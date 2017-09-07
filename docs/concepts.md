@@ -11,7 +11,7 @@ Your web app can **BOTH** execute actions and listen to events. Typically though
 Finally, you can also use metadata about the entire Matterport Space. [Learn more](metadata.md).
 
 <p align="center">
-  <img src="/images/message-flow.png"/><br/>
+  <img src="images/message-flow.png"/><br/>
   <em>Simple Message Flow with the 3D Showcase SDK</em>
 </p>
 
@@ -27,7 +27,7 @@ To make it easier to visualize, pretend the Matterport camera is a “human” a
 Then, coordinate conventions are easier to describe relative to how a person moves:
 
 <p align="center">
-  <img src="/images/xyz-coordinate-system.png"/><br/>
+  <img src="images/xyz-coordinate-system.png"/><br/>
 </p>
 
 This diagram is shown relative to the camera’s current position.
@@ -35,7 +35,7 @@ This diagram is shown relative to the camera’s current position.
 Another way to visualize the coordinate system is from the Floorplan View. This is the same as a “birds-eye” top-down view.
 
 <p align="center">
-  <img src="/images/top-down-coordinate-system.png"/><br/>
+  <img src="images/top-down-coordinate-system.png"/><br/>
 </p>
 
 <div class="admonition note">The floorplan is an absolute position of the Matterport Camera within the Space when it scanned.
