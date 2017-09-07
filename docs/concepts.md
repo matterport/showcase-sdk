@@ -47,7 +47,7 @@ The coordinate system is centered around the **first pano that was scanned**. Th
 To find the first scan, find the Space in [my.matterport.com](https://my.matterport.com) and then launch Workshop.
 
 <p align="center">
-  <img src="/images/first-scan-in-matterport-workshop.png"/><br/>
+  <img src="images/first-scan-in-matterport-workshop.png"/><br/>
 </p>
 
 Open the **3D Scans & 360º Views** menu. **Double click on Scan 1** and you will be transported to that scan position.
