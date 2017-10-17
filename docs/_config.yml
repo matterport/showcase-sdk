@@ -1,0 +1,5 @@
+theme: jekyll-theme-minimal
+title: Matterport 3D Showcase SDK
+description: An SDK for third party developers to control 3D Showcase
+show_downloads: false
+google_analytics: UA-34880260-1
