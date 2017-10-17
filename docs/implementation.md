@@ -10,7 +10,7 @@ First, add the 3D Showcase SDK to your web application by including the Javascri
 <script src='https://static.matterport.com/showcase-sdk/latest.js'>
 ```
 
-<div class="admonition note"><p>This exact URL is subject to change.  Please contact <a href="mailto:developers@matterport.com">developers@matterport.com</a> for more details.</p></div>
+This exact URL is subject to change.  Please contact <developers@matterport.com>
 
 Next, embed a Matterport Space on your web page with an `<iframe>` tag. [Learn more about embedding](https://support.matterport.com/hc/en-us/articles/115004549347-Embed-a-Space-with-an-iframe-). Add the **&play=1** URL parameter to automatically load the `<iframe>` when the page loads for a better user experience. Give it an ID you will use later.
 
@@ -46,7 +46,7 @@ function showcaseLoader() {
 Parameter | Description
 :---: | ---
 `showcase_iframe` | The value you put for the the `id` parameter in the `<iframe>` tag.
-`applicationKey` | Your API key is unique to your website domain. Contact <a href="mailto:developers@matterport.com">developers@matterport.com</a> to get your API key.<br/><br/>Your API key is limited to your website’s domain (example.com) and will not work with subdomains (something.example.com).
+`applicationKey` | Your API key is unique to your website domain. Contact <developers@matterport.com> to get your API key.<br/><br/>Your API key is limited to your website’s domain (example.com) and will not work with subdomains (something.example.com).
 
 
 For local development, you’ll need to run your app off a local web server. We recommend using a NodeJS server.
@@ -117,7 +117,7 @@ Name | Description
 :---: | ---
 [Showcase Replicator by Matterport](https://matterport.github.io/showcase-sdk-sample-app/app/) | This app simply replicates all the possible 3D showcase actions in simple UI buttons.
 
-This URL for any sample apps is subject to change.  Please contact <a href="mailto:developers@matterport.com">developers@matterport.com</a> for more details.
+This URL for any sample apps is subject to change.  Please contact <developers@matterport.com> for more details.
 
 
 [Return to the main page](index.md)
