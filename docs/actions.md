@@ -211,7 +211,7 @@ showcase.takeScreenShot(<resolution>)
 
 Argument | Type | Required? | Value/Description
 :---: | :---: | :---: | ---
-resolution | Object | Optional | The desired resolution for the screenshot. For example: `{ width: 1920, height: 1080 }` <br/><br/> If no resolution is specified, then the resolution of the size of Showcase (the current window or the `<iframe>` embed) is used. Maximum 4096 x 4096.
+resolution | Object | Optional | The desired resolution for the screenshot. For example: `{width: 1920, height: 1080}` <br/><br/> If no resolution is specified, then the resolution of the size of Showcase (the current window or the `<iframe>` embed) is used. Maximum 4096 x 4096.
 visibility | Object | Optional | Toggles certain scene objects such as Mattertag Posts and pano markers. For example: `{ showPucks:true, showMattertags: true }` <br/><br/> If no visibility object is specified, then all scene objects are hidden.
 
 ### Errors

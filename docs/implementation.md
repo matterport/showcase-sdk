@@ -46,7 +46,7 @@ function showcaseLoader() {
 Parameter | Description
 :---: | ---
 `showcase_iframe` | The value you put for the the `id` parameter in the `<iframe>` tag.
-`applicationKey` | Your API key is unique to your website domain. Contact <developers@matterport.com> to get your API key.<br/><br/>Your API key is limited to your website’s domain (example.com) and will not work with subdomains (something.example.com).
+`applicationKey` | Your API key is unique to your website domain. Contact <developers@matterport.com> to get your API key. Your API key is limited to your website’s domain (example.com) and will not work with subdomains (something.example.com).
 
 
 For local development, you’ll need to run your app off a local web server. We recommend using a NodeJS server.
