@@ -15,7 +15,7 @@ Finally, you can also use metadata about the entire Matterport Space. [Learn mor
   <em>Simple Message Flow with the 3D Showcase SDK</em>
 </p>
 
-<div class="admonition note"> If you’re having problems running 3D Showcase, it may be a problem with WebGL. Review our [system requirements](https://support.matterport.com/hc/en-us/articles/208220058-3D-Showcase-System-Requirements) for 3D Showcase.</div>
+If you’re having problems running 3D Showcase, it may be a problem with WebGL. Review our [system requirements](https://support.matterport.com/hc/articles/208220058) for 3D Showcase.
 
 
 # Coordinate Conventions
