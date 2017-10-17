@@ -115,9 +115,9 @@ See what’s possible with the Matterport 3D Showcase SDK:
 
 Name | Description
 :---: | ---
-[Showcase Replicator by Matterport](https://github.com/matterport/showcase-sdk-sample-app) | This app simply replicates all the possible 3D showcase actions in simple UI buttons.
+[Showcase Replicator by Matterport](https://matterport.github.io/showcase-sdk-sample-app/app/) | This app simply replicates all the possible 3D showcase actions in simple UI buttons.
 
-<div class="admonition info">This URL for any sample apps is subject to change.  Please contact <a href="mailto:developers@matterport.com">developers@matterport.com</a> for more details.</div>
+This URL for any sample apps is subject to change.  Please contact <a href="mailto:developers@matterport.com">developers@matterport.com</a> for more details.
 
 
 [Return to the main page](index.md)
