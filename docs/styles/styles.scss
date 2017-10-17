@@ -1,0 +1,23 @@
+---
+---
+
+@import "jekyll-theme-minimal";
+
+body {
+  color: red;
+  background-color: orange;
+}
+
+.note {
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: transparent;
+  background-color: #ececec;
+  padding: 15px;
+  vertical-align: middle;
+  display: block;
+  align-items:center;
+}
+h2 {
+  margin-top: 20px;
+}

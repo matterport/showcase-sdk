@@ -1,6 +1,6 @@
 # Events
 
-<div class="admonition note">The 3D Showcase SDK is actively in development. Details are subject to change. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+<div class="note">The 3D Showcase SDK is actively in development. Details are subject to change. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
 
 
 

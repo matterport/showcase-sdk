@@ -1,4 +1,4 @@
-# Introducing the SDK
+# Concepts
 
 The Matterport 3D Showcase SDK is currently focused on functionality about the **user’s location within the Matterport Space** and also what the user sees **(taking screenshots)**.
 
@@ -38,7 +38,7 @@ Another way to visualize the coordinate system is from the Floorplan View. This 
   <img src="images/top-down-coordinate-system.png"/><br/>
 </p>
 
-<div class="admonition note">The floorplan is an absolute position of the Matterport Camera within the Space when it scanned.
+<div class="note">The floorplan is an absolute position of the Matterport Camera within the Space when it scanned.
 
 The orientation of the Floorplan View depends on the original orientation of the pano that you transitioned from and the aspect ratio of the window.</div>
 
