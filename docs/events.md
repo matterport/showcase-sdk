@@ -9,10 +9,10 @@ The user has moved to a new pano.
 
 ```javascript
 showcase.on(showcase.Events.ENTER_PANO,
-function (oldPano, newPano) {
-  console.log('Just left ', oldPano);
-  console.log('Just entered ', newPano);
-}
+  function (oldPano, newPano) {
+    console.log('Just left ', oldPano);
+    console.log('Just entered ', newPano);
+  }
 );
 ```
 
@@ -28,12 +28,12 @@ User has changed their viewing mode, rotated their viewpoint, or panned the Matt
 
 ```javascript
 showcase.on(showcase.Events.MOVE,
-function (state) {
-console.log('Player moved, my new location is ', state.position);
-console.log('Rotation angle at ',  state.rotation);
-console.log('Pano UUID is ', state.uuid);
-console.log('View mode is ', state.mode);
-}
+  function (state) {
+    console.log('Player moved, my new location is ', state.position);
+    console.log('Rotation angle at ',  state.rotation);
+    console.log('Pano UUID is ', state.uuid);
+    console.log('View mode is ', state.mode);
+  }
 );
 ```
 
@@ -54,9 +54,9 @@ The Matterport Space loaded successfully and is ready to explore.
 
 ```javascript
 showcase.on(showcase.Events.MODEL_LOADED,
-function (metadata) {
-console.log('Space metadata: ', metadata);
-}
+  function (metadata) {
+    console.log('Space metadata: ', metadata);
+  }
 );
 ```
 

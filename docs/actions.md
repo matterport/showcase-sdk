@@ -9,7 +9,7 @@ Change the viewing mode in 3D Showcase.
 
 ```javascript
 showcase.moveToMode({
-    mode: <mode>
+  mode: <mode>
 })
    // callback that receives success message
 .then(successCallback)
@@ -34,9 +34,9 @@ Move to a new panorama (a new scan position in Inside View or a new 360º View).
 
 ```javascript
 showcase.moveToPano({
-pano: <uuid>,
-rotation: <rotationObject>,
-transition: <transition>
+  pano: <uuid>,
+  rotation: <rotationObject>,
+  transition: <transition>
 })
    // callback that receives success message
 .then(successCallback)
@@ -124,8 +124,8 @@ Moves the camera (user’s viewpoint) for Dollhouse or Floorplan.
 
 ```javascript
 showcase.panCamera({
-    x: <meters>,
-    z: <meters>
+  x: <meters>,
+  z: <meters>
 }).then(successCallback)
    // callback that receives success message
 .catch(errorCallback);
@@ -208,6 +208,7 @@ showcase.takeScreenShot(<resolution>)
   img.src = screenShotUrl
 });
 ```
+
 Argument | Type | Required? | Value/Description
 :---: | :---: | :---: | ---
 resolution | Object | Optional | The desired resolution for the screenshot. For example: `{ width: 1920, height: 1080 }` <br/><br/> If no resolution is specified, then the resolution of the size of Showcase (the current window or the `<iframe>` embed) is used. Maximum 4096 x 4096.

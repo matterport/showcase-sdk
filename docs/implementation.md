@@ -84,7 +84,7 @@ Listening for events from 3D Showcase is done in a similar way:
 
 ```javascript
 showcase.on(<event_name>, function (<state_arguments>) {
- // what to do when this event happens
+  // what to do when this event happens
 });
 ```
 
