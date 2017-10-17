@@ -15,29 +15,12 @@ Not everything in the normal, end-user version of 3D Showcase is available in th
 
 
 
-## Table of Contents
-
-1. [Vocabulary](vocabulary.md)
-2. [Concepts](concepts.md)
-3. [Implementation](implementation.md)
-4. [Actions](actions.md)
-5. [Events](events.md)
-6. [Metadata](metadata.md)
-
-
-
 ## Updates
 
  Version | Date | Notes
 :-------:|:----:|-----
 v1.1 | August 10th, 2017 | Added `getPose` and `takeScreenShot` actions. Added pano thumbnails from the default pose into the metadata.
 v1.0 | February 16th, 2017 | Initial release of SDK
-
-
-
-## Questions & Feedback
-
-Email <developers@matterport.com>.
 
 
 
