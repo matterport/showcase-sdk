@@ -18,7 +18,7 @@ Finally, you can also use metadata about the entire Matterport Space. [Learn mor
 If you’re having problems running 3D Showcase, it may be a problem with WebGL. Review our [system requirements](https://support.matterport.com/hc/articles/208220058) for 3D Showcase.
 
 
-# Coordinate Conventions
+## Coordinate Conventions
 
 X, Y, and Z coordinates are from the **viewpoint of the Matterport camera** when it scanned the environment.
 
