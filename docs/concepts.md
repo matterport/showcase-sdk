@@ -38,9 +38,9 @@ Another way to visualize the coordinate system is from the Floorplan View. This 
   <img src="images/top-down-coordinate-system.png"/><br/>
 </p>
 
-<div class="note">The floorplan is an absolute position of the Matterport Camera within the Space when it scanned.
+The floorplan is an absolute position of the Matterport Camera within the Space when it scanned.
 
-The orientation of the Floorplan View depends on the original orientation of the pano that you transitioned from and the aspect ratio of the window.</div>
+The orientation of the Floorplan View depends on the original orientation of the pano that you transitioned from and the aspect ratio of the window.
 
 The coordinate system is centered around the **first pano that was scanned**. This may be different from your Start Position.
 
