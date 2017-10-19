@@ -1,4 +1,4 @@
-# Introducing the SDK
+# Concepts
 
 The Matterport 3D Showcase SDK is currently focused on functionality about the **user’s location within the Matterport Space** and also what the user sees **(taking screenshots)**.
 
@@ -15,10 +15,10 @@ Finally, you can also use metadata about the entire Matterport Space. [Learn mor
   <em>Simple Message Flow with the 3D Showcase SDK</em>
 </p>
 
-<div class="admonition note"> If you’re having problems running 3D Showcase, it may be a problem with WebGL. Review our [system requirements](https://support.matterport.com/hc/en-us/articles/208220058-3D-Showcase-System-Requirements) for 3D Showcase.</div>
+If you’re having problems running 3D Showcase, it may be a problem with WebGL. Review our [system requirements](https://support.matterport.com/hc/articles/208220058) for 3D Showcase.
 
 
-# Coordinate Conventions
+## Coordinate Conventions
 
 X, Y, and Z coordinates are from the **viewpoint of the Matterport camera** when it scanned the environment.
 
@@ -38,9 +38,9 @@ Another way to visualize the coordinate system is from the Floorplan View. This 
   <img src="images/top-down-coordinate-system.png"/><br/>
 </p>
 
-<div class="admonition note">The floorplan is an absolute position of the Matterport Camera within the Space when it scanned.
+The floorplan is an absolute position of the Matterport Camera within the Space when it scanned.
 
-The orientation of the Floorplan View depends on the original orientation of the pano that you transitioned from and the aspect ratio of the window.</div>
+The orientation of the Floorplan View depends on the original orientation of the pano that you transitioned from and the aspect ratio of the window.
 
 The coordinate system is centered around the **first pano that was scanned**. This may be different from your Start Position.
 

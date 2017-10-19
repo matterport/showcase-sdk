@@ -1,6 +1,6 @@
 # Actions
 
-<div class="admonition note">The 3D Showcase SDK is actively in development. Details are subject to change. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+<div class="note">The 3D Showcase SDK is actively in development. Details are subject to change. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
 
 
 
@@ -9,7 +9,7 @@ Change the viewing mode in 3D Showcase.
 
 ```javascript
 showcase.moveToMode({
-    mode: <mode>
+  mode: <mode>
 })
    // callback that receives success message
 .then(successCallback)
@@ -21,7 +21,7 @@ Argument | Type | Required? | Value
 :---: | :---: | :---: | ---
 mode | Enum | Required | `showcase.Mode.PANORAMA`<br>`showcase.Mode.DOLLHOUSE`<br>`showcase.Mode.FLOORPLAN`
 
-### Warnings
+### Errors
 Warns if value is not one of the above options. Warns if the embed cannot download assets from the Matterport Space to switch to the new mode (because of network issues).
 
 ### Notes
@@ -34,9 +34,9 @@ Move to a new panorama (a new scan position in Inside View or a new 360º View).
 
 ```javascript
 showcase.moveToPano({
-pano: <uuid>,
-rotation: <rotationObject>,
-transition: <transition>
+  pano: <uuid>,
+  rotation: <rotationObject>,
+  transition: <transition>
 })
    // callback that receives success message
 .then(successCallback)
@@ -50,8 +50,8 @@ uuid | String | Required | UUID of new pano to move to. Use the result from `sho
 rotation | Object | Optional | The x and y Euler angles (float values) to rotate the viewpoint upon arrival to the new pano. Euler angles can be counter-intuitive. See rotate action. [Learn more about Euler angles](https://en.wikipedia.org/wiki/Euler_angles). `var rotationObject = { x: 20, y: 30 }` Default is no rotation upon arrival:  {x: 0, y: 0}
 transition | String | Optional | `showcase.Transition.FLY` (default)<br/>`showcase.Transition.FADEOUT`<br/>`showcase.Transition.INSTANT`<br/>
 
-### Warnings
-Errors if the provided UUID does not exist in the list of panos. If the rotation or transition is specified incorrectly. This parameter is then ignored.
+### Errors
+Fails if the provided UUID does not exist in the list of panos. Fails if the rotation or transition is specified incorrectly. This parameter is then ignored.
 
 
 
@@ -71,7 +71,7 @@ Argument | Type | Required? | Value
 vertical | Float | Required | How many degrees to rotate up or down.
 horizontal | Float | Required | How many degrees to rotate left or right.
 
-### Warnings
+### Errors
 Warns to console if you rotated, but then you hit the vertical limit. Fails if no movement because you are already at a rotation limit. Warns if trying to rotate up or down in Floorplan View.  
 
 ### Notes
@@ -111,7 +111,7 @@ Argument | Type | Required? | Value
 direction | Enum | Required | Which direction to rotate to: <br/>`showcase.Direction.LEFT`<br/>`showcase.Direction.RIGHT`<br/>`showcase.Direction.UP`<br/>`showcase.Direction.DOWN`
 angle | Float | Required | How much to rotate
 
-### Warnings
+### Errors
 Warns to console if you rotated, but you hit the vertical limit. Fails if there is no movement because you are already at a rotation limit. Warns if trying to rotate up or down in Floorplan View.  
 
 ### Notes
@@ -124,8 +124,8 @@ Moves the camera (user’s viewpoint) for Dollhouse or Floorplan.
 
 ```javascript
 showcase.panCamera({
-    x: <meters>,
-    z: <meters>
+  x: <meters>,
+  z: <meters>
 }).then(successCallback)
    // callback that receives success message
 .catch(errorCallback);
@@ -137,7 +137,7 @@ Argument | Type | Required? | Value/Description
 x | Float | Required | Absolute position of the pano on the x axis.
 z | Float | Required | Absolute position of the pano on the z axis.
 
-### Warnings
+### Errors
 Warns if pan was successful but you hit the model bounds. Fails if you are already at the model bounds and you cannot move any further.
 
 ### Notes
@@ -164,7 +164,7 @@ Argument | Type | Required? | Value/Description
 :---: | :---: | :---: | ---
 direction | Enum | Required | `showcase.Direction.LEFT`<br/>`showcase.Direction.RIGHT`<br/>`showcase.Direction.FORWARD`<br/>`showcase.Direction.BACK`<br/>`showcase.Direction.UP`<br/>`showcase.Direction.DOWN`
 
-### Warnings
+### Errors
 Fails if direction is not one of the above options. Warns if you can’t move in that direction (hit a wall).
 
 ### Notes
@@ -208,12 +208,13 @@ showcase.takeScreenShot(<resolution>)
   img.src = screenShotUrl
 });
 ```
+
 Argument | Type | Required? | Value/Description
 :---: | :---: | :---: | ---
-resolution | Object | Optional | The desired resolution for the screenshot. For example: `{ width: 1920, height: 1080 }` <br/><br/> If no resolution is specified, then the resolution of the size of Showcase (the current window or the `<iframe>` embed) is used. Maximum 4096 x 4096.
+resolution | Object | Optional | The desired resolution for the screenshot. For example: `{width: 1920, height: 1080}` <br/><br/> If no resolution is specified, then the resolution of the size of Showcase (the current window or the `<iframe>` embed) is used. Maximum 4096 x 4096.
 visibility | Object | Optional | Toggles certain scene objects such as Mattertag Posts and pano markers. For example: `{ showPucks:true, showMattertags: true }` <br/><br/> If no visibility object is specified, then all scene objects are hidden.
 
-### Warnings
+### Errors
 Warns if the resolution is 0 or negative.
 
 ### Notes
