@@ -2,3 +2,17 @@
 ---
 
 @import "{{ site.theme }}";
+.note {
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: transparent;
+  background-color: #ececec;
+  padding: 15px;
+  vertical-align: middle;
+  display: block;
+  align-items:center;
+}
+
+section h2 {
+  margin-top: 40px;
+}
