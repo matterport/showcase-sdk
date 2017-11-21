@@ -4,7 +4,7 @@
 
 
 
-## moveToPano
+## moveToMode
 Change the viewing mode in 3D Showcase.
 
 ```javascript
