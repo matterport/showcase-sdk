@@ -53,4 +53,4 @@ To find the first scan, find the Space in [my.matterport.com](https://my.matterp
 Open the **3D Scans & 360º Views** menu. **Double click on Scan 1** and you will be transported to that scan position.
 
 
-[Return to the main page](index.md)
+## [Return to the main page](index.md)

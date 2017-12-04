@@ -18,13 +18,3 @@ Not everything in the normal, end-user version of 3D Showcase is available in th
 :-------:|:--------:|-----
 v1.1 | August 10th, 2017 | Added `getPose` and `takeScreenShot` actions. <br/>Added pano thumbnails from the default pose into the metadata.
 v1.0 | February 16th, 2017 | Initial release of SDK
-
-
-
-## Legal
-
-:---:|---
-Matterport 3D Showcase SDK | For the **Third Party Developer Policy** and license information, email <developers@matterport.com>
-General Matterport legal information | [Terms of Use](https://matterport.com/terms-of-use-2/) <br/> [Privacy Policy](https://matterport.com/legal/privacy-policy/)
-
-Copyright © 2017 Matterport, all rights reserved.

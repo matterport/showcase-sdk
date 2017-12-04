@@ -10,4 +10,4 @@ Transition | Transitions are what the user sees when they move from one pano to 
 Mode | The user’s current view in 3D Showcase. It can be one of three possible modes: <br/>1) Panorama - Inside View (aligned pano) or 360º View (unaligned pano)<br/> 2) Dollhouse View<br/> 3) Floorplan View
 
 
-[Return to the main page](index.md)
+## [Return to the main page](index.md)
