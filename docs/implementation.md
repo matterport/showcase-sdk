@@ -94,8 +94,8 @@ showcase.on(<event_name>, function (<state_arguments>) {
 
 Parameter | Description
 :-----: | -----
-`<event_name>` | Event you’re you’re listening for
-`<state_arguments>` | Return values that provide information about the new state of 3D Showcase after the event.
+`<event_name>` | Event you’re listening for
+`<state_arguments>` | Return values related to this event. These tell you about the new state of 3D Showcase after this event has happened.
 
 
 ## Use the Metadata
