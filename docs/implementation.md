@@ -1,7 +1,9 @@
 # Installation
 
 
-## Include the Library & Connect
+<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/terms-of-service/">Matterport Third Party Developer Policy</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+
+## Include the Library and Add a Matterport Space
 
 First, add the 3D Showcase SDK to your web application by including the Javascript library. This line goes in the `<head>` tag with your other includes.
 
@@ -10,8 +12,6 @@ First, add the 3D Showcase SDK to your web application by including the Javascri
 src='https://static.matterport.com/showcase-sdk/latest.js'>
 ```
 
-<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/terms-of-service/">Matterport Third Party Developer Policy</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
-<br/>
 Next, embed a Matterport Space on your web page with an `<iframe>` tag. [Learn more about embedding](https://support.matterport.com/hc/en-us/articles/115004549347-Embed-a-Space-with-an-iframe-).
 
 Add the **&play=1** URL parameter to automatically load the `<iframe>` when the page loads for a better user experience. Give it an ID you will use later.
@@ -22,6 +22,8 @@ src=”https://my.matterport.com/show/?m=SxQL3iGyoDo&play=1”
 frameborder=”0” allowfullscreen allow="vr"
 id=”showcase_iframe”></iframe>
 ```
+
+## Connect to the Matterport Space
 
 Now in the Javascript code for your web application, connect to the Matterport Space.
 
@@ -135,7 +137,7 @@ Within each module, the reference docs are organized in this way:
 - **Functions** - Actions you can execute. Actions typically show the user something new or otherwise change the state of 3D Showcase.
 
 
-## Sample Applications
+## See a Sample App
 
 See what’s possible with the Matterport 3D Showcase SDK.
 
