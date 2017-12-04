@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://use.fontawesome.com/643a27f9d0.js"></script>
     <meta name="viewport" content="width=device-width">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -22,14 +23,16 @@
         <a href="https://matterport.github.io/showcase-sdk/"> <img src="images/matterport_sdk_logo.png" /> <br/><br/> <h1>{{ site.title | default: site.github.repository_name }}</h1> </a>
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
-        <h2><a href="vocabulary.html">Vocabulary</a></h2>
-        <h2><a href="concepts.html">Concepts</a></h2>
-        <h2><a href="implementation.html">Using the SDK</a></h2>
-        <h2><a href="actions.html">Actions</a></h2>
-        <h2><a href="events.html">Events</a></h2>
-        <h2><a href="metadata.html">Metadata</a></h2>
-        <h2><a href="mailto:developers@matterport.com">Questions & Feedback</a></h2>
-        <h2><a href="https://matterport.com/legal/terms-of-service/">Legal</a></h2>
+        <h2><a href="vocabulary.html"><i class="fa fa-flag-o"></i>&nbsp;&nbsp;Vocabulary</a></h2>
+        <h2><a href="concepts.html"><i class="fa fa-book"></i>&nbsp;&nbsp;Concepts</a></h2>
+        <h2><a href="implementation.html"><i class="fa fa-cogs"></i>&nbsp;&nbsp;Using the SDK</a></h2>
+        <h2><a href="actions.html"><i class="fa fa-code"></i>&nbsp;&nbsp;Actions</a></h2>
+        <h2><a href="events.html"><i class="fa fa-code"></i>&nbsp;&nbsp;Events</a></h2>
+        <h2><a href="metadata.html"><i class="fa fa-code"></i>&nbsp;&nbsp;Metadata</a></h2>
+        <h2><a href="mailto:developers@matterport.com"><i class="fa fa-question-circle-o"></i>&nbsp;&nbsp;Questions & Feedback</a></h2>
+        <h2><a href="https://matterport.com/legal/terms-of-service/"><i class="fa fa-balance-scale"></i>&nbsp;&nbsp;Legal</a></h2>
+
+        <p>Copyright © 2017 Matterport, all rights reserved.</p>
 
         {% if site.github.is_user_page %}
           <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
