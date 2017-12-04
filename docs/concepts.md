@@ -1,21 +1,21 @@
 # Concepts
 
-The Matterport 3D Showcase SDK is currently focused on functionality about the **user’s location within the Matterport Space** and also what the user sees **(taking screenshots)**.
+## Introduction
 
-Your website (web application or web app) can **execute actions** to change where the user is. [Learn more](actions.md) about all the actions you can execute on 3D Showcase.
+With the Matterport 3D Showcase SDK, your web application (web app) can **execute actions** that change where the end user is and what they see in 3D Showcase.
 
-Your web app can also **listen to events** about where the user is. Users navigate through 3D Showcase like normal, and your web app listens and reacts appropriately. [Learn more](events.md) about events.
+You can also let end users explore spaces with 3D Showcase naturally. Your web app can **listen to events** about where the user is and what they are seeing or doing, and then react appropriately.
 
-Your web app can **BOTH** execute actions and listen to events. Typically though, you will do one or the other depending the purpose of your web app.
+Your web app can **both** execute actions and listen to events. Depending on the purpose of your web app, you will typically only do one or the other.
 
-Finally, you can also use metadata about the entire Matterport Space. [Learn more](metadata.md).
+Finally, you can also use metadata about the entire Matterport Space so your web app can make informed decisions about the entire space.
 
 <p align="center">
   <img src="images/message-flow.png"/><br/>
   <em>Simple Message Flow with the 3D Showcase SDK</em>
 </p>
 
-If you’re having problems running 3D Showcase, it may be a problem with WebGL. Review our [system requirements](https://support.matterport.com/hc/articles/208220058) for 3D Showcase.
+<div class="note">If you’re having problems running 3D Showcase, it may be a problem with WebGL. Review our <a href="https://support.matterport.com/hc/articles/208220058">system requirements</a> for 3D Showcase.</div>
 
 
 ## Coordinate Conventions
@@ -24,7 +24,7 @@ X, Y, and Z coordinates are from the **viewpoint of the Matterport camera** when
 
 To make it easier to visualize, pretend the Matterport camera is a “human” and the Matterport camera lenses are his or her “eyes.” The buttons on the back of the Matterport Camera back are like the back of a person’s head.
 
-Then, coordinate conventions are easier to describe relative to how a person moves:
+Then, coordinate conventions are easier to describe relative to how the imaginary 'camera-person' moves:
 
 <p align="center">
   <img src="images/xyz-coordinate-system.png"/><br/>
@@ -44,7 +44,7 @@ The orientation of the Floorplan View depends on the original orientation of the
 
 The coordinate system is centered around the **first pano that was scanned**. This may be different from your Start Position.
 
-To find the first scan, find the Space in [my.matterport.com](https://my.matterport.com) and then launch Workshop.
+To find the first scan, find the space in [my.matterport.com](https://my.matterport.com) and then launch Workshop.
 
 <p align="center">
   <img src="images/first-scan-in-matterport-workshop.png"/><br/>
