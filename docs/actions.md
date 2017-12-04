@@ -1,6 +1,6 @@
-# Actions
+# Actions (SDK v1.1, deprecated)
 
-<div class="note">The 3D Showcase SDK is actively in development. Details are subject to change. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+<div class="note">Actions docs from SDK v1.1 (deprecated). Refer to <a href="reference/index.html">current reference content</a> and the upgrade path <a href="upgrade.html">from SDK v1.1 to v3.0</a>.</div>
 
 
 

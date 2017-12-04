@@ -21,7 +21,7 @@ takeScreenshot() | Camera.takeScreenshot()
 Version 1.1 | Version 3.0
 -------|--------
 Event.ENTER_PANO | Sweep.Event.ENTER
-Event.MOVE | Deprecated
+Event.MOVE | **Deprecated**
 Event.MODEL_LOADED | Model.Event.MODEL_LOADED
 
 <div class="note">We've skipped SDK version 2.0 so the SDK version number and the end-user (web player) version number are the same.</div><br/>

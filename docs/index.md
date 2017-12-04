@@ -11,7 +11,7 @@ With the SDK, developers can:
 The SDK does not contain all the same actions and events that an end-user can do in 3D Showcase. We are building out the SDK based on developer demand.
 
 
-# News
+# Versions
 
  Version | Date | Notes
 :-------:|:--------:|-----
