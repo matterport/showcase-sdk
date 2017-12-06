@@ -37,8 +37,9 @@ iframe.addEventListener('load', showcaseLoader, true);
 function showcaseLoader() {
   try {
     var showcase = window.SHOWCASE_EMBED_SDK.connect({
+      iframe: iframe,
       applicationKey: 'abc123456789',
-      iframe: iframe
+      sdkVersion: '3.0'
       })
       .then(loadedShowcaseHandler)
         // refer to docs for Model.Event.MODEL_LOADED
