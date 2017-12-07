@@ -40,7 +40,7 @@ function showcaseLoader() {
       iframe, // Obtained earlier
       'abc123456789', // Your API key
       '3.0' // SDK version you are using
-      // Use the latest version you can for your app.
+      // Use the latest version you can for your app
       )
       .then(loadedShowcaseHandler)
         // refer to docs for Model.Event.MODEL_LOADED

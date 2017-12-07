@@ -602,9 +602,21 @@ body { background: #fdfdfd; font-family: "Noto Sans", "Helvetica Neue", "Helveti
 a { color: #267CB9; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-code, pre { font-family: Menlo, Monaco, Consolas, "Courier New", monospace; padding: 0.2em; margin: 0; font-size: 14px; background-color: rgba(0, 0, 0, 0.04); }
+code, pre {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  padding: 0.2em;
+  margin: 0;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.04);
+}
 
-pre { padding: 10px; }
+pre {
+  padding: 10px;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 2px;
+  border-color: lightgray;
+}
 pre code { padding: 0; font-size: 100%; background-color: transparent; }
 
 .tsd-typography { line-height: 1.333em; }
@@ -655,6 +667,7 @@ html.minimal .tsd-generator { padding: 0; }
 
 dl.tsd-comment-tags { overflow: hidden; }
 dl.tsd-comment-tags dt { clear: both; float: left; padding: 1px 5px; margin: 0 10px 0 0; border-radius: 4px; border: 1px solid #808080; color: #808080; font-size: 0.8em; font-weight: normal; }
+dl.tsd-comment-tags dt.tsd-comment-tags-deprecated {color: white; background-color: rgb(223, 35, 35) }
 dl.tsd-comment-tags dd { margin: 0 0 10px 0; }
 dl.tsd-comment-tags p { margin: 0; }
 

@@ -14,7 +14,7 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../index.html">Globals</a>
+					<a href="../index.html">@mpSdk</a>
 				</li>
 				<li>
 					<a href="mode.html">Mode</a>
@@ -36,12 +36,14 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mode.event.html" class="tsd-kind-icon">Event</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mode.mode-1.html" class="tsd-kind-icon">Mode</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mode.transitiontype.html" class="tsd-kind-icon">Transition<wbr>Type</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mode.html#modechange" class="tsd-kind-icon">Mode<wbr>Change</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mode.html#movetomodeoptions" class="tsd-kind-icon">Move<wbr>ToMode<wbr>Options</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -73,6 +75,27 @@
 						</ul>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="movetomodeoptions" class="tsd-anchor"></a>
+					<h3>Move<wbr>ToMode<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">Move<wbr>ToMode<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> position<span class="tsd-signature-symbol">?: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> rotation<span class="tsd-signature-symbol">?: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> transition<span class="tsd-signature-symbol">?: </span><a href="../enums/mode.transitiontype.html" class="tsd-signature-type">Mode.TransitionType</a></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
@@ -80,7 +103,7 @@
 					<a name="moveto" class="tsd-anchor"></a>
 					<h3>move<wbr>To</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">move<wbr>To<span class="tsd-signature-symbol">(</span>mode<span class="tsd-signature-symbol">: </span><a href="../enums/mode.mode-1.html" class="tsd-signature-type">Mode.Mode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/mode.mode-1.html" class="tsd-signature-type">Mode.Mode</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">move<wbr>To<span class="tsd-signature-symbol">(</span>mode<span class="tsd-signature-symbol">: </span><a href="../enums/mode.mode-1.html" class="tsd-signature-type">Mode.Mode</a>, options<span class="tsd-signature-symbol">?: </span><a href="mode.html#movetomodeoptions" class="tsd-signature-type">Mode.MoveToModeOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/mode.mode-1.html" class="tsd-signature-type">Mode.Mode</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -89,21 +112,33 @@
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Change the viewing mode in 3D Showcase.</p>
-									<pre><code><span class="hljs-keyword">const</span> mode = mpSdk.Mode.Mode.INSIDE;
-mpSdk.Mode.moveTo(mode)
-  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(nextMode)</span></span>{
-    <span class="hljs-comment">// moveTo complete.</span>
+								</div>
+								<pre><code><span class="hljs-keyword">const</span> mode = mpSdk.Mode.Mode.DOLLHOUSE;
+<span class="hljs-keyword">const</span> position = {<span class="hljs-attr">x</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">0</span>};
+<span class="hljs-keyword">const</span> rotation = {<span class="hljs-attr">x</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">0</span>};
+<span class="hljs-keyword">const</span> transition = mpSdk.Mode.TransitionType.FLY;
+
+mpSdk.Mode.moveTo(mode, {
+    <span class="hljs-attr">position</span>: position,
+    <span class="hljs-attr">rotation</span>: rotation,
+    <span class="hljs-attr">transition</span>: transition
   })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span></span>{
-    <span class="hljs-comment">// moveTo error.</span>
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nextMode</span>)</span>{
+    <span class="hljs-comment">// Move successful.</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Arrived at new view mode '</span> + nextMode);
+  })
+  .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>)</span>{
+    <span class="hljs-comment">// Error with moveTo command</span>
   });
 </code></pre>
-								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>mode: <a href="../enums/mode.mode-1.html" class="tsd-signature-type">Mode.Mode</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="mode.html#movetomodeoptions" class="tsd-signature-type">Mode.MoveToModeOptions</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/mode.mode-1.html" class="tsd-signature-type">Mode.Mode</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -117,13 +152,16 @@ mpSdk.Mode.moveTo(mode)
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="globals  ">
-						<a href="../index.html"><em>Globals</em></a>
+						<a href="../index.html"><em>@mpSdk</em></a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="camera.html">Camera</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="floor.html">Floor</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="label.html">Label</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="mattertag.html">Mattertag</a>
@@ -150,8 +188,14 @@ mpSdk.Mode.moveTo(mode)
 					<li class=" tsd-kind-enum tsd-parent-kind-module">
 						<a href="../enums/mode.mode-1.html" class="tsd-kind-icon">Mode</a>
 					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/mode.transitiontype.html" class="tsd-kind-icon">Transition<wbr>Type</a>
+					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="mode.html#modechange" class="tsd-kind-icon">Mode<wbr>Change</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="mode.html#movetomodeoptions" class="tsd-kind-icon">Move<wbr>ToMode<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="mode.html#moveto" class="tsd-kind-icon">move<wbr>To</a>
