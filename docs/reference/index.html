@@ -25,6 +25,7 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<section class="tsd-panel-group tsd-index-group">
+				<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
@@ -443,19 +444,18 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 								<div class="lead">
 									<p>This event fires when the camera has changed.</p>
 								</div>
-								<p>```
-									mpSdk.on(mpSdk.Event.MOVE,
-									function(pose) {
-									console.log(&#39;Current position is &#39;, pose.position);
-									console.log(&#39;Rotation angle is &#39;, pose.rotation);
-									console.log(&#39;Pano UUID is &#39;, pose.pano);
-									console.log(&#39;View mode is &#39;, pose.mode);
-									}
-								);</p>
+								<pre><code>mpSdk.on(mpSdk.Event.MOVE,
+  function(<span class="hljs-keyword">pose</span>) {
+    console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'Current position is '</span>, <span class="hljs-keyword">pose</span>.position);
+    console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'Rotation angle is '</span>, <span class="hljs-keyword">pose</span>.rotation);
+    console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'Pano UUID is '</span>, <span class="hljs-keyword">pose</span>.pano);
+    console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'View mode is '</span>, <span class="hljs-keyword">pose</span>.mode);
+  }
+);
+</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
-									<dd><p>```</p>
-									</dd>
+									<dd></dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -608,14 +608,14 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>labelData<span class="tsd-signature-symbol">: </span><a href="modules/label.html#labeldata" class="tsd-signature-type">Label.LabelData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>labelData<span class="tsd-signature-symbol">: </span><a href="modules/label.html" class="tsd-signature-type">Label</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>labelData: <a href="modules/label.html#labeldata" class="tsd-signature-type">Label.LabelData</a></h5>
+															<h5>labelData: <a href="modules/label.html" class="tsd-signature-type">Label</a><span class="tsd-signature-symbol">[]</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
