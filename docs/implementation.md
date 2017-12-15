@@ -18,7 +18,7 @@ Add the **&play=1** URL parameter to automatically load the `<iframe>` when the 
 
 ``` html
 <iframe width=”853” height=”480”
-src=”https://my.matterport.com/show/?m=SxQL3iGyoDo&play=1”
+src=”https://my.matterport.com/showcase-beta?m=SxQL3iGyoDo&play=1”
 frameborder=”0” allowfullscreen allow="vr"
 id=”showcase_iframe”></iframe>
 ```
