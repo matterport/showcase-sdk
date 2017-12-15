@@ -1,7 +1,7 @@
 # Installation
 
 
-<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/terms-of-service/">Matterport Third Party Developer Policy</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport Third Party Developer Policy</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
 
 ## Include the Library and Add a Matterport Space
 
