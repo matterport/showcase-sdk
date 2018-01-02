@@ -36,7 +36,7 @@ iframe.addEventListener('load', showcaseLoader, true);
 
 function showcaseLoader() {
   try {
-    var showcase = window.SHOWCASE_EMBED_SDK.connect(
+    var showcase = window.SHOWCASE_SDK.connect(
       iframe, // Obtained earlier
       'abc123456789', // Your API key
       '3.0' // SDK version you are using
