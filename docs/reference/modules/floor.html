@@ -123,7 +123,8 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>This function moves the camera to a specific floor.</p>
+									<p>When in inside mode, this function changes the active floor, and moves the camera to the nearest position on that floor.
+									When in floorplan/dollhouse mode, this function changes the active floor, but does not modify the camera</p>
 								</div>
 								<pre><code>mpSdk.<span class="hljs-built_in">Floor</span>.moveTo(<span class="hljs-number">2</span>)
   .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(</span>floorIndex) {

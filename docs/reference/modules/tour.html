@@ -47,6 +47,7 @@
 
   mpSdk.Tour.getData()
     .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(tour)</span></span> {
+      console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'tour has '</span> + tour.length + <span class="hljs-string">' stops'</span>);
       <span class="hljs-keyword">return</span> mpSdk.Tour.start(<span class="hljs-number">0</span>);
     })
     .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
