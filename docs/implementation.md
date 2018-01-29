@@ -139,13 +139,4 @@ Within each module, the reference docs are organized in this way:
 - **Functions** - Actions you can execute. Actions typically show the user something new or otherwise change the state of 3D Showcase.
 
 
-## See a Sample App
-
-See what’s possible with the Matterport 3D Showcase SDK.
-
-Name | Description
-:---: | ---
-[Showcase Replicator by Matterport](https://matterport.github.io/showcase-sdk-sample-app/app/) | This app simply replicates all the possible 3D showcase actions in simple UI buttons.
-
-
 ### [Return to the main page](index.md)
