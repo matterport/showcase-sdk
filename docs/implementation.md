@@ -125,9 +125,9 @@ We've organized our [SDK reference docs](reference/index.html) around modules (f
 Name | Description
 :---: | ---
 [Globals](reference/index.html) | Things related to the entire SDK, including subscribing (listening) and unsubscribing to events.
-[Camera](reference/modules/camera.html) | Related to the end-user's view and what they currently see.
-[Floor](reference/modules/floor.html) | How many floors in the space and moving between floors.
-[Mattertag](reference/modules/mattertag.html) | Getting and reading content from Mattertag™ Posts.
+[Camera](reference/modules/camera.html) | The end-user's view and what they currently see.
+[Floor](reference/modules/floor.html) | How many floors in space and moving between floors.
+[Mattertag](reference/modules/mattertag.html) | Get and read content from Mattertag™ Posts.
 [Mode](reference/modules/mode.html) | Related to the end-user's current viewing mode (Dollhouse, Floorplan, Inside View, etc)
 [Model](reference/modules/model.html) | Related to the metadata of the Matterport Space as a whole
 [Sweep](reference/modules/sweep.html) | Moving to a specific sweep/pano within the entire space
