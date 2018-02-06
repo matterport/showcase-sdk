@@ -7,7 +7,7 @@ In version 3.0 of the SDK, we refactored our code into modules that are easier f
 
 Version 1.1 | Version 3.0
 -------|--------
-moveToMode() | Move.MoveTo()
+moveToMode() | Mode.moveTo()
 moveToPano() | Sweep.moveTo()
 rotate() | Camera.rotate()
 rotateDirection() | Camera.rotateInDirection()
