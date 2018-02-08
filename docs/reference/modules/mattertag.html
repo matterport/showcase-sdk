@@ -35,24 +35,33 @@
 						<section class="tsd-index-section ">
 							<h3>Enumerations</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mattertag.boardstate.html" class="tsd-kind-icon">Board<wbr>State</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mattertag.event.html" class="tsd-kind-icon">Event</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mattertag.linktype.html" class="tsd-kind-icon">Link<wbr>Type</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mattertag.tagdescriptionchunktype.html" class="tsd-kind-icon">Tag<wbr>Description<wbr>Chunk<wbr>Type</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mattertag.tagmediatype.html" class="tsd-kind-icon">Tag<wbr>Media<wbr>Type</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/mattertag.tagdescriptionchunk.html" class="tsd-kind-icon">Tag<wbr>Description<wbr>Chunk</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/mattertag.taglink.html" class="tsd-kind-icon">Tag<wbr>Link</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#activemattertagdata" class="tsd-kind-icon">Active<wbr>Mattertag<wbr>Data</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#hoverstate" class="tsd-kind-icon">Hover<wbr>State</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#mattertagdata" class="tsd-kind-icon">Mattertag<wbr>Data</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#mattertagpositiondata" class="tsd-kind-icon">Mattertag<wbr>Position<wbr>Data</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#selectedstate" class="tsd-kind-icon">Selected<wbr>State</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#activate" class="tsd-kind-icon">activate</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#getmattertagdata" class="tsd-kind-icon">get<wbr>Mattertag<wbr>Data</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#toggle" class="tsd-kind-icon">toggle</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#navigatetotag" class="tsd-kind-icon">navigate<wbr>ToTag</a></li>
 							</ul>
 						</section>
 					</div>
@@ -60,6 +69,30 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Types</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="activemattertagdata" class="tsd-anchor"></a>
+					<h3>Active<wbr>Mattertag<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">Active<wbr>Mattertag<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>behind<wbr>View<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>viewport<wbr>Anchor<wbr>Position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>viewport<wbr>Tag<wbr>Position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
 					<a name="hoverstate" class="tsd-anchor"></a>
 					<h3>Hover<wbr>State</h3>
@@ -88,73 +121,25 @@
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5>anchor<wbr>Position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>board<wbr>State<span class="tsd-signature-symbol">: </span><a href="../enums/mattertag.boardstate.html" class="tsd-signature-type">Mattertag.BoardState</a></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>color<span class="tsd-signature-symbol">: </span><a href="../index.html#color" class="tsd-signature-type">Color</a></h5>
-							</li>
-							<li class="tsd-parameter">
 								<h5>description<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>enabled<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>floor<wbr>Index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<h5>is<wbr>Open<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>mode<span class="tsd-signature-symbol">: </span><a href="../enums/mode.mode-1.html" class="tsd-signature-type">Mode.Mode</a></h5>
+								<h5>media<wbr>Src<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<h5>media<wbr>Type<span class="tsd-signature-symbol">: </span><a href="../enums/mattertag.tagmediatype.html" class="tsd-signature-type">Mattertag.TagMediaType</a></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>stem<wbr>Vector<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
-					<a name="mattertagpositiondata" class="tsd-anchor"></a>
-					<h3>Mattertag<wbr>Position<wbr>Data</h3>
-					<div class="tsd-signature tsd-kind-icon">Mattertag<wbr>Position<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>behind<wbr>View<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>viewport<wbr>Anchor<wbr>Position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>viewport<wbr>Tag<wbr>Position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a></h5>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
-					<a name="selectedstate" class="tsd-anchor"></a>
-					<h3>Selected<wbr>State</h3>
-					<div class="tsd-signature tsd-kind-icon">Selected<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>selected<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								<h5>parsed<wbr>Description<span class="tsd-signature-symbol">: </span><a href="../interfaces/mattertag.tagdescriptionchunk.html" class="tsd-signature-type">Mattertag.TagDescriptionChunk</a><span class="tsd-signature-symbol">[]</span></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
@@ -165,6 +150,36 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="activate" class="tsd-anchor"></a>
+					<h3>activate</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">activate<span class="tsd-signature-symbol">(</span>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, active<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This function toggles the selected state for the provided mattertag sid</p>
+								</div>
+								<pre><code>mpSdk.Mattertag.<span class="hljs-built_in">activate</span>(sid, <span class="hljs-literal">true</span>);
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>sid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>active: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="getmattertagdata" class="tsd-anchor"></a>
 					<h3>get<wbr>Mattertag<wbr>Data</h3>
@@ -197,10 +212,10 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="toggle" class="tsd-anchor"></a>
-					<h3>toggle</h3>
+					<a name="navigatetotag" class="tsd-anchor"></a>
+					<h3>navigate<wbr>ToTag</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">toggle<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">navigate<wbr>ToTag<span class="tsd-signature-symbol">(</span>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -208,12 +223,18 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>This function toggles the selected state for the provided mattertag sid</p>
+									<p>This function navigates to the disc with the provided mattertag sid</p>
 								</div>
-								<pre><code><span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.toggle</span>(<span class="hljs-selector-tag">sid</span>);
+								<pre><code><span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.navigateToTag</span>(<span class="hljs-selector-tag">sid</span>);
 </code></pre>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>sid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -257,10 +278,25 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum tsd-parent-kind-module">
-						<a href="../enums/mattertag.boardstate.html" class="tsd-kind-icon">Board<wbr>State</a>
+						<a href="../enums/mattertag.event.html" class="tsd-kind-icon">Event</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-module">
-						<a href="../enums/mattertag.event.html" class="tsd-kind-icon">Event</a>
+						<a href="../enums/mattertag.linktype.html" class="tsd-kind-icon">Link<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/mattertag.tagdescriptionchunktype.html" class="tsd-kind-icon">Tag<wbr>Description<wbr>Chunk<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/mattertag.tagmediatype.html" class="tsd-kind-icon">Tag<wbr>Media<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/mattertag.tagdescriptionchunk.html" class="tsd-kind-icon">Tag<wbr>Description<wbr>Chunk</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/mattertag.taglink.html" class="tsd-kind-icon">Tag<wbr>Link</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="mattertag.html#activemattertagdata" class="tsd-kind-icon">Active<wbr>Mattertag<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="mattertag.html#hoverstate" class="tsd-kind-icon">Hover<wbr>State</a>
@@ -268,17 +304,14 @@
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="mattertag.html#mattertagdata" class="tsd-kind-icon">Mattertag<wbr>Data</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="mattertag.html#mattertagpositiondata" class="tsd-kind-icon">Mattertag<wbr>Position<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="mattertag.html#selectedstate" class="tsd-kind-icon">Selected<wbr>State</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="mattertag.html#activate" class="tsd-kind-icon">activate</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="mattertag.html#getmattertagdata" class="tsd-kind-icon">get<wbr>Mattertag<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="mattertag.html#toggle" class="tsd-kind-icon">toggle</a>
+						<a href="mattertag.html#navigatetotag" class="tsd-kind-icon">navigate<wbr>ToTag</a>
 					</li>
 				</ul>
 			</nav>

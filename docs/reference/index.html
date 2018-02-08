@@ -328,6 +328,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 					<a name="on" class="tsd-anchor"></a>
 					<h3>on</h3>
 					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/app.event.html#phase_change" class="tsd-signature-type">App.Event.PHASE_CHANGE</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mode.event.html#change_start" class="tsd-signature-type">Mode.Event.CHANGE_START</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mode.event.html#change_end" class="tsd-signature-type">Mode.Event.CHANGE_END</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/event.html#move" class="tsd-signature-type">Event.MOVE</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
@@ -336,7 +337,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/floor.event.html#change_end" class="tsd-signature-type">Floor.Event.CHANGE_END</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/label.event.html#position_updated" class="tsd-signature-type">Label.Event.POSITION_UPDATED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mattertag.event.html#hover" class="tsd-signature-type">Mattertag.Event.HOVER</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mattertag.event.html#selection" class="tsd-signature-type">Mattertag.Event.SELECTION</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mattertag.event.html#click" class="tsd-signature-type">Mattertag.Event.CLICK</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mattertag.event.html#updated" class="tsd-signature-type">Mattertag.Event.UPDATED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/model.event.html#model_loaded" class="tsd-signature-type">Model.Event.MODEL_LOADED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/event.html#model_loaded" class="tsd-signature-type">Event.MODEL_LOADED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
@@ -348,6 +349,47 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/tour.event.html#stepped" class="tsd-signature-type">Tour.Event.STEPPED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when the applicaiton has started playing.</p>
+									<pre><code>mpSdk.on(mpSdk.App.Event.PHASE_CHANGE, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">app</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(app + <span class="hljs-string">' has started.'</span>);
+});
+</code></pre>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/app.event.html#phase_change" class="tsd-signature-type">App.Event.PHASE_CHANGE</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>app<span class="tsd-signature-symbol">: </span><a href="enums/app.phase.html" class="tsd-signature-type">App.Phase</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>app: <a href="enums/app.phase.html" class="tsd-signature-type">App.Phase</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 							</aside>
@@ -725,13 +767,9 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 								<div class="lead">
 									<p>This event fires when the input pointer selects a mattertag.</p>
 								</div>
-								<pre><code>mpSdk.on(mpSdk.Mattertag.Event.SELECTION,
-  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">selectionState</span>) </span>{
-    <span class="hljs-keyword">if</span> (selectionState.selected) {
-      <span class="hljs-built_in">console</span>.log(selectionState.sid + <span class="hljs-string">' was selected'</span>);
-    } <span class="hljs-keyword">else</span> {
-      <span class="hljs-built_in">console</span>.log(selectionState.sid + <span class="hljs-string">' was deselected'</span>);
-    }
+								<pre><code>mpSdk.on(mpSdk.Mattertag.Event.CLICK,
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">sid</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(sid + <span class="hljs-string">' was selected'</span>);
   }
 );
 </code></pre>
@@ -739,21 +777,21 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>event: <a href="enums/mattertag.event.html#selection" class="tsd-signature-type">Mattertag.Event.SELECTION</a></h5>
+									<h5>event: <a href="enums/mattertag.event.html#click" class="tsd-signature-type">Mattertag.Event.CLICK</a></h5>
 								</li>
 								<li>
 									<h5>callback: <span class="tsd-signature-type">function</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="modules/mattertag.html#selectedstate" class="tsd-signature-type">Mattertag.SelectedState</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>state: <a href="modules/mattertag.html#selectedstate" class="tsd-signature-type">Mattertag.SelectedState</a></h5>
+															<h5>sid: <span class="tsd-signature-type">string</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -801,7 +839,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 															<h5>state: <span class="tsd-signature-type">object</span></h5>
 															<ul class="tsd-parameters">
 																<li class="tsd-parameter">
-																	<h5>tags<span class="tsd-signature-symbol">: </span><a href="modules/mattertag.html#mattertagpositiondata" class="tsd-signature-type">Mattertag.MattertagPositionData</a><span class="tsd-signature-symbol">[]</span></h5>
+																	<h5>tags<span class="tsd-signature-symbol">: </span><a href="modules/mattertag.html#activemattertagdata" class="tsd-signature-type">Mattertag.ActiveMattertagData</a><span class="tsd-signature-symbol">[]</span></h5>
 																</li>
 															</ul>
 														</li>

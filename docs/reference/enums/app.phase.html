@@ -35,8 +35,8 @@
 					<div class="lead">
 						<p>Application Phases</p>
 					</div>
-					<p>Application phases are returned as payload by the &#39;App.PLAYING&#39; Event</p>
-					<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.<span class="hljs-keyword">App</span>.Event.PLAYING, function(phase) {
+					<p>Application phases are returned as payload by the &#39;App.PHASE_CHANGE&#39; Event</p>
+					<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.<span class="hljs-keyword">App</span>.Event.PHASE_CHANGE, function(phase) {
  <span class="hljs-keyword">if</span>(phase === mpSdk.<span class="hljs-keyword">App</span>.Phase.LOADING) {
    console.<span class="hljs-built_in">log</span>('The <span class="hljs-keyword">app</span> has started loading!')
  }
