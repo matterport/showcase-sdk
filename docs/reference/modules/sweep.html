@@ -85,10 +85,10 @@
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5>new<wbr>Pano<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<h5>new<wbr>Sweep<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> old<wbr>Pano<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> old<wbr>Sweep<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -110,11 +110,11 @@
 								<div class="lead">
 									<p>Move to a sweep.</p>
 								</div>
-								<pre><code><span class="hljs-keyword">const</span> panoId = <span class="hljs-string">'1'</span>;
+								<pre><code><span class="hljs-keyword">const</span> sweepId = <span class="hljs-string">'1'</span>;
 <span class="hljs-keyword">const</span> rotation = {<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>};
 <span class="hljs-keyword">const</span> transition = mpSdk.Sweep.TransitionType.INSTANT;
 
-mpSdk.Sweep.moveTo(panoId, {
+mpSdk.Sweep.moveTo(sweepId, {
     <span class="hljs-attr">rotation</span>: rotation,
     <span class="hljs-attr">transition</span>: transition
   })

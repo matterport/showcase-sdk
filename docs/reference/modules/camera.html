@@ -55,7 +55,6 @@
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#moveindirection" class="tsd-kind-icon">move<wbr>InDirection</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#pan" class="tsd-kind-icon">pan</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#rotate" class="tsd-kind-icon">rotate</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#rotateindirection" class="tsd-kind-icon">rotate<wbr>InDirection</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#takescreenshot" class="tsd-kind-icon">take<wbr>Screenshot</a></li>
 							</ul>
 						</section>
@@ -77,13 +76,13 @@
 								<h5>mode<span class="tsd-signature-symbol">: </span><a href="../enums/mode.mode-1.html" class="tsd-signature-type">Mode.Mode</a></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>pano<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li class="tsd-parameter">
 								<h5>position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>rotation<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>sweep<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -159,7 +158,7 @@
   .then(function(<span class="hljs-keyword">pose</span>){
     console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'Current position is '</span>, <span class="hljs-keyword">pose</span>.position);
     console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'Rotation angle is '</span>, <span class="hljs-keyword">pose</span>.rotation);
-    console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'Pano UUID is '</span>, <span class="hljs-keyword">pose</span>.pano);
+    console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'Sweep UUID is '</span>, <span class="hljs-keyword">pose</span>.sweep);
     console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'View mode is '</span>, <span class="hljs-keyword">pose</span>.mode);
   });
 </code></pre>
@@ -254,13 +253,13 @@ mpSdk.Camera.moveInDirection(nextDirection)
 										<li class="tsd-parameter">
 											<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 											<div class="tsd-comment tsd-typography">
-												<p>Absolute position of the pano on the x axis.</p>
+												<p>Absolute position of the sweep on the x axis.</p>
 											</div>
 										</li>
 										<li class="tsd-parameter">
 											<h5>z<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 											<div class="tsd-comment tsd-typography">
-												<p>Absolute position of the pano on the z axis.</p>
+												<p>Absolute position of the sweep on the z axis.</p>
 											</div>
 										</li>
 									</ul>
@@ -274,12 +273,12 @@ mpSdk.Camera.moveInDirection(nextDirection)
 								<li>Fails if you are already at the model bounds and you cannot move any further.</li>
 							</ul>
 							<p><strong>Notes</strong></p>
-							<p>The orientation of the axes depends on the pano you were in before entering
+							<p>The orientation of the axes depends on the sweep you were in before entering
 							Floorplan and the aspect ratio of window.</p>
 							<p>Only available in Dollhouse or Floorplan View. This is the same behavior as
 							if the user uses the keyboard shortcuts I, J, K, and L or the arrow keys.</p>
 							<p>Use <code>mpSdk.Camera.pan({ x: 0, z: 0 });</code> to return to directly above the
-							very first pano scanned.</p>
+							very first sweep scanned.</p>
 						</li>
 					</ul>
 				</section>
@@ -297,7 +296,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
 								<div class="lead">
 									<p>Rotates the camera (user’s viewpoint).</p>
 								</div>
-								<pre><code>mpSdk.rotate(<span class="hljs-number">10</span>, <span class="hljs-number">-20</span>)
+								<pre><code>mpSdk.Camera.rotate(<span class="hljs-number">10</span>, <span class="hljs-number">-20</span>)
   .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-comment">// Camera rotation complete.</span>
   })
@@ -349,61 +348,6 @@ mpSdk.Camera.moveInDirection(nextDirection)
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="rotateindirection" class="tsd-anchor"></a>
-					<h3>rotate<wbr>InDirection</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">rotate<wbr>InDirection<span class="tsd-signature-symbol">(</span>direction<span class="tsd-signature-symbol">: </span><a href="../enums/camera.direction.html" class="tsd-signature-type">Camera.Direction</a>, angle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Rotate the user’s viewpoint (the camera) in a certain direction.</p>
-								</div>
-								<pre><code><span class="hljs-keyword">const</span> desiredDirection = mpSdk.Camera.Direction.LEFT;
-
-mpSdk.rotateInDirection(desiredDirection, <span class="hljs-number">10</span>)
-  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
-    <span class="hljs-comment">// Camera rotation complete.</span>
-  })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span></span>{
-    <span class="hljs-comment">// Camera rotation error.</span>
-  });
-</code></pre>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>direction: <a href="../enums/camera.direction.html" class="tsd-signature-type">Camera.Direction</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The rotation direction.</p>
-									</div>
-								</li>
-								<li>
-									<h5>angle: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>How much to rotate.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A promise that resolves when the rotation is complete.</p>
-							<p><strong>Errors</strong></p>
-							<ul>
-								<li>Warns to console if you rotated, but you hit the vertical limit.</li>
-								<li>Fails if there is no movement because you are already at a rotation limit.</li>
-								<li>Warns if trying to rotate up or down in Floorplan View.</li>
-							</ul>
-							<p><strong>Notes</strong></p>
-							<p>Similar to rotate action, but rotateInDirection is specified in a more intuitive,
-								easy-to-understand manner. Rotation is relative to the user’s current viewpoint.
-							This is the same behavior as if the user uses the keyboard shortcuts I, J, K, and L.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="takescreenshot" class="tsd-anchor"></a>
 					<h3>take<wbr>Screenshot</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
@@ -448,7 +392,7 @@ mpSdk.Camera.takeScreenShot(resolution, visibility)
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> visibility: <a href="camera.html#visibility" class="tsd-signature-type">Camera.Visibility</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Toggles certain scene objects such as Mattertag Posts and pano markers.
+										<p>Toggles certain scene objects such as Mattertag Posts and sweep markers.
 										If no visibility object is specified, then all scene objects are hidden.</p>
 									</div>
 								</li>
@@ -531,9 +475,6 @@ mpSdk.Camera.takeScreenShot(resolution, visibility)
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="camera.html#rotate" class="tsd-kind-icon">rotate</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="camera.html#rotateindirection" class="tsd-kind-icon">rotate<wbr>InDirection</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="camera.html#takescreenshot" class="tsd-kind-icon">take<wbr>Screenshot</a>
