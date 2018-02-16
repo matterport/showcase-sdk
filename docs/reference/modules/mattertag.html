@@ -52,15 +52,16 @@
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#activemattertagdata" class="tsd-kind-icon">Active<wbr>Mattertag<wbr>Data</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#hoverstate" class="tsd-kind-icon">Hover<wbr>State</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#mattertagdata" class="tsd-kind-icon">Mattertag<wbr>Data</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#getdata" class="tsd-kind-icon">get<wbr>Data</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#activate" class="tsd-kind-icon">activate</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#getmattertagdata" class="tsd-kind-icon">get<wbr>Mattertag<wbr>Data</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#navigatetotag" class="tsd-kind-icon">navigate<wbr>ToTag</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#setactive" class="tsd-kind-icon">set<wbr>Active</a></li>
 							</ul>
 						</section>
 					</div>
@@ -85,21 +86,27 @@
 							</li>
 							<li class="tsd-parameter">
 								<h5>viewport<wbr>Anchor<wbr>Position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Distance (in pixels) from the top-left corner of the screen: x represents the distance down, and
-										y represents the distance right. For example, {x: 50, y: 100} is 50 pixels down and 100 pixels right.</p>
-									</div>
-								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5>viewport<wbr>Tag<wbr>Position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Distance (in pixels) from the top-left corner of the screen: x represents the distance down, and
-										y represents the distance right. For example, {x: 50, y: 100} is 50 pixels down and 100 pixels right.</p>
-									</div>
-								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="hoverstate" class="tsd-anchor"></a>
+					<h3>Hover<wbr>State</h3>
+					<div class="tsd-signature tsd-kind-icon">Hover<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>hovering<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -120,7 +127,7 @@
 								<h5>enabled<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>is<wbr>Active<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								<h5>is<wbr>Open<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
@@ -144,10 +151,10 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="getdata" class="tsd-anchor"></a>
-					<h3>get<wbr>Data</h3>
+					<a name="activate" class="tsd-anchor"></a>
+					<h3>activate</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="mattertag.html#mattertagdata" class="tsd-signature-type">Mattertag.MattertagData</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">activate<span class="tsd-signature-symbol">(</span>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, active<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -155,9 +162,39 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>This function returns metadata on the collection of Mattertags.</p>
+									<p>This function toggles the selected state for the provided mattertag sid</p>
 								</div>
-								<pre><code>mpSdk.Mattertag.getData()
+								<pre><code>mpSdk.Mattertag.<span class="hljs-built_in">activate</span>(sid, <span class="hljs-literal">true</span>);
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>sid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>active: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="getmattertagdata" class="tsd-anchor"></a>
+					<h3>get<wbr>Mattertag<wbr>Data</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Mattertag<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="mattertag.html#mattertagdata" class="tsd-signature-type">Mattertag.MattertagData</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This function returns the collection of mattertags.</p>
+								</div>
+								<pre><code>mpSdk.Mattertag.getMattertagData()
   .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(mattertags)</span> {</span>
     <span class="hljs-comment">// Mattertag data retreival complete.</span>
     <span class="hljs-keyword">if</span>(mattertags.<span class="hljs-built_in">length</span> &gt; <span class="hljs-number">0</span>) {
@@ -186,7 +223,7 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>This function navigates to the Mattertag disc with the provided sid.</p>
+									<p>This function navigates to the disc with the provided mattertag sid</p>
 								</div>
 								<pre><code><span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.navigateToTag</span>(<span class="hljs-selector-tag">sid</span>);
 </code></pre>
@@ -198,37 +235,6 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="setactive" class="tsd-anchor"></a>
-					<h3>set<wbr>Active</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Active<span class="tsd-signature-symbol">(</span>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, active<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>This function adds this Mattertag to the active Mattertags list.
-									Only active Mattertags will receive position data in Mattertag.Event.UPDATED events.</p>
-								</div>
-								<pre><code><span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.setActive</span>(<span class="hljs-selector-tag">sid</span>, <span class="hljs-selector-tag">true</span>);
-</code></pre>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>sid: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>active: <span class="tsd-signature-type">boolean</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -293,16 +299,19 @@
 						<a href="mattertag.html#activemattertagdata" class="tsd-kind-icon">Active<wbr>Mattertag<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="mattertag.html#hoverstate" class="tsd-kind-icon">Hover<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="mattertag.html#mattertagdata" class="tsd-kind-icon">Mattertag<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="mattertag.html#getdata" class="tsd-kind-icon">get<wbr>Data</a>
+						<a href="mattertag.html#activate" class="tsd-kind-icon">activate</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="mattertag.html#getmattertagdata" class="tsd-kind-icon">get<wbr>Mattertag<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="mattertag.html#navigatetotag" class="tsd-kind-icon">navigate<wbr>ToTag</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="mattertag.html#setactive" class="tsd-kind-icon">set<wbr>Active</a>
 					</li>
 				</ul>
 			</nav>

@@ -66,6 +66,7 @@
 								<li class="tsd-kind-function"><a href="index.html#movetopano" class="tsd-kind-icon">move<wbr>ToPano</a></li>
 								<li class="tsd-kind-function"><a href="index.html#off" class="tsd-kind-icon">off</a></li>
 								<li class="tsd-kind-function"><a href="index.html#on" class="tsd-kind-icon">on</a></li>
+								<li class="tsd-kind-function"><a href="index.html#takescreenshot" class="tsd-kind-icon">take<wbr>Screenshot</a></li>
 							</ul>
 						</section>
 					</div>
@@ -330,6 +331,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/app.event.html#phase_change" class="tsd-signature-type">App.Event.PHASE_CHANGE</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mode.event.html#change_start" class="tsd-signature-type">Mode.Event.CHANGE_START</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mode.event.html#change_end" class="tsd-signature-type">Mode.Event.CHANGE_END</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/event.html#move" class="tsd-signature-type">Event.MOVE</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/camera.event.html#perf_stat" class="tsd-signature-type">Camera.Event.PERF_STAT</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/floor.event.html#change_start" class="tsd-signature-type">Floor.Event.CHANGE_START</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/floor.event.html#change_end" class="tsd-signature-type">Floor.Event.CHANGE_END</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
@@ -465,6 +467,56 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 													<ul class="tsd-parameters">
 														<li>
 															<h5>modeChange: <a href="modules/mode.html#modechange" class="tsd-signature-type">Mode.ModeChange</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when the camera has changed.</p>
+								</div>
+								<pre><code>mpSdk.on(mpSdk.Event.MOVE,
+  function(<span class="hljs-keyword">pose</span>) {
+    console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'Current position is '</span>, <span class="hljs-keyword">pose</span>.position);
+    console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'Rotation angle is '</span>, <span class="hljs-keyword">pose</span>.rotation);
+    console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'Pano UUID is '</span>, <span class="hljs-keyword">pose</span>.pano);
+    console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'View mode is '</span>, <span class="hljs-keyword">pose</span>.mode);
+  }
+);
+</code></pre>
+								<dl class="tsd-comment-tags">
+									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/event.html#move" class="tsd-signature-type">Event.MOVE</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>pose<span class="tsd-signature-symbol">: </span><a href="modules/camera.html#pose" class="tsd-signature-type">Camera.Pose</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>pose: <a href="modules/camera.html#pose" class="tsd-signature-type">Camera.Pose</a></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -666,14 +718,14 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>This event fires when the input pointer hovers onto or out of a mattertag disc.</p>
+									<p>This event fires when the input pointer hovers over a mattertag.</p>
 								</div>
 								<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.Mattertag.Event.HOVER,
-  function (sid, hovering) {
-    <span class="hljs-keyword">if</span> (hovering) {
-      console.<span class="hljs-built_in">log</span>('Begin Hovering <span class="hljs-keyword">on</span>', sid);
+  function (hoverState) {
+    <span class="hljs-keyword">if</span> (hoverState.hovering) {
+      console.<span class="hljs-built_in">log</span>('Begin Hovering <span class="hljs-keyword">on</span>', hoverState.sid);
     } <span class="hljs-keyword">else</span> {
-      console.<span class="hljs-built_in">log</span>('End Hovering <span class="hljs-keyword">on</span>', sid);
+      console.<span class="hljs-built_in">log</span>('End Hovering <span class="hljs-keyword">on</span>', hoverState.sid);
     }
   }
 );
@@ -689,17 +741,14 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, hovering<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="modules/mattertag.html#hoverstate" class="tsd-signature-type">Mattertag.HoverState</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>sid: <span class="tsd-signature-type">string</span></h5>
-														</li>
-														<li>
-															<h5>hovering: <span class="tsd-signature-type">boolean</span></h5>
+															<h5>state: <a href="modules/mattertag.html#hoverstate" class="tsd-signature-type">Mattertag.HoverState</a></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -716,7 +765,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>This event fires when the input pointer clicks a Mattertag disc.</p>
+									<p>This event fires when the input pointer selects a mattertag.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Mattertag.Event.CLICK,
   <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">sid</span>) </span>{
@@ -759,7 +808,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>This event fires when any active Mattertag disc changes its screen position. It returns a list of all active Mattertags.</p>
+									<p>This event fires when any selected or hovered mattertag changes its screen position, it returns a list of all active tags.</p>
 								</div>
 								<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.Mattertag.Event.UPDATED,
   function (tags) {
@@ -1142,6 +1191,70 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="takescreenshot" class="tsd-anchor"></a>
+					<h3>take<wbr>Screenshot</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">take<wbr>Screenshot<span class="tsd-signature-symbol">(</span>resolution<span class="tsd-signature-symbol">?: </span><a href="modules/camera.html#resolution" class="tsd-signature-type">Camera.Resolution</a>, visibility<span class="tsd-signature-symbol">?: </span><a href="modules/camera.html#visibility" class="tsd-signature-type">Camera.Visibility</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Takes a screenshot (JPEG) of the user’s current view.</p>
+								</div>
+								<pre><code><span class="hljs-keyword">const</span> resolution = {
+  width: <span class="hljs-number">600</span>,
+  height: <span class="hljs-number">800</span>
+};
+
+<span class="hljs-keyword">const</span> visibility = {
+  mattertags: <span class="hljs-literal">false</span>,
+  sweeps: <span class="hljs-literal">true</span>
+};
+
+mpSdk.takeScreenShot(resolution, visibility)
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(screenShotUrl)</span> </span>{
+    <span class="hljs-comment">// set src of an img element</span>
+    img.src = screenShotUrl
+});
+</code></pre>
+								<dl class="tsd-comment-tags">
+									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+									<dd><p><strong>Errors</strong></p>
+										<p>Warns if the resolution is 0 or negative.</p>
+										<p><strong>Notes</strong></p>
+										<p>The URL only exists (temporarily) on the client’s browser.
+										It is not on Matterport servers and does not persist between user sessions.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> resolution: <a href="modules/camera.html#resolution" class="tsd-signature-type">Camera.Resolution</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The desired resolution for the screenshot.
+											For example: <code>{width: 1920, height: 1080}</code>
+											If no resolution is specified, then the resolution of the size of
+										Showcase (the current window or the iframe embed) is used. Maximum 4096 x 4096.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> visibility: <a href="modules/camera.html#visibility" class="tsd-signature-type">Camera.Visibility</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Toggles certain scene objects such as Mattertag Posts and pano markers.
+										If no visibility object is specified, then all scene objects are hidden.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A promise that resolves with the screenshot url.</p>
+						</li>
+					</ul>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -1210,6 +1323,9 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="index.html#on" class="tsd-kind-icon">on</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="index.html#takescreenshot" class="tsd-kind-icon">take<wbr>Screenshot</a>
 					</li>
 				</ul>
 			</nav>
