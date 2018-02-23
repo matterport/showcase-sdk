@@ -527,6 +527,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 								<div class="lead">
 									<p>This event fires when a floor change is starting.</p>
 								</div>
+								<p>The callback returns the floor index that we are moving to, and the floor index we are moving from.</p>
 								<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.Floor.Event.CHANGE_START,
   function(<span class="hljs-keyword">to</span>, <span class="hljs-keyword">from</span>) {
     console.<span class="hljs-built_in">log</span>('Starting <span class="hljs-keyword">to</span> move <span class="hljs-keyword">to</span> floor ' + <span class="hljs-keyword">to</span> + ' <span class="hljs-keyword">from</span> floor ' + <span class="hljs-keyword">from</span>);
@@ -573,9 +574,12 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 								<div class="lead">
 									<p>This event fires when a floor change is ending.</p>
 								</div>
-								<pre><code>mpSdk.on(mpSdk.<span class="hljs-built_in">Floor</span>.Event.CHANGE_END,
-  <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(floorName)</span></span> {
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Arrived at floor '</span> + floorName);
+								<p>The callback returns the floor index (0 based, counting from the bottom)
+								and the floorName, as set in workshop, or defaulting to the same as floorIndex</p>
+								<pre><code>mpSdk.on(mpSdk.Floor.Event.CHANGE_END,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">floorIndex, floorName</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Arrived at floor '</span> + floorName);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'it is the '</span> + floorIndex+<span class="hljs-number">1</span> + <span class="hljs-string">'th floor from the bottom'</span>);
   }
 );
 </code></pre>
@@ -590,22 +594,17 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>newFloor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>floorIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, floorName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>newFloor: <span class="tsd-signature-type">object</span></h5>
-															<ul class="tsd-parameters">
-																<li class="tsd-parameter">
-																	<h5>floor<wbr>Index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-																</li>
-																<li class="tsd-parameter">
-																	<h5>floor<wbr>Name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-																</li>
-															</ul>
+															<h5>floorIndex: <span class="tsd-signature-type">number</span></h5>
+														</li>
+														<li>
+															<h5>floorName: <span class="tsd-signature-type">string</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
