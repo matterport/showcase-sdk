@@ -43,7 +43,6 @@
 						<section class="tsd-index-section ">
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mode.html#modechange" class="tsd-kind-icon">Mode<wbr>Change</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mode.html#movetomodeoptions" class="tsd-kind-icon">Move<wbr>ToMode<wbr>Options</a></li>
 							</ul>
 						</section>
@@ -58,24 +57,6 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Types</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
-					<a name="modechange" class="tsd-anchor"></a>
-					<h3>Mode<wbr>Change</h3>
-					<div class="tsd-signature tsd-kind-icon">Mode<wbr>Change<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>new<wbr>Mode<span class="tsd-signature-symbol">: </span><a href="../enums/mode.mode-1.html" class="tsd-signature-type">Mode.Mode</a></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>old<wbr>Mode<span class="tsd-signature-symbol">: </span><a href="../enums/mode.mode-1.html" class="tsd-signature-type">Mode.Mode</a></h5>
-							</li>
-						</ul>
-					</div>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
 					<a name="movetomodeoptions" class="tsd-anchor"></a>
 					<h3>Move<wbr>ToMode<wbr>Options</h3>
@@ -93,6 +74,9 @@
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> transition<span class="tsd-signature-symbol">?: </span><a href="../enums/mode.transitiontype.html" class="tsd-signature-type">Mode.TransitionType</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> zoom<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -114,15 +98,17 @@
 								<div class="lead">
 									<p>Change the viewing mode in 3D Showcase.</p>
 								</div>
-								<pre><code><span class="hljs-keyword">const</span> mode = mpSdk.Mode.Mode.DOLLHOUSE;
+								<pre><code><span class="hljs-keyword">const</span> mode = mpSdk.Mode.Mode.FLOORPLAN;
 <span class="hljs-keyword">const</span> position = {<span class="hljs-attr">x</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">0</span>};
-<span class="hljs-keyword">const</span> rotation = {<span class="hljs-attr">x</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">0</span>};
+<span class="hljs-keyword">const</span> rotation = {<span class="hljs-attr">x</span>: <span class="hljs-number">-90</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>};
 <span class="hljs-keyword">const</span> transition = mpSdk.Mode.TransitionType.FLY;
+<span class="hljs-keyword">const</span> zoom = <span class="hljs-number">5</span>;
 
 mpSdk.Mode.moveTo(mode, {
     <span class="hljs-attr">position</span>: position,
     <span class="hljs-attr">rotation</span>: rotation,
-    <span class="hljs-attr">transition</span>: transition
+    <span class="hljs-attr">transition</span>: transition,
+    zoom,
   })
   .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nextMode</span>)</span>{
     <span class="hljs-comment">// Move successful.</span>
@@ -131,7 +117,15 @@ mpSdk.Mode.moveTo(mode, {
   .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>)</span>{
     <span class="hljs-comment">// Error with moveTo command</span>
   });
-</code></pre>
+</code></pre><p>Notes about transitions to Floorplan mode:</p>
+								<ul>
+									<li><code>zoom</code> option is only taken into account in Floorplan transitions, the lower the number,
+									the further the camera is zoomed in</li>
+									<li>The position of a floorplan view is determined by the X and Z arguments of the optional position object.</li>
+									<li>The rotation of a floorplan view is determined by the X and Y of the optional rotation object,
+										changing X changes the &#39;roll&#39; of the view, similar to hitting the LEFT/RIGHT arrow keys in Showcase
+									floorplan view, changing the Y value has no analog in showcase, but changes the &#39;tilt&#39; of the view.</li>
+								</ul>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -194,9 +188,6 @@ mpSdk.Mode.moveTo(mode, {
 					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-module">
 						<a href="../enums/mode.transitiontype.html" class="tsd-kind-icon">Transition<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="mode.html#modechange" class="tsd-kind-icon">Mode<wbr>Change</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="mode.html#movetomodeoptions" class="tsd-kind-icon">Move<wbr>ToMode<wbr>Options</a>

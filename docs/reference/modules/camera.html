@@ -44,7 +44,6 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="camera.html#pose" class="tsd-kind-icon">Pose</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="camera.html#resolution" class="tsd-kind-icon">Resolution</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="camera.html#stat" class="tsd-kind-icon">Stat</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="camera.html#visibility" class="tsd-kind-icon">Visibility</a></li>
 							</ul>
 						</section>
@@ -101,21 +100,6 @@
 							</li>
 							<li class="tsd-parameter">
 								<h5>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
-					<a name="stat" class="tsd-anchor"></a>
-					<h3>Stat</h3>
-					<div class="tsd-signature tsd-kind-icon">Stat<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>fps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -181,7 +165,7 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Moves user to a different pano relative to their current location</p>
+									<p>Moves user to a different sweep relative to their current location</p>
 								</div>
 								<pre><code>const nextDirection = mpSdk.Camera.Direction.FORWARD;
 
@@ -204,7 +188,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A promise that resolves when a pano has been reached.</p>
+							<p>A promise that resolves when a sweep has been reached.</p>
 							<p><strong>Errors</strong></p>
 							<ul>
 								<li>Fails if direction is not one of the above options.</li>
@@ -216,9 +200,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
 								<li>Camera.Direction.UP is like moving forwards</li>
 								<li>Camera.Direction.DOWN is like moving backwards</li>
 							</ul>
-							<p>This action is meant for Inside View, but can also be used in Dollhouse and
-								Floorplan Views. In the latter two modes, showcase.Direction.UP will move the
-							user into a pano (either the previous pano or the closest pano to the user’s view).</p>
+							<p>This action is for moving between sweeps while in Inside View.</p>
 						</li>
 					</ul>
 				</section>
@@ -276,7 +258,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
 							<p>The orientation of the axes depends on the sweep you were in before entering
 							Floorplan and the aspect ratio of window.</p>
 							<p>Only available in Dollhouse or Floorplan View. This is the same behavior as
-							if the user uses the keyboard shortcuts I, J, K, and L or the arrow keys.</p>
+							if the user uses the keyboard shortcuts W, A, S, and D or the arrow keys.</p>
 							<p>Use <code>mpSdk.Camera.pan({ x: 0, z: 0 });</code> to return to directly above the
 							very first sweep scanned.</p>
 						</li>
@@ -286,7 +268,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
 					<a name="rotate" class="tsd-anchor"></a>
 					<h3>rotate</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">rotate<span class="tsd-signature-symbol">(</span>vertical<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, horizontal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">rotate<span class="tsd-signature-symbol">(</span>horizontal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, vertical<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -308,15 +290,15 @@ mpSdk.Camera.moveInDirection(nextDirection)
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>vertical: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>How many degrees to rotate up or down.</p>
-									</div>
-								</li>
-								<li>
 									<h5>horizontal: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>How many degrees to rotate left or right.</p>
+									</div>
+								</li>
+								<li>
+									<h5>vertical: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>How many degrees to rotate up or down.</p>
 									</div>
 								</li>
 							</ul>
@@ -329,17 +311,18 @@ mpSdk.Camera.moveInDirection(nextDirection)
 								<li>Fails if no movement because you are already at a rotation limit.</li>
 							</ul>
 							<p><strong>Notes</strong></p>
-							<p>If user is in Floorplan View, the entire Matterport Space is rotated.</p>
+							<p>If user is in Dollhouse or Floorplan View, the entire Matterport Space is rotated.</p>
 							<ul>
-								<li>Positive values for horizontal means the Space rotates counterclockwise.</li>
-								<li>Negative values for horizontal clockwise rotations.</li>
-								<li>The vertical value is ignored.</li>
+								<li>Positive values for horizontal means the Space rotates clockwise.</li>
+								<li>Negative values for horizontal counterclockwise rotations.</li>
+								<li>In Dollhouse view, vertical ranges from 0° (horizontal) to 80° above the Space.</li>
+								<li>In Floorplan view, the vertical value is ignored.</li>
 							</ul>
 							<p>If the user is in Inside View or 360º View, their viewpoint is rotated.</p>
 							<ul>
-								<li>Positive values for horizontal means the user rotates counterclockwise.</li>
-								<li>Negative values for horizontal are clockwise rotations.</li>
-								<li>Vertical ranges from -40 (down) to 40 (up).</li>
+								<li>Positive values for horizontal means the user rotates clockwise.</li>
+								<li>Negative values for horizontal are counterclockwise rotations.</li>
+								<li>Vertical ranges from -70° (down) to 70° (up).</li>
 								<li>Tilting the view (similar to tilting one’s head) not supported.</li>
 							</ul>
 							<p>Rotation is relative to the user’s current viewpoint.
@@ -457,9 +440,6 @@ mpSdk.Camera.takeScreenShot(resolution, visibility)
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="camera.html#resolution" class="tsd-kind-icon">Resolution</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="camera.html#stat" class="tsd-kind-icon">Stat</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="camera.html#visibility" class="tsd-kind-icon">Visibility</a>

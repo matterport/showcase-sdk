@@ -53,7 +53,6 @@
 						<section class="tsd-index-section ">
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias"><a href="index.html#color" class="tsd-kind-icon">Color</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#movetopanooptions" class="tsd-kind-icon">Move<wbr>ToPano<wbr>Options</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#vector2" class="tsd-kind-icon">Vector2</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#vector3" class="tsd-kind-icon">Vector3</a></li>
@@ -73,27 +72,6 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Types</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias">
-					<a name="color" class="tsd-anchor"></a>
-					<h3>Color</h3>
-					<div class="tsd-signature tsd-kind-icon">Color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>g<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-							</li>
-						</ul>
-					</div>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">
 					<a name="movetopanooptions" class="tsd-anchor"></a>
 					<h3>Move<wbr>ToPano<wbr>Options</h3>
@@ -330,7 +308,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/app.event.html#phase_change" class="tsd-signature-type">App.Event.PHASE_CHANGE</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mode.event.html#change_start" class="tsd-signature-type">Mode.Event.CHANGE_START</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mode.event.html#change_end" class="tsd-signature-type">Mode.Event.CHANGE_END</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/camera.event.html#perf_stat" class="tsd-signature-type">Camera.Event.PERF_STAT</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/camera.event.html#move" class="tsd-signature-type">Camera.Event.MOVE</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/floor.event.html#change_start" class="tsd-signature-type">Floor.Event.CHANGE_START</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/floor.event.html#change_end" class="tsd-signature-type">Floor.Event.CHANGE_END</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/label.event.html#position_updated" class="tsd-signature-type">Label.Event.POSITION_UPDATED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
@@ -340,6 +318,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/model.event.html#model_loaded" class="tsd-signature-type">Model.Event.MODEL_LOADED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/event.html#model_loaded" class="tsd-signature-type">Event.MODEL_LOADED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/sweep.event.html#enter" class="tsd-signature-type">Sweep.Event.ENTER</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/sweep.event.html#exit" class="tsd-signature-type">Sweep.Event.EXIT</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/event.html#enter_pano" class="tsd-signature-type">Event.ENTER_PANO</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/tour.event.html#started" class="tsd-signature-type">Tour.Event.STARTED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/tour.event.html#stopped" class="tsd-signature-type">Tour.Event.STOPPED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
@@ -396,9 +375,9 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 									<p>This event fires when the camera is starting to transition to a mode.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Mode.Event.CHANGE_START,
-  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">modeChange</span>)</span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Mode changing from '</span> + modeChange.oldMode);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Mode changing to  '</span> + modeChange.newMode);
+  <span class="hljs-function"><span class="hljs-keyword">function</span></span>(oldMode, <span class="hljs-keyword">new</span><span class="hljs-type">Mode</span>){
+    console.log(<span class="hljs-string">'Mode changing from '</span> + oldMode);
+    console.log(<span class="hljs-string">'Mode changing to  '</span> + <span class="hljs-keyword">new</span><span class="hljs-type">Mode</span>);
   }
 );
 </code></pre>
@@ -413,14 +392,17 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>modeChange<span class="tsd-signature-symbol">: </span><a href="modules/mode.html#modechange" class="tsd-signature-type">Mode.ModeChange</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, newMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>modeChange: <a href="modules/mode.html#modechange" class="tsd-signature-type">Mode.ModeChange</a></h5>
+															<h5>oldMode: <span class="tsd-signature-type">string</span></h5>
+														</li>
+														<li>
+															<h5>newMode: <span class="tsd-signature-type">string</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -440,9 +422,9 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 									<p>This event fires when the camera has completed a transition to a mode.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Mode.Event.CHANGE_END,
-  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">modeChange</span>)</span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Mode changed from '</span> + modeChange.oldMode);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Mode changed to  '</span> + modeChange.newMode);
+  <span class="hljs-function"><span class="hljs-keyword">function</span></span>(oldMode, <span class="hljs-keyword">new</span><span class="hljs-type">Mode</span>){
+    console.log(<span class="hljs-string">'Mode changed from '</span> + oldMode);
+    console.log(<span class="hljs-string">'Mode changed to  '</span> + <span class="hljs-keyword">new</span><span class="hljs-type">Mode</span>);
   }
 );
 </code></pre>
@@ -457,14 +439,17 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>modeChange<span class="tsd-signature-symbol">: </span><a href="modules/mode.html#modechange" class="tsd-signature-type">Mode.ModeChange</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, newMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>modeChange: <a href="modules/mode.html#modechange" class="tsd-signature-type">Mode.ModeChange</a></h5>
+															<h5>oldMode: <span class="tsd-signature-type">string</span></h5>
+														</li>
+														<li>
+															<h5>newMode: <span class="tsd-signature-type">string</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -481,12 +466,15 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>This event fires when a camera performance statistic is created.
-									To enable this event, set the url parameter <code>&amp;perf=1</code></p>
+									<p>This event fires when the camera&#39;s pose has changed via a position or orientation change.</p>
 								</div>
-								<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.Camera.Event.PERF_STAT,
-  function(stat){
-    console.<span class="hljs-keyword">log</span>('Current fps ' + <span class="hljs-keyword">state</span>.fps);
+								<p>The callback is called with the new pose of the camera.</p>
+								<pre><code>mpSdk.on(mpSdk.Camera.Event.MOVE,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">pose</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Camera moved to position: <span class="hljs-subst">${pose.position}</span>`</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`with orientation: <span class="hljs-subst">${pose.rotation}</span>`</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`in mode: <span class="hljs-subst">${pose.mode}</span>`</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`currently at sweep: <span class="hljs-subst">${pose.sweep}</span>`</span>);
   }
 );
 </code></pre>
@@ -494,21 +482,21 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>event: <a href="enums/camera.event.html#perf_stat" class="tsd-signature-type">Camera.Event.PERF_STAT</a></h5>
+									<h5>event: <a href="enums/camera.event.html#move" class="tsd-signature-type">Camera.Event.MOVE</a></h5>
 								</li>
 								<li>
 									<h5>callback: <span class="tsd-signature-type">function</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="modules/camera.html#stat" class="tsd-signature-type">Camera.Stat</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>pose<span class="tsd-signature-symbol">: </span><a href="modules/camera.html#pose" class="tsd-signature-type">Camera.Pose</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>state: <a href="modules/camera.html#stat" class="tsd-signature-type">Camera.Stat</a></h5>
+															<h5>pose: <a href="modules/camera.html#pose" class="tsd-signature-type">Camera.Pose</a></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -527,7 +515,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 								<div class="lead">
 									<p>This event fires when a floor change is starting.</p>
 								</div>
-								<p>The callback returns the floor index that we are moving to, and the floor index we are moving from.</p>
+								<p>the callback returns the floor index that we are moving to, and the floor index we are moving from.</p>
 								<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.Floor.Event.CHANGE_START,
   function(<span class="hljs-keyword">to</span>, <span class="hljs-keyword">from</span>) {
     console.<span class="hljs-built_in">log</span>('Starting <span class="hljs-keyword">to</span> move <span class="hljs-keyword">to</span> floor ' + <span class="hljs-keyword">to</span> + ' <span class="hljs-keyword">from</span> floor ' + <span class="hljs-keyword">from</span>);
@@ -574,7 +562,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 								<div class="lead">
 									<p>This event fires when a floor change is ending.</p>
 								</div>
-								<p>The callback returns the floor index (0 based, counting from the bottom)
+								<p>the callback returns the floor index (0 based, counting from the bottom)
 								and the floorName, as set in workshop, or defaulting to the same as floorIndex</p>
 								<pre><code>mpSdk.on(mpSdk.Floor.Event.CHANGE_END,
   <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">floorIndex, floorName</span>) </span>{
@@ -901,9 +889,9 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 									<p>This event fires when first entering a sweep.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Sweep.Event.ENTER,
-  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">sweepInfo</span>)</span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Leaving pano '</span> + sweepInfo.oldPano);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Entering pano '</span> + sweepInfo.newPano);
+  <span class="hljs-function"><span class="hljs-keyword">function</span></span>(oldSweep, <span class="hljs-keyword">new</span><span class="hljs-type">Sweep</span>){
+    console.log(<span class="hljs-string">'Leaving pano '</span> + oldSweep);
+    console.log(<span class="hljs-string">'Entering pano '</span> + <span class="hljs-keyword">new</span><span class="hljs-type">Sweep</span>);
   }
 );
 </code></pre>
@@ -918,14 +906,60 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>sweepInfo<span class="tsd-signature-symbol">: </span><a href="modules/sweep.html#sweepinfo" class="tsd-signature-type">Sweep.SweepInfo</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldSweep<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, newSweep<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>sweepInfo: <a href="modules/sweep.html#sweepinfo" class="tsd-signature-type">Sweep.SweepInfo</a></h5>
+															<h5>oldSweep: <span class="tsd-signature-type">string</span></h5>
+														</li>
+														<li>
+															<h5>newSweep: <span class="tsd-signature-type">string</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when exiting a sweep.</p>
+								</div>
+								<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.Sweep.Event.<span class="hljs-keyword">EXIT</span>,
+  <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(sweep)</span><span class="hljs-comment">{
+    console.log('Leaving pano ' + sweep);
+  }</span>
+);</span>
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/sweep.event.html#exit" class="tsd-signature-type">Sweep.Event.EXIT</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>sweep<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>sweep: <span class="tsd-signature-type">string</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -945,9 +979,9 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 									<p>This event fires when first entering a sweep.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Event.ENTER_PANO,
-  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">sweepInfo</span>)</span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Leaving pano '</span> + sweepInfo.oldPano);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Entering pano '</span> + sweepInfo.newPano);
+  <span class="hljs-function"><span class="hljs-keyword">function</span></span>(oldSweep, <span class="hljs-keyword">new</span><span class="hljs-type">Sweep</span>){
+    console.log(<span class="hljs-string">'Leaving pano '</span> + oldSweep);
+    console.log(<span class="hljs-string">'Entering pano '</span> + <span class="hljs-keyword">new</span><span class="hljs-type">Sweep</span>);
   }
 );
 </code></pre>
@@ -966,14 +1000,17 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>sweepInfo<span class="tsd-signature-symbol">: </span><a href="modules/sweep.html#sweepinfo" class="tsd-signature-type">Sweep.SweepInfo</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldSweep<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, newSweep<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>sweepInfo: <a href="modules/sweep.html#sweepinfo" class="tsd-signature-type">Sweep.SweepInfo</a></h5>
+															<h5>oldSweep: <span class="tsd-signature-type">string</span></h5>
+														</li>
+														<li>
+															<h5>newSweep: <span class="tsd-signature-type">string</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1185,9 +1222,6 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/modeenum.html" class="tsd-kind-icon">Mode<wbr>Enum</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="index.html#color" class="tsd-kind-icon">Color</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="index.html#movetopanooptions" class="tsd-kind-icon">Move<wbr>ToPano<wbr>Options</a>
