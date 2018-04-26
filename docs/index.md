@@ -16,5 +16,5 @@ The SDK does not have all the same actions and events that an end-user can do in
  Version | Date | Notes
 :-------:|:--------:|-----
 3.0 | December 4th, 2017 | New actions and events on floors, labels, and Mattertag™ Posts. New set of reference content that covers all actions and events. Version 2.0 skipped. [See a list of modified endpoints](upgrade.html).
-1.1 | August 10th, 2017 | **Version 1.x no long supported** Added `getPose` and `takeScreenShot` actions. <br/>Added pano thumbnails from the default pose into the metadata.
+1.1 | August 10th, 2017 | **Version 1.x no longer supported**. Added `getPose` and `takeScreenShot` actions. <br/>Added pano thumbnails from the default pose into the metadata.
 1.0 | February 16th, 2017 | Initial release of SDK. Focus on movement and the user's location in the space.
