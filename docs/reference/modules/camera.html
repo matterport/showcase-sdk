@@ -43,8 +43,6 @@
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="camera.html#pose" class="tsd-kind-icon">Pose</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="camera.html#resolution" class="tsd-kind-icon">Resolution</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="camera.html#visibility" class="tsd-kind-icon">Visibility</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -54,7 +52,6 @@
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#moveindirection" class="tsd-kind-icon">move<wbr>InDirection</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#pan" class="tsd-kind-icon">pan</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#rotate" class="tsd-kind-icon">rotate</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#takescreenshot" class="tsd-kind-icon">take<wbr>Screenshot</a></li>
 							</ul>
 						</section>
 					</div>
@@ -82,42 +79,6 @@
 							</li>
 							<li class="tsd-parameter">
 								<h5>sweep<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
-					<a name="resolution" class="tsd-anchor"></a>
-					<h3>Resolution</h3>
-					<div class="tsd-signature tsd-kind-icon">Resolution<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
-					<a name="visibility" class="tsd-anchor"></a>
-					<h3>Visibility</h3>
-					<div class="tsd-signature tsd-kind-icon">Visibility<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>mattertags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>sweeps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -330,66 +291,6 @@ mpSdk.Camera.moveInDirection(nextDirection)
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="takescreenshot" class="tsd-anchor"></a>
-					<h3>take<wbr>Screenshot</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">take<wbr>Screenshot<span class="tsd-signature-symbol">(</span>resolution<span class="tsd-signature-symbol">?: </span><a href="camera.html#resolution" class="tsd-signature-type">Camera.Resolution</a>, visibility<span class="tsd-signature-symbol">?: </span><a href="camera.html#visibility" class="tsd-signature-type">Camera.Visibility</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Takes a screenshot (JPEG) of the user’s current view.</p>
-								</div>
-								<pre><code><span class="hljs-keyword">const</span> resolution = {
-  width: <span class="hljs-number">600</span>,
-  height: <span class="hljs-number">800</span>
-};
-
-<span class="hljs-keyword">const</span> visibility = {
-  mattertags: <span class="hljs-literal">false</span>,
-  sweeps: <span class="hljs-literal">true</span>
-};
-
-mpSdk.Camera.takeScreenShot(resolution, visibility)
-  .then(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(screenShotUrl)</span> </span>{
-    <span class="hljs-comment">// set src of an img element</span>
-    img.src = screenShotUrl
-});
-</code></pre>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> resolution: <a href="camera.html#resolution" class="tsd-signature-type">Camera.Resolution</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The desired resolution for the screenshot.
-											For example: <code>{width: 1920, height: 1080}</code>
-											If no resolution is specified, then the resolution of the size of
-										Showcase (the current window or the iframe embed) is used. Maximum 4096 x 4096.</p>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> visibility: <a href="camera.html#visibility" class="tsd-signature-type">Camera.Visibility</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Toggles certain scene objects such as Mattertag Posts and sweep markers.
-										If no visibility object is specified, then all scene objects are hidden.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A promise that resolves with the screenshot url.</p>
-							<p><strong>Errors</strong></p>
-							<p>Warns if the resolution is 0 or negative.</p>
-							<p><strong>Notes</strong></p>
-							<p>The URL only exists (temporarily) on the client’s browser.
-							It is not on Matterport servers and does not persist between user sessions.</p>
-						</li>
-					</ul>
-				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -420,6 +321,12 @@ mpSdk.Camera.takeScreenShot(resolution, visibility)
 						<a href="model.html">Model</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="settings.html">Settings</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="sweep.html">Sweep</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -438,12 +345,6 @@ mpSdk.Camera.takeScreenShot(resolution, visibility)
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="camera.html#pose" class="tsd-kind-icon">Pose</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="camera.html#resolution" class="tsd-kind-icon">Resolution</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="camera.html#visibility" class="tsd-kind-icon">Visibility</a>
-					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="camera.html#getpose" class="tsd-kind-icon">get<wbr>Pose</a>
 					</li>
@@ -455,9 +356,6 @@ mpSdk.Camera.takeScreenShot(resolution, visibility)
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="camera.html#rotate" class="tsd-kind-icon">rotate</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="camera.html#takescreenshot" class="tsd-kind-icon">take<wbr>Screenshot</a>
 					</li>
 				</ul>
 			</nav>

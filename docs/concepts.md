@@ -30,7 +30,7 @@ Then, coordinate conventions are easier to describe relative to how the imaginar
   <img src="images/xyz-coordinate-system.png"/><br/>
 </p>
 
-This diagram is shown relative to the camera’s current position.
+<div class="note">This diagram is shown <strong>relative</strong> to the current camera's <strong>position and orientation</strong>.</div>
 
 Another way to visualize the coordinate system is from the Floorplan View. This is the same as a “birds-eye” top-down view.
 
