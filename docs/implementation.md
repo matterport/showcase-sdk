@@ -9,7 +9,7 @@ First, add the 3D Showcase SDK to your web application by including the Javascri
 
 ``` javascript
 <script
-src='https://static.matterport.com/showcase-sdk/1.1.0-72-g41a2b01/sdk.js'>
+src='https://static.matterport.com/showcase-sdk/1.2.0-0-g1d0799d/sdk.js'>
 ```
 
 Next, embed a Matterport Space on your web page with an `<iframe>` tag. [Learn more about embedding](https://support.matterport.com/hc/en-us/articles/115004549347-Embed-a-Space-with-an-iframe-).
