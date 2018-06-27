@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Renderer | Matterport SDK</title>
+	<title>Renderer | @mpSdk 3.0.3.35-0-g97fb047f8</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -37,11 +37,14 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="renderer.html#resolution" class="tsd-kind-icon">Resolution</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="renderer.html#visibility" class="tsd-kind-icon">Visibility</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="renderer.html#worldpositiondata" class="tsd-kind-icon">World<wbr>Position<wbr>Data</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="renderer.html#getscreenposition" class="tsd-kind-icon">get<wbr>Screen<wbr>Position</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="renderer.html#getworldpositiondata" class="tsd-kind-icon">get<wbr>World<wbr>Position<wbr>Data</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="renderer.html#takescreenshot" class="tsd-kind-icon">take<wbr>Screenshot</a></li>
 							</ul>
 						</section>
@@ -86,9 +89,84 @@
 						</ul>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="worldpositiondata" class="tsd-anchor"></a>
+					<h3>World<wbr>Position<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">World<wbr>Position<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>floor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="getscreenposition" class="tsd-anchor"></a>
+					<h3>get<wbr>Screen<wbr>Position</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Screen<wbr>Position<span class="tsd-signature-symbol">(</span>worldPosition<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts a world position into a screen position</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>worldPosition: <a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="getworldpositiondata" class="tsd-anchor"></a>
+					<h3>get<wbr>World<wbr>Position<wbr>Data</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>World<wbr>Position<wbr>Data<span class="tsd-signature-symbol">(</span>screenPosition<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a>, height<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="renderer.html#worldpositiondata" class="tsd-signature-type">Renderer.WorldPositionData</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts a screen position into a world position</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>screenPosition: <a href="../index.html#vector2" class="tsd-signature-type">Vector2</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The screen position in pixels from the top-left corner of the screen.
+										For example, <code>{x: 300, y: 200}</code> would be the position 300 pixels right and 200 pixels down from the top-left corner.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> height: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="renderer.html#worldpositiondata" class="tsd-signature-type">Renderer.WorldPositionData</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="takescreenshot" class="tsd-anchor"></a>
 					<h3>take<wbr>Screenshot</h3>
@@ -182,6 +260,9 @@ mpSdk.Camera.takeScreenShot(resolution, visibility)
 						<a href="renderer.html">Renderer</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="settings.html">Settings</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="sweep.html">Sweep</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -196,6 +277,15 @@ mpSdk.Camera.takeScreenShot(resolution, visibility)
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="renderer.html#visibility" class="tsd-kind-icon">Visibility</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="renderer.html#worldpositiondata" class="tsd-kind-icon">World<wbr>Position<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="renderer.html#getscreenposition" class="tsd-kind-icon">get<wbr>Screen<wbr>Position</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="renderer.html#getworldpositiondata" class="tsd-kind-icon">get<wbr>World<wbr>Position<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="renderer.html#takescreenshot" class="tsd-kind-icon">take<wbr>Screenshot</a>

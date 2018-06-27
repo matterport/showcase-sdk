@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Camera | Matterport SDK</title>
+	<title>Camera | @mpSdk 3.0.3.35-0-g97fb047f8</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -49,6 +49,7 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#getpose" class="tsd-kind-icon">get<wbr>Pose</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#lookatscreencoords" class="tsd-kind-icon">look<wbr>AtScreen<wbr>Coords</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#moveindirection" class="tsd-kind-icon">move<wbr>InDirection</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#pan" class="tsd-kind-icon">pan</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#rotate" class="tsd-kind-icon">rotate</a></li>
@@ -111,6 +112,57 @@
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="camera.html#pose" class="tsd-signature-type">Camera.Pose</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A promise that resolves with the current state of the camera.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="lookatscreencoords" class="tsd-anchor"></a>
+					<h3>look<wbr>AtScreen<wbr>Coords</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">look<wbr>AtScreen<wbr>Coords<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Rotates the camera to a specific screen coordinate.
+										Coordinates are measure in pixels, relative to the WebGL Canvas&#39; top left corner.
+									See <a href="https://www.w3schools.com/graphics/canvas_coordinates.asp">https://www.w3schools.com/graphics/canvas_coordinates.asp</a> for more information on coordinates.</p>
+								</div>
+								<pre><code>mpSdk.Camera.lookAtScreenCoords(<span class="hljs-number">500</span>, <span class="hljs-number">320</span>)
+  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-comment">// Camera rotation complete.</span>
+  })
+  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
+    <span class="hljs-comment">// Camera rotation error.</span>
+  });
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>x: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Horizontal position, in pixels. Starting from the canvas&#39; top left corner.</p>
+									</div>
+								</li>
+								<li>
+									<h5>y: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Vertical position, in pixels. Starting from the canvas&#39; top left corner.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A Promise that resolves when the rotation is complete.</p>
+							<p><strong>Errors</strong></p>
+							<ul>
+								<li>Fails if used outside of Inside mode.</li>
+								<li>Warns to console if you rotated, but then you hit the vertical limit.</li>
+								<li>Fails if no movement because you are already at a rotation limit.</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -324,6 +376,9 @@ mpSdk.Camera.moveInDirection(nextDirection)
 						<a href="renderer.html">Renderer</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="settings.html">Settings</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="sweep.html">Sweep</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -344,6 +399,9 @@ mpSdk.Camera.moveInDirection(nextDirection)
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="camera.html#getpose" class="tsd-kind-icon">get<wbr>Pose</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="camera.html#lookatscreencoords" class="tsd-kind-icon">look<wbr>AtScreen<wbr>Coords</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="camera.html#moveindirection" class="tsd-kind-icon">move<wbr>InDirection</a>
