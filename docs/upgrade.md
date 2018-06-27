@@ -1,3 +1,11 @@
+# Upgrading from v3.0 to v3.0.35
+
+## Actions
+
+Version 3.0 | Version 3.0.35
+-------|--------
+Camera.takeScreenshot() | Renderer.takeScreenshot()
+
 
 # Upgrading from v1.1 to v3.0
 
