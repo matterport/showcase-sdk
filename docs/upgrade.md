@@ -1,8 +1,8 @@
-# Upgrading from v3.0 to v3.0.35
+# Upgrading from v3.0 to v3.0.3.35
 
 ## Changes
 
-Version 3.0 | Version 3.0.35
+Version 3.0 | Version 3.0.3.35
 -------|--------
 Camera.takeScreenshot() | Renderer.takeScreenshot()
 
@@ -12,7 +12,7 @@ Mode.Transition has an enum of transition styles (Instant/blackout etc)
 
 ## New Functionality
 
-Version 3.0.35
+Version 3.0.3.35
 Camera.lookAtScreenCoords
 Renderer.getScreenPosition
 Renderer.getWorldPositionData
