@@ -6,19 +6,20 @@ Version 3.0 | Version 3.0.3.35
 -------|--------
 Camera.takeScreenshot() | Renderer.takeScreenshot()
 
-Sweep.alignmentType and Sweep.floor added to the Sweep definition
-Sweep.placementType added to differentiate a sweep aligned by a user, and a sweep aligned space processing
-Mode.Transition has an enum of transition styles (Instant/blackout etc)
+Sweep.alignment changes to Sweep.alignmentType  
+Sweep.floor added to the Sweep definition  
+Sweep.placementType added to differentiate a sweep aligned by a user, and a sweep aligned space processing  
+Mode.Transition has an enum of transition styles (Instant/blackout etc)  
 
 ## New Functionality
 
-Version 3.0.3.35
-Camera.lookAtScreenCoords
-Renderer.getScreenPosition
-Renderer.getWorldPositionData
-Renderer.takeScreenshot
-Settings.get
-Settings.update
+Version 3.0.3.35  
+Camera.lookAtScreenCoords  
+Renderer.getScreenPosition  
+Renderer.getWorldPositionData  
+Renderer.takeScreenshot  
+Settings.get  
+Settings.update  
 
 
 # Upgrading from v1.1 to v3.0
