@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Mattertag | @mpSdk 3.0.3.35-0-g97fb047f8</title>
+	<title>Mattertag | @mpSdk 3.0.6.32-0-g60e243ee8</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -36,6 +36,7 @@
 							<h3>Enumerations</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mattertag.event.html" class="tsd-kind-icon">Event</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mattertag.filtercategory.html" class="tsd-kind-icon">Filter<wbr>Category</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mattertag.linktype.html" class="tsd-kind-icon">Link<wbr>Type</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mattertag.tagdescriptionchunktype.html" class="tsd-kind-icon">Tag<wbr>Description<wbr>Chunk<wbr>Type</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mattertag.tagmediatype.html" class="tsd-kind-icon">Tag<wbr>Media<wbr>Type</a></li>
@@ -51,15 +52,19 @@
 						<section class="tsd-index-section ">
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#activemattertagdata" class="tsd-kind-icon">Active<wbr>Mattertag<wbr>Data</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#discposition" class="tsd-kind-icon">Disc<wbr>Position</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#mattertagdata" class="tsd-kind-icon">Mattertag<wbr>Data</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#closebillboards" class="tsd-kind-icon">close<wbr>Billboards</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#filter" class="tsd-kind-icon">filter</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#getdata" class="tsd-kind-icon">get<wbr>Data</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#getdisccoordinates" class="tsd-kind-icon">get<wbr>Disc<wbr>Coordinates</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#navigatetotag" class="tsd-kind-icon">navigate<wbr>ToTag</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#openbillboards" class="tsd-kind-icon">open<wbr>Billboards</a></li>
 							</ul>
 						</section>
 					</div>
@@ -68,37 +73,28 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Types</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
-					<a name="activemattertagdata" class="tsd-anchor"></a>
-					<h3>Active<wbr>Mattertag<wbr>Data</h3>
-					<div class="tsd-signature tsd-kind-icon">Active<wbr>Mattertag<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<a name="discposition" class="tsd-anchor"></a>
+					<h3>Disc<wbr>Position</h3>
+					<div class="tsd-signature tsd-kind-icon">Disc<wbr>Position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5>behind<wbr>View<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								<h5>screen<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Distance (in pixels) from the top-left corner of the screen: x represents the distance down, and
+										y represents the distance right. For example, {x: 50, y: 100} is 50 pixels down and 100 pixels right.</p>
+									</div>
+								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>viewport<wbr>Anchor<wbr>Position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Distance (in pixels) from the top-left corner of the screen: x represents the distance down, and
-										y represents the distance right. For example, {x: 50, y: 100} is 50 pixels down and 100 pixels right.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>viewport<wbr>Tag<wbr>Position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Distance (in pixels) from the top-left corner of the screen: x represents the distance down, and
-										y represents the distance right. For example, {x: 50, y: 100} is 50 pixels down and 100 pixels right.</p>
-									</div>
-								</div>
+								<h5>world<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
 							</li>
 						</ul>
 					</div>
@@ -140,6 +136,78 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="closebillboards" class="tsd-anchor"></a>
+					<h3>close<wbr>Billboards</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">close<wbr>Billboards<span class="tsd-signature-symbol">(</span>sids<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, persistent<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Closes the list of billboards. If an empty list is passed in, it will close all billboards.
+										By default, this closes only non-persistent billboards, but if the persistent flag is set to true,
+									both persistent and non-persistent billboards will be closed.</p>
+								</div>
+								<pre><code>mpSdk.closeBillboards([<span class="hljs-string">'08p92bxwyxf'</span>, <span class="hljs-string">'47zborx3v1c'</span>], <span class="hljs-keyword">true</span>)
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+   <span class="hljs-comment">// The two persistent billboards will be closed</span>
+});
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> sids: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> persistent: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="filter" class="tsd-anchor"></a>
+					<h3>filter</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">filter<span class="tsd-signature-symbol">(</span>search<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, category<span class="tsd-signature-symbol">?: </span><a href="../enums/mattertag.filtercategory.html" class="tsd-signature-type">Mattertag.FilterCategory</a>, matchCase<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Searches Mattertag data for a certain string and returns a list of matching sids.</p>
+								</div>
+								<pre><code>mpSdk.filter(<span class="hljs-string">'door'</span>, mpSdk.FilterCategory.DESCRIPTION, <span class="hljs-keyword">true</span>)
+ .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(filteredSids)</span> </span>{
+   <span class="hljs-comment">// The list can be used to open billboards with the word `door` in the description.</span>
+   mpSdk.openBillboards(filteredSids);
+});
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>search: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> category: <a href="../enums/mattertag.filtercategory.html" class="tsd-signature-type">Mattertag.FilterCategory</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> matchCase: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="getdata" class="tsd-anchor"></a>
 					<h3>get<wbr>Data</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
@@ -171,10 +239,10 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="navigatetotag" class="tsd-anchor"></a>
-					<h3>navigate<wbr>ToTag</h3>
+					<a name="getdisccoordinates" class="tsd-anchor"></a>
+					<h3>get<wbr>Disc<wbr>Coordinates</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">navigate<wbr>ToTag<span class="tsd-signature-symbol">(</span>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Disc<wbr>Coordinates<span class="tsd-signature-symbol">(</span>sids<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="mattertag.html#discposition" class="tsd-signature-type">Mattertag.DiscPosition</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -182,9 +250,46 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>This function navigates to the Mattertag disc with the provided sid.</p>
+									<p>This function returns the coordinates discs of the passed-in Mattertag sids</p>
 								</div>
-								<pre><code><span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.navigateToTag</span>(<span class="hljs-selector-tag">sid</span>);
+								<pre><code>mpSdk.Mattertag.getDiscCoordinates()
+  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(coordinates)</span> {</span>
+     <span class="hljs-keyword">if</span> (coordinates.<span class="hljs-built_in">length</span> &gt; <span class="hljs-number">0</span>){
+       console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'The Mattertag disc with an sid '</span> + coordinates[<span class="hljs-number">0</span>].sid);
+       console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'is '</span> + coordinates[<span class="hljs-number">0</span>].screen.x + <span class="hljs-string">' pixels from the left of the screen'</span> ));
+       console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'and is '</span> + coordinates[<span class="hljs-number">0</span>].screen.y + <span class="hljs-string">' pixels from the top of the screen'</span> ));
+     }
+  })
+  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
+    <span class="hljs-comment">// Mattertag disc coordinates retrieval error</span>
+  });
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>sids: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="mattertag.html#discposition" class="tsd-signature-type">Mattertag.DiscPosition</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="navigatetotag" class="tsd-anchor"></a>
+					<h3>navigate<wbr>ToTag</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">navigate<wbr>ToTag<span class="tsd-signature-symbol">(</span>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, transition<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">sdkTransitionType</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This function navigates to the Mattertag disc with the provided sid, opening the billboard on arrival.</p>
+								</div>
+								<pre><code><span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.navigateToTag</span>(<span class="hljs-selector-tag">sid</span>, <span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.Transition</span><span class="hljs-selector-class">.FLY</span>);
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -192,8 +297,45 @@
 								<li>
 									<h5>sid: <span class="tsd-signature-type">string</span></h5>
 								</li>
+								<li>
+									<h5>transition: <span class="tsd-signature-type">sdkTransitionType</span></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="openbillboards" class="tsd-anchor"></a>
+					<h3>open<wbr>Billboards</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">open<wbr>Billboards<span class="tsd-signature-symbol">(</span>sids<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, persistent<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Opens Mattertag billboards. If set as persistent, they will remain open while visible from the current camera
+									position or until specifically closed by the closeBillboards function.</p>
+								</div>
+								<pre><code>mpSdk.openBillboards([<span class="hljs-string">'08p92bxwyxf'</span>, <span class="hljs-string">'47zborx3v1c'</span>, <span class="hljs-string">'plz9yxu01wg'</span>], <span class="hljs-keyword">true</span>)
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+   <span class="hljs-comment">// The three billboards with matching sids will be opened and set as persistent</span>
+});
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>sids: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> persistent: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -246,6 +388,9 @@
 						<a href="../enums/mattertag.event.html" class="tsd-kind-icon">Event</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/mattertag.filtercategory.html" class="tsd-kind-icon">Filter<wbr>Category</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
 						<a href="../enums/mattertag.linktype.html" class="tsd-kind-icon">Link<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-module">
@@ -261,16 +406,28 @@
 						<a href="../interfaces/mattertag.taglink.html" class="tsd-kind-icon">Tag<wbr>Link</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="mattertag.html#activemattertagdata" class="tsd-kind-icon">Active<wbr>Mattertag<wbr>Data</a>
+						<a href="mattertag.html#discposition" class="tsd-kind-icon">Disc<wbr>Position</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="mattertag.html#mattertagdata" class="tsd-kind-icon">Mattertag<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="mattertag.html#closebillboards" class="tsd-kind-icon">close<wbr>Billboards</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="mattertag.html#filter" class="tsd-kind-icon">filter</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="mattertag.html#getdata" class="tsd-kind-icon">get<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="mattertag.html#getdisccoordinates" class="tsd-kind-icon">get<wbr>Disc<wbr>Coordinates</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="mattertag.html#navigatetotag" class="tsd-kind-icon">navigate<wbr>ToTag</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="mattertag.html#openbillboards" class="tsd-kind-icon">open<wbr>Billboards</a>
 					</li>
 				</ul>
 			</nav>

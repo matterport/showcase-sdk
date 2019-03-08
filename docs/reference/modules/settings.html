@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Settings | @mpSdk 3.0.3.35-0-g97fb047f8</title>
+	<title>Settings | @mpSdk 3.0.6.32-0-g60e243ee8</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -86,7 +86,7 @@
 								<div class="lead">
 									<p>This function updates the value of a setting if it exists, returning the new value when it is set</p>
 								</div>
-								<pre><code>mpSdk.Settings.get(<span class="hljs-string">'labels'</span>, false)
+								<pre><code>mpSdk.Settings.update(<span class="hljs-string">'labels'</span>, false)
   .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span> {</span>
     <span class="hljs-comment">// Setting retreival complete.</span>
     console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Labels setting: '</span> + data);
