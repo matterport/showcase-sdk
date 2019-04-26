@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Sweep | Matterport SDK</title>
+	<title>Sweep | @mpSdk </title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -65,11 +65,21 @@
 					<div class="tsd-signature tsd-kind-icon">Move<wbr>ToOptions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><code>rotation.x</code>: is the amount the camera will rotate up/down, in the range between [-90…90] with -90 being straight down and 90 being straight up, 45 would be looking up at a 45 degree angle., -45 down etc..
+							<code>rotation.y</code>: is the amount the camera rotate around horizontally, between [-360…0…360], negative values to rotate to the left, positive to rotate to the right.</p>
+						</div>
+						<p>Note: The rotation that Sweep.moveTo uses for input is the same rotation that will get returned from the Camera.getPose command.</p>
+						<pre><code><span class="hljs-keyword">const</span> pose = <span class="hljs-keyword">await</span> mpSdk.Camera.getPose();
+<span class="hljs-built_in">console</span>.log(pose.rotation);
+</code></pre><p>With that combo you can get your view lined up with the normal camera, call getPose, and use that as input to the moveTo command.</p>
+					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> rotation<span class="tsd-signature-symbol">?: </span><a href="../index.html#rotation" class="tsd-signature-type">Rotation</a></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> rotation<span class="tsd-signature-symbol">?: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> transition<span class="tsd-signature-symbol">?: </span><a href="../enums/sweep.transitiontype.html" class="tsd-signature-type">Sweep.TransitionType</a></h5>
@@ -125,7 +135,7 @@
 									<p>Move to a sweep.</p>
 								</div>
 								<pre><code><span class="hljs-keyword">const</span> sweepId = <span class="hljs-string">'1'</span>;
-<span class="hljs-keyword">const</span> rotation = {<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>};
+<span class="hljs-keyword">const</span> rotation = { <span class="hljs-number">30</span>, <span class="hljs-number">-45</span> };
 <span class="hljs-keyword">const</span> transition = mpSdk.Sweep.TransitionType.INSTANT;
 
 mpSdk.Sweep.moveTo(sweepId, {
@@ -177,6 +187,9 @@ mpSdk.Sweep.moveTo(sweepId, {
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="mattertag.html">Mattertag</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="measurements.html">Measurements</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="mode.html">Mode</a>

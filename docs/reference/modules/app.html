@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>App | Matterport SDK</title>
+	<title>App | @mpSdk </title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -49,6 +49,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="app.html#getloadtimes" class="tsd-kind-icon">get<wbr>Load<wbr>Times</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="app.html#getstate" class="tsd-kind-icon">get<wbr>State</a></li>
 							</ul>
 						</section>
@@ -78,6 +79,36 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="getloadtimes" class="tsd-anchor"></a>
+					<h3>get<wbr>Load<wbr>Times</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Load<wbr>Times<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the time that each app phase has loaded</p>
+								</div>
+								<pre><code>mpSdk.App.getLoadTimes()
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">loadTimes</span>) </span>{
+     <span class="hljs-keyword">if</span> (loadTimes[mpSdk.App.Phase.STARTING] !== <span class="hljs-literal">null</span>) {
+       <span class="hljs-keyword">const</span> timeToLoad = loadTimes[mpSdk.App.Phase.STARTING] - loadTimes[mpSdk.App.Phase.LOADING];
+       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'It took '</span>, timeToLoad, <span class="hljs-string">' milliseconds to see the model after the play button was clicked'</span>);
+     }
+     <span class="hljs-keyword">else</span> {
+       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'The model is not visible yet.'</span>);
+     }
+  });
+</code></pre>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="getstate" class="tsd-anchor"></a>
 					<h3>get<wbr>State</h3>
@@ -130,6 +161,9 @@
 						<a href="mattertag.html">Mattertag</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="measurements.html">Measurements</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="mode.html">Mode</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -162,6 +196,9 @@
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="app.html#appstate" class="tsd-kind-icon">App<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="app.html#getloadtimes" class="tsd-kind-icon">get<wbr>Load<wbr>Times</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="app.html#getstate" class="tsd-kind-icon">get<wbr>State</a>

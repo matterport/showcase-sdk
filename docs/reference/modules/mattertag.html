@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Mattertag | Matterport SDK</title>
+	<title>Mattertag | @mpSdk </title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -51,7 +51,7 @@
 						<section class="tsd-index-section ">
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#activemattertagdata" class="tsd-kind-icon">Active<wbr>Mattertag<wbr>Data</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#discposition" class="tsd-kind-icon">Disc<wbr>Position</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#mattertagdata" class="tsd-kind-icon">Mattertag<wbr>Data</a></li>
 							</ul>
 						</section>
@@ -68,37 +68,28 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Types</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
-					<a name="activemattertagdata" class="tsd-anchor"></a>
-					<h3>Active<wbr>Mattertag<wbr>Data</h3>
-					<div class="tsd-signature tsd-kind-icon">Active<wbr>Mattertag<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<a name="discposition" class="tsd-anchor"></a>
+					<h3>Disc<wbr>Position</h3>
+					<div class="tsd-signature tsd-kind-icon">Disc<wbr>Position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5>behind<wbr>View<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								<h5>screen<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Distance (in pixels) from the top-left corner of the screen: x represents the distance down, and
+										y represents the distance right. For example, {x: 50, y: 100} is 50 pixels down and 100 pixels right.</p>
+									</div>
+								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>viewport<wbr>Anchor<wbr>Position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Distance (in pixels) from the top-left corner of the screen: x represents the distance down, and
-										y represents the distance right. For example, {x: 50, y: 100} is 50 pixels down and 100 pixels right.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>viewport<wbr>Tag<wbr>Position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Distance (in pixels) from the top-left corner of the screen: x represents the distance down, and
-										y represents the distance right. For example, {x: 50, y: 100} is 50 pixels down and 100 pixels right.</p>
-									</div>
-								</div>
+								<h5>world<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
 							</li>
 						</ul>
 					</div>
@@ -174,7 +165,7 @@
 					<a name="navigatetotag" class="tsd-anchor"></a>
 					<h3>navigate<wbr>ToTag</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">navigate<wbr>ToTag<span class="tsd-signature-symbol">(</span>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">navigate<wbr>ToTag<span class="tsd-signature-symbol">(</span>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, transition<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">sdkTransitionType</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -182,15 +173,18 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>This function navigates to the Mattertag disc with the provided sid.</p>
+									<p>This function navigates to the Mattertag disc with the provided sid, opening the billboard on arrival.</p>
 								</div>
-								<pre><code><span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.navigateToTag</span>(<span class="hljs-selector-tag">sid</span>);
+								<pre><code><span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.navigateToTag</span>(<span class="hljs-selector-tag">sid</span>, <span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.Transition</span><span class="hljs-selector-class">.FLY</span>);
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>sid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>transition: <span class="tsd-signature-type">sdkTransitionType</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -219,6 +213,9 @@
 					</li>
 					<li class="current tsd-kind-module">
 						<a href="mattertag.html">Mattertag</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="measurements.html">Measurements</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="mode.html">Mode</a>
@@ -261,7 +258,7 @@
 						<a href="../interfaces/mattertag.taglink.html" class="tsd-kind-icon">Tag<wbr>Link</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="mattertag.html#activemattertagdata" class="tsd-kind-icon">Active<wbr>Mattertag<wbr>Data</a>
+						<a href="mattertag.html#discposition" class="tsd-kind-icon">Disc<wbr>Position</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="mattertag.html#mattertagdata" class="tsd-kind-icon">Mattertag<wbr>Data</a>
