@@ -1,5 +1,32 @@
 # Release Notes
 
+## April 25th, 2019
+
+### Measurements
+
+- Added `Measurements.getData()`. You can now access measurements created from Workshop!
+
+### App
+
+- Added `App.getLoadTimes()`. You can now access app phase timing information!
+
+### Mattertag
+
+- Added transition type parameter to `Mattertag.navigateToTag()`
+- Removed `Mattertag.ActiveMattertagData` type
+- Removed `Mattertag.Event.UPDATE`
+
+### Camera
+
+- Added projection property to `Camera.getPose()`
+
+### Renderer
+
+- Added optional includeHiddenFloors parameter to `Renderer.getWorldPositionData()`
+- Added `Renderer.takeEquirectangular()`
+
+
+
 ## February 12th, 2018
 
 ### Mattertag
