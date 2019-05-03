@@ -15,6 +15,7 @@ The SDK does not have all the same actions and events that an end-user can do in
 
  Version | Date | Notes
 :-------:|:--------:|-----
+3.0.12.25 | May 3rd, 2019 | Added color and anchor points to Mattertags data object
 3.0.12.18 | April 25th, 2019 | You can now access measurements data and app phase timing information! Small modifications to endpoints in Mattertag and Renderer. [See release notes](release-notes.html)
 3.0.3.35 | June 27th, 2018 | New actions on camera, new namespaces for Renderer, and Settings, Recommended SDK Client version updated to: `https://static.matterport.com/showcase-sdk/1.2.0-0-g1d0799d/sdk.js` [See a list of modified endpoints](upgrade.html)
 3.0 | December 4th, 2017 | New actions and events on floors, labels, and Mattertag™ Posts. New set of reference content that covers all actions and events. Version 2.0 skipped. [See a list of modified endpoints](upgrade.html).

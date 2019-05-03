@@ -1,5 +1,11 @@
 # Release Notes
 
+## May 3rd, 2019
+
+### Mattertag
+
+- Added colors and anchor points `Mattertag.MattertagData`
+
 ## April 25th, 2019
 
 ### Measurements
