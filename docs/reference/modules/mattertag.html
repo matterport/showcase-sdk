@@ -36,6 +36,7 @@
 							<h3>Enumerations</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mattertag.event.html" class="tsd-kind-icon">Event</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mattertag.filtercategory.html" class="tsd-kind-icon">Filter<wbr>Category</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mattertag.linktype.html" class="tsd-kind-icon">Link<wbr>Type</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mattertag.tagdescriptionchunktype.html" class="tsd-kind-icon">Tag<wbr>Description<wbr>Chunk<wbr>Type</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/mattertag.tagmediatype.html" class="tsd-kind-icon">Tag<wbr>Media<wbr>Type</a></li>
@@ -51,7 +52,6 @@
 						<section class="tsd-index-section ">
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#discposition" class="tsd-kind-icon">Disc<wbr>Position</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#mattertagdata" class="tsd-kind-icon">Mattertag<wbr>Data</a></li>
 							</ul>
 						</section>
@@ -68,33 +68,6 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Types</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
-					<a name="discposition" class="tsd-anchor"></a>
-					<h3>Disc<wbr>Position</h3>
-					<div class="tsd-signature tsd-kind-icon">Disc<wbr>Position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>screen<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Distance (in pixels) from the top-left corner of the screen: x represents the distance down, and
-										y represents the distance right. For example, {x: 50, y: 100} is 50 pixels down and 100 pixels right.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>world<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
 					<a name="mattertagdata" class="tsd-anchor"></a>
 					<h3>Mattertag<wbr>Data</h3>
 					<div class="tsd-signature tsd-kind-icon">Mattertag<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
@@ -103,6 +76,17 @@
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>anchor<wbr>Position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The world space position of the mattertag anchor within the model</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>color<span class="tsd-signature-symbol">: </span><a href="../index.html#color" class="tsd-signature-type">Color</a></h5>
+							</li>
 							<li class="tsd-parameter">
 								<h5>description<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 							</li>
@@ -243,6 +227,9 @@
 						<a href="../enums/mattertag.event.html" class="tsd-kind-icon">Event</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/mattertag.filtercategory.html" class="tsd-kind-icon">Filter<wbr>Category</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
 						<a href="../enums/mattertag.linktype.html" class="tsd-kind-icon">Link<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-module">
@@ -256,9 +243,6 @@
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/mattertag.taglink.html" class="tsd-kind-icon">Tag<wbr>Link</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="mattertag.html#discposition" class="tsd-kind-icon">Disc<wbr>Position</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="mattertag.html#mattertagdata" class="tsd-kind-icon">Mattertag<wbr>Data</a>
