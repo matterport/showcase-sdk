@@ -1,5 +1,18 @@
 # Release Notes
 
+
+## Aug 22, 2019
+
+### Camera
+
+- Added `Camera.pose` observable property
+
+### Pointer
+
+- Added Pointer namespace and `Pointer.intersection` observable property
+
+
+
 ## May 3rd, 2019
 
 ### Mattertag
