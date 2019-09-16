@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Sweep | @mpSdk </title>
+	<title>Sweep | @mpSdk 3.0.21.0-0-gf7676ebe0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -72,8 +72,7 @@
 						</div>
 						<p>Note: The rotation that Sweep.moveTo uses for input is the same rotation that will get returned from the Camera.getPose command.</p>
 						<pre><code><span class="hljs-keyword">const</span> pose = <span class="hljs-keyword">await</span> mpSdk.Camera.getPose();
-<span class="hljs-built_in">console</span>.log(pose.rotation);
-</code></pre><p>With that combo you can get your view lined up with the normal camera, call getPose, and use that as input to the moveTo command.</p>
+<span class="hljs-built_in">console</span>.log(pose.rotation);</code></pre><p>With that combo you can get your view lined up with the normal camera, call getPose, and use that as input to the moveTo command.</p>
 					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
@@ -136,7 +135,7 @@
 								</div>
 								<pre><code><span class="hljs-keyword">const</span> sweepId = <span class="hljs-string">'1'</span>;
 <span class="hljs-keyword">const</span> rotation = { <span class="hljs-number">30</span>, <span class="hljs-number">-45</span> };
-<span class="hljs-keyword">const</span> transition = mpSdk.Sweep.TransitionType.INSTANT;
+<span class="hljs-keyword">const</span> transition = mpSdk.Sweep.Transition.INSTANT;
 
 mpSdk.Sweep.moveTo(sweepId, {
     <span class="hljs-attr">rotation</span>: rotation,
@@ -148,8 +147,7 @@ mpSdk.Sweep.moveTo(sweepId, {
   })
   .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>)</span>{
     <span class="hljs-comment">// Error with moveTo command</span>
-  });
-</code></pre>
+  });</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -196,6 +194,9 @@ mpSdk.Sweep.moveTo(sweepId, {
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="model.html">Model</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="pointer.html">Pointer</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="renderer.html">Renderer</a>

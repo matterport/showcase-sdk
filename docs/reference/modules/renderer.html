@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Renderer | @mpSdk </title>
+	<title>Renderer | @mpSdk 3.0.21.0-0-gf7676ebe0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -139,7 +139,6 @@ mpSdk.Renderer.getScreenPosition(worldPosition).<span class="hljs-keyword">then<
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'x: '</span>, result.x);
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'y: '</span>, result.y);
 });
-
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -156,7 +155,7 @@ mpSdk.Renderer.getScreenPosition(worldPosition).<span class="hljs-keyword">then<
 					<a name="getworldpositiondata" class="tsd-anchor"></a>
 					<h3>get<wbr>World<wbr>Position<wbr>Data</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>World<wbr>Position<wbr>Data<span class="tsd-signature-symbol">(</span>screenPosition<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a>, height<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, includeHiddenFloors<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="renderer.html#worldpositiondata" class="tsd-signature-type">Renderer.WorldPositionData</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>World<wbr>Position<wbr>Data<span class="tsd-signature-symbol">(</span>screenPosition<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a>, height<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, includeHiddenFloors<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="renderer.html#worldpositiondata" class="tsd-signature-type">Renderer.WorldPositionData</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -174,8 +173,7 @@ mpSdk.Renderer.getWorldPositionData(screenPosition)
 .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span></span>{
    <span class="hljs-keyword">const</span> worldPosition = data.position; <span class="hljs-comment">// e.g. {x: 2.2323231, y: 4.7523232, z; 7.92893};</span>
    <span class="hljs-keyword">const</span> floor = data.floor; <span class="hljs-comment">// e.g. 2</span>
-});
-</code></pre><p>If the height is passed in, the function returns the intersection with the plane at that height. However,
+});</code></pre><p>If the height is passed in, the function returns the intersection with the plane at that height. However,
 								if there is no intersection with the plane in that direction, the position will be null and the floor will be -1.</p>
 								<pre><code><span class="hljs-keyword">const</span> screenPosition {x: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span>}; <span class="hljs-comment">// Top left corner of the screen</span>
 <span class="hljs-keyword">const</span> <span class="hljs-built_in">height</span> = <span class="hljs-number">20</span>;
@@ -184,8 +182,7 @@ mpSdk.Renderer.getWorldPositionData(screenPosition, <span class="hljs-built_in">
 .then(function(data){
    <span class="hljs-keyword">const</span> worldPosition = data.position; <span class="hljs-comment">// e.g. {x: 2.2323231, y: 20, z; 7.92893};</span>
    <span class="hljs-keyword">const</span> <span class="hljs-built_in">floor</span> = data.<span class="hljs-built_in">floor</span> <span class="hljs-comment">// e.g. 2</span>
-});
-</code></pre>
+});</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -200,7 +197,7 @@ mpSdk.Renderer.getWorldPositionData(screenPosition, <span class="hljs-built_in">
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> height: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> includeHiddenFloors: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> includeHiddenFloors: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="renderer.html#worldpositiondata" class="tsd-signature-type">Renderer.WorldPositionData</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -221,12 +218,11 @@ mpSdk.Renderer.getWorldPositionData(screenPosition, <span class="hljs-built_in">
 								<div class="lead">
 									<p>Takes an equirectangular screenshot (JPEG) of the currently active sweep.</p>
 								</div>
-								<pre><code>mpSdk.Renderer.takeEquirectangular()
-  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(screenShotUrl)</span> {</span>
+								<pre><code>mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Renderer</span>.</span></span>take<span class="hljs-constructor">Equirectangular()</span>
+  .<span class="hljs-keyword">then</span>(<span class="hljs-keyword">function</span> (screenShotUrl) {
     <span class="hljs-comment">// set src of an img element</span>
     img.src = screenShotUrl
-});
-</code></pre><p><strong>Errors</strong></p>
+});</code></pre><p><strong>Errors</strong></p>
 								<p>Warns if the camera is not in Panorama mode and is instead in Dollhouse or Floorplan mode.</p>
 								<p><strong>Notes</strong></p>
 								<p>The URL only exists (temporarily) on the client’s browser.
@@ -250,22 +246,21 @@ mpSdk.Renderer.getWorldPositionData(screenPosition, <span class="hljs-built_in">
 								<div class="lead">
 									<p>Takes a screenshot (JPEG) of the user’s current view.</p>
 								</div>
-								<pre><code><span class="hljs-keyword">const</span> resolution = {
+								<pre><code>const resolution = {
   width: <span class="hljs-number">600</span>,
   height: <span class="hljs-number">800</span>
 };
 
-<span class="hljs-keyword">const</span> visibility = {
+const visibility = {
   mattertags: <span class="hljs-literal">false</span>,
   sweeps: <span class="hljs-literal">true</span>
 };
 
-mpSdk.Renderer.takeScreenShot(resolution, visibility)
-  .then(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(screenShotUrl)</span> </span>{
+mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Renderer</span>.</span></span>take<span class="hljs-constructor">ScreenShot(<span class="hljs-params">resolution</span>, <span class="hljs-params">visibility</span>)</span>
+  .<span class="hljs-keyword">then</span>(<span class="hljs-keyword">function</span> (screenShotUrl) {
     <span class="hljs-comment">// set src of an img element</span>
     img.src = screenShotUrl
-});
-</code></pre>
+});</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -327,6 +322,9 @@ mpSdk.Renderer.takeScreenShot(resolution, visibility)
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="model.html">Model</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="pointer.html">Pointer</a>
 					</li>
 					<li class="current tsd-kind-module">
 						<a href="renderer.html">Renderer</a>

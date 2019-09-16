@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Camera | @mpSdk </title>
+	<title>Camera | @mpSdk 3.0.21.0-0-gf7676ebe0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -43,6 +43,13 @@
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="camera.html#pose" class="tsd-kind-icon">Pose</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="camera.html#rotateoptions" class="tsd-kind-icon">Rotate<wbr>Options</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="camera.html#pose-1" class="tsd-kind-icon">pose</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -87,6 +94,48 @@
 						</ul>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="rotateoptions" class="tsd-anchor"></a>
+					<h3>Rotate<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">Rotate<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> speed<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Rotation speed in degrees per second.</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="pose-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> pose</h3>
+					<div class="tsd-signature tsd-kind-icon">pose<span class="tsd-signature-symbol">:</span> <a href="../index.html#observable" class="tsd-signature-type">Observable</a><span class="tsd-signature-symbol">&lt;</span><a href="camera.html#pose" class="tsd-signature-type">Camera.Pose</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An observable pose data object that can be subscribed to.</p>
+						</div>
+						<pre><code>mpSdk.Camera.<span class="hljs-keyword">pose</span>.subscribe(function (<span class="hljs-keyword">pose</span>) {
+  <span class="hljs-comment">// Changes to the Camera pose have occurred.</span>
+  console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'Current position is '</span>, <span class="hljs-keyword">pose</span>.position);
+  console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'Rotation angle is '</span>, <span class="hljs-keyword">pose</span>.rotation);
+  console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'Sweep UUID is '</span>, <span class="hljs-keyword">pose</span>.sweep);
+  console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'View mode is '</span>, <span class="hljs-keyword">pose</span>.mode);
+});</code></pre>
+					</div>
+				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
@@ -109,9 +158,13 @@
     console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'Rotation angle is '</span>, <span class="hljs-keyword">pose</span>.rotation);
     console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'Sweep UUID is '</span>, <span class="hljs-keyword">pose</span>.sweep);
     console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'View mode is '</span>, <span class="hljs-keyword">pose</span>.mode);
-  });
-</code></pre>
+  });</code></pre>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+									<dd><p>You can use the <a href="camera.html#pose-1">pose</a> observable property instead.</p>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="camera.html#pose" class="tsd-signature-type">Camera.Pose</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A promise that resolves with the current state of the camera.</p>
@@ -140,8 +193,7 @@
   })
   .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
     <span class="hljs-comment">// Camera rotation error.</span>
-  });
-</code></pre>
+  });</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -191,8 +243,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
   })
   .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
     console.<span class="hljs-built_in">warning</span>(<span class="hljs-string">'An error occured while moving in that direction.'</span>);
-  });
-</code></pre>
+  });</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -240,8 +291,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
   })
   .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
     <span class="hljs-comment">// Pan error.</span>
-  });
-</code></pre>
+  });</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -284,7 +334,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
 					<a name="rotate" class="tsd-anchor"></a>
 					<h3>rotate</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">rotate<span class="tsd-signature-symbol">(</span>horizontal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, vertical<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">rotate<span class="tsd-signature-symbol">(</span>horizontal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, vertical<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><a href="camera.html#rotateoptions" class="tsd-signature-type">Camera.RotateOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -294,14 +344,13 @@ mpSdk.Camera.moveInDirection(nextDirection)
 								<div class="lead">
 									<p>Rotates the camera (user’s viewpoint).</p>
 								</div>
-								<pre><code>mpSdk.Camera.rotate(<span class="hljs-number">10</span>, <span class="hljs-number">-20</span>)
+								<pre><code>mpSdk.Camera.rotate(<span class="hljs-number">10</span>, <span class="hljs-number">-20</span>, { speed: <span class="hljs-number">2</span> })
   .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-comment">// Camera rotation complete.</span>
   })
   .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
     <span class="hljs-comment">// Camera rotation error.</span>
-  });
-</code></pre>
+  });</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -316,6 +365,9 @@ mpSdk.Camera.moveInDirection(nextDirection)
 									<div class="tsd-comment tsd-typography">
 										<p>How many degrees to rotate up or down.</p>
 									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="camera.html#rotateoptions" class="tsd-signature-type">Camera.RotateOptions</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -342,7 +394,8 @@ mpSdk.Camera.moveInDirection(nextDirection)
 								<li>Tilting the view (similar to tilting one’s head) not supported.</li>
 							</ul>
 							<p>Rotation is relative to the user’s current viewpoint.
-							This is the same behavior as if the user uses the keyboard shortcuts I, J, K, and L.</p>
+								This is the same behavior as if the user uses the keyboard shortcuts I, J, K, and L.
+							Speeds less than or equal to zero are not allowed.</p>
 						</li>
 					</ul>
 				</section>
@@ -379,6 +432,9 @@ mpSdk.Camera.moveInDirection(nextDirection)
 						<a href="model.html">Model</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="pointer.html">Pointer</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="renderer.html">Renderer</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -402,6 +458,12 @@ mpSdk.Camera.moveInDirection(nextDirection)
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="camera.html#pose" class="tsd-kind-icon">Pose</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="camera.html#rotateoptions" class="tsd-kind-icon">Rotate<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="camera.html#pose-1" class="tsd-kind-icon">pose</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="camera.html#getpose" class="tsd-kind-icon">get<wbr>Pose</a>
