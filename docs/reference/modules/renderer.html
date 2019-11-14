@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Renderer | @mpSdk 3.0.21.0-0-gf7676ebe0</title>
+	<title>Renderer | @mpSdk 3.0.24.4-0-g9eeb3f71c</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -125,21 +125,11 @@
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Converts a world position into a screen position</p>
-								</div>
-								<pre><code>const worldPosition = {
-  x: <span class="hljs-number">10</span>,
-  y: <span class="hljs-number">2</span>,
-  z: <span class="hljs-number">1.2</span>,
-};
-
-mpSdk.Renderer.getScreenPosition(worldPosition).<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(result)</span> =&gt;</span> {
-  <span class="hljs-keyword">if</span>(result !== <span class="hljs-literal">null</span>) {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'x: '</span>, result.x);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'y: '</span>, result.y);
-});
-</code></pre>
+								<dl class="tsd-comment-tags">
+									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+									<dd><p>Use <a href="conversion.html#worldtoscreen">Conversion.worldToScreen</a> to convert a 3d position to a point on screen.</p>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -304,6 +294,9 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="camera.html">Camera</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="conversion.html">Conversion</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="floor.html">Floor</a>

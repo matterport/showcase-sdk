@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Phase | @mpSdk 3.0.21.0-0-gf7676ebe0</title>
+	<title>Phase | @mpSdk 3.0.24.4-0-g9eeb3f71c</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -33,17 +33,16 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Application Phases</p>
+						<p>Application phases are returned as part of the <a href="../modules/app.html#state-1">state</a> observable.</p>
 					</div>
-					<p>Application phases are returned as payload by the &#39;App.PHASE_CHANGE&#39; Event</p>
-					<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.<span class="hljs-keyword">App</span>.Event.PHASE_CHANGE, function(phase) {
- <span class="hljs-keyword">if</span>(phase === mpSdk.<span class="hljs-keyword">App</span>.Phase.LOADING) {
+					<pre><code>mpSdk.<span class="hljs-keyword">App</span>.state.subscribe(function (appState) {
+ <span class="hljs-keyword">if</span>(appState.phase === mpSdk.<span class="hljs-keyword">App</span>.Phase.LOADING) {
    console.<span class="hljs-built_in">log</span>('The <span class="hljs-keyword">app</span> has started loading!')
  }
- <span class="hljs-keyword">if</span>(phase === mpSdk.<span class="hljs-keyword">App</span>.Phase.STARTING) {
+ <span class="hljs-keyword">if</span>(appState.phase === mpSdk.<span class="hljs-keyword">App</span>.Phase.STARTING) {
    console.<span class="hljs-built_in">log</span>('The transition into the start location begins!')
  }
- <span class="hljs-keyword">if</span>(phase === mpSdk.<span class="hljs-keyword">App</span>.Phase.PLAYING) {
+ <span class="hljs-keyword">if</span>(appState.phase === mpSdk.<span class="hljs-keyword">App</span>.Phase.PLAYING) {
    console.<span class="hljs-built_in">log</span>('The <span class="hljs-keyword">app</span> is ready to take user <span class="hljs-keyword">input</span> now!')
  }
 });</code></pre>
@@ -127,6 +126,9 @@
 						<a href="../modules/camera.html">Camera</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="../modules/conversion.html">Conversion</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="../modules/floor.html">Floor</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -198,6 +200,12 @@
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="../modules/app.html#appstate" class="tsd-kind-icon">App<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="../modules/app.html#state" class="tsd-kind-icon">State</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="../modules/app.html#state-1" class="tsd-kind-icon">state</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="../modules/app.html#getloadtimes" class="tsd-kind-icon">get<wbr>Load<wbr>Times</a>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@mpSdk 3.0.21.0-0-gf7676ebe0</title>
+	<title>@mpSdk 3.0.24.4-0-g9eeb3f71c</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -34,6 +34,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-module"><a href="modules/app.html" class="tsd-kind-icon">App</a></li>
 								<li class="tsd-kind-module"><a href="modules/camera.html" class="tsd-kind-icon">Camera</a></li>
+								<li class="tsd-kind-module"><a href="modules/conversion.html" class="tsd-kind-icon">Conversion</a></li>
 								<li class="tsd-kind-module"><a href="modules/floor.html" class="tsd-kind-icon">Floor</a></li>
 								<li class="tsd-kind-module"><a href="modules/label.html" class="tsd-kind-icon">Label</a></li>
 								<li class="tsd-kind-module"><a href="modules/mattertag.html" class="tsd-kind-icon">Mattertag</a></li>
@@ -51,6 +52,12 @@
 							<h3>Enumerations</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-enum"><a href="enums/event.html" class="tsd-kind-icon">Event</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface"><a href="interfaces/size.html" class="tsd-kind-icon">Size</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -307,12 +314,11 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>This event fires when the applicaiton has started playing.</p>
-									<pre><code>mpSdk.on(mpSdk.App.Event.PHASE_CHANGE, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">app</span>) </span>{
-  <span class="hljs-built_in">console</span>.log(app + <span class="hljs-string">' has started.'</span>);
-});</code></pre>
-								</div>
+								<dl class="tsd-comment-tags">
+									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+									<dd><p>Use <a href="modules/app.html#state-1">state</a> observable to get phase change notifications.</p>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1010,6 +1016,9 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 						<a href="modules/camera.html">Camera</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/conversion.html">Conversion</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/floor.html">Floor</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -1048,6 +1057,9 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
 						<a href="enums/event.html" class="tsd-kind-icon">Event</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/size.html" class="tsd-kind-icon">Size</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="index.html#color" class="tsd-kind-icon">Color</a>
