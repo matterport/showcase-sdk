@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TagLink | @mpSdk 3.0.26.0-210-g15698aee8</title>
+	<title>MattertagInput | @mpSdk 3.0.26.0-210-g15698aee8</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -20,21 +20,29 @@
 					<a href="../modules/mattertag.html">Mattertag</a>
 				</li>
 				<li>
-					<a href="mattertag.taglink.html">TagLink</a>
+					<a href="mattertag.mattertaginput.html">MattertagInput</a>
 				</li>
 			</ul>
-			<h1>TagLink Interface</h1>
+			<h1>MattertagInput Interface</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A subset of the MattertagData used to add Mattertags through the sdk.
+						Most properties are optional except those used for positioning: <code>anchorPosition</code>, <code>stemVector</code>.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">TagLink</span>
+						<span class="target">MattertagInput</span>
 					</li>
 				</ul>
 			</section>
@@ -46,10 +54,13 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mattertag.taglink.html#label" class="tsd-kind-icon">label</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mattertag.taglink.html#navigationdata" class="tsd-kind-icon">navigation<wbr>Data</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mattertag.taglink.html#type" class="tsd-kind-icon">type</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mattertag.taglink.html#url" class="tsd-kind-icon">url</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mattertag.mattertaginput.html#anchorposition" class="tsd-kind-icon">anchor<wbr>Position</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mattertag.mattertaginput.html#color" class="tsd-kind-icon">color</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mattertag.mattertaginput.html#description" class="tsd-kind-icon">description</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mattertag.mattertaginput.html#label" class="tsd-kind-icon">label</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mattertag.mattertaginput.html#mediasrc" class="tsd-kind-icon">media<wbr>Src</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mattertag.mattertaginput.html#mediatype" class="tsd-kind-icon">media<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mattertag.mattertaginput.html#stemvector" class="tsd-kind-icon">stem<wbr>Vector</a></li>
 							</ul>
 						</section>
 					</div>
@@ -58,30 +69,51 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="anchorposition" class="tsd-anchor"></a>
+					<h3>anchor<wbr>Position</h3>
+					<div class="tsd-signature tsd-kind-icon">anchor<wbr>Position<span class="tsd-signature-symbol">:</span> <a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="color" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> color</h3>
+					<div class="tsd-signature tsd-kind-icon">color<span class="tsd-signature-symbol">:</span> <a href="../index.html#color" class="tsd-signature-type">Color</a></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="description" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> description</h3>
+					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="label" class="tsd-anchor"></a>
-					<h3>label</h3>
-					<div class="tsd-signature tsd-kind-icon">label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> label</h3>
+					<div class="tsd-signature tsd-kind-icon">label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="navigationdata" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> navigation<wbr>Data</h3>
-					<div class="tsd-signature tsd-kind-icon">navigation<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="mediasrc" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> media<wbr>Src</h3>
+					<div class="tsd-signature tsd-kind-icon">media<wbr>Src<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/mattertag.linktype.html" class="tsd-signature-type">Mattertag.LinkType</a></div>
+					<a name="mediatype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> media<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">media<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="../enums/mattertag.mediatype.html" class="tsd-signature-type">Mattertag.MediaType</a></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="url" class="tsd-anchor"></a>
-					<h3>url</h3>
-					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="stemvector" class="tsd-anchor"></a>
+					<h3>stem<wbr>Vector</h3>
+					<div class="tsd-signature tsd-kind-icon">stem<wbr>Vector<span class="tsd-signature-symbol">:</span> <a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
@@ -154,36 +186,45 @@
 					<li class=" tsd-kind-enum tsd-parent-kind-module">
 						<a href="../enums/mattertag.tagdescriptionchunktype.html" class="tsd-kind-icon">Tag<wbr>Description<wbr>Chunk<wbr>Type</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-module">
 						<a href="mattertag.mattertaginput.html" class="tsd-kind-icon">Mattertag<wbr>Input</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mattertag.mattertaginput.html#anchorposition" class="tsd-kind-icon">anchor<wbr>Position</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mattertag.mattertaginput.html#color" class="tsd-kind-icon">color</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mattertag.mattertaginput.html#description" class="tsd-kind-icon">description</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mattertag.mattertaginput.html#label" class="tsd-kind-icon">label</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mattertag.mattertaginput.html#mediasrc" class="tsd-kind-icon">media<wbr>Src</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mattertag.mattertaginput.html#mediatype" class="tsd-kind-icon">media<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mattertag.mattertaginput.html#stemvector" class="tsd-kind-icon">stem<wbr>Vector</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="mattertag.moveoptions.html" class="tsd-kind-icon">Move<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="mattertag.tagdescriptionchunk.html" class="tsd-kind-icon">Tag<wbr>Description<wbr>Chunk</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="mattertag.taglink.html" class="tsd-kind-icon">Tag<wbr>Link</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="mattertag.taglink.html#label" class="tsd-kind-icon">label</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="mattertag.taglink.html#navigationdata" class="tsd-kind-icon">navigation<wbr>Data</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="mattertag.taglink.html#type" class="tsd-kind-icon">type</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="mattertag.taglink.html#url" class="tsd-kind-icon">url</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="../modules/mattertag.html#editableproperties" class="tsd-kind-icon">Editable<wbr>Properties</a>
 					</li>

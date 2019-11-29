@@ -2,6 +2,7 @@
 ---
 
 @import "{{ site.theme }}";
+
 .note {
   border-collapse: collapse;
   border-spacing: 0;
@@ -15,4 +16,23 @@
 
 section h2 {
   margin-top: 40px;
+}
+
+section {
+  width: 650px;
+}
+
+header {
+  width: 240px;
+}
+
+.wrapper {
+  width: 930px;
+}
+
+code {
+  font-size: 13px;
+  border-radius: 3px;
+  font-family: 'Monaco', 'Courier New';
+  letter-spacing: 0.05em;
 }
