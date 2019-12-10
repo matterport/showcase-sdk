@@ -266,16 +266,15 @@
 								<div class="lead">
 									<p>Edit the color of a Mattertag</p>
 								</div>
-								<p><code>`</code>
-								var mattertagData; // ... acquired through a previous call to mpSdk.Mattertag.getData();</p>
-								<p>// change the first Mattertag to yellow
-									mpSdk.Mattertag.editColor(mattertagData[0].sid, {
-									r: 0.9,
-									g: 0.9,
-									b: 0,
-								});</p>
-								<p>@param sid: The sid of the Mattertag to edit
-								@param color: The new color to be applied to the Mattertag disc</p>
+								<pre><code><span class="hljs-comment">// acquired through a previous call to mpSdk.Mattertag.getData();</span>
+var mattertagData;
+
+<span class="hljs-comment">// change the first Mattertag to yellow</span>
+mpSdk.Mattertag.editColor(mattertagData[<span class="hljs-number">0</span>].sid, {
+  r: <span class="hljs-number">0.9</span>,
+  g: <span class="hljs-number">0.9</span>,
+  b: <span class="hljs-number">0</span>,
+});</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
