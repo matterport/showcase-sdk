@@ -3,7 +3,7 @@ layout: default
 title: Home
 nav_order: 1
 description: "Showcase Embed SDK Landing Page"
-permalink: /
+permalink: /docs
 ---
 
 # Getting Started
