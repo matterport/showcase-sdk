@@ -1,6 +1,12 @@
-# Upgrading from v3.0 to v3.0.3.35
+---
+layout: default
+title: Upgrading
+nav_order: 7
+---
 
-## Changes
+## Upgrading from v3.0 to v3.0.3.35
+
+### Changes
 
 Version 3.0 | Version 3.0.3.35
 -------|--------
@@ -11,7 +17,7 @@ Sweep.floor added to the Sweep definition
 Sweep.placementType added to differentiate a sweep aligned by a user, and a sweep aligned space processing  
 Mode.Transition has an enum of transition styles (Instant/blackout etc)  
 
-## New Functionality
+### New Functionality
 
 Version 3.0.3.35  
 Camera.lookAtScreenCoords  
@@ -22,11 +28,11 @@ Settings.get
 Settings.update  
 
 
-# Upgrading from v1.1 to v3.0
+## Upgrading from v1.1 to v3.0
 
 In version 3.0 of the SDK, we refactored our code into modules that are easier for us to maintain. As a result, some of the endpoints have changed from version 1.1. We've listed what's changed below.
 
-## Actions
+### Actions
 
 Version 1.1 | Version 3.0
 -------|--------
@@ -39,7 +45,7 @@ moveInDirection() | Camera.moveInDirection()
 getPose() | Camera.getPose()
 takeScreenshot() | Camera.takeScreenshot()
 
-## Events
+### Events
 
 Version 1.1 | Version 3.0
 -------|--------

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Concepts
+nav_order: 3
+---
+
 # Concepts
 
 ## Introduction
@@ -11,7 +17,7 @@ Your web app can **both** execute actions and listen to events. Depending on the
 Finally, you can also use metadata about the entire Matterport Space so your web app can make informed decisions about the entire space.
 
 <p align="center">
-  <img src="images/message-flow.png"/><br/>
+  <img src="{{ site.baseurl }}/assets/images/message-flow.png"/><br/>
   <em>Simple Message Flow with the 3D Showcase SDK</em>
 </p>
 
@@ -27,7 +33,7 @@ To make it easier to visualize, pretend the Matterport camera is a “human” a
 Then, coordinate conventions are easier to describe relative to how the imaginary 'camera-person' moves:
 
 <p align="center">
-  <img src="images/xyz-coordinate-system.png"/><br/>
+  <img src="{{ site.baseurl }}/assets/images/xyz-coordinate-system.png"/><br/>
 </p>
 
 <p class="note">This diagram is shown <strong>relative</strong> to the current camera's <strong>position and orientation</strong>.</p>
@@ -35,7 +41,7 @@ Then, coordinate conventions are easier to describe relative to how the imaginar
 Another way to visualize the coordinate system is from the Floorplan View. This is the same as a “birds-eye” top-down view.
 
 <p align="center">
-  <img src="images/top-down-coordinate-system.png"/><br/>
+  <img src="{{ site.baseurl }}/assets/images/top-down-coordinate-system.png"/><br/>
 </p>
 
 The floorplan is an absolute position of the Matterport Camera within the Space when it scanned.
@@ -47,10 +53,7 @@ The coordinate system is centered around the **first pano that was scanned**. Th
 To find the first scan, find the space in [my.matterport.com](https://my.matterport.com) and then launch Workshop.
 
 <p align="center">
-  <img src="images/first-scan-in-matterport-workshop.png"/><br/>
+  <img src="{{ site.baseurl }}/assets/images/first-scan-in-matterport-workshop.png"/><br/>
 </p>
 
 Open the **3D Scans & 360º Views** menu. **Double click on Scan 1** and you will be transported to that scan position.
-
-
-## [Return to the main page](index.md)
