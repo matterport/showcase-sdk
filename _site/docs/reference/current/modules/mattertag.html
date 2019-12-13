@@ -176,10 +176,11 @@
 									<p>Add one or more Mattertags to Showcase.
 									Each input Mattertag supports setting the label, description, color, anchorPosition, and stemVector.</p>
 								</div>
-								<p>Two properties are required:</p>
+								<p>Three properties are required:</p>
 								<ul>
 									<li><code>anchorPosition</code>, the point where the tag connects to the model</li>
 									<li><code>stemVector</code>, the direction, aka normal, and height that the Mattertag stem points</li>
+									<li><code>color</code>, the color of the mattertag disc</li>
 								</ul>
 								<p>See <a href="pointer.html#intersection-1">Pointer.intersection</a> for a way to retrive a new <code>anchorPosition</code> and <code>stemVector</code>.</p>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
@@ -195,7 +196,12 @@
    <span class="hljs-attribute">x</span>: <span class="hljs-number">0</span>,
    <span class="hljs-attribute">y</span>: <span class="hljs-number">0.30</span>,
    <span class="hljs-attribute">z</span>: <span class="hljs-number">0</span>,
- }
+ },
+<span class="hljs-attribute">color</span>: {  <span class="hljs-comment">// blue color</span>
+  <span class="hljs-attribute">r</span>: <span class="hljs-number">0.0</span>,
+  <span class="hljs-attribute">g</span>: <span class="hljs-number">0.0</span>,
+  <span class="hljs-attribute">b</span>: <span class="hljs-number">1.0</span>,
+}
 }])</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -260,16 +266,15 @@
 								<div class="lead">
 									<p>Edit the color of a Mattertag</p>
 								</div>
-								<p><code>`</code>
-								var mattertagData; // ... acquired through a previous call to mpSdk.Mattertag.getData();</p>
-								<p>// change the first Mattertag to yellow
-									mpSdk.Mattertag.editColor(mattertagData[0].sid, {
-									r: 0.9,
-									g: 0.9,
-									b: 0,
-								});</p>
-								<p>@param sid: The sid of the Mattertag to edit
-								@param color: The new color to be applied to the Mattertag disc</p>
+								<pre><code><span class="hljs-comment">// acquired through a previous call to mpSdk.Mattertag.getData();</span>
+var mattertagData;
+
+<span class="hljs-comment">// change the first Mattertag to yellow</span>
+mpSdk.Mattertag.editColor(mattertagData[<span class="hljs-number">0</span>].sid, {
+  r: <span class="hljs-number">0.9</span>,
+  g: <span class="hljs-number">0.9</span>,
+  b: <span class="hljs-number">0</span>,
+});</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
