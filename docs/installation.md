@@ -45,7 +45,7 @@ function showcaseLoader() {
     window.MP_SDK.connect(
       iframe, // Obtained earlier
       'abc123456789', // Your API key
-      '3.1' // SDK version you are using
+      '3.2' // SDK version you are using
       // Use the latest version you can for your app
       )
       .then(loadedShowcaseHandler)
