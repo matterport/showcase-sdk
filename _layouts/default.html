@@ -5,6 +5,22 @@ layout: table_wrappers
 <!DOCTYPE html>
 
 <html lang="{{ site.lang | default: "en-US" }}">
+  <header>
+      <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+      <script>
+        window.addEventListener('DOMContentLoaded', function() {
+          mermaid.initialize({
+            startOnLoad: true,
+            theme: 'neutral',
+            flowchart: {
+              useMaxWidth: false,
+            },
+            logLevel: 1,
+          });
+        });
+      </script>
+      <script type="text/javascript" src="{{ site.url }}{{ site.baseurl }}assets/js/mermaid.min.js"></script>
+  </header>
 {% include head.html %}
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
