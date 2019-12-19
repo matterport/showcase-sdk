@@ -5,8 +5,6 @@ nav_order: 1
 description: "Showcase Embed SDK"
 ---
 
-<div class="note">Have a question? Email us at <a href="mailto:developers@matterport.com">developers@matterport.com</a></div>
-
 # Getting Started
 - [Installation]({{ site.baseUrl }}installation)
 - [About the showcase embed SDK]({{ site.baseUrl }}about)

@@ -34,3 +34,26 @@
   color: $grey-dk-200;
   background-color: $yellow-200;
 }
+
+
+// custom
+.label-legend-callback {
+  color: $body-text-color;
+  background-color: #CEFFD7;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #999999;
+}
+
+.label-legend-info {
+  color: $body-text-color;
+  background-color: #eeeeee;
+  border-style: dashed;
+  border-width: 1px;
+  border-color: #999999;
+}
+
+.label-legend-scene-node-calls {
+  color: $body-text-color;
+  background-color: $white;
+}

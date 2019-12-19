@@ -2,7 +2,6 @@
 //// Typography
 ////
 
-//$body-font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica, roboto, noto, "segoe ui", arial, sans-serif;
 //$mono-font-family: "SFMono-Regular", Menlo, Consolas, Monospace;
 //$root-font-size: 16px;         // Base font-size for rems
 //$body-line-height: 1.4;
@@ -127,14 +126,53 @@
 //lg: $content-width + $nav-width,
 //xl: 1400px
 //);
-$link-color: #267CB9;
+// $body-font-family: 'Roboto', sans-serif;
+$body-text-color: #333333;
+$link-color: #385DFF;
 .note {
   border-collapse: collapse;
   border-spacing: 0;
   background-color: transparent;
   background-color: #ececec;
   padding: 15px;
-  vertical-align: middle;
   display: block;
   align-items:center;
+}
+
+body {
+  letter-spacing: 0.1px;
+}
+
+.navigation-list-item a {
+  color: #222222;
+}
+
+.navigation-list-item a:hover {
+  color: #FF3158;
+  text-decoration: underline;
+}
+
+.beta::after {
+  content: "SDK Bundle Beta";
+  background-color: #3cb55b;
+  border-radius: 5px;
+  color: #ffffff;
+  line-height: 10px;
+  padding: 4px 6px;
+  width: 100px;
+  height: 35px;
+}
+
+.mermaid {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #eeeeee;
+}
+
+.mermaid .label {
+  text-transform: unset;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
 }
