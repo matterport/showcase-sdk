@@ -1,9 +1,10 @@
 ---
 layout: default
-title: Bundle Beta
+title: SDK Bundle Beta
 has_children: false
 nav_exclude: true
 search_exclude: true
+description: "Developer Documentation"
 ---
 
 ### SDK Bundle Beta
