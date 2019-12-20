@@ -24,8 +24,8 @@ description: A Jekyll theme for documentation
 # baseurl: "/pages/matterport/showcase-sdk-site-preview"
 # url: "https://ghe.matterport.com"
 
-baseurl: "/showcase-sdk/"
-url: "https://matterport.github.io"
+baseurl: "/pages/matterport/showcase-sdk-site-preview/"
+url: "https://ghe.matterport.com"
 
 permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"]
@@ -68,4 +68,4 @@ compress_html:
   blanklines: false
   profile: false
 
-latest_bundle_version: 3.0.29.0-179-gacab3ac7c
+latest_bundle_version: 3.0.29.0-183-g19014b95b
