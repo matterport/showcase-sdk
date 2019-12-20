@@ -17,14 +17,14 @@ title: Showcase Embed SDK
 description: A Jekyll theme for documentation
 
 # github
-# baseurl: "/showcase-sdk"
+# baseurl: "/showcase-sdk/"
 # url: "https://matterport.github.io"
 #
 # ghe
-# baseurl: "/pages/matterport/showcase-sdk-site-preview"
+# baseurl: "/pages/matterport/showcase-sdk-site-preview/"
 # url: "https://ghe.matterport.com"
 
-baseurl: "/showcase-sdk"
+baseurl: "/showcase-sdk/"
 url: "https://matterport.github.io"
 
 permalink: pretty
