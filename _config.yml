@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Showcase Embed SDK
-description: A Jekyll theme for documentation
+description: Developer Documentation
 
 # github
 # baseurl: "/showcase-sdk/"
