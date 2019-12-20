@@ -11,7 +11,8 @@ search_exclude: true
 - [Overview](../overview)
 - [Getting Started](../getting_started)
 - [Tutorials](../tutorials)
-- [Reference](../reference)
+- [Reference - Scene Module](../reference/modules/scene.html)
+- [Reference - General](../reference)
 {: .text-epsilon }
 
 <div class="note">Note: Code snippets in the Overview, Gettings Started, and Tutorials section are in es6. The Reference section is in es5.</div>
