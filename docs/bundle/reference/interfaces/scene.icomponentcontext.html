@@ -1,0 +1,256 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>IComponentContext | @mpSdk 3.0.29.0-179-gacab3ac7c</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">@mpSdk</a>
+				</li>
+				<li>
+					<a href="../modules/scene.html">Scene</a>
+				</li>
+				<li>
+					<a href="scene.icomponentcontext.html">IComponentContext</a>
+				</li>
+			</ul>
+			<h1>IComponentContext Interface</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p><strong>Component Context</strong><br>
+							The context object contains the three.js module and the main aspects of the rendering engine.<br>
+						The camera, scene, or renderer may will likely be replaced in the future with an sdk module.</p>
+					</div>
+					<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Cylinder</span></span>() {
+   <span class="hljs-built_in">this</span>.onInit = <span class="hljs-function"><span class="hljs-keyword">function</span></span>() {
+     <span class="hljs-keyword">var</span> THREE = <span class="hljs-built_in">this</span>.context.three;
+     <span class="hljs-keyword">var</span> geometry = <span class="hljs-keyword">new</span> <span class="hljs-type">THREE</span>.CylinderGeometry( <span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">20</span>, <span class="hljs-number">32</span> );
+     <span class="hljs-keyword">var</span> material = <span class="hljs-keyword">new</span> <span class="hljs-type">THREE</span>.MeshBasicMaterial( {color: <span class="hljs-type">0xffff00</span>} );
+     <span class="hljs-keyword">var</span> cylinder = <span class="hljs-keyword">new</span> <span class="hljs-type">THREE</span>.Mesh( geometry, material );
+   };
+}</code></pre>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">IComponentContext</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.icomponentcontext.html#camera" class="tsd-kind-icon">camera</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.icomponentcontext.html#renderer" class="tsd-kind-icon">renderer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.icomponentcontext.html#scene" class="tsd-kind-icon">scene</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.icomponentcontext.html#three" class="tsd-kind-icon">three</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="camera" class="tsd-anchor"></a>
+					<h3>camera</h3>
+					<div class="tsd-signature tsd-kind-icon">camera<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Camera</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The main camera. It is read-only.<br>
+							See <a href="https://threejs.org/docs/#api/en/cameras/Camera" target="_blank">https://threejs.org/docs/#api/en/cameras/Camera</a></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="renderer" class="tsd-anchor"></a>
+					<h3>renderer</h3>
+					<div class="tsd-signature tsd-kind-icon">renderer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WebGLRenderer</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The showcase three.js renderer.<br>
+							See <a href="https://threejs.org/docs/#api/en/renderers/WebGLRenderer" target="_blank">https://threejs.org/docs/#api/en/renderers/WebGLRenderer</a></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="scene" class="tsd-anchor"></a>
+					<h3>scene</h3>
+					<div class="tsd-signature tsd-kind-icon">scene<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Scene</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The showcase scene.<br>
+							See <a href="https://threejs.org/docs/#api/en/scenes/Scene" target="_blank">https://threejs.org/docs/#api/en/scenes/Scene</a></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="three" class="tsd-anchor"></a>
+					<h3>three</h3>
+					<div class="tsd-signature tsd-kind-icon">three<span class="tsd-signature-symbol">:</span> <a href="../modules/scene.html#three" class="tsd-signature-type">Scene.THREE</a></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The r110 three.js module. It does not include examples.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../index.html"><em>@mpSdk</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/app.html">App</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/camera.html">Camera</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/conversion.html">Conversion</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/floor.html">Floor</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/label.html">Label</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/mattertag.html">Mattertag</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/measurements.html">Measurements</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/mode.html">Mode</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/model.html">Model</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/pointer.html">Pointer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/renderer.html">Renderer</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/scene.html">Scene</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/settings.html">Settings</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/sweep.html">Sweep</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/tour.html">Tour</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/scene.interactiontype.html" class="tsd-kind-icon">Interaction<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="scene.icomponent.html" class="tsd-kind-icon">IComponent</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-module">
+						<a href="scene.icomponentcontext.html" class="tsd-kind-icon">IComponent<wbr>Context</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="scene.icomponentcontext.html#camera" class="tsd-kind-icon">camera</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="scene.icomponentcontext.html#renderer" class="tsd-kind-icon">renderer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="scene.icomponentcontext.html#scene" class="tsd-kind-icon">scene</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="scene.icomponentcontext.html#three" class="tsd-kind-icon">three</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="scene.inode.html" class="tsd-kind-icon">INode</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="scene.intersect.html" class="tsd-kind-icon">Intersect</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/scene.html#predefinedoutputs" class="tsd-kind-icon">Predefined<wbr>Outputs</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/scene.html#three" class="tsd-kind-icon">THREE</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/scene.html#createnode" class="tsd-kind-icon">create<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/scene.html#deserialize" class="tsd-kind-icon">deserialize</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/scene.html#register" class="tsd-kind-icon">register</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/scene.html#serialize" class="tsd-kind-icon">serialize</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+<script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-34880260-5', '');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>

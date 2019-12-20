@@ -50,9 +50,9 @@ The following is a list of urls that you can use for this tutorial.
 - **Setup your scene**<br>
   Add some lights to your scene, otherwise, your models will be black. We provide a basic lighting component.
   
-  Start at <https://github.com/matterport/showcase-sdk-tutorial/blob/master/index.js#L12>{:target="_blank"}
+  Start after <https://github.com/matterport/showcase-sdk-tutorial/blob/master/index.js#L16>{:target="_blank"}
   ```javascript  
-  var lights = await sdk.Scene.createNode();
+  const lights = await sdk.Scene.createNode();
   lights.addComponent('mp.lights');
   lights.start();
   ```
@@ -60,7 +60,7 @@ The following is a list of urls that you can use for this tutorial.
 - **Create your component**<br>
   The component name will depend on the model you choose. We will use the stanford bunny.
   ```javascript
-  var modelNode = await sdk.Scene.createNode();
+  const modelNode = await sdk.Scene.createNode();
   modelNode.addComponent(sdk.Scene.Component.FBX_LOADER, {
     url: 'https://gitcdn.link/repo/mrdoob/three.js/dev/examples/models/fbx/stanford-bunny.fbx',
   });

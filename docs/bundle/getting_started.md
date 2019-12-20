@@ -17,7 +17,7 @@ nav_order: 2
 
 # Adding the SDK Bundle to an existing application
 ## Download the latest SDK Bundle package
-<https://static.matterport.com/misc/bundle/showcase/3.0.25.22-524-g521559dd5/showcase-bundle.tar.gz>
+<https://static.matterport.com/misc/bundle/showcase/{{ site.latest_bundle_version }}/showcase-bundle.tar.gz>
 ## Extract the contents of showcase-bundle.tar.gz to a directory where your files will be served
 It is important that you preserve the package's file organization.  We recommend that you keep the bundle files under one directory to make it easy to upgrade in the future. <br>
 ```shell
@@ -42,17 +42,16 @@ Add a script to the page to await the loading of showcase. Connect to it once lo
 
 ```javascript
 var showcase = document.getElementById('showcase');
-showcase.addEventListener('load', function() {
-  showcase.contentWindow.MP_SDK.connect(showcase, '{YOUR SDK KEY}', '3.2')
-    .then(onConnect, onError);
-});
+showcase.addEventListener('load', async function() {
+  let sdk;
+  try {
+    sdk = await showcase.contentWindow.MP_SDK.connect(showcase, '{YOUR SDK KEY}', '3.2');
+  }
+  catch(e) {
+    console.error(e);
+    return;
+  }
 
-function onConnect(sdk) {
   console.log('Hello Bundle SDK', sdk);
-  // ready to access the sdk!
-}
-
-function onError(error) {
-  console.error(error);
-}
+});
 ```

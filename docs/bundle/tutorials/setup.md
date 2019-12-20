@@ -20,7 +20,7 @@ yarn install
 
 - **Download and extract the latest Bundle SDK**
 ```shell
-curl https://static.matterport.com/misc/bundle/showcase/3.0.25.22-524-g521559dd5/showcase-bundle.tar.gz -o bundle.tar.gz
+curl https://static.matterport.com/misc/bundle/showcase/{{ site.latest_bundle_version }}/showcase-bundle.tar.gz -o bundle.tar.gz
 tar -xzf bundle.tar.gz -C ./bundle
 ```
 
