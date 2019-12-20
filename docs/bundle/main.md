@@ -7,8 +7,11 @@ search_exclude: true
 ---
 
 SDK Bundle
+
 - [Overview](../overview)
 - [Getting Started](../getting_started)
 - [Tutorials](../tutorials)
-- [Components](../components)
+- [Reference](../reference)
 {: .text-epsilon }
+
+<div class="note">Note: Code snippets in the Overview, Gettings Started, and Tutorials section are in es6. The Reference section is in es5.</div>

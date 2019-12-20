@@ -19,7 +19,7 @@ nav_order: 1
 ---
 Scene nodes contain and manage the lifecycle of their child components. Scene nodes have a 3D transform that parent child components.
 
-Scene node states,
+Scene node have the following states:
 - <b>Initializing</b> - The scene node is not part of the scene graph during this state. Components can be added and property bindings can be created.
 - <b>Operating</b> - The scene node becomes active and is part of the scene graph. Child components are also operating.
 - <b>Destroyed</b> - The scene node and its components are removed from the scene graph and destroyed.
@@ -32,10 +32,10 @@ graph LR&#10;
   style id1 fill-opacity:0.1,stroke-width:0px&#10;
 </div><br>
 
-Example usage,
+The following is an example of scene node usage.
 ```javascript
 // Creating a scene node
-var node = sdk.Scene.createNode();
+const node = await sdk.Scene.createNode();
 
 // Adding a component
 node.addComponent('mp.fbx', {
@@ -119,7 +119,7 @@ graph LR&#10;
 </div>
 
 ## Input and Output Dictionaries
-Each component properties called `inputs` and `outputs`. The properties are dictionaries defined by the component. The `inputs` dictionary represents properties that affect the components behavior or appearance. The `outputs` dictionary represents properties computed by the component.
+Components have properties named `inputs` and `outputs`. The properties are dictionaries defined by the component. The `inputs` dictionary represents properties that affect the components behavior or appearance. The `outputs` dictionary represents properties computed by the component.
 
 An example of a computed output,
 ```javascript
@@ -145,7 +145,7 @@ A property binding is a connection from a components `inputs` property to anothe
 
 ```javascript
 // assume Sum() class from Inputs and Outputs Dictionaries section
-var node = sdk.Scene.createNode();
+var node = await sdk.Scene.createNode();
 var comp1 = node.addComponent('sum');
 var comp2 = node.addComponent('sum');
 var comp3 = node.addComponent('sum');
