@@ -6,7 +6,7 @@ nav_exclude: true
 search_exclude: true
 ---
 
-SDK Bundle
+### SDK Bundle Beta
 
 - [Overview](../overview)
 - [Getting Started](../getting_started)

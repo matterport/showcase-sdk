@@ -13,9 +13,7 @@ has_children: false
 # Tutorials
 
 - [Setup](../tutorials/setup)
-- [Making your first component](../tutorials/components)
 - [Working with 3D models](../tutorials/models)
-- [Handling user interactions](../tutorials/interactions)
-- [Working with scenes](../tutorials/scenes)
-- [Using bindings](../tutorials/bindings)
+- [Making your first component] Under Construction
+- [Working with scenes] Under Construction
 {: .text-epsilon }
