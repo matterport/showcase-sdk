@@ -34,7 +34,7 @@ cursors		images		locale		terms
 To avoid css conflicts, we are requiring that the showcase be embedded in an iframe. In addition, your server must use https. Replace `[SERVERPATH]` and `[MODEL_SID]` with your own.
 
 ``` html
- <iframe id="showcase" width="740px" height="480px" src="https://[SERVERPATH]/bundle/showcase.html?m=[MODEL_SID]" frameborder=”0” allowfullscreen allow="vr"'></iframe>
+ <iframe id="showcase" width="740" height="480" src="https://[SERVERPATH]/bundle/showcase.html?m=[MODEL_SID]" frameborder=”0” allowfullscreen allow="vr"'></iframe>
 ```
 
 ## Connect to the SDK
