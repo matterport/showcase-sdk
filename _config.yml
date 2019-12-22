@@ -68,4 +68,4 @@ compress_html:
   blanklines: false
   profile: false
 
-latest_bundle_version: 3.0.29.0-183-g19014b95b
+latest_bundle_version: 3.0.29.0-184-g2c3cb43f6
