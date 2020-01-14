@@ -102,11 +102,5 @@
     "url": "https://matterport.github.io/showcase-sdk/docs/vocabulary/",
     "relUrl": "/docs/vocabulary/"
   }
-  ,"28": {
-    "title": "Example protected page",
-    "content": "Enter password Submit .",
-    "url": "https://matterport.github.io/showcase-sdk/docs/bundle/main/",
-    "relUrl": "/docs/bundle/main/"
-  }
   
 }
