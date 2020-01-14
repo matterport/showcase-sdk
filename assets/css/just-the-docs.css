@@ -642,7 +642,7 @@ hr {
 .site-logo {
   width: 100%;
   height: 100%;
-  background-image: url("https://ghe.matterport.com/pages/matterport/showcase-sdk-site-preview/assets/images/MP-logo_H_lock-RGB_black.svg");
+  background-image: url("https://matterport.github.io/showcase-sdk/assets/images/MP-logo_H_lock-RGB_black.svg");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: contain; }
