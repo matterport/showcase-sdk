@@ -397,6 +397,12 @@ body {
 body {
   -webkit-font-smoothing: antialiased; }
 
+thead th {
+  background-color: #f5f6fa; }
+
+.table-wrapper {
+  border: 1px solid #eeeeee; }
+
 * {
   box-sizing: border-box; }
 
