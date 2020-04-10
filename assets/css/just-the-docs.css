@@ -367,7 +367,8 @@ th {
   align-items: center; }
 
 body {
-  letter-spacing: 0.1px; }
+  letter-spacing: 0.1px;
+  font-size: 15px !important; }
 
 .navigation-list-item a {
   color: #222222; }
