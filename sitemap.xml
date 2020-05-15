@@ -76,13 +76,13 @@
   
   
   <url>
-    <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
+    <loc>https://matterport.github.io/docs/index.html</loc>
   </url>
   
   
   
   <url>
-    <loc>https://matterport.github.io/docs/index.html</loc>
+    <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
   </url>
   
   
@@ -673,6 +673,12 @@
   
   <url>
     <loc>https://matterport.github.io/sdkbundle_custom_experience.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdkbundle_examples_summary.html</loc>
   </url>
   
   
