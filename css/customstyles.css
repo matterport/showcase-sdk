@@ -1296,3 +1296,7 @@ code {
 .label {
     font-weight: normal;
 }
+
+.tags-quiz {
+    height: 710px;
+}
