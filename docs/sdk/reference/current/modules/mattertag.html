@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Mattertag | @mpSdk 3.1.0.10-0-g205dd9958</title>
+	<title>Mattertag | @mpSdk 3.1.1.0-31-g53bdad869</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -63,11 +63,14 @@
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#add" class="tsd-kind-icon">add</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#editbillboard" class="tsd-kind-icon">edit<wbr>Billboard</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#editcolor" class="tsd-kind-icon">edit<wbr>Color</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#editicon" class="tsd-kind-icon">edit<wbr>Icon</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#editposition" class="tsd-kind-icon">edit<wbr>Position</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#getdata" class="tsd-kind-icon">get<wbr>Data</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#getdiscposition" class="tsd-kind-icon">get<wbr>Disc<wbr>Position</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#navigatetotag" class="tsd-kind-icon">navigate<wbr>ToTag</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#registericon" class="tsd-kind-icon">register<wbr>Icon</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#remove" class="tsd-kind-icon">remove</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#reseticon" class="tsd-kind-icon">reset<wbr>Icon</a></li>
 							</ul>
 						</section>
 					</div>
@@ -129,6 +132,9 @@
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> floor<wbr>Id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> icon<wbr>Id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
@@ -211,6 +217,9 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>newTagData: <a href="../interfaces/mattertag.mattertagdescriptor.html" class="tsd-signature-type">Mattertag.MattertagDescriptor</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/mattertag.mattertagdescriptor.html" class="tsd-signature-type">Mattertag.MattertagDescriptor</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A single or array of Mattertag templates to add.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -222,7 +231,7 @@
 					<a name="editbillboard" class="tsd-anchor"></a>
 					<h3>edit<wbr>Billboard</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">edit<wbr>Billboard<span class="tsd-signature-symbol">(</span>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, properties<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="mattertag.html#editableproperties" class="tsd-signature-type">Mattertag.EditableProperties</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">edit<wbr>Billboard<span class="tsd-signature-symbol">(</span>tagSid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, properties<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="mattertag.html#editableproperties" class="tsd-signature-type">Mattertag.EditableProperties</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -245,10 +254,16 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>sid: <span class="tsd-signature-type">string</span></h5>
+									<h5>tagSid: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the sid of the Mattertag to edit</p>
+									</div>
 								</li>
 								<li>
 									<h5>properties: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="mattertag.html#editableproperties" class="tsd-signature-type">Mattertag.EditableProperties</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A dictionary of properties to set</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -259,7 +274,7 @@
 					<a name="editcolor" class="tsd-anchor"></a>
 					<h3>edit<wbr>Color</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">edit<wbr>Color<span class="tsd-signature-symbol">(</span>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, color<span class="tsd-signature-symbol">: </span><a href="../index.html#color" class="tsd-signature-type">Color</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">edit<wbr>Color<span class="tsd-signature-symbol">(</span>tagSid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, color<span class="tsd-signature-symbol">: </span><a href="../index.html#color" class="tsd-signature-type">Color</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -282,10 +297,56 @@ mpSdk.Mattertag.editColor(mattertagData[<span class="hljs-number">0</span>].sid,
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>sid: <span class="tsd-signature-type">string</span></h5>
+									<h5>tagSid: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The sid of the Mattertag to edit</p>
+									</div>
 								</li>
 								<li>
 									<h5>color: <a href="../index.html#color" class="tsd-signature-type">Color</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The new color to be applied to the Mattertag disc</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="editicon" class="tsd-anchor"></a>
+					<h3>edit<wbr>Icon</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">edit<wbr>Icon<span class="tsd-signature-symbol">(</span>tagSid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, iconId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Change the icon of the Mattertag disc</p>
+								</div>
+								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
+								<pre><code><span class="hljs-comment">// acquired through a previous call to mpSdk.Mattertag.getData();</span>
+var mattertagData;
+
+<span class="hljs-comment">// change the icon of the first Mattertag using the id used in a previously registeredIcon call</span>
+mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Mattertag</span>.</span></span>edit<span class="hljs-constructor">Icon(<span class="hljs-params">mattertagData</span>[0].<span class="hljs-params">sid</span>, '<span class="hljs-params">customIconId</span>')</span>;</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>tagSid: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The sid of the Mattertag to edit</p>
+									</div>
+								</li>
+								<li>
+									<h5>iconId: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The id of the icon to apply</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -296,7 +357,7 @@ mpSdk.Mattertag.editColor(mattertagData[<span class="hljs-number">0</span>].sid,
 					<a name="editposition" class="tsd-anchor"></a>
 					<h3>edit<wbr>Position</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">edit<wbr>Position<span class="tsd-signature-symbol">(</span>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, moveOptions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/mattertag.positionoptions.html" class="tsd-signature-type">Mattertag.PositionOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">edit<wbr>Position<span class="tsd-signature-symbol">(</span>tagSid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, moveOptions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/mattertag.positionoptions.html" class="tsd-signature-type">Mattertag.PositionOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -327,10 +388,16 @@ mpSdk.Mattertag.editPosition(mattertagData[<span class="hljs-number">0</span>].s
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>sid: <span class="tsd-signature-type">string</span></h5>
+									<h5>tagSid: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The sid of the Mattertag to reposition</p>
+									</div>
 								</li>
 								<li>
 									<h5>moveOptions: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/mattertag.positionoptions.html" class="tsd-signature-type">Mattertag.PositionOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The new anchorPosition, stemVector and/or floorId.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -402,7 +469,7 @@ var tagDiscPosition = mpSdk.<span class="hljs-module-access"><span class="hljs-m
 					<a name="navigatetotag" class="tsd-anchor"></a>
 					<h3>navigate<wbr>ToTag</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">navigate<wbr>ToTag<span class="tsd-signature-symbol">(</span>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, transition<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">sdkTransitionType</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">navigate<wbr>ToTag<span class="tsd-signature-symbol">(</span>tagSid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, transition<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">sdkTransitionType</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -417,13 +484,55 @@ var tagDiscPosition = mpSdk.<span class="hljs-module-access"><span class="hljs-m
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>sid: <span class="tsd-signature-type">string</span></h5>
+									<h5>tagSid: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The sid of the Mattertag to navigate to</p>
+									</div>
 								</li>
 								<li>
 									<h5>transition: <span class="tsd-signature-type">sdkTransitionType</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The type of transition to navigate to a sweep where the Mattertag disc is visible</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="registericon" class="tsd-anchor"></a>
+					<h3>register<wbr>Icon</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">register<wbr>Icon<span class="tsd-signature-symbol">(</span>iconId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, iconSrc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Register an icon to use with subsequent <a href="mattertag.html#editicon">Mattertag.editIcon</a> calls.</p>
+								</div>
+								<p><strong>Note</strong>: It is recommended to host your own images to mitigate cross origin limitations.</p>
+								<pre><code>mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Mattertag</span>.</span></span>register<span class="hljs-constructor">Icon('<span class="hljs-params">customIconId</span>', '<span class="hljs-params">https</span>:<span class="hljs-operator">/</span><span class="hljs-operator">/</span>[<span class="hljs-params">link</span>.<span class="hljs-params">to</span><span class="hljs-operator">/</span><span class="hljs-params">image</span>]')</span>;</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>iconId: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A user specified string to use as a lookup of this icon</p>
+									</div>
+								</li>
+								<li>
+									<h5>iconSrc: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The src of the icon, like the src of an <img></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -454,10 +563,46 @@ mpSdk.Mattertag.<span class="hljs-built_in">remove</span>([<span class="hljs-bui
 							<ul class="tsd-parameters">
 								<li>
 									<h5>tagSids: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A single Mattertag sid or array of Mattertag sids to remove.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A promise with an array of Mattertag sids that were actually removed.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="reseticon" class="tsd-anchor"></a>
+					<h3>reset<wbr>Icon</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">reset<wbr>Icon<span class="tsd-signature-symbol">(</span>tagSid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Resets the icon of the Mattertag disc back to its original icon.</p>
+								</div>
+								<pre><code><span class="hljs-comment">// acquired through a previous call to mpSdk.Mattertag.getData();</span>
+var mattertagData;
+
+<span class="hljs-comment">// reset the icon of the first Mattertag to its original</span>
+mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Mattertag</span>.</span></span>reset<span class="hljs-constructor">Icon(<span class="hljs-params">mattertagData</span>[0].<span class="hljs-params">sid</span>)</span>;</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>tagSid: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The sid of the Mattertag to reset</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -555,6 +700,9 @@ mpSdk.Mattertag.<span class="hljs-built_in">remove</span>([<span class="hljs-bui
 						<a href="mattertag.html#editcolor" class="tsd-kind-icon">edit<wbr>Color</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="mattertag.html#editicon" class="tsd-kind-icon">edit<wbr>Icon</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="mattertag.html#editposition" class="tsd-kind-icon">edit<wbr>Position</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
@@ -567,7 +715,13 @@ mpSdk.Mattertag.<span class="hljs-built_in">remove</span>([<span class="hljs-bui
 						<a href="mattertag.html#navigatetotag" class="tsd-kind-icon">navigate<wbr>ToTag</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="mattertag.html#registericon" class="tsd-kind-icon">register<wbr>Icon</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="mattertag.html#remove" class="tsd-kind-icon">remove</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="mattertag.html#reseticon" class="tsd-kind-icon">reset<wbr>Icon</a>
 					</li>
 				</ul>
 			</nav>
