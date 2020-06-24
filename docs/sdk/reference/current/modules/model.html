@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Model | @mpSdk 3.1.1.0-31-g53bdad869</title>
+	<title>Model | @mpSdk 3.1.1.1-0-g85c6fdd6a</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -74,6 +74,13 @@
 							</li>
 							<li class="tsd-parameter">
 								<h5>sweeps<span class="tsd-signature-symbol">: </span><a href="sweep.html#sweepdata" class="tsd-signature-type">Sweep.SweepData</a><span class="tsd-signature-symbol">[]</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<dl class="tsd-comment-tags">
+										<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+										<dd><p>Use <a href="sweep.html#data">Sweep.data</a> instead</p>
+										</dd>
+									</dl>
+								</div>
 							</li>
 						</ul>
 					</div>
@@ -140,6 +147,7 @@
 								<div class="lead">
 									<p>This function returns basic model information.</p>
 								</div>
+								<p>This is no longer the canonical way to receive sweep information. See <a href="sweep.html#data">Sweep.data</a>.</p>
 								<pre><code>mpSdk.Model.getData()
   .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(model)</span> {</span>
     <span class="hljs-comment">// Model data retreival complete.</span>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Camera | @mpSdk 3.1.1.0-31-g53bdad869</title>
+	<title>Camera | @mpSdk 3.1.1.1-0-g85c6fdd6a</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -60,6 +60,9 @@
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#pan" class="tsd-kind-icon">pan</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#rotate" class="tsd-kind-icon">rotate</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#setrotation" class="tsd-kind-icon">set<wbr>Rotation</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#zoomby" class="tsd-kind-icon">zoom<wbr>By</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#zoomreset" class="tsd-kind-icon">zoom<wbr>Reset</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="camera.html#zoomto" class="tsd-kind-icon">zoom<wbr>To</a></li>
 							</ul>
 						</section>
 					</div>
@@ -398,6 +401,107 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="zoomby" class="tsd-anchor"></a>
+					<h3>zoom<wbr>By</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">zoom<wbr>By<span class="tsd-signature-symbol">(</span>zoomDelta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Zooms the camera by a percentage. The zoom delta is defined relative to the base field of view, not the current zoom.
+									This means that the delta is strictly added, and not multiplied by the current zoom first.</p>
+								</div>
+								<p>Ex: If at zoom 2.0, zooming by another 0.1x will bring the camera to 2.1x (2.0 + 0.1) not 2.2x (2.0 + 2.0 * 0.1)</p>
+								<pre><code>mpSdk.Camera.zoomBy(<span class="hljs-number">0.1</span>)
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span> </span>(<span class="hljs-keyword">new</span><span class="hljs-type">Zoom</span>) {
+    console.log(<span class="hljs-string">'Camera zoomed to'</span>, <span class="hljs-keyword">new</span><span class="hljs-type">Zoom</span>);
+  });</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>zoomDelta: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><strong>Errors</strong></p>
+										<ul>
+											<li>Fails if the current mode is not Inside mode.</li>
+											<li>Warns to console if the zoom level would be outside of the zoom range supported.</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="zoomreset" class="tsd-anchor"></a>
+					<h3>zoom<wbr>Reset</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">zoom<wbr>Reset<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Reset the zoom of the camera back to 1.0x.</p>
+								</div>
+								<pre><code>mpSdk.Camera.reset()
+  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span></span> {
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Camera zoom has been reset'</span>);
+  })</code></pre><p><strong>Errors</strong></p>
+								<ul>
+									<li>Fails if the current mode is not Inside mode.</li>
+								</ul>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="zoomto" class="tsd-anchor"></a>
+					<h3>zoom<wbr>To</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">zoom<wbr>To<span class="tsd-signature-symbol">(</span>zoomLevel<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Zooms the camera to a percentage of the base field of view.</p>
+								</div>
+								<p>Ex: Doubling the zoom, halves the field of view.</p>
+								<pre><code>mpSdk.Camera.zoomTo(<span class="hljs-number">2.0</span>)
+ .then(<span class="hljs-function"><span class="hljs-keyword">function</span> </span>(<span class="hljs-keyword">new</span><span class="hljs-type">Zoom</span>) {
+   console.log(<span class="hljs-string">'Camera zoomed to'</span>, <span class="hljs-keyword">new</span><span class="hljs-type">Zoom</span>);
+ });</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>zoomLevel: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><strong>Errors</strong></p>
+										<ul>
+											<li>Fails if the current mode is not Inside mode.</li>
+											<li>Warns to console if the zoom level is outside of the zoom range supported.</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -481,6 +585,15 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="camera.html#setrotation" class="tsd-kind-icon">set<wbr>Rotation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="camera.html#zoomby" class="tsd-kind-icon">zoom<wbr>By</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="camera.html#zoomreset" class="tsd-kind-icon">zoom<wbr>Reset</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="camera.html#zoomto" class="tsd-kind-icon">zoom<wbr>To</a>
 					</li>
 				</ul>
 			</nav>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Sweep | @mpSdk 3.1.1.0-31-g53bdad869</title>
+	<title>Sweep | @mpSdk 3.1.1.1-0-g85c6fdd6a</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -49,6 +49,12 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="sweep.html#data" class="tsd-kind-icon">data</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="sweep.html#moveto" class="tsd-kind-icon">move<wbr>To</a></li>
@@ -70,9 +76,14 @@
 							<p><code>rotation.x</code>: is the amount the camera will rotate up/down, in the range between [-90…90] with -90 being straight down and 90 being straight up, 45 would be looking up at a 45 degree angle., -45 down etc..
 							<code>rotation.y</code>: is the amount the camera rotate around horizontally, between [-360…0…360], negative values to rotate to the left, positive to rotate to the right.</p>
 						</div>
-						<p>Note: The rotation that Sweep.moveTo uses for input is the same rotation that will get returned from the Camera.getPose command.</p>
-						<pre><code><span class="hljs-keyword">const</span> pose = <span class="hljs-keyword">await</span> mpSdk.Camera.getPose();
-<span class="hljs-built_in">console</span>.log(pose.rotation);</code></pre><p>With that combo you can get your view lined up with the normal camera, call getPose, and use that as input to the moveTo command.</p>
+						<p>Note: The rotation that Sweep.moveTo uses for input is the same rotation that will get returned from the <a href="camera.html#pose-1">Camera.pose</a> property.</p>
+						<pre><code><span class="hljs-keyword">const</span> cachedPose = <span class="hljs-literal">null</span>;
+mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">pose</span>) </span>{
+  cachedPose = pose;
+})
+
+<span class="hljs-comment">// If the pose is returned immediately.</span>
+<span class="hljs-built_in">console</span>.log(cachedPose.rotation);</code></pre>
 					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
@@ -82,6 +93,14 @@
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> transition<span class="tsd-signature-symbol">?: </span><a href="../enums/sweep.transitiontype.html" class="tsd-signature-type">Sweep.TransitionType</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> transition<wbr>Time<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Total transition time in milliseconds.</p>
+									</div>
+								</div>
 							</li>
 						</ul>
 					</div>
@@ -118,6 +137,33 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="data" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> data</h3>
+					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservablemap.html" class="tsd-signature-type">IObservableMap</a><span class="tsd-signature-symbol">&lt;</span><a href="sweep.html#sweepdata" class="tsd-signature-type">Sweep.SweepData</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An observable collection of sweep data that can be subscribed to.</p>
+						</div>
+						<p>When first subscribing, the current set of sweeps will call the observers <code>onAdded</code> for each sweep as the data becomes available.</p>
+						<pre><code>showcase.Sweep.data.subscribe({
+  onAdded: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'sweep added to the collection'</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
+  },
+  onRemoved: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'sweep removed from the collection'</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
+  },
+  onUpdated: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'sweep updated in place in the collection'</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
+  }
+});</code></pre>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="moveto" class="tsd-anchor"></a>
@@ -136,10 +182,12 @@
 								<pre><code><span class="hljs-keyword">const</span> sweepId = <span class="hljs-string">'1'</span>;
 <span class="hljs-keyword">const</span> rotation = { <span class="hljs-attr">x</span>: <span class="hljs-number">30</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">-45</span> };
 <span class="hljs-keyword">const</span> transition = mpSdk.Sweep.Transition.INSTANT;
+<span class="hljs-keyword">const</span> transitionTime = <span class="hljs-number">2000</span>; <span class="hljs-comment">// in milliseconds</span>
 
 mpSdk.Sweep.moveTo(sweepId, {
     <span class="hljs-attr">rotation</span>: rotation,
-    <span class="hljs-attr">transition</span>: transition
+    <span class="hljs-attr">transition</span>: transition,
+    <span class="hljs-attr">transitionTime</span>: transitionTime,
   })
   .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">sweepId</span>)</span>{
     <span class="hljs-comment">// Move successful.</span>
@@ -234,6 +282,9 @@ mpSdk.Sweep.moveTo(sweepId, {
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="sweep.html#sweepdata" class="tsd-kind-icon">Sweep<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="sweep.html#data" class="tsd-kind-icon">data</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="sweep.html#moveto" class="tsd-kind-icon">move<wbr>To</a>

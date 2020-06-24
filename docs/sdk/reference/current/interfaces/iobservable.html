@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IObservable | @mpSdk 3.1.1.0-31-g53bdad869</title>
+	<title>IObservable | @mpSdk 3.1.1.1-0-g85c6fdd6a</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -30,7 +30,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>A data object that can have its changes observed via subscribing</p>
+						<p>A data object that can have its changes observed via subscribing an <a href="iobserver.html">IObserver</a> or <a href="../index.html#observercallback">ObserverCallback</a></p>
 					</div>
 				</div>
 			</section>
@@ -75,7 +75,7 @@
 					<a name="subscribe" class="tsd-anchor"></a>
 					<h3>subscribe</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">subscribe<span class="tsd-signature-symbol">(</span>observer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="isubscription.html" class="tsd-signature-type">ISubscription</a></li>
+						<li class="tsd-signature tsd-kind-icon">subscribe<span class="tsd-signature-symbol">(</span>observer<span class="tsd-signature-symbol">: </span><a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DataT</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../index.html#observercallback" class="tsd-signature-type">ObserverCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DataT</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="isubscription.html" class="tsd-signature-type">ISubscription</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -90,25 +90,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>observer: <span class="tsd-signature-type">function</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DataT</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5>data: <span class="tsd-signature-type">DataT</span></h5>
-														</li>
-													</ul>
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
+									<h5>observer: <a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DataT</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../index.html#observercallback" class="tsd-signature-type">ObserverCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DataT</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="isubscription.html" class="tsd-signature-type">ISubscription</a></h4>
@@ -152,11 +134,17 @@
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="iobservablemap.html" class="tsd-kind-icon">IObservable<wbr>Map</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="iobserver.html" class="tsd-kind-icon">IObserver</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="isubscription.html" class="tsd-kind-icon">ISubscription</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="../index.html#color" class="tsd-kind-icon">Color</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="../index.html#observercallback" class="tsd-kind-icon">Observer<wbr>Callback</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="../index.html#rotation" class="tsd-kind-icon">Rotation</a>
