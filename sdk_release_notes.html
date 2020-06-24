@@ -419,6 +419,9 @@
   <li>Added <code class="highlighter-rouge">Mattertag.preventAction</code> to disable Showcase’s default hover and click handlers allowing for the billboard to be hidden and/or the click to navigate to be suppressed.</li>
   <li>Added <code class="highlighter-rouge">Sweep.data</code> as a replacement for the <code class="highlighter-rouge">sweeps</code> property of <code class="highlighter-rouge">Model.getData</code>.</li>
   <li>Added <code class="highlighter-rouge">IObserver</code> support to <code class="highlighter-rouge">IObservable</code> for the more object-oriented programmer.</li>
+  <li>Added transitionTime to <code class="highlighter-rouge">Sweep.moveTo</code> options.</li>
+  <li>Fixed an issue with <code class="highlighter-rouge">Camera.setRotation</code> where certain orientations would rotate in the wrong direction.</li>
+  <li>Fixed a race condition between <code class="highlighter-rouge">Mattertag.registerIcon</code> and <code class="highlighter-rouge">Mattertag.editIcon</code>.</li>
 </ul>
 
 <h2 id="v331">v3.3.1</h2>
