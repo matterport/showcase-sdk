@@ -261,6 +261,13 @@
           
           
           
+          <li><a title="Summary" href="sdk_examples_summary.html">Summary</a></li>
+          
+          
+          
+          
+          
+          
           <li><a title="Navigation Controls" href="sdk_navigation_controls.html">Navigation Controls</a></li>
           
           
@@ -297,6 +304,13 @@
           
           
           <li><a title="Kitchen Sink" href="sdk_kitchen_sink.html">Kitchen Sink</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Remote Control" href="sdk_remote_control.html">Remote Control</a></li>
           
           
           
@@ -415,6 +429,7 @@
 <h6 id="june-23-2020">June 23, 2020</h6>
 <ul>
   <li>Added <code class="highlighter-rouge">Camera.zoomBy</code>, <code class="highlighter-rouge">Camera.zoomTo</code>, and <code class="highlighter-rouge">Camera.zoomReset</code> to manipulate the zoom level of the camera in Panorama modes.</li>
+  <li>Added <code class="highlighter-rouge">Camera.zoom</code> observable to get the zoom level of the camera while in Panorama mode.</li>
   <li>Added <code class="highlighter-rouge">Mattertag.editOpacity</code> to control opacity of each Mattertag.</li>
   <li>Added <code class="highlighter-rouge">Mattertag.preventAction</code> to disable Showcase’s default hover and click handlers allowing for the billboard to be hidden and/or the click to navigate to be suppressed.</li>
   <li>Added <code class="highlighter-rouge">Sweep.data</code> as a replacement for the <code class="highlighter-rouge">sweeps</code> property of <code class="highlighter-rouge">Model.getData</code>.</li>
@@ -442,7 +457,7 @@
 <h2 id="v323">v3.2.3</h2>
 <h6 id="may-13-2020">May 13, 2020</h6>
 <ul>
-  <li>Fixed a race condition with Camera.pose and Pointer.intersection initialization.</li>
+  <li>Fixed a race condition with <code class="highlighter-rouge">Camera.pose</code> and <code class="highlighter-rouge">Pointer.intersection</code> initialization.</li>
 </ul>
 
 <h2 id="v322">v3.2.2</h2>
@@ -463,7 +478,7 @@
 <h6 id="dec-9-2019">Dec 9, 2019</h6>
 <ul>
   <li><strong>Transient Mattertags</strong><br />
-Support for creating, updating and deleting mattertags. 
+Support for creating, updating and deleting mattertags.
 Changes to mattertags disappear once the user leaves showcase. Added <code class="highlighter-rouge">Mattertag.add</code>, <code class="highlighter-rouge">Mattertag.editColor</code>, <code class="highlighter-rouge">Mattertag.editBillboard</code>, <code class="highlighter-rouge">Mattertag.editPosition</code>, and <code class="highlighter-rouge">Mattertag.remove</code> See <a href="sdk_editing_mattertags.html">Tutorials</a> section for help on editing transient mattertag content.</li>
   <li><strong>Synchronous Functions</strong><br />
 We are adding support for synchronous functions. These functions compute and return your data immediately, no promise involved. In general, synchronous functions are more performant since they dont directly interact with the showcase. Use them when you can. To start, we have selected a function that is called frequently <code class="highlighter-rouge">Renderer.getScreenPosition()</code>. This function is now being deprecated, and the new synchronous function is <code class="highlighter-rouge">Renderer.worldToScreen()</code>. In order to use synchronous functions, you will need to update your sdk client reference to <code class="highlighter-rouge">https://static.matterport.com/showcase-sdk/2.0.0-0-g7edd6b8/sdk.js</code></li>
@@ -580,7 +595,7 @@ We are adding support for synchronous functions. These functions compute and ret
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jun 23, 2020 <br />
+ Site last generated: Jul 16, 2020 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

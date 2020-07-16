@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Camera | @mpSdk 3.1.1.1-0-g85c6fdd6a</title>
+	<title>Camera | @mpSdk 3.1.2.0-144-g04176b9a5</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -44,12 +44,14 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="camera.html#pose" class="tsd-kind-icon">Pose</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="camera.html#rotateoptions" class="tsd-kind-icon">Rotate<wbr>Options</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="camera.html#zoomdata" class="tsd-kind-icon">Zoom<wbr>Data</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="camera.html#pose-1" class="tsd-kind-icon">pose</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="camera.html#zoom" class="tsd-kind-icon">zoom</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -117,6 +119,26 @@
 						</ul>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="zoomdata" class="tsd-anchor"></a>
+					<h3>Zoom<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">Zoom<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The current zoom level</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
@@ -136,6 +158,23 @@
   console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'Rotation angle is '</span>, <span class="hljs-keyword">pose</span>.rotation);
   console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'Sweep UUID is '</span>, <span class="hljs-keyword">pose</span>.sweep);
   console.<span class="hljs-keyword">log</span>(<span class="hljs-string">'View mode is '</span>, <span class="hljs-keyword">pose</span>.mode);
+});</code></pre>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="zoom" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> zoom</h3>
+					<div class="tsd-signature tsd-kind-icon">zoom<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservable.html" class="tsd-signature-type">IObservable</a><span class="tsd-signature-symbol">&lt;</span><a href="camera.html#zoomdata" class="tsd-signature-type">Camera.ZoomData</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An observable zoom level of the camera in Panorama mode.
+							The zoom level will be 1.0 for all other viewmodes.</p>
+						</div>
+						<pre><code>mpSdk.Camera.zoom.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">zoom</span>) </span>{
+  <span class="hljs-comment">// the zoom level has changed</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Current zoom is '</span>, zoom.level);
 });</code></pre>
 					</div>
 				</section>
@@ -568,8 +607,14 @@
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="camera.html#rotateoptions" class="tsd-kind-icon">Rotate<wbr>Options</a>
 					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="camera.html#zoomdata" class="tsd-kind-icon">Zoom<wbr>Data</a>
+					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
 						<a href="camera.html#pose-1" class="tsd-kind-icon">pose</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="camera.html#zoom" class="tsd-kind-icon">zoom</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="camera.html#getpose" class="tsd-kind-icon">get<wbr>Pose</a>
