@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Mattertag | @mpSdk 3.1.2.0-144-g04176b9a5</title>
+	<title>Mattertag | @mpSdk 3.1.6.0-48-gaf8c817ad</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -44,6 +44,7 @@
 						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/mattertag.imessenger.html" class="tsd-kind-icon">IMessenger</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/mattertag.mattertagdescriptor.html" class="tsd-kind-icon">Mattertag<wbr>Descriptor</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/mattertag.positionoptions.html" class="tsd-kind-icon">Position<wbr>Options</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/mattertag.tagdescriptionchunk.html" class="tsd-kind-icon">Tag<wbr>Description<wbr>Chunk</a></li>
@@ -54,7 +55,9 @@
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported"><a href="mattertag.html#editableproperties" class="tsd-kind-icon">Editable<wbr>Properties</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#injectionoptions" class="tsd-kind-icon">Injection<wbr>Options</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#mattertagdata" class="tsd-kind-icon">Mattertag<wbr>Data</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#messengerfcnmapping" class="tsd-kind-icon">Messenger<wbr>Fcn<wbr>Mapping</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#preventableactions" class="tsd-kind-icon">Preventable<wbr>Actions</a></li>
 							</ul>
 						</section>
@@ -69,6 +72,7 @@
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#editposition" class="tsd-kind-icon">edit<wbr>Position</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#getdata" class="tsd-kind-icon">get<wbr>Data</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#getdiscposition" class="tsd-kind-icon">get<wbr>Disc<wbr>Position</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#injecthtml" class="tsd-kind-icon">injectHTML</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#navigatetotag" class="tsd-kind-icon">navigate<wbr>ToTag</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#preventaction" class="tsd-kind-icon">prevent<wbr>Action</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="mattertag.html#registericon" class="tsd-kind-icon">register<wbr>Icon</a></li>
@@ -106,6 +110,52 @@
 										<h5>type<span class="tsd-signature-symbol">: </span><a href="../enums/mattertag.mediatype.html" class="tsd-signature-type">Mattertag.MediaType</a></h5>
 									</li>
 								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="injectionoptions" class="tsd-anchor"></a>
+					<h3>Injection<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">Injection<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Options that can be specified when injection custom HTML into a Mattertag.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> message<wbr>Fcn<wbr>Mapping<span class="tsd-signature-symbol">?: </span><a href="mattertag.html#messengerfcnmapping" class="tsd-signature-type">Mattertag.MessengerFcnMapping</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>A map for the three global functions we provide in your iframe sandbox.
+										Only needs to be used if scripts you are importing also have a global <code>send</code>, <code>on</code>, or <code>off</code> function.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> size<span class="tsd-signature-symbol">?: </span><a href="../index.html#size" class="tsd-signature-type">Size</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The size of the frame to create</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> window<wbr>Path<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The path between Showcase&#39;s window and your window (with the sdk).</p>
+									</div>
+									<p>If you embed Showcase normally, this can be omitted.</p>
+									<p>If you put Showcase within another level of iframe on your page, the path would be <code>&#39;parent.parent&#39;</code>; Showcase&#39;s parent is the iframe, the parent of that frame is your page.</p>
+									<p>If you programmatically open Showcase in a new window, use <code>&#39;opener&#39;</code>.</p>
+									<p>When using the Bundle SDK use <code>&#39;&#39;</code>.</p>
+								</div>
 							</li>
 						</ul>
 					</div>
@@ -166,6 +216,32 @@
 										<p>The world space (non-normal) direction of the mattertag&#39;s stem</p>
 									</div>
 								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="messengerfcnmapping" class="tsd-anchor"></a>
+					<h3>Messenger<wbr>Fcn<wbr>Mapping</h3>
+					<div class="tsd-signature tsd-kind-icon">Messenger<wbr>Fcn<wbr>Mapping<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Map the global functions we provide in your sandbox to other names.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> off<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> on<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> send<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -532,6 +608,70 @@ var tagDiscPosition = mpSdk.<span class="hljs-module-access"><span class="hljs-m
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="injecthtml" class="tsd-anchor"></a>
+					<h3>injectHTML</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">injectHTML<span class="tsd-signature-symbol">(</span>tagSid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">: </span><a href="mattertag.html#injectionoptions" class="tsd-signature-type">Mattertag.InjectionOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/mattertag.imessenger.html" class="tsd-signature-type">Mattertag.IMessenger</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a custom frame that can host custom HTML and JavaScript, and communicate bi-directionally with your page.</p>
+								</div>
+								<p>The frame that contains your custom code will have certain limitations due to being sandboxed by the <code>sandbox=&#39;allow-scripts</code> attribute.
+								Attempting to access properties of other windows will also be blocked by the browser. (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe">see the MDN pages about iframe sandbox</a>)</p>
+								<p>Currently, the HTML CAN ONLY BE SET ONCE by a call to <code>injectHTML</code>. This includes removing or clearing the HTML.</p>
+								<pre><code>var mattertagData; <span class="hljs-comment">// ... acquired through a previous call to mpSdk.Mattertag.getData();</span>
+
+<span class="hljs-comment">// create a 100x50px button within the Mattertag and send out an ID when it is clicked</span>
+var htmlToInject = <span class="hljs-string">' \
+  &lt;style&gt; \
+    button { \
+      width: 100px; \
+      height: 50px; \
+    } \
+  &lt;/style&gt; \
+  &lt;button id="</span>btn1<span class="hljs-string">"&gt;CLICK ME&lt;/button&gt; \
+  &lt;script&gt; \
+    var btn1 = document.getElementById("</span>btn1<span class="hljs-string">"); \
+    btn1.addEventListener("</span>click<span class="hljs-string">", function () { \
+      window.send("</span>buttonClick<span class="hljs-string">", 12345); \
+    }); \
+  &lt;/script&gt;'</span>;
+
+mpSdk.Mattertag.injectHTML(mattertagData[<span class="hljs-number">0</span>], htmlToInject, {
+  <span class="hljs-built_in">size</span>: {
+    w: <span class="hljs-number">100</span>,
+    h: <span class="hljs-number">50</span>,
+  }
+})
+  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(messenger)</span> {</span>
+    messenger.on(<span class="hljs-string">"buttonClick"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(buttonId)</span> {</span>
+      console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'clicked button with id:'</span>, buttonId);
+    });
+  });
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>tagSid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>html: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>options: <a href="mattertag.html#injectionoptions" class="tsd-signature-type">Mattertag.InjectionOptions</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/mattertag.imessenger.html" class="tsd-signature-type">Mattertag.IMessenger</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="navigatetotag" class="tsd-anchor"></a>
 					<h3>navigate<wbr>ToTag</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
@@ -792,6 +932,9 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 						<a href="../enums/mattertag.tagdescriptionchunktype.html" class="tsd-kind-icon">Tag<wbr>Description<wbr>Chunk<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/mattertag.imessenger.html" class="tsd-kind-icon">IMessenger</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/mattertag.mattertagdescriptor.html" class="tsd-kind-icon">Mattertag<wbr>Descriptor</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
@@ -807,7 +950,13 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 						<a href="mattertag.html#editableproperties" class="tsd-kind-icon">Editable<wbr>Properties</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="mattertag.html#injectionoptions" class="tsd-kind-icon">Injection<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="mattertag.html#mattertagdata" class="tsd-kind-icon">Mattertag<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="mattertag.html#messengerfcnmapping" class="tsd-kind-icon">Messenger<wbr>Fcn<wbr>Mapping</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="mattertag.html#preventableactions" class="tsd-kind-icon">Preventable<wbr>Actions</a>
@@ -835,6 +984,9 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="mattertag.html#getdiscposition" class="tsd-kind-icon">get<wbr>Disc<wbr>Position</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="mattertag.html#injecthtml" class="tsd-kind-icon">injectHTML</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="mattertag.html#navigatetotag" class="tsd-kind-icon">navigate<wbr>ToTag</a>
