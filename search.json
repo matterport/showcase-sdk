@@ -15,6 +15,17 @@
 
 
 {
+"title": "Camera",
+"tags": "",
+"keywords": "",
+"url": "sdkbundle_components_camera.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "DAE Loader",
 "tags": "",
 "keywords": "",
@@ -59,6 +70,17 @@
 
 
 {
+"title": "Input",
+"tags": "",
+"keywords": "",
+"url": "sdkbundle_components_input.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "OBJ Loader",
 "tags": "",
 "keywords": "",
@@ -80,13 +102,24 @@
 
 
 
+{
+"title": "Transform Controls",
+"tags": "",
+"keywords": "",
+"url": "sdkbundle_components_transformcontrols.html",
+"summary": ""
+}
+,
+
+
+
 
 
 {
-"title": "Matterport Developers",
+"title": "Redirecting to SDK Bundle Home",
 "tags": "",
 "keywords": "",
-"url": "index.html",
+"url": "docsbundlemainindex.html",
 "summary": ""
 }
 ,
@@ -94,10 +127,10 @@
 
 
 {
-"title": "Redirecting to SDK Home",
+"title": "Matterport Developers",
 "tags": "",
 "keywords": "",
-"url": "docsreferenceindex.html",
+"url": "index.html",
 "summary": ""
 }
 ,
@@ -116,10 +149,10 @@
 
 
 {
-"title": "Redirecting to SDK Bundle Home",
+"title": "Redirecting to SDK Home",
 "tags": "",
 "keywords": "",
-"url": "docsbundlemainindex.html",
+"url": "docsreferenceindex.html",
 "summary": ""
 }
 ,

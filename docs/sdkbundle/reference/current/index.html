@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@mpSdk 3.0.35.28-24-g643202bd1</title>
+	<title>@mpSdk 3.1.6.1-15-ged398ca2e</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -55,18 +55,24 @@
 								<li class="tsd-kind-enum"><a href="enums/event.html" class="tsd-kind-icon">Event</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-not-exported">
+						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-is-not-exported"><a href="interfaces/dictionary.html" class="tsd-kind-icon">Dictionary</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter tsd-is-not-exported"><a href="interfaces/dictionary.html" class="tsd-kind-icon">Dictionary</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/icondition.html" class="tsd-kind-icon">ICondition</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/imapobserver.html" class="tsd-kind-icon">IMap<wbr>Observer</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/iobservable.html" class="tsd-kind-icon">IObservable</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/iobservablemap.html" class="tsd-kind-icon">IObservable<wbr>Map</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/iobserver.html" class="tsd-kind-icon">IObserver</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/isubscription.html" class="tsd-kind-icon">ISubscription</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias"><a href="index.html#color" class="tsd-kind-icon">Color</a></li>
-								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="index.html#iobservable" class="tsd-kind-icon">IObservable</a></li>
-								<li class="tsd-kind-type-alias"><a href="index.html#isubscription" class="tsd-kind-icon">ISubscription</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="index.html#conditioncallback" class="tsd-kind-icon">Condition<wbr>Callback</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="index.html#observercallback" class="tsd-kind-icon">Observer<wbr>Callback</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#rotation" class="tsd-kind-icon">Rotation</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#size" class="tsd-kind-icon">Size</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#vector2" class="tsd-kind-icon">Vector2</a></li>
@@ -113,59 +119,68 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
-					<a name="iobservable" class="tsd-anchor"></a>
-					<h3>IObservable</h3>
-					<div class="tsd-signature tsd-kind-icon">IObservable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<a name="conditioncallback" class="tsd-anchor"></a>
+					<h3>Condition<wbr>Callback</h3>
+					<div class="tsd-signature tsd-kind-icon">Condition<wbr>Callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A callback that describes a condition of an <a href="interfaces/iobservable.html">IObservable</a> to wait for.
+							Returning true will resolve the promise returned by <a href="interfaces/iobservable.html#waituntil">IObservable.waitUntil</a></p>
+						</div>
+						<p>The functional style version of the <a href="interfaces/icondition.html">ICondition</a></p>
+					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>subscribe<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></h5>
-								<ul class="tsd-parameters">
-									<li class="tsd-parameter-siganture">
-										<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
-											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="index.html#isubscription" class="tsd-signature-type">ISubscription</a></li>
-										</ul>
-										<ul class="tsd-descriptions">
-											<li class="tsd-description">
-												<h4 class="tsd-parameters-title">Parameters</h4>
-												<ul class="tsd-parameters">
-													<li>
-														<h5>data: <span class="tsd-signature-type">T</span></h5>
-													</li>
-												</ul>
-												<h4 class="tsd-returns-title">Returns <a href="index.html#isubscription" class="tsd-signature-type">ISubscription</a></h4>
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DataT</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>data: <span class="tsd-signature-type">DataT</span></h5>
 											</li>
 										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 									</li>
 								</ul>
 							</li>
 						</ul>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias">
-					<a name="isubscription" class="tsd-anchor"></a>
-					<h3>ISubscription</h3>
-					<div class="tsd-signature tsd-kind-icon">ISubscription<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="observercallback" class="tsd-anchor"></a>
+					<h3>Observer<wbr>Callback</h3>
+					<div class="tsd-signature tsd-kind-icon">Observer<wbr>Callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A callback that can be subscribed to changes of an <a href="interfaces/iobservable.html">IObservable</a></p>
+						</div>
+						<p>The functional style version of the <a href="interfaces/iobserver.html">IObserver</a></p>
+					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>cancel<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></h5>
-								<ul class="tsd-parameters">
-									<li class="tsd-parameter-siganture">
-										<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
-											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-										</ul>
-										<ul class="tsd-descriptions">
-											<li class="tsd-description">
-												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DataT</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>data: <span class="tsd-signature-type">DataT</span></h5>
 											</li>
 										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 									</li>
 								</ul>
 							</li>
@@ -663,11 +678,11 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 									<p>This event fires when the input pointer hovers onto or out of a mattertag disc.</p>
 								</div>
 								<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.Mattertag.Event.HOVER,
-  function (sid, hovering) {
+  function (tagSid, hovering) {
     <span class="hljs-keyword">if</span> (hovering) {
-      console.<span class="hljs-built_in">log</span>('Begin Hovering <span class="hljs-keyword">on</span>', sid);
+      console.<span class="hljs-built_in">log</span>('Begin Hovering <span class="hljs-keyword">on</span>', tagSid);
     } <span class="hljs-keyword">else</span> {
-      console.<span class="hljs-built_in">log</span>('End Hovering <span class="hljs-keyword">on</span>', sid);
+      console.<span class="hljs-built_in">log</span>('End Hovering <span class="hljs-keyword">on</span>', tagSid);
     }
   }
 );</code></pre>
@@ -682,14 +697,14 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, hovering<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>tagSid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, hovering<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>sid: <span class="tsd-signature-type">string</span></h5>
+															<h5>tagSid: <span class="tsd-signature-type">string</span></h5>
 														</li>
 														<li>
 															<h5>hovering: <span class="tsd-signature-type">boolean</span></h5>
@@ -712,8 +727,8 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 									<p>This event fires when the input pointer clicks a Mattertag disc.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Mattertag.Event.CLICK,
-  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">sid</span>) </span>{
-    <span class="hljs-built_in">console</span>.log(sid + <span class="hljs-string">' was selected'</span>);
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">tagSid</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(tagSid + <span class="hljs-string">' was selected'</span>);
   }
 );</code></pre>
 							</div>
@@ -727,14 +742,14 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>tagSid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>sid: <span class="tsd-signature-type">string</span></h5>
+															<h5>tagSid: <span class="tsd-signature-type">string</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -754,8 +769,8 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 									<p>This event fires when a mattertag link is opened.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Mattertag.Event.LINK_OPEN,
-  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">sid, url</span>) </span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'The link '</span> + <span class="hljs-built_in">url</span> + <span class="hljs-string">' opened for sid '</span> + sid);
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">tagSid, url</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'The link '</span> + <span class="hljs-built_in">url</span> + <span class="hljs-string">' opened for sid '</span> + tagSid);
   }
 );</code></pre>
 							</div>
@@ -769,14 +784,14 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>tagSid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>sid: <span class="tsd-signature-type">string</span></h5>
+															<h5>tagSid: <span class="tsd-signature-type">string</span></h5>
 														</li>
 														<li>
 															<h5>url: <span class="tsd-signature-type">string</span></h5>
@@ -800,8 +815,8 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Sweep.Event.ENTER,
   <span class="hljs-function"><span class="hljs-keyword">function</span></span>(oldSweep, <span class="hljs-keyword">new</span><span class="hljs-type">Sweep</span>){
-    console.log(<span class="hljs-string">'Leaving pano '</span> + oldSweep);
-    console.log(<span class="hljs-string">'Entering pano '</span> + <span class="hljs-keyword">new</span><span class="hljs-type">Sweep</span>);
+    console.log(<span class="hljs-string">'Leaving sweep '</span> + oldSweep);
+    console.log(<span class="hljs-string">'Entering sweep '</span> + <span class="hljs-keyword">new</span><span class="hljs-type">Sweep</span>);
   }
 );</code></pre>
 							</div>
@@ -844,11 +859,12 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 								<div class="lead">
 									<p>This event fires when exiting a sweep.</p>
 								</div>
-								<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.Sweep.Event.<span class="hljs-keyword">EXIT</span>,
-  <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(sweep)</span><span class="hljs-comment">{
-    console.log('Leaving pano ' + sweep);
-  }</span>
-);</span></code></pre>
+								<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.Sweep.Event.EXIT,
+  function(<span class="hljs-keyword">from</span>Sweep, <span class="hljs-keyword">to</span>Sweep){
+    console.<span class="hljs-keyword">log</span>('Leaving sweep ' + <span class="hljs-keyword">from</span>Sweep);
+    console.<span class="hljs-keyword">log</span>('Transitioning <span class="hljs-keyword">to</span> sweep ' + <span class="hljs-keyword">to</span>Sweep);
+  }
+);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -860,14 +876,23 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>sweep<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>fromSweep<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, toSweep<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>sweep: <span class="tsd-signature-type">string</span></h5>
+															<h5>fromSweep: <span class="tsd-signature-type">string</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>The exit sweep.</p>
+															</div>
+														</li>
+														<li>
+															<h5>toSweep: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>The destination sweep. This value is only valid for inside mode. It is undefined for floorplan and dollhouse mode.</p>
+															</div>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1133,17 +1158,35 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 					<li class=" tsd-kind-enum">
 						<a href="enums/event.html" class="tsd-kind-icon">Event</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-is-not-exported">
+					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-not-exported">
 						<a href="interfaces/dictionary.html" class="tsd-kind-icon">Dictionary</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/icondition.html" class="tsd-kind-icon">ICondition</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/imapobserver.html" class="tsd-kind-icon">IMap<wbr>Observer</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/iobservable.html" class="tsd-kind-icon">IObservable</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/iobservablemap.html" class="tsd-kind-icon">IObservable<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/iobserver.html" class="tsd-kind-icon">IObserver</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/isubscription.html" class="tsd-kind-icon">ISubscription</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="index.html#color" class="tsd-kind-icon">Color</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
-						<a href="index.html#iobservable" class="tsd-kind-icon">IObservable</a>
+						<a href="index.html#conditioncallback" class="tsd-kind-icon">Condition<wbr>Callback</a>
 					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="index.html#isubscription" class="tsd-kind-icon">ISubscription</a>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="index.html#observercallback" class="tsd-kind-icon">Observer<wbr>Callback</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="index.html#rotation" class="tsd-kind-icon">Rotation</a>
