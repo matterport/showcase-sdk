@@ -100,13 +100,13 @@
   
   
   <url>
-    <loc>https://matterport.github.io/docs/index.html</loc>
+    <loc>https://matterport.github.io/docs/reference/index.html</loc>
   </url>
   
   
   
   <url>
-    <loc>https://matterport.github.io/docs/reference/index.html</loc>
+    <loc>https://matterport.github.io/docs/index.html</loc>
   </url>
   
   
@@ -763,6 +763,12 @@
   
   <url>
     <loc>https://matterport.github.io/sdkbundle_tutorials_models.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdkbundle_tutorials_setting_up_embedly.html</loc>
   </url>
   
   

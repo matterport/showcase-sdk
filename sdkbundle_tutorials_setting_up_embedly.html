@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Transform Controls | Matterport Developers</title>
+<title>Setting up Embedly | Matterport Developers</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -138,7 +138,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Transform Controls page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Setting up Embedly page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -156,7 +156,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Transform Controls">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Setting up Embedly">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -252,7 +252,7 @@
           
           
           
-          <li><a title="Setting up Embedly" href="sdkbundle_tutorials_setting_up_embedly.html">Setting up Embedly</a></li>
+          <li class="active"><a title="Setting up Embedly" href="sdkbundle_tutorials_setting_up_embedly.html">Setting up Embedly</a></li>
           
           
           
@@ -398,7 +398,7 @@
           
           
           
-          <li class="active"><a title="Transform Controls" href="sdkbundle_components_transformcontrols.html">Transform Controls</a></li>
+          <li><a title="Transform Controls" href="sdkbundle_components_transformcontrols.html">Transform Controls</a></li>
           
           
           
@@ -439,7 +439,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Transform Controls</h1>
+   <h1 class="post-title-main">Setting up Embedly</h1>
 </div>
 
 
@@ -449,83 +449,63 @@
    
 
     
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
 
 
     
 
-   <p><strong>Type</strong>: mp.transformControls</p>
+   <p>By default, the SDK bundle uses Matterport’s embedly account which is only enabled for the Matterport and localhost domains. In order to use media mattertags on your own site, you will need to obtain an embedly key configured for your site from <a href="https://embed.ly">Embedly</a>.</p>
 
-<p><strong>Inputs</strong></p>
+<p>To configure your application, you will need to do the following:</p>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Property</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><strong>visible</strong>: boolean<br />default <code class="highlighter-rouge">true</code></td>
-      <td>If true the transform control is visible in the scene.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>mode</strong>: string<br />default <code class="highlighter-rouge">'translate'</code></td>
-      <td>The transformation mode. Valid values are ‘translate’, ‘rotate’ and ‘scale’.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>selection</strong>: Object3D or null <br />default <code class="highlighter-rouge">null</code></td>
-      <td>The three.js object being controlled by this component.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>showX</strong>: boolean<br />default <code class="highlighter-rouge">true</code></td>
-      <td>X axis control visibility.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>showY</strong>: boolean<br />default <code class="highlighter-rouge">true</code></td>
-      <td>Y axis control visibility.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>showZ</strong>: boolean<br />default <code class="highlighter-rouge">true</code></td>
-      <td>Z axis control visibility.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>size</strong>: number<br />default <code class="highlighter-rouge">1</code></td>
-      <td>The size of the transform control.</td>
-    </tr>
-  </tbody>
-</table>
+<ol>
+  <li>
+    <p>Find <code class="highlighter-rouge">showcase.html</code> file at the root of the bundle zip file.</p>
+  </li>
+  <li>
+    <p>Find the application config object in <code class="highlighter-rouge">showcase.html</code>. It should look like this,</p>
+  </li>
+</ol>
 
-<p><strong>Usage</strong></p>
-
-<p>This component wraps the three.js <a href="https://threejs.org/docs/#examples/en/controls/TransformControls">transform controls component</a><br />
-It can be used to change the position, orientation, or scale of a scene node.</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create a scene node with a model component.</span>
-<span class="c1">// This node's transform will be changed by the transform control.</span>
-<span class="kd">const</span> <span class="nx">modelNode</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createNode</span><span class="p">();</span>
-<span class="nx">modelNode</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'mp.gltfLoader'</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s2">"http://test.com/bunny.gltf"</span><span class="p">,</span>
-<span class="p">});</span>
-
-<span class="c1">// Create a scene node with a transform control component.</span>
-<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createNode</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">myControl</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'mp.transformControls'</span><span class="p">);</span>
-<span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
-
-<span class="c1">// Make the transform control visible so that the user can manipulate the control selection.</span>
-<span class="nx">myControl</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-
-<span class="c1">// Attach the model to the transform control</span>
-<span class="nx">myControl</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">selection</span> <span class="o">=</span> <span class="nx">modelNode</span><span class="p">;</span>
-
-<span class="c1">// set 'translate' mode to position the selection.</span>
-<span class="nx">myControl</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">mode</span> <span class="o">=</span> <span class="s1">'translate'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">var</span> <span class="nx">detailObject</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">config</span><span class="p">:</span> <span class="p">{</span><span class="s2">"apiHost"</span><span class="p">:</span><span class="s2">"https://my.matterport.com"</span><span class="p">,</span><span class="s2">"pointerPreventDefault"</span><span class="p">:</span><span class="kc">false</span><span class="p">}</span>
+    <span class="p">};</span>
 </code></pre></div></div>
 
-<p align="center">
-  <img src="images/sdkbundle-components-transform-controls.png" style="width: 100%; border: solid; border-width: 1px;" /><br />
-</p>
+<ol>
+  <li>Append <code class="highlighter-rouge">"embedlyKey": "YOUR_EMBEDLY_KEY"</code> to the config object. Replace <code class="highlighter-rouge">YOUR_EMBEDLY_KEY</code> with your actual key. The result should look like the following:</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">var</span> <span class="nx">detailObject</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">config</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"apiHost"</span><span class="p">:</span> <span class="s2">"https://my.matterport.com"</span><span class="p">,</span>
+        <span class="s2">"pointerPreventDefault"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s2">"embedlyKey"</span><span class="p">:</span> <span class="s2">"YOUR_EMBEDLY_KEY"</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+</code></pre></div></div>
 
 
     <div class="tags">

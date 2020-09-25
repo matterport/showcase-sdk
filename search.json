@@ -141,7 +141,7 @@
 "title": "Redirecting to SDK Home",
 "tags": "",
 "keywords": "",
-"url": "docsindex.html",
+"url": "docsreferenceindex.html",
 "summary": ""
 }
 ,
@@ -152,7 +152,7 @@
 "title": "Redirecting to SDK Home",
 "tags": "",
 "keywords": "",
-"url": "docsreferenceindex.html",
+"url": "docsindex.html",
 "summary": ""
 }
 ,
@@ -1354,6 +1354,17 @@
 "tags": "",
 "keywords": "",
 "url": "sdkbundle_tutorials_models.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Setting up Embedly",
+"tags": "",
+"keywords": "",
+"url": "sdkbundle_tutorials_setting_up_embedly.html",
 "summary": ""
 }
 ,
