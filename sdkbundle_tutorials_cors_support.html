@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Virtual Staging | Matterport Developers</title>
+<title>CORS Support | Matterport Developers</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -138,7 +138,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Virtual Staging page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the CORS Support page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -156,7 +156,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Virtual Staging">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="CORS Support">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -282,7 +282,7 @@
           
           
           
-          <li class="active"><a title="Virtual Staging" href="sdkbundle_virtual_staging.html">Virtual Staging</a></li>
+          <li><a title="Virtual Staging" href="sdkbundle_virtual_staging.html">Virtual Staging</a></li>
           
           
           
@@ -453,7 +453,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Virtual Staging</h1>
+   <h1 class="post-title-main">CORS Support</h1>
 </div>
 
 
@@ -463,14 +463,51 @@
    
 
     
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
 
 
     
 
-   <p>Source code: <a href="https://github.com/matterport/showcase-sdk-examples">Showcase SDK Examples</a></p>
+   <p>When you are ready to deploy your application to your domain, you will need to provide your sdk key as a url parameter.</p>
 
-<iframe class="sdkbundle-iframe" src="https://static.matterport.com/showcase-sdk/examples/current/vs-app/index.html" allowfullscreen="allowfullscreen" frameborder="0" />
+<ol>
+  <li>
+    <p>Find the showcase bundle iframe path in your application.
+<br />The path should contain the following string:<br />
+<code class="highlighter-rouge">./bundle/showcase.html</code>,<br /><br />
+Examples (search for “bundle/showcase.html”):<br />
+<a href="https://github.com/matterport/showcase-sdk-examples/blob/master/packages/easter/src/react-components/MainView.tsx">packages/easter/src/react-components/MainView.tsx</a><br />
+<a href="https://github.com/matterport/showcase-sdk-examples/blob/master/packages/inspector/src/components/Main.tsx">packages/inspector/src/components/Main.tsx</a><br />
+<a href="https://github.com/matterport/showcase-sdk-examples/blob/master/packages/vs-app/src/components/Main.tsx">packages/vs-app/src/components/Main.tsx</a></p>
+  </li>
+  <li>
+    <p>Append your sdk key as a url parameter.</p>
 
+    <p><code class="highlighter-rouge">./bundle/showcase.html?applicationKey=[PUT YOUR SDK KEY  HERE]</code></p>
+  </li>
+</ol>
 
 
     <div class="tags">

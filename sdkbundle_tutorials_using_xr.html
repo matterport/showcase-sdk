@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Virtual Staging | Matterport Developers</title>
+<title>Using XR | Matterport Developers</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -138,7 +138,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Virtual Staging page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Using XR page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -156,7 +156,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Virtual Staging">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Using XR">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -259,7 +259,7 @@
           
           
           
-          <li><a title="Using xr" href="sdkbundle_tutorials_using_xr.html">Using xr</a></li>
+          <li class="active"><a title="Using xr" href="sdkbundle_tutorials_using_xr.html">Using xr</a></li>
           
           
           
@@ -282,7 +282,7 @@
           
           
           
-          <li class="active"><a title="Virtual Staging" href="sdkbundle_virtual_staging.html">Virtual Staging</a></li>
+          <li><a title="Virtual Staging" href="sdkbundle_virtual_staging.html">Virtual Staging</a></li>
           
           
           
@@ -453,7 +453,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Virtual Staging</h1>
+   <h1 class="post-title-main">Using XR</h1>
 </div>
 
 
@@ -463,14 +463,54 @@
    
 
     
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
 
 
     
 
-   <p>Source code: <a href="https://github.com/matterport/showcase-sdk-examples">Showcase SDK Examples</a></p>
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> xr mode + sdk is experimental at this time and not guaranteed to work with all sdk functionality.</div>
 
-<iframe class="sdkbundle-iframe" src="https://static.matterport.com/showcase-sdk/examples/current/vs-app/index.html" allowfullscreen="allowfullscreen" frameborder="0" />
+<p>You will need to do the following to try xr immersive mode with your application.</p>
 
+<ol>
+  <li>Use https. The examples use webpack dev-server which supports serving https.
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="c1">//...</span>
+ <span class="na">devServer</span><span class="p">:</span> <span class="p">{</span>
+   <span class="na">https</span><span class="p">:</span> <span class="kc">true</span>
+ <span class="p">}</span>
+  <span class="p">};</span>
+</code></pre></div>    </div>
+    <p>See <a href="https://webpack.js.org/configuration/dev-server/">Webpack dev-server</a> for more details.</p>
+  </li>
+  <li>
+    <p>Due to CORS restrictions, you can only connect via localhost or 127.0.0.1. You will need to connect your webxr device to your dev machine and enable port forwarding in the DevTools devices section of chrome.
+  See <a href="https://developers.google.com/web/tools/chrome-devtools/remote-debugging/">Chrome Remote Debugging</a></p>
+  </li>
+  <li>Add <code class="highlighter-rouge">allow='xr-spatial-tracking'</code> to the iframe that loads the showcase.html file of the bundle.</li>
+</ol>
 
 
     <div class="tags">

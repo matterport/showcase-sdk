@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Virtual Staging | Matterport Developers</title>
+<title>XR (Limited Functionality) | Matterport Developers</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -138,7 +138,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Virtual Staging page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the XR (Limited Functionality) page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -156,7 +156,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Virtual Staging">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="XR (Limited Functionality)">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -282,7 +282,7 @@
           
           
           
-          <li class="active"><a title="Virtual Staging" href="sdkbundle_virtual_staging.html">Virtual Staging</a></li>
+          <li><a title="Virtual Staging" href="sdkbundle_virtual_staging.html">Virtual Staging</a></li>
           
           
           
@@ -426,7 +426,7 @@
           
           
           
-          <li><a title="XR" href="sdkbundle_components_xr.html">XR</a></li>
+          <li class="active"><a title="XR" href="sdkbundle_components_xr.html">XR</a></li>
           
           
           
@@ -453,7 +453,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Virtual Staging</h1>
+   <h1 class="post-title-main">XR (Limited Functionality)</h1>
 </div>
 
 
@@ -467,10 +467,57 @@
 
     
 
-   <p>Source code: <a href="https://github.com/matterport/showcase-sdk-examples">Showcase SDK Examples</a></p>
+   <p><strong>Type</strong>: “mp.xr”</p>
 
-<iframe class="sdkbundle-iframe" src="https://static.matterport.com/showcase-sdk/examples/current/vs-app/index.html" allowfullscreen="allowfullscreen" frameborder="0" />
+<p><strong>Inputs</strong></p>
 
+<p>None</p>
+
+<p><strong>Outputs</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>session</strong>: XRSession <br /><em>default</em> <code class="highlighter-rouge">null</code></td>
+      <td>Set to a valid session when the user has entered webxr immersive mode.<br />When not in immersive mode, this session is null.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Usage</strong></p>
+
+<p>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/XRSession">XRSession</a> for the current specification.</p>
+
+<p>Binding to the mp.xr component from another component.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Assumes MyComponent has a session input and handled</span>
+<span class="c1">// onInputsChanged()</span>
+
+<span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">xr</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'mp.xr'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">my</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'myComponent'</span><span class="p">);</span>
+<span class="nx">my</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s1">'session'</span><span class="p">,</span> <span class="nx">xr</span><span class="p">,</span> <span class="s1">'session'</span><span class="p">);</span>
+<span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Observing the mp.xr session from outside the component system.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">xr</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'mp.xr'</span><span class="p">);</span>
+<span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+
+<span class="c1">// The outputs object is an ObservableProxy which supports observing property changes.</span>
+<span class="c1">// See @mp/core/src/observable/ObservableProxy.ts in the sdk examples repo.</span>
+<span class="nx">xr</span><span class="p">.</span><span class="nx">onPropertyChanged</span><span class="p">(</span><span class="s1">'session'</span><span class="p">,</span> <span class="p">(</span><span class="nx">session</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`session changed:`</span><span class="p">,</span> <span class="nx">session</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div></div>
 
 
     <div class="tags">

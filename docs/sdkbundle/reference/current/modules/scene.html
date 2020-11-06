@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Scene | @mpSdk 3.1.6.1-15-ged398ca2e</title>
+	<title>Scene | @mpSdk 3.1.10.3-29-g34a6b3134</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -43,6 +43,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/scene.icomponent.html" class="tsd-kind-icon">IComponent</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/scene.icomponentcontext.html" class="tsd-kind-icon">IComponent<wbr>Context</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/scene.icomponentdesc.html" class="tsd-kind-icon">IComponent<wbr>Desc</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter"><a href="../interfaces/scene.icomponenteventspy.html" class="tsd-kind-icon">IComponent<wbr>Event<wbr>Spy</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/scene.inode.html" class="tsd-kind-icon">INode</a></li>
 							</ul>
@@ -59,8 +60,10 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="scene.html#createnode" class="tsd-kind-icon">create<wbr>Node</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="scene.html#createnodes" class="tsd-kind-icon">create<wbr>Nodes</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="scene.html#deserialize" class="tsd-kind-icon">deserialize</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="scene.html#register" class="tsd-kind-icon">register</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="scene.html#registercomponents" class="tsd-kind-icon">register<wbr>Components</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="scene.html#serialize" class="tsd-kind-icon">serialize</a></li>
 							</ul>
 						</section>
@@ -149,6 +152,35 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createnodes" class="tsd-anchor"></a>
+					<h3>create<wbr>Nodes</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Nodes<span class="tsd-signature-symbol">(</span>count<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates an array of scene nodes.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>count: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The number of scene nodes to create.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A promise that resolves with the array of scene nodes.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="deserialize" class="tsd-anchor"></a>
 					<h3>deserialize</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
@@ -221,6 +253,52 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="registercomponents" class="tsd-anchor"></a>
+					<h3>register<wbr>Components</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">register<wbr>Components<span class="tsd-signature-symbol">(</span>components<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.icomponentdesc.html" class="tsd-signature-type">Scene.IComponentDesc</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Register an array of component factories all at once.</p>
+								</div>
+								<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myComponent1Factory</span><span class="hljs-params">()</span> </span>{
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyComponent1();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myComponent2Factory</span><span class="hljs-params">()</span> </span>{
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyComponent2();
+}
+
+sdk.Scene.registerComponents([
+  {
+    name: <span class="hljs-string">'myComponent1'</span>,
+    factory: myComponent1Factory,
+  },
+  {
+    name: <span class="hljs-string">'myComponent2'</span>,
+    factory: myComponent2Factory,
+  },
+]);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>components: <a href="../interfaces/scene.icomponentdesc.html" class="tsd-signature-type">Scene.IComponentDesc</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An array of <a href="../interfaces/scene.icomponentdesc.html">IComponentDesc</a></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -319,6 +397,9 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/scene.icomponentcontext.html" class="tsd-kind-icon">IComponent<wbr>Context</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/scene.icomponentdesc.html" class="tsd-kind-icon">IComponent<wbr>Desc</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="../interfaces/scene.icomponenteventspy.html" class="tsd-kind-icon">IComponent<wbr>Event<wbr>Spy</a>
 					</li>
@@ -338,10 +419,16 @@
 						<a href="scene.html#createnode" class="tsd-kind-icon">create<wbr>Node</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="scene.html#createnodes" class="tsd-kind-icon">create<wbr>Nodes</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="scene.html#deserialize" class="tsd-kind-icon">deserialize</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="scene.html#register" class="tsd-kind-icon">register</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="scene.html#registercomponents" class="tsd-kind-icon">register<wbr>Components</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="scene.html#serialize" class="tsd-kind-icon">serialize</a>

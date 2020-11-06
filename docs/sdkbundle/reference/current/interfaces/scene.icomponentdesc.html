@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IComponentContext | @mpSdk 3.1.10.3-29-g34a6b3134</title>
+	<title>IComponentDesc | @mpSdk 3.1.10.3-29-g34a6b3134</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -20,38 +20,21 @@
 					<a href="../modules/scene.html">Scene</a>
 				</li>
 				<li>
-					<a href="scene.icomponentcontext.html">IComponentContext</a>
+					<a href="scene.icomponentdesc.html">IComponentDesc</a>
 				</li>
 			</ul>
-			<h1>IComponentContext Interface</h1>
+			<h1>IComponentDesc Interface</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p><strong>Component Context</strong><br>
-							The context object contains the three.js module and the main aspects of the rendering engine.<br>
-						The camera, scene, or renderer may will likely be replaced in the future with an sdk module.</p>
-					</div>
-					<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Cylinder</span></span>() {
-   <span class="hljs-built_in">this</span>.onInit = <span class="hljs-function"><span class="hljs-keyword">function</span></span>() {
-     <span class="hljs-keyword">var</span> THREE = <span class="hljs-built_in">this</span>.context.three;
-     <span class="hljs-keyword">var</span> geometry = <span class="hljs-keyword">new</span> <span class="hljs-type">THREE</span>.CylinderGeometry( <span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">20</span>, <span class="hljs-number">32</span> );
-     <span class="hljs-keyword">var</span> material = <span class="hljs-keyword">new</span> <span class="hljs-type">THREE</span>.MeshBasicMaterial( {color: <span class="hljs-type">0xffff00</span>} );
-     <span class="hljs-keyword">var</span> cylinder = <span class="hljs-keyword">new</span> <span class="hljs-type">THREE</span>.Mesh( geometry, material );
-   };
-}</code></pre>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IComponentContext</span>
+						<span class="target">IComponentDesc</span>
 					</li>
 				</ul>
 			</section>
@@ -63,10 +46,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.icomponentcontext.html#camera" class="tsd-kind-icon">camera</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.icomponentcontext.html#renderer" class="tsd-kind-icon">renderer</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.icomponentcontext.html#scene" class="tsd-kind-icon">scene</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.icomponentcontext.html#three" class="tsd-kind-icon">three</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.icomponentdesc.html#factory" class="tsd-kind-icon">factory</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.icomponentdesc.html#name" class="tsd-kind-icon">name</a></li>
 							</ul>
 						</section>
 					</div>
@@ -75,55 +56,33 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="camera" class="tsd-anchor"></a>
-					<h3>camera</h3>
-					<div class="tsd-signature tsd-kind-icon">camera<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Camera</span></div>
+					<a name="factory" class="tsd-anchor"></a>
+					<h3>factory</h3>
+					<div class="tsd-signature tsd-kind-icon">factory<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The main camera. It is read-only.<br>
-							See <a href="https://threejs.org/docs/#api/en/cameras/Camera" target="_blank">https://threejs.org/docs/#api/en/cameras/Camera</a></p>
-						</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="renderer" class="tsd-anchor"></a>
-					<h3>renderer</h3>
-					<div class="tsd-signature tsd-kind-icon">renderer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WebGLRenderer</span></div>
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The showcase three.js renderer.<br>
-							See <a href="https://threejs.org/docs/#api/en/renderers/WebGLRenderer" target="_blank">https://threejs.org/docs/#api/en/renderers/WebGLRenderer</a></p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="scene" class="tsd-anchor"></a>
-					<h3>scene</h3>
-					<div class="tsd-signature tsd-kind-icon">scene<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Scene</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The showcase scene.<br>
-							See <a href="https://threejs.org/docs/#api/en/scenes/Scene" target="_blank">https://threejs.org/docs/#api/en/scenes/Scene</a></p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="three" class="tsd-anchor"></a>
-					<h3>three</h3>
-					<div class="tsd-signature tsd-kind-icon">three<span class="tsd-signature-symbol">:</span> <a href="../modules/scene.html#three" class="tsd-signature-type">Scene.THREE</a></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The r110 three.js module. It does not include examples.</p>
-						</div>
-					</div>
 				</section>
 			</section>
 		</div>
@@ -188,30 +147,24 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="scene.icomponent.html" class="tsd-kind-icon">IComponent</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="scene.icomponentcontext.html" class="tsd-kind-icon">IComponent<wbr>Context</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="scene.icomponentcontext.html" class="tsd-kind-icon">IComponent<wbr>Context</a>
+						<a href="scene.icomponentdesc.html" class="tsd-kind-icon">IComponent<wbr>Desc</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="scene.icomponentcontext.html#camera" class="tsd-kind-icon">camera</a>
+								<a href="scene.icomponentdesc.html#factory" class="tsd-kind-icon">factory</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="scene.icomponentcontext.html#renderer" class="tsd-kind-icon">renderer</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="scene.icomponentcontext.html#scene" class="tsd-kind-icon">scene</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="scene.icomponentcontext.html#three" class="tsd-kind-icon">three</a>
+								<a href="scene.icomponentdesc.html#name" class="tsd-kind-icon">name</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="scene.icomponentdesc.html" class="tsd-kind-icon">IComponent<wbr>Desc</a>
-					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="scene.icomponenteventspy.html" class="tsd-kind-icon">IComponent<wbr>Event<wbr>Spy</a>
 					</li>
