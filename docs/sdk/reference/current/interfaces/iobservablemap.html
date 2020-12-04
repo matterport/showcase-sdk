@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IObservableMap | @mpSdk 3.1.6.0-48-gaf8c817ad</title>
+	<title>IObservableMap | @mpSdk 3.1.16.0-33-ga89c329cc</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -32,6 +32,16 @@
 					<div class="lead">
 						<p>A map that can have its changes observed via subscribing an <a href="imapobserver.html">IMapObserver</a></p>
 					</div>
+					<p>For each observer subscribed to this <code>IObservableMap</code>:</p>
+					<ul>
+						<li><code>observer.onAdded</code> will be called when an item is added to the collection</li>
+						<li><code>observer.onRemoved</code> will be called when an item is removed from the collection</li>
+						<li><code>observer.onUpdated</code> will be called when an item has some of its properties changed</li>
+						<li><code>observer.onCollectionUpdated</code> will be called when some set of the above events have occured (item added/removed/updated)</li>
+					</ul>
+					<p>When first subscribing, the observers&#39; <code>onAdded</code> will be called for each item in the collection, and then again as items are added.
+						Alternatively, the <code>onCollectionUpdated</code> will always give an up-to-date view of the collection.
+					<code>onCollectionUpdated</code>, on first subscription, will be called once with the entire collection, and then again as changes to the collection  occur.</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-type-parameters">

@@ -85,12 +85,6 @@
   
   
   
-  <url>
-    <loc>https://matterport.github.io/sdkbundle_components_xr.html</loc>
-  </url>
-  
-  
-  
   
   
   <url>
@@ -106,13 +100,13 @@
   
   
   <url>
-    <loc>https://matterport.github.io/docs/index.html</loc>
+    <loc>https://matterport.github.io/docs/reference/index.html</loc>
   </url>
   
   
   
   <url>
-    <loc>https://matterport.github.io/docs/reference/index.html</loc>
+    <loc>https://matterport.github.io/docs/index.html</loc>
   </url>
   
   
@@ -768,12 +762,6 @@
   
   
   <url>
-    <loc>https://matterport.github.io/sdkbundle_tutorials_cors_support.html</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://matterport.github.io/sdkbundle_tutorials_models.html</loc>
   </url>
   
@@ -787,12 +775,6 @@
   
   <url>
     <loc>https://matterport.github.io/sdkbundle_tutorials_setup.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://matterport.github.io/sdkbundle_tutorials_using_xr.html</loc>
   </url>
   
   

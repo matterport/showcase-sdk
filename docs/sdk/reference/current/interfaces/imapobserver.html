@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IMapObserver | @mpSdk 3.1.6.0-48-gaf8c817ad</title>
+	<title>IMapObserver | @mpSdk 3.1.16.0-33-ga89c329cc</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -64,6 +64,7 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="imapobserver.html#onadded" class="tsd-kind-icon">on<wbr>Added</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="imapobserver.html#oncollectionupdated" class="tsd-kind-icon">on<wbr>Collection<wbr>Updated</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="imapobserver.html#onremoved" class="tsd-kind-icon">on<wbr>Removed</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="imapobserver.html#onupdated" class="tsd-kind-icon">on<wbr>Updated</a></li>
 							</ul>
@@ -96,6 +97,32 @@
 								<li>
 									<h5>item: <span class="tsd-signature-type">ItemT</span></h5>
 								</li>
+								<li>
+									<h5>collection: <a href="dictionary.html" class="tsd-signature-type">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ItemT</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="oncollectionupdated" class="tsd-anchor"></a>
+					<h3>on<wbr>Collection<wbr>Updated</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Collection<wbr>Updated<span class="tsd-signature-symbol">(</span>collection<span class="tsd-signature-symbol">: </span><a href="dictionary.html" class="tsd-signature-type">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ItemT</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Called when a set of changes happens within the <code>collection</code>.
+									For example, this can be used to get the initial state of the collection instead of receiving individual <code>onAdded</code> calls for each item.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
 								<li>
 									<h5>collection: <a href="dictionary.html" class="tsd-signature-type">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ItemT</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
@@ -194,6 +221,9 @@
 						<ul>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="imapobserver.html#onadded" class="tsd-kind-icon">on<wbr>Added</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="imapobserver.html#oncollectionupdated" class="tsd-kind-icon">on<wbr>Collection<wbr>Updated</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="imapobserver.html#onremoved" class="tsd-kind-icon">on<wbr>Removed</a>
