@@ -113,6 +113,17 @@
 
 
 
+{
+"title": "XR (Limited Functionality)",
+"tags": "",
+"keywords": "",
+"url": "sdkbundle_components_xr.html",
+"summary": ""
+}
+,
+
+
+
 
 
 {
@@ -141,7 +152,7 @@
 "title": "Redirecting to SDK Home",
 "tags": "",
 "keywords": "",
-"url": "docsreferenceindex.html",
+"url": "docsindex.html",
 "summary": ""
 }
 ,
@@ -152,7 +163,7 @@
 "title": "Redirecting to SDK Home",
 "tags": "",
 "keywords": "",
-"url": "docsindex.html",
+"url": "docsreferenceindex.html",
 "summary": ""
 }
 ,
@@ -1350,6 +1361,17 @@
 
 
 {
+"title": "CORS Support",
+"tags": "",
+"keywords": "",
+"url": "sdkbundle_tutorials_cors_support.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Working With Models",
 "tags": "",
 "keywords": "",
@@ -1376,6 +1398,17 @@
 "tags": "",
 "keywords": "",
 "url": "sdkbundle_tutorials_setup.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Using XR",
+"tags": "",
+"keywords": "",
+"url": "sdkbundle_tutorials_using_xr.html",
 "summary": ""
 }
 ,
