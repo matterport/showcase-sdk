@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Mattertag | @mpSdk 3.1.10.3-29-g34a6b3134</title>
+	<title>Mattertag | @mpSdk 3.1.16.9-14-gdeed9da45</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,6 +59,12 @@
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#mattertagdata" class="tsd-kind-icon">Mattertag<wbr>Data</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#messengerfcnmapping" class="tsd-kind-icon">Messenger<wbr>Fcn<wbr>Mapping</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#preventableactions" class="tsd-kind-icon">Preventable<wbr>Actions</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="mattertag.html#data" class="tsd-kind-icon">data</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -184,10 +190,17 @@
 								<h5>description<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> floor<wbr>Id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								<h5>floor<wbr>Id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<dl class="tsd-comment-tags">
+										<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+										<dd><p>Use [[floorIndex]] instead</p>
+										</dd>
+									</dl>
+								</div>
 							</li>
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> icon<wbr>Id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								<h5>floor<wbr>Index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
@@ -205,6 +218,12 @@
 							</li>
 							<li class="tsd-parameter">
 								<h5>parsed<wbr>Description<span class="tsd-signature-symbol">: </span><a href="../interfaces/mattertag.tagdescriptionchunk.html" class="tsd-signature-type">Mattertag.TagDescriptionChunk</a><span class="tsd-signature-symbol">[]</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<dl class="tsd-comment-tags">
+										<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+										<dd></dd>
+									</dl>
+								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
@@ -266,6 +285,33 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="data" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> data</h3>
+					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservablemap.html" class="tsd-signature-type">IObservableMap</a><span class="tsd-signature-symbol">&lt;</span><a href="mattertag.html#mattertagdata" class="tsd-signature-type">Mattertag.MattertagData</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An observable collection of Mattertag data that can be subscribed to.</p>
+						</div>
+						<p>When first subscribing, the current set of Mattertag will call the observer&#39;s <code>onAdded</code> for each Mattertag as the data becomes available.</p>
+						<pre><code>showcase.Mattertag.data.subscribe({
+  onAdded: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Mattertag added to the collection'</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
+  },
+  onRemoved: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Mattertag removed from the collection'</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
+  },
+  onUpdated: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Mattertag updated in place in the collection'</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
+  }
+});</code></pre>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="add" class="tsd-anchor"></a>
@@ -307,7 +353,7 @@
 <span class="hljs-symbol">   g:</span> <span class="hljs-number">0.0</span>,
 <span class="hljs-symbol">   b:</span> <span class="hljs-number">1.0</span>,
  },
-<span class="hljs-symbol"> floorId:</span> <span class="hljs-number">0</span>, <span class="hljs-comment">// optional, if not specified the sdk will provide an estimate of the floor id for the anchor position provided.</span>
+<span class="hljs-symbol"> floorIndex:</span> <span class="hljs-number">0</span>, <span class="hljs-comment">// optional, if not specified the sdk will provide an estimate of the floor index for the anchor position provided.</span>
 }])</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -443,6 +489,8 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 									<h5>iconId: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The id of the icon to apply</p>
+										<p><strong>Errors</strong></p>
+										<p>Warns if the provided <code>iconSrc</code> is an .svg file which doesn&#39;t have a <code>&#39;width&#39;</code> or <code>&#39;height&#39;</code> attribute. Defaults to a resolution of 128x128 if neither exist.</p>
 									</div>
 								</li>
 							</ul>
@@ -524,7 +572,7 @@ mpSdk.Mattertag.editPosition(mattertagData[<span class="hljs-number">0</span>].s
 <span class="hljs-symbol">   y:</span> <span class="hljs-number">0.30</span>,
 <span class="hljs-symbol">   z:</span> <span class="hljs-number">0</span>,
  },
-<span class="hljs-symbol"> floorId:</span> <span class="hljs-number">2</span>,
+<span class="hljs-symbol"> floorIndex:</span> <span class="hljs-number">2</span>,
 });</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -571,6 +619,11 @@ mpSdk.Mattertag.editPosition(mattertagData[<span class="hljs-number">0</span>].s
   .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
     <span class="hljs-comment">// Mattertag data retrieval error.</span>
   });</code></pre>
+								<dl class="tsd-comment-tags">
+									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+									<dd><p>Use the observable <a href="mattertag.html#data">data</a> collection instead</p>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="mattertag.html#mattertagdata" class="tsd-signature-type">Mattertag.MattertagData</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -963,6 +1016,9 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="mattertag.html#preventableactions" class="tsd-kind-icon">Preventable<wbr>Actions</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="mattertag.html#data" class="tsd-kind-icon">data</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="mattertag.html#add" class="tsd-kind-icon">add</a>

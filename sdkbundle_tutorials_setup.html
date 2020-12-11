@@ -108,7 +108,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<img class="navbar-image" src="images/MP-logo_icon-RGB_black.svg"></img><span class="projectTitle"> Matterport Developers</span></a>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<img class="navbar-image" src="images/MP-logo_H_lock-RGB_white.svg"></img><span class="projectTitle"> </span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -173,13 +173,6 @@
 <div class='global-links-container'>
   <a
     class='global-link'
-    href="https://docs.google.com/forms/d/e/1FAIpQLScNHz-orqWs4diakLFUxqHAVv4g26jqno2uysVv9jHBt62R2Q/viewform"
-    target="_blank"
-    rel="noopener"
-  >Request a Key
-  </a>
-  <a
-    class='global-link'
     href="https://matterport.com/legal/sdk-api-agreement"
     target="_blank"
     rel="noopener"
@@ -198,7 +191,7 @@
                 
 
 <ul id="mysidebar" class="nav">
-  <li class="sidebarTitle">SDK Bundle <span class="label label-primary">Beta</span> </li>
+  <li class="sidebarTitle">SDK Bundle </li>
   
   
   
@@ -509,11 +502,37 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="download-and-extract-the-latest-bundle-sdk">Download and extract the latest Bundle SDK</h2>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> curl https://static.matterport.com/showcase-sdk/bundle/3.1.10.3-30-g034a60845/showcase-bundle.zip <span class="nt">-o</span> bundle.zip
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> curl https://static.matterport.com/showcase-sdk/bundle/3.1.16.9-17-gacf9fb85e/showcase-bundle.zip <span class="nt">-o</span> bundle.zip
 <span class="o">&gt;</span> unzip bundle.zip <span class="nt">-d</span> ./bundle
 </code></pre></div></div>
 
 <p>If you don’t have curl, you download the file from your browser and expand it manually in the showcase-sdk-tutorial directory.</p>
+
+<h2 id="set-your-application-key">Set your application key</h2>
+
+<p>You will need to set the application key in two places.</p>
+
+<ul>
+  <li>The function call to connect().<br />Source <a href="https://github.com/matterport/showcase-sdk-tutorial/blob/master/src/index.ts">https://github.com/matterport/showcase-sdk-tutorial/blob/master/src/index.ts</a></li>
+</ul>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">sdk</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcase</span><span class="p">,</span> <span class="s1">'PUT_APPLICATION_KEY_HERE'</span><span class="p">,</span> <span class="s1">'3.5'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>The bundle iframe.<br />Source <a href="https://github.com/matterport/showcase-sdk-tutorial/blob/master/index.html">https://github.com/matterport/showcase-sdk-tutorial/blob/master/index.html</a></li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span>
+  <span class="na">id=</span><span class="s">"showcase"</span>
+  <span class="na">src=</span><span class="s">"/bundle/showcase.html?m=22Ub5eknCVx&amp;play=1&amp;qs=1&amp;log=0&amp;applicationKey=PUT_APPLICATION_KEY_HERE"</span>
+  <span class="na">width=</span><span class="s">"800px"</span>
+  <span class="na">height=</span><span class="s">"600px"</span>
+  <span class="na">frameborder=</span><span class="s">”0”</span>
+  <span class="na">allow=</span><span class="s">"xr-spatial-tracking"</span>
+  <span class="na">allowfullscreen</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/iframe&gt;</span>
+</code></pre></div></div>
 
 <h2 id="start-the-development-environment">Start the development environment</h2>
 
@@ -544,7 +563,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Matterport, Inc. All rights reserved. <br />
- Site last generated: Dec 6, 2020 <br />
+ Site last generated: Dec 11, 2020 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

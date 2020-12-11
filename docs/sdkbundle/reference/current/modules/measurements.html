@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Measurements | @mpSdk 3.1.10.3-29-g34a6b3134</title>
+	<title>Measurements | @mpSdk 3.1.16.9-14-gdeed9da45</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -148,14 +148,17 @@
 							<p>An observable collection of measurement mode data that can be subscribed to.</p>
 						</div>
 						<pre><code>showcase.Measurements.data.subscribe({
-  onAdded: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'item added to the collection'</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
+  onAdded: <span class="hljs-keyword">function</span> (index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>) {
+    console.log(<span class="hljs-string">'item added to the collection'</span>, index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>);
   },
-  onRemoved: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'item removed from the collection'</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
+  onRemoved: <span class="hljs-keyword">function</span> (index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>) {
+    console.log(<span class="hljs-string">'item removed from the collection'</span>, index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>);
   },
-  onUpdated: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'item updated in place in the collection'</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
+  onUpdated: <span class="hljs-keyword">function</span> (index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>) {
+    console.log(<span class="hljs-string">'item updated in place in the collection'</span>, index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>);
+  },
+  onCollectionUpdated: <span class="hljs-keyword">function</span> <span class="hljs-built_in">(collection</span>) {
+    console.log(<span class="hljs-string">'the entire up-to-date collection'</span>,<span class="hljs-built_in"> collection</span>);
   }
 });</code></pre>
 					</div>

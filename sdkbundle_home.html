@@ -108,7 +108,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<img class="navbar-image" src="images/MP-logo_icon-RGB_black.svg"></img><span class="projectTitle"> Matterport Developers</span></a>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<img class="navbar-image" src="images/MP-logo_H_lock-RGB_white.svg"></img><span class="projectTitle"> </span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -173,13 +173,6 @@
 <div class='global-links-container'>
   <a
     class='global-link'
-    href="https://docs.google.com/forms/d/e/1FAIpQLScNHz-orqWs4diakLFUxqHAVv4g26jqno2uysVv9jHBt62R2Q/viewform"
-    target="_blank"
-    rel="noopener"
-  >Request a Key
-  </a>
-  <a
-    class='global-link'
     href="https://matterport.com/legal/sdk-api-agreement"
     target="_blank"
     rel="noopener"
@@ -198,7 +191,7 @@
                 
 
 <ul id="mysidebar" class="nav">
-  <li class="sidebarTitle">SDK Bundle <span class="label label-primary">Beta</span> </li>
+  <li class="sidebarTitle">SDK Bundle </li>
   
   
   
@@ -467,15 +460,46 @@
 
     
 
-   <h3 id="what-is-the-sdk-bundle">What is the SDK Bundle?</h3>
+   <h2 id="latest-version">Latest Version</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>SDK File</td>
+      <td><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.16.9-17-gacf9fb85e/showcase-bundle.zip">3.1.16.9-17-gacf9fb85e</a></td>
+    </tr>
+    <tr>
+      <td>SDK Version *</td>
+      <td><strong>3.6</strong></td>
+    </tr>
+    <tr>
+      <td>Last Updated</td>
+      <td><strong>Dec 11, 2020</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="fs-2">*Where to specify the SDK version, <a href="sdk_installation/#connect-to-the-matterport-space"><em>Connect to a space</em></a></p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> SDK for embeds changes are typically integrated into the SDK bundle 2-4 weeks after their release.</div>
+
+<h3 id="what-is-the-sdk-bundle">What is the SDK Bundle?</h3>
 
 <p>It is an extension of the SDK for embeds and provides a framework for deep third-party integration with Matterport models. You get direct access to the 3d engine, renderer, scene graph and more.</p>
 
-<h3 id="how-do-i-get-access-to-the-sdk-bundle">How do I get access to the SDK Bundle?</h3>
+<h3 id="how-do-i-obtain-an-sdk-key">How do I obtain an SDK key?</h3>
 
-<p>The SDK Bundle is in beta and will change as we make improvements to it. The beta is open to everyone. If you are interested in trying it out, please send a request to <a href="mailto:developers@matterport.com">developers@matterport.com</a>. <code class="highlighter-rouge">localhost</code> access to the sdk bundle will enabled during the beta period.</p>
+<p>Our developer tools are now out of beta and all accounts are now enabled to generate sandboxed SDK keys. You can find your key management by navigating to your <a href="https://my.matterport.com/settings/account/devtools">Account Settings -&gt; Developer Tools</a>. To learn more about our developer tools, please visit the <a href="https://support.matterport.com/hc/en-us/articles/360057506813-Matterport-Developer-Tools-Pricing-and-Availability">Matterport Developer Tools and Pricing</a></p>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Code snippets in the SDK Bundle pages are in typescript. The Reference section is in es5. Visit <a href="https://www.typescriptlang.org">https://www.typescriptlang.org</a> to learn more about typescript.</div>
+
+<h3 id="12-11-2020">12-11-2020</h3>
+<ul>
+  <li>Components: Added <code class="highlighter-rouge">unfiltered</code> property to <a href="sdkbundle_components_input.html">mp.input</a> component.</li>
+  <li>Additional setup instructions for application keys required for CORS, see <a href="sdkbundle_tutorials_setup.html#set-your-application-key.html">Set your application key</a></li>
+  <li>Fixed an issue with where Sweep.data would return no sweeps.</li>
+  <li>Download: <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.16.9-17-gacf9fb85e/showcase-bundle.zip">SDK Bundle version: 3.1.16.9-17-gacf9fb85e</a></li>
+</ul>
 
 <h3 id="11-6-2020">11-6-2020</h3>
 <ul>
@@ -570,7 +594,7 @@
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Matterport, Inc. All rights reserved. <br />
- Site last generated: Dec 6, 2020 <br />
+ Site last generated: Dec 11, 2020 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
