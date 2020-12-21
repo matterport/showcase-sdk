@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Mattertag | @mpSdk 3.1.16.0-33-ga89c329cc</title>
+	<title>Mattertag | @mpSdk 3.1.20.11-0-g12e241cc2</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -58,6 +58,7 @@
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#injectionoptions" class="tsd-kind-icon">Injection<wbr>Options</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#mattertagdata" class="tsd-kind-icon">Mattertag<wbr>Data</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#messengerfcnmapping" class="tsd-kind-icon">Messenger<wbr>Fcn<wbr>Mapping</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#observablemattertagdata" class="tsd-kind-icon">Observable<wbr>Mattertag<wbr>Data</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="mattertag.html#preventableactions" class="tsd-kind-icon">Preventable<wbr>Actions</a></li>
 							</ul>
 						</section>
@@ -194,13 +195,31 @@
 								<div class="tsd-comment tsd-typography">
 									<dl class="tsd-comment-tags">
 										<dt class="tsd-comment-tags-deprecated">deprecated</dt>
-										<dd><p>Use [[floorIndex]] instead</p>
+										<dd><p>Use <a href="label.html#label-1.__type.floorinfo">floorInfo</a> instead</p>
 										</dd>
 									</dl>
 								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5>floor<wbr>Index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<dl class="tsd-comment-tags">
+										<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+										<dd><p>Use <a href="label.html#label-1.__type.floorinfo">floorInfo</a> instead</p>
+										</dd>
+									</dl>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>floor<wbr>Info<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>sequence<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+									</li>
+								</ul>
 							</li>
 							<li class="tsd-parameter">
 								<h5>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
@@ -266,6 +285,84 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="observablemattertagdata" class="tsd-anchor"></a>
+					<h3>Observable<wbr>Mattertag<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">Observable<wbr>Mattertag<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>anchor<wbr>Position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The world space position of the mattertag anchor within the model</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>color<span class="tsd-signature-symbol">: </span><a href="../index.html#color" class="tsd-signature-type">Color</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>description<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>enabled<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>floor<wbr>Index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<dl class="tsd-comment-tags">
+										<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+										<dd><p>Use <a href="label.html#label-1.__type.floorinfo">floorInfo</a> instead</p>
+										</dd>
+									</dl>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>floor<wbr>Info<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>sequence<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>media<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>src<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>type<span class="tsd-signature-symbol">: </span><a href="../enums/mattertag.mediatype.html" class="tsd-signature-type">Mattertag.MediaType</a></h5>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>stem<wbr>Vector<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The world space (non-normal) direction of the mattertag&#39;s stem</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>stem<wbr>Visible<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
 					<a name="preventableactions" class="tsd-anchor"></a>
 					<h3>Preventable<wbr>Actions</h3>
 					<div class="tsd-signature tsd-kind-icon">Preventable<wbr>Actions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
@@ -289,7 +386,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
 					<a name="data" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> data</h3>
-					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservablemap.html" class="tsd-signature-type">IObservableMap</a><span class="tsd-signature-symbol">&lt;</span><a href="mattertag.html#mattertagdata" class="tsd-signature-type">Mattertag.MattertagData</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservablemap.html" class="tsd-signature-type">IObservableMap</a><span class="tsd-signature-symbol">&lt;</span><a href="mattertag.html#observablemattertagdata" class="tsd-signature-type">Mattertag.ObservableMattertagData</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -1010,6 +1107,9 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="mattertag.html#messengerfcnmapping" class="tsd-kind-icon">Messenger<wbr>Fcn<wbr>Mapping</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="mattertag.html#observablemattertagdata" class="tsd-kind-icon">Observable<wbr>Mattertag<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="mattertag.html#preventableactions" class="tsd-kind-icon">Preventable<wbr>Actions</a>

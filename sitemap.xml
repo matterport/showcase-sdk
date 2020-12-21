@@ -94,7 +94,7 @@
   
   
   <url>
-    <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
+    <loc>https://matterport.github.io/docs/index.html</loc>
   </url>
   
   
@@ -106,7 +106,7 @@
   
   
   <url>
-    <loc>https://matterport.github.io/docs/index.html</loc>
+    <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
   </url>
   
   
@@ -763,12 +763,6 @@
   
   <url>
     <loc>https://matterport.github.io/sdkbundle_security_camera.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://matterport.github.io/sdkbundle_tutorials_cors_support.html</loc>
   </url>
   
   

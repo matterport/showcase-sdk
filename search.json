@@ -127,10 +127,10 @@
 
 
 {
-"title": "Redirecting to SDK Bundle Home",
+"title": "Redirecting to SDK Home",
 "tags": "",
 "keywords": "",
-"url": "docsbundlemainindex.html",
+"url": "docsindex.html",
 "summary": ""
 }
 ,
@@ -149,10 +149,10 @@
 
 
 {
-"title": "Redirecting to SDK Home",
+"title": "Redirecting to SDK Bundle Home",
 "tags": "",
 "keywords": "",
-"url": "docsindex.html",
+"url": "docsbundlemainindex.html",
 "summary": ""
 }
 ,
@@ -1354,17 +1354,6 @@
 "tags": "",
 "keywords": "",
 "url": "sdkbundle_security_camera.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "CORS Support",
-"tags": "",
-"keywords": "",
-"url": "sdkbundle_tutorials_cors_support.html",
 "summary": ""
 }
 ,
