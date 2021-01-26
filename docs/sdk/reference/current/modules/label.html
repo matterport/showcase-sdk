@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Label | @mpSdk 3.1.20.11-0-g12e241cc2</title>
+	<title>Label | Matterport SDK</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -35,19 +35,19 @@
 						<section class="tsd-index-section ">
 							<h3>Enumerations</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/label.event.html" class="tsd-kind-icon">Event</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/label.event.html" class="tsd-kind-icon">Event</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="label.html#label-1" class="tsd-kind-icon">Label</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="label.html#label-1" class="tsd-kind-icon">Label</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="label.html#getdata" class="tsd-kind-icon">get<wbr>Data</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="label.html#getdata" class="tsd-kind-icon">get<wbr>Data</a></li>
 							</ul>
 						</section>
 					</div>
@@ -55,7 +55,7 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Types</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
 					<a name="label-1" class="tsd-anchor"></a>
 					<h3>Label</h3>
 					<div class="tsd-signature tsd-kind-icon">Label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
@@ -125,10 +125,10 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
 					<a name="getdata" class="tsd-anchor"></a>
 					<h3>get<wbr>Data</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="label.html#label-1" class="tsd-signature-type">Label.Label</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -142,9 +142,9 @@
 								<pre><code>mpSdk.Label.getData()
   .<span class="hljs-keyword">then</span>(function(<span class="hljs-built_in">labels</span>) {
     // Label data retrieval complete.
-    console.<span class="hljs-built_in">log</span>('Total <span class="hljs-built_in">labels</span>: ' + <span class="hljs-built_in">labels</span>.<span class="hljs-built_in">length</span>);
-    console.<span class="hljs-built_in">log</span>('Text of <span class="hljs-built_in">first</span> <span class="hljs-built_in">label</span>: ' + <span class="hljs-built_in">labels</span>[<span class="hljs-number">0</span>].text);
-    console.<span class="hljs-built_in">log</span>('On-screen <span class="hljs-built_in">position</span> of <span class="hljs-built_in">first</span> <span class="hljs-built_in">label</span>: ' + JSON.stringify(<span class="hljs-built_in">labels</span>[<span class="hljs-number">0</span>].<span class="hljs-built_in">position</span>));
+    console.<span class="hljs-built_in">log</span>(&#x27;Total <span class="hljs-built_in">labels</span>: &#x27; + <span class="hljs-built_in">labels</span>.<span class="hljs-built_in">length</span>);
+    console.<span class="hljs-built_in">log</span>(&#x27;Text of <span class="hljs-built_in">first</span> <span class="hljs-built_in">label</span>: &#x27; + <span class="hljs-built_in">labels</span>[<span class="hljs-number">0</span>].text);
+    console.<span class="hljs-built_in">log</span>(&#x27;On-screen <span class="hljs-built_in">position</span> of <span class="hljs-built_in">first</span> <span class="hljs-built_in">label</span>: &#x27; + JSON.stringify(<span class="hljs-built_in">labels</span>[<span class="hljs-number">0</span>].<span class="hljs-built_in">position</span>));
   })
   .<span class="hljs-built_in">catch</span>(function(<span class="hljs-built_in">error</span>) {
     // Label data retrieval <span class="hljs-built_in">error</span>.
@@ -162,59 +162,59 @@
 					<li class="globals  ">
 						<a href="../index.html"><em>@mpSdk</em></a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="app.html">App</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="camera.html">Camera</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="conversion.html">Conversion</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="floor.html">Floor</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class="current tsd-kind-namespace">
 						<a href="label.html">Label</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="mattertag.html">Mattertag</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="measurements.html">Measurements</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="mode.html">Mode</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="model.html">Model</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="pointer.html">Pointer</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="renderer.html">Renderer</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="settings.html">Settings</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="sweep.html">Sweep</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="tour.html">Tour</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum tsd-parent-kind-module">
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
 						<a href="../enums/label.event.html" class="tsd-kind-icon">Event</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="label.html#label-1" class="tsd-kind-icon">Label</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="label.html#getdata" class="tsd-kind-icon">get<wbr>Data</a>
 					</li>
 				</ul>
@@ -227,14 +227,5 @@
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
 <script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
-<script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-34880260-5', '');
-        ga('send', 'pageview');
-    </script>
 </body>
 </html>

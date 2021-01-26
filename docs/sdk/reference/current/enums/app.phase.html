@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Phase | @mpSdk 3.1.20.11-0-g12e241cc2</title>
+	<title>Phase | Matterport SDK</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -35,15 +35,15 @@
 					<div class="lead">
 						<p>Application phases are returned as part of the <a href="../modules/app.html#state-1">state</a> observable.</p>
 					</div>
-					<pre><code>mpSdk.<span class="hljs-keyword">App</span>.state.subscribe(function (appState) {
- <span class="hljs-keyword">if</span>(appState.phase === mpSdk.<span class="hljs-keyword">App</span>.Phase.LOADING) {
-   console.<span class="hljs-built_in">log</span>('The <span class="hljs-keyword">app</span> has started loading!')
+					<pre><code>mpSdk.App.state.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">appState</span>) </span>{
+ <span class="hljs-keyword">if</span>(appState.phase === mpSdk.App.Phase.LOADING) {
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;The app has started loading!&#x27;</span>)
  }
- <span class="hljs-keyword">if</span>(appState.phase === mpSdk.<span class="hljs-keyword">App</span>.Phase.STARTING) {
-   console.<span class="hljs-built_in">log</span>('The transition into the start location begins!')
+ <span class="hljs-keyword">if</span>(appState.phase === mpSdk.App.Phase.STARTING) {
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;The transition into the start location begins!&#x27;</span>)
  }
- <span class="hljs-keyword">if</span>(appState.phase === mpSdk.<span class="hljs-keyword">App</span>.Phase.PLAYING) {
-   console.<span class="hljs-built_in">log</span>('The <span class="hljs-keyword">app</span> is ready to take user <span class="hljs-keyword">input</span> now!')
+ <span class="hljs-keyword">if</span>(appState.phase === mpSdk.App.Phase.PLAYING) {
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;The app is ready to take user input now!&#x27;</span>)
  }
 });</code></pre>
 				</div>
@@ -72,42 +72,42 @@
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="error" class="tsd-anchor"></a>
 					<h3>ERROR</h3>
-					<div class="tsd-signature tsd-kind-icon">ERROR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;appphase.error&quot;</span></div>
+					<div class="tsd-signature tsd-kind-icon">ERROR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;appphase.error&quot;</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="loading" class="tsd-anchor"></a>
 					<h3>LOADING</h3>
-					<div class="tsd-signature tsd-kind-icon">LOADING<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;appphase.loading&quot;</span></div>
+					<div class="tsd-signature tsd-kind-icon">LOADING<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;appphase.loading&quot;</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="playing" class="tsd-anchor"></a>
 					<h3>PLAYING</h3>
-					<div class="tsd-signature tsd-kind-icon">PLAYING<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;appphase.playing&quot;</span></div>
+					<div class="tsd-signature tsd-kind-icon">PLAYING<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;appphase.playing&quot;</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="starting" class="tsd-anchor"></a>
 					<h3>STARTING</h3>
-					<div class="tsd-signature tsd-kind-icon">STARTING<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;appphase.starting&quot;</span></div>
+					<div class="tsd-signature tsd-kind-icon">STARTING<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;appphase.starting&quot;</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="uninitialized" class="tsd-anchor"></a>
 					<h3>UNINITIALIZED</h3>
-					<div class="tsd-signature tsd-kind-icon">UNINITIALIZED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;appphase.uninitialized&quot;</span></div>
+					<div class="tsd-signature tsd-kind-icon">UNINITIALIZED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;appphase.uninitialized&quot;</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="waiting" class="tsd-anchor"></a>
 					<h3>WAITING</h3>
-					<div class="tsd-signature tsd-kind-icon">WAITING<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;appphase.waiting&quot;</span></div>
+					<div class="tsd-signature tsd-kind-icon">WAITING<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;appphase.waiting&quot;</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
@@ -119,58 +119,58 @@
 					<li class="globals  ">
 						<a href="../index.html"><em>@mpSdk</em></a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class="current tsd-kind-namespace">
 						<a href="../modules/app.html">App</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/camera.html">Camera</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/conversion.html">Conversion</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/floor.html">Floor</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/label.html">Label</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/mattertag.html">Mattertag</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/measurements.html">Measurements</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/mode.html">Mode</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/model.html">Model</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/pointer.html">Pointer</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/renderer.html">Renderer</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/settings.html">Settings</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/sweep.html">Sweep</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/tour.html">Tour</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum tsd-parent-kind-module">
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
 						<a href="app.event.html" class="tsd-kind-icon">Event</a>
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-enum tsd-parent-kind-module">
+					<li class="current tsd-kind-enum tsd-parent-kind-namespace">
 						<a href="app.phase.html" class="tsd-kind-icon">Phase</a>
 						<ul>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
@@ -195,22 +195,22 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-enum tsd-parent-kind-module">
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
 						<a href="app.sdkapplication.html" class="tsd-kind-icon">Sdk<wbr>Application</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/app.html#appstate" class="tsd-kind-icon">App<wbr>State</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/app.html#state" class="tsd-kind-icon">State</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
+					<li class=" tsd-kind-variable tsd-parent-kind-namespace">
 						<a href="../modules/app.html#state-1" class="tsd-kind-icon">state</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/app.html#getloadtimes" class="tsd-kind-icon">get<wbr>Load<wbr>Times</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/app.html#getstate" class="tsd-kind-icon">get<wbr>State</a>
 					</li>
 				</ul>
@@ -223,14 +223,5 @@
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
 <script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
-<script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-34880260-5', '');
-        ga('send', 'pageview');
-    </script>
 </body>
 </html>
