@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IComponent | @mpSdk 3.1.16.9-14-gdeed9da45</title>
+	<title>IComponent | Matterport SDK</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -36,39 +36,39 @@
 						<p>IComponent</p>
 					</div>
 					<p>Use this interface to implement a component and register it with the sdk.</p>
-					<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Box</span><span class="hljs-params">()</span> </span>{
-   <span class="hljs-keyword">this</span>.inputs = {
-     visible: <span class="hljs-literal">false</span>,
+					<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Box</span>(<span class="hljs-params"></span>) </span>{
+   <span class="hljs-built_in">this</span>.inputs = {
+     <span class="hljs-attr">visible</span>: <span class="hljs-literal">false</span>,
    };
 
-   <span class="hljs-keyword">this</span>.onInit = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
-     <span class="hljs-keyword">var</span> THREE = <span class="hljs-keyword">this</span>.context.three;
+   <span class="hljs-built_in">this</span>.onInit = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+     <span class="hljs-keyword">var</span> THREE = <span class="hljs-built_in">this</span>.context.three;
      <span class="hljs-keyword">var</span> geometry = <span class="hljs-keyword">new</span> THREE.BoxGeometry(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
-     <span class="hljs-keyword">this</span>.material = <span class="hljs-keyword">new</span> THREE.MeshBasicMaterial();
-     <span class="hljs-keyword">var</span> mesh = <span class="hljs-keyword">new</span> THREE.Mesh( geometry, <span class="hljs-keyword">this</span>.material );
-     <span class="hljs-keyword">this</span>.outputs.objectRoot = mesh;
+     <span class="hljs-built_in">this</span>.material = <span class="hljs-keyword">new</span> THREE.MeshBasicMaterial();
+     <span class="hljs-keyword">var</span> mesh = <span class="hljs-keyword">new</span> THREE.Mesh( geometry, <span class="hljs-built_in">this</span>.material );
+     <span class="hljs-built_in">this</span>.outputs.objectRoot = mesh;
    };
 
-   <span class="hljs-keyword">this</span>.onEvent = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(type, data)</span> </span>{
+   <span class="hljs-built_in">this</span>.onEvent = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">type, data</span>) </span>{
    }
 
-   <span class="hljs-keyword">this</span>.onInputsUpdated = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(previous)</span> </span>{
+   <span class="hljs-built_in">this</span>.onInputsUpdated = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">previous</span>) </span>{
    };
 
-   <span class="hljs-keyword">this</span>.onTick = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(tickDelta)</span> </span>{
+   <span class="hljs-built_in">this</span>.onTick = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">tickDelta</span>) </span>{
    }
 
-   <span class="hljs-keyword">this</span>.onDestroy = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
-     <span class="hljs-keyword">this</span>.material.dispose();
+   <span class="hljs-built_in">this</span>.onDestroy = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+     <span class="hljs-built_in">this</span>.material.dispose();
    };
 }
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">BoxFactory</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">BoxFactory</span>(<span class="hljs-params"></span>) </span>{
    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Box();
 }
 
 <span class="hljs-comment">// Registering the component with the sdk</span>
-sdk.Scene.register(<span class="hljs-string">'box'</span>, BoxFactory);
+sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory);
 </code></pre>
 				</div>
 			</section>
@@ -192,12 +192,12 @@ sdk.Scene.register(<span class="hljs-string">'box'</span>, BoxFactory);
    var node2 = nodes[<span class="hljs-number">1</span>];
 
    // mp.objLoader has an outputs.visible property
-   var comp1 = node1.addComponent(`mp.objLoader<span class="hljs-string">');
+   var comp1 = node1.addComponent(`mp.objLoader<span class="hljs-string">&#x27;);
 
    // myComponent has an inputs.toggleState property
-   var comp2 = node2.addComponent('</span>myComponent<span class="hljs-string">');
+   var comp2 = node2.addComponent(&#x27;</span>myComponent<span class="hljs-string">&#x27;);
 
-   comp1.bind('</span>visibl<span class="hljs-string">e', comp2, '</span>toggleStat<span class="hljs-string">e');
+   comp1.bind(&#x27;</span>visibl<span class="hljs-string">e&#x27;, comp2, &#x27;</span>toggleStat<span class="hljs-string">e&#x27;);
 
    node1.start();
    node2.start();
@@ -414,61 +414,61 @@ sdk.Scene.register(<span class="hljs-string">'box'</span>, BoxFactory);
 					<li class="globals  ">
 						<a href="../index.html"><em>@mpSdk</em></a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/app.html">App</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/camera.html">Camera</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/conversion.html">Conversion</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/floor.html">Floor</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/label.html">Label</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/mattertag.html">Mattertag</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/measurements.html">Measurements</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/mode.html">Mode</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/model.html">Model</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/pointer.html">Pointer</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/renderer.html">Renderer</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class="current tsd-kind-namespace">
 						<a href="../modules/scene.html">Scene</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/settings.html">Settings</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/sweep.html">Sweep</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/tour.html">Tour</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum tsd-parent-kind-module">
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
 						<a href="../enums/scene.interactiontype.html" class="tsd-kind-icon">Interaction<wbr>Type</a>
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
+					<li class="current tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="scene.icomponent.html" class="tsd-kind-icon">IComponent</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
@@ -508,43 +508,46 @@ sdk.Scene.register(<span class="hljs-string">'box'</span>, BoxFactory);
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="scene.icomponentcontext.html" class="tsd-kind-icon">IComponent<wbr>Context</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="scene.icomponentdesc.html" class="tsd-kind-icon">IComponent<wbr>Desc</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="scene.icomponenteventspy.html" class="tsd-kind-icon">IComponent<wbr>Event<wbr>Spy</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="scene.inode.html" class="tsd-kind-icon">INode</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#intersect" class="tsd-kind-icon">Intersect</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#predefinedoutputs" class="tsd-kind-icon">Predefined<wbr>Outputs</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#three" class="tsd-kind-icon">THREE</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="../modules/scene.html#configure" class="tsd-kind-icon">configure</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#createnode" class="tsd-kind-icon">create<wbr>Node</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#createnodes" class="tsd-kind-icon">create<wbr>Nodes</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#deserialize" class="tsd-kind-icon">deserialize</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#register" class="tsd-kind-icon">register</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#registercomponents" class="tsd-kind-icon">register<wbr>Components</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#serialize" class="tsd-kind-icon">serialize</a>
 					</li>
 				</ul>
@@ -557,14 +560,5 @@ sdk.Scene.register(<span class="hljs-string">'box'</span>, BoxFactory);
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
 <script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
-<script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-34880260-5', '');
-        ga('send', 'pageview');
-    </script>
 </body>
 </html>
