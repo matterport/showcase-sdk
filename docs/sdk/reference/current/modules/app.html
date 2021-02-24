@@ -112,16 +112,17 @@
 										<p>An object whose keys are phases from <a href="../enums/app.phase.html">Phase</a>
 											and values are epoch time in milliseconds.
 										The times are filled in after the phase has passed.</p>
-										<pre><code>{
-   phaseTimes: {
-     <span class="hljs-symbol">&#x27;appphase</span>.uninitialized&#x27;: <span class="hljs-number">1570084156590</span>,
-     <span class="hljs-symbol">&#x27;appphase</span>.waiting&#x27;: <span class="hljs-number">0</span>,
-     <span class="hljs-symbol">&#x27;appphase</span>.loading&#x27;: <span class="hljs-number">0</span>,
-     <span class="hljs-symbol">&#x27;appphase</span>.starting&#x27;: <span class="hljs-number">0</span>,
-     <span class="hljs-symbol">&#x27;appphase</span>.playing&#x27;: <span class="hljs-number">0</span>,
-     <span class="hljs-symbol">&#x27;appphase</span>.error&#x27;: <span class="hljs-number">0</span>,
-   }
-}</code></pre>
+										<pre><code><span style="color: #000000">{</span>
+<span style="color: #000000">   phaseTimes: {</span>
+<span style="color: #000000">     </span><span style="color: #A31515">&#039;appphase.uninitialized&#039;</span><span style="color: #000000">: </span><span style="color: #098658">1570084156590</span><span style="color: #000000">,</span>
+<span style="color: #000000">     </span><span style="color: #A31515">&#039;appphase.waiting&#039;</span><span style="color: #000000">: </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
+<span style="color: #000000">     </span><span style="color: #A31515">&#039;appphase.loading&#039;</span><span style="color: #000000">: </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
+<span style="color: #000000">     </span><span style="color: #A31515">&#039;appphase.starting&#039;</span><span style="color: #000000">: </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
+<span style="color: #000000">     </span><span style="color: #A31515">&#039;appphase.playing&#039;</span><span style="color: #000000">: </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
+<span style="color: #000000">     </span><span style="color: #A31515">&#039;appphase.error&#039;</span><span style="color: #000000">: </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
+<span style="color: #000000">   }</span>
+<span style="color: #000000">}</span>
+</code></pre>
 									</div>
 								</div>
 								<ul class="tsd-parameters">
@@ -146,20 +147,21 @@
 						<div class="lead">
 							<p>An observable application state object.</p>
 						</div>
-						<pre><code>mpSdk.App.state.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(appState)</span></span> {
- // app state has changed
- console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;The current application: &#x27;</span>, appState.application);
- console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;The current phase: &#x27;</span>, appState.phase);
- console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Loaded at time &#x27;</span>, appState.phaseTimes[mpSdk.App.Phase.LOADING]);
- console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Started at time &#x27;</span>, appState.phaseTimes[mpSdk.App.Phase.STARTING]);
-});
+						<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">App</span><span style="color: #000000">.</span><span style="color: #001080">state</span><span style="color: #000000">.</span><span style="color: #795E26">subscribe</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">appState</span><span style="color: #000000">) {</span>
+<span style="color: #000000"> </span><span style="color: #008000">// app state has changed</span>
+<span style="color: #000000"> </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;The current application: &#039;</span><span style="color: #000000">, </span><span style="color: #001080">appState</span><span style="color: #000000">.</span><span style="color: #001080">application</span><span style="color: #000000">);</span>
+<span style="color: #000000"> </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;The current phase: &#039;</span><span style="color: #000000">, </span><span style="color: #001080">appState</span><span style="color: #000000">.</span><span style="color: #001080">phase</span><span style="color: #000000">);</span>
+<span style="color: #000000"> </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Loaded at time &#039;</span><span style="color: #000000">, </span><span style="color: #001080">appState</span><span style="color: #000000">.</span><span style="color: #001080">phaseTimes</span><span style="color: #000000">[</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">App</span><span style="color: #000000">.</span><span style="color: #001080">Phase</span><span style="color: #000000">.</span><span style="color: #0070C1">LOADING</span><span style="color: #000000">]);</span>
+<span style="color: #000000"> </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Started at time &#039;</span><span style="color: #000000">, </span><span style="color: #001080">appState</span><span style="color: #000000">.</span><span style="color: #001080">phaseTimes</span><span style="color: #000000">[</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">App</span><span style="color: #000000">.</span><span style="color: #001080">Phase</span><span style="color: #000000">.</span><span style="color: #0070C1">STARTING</span><span style="color: #000000">]);</span>
+<span style="color: #000000">});</span>
 
-<span class="hljs-built_in">output</span>
-&gt; The current application: application.showcase
-&gt; The current phase: appphase.waiting
-&gt; Loaded at <span class="hljs-built_in">time</span> <span class="hljs-number">1570084156590</span>
-&gt; Started at <span class="hljs-built_in">time</span> <span class="hljs-number">1570084156824</span>
-&gt;</code></pre>
+<span style="color: #001080">output</span>
+<span style="color: #000000">&gt; </span><span style="color: #001080">The</span><span style="color: #000000"> </span><span style="color: #001080">current</span><span style="color: #000000"> application: </span><span style="color: #001080">application</span><span style="color: #000000">.</span><span style="color: #001080">showcase</span>
+<span style="color: #000000">&gt; </span><span style="color: #001080">The</span><span style="color: #000000"> </span><span style="color: #001080">current</span><span style="color: #000000"> phase: </span><span style="color: #001080">appphase</span><span style="color: #000000">.</span><span style="color: #001080">waiting</span>
+<span style="color: #000000">&gt; </span><span style="color: #001080">Loaded</span><span style="color: #000000"> </span><span style="color: #001080">at</span><span style="color: #000000"> </span><span style="color: #001080">time</span><span style="color: #000000"> </span><span style="color: #098658">1570084156590</span>
+<span style="color: #000000">&gt; </span><span style="color: #001080">Started</span><span style="color: #000000"> </span><span style="color: #001080">at</span><span style="color: #000000"> </span><span style="color: #001080">time</span><span style="color: #000000"> </span><span style="color: #098658">1570084156824</span>
+<span style="color: #000000">&gt;</span>
+</code></pre>
 					</div>
 				</section>
 			</section>
@@ -169,7 +171,7 @@
 					<a name="getloadtimes" class="tsd-anchor"></a>
 					<h3>get<wbr>Load<wbr>Times</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Load<wbr>Times<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Load<wbr>Times<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">{ [key in Phase]: null | number}</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -182,7 +184,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">{ [key in Phase]: null | number}</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -212,8 +214,8 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="../index.html"><em>@mpSdk</em></a>
+					<li class=" ">
+						<a href="../index.html">Exports</a>
 					</li>
 					<li class="current tsd-kind-namespace">
 						<a href="app.html">App</a>
@@ -247,6 +249,9 @@
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="sensor.html">Sensor</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="settings.html">Settings</a>

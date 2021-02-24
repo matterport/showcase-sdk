@@ -101,13 +101,14 @@
 							<code>rotation.y</code>: is the amount the camera rotate around horizontally, between [-360…0…360], negative values to rotate to the left, positive to rotate to the right.</p>
 						</div>
 						<p>Note: The rotation that Sweep.moveTo uses for input is the same rotation that will get returned from the <a href="camera.html#pose-1">Camera.pose</a> property.</p>
-						<pre><code><span class="hljs-keyword">const</span> cachedPose = <span class="hljs-literal">null</span>;
-mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">pose</span>) </span>{
-  cachedPose = pose;
-})
+						<pre><code><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">cachedPose</span><span style="color: #000000"> = </span><span style="color: #0000FF">null</span><span style="color: #000000">;</span>
+<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Camera</span><span style="color: #000000">.</span><span style="color: #001080">pose</span><span style="color: #000000">.</span><span style="color: #795E26">subscribe</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">pose</span><span style="color: #000000">) {</span>
+<span style="color: #000000">  </span><span style="color: #001080">cachedPose</span><span style="color: #000000"> = </span><span style="color: #001080">pose</span><span style="color: #000000">;</span>
+<span style="color: #000000">})</span>
 
-<span class="hljs-comment">// If the pose is returned immediately.</span>
-<span class="hljs-built_in">console</span>.log(cachedPose.rotation);</code></pre>
+<span style="color: #008000">// If the pose is returned immediately.</span>
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">cachedPose</span><span style="color: #000000">.</span><span style="color: #001080">rotation</span><span style="color: #000000">);</span>
+</code></pre>
 					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
@@ -119,7 +120,7 @@ mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keywor
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> transition<span class="tsd-signature-symbol">?: </span><a href="../enums/sweep.transitiontype.html" class="tsd-signature-type">Sweep.TransitionType</a></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> transition<wbr>Time<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> transition<wbr>Time<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
 										<p>Total transition time in milliseconds.</p>
@@ -281,16 +282,17 @@ mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keywor
 									<td>undefined</td>
 								</tr>
 						</tbody></table>
-						<pre><code>mpSdk.Sweep.current.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">currentSweep</span>) </span>{
-  <span class="hljs-comment">// Change to the current sweep has occurred.</span>
-  <span class="hljs-keyword">if</span> (currentSweep.sid === <span class="hljs-string">&#x27;&#x27;</span>) {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Not currently stationed at a sweep position&#x27;</span>);
-  } <span class="hljs-keyword">else</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Currently at sweep&#x27;</span>, currentSweep.sid);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Current position&#x27;</span>, currentSweep.position);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;On floor&#x27;</span>, currentSweep.floorInfo.sequence);
-  }
-});</code></pre>
+						<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Sweep</span><span style="color: #000000">.</span><span style="color: #001080">current</span><span style="color: #000000">.</span><span style="color: #795E26">subscribe</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">currentSweep</span><span style="color: #000000">) {</span>
+<span style="color: #000000">  </span><span style="color: #008000">// Change to the current sweep has occurred.</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">currentSweep</span><span style="color: #000000">.</span><span style="color: #001080">sid</span><span style="color: #000000"> === </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Not currently stationed at a sweep position&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  } </span><span style="color: #AF00DB">else</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Currently at sweep&#039;</span><span style="color: #000000">, </span><span style="color: #001080">currentSweep</span><span style="color: #000000">.</span><span style="color: #001080">sid</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Current position&#039;</span><span style="color: #000000">, </span><span style="color: #001080">currentSweep</span><span style="color: #000000">.</span><span style="color: #001080">position</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;On floor&#039;</span><span style="color: #000000">, </span><span style="color: #001080">currentSweep</span><span style="color: #000000">.</span><span style="color: #001080">floorInfo</span><span style="color: #000000">.</span><span style="color: #001080">sequence</span><span style="color: #000000">);</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">});</span>
+</code></pre>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-namespace">
@@ -303,20 +305,21 @@ mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keywor
 						<div class="lead">
 							<p>An observable collection of sweep data that can be subscribed to.</p>
 						</div>
-						<pre><code>showcase.Sweep.data.subscribe({
-  onAdded: <span class="hljs-keyword">function</span> (index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>) {
-    console.log(<span class="hljs-string">&#x27;sweep added to the collection&#x27;</span>, index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>);
-  },
-  onRemoved: <span class="hljs-keyword">function</span> (index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>) {
-    console.log(<span class="hljs-string">&#x27;sweep removed from the collection&#x27;</span>, index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>);
-  },
-  onUpdated: <span class="hljs-keyword">function</span> (index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>) {
-    console.log(<span class="hljs-string">&#x27;sweep updated in place in the collection&#x27;</span>, index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>);
-  },
-  onCollectionUpdated: <span class="hljs-keyword">function</span> <span class="hljs-built_in">(collection</span>) {
-    console.log(<span class="hljs-string">&#x27;the entire up-to-date collection&#x27;</span>,<span class="hljs-built_in"> collection</span>);
-  }
-});</code></pre>
+						<pre><code><span style="color: #001080">showcase</span><span style="color: #000000">.</span><span style="color: #001080">Sweep</span><span style="color: #000000">.</span><span style="color: #001080">data</span><span style="color: #000000">.</span><span style="color: #795E26">subscribe</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #795E26">onAdded</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;sweep added to the collection&#039;</span><span style="color: #000000">, </span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">);</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  </span><span style="color: #795E26">onRemoved</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;sweep removed from the collection&#039;</span><span style="color: #000000">, </span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">);</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  </span><span style="color: #795E26">onUpdated</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;sweep updated in place in the collection&#039;</span><span style="color: #000000">, </span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">);</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  </span><span style="color: #795E26">onCollectionUpdated</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">collection</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;the entire up-to-date collection&#039;</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">);</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">});</span>
+</code></pre>
 					</div>
 				</section>
 			</section>
@@ -337,7 +340,8 @@ mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keywor
 									<p>Disable a set of sweeps by ids.</p>
 								</div>
 								<p>Disabling a sweep will hide the sweep&#39;s puck and prevent the player&#39;s ability to navigate to that location.</p>
-								<pre><code>mpSdk.Sweep.<span class="hljs-builtin-name">disable</span>(<span class="hljs-string">&#x27;sweep1&#x27;</span>, <span class="hljs-string">&#x27;sweep2&#x27;</span>, <span class="hljs-string">&#x27;sweep3&#x27;</span>);</code></pre>
+								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Sweep</span><span style="color: #000000">.</span><span style="color: #795E26">disable</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;sweep1&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;sweep2&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;sweep3&#039;</span><span style="color: #000000">);</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -366,7 +370,8 @@ mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keywor
 									<p>Enable a set of sweeps by ids.</p>
 								</div>
 								<p>Enabling a sweep will show the sweep&#39;s puck and allow the player to navigate to that location.</p>
-								<pre><code>mpSdk.Sweep.<span class="hljs-builtin-name">enable</span>(<span class="hljs-string">&#x27;sweep1&#x27;</span>, <span class="hljs-string">&#x27;sweep2&#x27;</span>, <span class="hljs-string">&#x27;sweep3&#x27;</span>);</code></pre>
+								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Sweep</span><span style="color: #000000">.</span><span style="color: #795E26">enable</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;sweep1&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;sweep2&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;sweep3&#039;</span><span style="color: #000000">);</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -394,23 +399,24 @@ mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keywor
 								<div class="lead">
 									<p>Move to a sweep.</p>
 								</div>
-								<pre><code><span class="hljs-keyword">const</span> sweepId = <span class="hljs-string">&#x27;1&#x27;</span>;
-<span class="hljs-keyword">const</span> rotation = { <span class="hljs-attr">x</span>: <span class="hljs-number">30</span>, <span class="hljs-attr">y</span>: -<span class="hljs-number">45</span> };
-<span class="hljs-keyword">const</span> transition = mpSdk.Sweep.Transition.INSTANT;
-<span class="hljs-keyword">const</span> transitionTime = <span class="hljs-number">2000</span>; <span class="hljs-comment">// in milliseconds</span>
+								<pre><code><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">sweepId</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;1&#039;</span><span style="color: #000000">;</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">rotation</span><span style="color: #000000"> = { </span><span style="color: #001080">x:</span><span style="color: #000000"> </span><span style="color: #098658">30</span><span style="color: #000000">, </span><span style="color: #001080">y:</span><span style="color: #000000"> -</span><span style="color: #098658">45</span><span style="color: #000000"> };</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">transition</span><span style="color: #000000"> = </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Sweep</span><span style="color: #000000">.</span><span style="color: #001080">Transition</span><span style="color: #000000">.</span><span style="color: #0070C1">INSTANT</span><span style="color: #000000">;</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">transitionTime</span><span style="color: #000000"> = </span><span style="color: #098658">2000</span><span style="color: #000000">; </span><span style="color: #008000">// in milliseconds</span>
 
-mpSdk.Sweep.moveTo(sweepId, {
-    <span class="hljs-attr">rotation</span>: rotation,
-    <span class="hljs-attr">transition</span>: transition,
-    <span class="hljs-attr">transitionTime</span>: transitionTime,
-  })
-  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">sweepId</span>)</span>{
-    <span class="hljs-comment">// Move successful.</span>
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Arrived at sweep &#x27;</span> + sweepId);
-  })
-  .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>)</span>{
-    <span class="hljs-comment">// Error with moveTo command</span>
-  });</code></pre>
+<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Sweep</span><span style="color: #000000">.</span><span style="color: #795E26">moveTo</span><span style="color: #000000">(</span><span style="color: #001080">sweepId</span><span style="color: #000000">, {</span>
+<span style="color: #000000">    </span><span style="color: #001080">rotation:</span><span style="color: #000000"> </span><span style="color: #001080">rotation</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">transition:</span><span style="color: #000000"> </span><span style="color: #001080">transition</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">transitionTime:</span><span style="color: #000000"> </span><span style="color: #001080">transitionTime</span><span style="color: #000000">,</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">sweepId</span><span style="color: #000000">){</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Move successful.</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Arrived at sweep &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">sweepId</span><span style="color: #000000">);</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">){</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Error with moveTo command</span>
+<span style="color: #000000">  });</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -431,8 +437,8 @@ mpSdk.Sweep.moveTo(sweepId, {
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="../index.html"><em>@mpSdk</em></a>
+					<li class=" ">
+						<a href="../index.html">Exports</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="app.html">App</a>
@@ -466,6 +472,9 @@ mpSdk.Sweep.moveTo(sweepId, {
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="sensor.html">Sensor</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="settings.html">Settings</a>

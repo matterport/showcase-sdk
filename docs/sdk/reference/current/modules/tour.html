@@ -32,43 +32,44 @@
 					<div class="lead">
 						<p>Sample custom tour.</p>
 					</div>
-					<pre><code><span class="hljs-keyword">const</span> connect = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">sdk</span>) </span>{
-  <span class="hljs-keyword">const</span> mpSdk = sdk;
+					<pre><code><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">connect</span><span style="color: #000000"> = </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">sdk</span><span style="color: #000000">) {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">mpSdk</span><span style="color: #000000"> = </span><span style="color: #001080">sdk</span><span style="color: #000000">;</span>
 
-  mpSdk.Tour.Event.on(Tour.Event.STEPPED, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">tourIndex</span>)</span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Tour index &#x27;</span> + tourIndex);
-  });
-  mpSdk.Tour.Event.on(Tour.Event.STARTED, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Tour started&#x27;</span>);
-  });
-  mpSdk.Tour.Event.on(Tour.Event.STOPPED, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Tour stopped&#x27;</span>);
-  });
+<span style="color: #000000">  </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">STEPPED</span><span style="color: #000000">, </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">tourIndex</span><span style="color: #000000">){</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Tour index &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">tourIndex</span><span style="color: #000000">);</span>
+<span style="color: #000000">  });</span>
+<span style="color: #000000">  </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">STARTED</span><span style="color: #000000">, </span><span style="color: #0000FF">function</span><span style="color: #000000">(){</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Tour started&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  });</span>
+<span style="color: #000000">  </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">STOPPED</span><span style="color: #000000">, </span><span style="color: #0000FF">function</span><span style="color: #000000">(){</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Tour stopped&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  });</span>
 
-  mpSdk.Tour.getData()
-    .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">tour</span>) </span>{
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;tour has &#x27;</span> + tour.length + <span class="hljs-string">&#x27; stops&#x27;</span>);
-      <span class="hljs-keyword">return</span> mpSdk.Tour.start(<span class="hljs-number">0</span>);
-    })
-    .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-      <span class="hljs-comment">// console &#x27;Tour started&#x27;</span>
-      <span class="hljs-comment">// console -&gt; &#x27;Tour index 0&#x27;</span>
-      <span class="hljs-keyword">return</span> mpSdk.Tour.next();
-    })
-    .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-      <span class="hljs-comment">// console -&gt; &#x27;Tour index 1&#x27;</span>
-      <span class="hljs-keyword">return</span> mpSdk.Tour.step(<span class="hljs-number">3</span>);
-    })
-    .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-      <span class="hljs-comment">// console -&gt; &#x27;Tour index 3&#x27;</span>
-      <span class="hljs-keyword">return</span> mpSdk.Tour.prev();
-    })
-    .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-      <span class="hljs-comment">// console -&gt; &#x27;Tour index 2&#x27;</span>
-      <span class="hljs-comment">// console -&gt; &#x27;Tour stopped&#x27;</span>
-      <span class="hljs-keyword">return</span> mpSdk.Tour.stop();
-    });
-}</code></pre>
+<span style="color: #000000">  </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #795E26">getData</span><span style="color: #000000">()</span>
+<span style="color: #000000">    .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">tour</span><span style="color: #000000">) {</span>
+<span style="color: #000000">      </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;tour has &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">tour</span><span style="color: #000000">.</span><span style="color: #001080">length</span><span style="color: #000000"> + </span><span style="color: #A31515">&#039; stops&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">      </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #795E26">start</span><span style="color: #000000">(</span><span style="color: #098658">0</span><span style="color: #000000">);</span>
+<span style="color: #000000">    })</span>
+<span style="color: #000000">    .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(){</span>
+<span style="color: #000000">      </span><span style="color: #008000">// console &#039;Tour started&#039;</span>
+<span style="color: #000000">      </span><span style="color: #008000">// console -&gt; &#039;Tour index 0&#039;</span>
+<span style="color: #000000">      </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #795E26">next</span><span style="color: #000000">();</span>
+<span style="color: #000000">    })</span>
+<span style="color: #000000">    .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(){</span>
+<span style="color: #000000">      </span><span style="color: #008000">// console -&gt; &#039;Tour index 1&#039;</span>
+<span style="color: #000000">      </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #795E26">step</span><span style="color: #000000">(</span><span style="color: #098658">3</span><span style="color: #000000">);</span>
+<span style="color: #000000">    })</span>
+<span style="color: #000000">    .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(){</span>
+<span style="color: #000000">      </span><span style="color: #008000">// console -&gt; &#039;Tour index 3&#039;</span>
+<span style="color: #000000">      </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #795E26">prev</span><span style="color: #000000">();</span>
+<span style="color: #000000">    })</span>
+<span style="color: #000000">    .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(){</span>
+<span style="color: #000000">      </span><span style="color: #008000">// console -&gt; &#039;Tour index 2&#039;</span>
+<span style="color: #000000">      </span><span style="color: #008000">// console -&gt; &#039;Tour stopped&#039;</span>
+<span style="color: #000000">      </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #795E26">stop</span><span style="color: #000000">();</span>
+<span style="color: #000000">    });</span>
+<span style="color: #000000">}</span>
+</code></pre>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -120,7 +121,7 @@
 								<h5>is360<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>mode<span class="tsd-signature-symbol">: </span><a href="mode.html" class="tsd-signature-type">Mode</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								<h5>mode<span class="tsd-signature-symbol">: </span><a href="../enums/mode.mode-1.html" class="tsd-signature-type">Mode.Mode</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
@@ -160,18 +161,19 @@
 								<div class="lead">
 									<p>This function returns an array of Snapshots.</p>
 								</div>
-								<pre><code>mpSdk.Tour.getData()
-  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(snapshots)</span> {</span>
-    <span class="hljs-comment">// Tour getData complete.</span>
-    <span class="hljs-keyword">if</span>(snapshots.<span class="hljs-built_in">length</span> &gt; <span class="hljs-number">0</span>){
-      console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;First snapshot sid: &#x27;</span> + snapshots[<span class="hljs-number">0</span>].sid);
-      console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;First snapshot name: &#x27;</span> + snapshots[<span class="hljs-number">0</span>].name);
-      console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;First snapshot position: &#x27;</span> + snapshots[<span class="hljs-number">0</span>].position);
-    }
-  })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
-    <span class="hljs-comment">// Tour getData error.</span>
-  });</code></pre>
+								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #795E26">getData</span><span style="color: #000000">()</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">snapshots</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Tour getData complete.</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">if</span><span style="color: #000000">(</span><span style="color: #001080">snapshots</span><span style="color: #000000">.</span><span style="color: #001080">length</span><span style="color: #000000"> &gt; </span><span style="color: #098658">0</span><span style="color: #000000">){</span>
+<span style="color: #000000">      </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;First snapshot sid: &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">snapshots</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #001080">sid</span><span style="color: #000000">);</span>
+<span style="color: #000000">      </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;First snapshot name: &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">snapshots</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #001080">name</span><span style="color: #000000">);</span>
+<span style="color: #000000">      </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;First snapshot position: &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">snapshots</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #001080">position</span><span style="color: #000000">);</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Tour getData error.</span>
+<span style="color: #000000">  });</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="tour.html#snapshot" class="tsd-signature-type">Tour.Snapshot</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -191,13 +193,14 @@
 								<div class="lead">
 									<p>This function moves the camera to the next snapshot in the tour.</p>
 								</div>
-								<pre><code>mpSdk.Tour.<span class="hljs-built_in">next</span>()
-  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span> {
-    // Tour <span class="hljs-built_in">next</span> complete.
-  })
-  .catch(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span></span> {
-    // Tour <span class="hljs-built_in">next</span> <span class="hljs-built_in">error</span>.
-  });</code></pre>
+								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #795E26">next</span><span style="color: #000000">()</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Tour next complete.</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Tour next error.</span>
+<span style="color: #000000">  });</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -217,13 +220,14 @@
 								<div class="lead">
 									<p>This function moves the camera to the previous snapshot in the tour.</p>
 								</div>
-								<pre><code>mpSdk.Tour.prev()
-  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-comment">// Tour prev complete.</span>
-  })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
-    <span class="hljs-comment">// Tour prev error.</span>
-  });</code></pre>
+								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #795E26">prev</span><span style="color: #000000">()</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Tour prev complete.</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Tour prev error.</span>
+<span style="color: #000000">  });</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -233,7 +237,7 @@
 					<a name="start" class="tsd-anchor"></a>
 					<h3>start</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -243,20 +247,21 @@
 								<div class="lead">
 									<p>This function start the tour.</p>
 								</div>
-								<pre><code><span class="hljs-keyword">const</span> tourIndex = <span class="hljs-number">1</span>;
+								<pre><code><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">tourIndex</span><span style="color: #000000"> = </span><span style="color: #098658">1</span><span style="color: #000000">;</span>
 
-mpSdk.Tour.start(tourIndex)
-  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-comment">// Tour start complete.</span>
-  })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> </span>{
-    <span class="hljs-comment">// Tour start error.</span>
-  });</code></pre>
+<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #795E26">start</span><span style="color: #000000">(</span><span style="color: #001080">tourIndex</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Tour start complete.</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Tour start error.</span>
+<span style="color: #000000">  });</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> index: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> index: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -277,14 +282,15 @@ mpSdk.Tour.start(tourIndex)
 								<div class="lead">
 									<p>This function moves the camera to a specific snapshot in the tour.</p>
 								</div>
-								<pre><code><span class="hljs-keyword">const</span> myStep = <span class="hljs-number">2</span>;
-mpSdk.Tour.<span class="hljs-keyword">step</span>(myStep)
-  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(</span>) {
-    //Tour <span class="hljs-keyword">step</span> complete.
-  })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(</span><span class="hljs-built_in">error</span>) {
-    // Tour <span class="hljs-keyword">step</span> <span class="hljs-built_in">error</span>.
-  });</code></pre>
+								<pre><code><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">myStep</span><span style="color: #000000"> = </span><span style="color: #098658">2</span><span style="color: #000000">;</span>
+<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #795E26">step</span><span style="color: #000000">(</span><span style="color: #001080">myStep</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
+<span style="color: #000000">    </span><span style="color: #008000">//Tour step complete.</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Tour step error.</span>
+<span style="color: #000000">  });</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -310,13 +316,14 @@ mpSdk.Tour.<span class="hljs-keyword">step</span>(myStep)
 								<div class="lead">
 									<p>This function stop the tour.</p>
 								</div>
-								<pre><code>mpSdk.Tour.<span class="hljs-keyword">stop</span>()
-  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span> {
-    // Tour <span class="hljs-keyword">stop</span> complete.
-  })
-  .catch(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span></span> {
-    // Tour <span class="hljs-keyword">stop</span> error.
-  });</code></pre>
+								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #795E26">stop</span><span style="color: #000000">()</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Tour stop complete.</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Tour stop error.</span>
+<span style="color: #000000">  });</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -327,8 +334,8 @@ mpSdk.Tour.<span class="hljs-keyword">step</span>(myStep)
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="../index.html"><em>@mpSdk</em></a>
+					<li class=" ">
+						<a href="../index.html">Exports</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="app.html">App</a>
@@ -362,6 +369,9 @@ mpSdk.Tour.<span class="hljs-keyword">step</span>(myStep)
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="sensor.html">Sensor</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="settings.html">Settings</a>

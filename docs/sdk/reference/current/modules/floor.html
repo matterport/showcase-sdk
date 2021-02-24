@@ -41,6 +41,7 @@
 						<section class="tsd-index-section ">
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="floor.html#floordata" class="tsd-kind-icon">Floor<wbr>Data</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="floor.html#floors" class="tsd-kind-icon">Floors</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="floor.html#observablefloordata" class="tsd-kind-icon">Observable<wbr>Floor<wbr>Data</a></li>
 							</ul>
@@ -65,6 +66,27 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Types</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="floordata" class="tsd-anchor"></a>
+					<h3>Floor<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">Floor<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>sequence<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
 					<a name="floors" class="tsd-anchor"></a>
 					<h3>Floors</h3>
@@ -155,28 +177,29 @@
 									<td>&#39;&#39;</td>
 								</tr>
 						</tbody></table>
-						<pre><code>mpSdk.Floor.current.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">currentFloor</span>) </span>{
-  <span class="hljs-comment">// Change to the current floor has occurred.</span>
-  <span class="hljs-keyword">if</span> (currentFloor.sequence === -<span class="hljs-number">1</span>) {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Currently viewing all floors&#x27;</span>);
-  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (currentFloor.sequence === <span class="hljs-literal">undefined</span>) {
-    <span class="hljs-keyword">if</span> (currentFloor.id === <span class="hljs-literal">undefined</span>) {
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Current viewing an unplaced unaligned sweep&#x27;</span>);
-    } <span class="hljs-keyword">else</span> {
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Currently transitioning between floors&#x27;</span>);
-    }
-  } <span class="hljs-keyword">else</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Currently on floor&#x27;</span>, currentFloor.id);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Current floor\&#x27;s sequence index&#x27;</span>, currentFloor.sequence);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Current floor\&#x27;s name&#x27;</span>, currentFloor.name)
-  }
-});</code></pre>
+						<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Floor</span><span style="color: #000000">.</span><span style="color: #001080">current</span><span style="color: #000000">.</span><span style="color: #795E26">subscribe</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">currentFloor</span><span style="color: #000000">) {</span>
+<span style="color: #000000">  </span><span style="color: #008000">// Change to the current floor has occurred.</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">currentFloor</span><span style="color: #000000">.</span><span style="color: #001080">sequence</span><span style="color: #000000"> === -</span><span style="color: #098658">1</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Currently viewing all floors&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  } </span><span style="color: #AF00DB">else</span><span style="color: #000000"> </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">currentFloor</span><span style="color: #000000">.</span><span style="color: #001080">sequence</span><span style="color: #000000"> === </span><span style="color: #0000FF">undefined</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">currentFloor</span><span style="color: #000000">.</span><span style="color: #001080">id</span><span style="color: #000000"> === </span><span style="color: #0000FF">undefined</span><span style="color: #000000">) {</span>
+<span style="color: #000000">      </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Current viewing an unplaced unaligned sweep&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">    } </span><span style="color: #AF00DB">else</span><span style="color: #000000"> {</span>
+<span style="color: #000000">      </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Currently transitioning between floors&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  } </span><span style="color: #AF00DB">else</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Currently on floor&#039;</span><span style="color: #000000">, </span><span style="color: #001080">currentFloor</span><span style="color: #000000">.</span><span style="color: #001080">id</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Current floor</span><span style="color: #EE0000">\&#039;</span><span style="color: #A31515">s sequence index&#039;</span><span style="color: #000000">, </span><span style="color: #001080">currentFloor</span><span style="color: #000000">.</span><span style="color: #001080">sequence</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Current floor</span><span style="color: #EE0000">\&#039;</span><span style="color: #A31515">s name&#039;</span><span style="color: #000000">, </span><span style="color: #001080">currentFloor</span><span style="color: #000000">.</span><span style="color: #001080">name</span><span style="color: #000000">)</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">});</span>
+</code></pre>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-namespace">
 					<a name="data" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> data</h3>
-					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservablemap.html" class="tsd-signature-type">IObservableMap</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">FloorData</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservablemap.html" class="tsd-signature-type">IObservableMap</a><span class="tsd-signature-symbol">&lt;</span><a href="floor.html#floordata" class="tsd-signature-type">Floor.FloorData</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -184,11 +207,12 @@
 							<p>An observable collection of Floor data that can be subscribed to.</p>
 						</div>
 						<p>See <a href="../interfaces/iobservablemap.html">IObservableMap</a> to learn how to receive data from the collection.</p>
-						<pre><code><span class="hljs-selector-tag">showcase</span><span class="hljs-selector-class">.Floor</span><span class="hljs-selector-class">.data</span><span class="hljs-selector-class">.subscribe</span>({
-  <span class="hljs-attribute">onCollectionUpdated</span>: function (collection) {
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Collection received. There are &#x27;</span>, Object.keys(collection).length, <span class="hljs-string">&#x27;floors in the collection&#x27;</span>);
-  }
-});</code></pre>
+						<pre><code><span style="color: #001080">showcase</span><span style="color: #000000">.</span><span style="color: #001080">Floor</span><span style="color: #000000">.</span><span style="color: #001080">data</span><span style="color: #000000">.</span><span style="color: #795E26">subscribe</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #795E26">onCollectionUpdated</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">collection</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Collection received. There are &#039;</span><span style="color: #000000">, </span><span style="color: #267F99">Object</span><span style="color: #000000">.</span><span style="color: #795E26">keys</span><span style="color: #000000">(</span><span style="color: #001080">collection</span><span style="color: #000000">).</span><span style="color: #001080">length</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;floors in the collection&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">});</span>
+</code></pre>
 					</div>
 				</section>
 			</section>
@@ -208,16 +232,17 @@
 								<div class="lead">
 									<p>This function returns the state of all floors.</p>
 								</div>
-								<pre><code>mpSdk.Floor.getData()
-  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(floors)</span> {</span>
-    <span class="hljs-comment">// Floor data retreival complete.</span>
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Current floor: &#x27;</span> + floors.currentFloor);
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Total floos: &#x27;</span> + floors.totalFloors);
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Name of first floor: &#x27;</span> + floors.floorNames[<span class="hljs-number">0</span>]);
-  })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
-    <span class="hljs-comment">// Floors data retrieval error.</span>
-  });</code></pre>
+								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Floor</span><span style="color: #000000">.</span><span style="color: #795E26">getData</span><span style="color: #000000">()</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">floors</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Floor data retreival complete.</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Current floor: &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">floors</span><span style="color: #000000">.</span><span style="color: #001080">currentFloor</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Total floos: &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">floors</span><span style="color: #000000">.</span><span style="color: #001080">totalFloors</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Name of first floor: &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">floors</span><span style="color: #000000">.</span><span style="color: #001080">floorNames</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">]);</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Floors data retrieval error.</span>
+<span style="color: #000000">  });</span>
+</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
 									<dd><p>Use the observable <a href="floor.html#data">data</a> collection instead</p>
@@ -243,14 +268,15 @@
 									<p>When in inside mode, this function changes the active floor, and moves the camera to the nearest position on that floor.
 									When in floorplan/dollhouse mode, this function changes the active floor, but does not modify the camera</p>
 								</div>
-								<pre><code>mpSdk.<span class="hljs-built_in">Floor</span>.moveTo(<span class="hljs-number">2</span>)
-  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(</span>floorIndex) {
-    // Move <span class="hljs-keyword">to</span> <span class="hljs-built_in">floor</span> complete.
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-comment">&#x27;Current floor: &#x27; + floorIndex);</span>
-  })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(</span><span class="hljs-built_in">error</span>) {
-    // <span class="hljs-built_in">Error</span> moving <span class="hljs-keyword">to</span> <span class="hljs-built_in">floor</span>.
-  });</code></pre>
+								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Floor</span><span style="color: #000000">.</span><span style="color: #795E26">moveTo</span><span style="color: #000000">(</span><span style="color: #098658">2</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">floorIndex</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Move to floor complete.</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Current floor: &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">floorIndex</span><span style="color: #000000">);</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Error moving to floor.</span>
+<span style="color: #000000">  });</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -277,13 +303,14 @@
 								<div class="lead">
 									<p>This function displays all floors.</p>
 								</div>
-								<pre><code>mpSdk.<span class="hljs-built_in">Floor</span>.showAll()
-  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-    <span class="hljs-comment">// Show floors complete.</span>
-  })
-  .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>) </span>{
-    <span class="hljs-comment">// Error displaying all floors.</span>
-  });</code></pre>
+								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Floor</span><span style="color: #000000">.</span><span style="color: #795E26">showAll</span><span style="color: #000000">()</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(){</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Show floors complete.</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Error displaying all floors.</span>
+<span style="color: #000000">  });</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -294,8 +321,8 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="../index.html"><em>@mpSdk</em></a>
+					<li class=" ">
+						<a href="../index.html">Exports</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="app.html">App</a>
@@ -331,6 +358,9 @@
 						<a href="renderer.html">Renderer</a>
 					</li>
 					<li class=" tsd-kind-namespace">
+						<a href="sensor.html">Sensor</a>
+					</li>
+					<li class=" tsd-kind-namespace">
 						<a href="settings.html">Settings</a>
 					</li>
 					<li class=" tsd-kind-namespace">
@@ -345,6 +375,9 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
 						<a href="../enums/floor.event.html" class="tsd-kind-icon">Event</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="floor.html#floordata" class="tsd-kind-icon">Floor<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="floor.html#floors" class="tsd-kind-icon">Floors</a>

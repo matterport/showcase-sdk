@@ -1,0 +1,1216 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Matterport SDK</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="index.html">@mpSdk</a>
+				</li>
+			</ul>
+			<h1>@mpSdk</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Namespaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-namespace"><a href="modules/app.html" class="tsd-kind-icon">App</a></li>
+								<li class="tsd-kind-namespace"><a href="modules/camera.html" class="tsd-kind-icon">Camera</a></li>
+								<li class="tsd-kind-namespace"><a href="modules/conversion.html" class="tsd-kind-icon">Conversion</a></li>
+								<li class="tsd-kind-namespace"><a href="modules/floor.html" class="tsd-kind-icon">Floor</a></li>
+								<li class="tsd-kind-namespace"><a href="modules/label.html" class="tsd-kind-icon">Label</a></li>
+								<li class="tsd-kind-namespace"><a href="modules/mattertag.html" class="tsd-kind-icon">Mattertag</a></li>
+								<li class="tsd-kind-namespace"><a href="modules/measurements.html" class="tsd-kind-icon">Measurements</a></li>
+								<li class="tsd-kind-namespace"><a href="modules/mode.html" class="tsd-kind-icon">Mode</a></li>
+								<li class="tsd-kind-namespace"><a href="modules/model.html" class="tsd-kind-icon">Model</a></li>
+								<li class="tsd-kind-namespace"><a href="modules/pointer.html" class="tsd-kind-icon">Pointer</a></li>
+								<li class="tsd-kind-namespace"><a href="modules/renderer.html" class="tsd-kind-icon">Renderer</a></li>
+								<li class="tsd-kind-namespace"><a href="modules/settings.html" class="tsd-kind-icon">Settings</a></li>
+								<li class="tsd-kind-namespace"><a href="modules/sweep.html" class="tsd-kind-icon">Sweep</a></li>
+								<li class="tsd-kind-namespace"><a href="modules/tour.html" class="tsd-kind-icon">Tour</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum"><a href="enums/event.html" class="tsd-kind-icon">Event</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/dictionary.html" class="tsd-kind-icon">Dictionary</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/icondition.html" class="tsd-kind-icon">ICondition</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/imapobserver.html" class="tsd-kind-icon">IMap<wbr>Observer</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/iobservable.html" class="tsd-kind-icon">IObservable</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/iobservablemap.html" class="tsd-kind-icon">IObservable<wbr>Map</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/iobserver.html" class="tsd-kind-icon">IObserver</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/isubscription.html" class="tsd-kind-icon">ISubscription</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Types</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias"><a href="index.html#color" class="tsd-kind-icon">Color</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="index.html#conditioncallback" class="tsd-kind-icon">Condition<wbr>Callback</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="index.html#observercallback" class="tsd-kind-icon">Observer<wbr>Callback</a></li>
+								<li class="tsd-kind-type-alias"><a href="index.html#rotation" class="tsd-kind-icon">Rotation</a></li>
+								<li class="tsd-kind-type-alias"><a href="index.html#size" class="tsd-kind-icon">Size</a></li>
+								<li class="tsd-kind-type-alias"><a href="index.html#vector2" class="tsd-kind-icon">Vector2</a></li>
+								<li class="tsd-kind-type-alias"><a href="index.html#vector3" class="tsd-kind-icon">Vector3</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function"><a href="index.html#off" class="tsd-kind-icon">off</a></li>
+								<li class="tsd-kind-function"><a href="index.html#on" class="tsd-kind-icon">on</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Types</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="color" class="tsd-anchor"></a>
+					<h3>Color</h3>
+					<div class="tsd-signature tsd-kind-icon">Color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An RGB represenation of a color.
+							Each property is normalized to the range [0, 1]</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>g<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="conditioncallback" class="tsd-anchor"></a>
+					<h3>Condition<wbr>Callback</h3>
+					<div class="tsd-signature tsd-kind-icon">Condition<wbr>Callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A callback that describes a condition of an <a href="interfaces/iobservable.html">IObservable</a> to wait for.
+							Returning true will resolve the promise returned by <a href="interfaces/iobservable.html#waituntil">IObservable.waitUntil</a></p>
+						</div>
+						<p>The functional style version of the <a href="interfaces/icondition.html">ICondition</a></p>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DataT</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>data: <span class="tsd-signature-type">DataT</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="observercallback" class="tsd-anchor"></a>
+					<h3>Observer<wbr>Callback</h3>
+					<div class="tsd-signature tsd-kind-icon">Observer<wbr>Callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A callback that can be subscribed to changes of an <a href="interfaces/iobservable.html">IObservable</a></p>
+						</div>
+						<p>The functional style version of the <a href="interfaces/iobserver.html">IObserver</a></p>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DataT</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>data: <span class="tsd-signature-type">DataT</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="rotation" class="tsd-anchor"></a>
+					<h3>Rotation</h3>
+					<div class="tsd-signature tsd-kind-icon">Rotation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> z<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="size" class="tsd-anchor"></a>
+					<h3>Size</h3>
+					<div class="tsd-signature tsd-kind-icon">Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>h<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>w<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="vector2" class="tsd-anchor"></a>
+					<h3>Vector2</h3>
+					<div class="tsd-signature tsd-kind-icon">Vector2<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="vector3" class="tsd-anchor"></a>
+					<h3>Vector3</h3>
+					<div class="tsd-signature tsd-kind-icon">Vector3<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>z<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="off" class="tsd-anchor"></a>
+					<h3>off</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">off<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Unsubscribes from an event.</p>
+								</div>
+								<pre><code><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">model</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;My model loaded!&#x27;</span>);
+};
+
+<span class="hljs-comment">// Start listening to the event.</span>
+mpSdk.on(mpSdk.Event.MODEL_LOADED, callback);
+
+<span class="hljs-comment">// Stop listening to the event.</span>
+mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The event to stop.</p>
+									</div>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The original callback.</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>any<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>any: <span class="tsd-signature-type">any</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="on" class="tsd-anchor"></a>
+					<h3>on</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/app.event.html#phase_change" class="tsd-signature-type">App.Event.PHASE_CHANGE</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mode.event.html#change_start" class="tsd-signature-type">Mode.Event.CHANGE_START</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mode.event.html#change_end" class="tsd-signature-type">Mode.Event.CHANGE_END</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/camera.event.html#move" class="tsd-signature-type">Camera.Event.MOVE</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/floor.event.html#change_start" class="tsd-signature-type">Floor.Event.CHANGE_START</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/floor.event.html#change_end" class="tsd-signature-type">Floor.Event.CHANGE_END</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/label.event.html#position_updated" class="tsd-signature-type">Label.Event.POSITION_UPDATED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mattertag.event.html#hover" class="tsd-signature-type">Mattertag.Event.HOVER</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mattertag.event.html#click" class="tsd-signature-type">Mattertag.Event.CLICK</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mattertag.event.html#link_open" class="tsd-signature-type">Mattertag.Event.LINK_OPEN</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/sweep.event.html#enter" class="tsd-signature-type">Sweep.Event.ENTER</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/sweep.event.html#exit" class="tsd-signature-type">Sweep.Event.EXIT</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/model.event.html#model_loaded" class="tsd-signature-type">Model.Event.MODEL_LOADED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/tour.event.html#started" class="tsd-signature-type">Tour.Event.STARTED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/tour.event.html#stopped" class="tsd-signature-type">Tour.Event.STOPPED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/tour.event.html#ended" class="tsd-signature-type">Tour.Event.ENDED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/tour.event.html#stepped" class="tsd-signature-type">Tour.Event.STEPPED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+									<dd><p>Use <a href="modules/app.html#state-1">state</a> observable to get phase change notifications.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/app.event.html#phase_change" class="tsd-signature-type">App.Event.PHASE_CHANGE</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>app<span class="tsd-signature-symbol">: </span><a href="enums/app.phase.html" class="tsd-signature-type">App.Phase</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>app: <a href="enums/app.phase.html" class="tsd-signature-type">App.Phase</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when the camera is starting to transition to a mode.</p>
+								</div>
+								<pre><code>mpSdk.on(mpSdk.Mode.Event.CHANGE_START,
+  <span class="hljs-function"><span class="hljs-keyword">function</span></span>(oldMode, <span class="hljs-keyword">new</span><span class="hljs-type">Mode</span>){
+    console.log(<span class="hljs-string">&#x27;Mode changing from &#x27;</span> + oldMode);
+    console.log(<span class="hljs-string">&#x27;Mode changing to  &#x27;</span> + <span class="hljs-keyword">new</span><span class="hljs-type">Mode</span>);
+  }
+);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/mode.event.html#change_start" class="tsd-signature-type">Mode.Event.CHANGE_START</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, newMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>oldMode: <span class="tsd-signature-type">string</span></h5>
+														</li>
+														<li>
+															<h5>newMode: <span class="tsd-signature-type">string</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when the camera has completed a transition to a mode.</p>
+								</div>
+								<pre><code>mpSdk.on(mpSdk.Mode.Event.CHANGE_END,
+  <span class="hljs-function"><span class="hljs-keyword">function</span></span>(oldMode, <span class="hljs-keyword">new</span><span class="hljs-type">Mode</span>){
+    console.log(<span class="hljs-string">&#x27;Mode changed from &#x27;</span> + oldMode);
+    console.log(<span class="hljs-string">&#x27;Mode changed to  &#x27;</span> + <span class="hljs-keyword">new</span><span class="hljs-type">Mode</span>);
+  }
+);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/mode.event.html#change_end" class="tsd-signature-type">Mode.Event.CHANGE_END</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, newMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>oldMode: <span class="tsd-signature-type">string</span></h5>
+														</li>
+														<li>
+															<h5>newMode: <span class="tsd-signature-type">string</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when the camera&#39;s pose has changed via a position or orientation change.</p>
+								</div>
+								<p>The callback is called with the new pose of the camera.</p>
+								<pre><code>mpSdk.on(mpSdk.Camera.Event.MOVE,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">pose</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Camera moved to position: <span class="hljs-subst">${pose.position}</span>`</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`with orientation: <span class="hljs-subst">${pose.rotation}</span>`</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`in mode: <span class="hljs-subst">${pose.mode}</span>`</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`currently at sweep: <span class="hljs-subst">${pose.sweep}</span>`</span>);
+  }
+);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/camera.event.html#move" class="tsd-signature-type">Camera.Event.MOVE</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>pose<span class="tsd-signature-symbol">: </span><a href="modules/camera.html#pose" class="tsd-signature-type">Camera.Pose</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>pose: <a href="modules/camera.html#pose" class="tsd-signature-type">Camera.Pose</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when a floor change is starting.</p>
+								</div>
+								<p>the callback returns the floor index that we are moving to, and the floor index we are moving from.</p>
+								<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.Floor.Event.CHANGE_START,
+  function(<span class="hljs-keyword">to</span>, <span class="hljs-keyword">from</span>) {
+    console.<span class="hljs-built_in">log</span>(&#x27;Starting <span class="hljs-keyword">to</span> move <span class="hljs-keyword">to</span> floor &#x27; + <span class="hljs-keyword">to</span> + &#x27; <span class="hljs-keyword">from</span> floor &#x27; + <span class="hljs-keyword">from</span>);
+  }
+);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/floor.event.html#change_start" class="tsd-signature-type">Floor.Event.CHANGE_START</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>to<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, from<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>to: <span class="tsd-signature-type">number</span></h5>
+														</li>
+														<li>
+															<h5>from: <span class="tsd-signature-type">number</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when a floor change is ending.</p>
+								</div>
+								<p>the callback returns the floor index (0 based, counting from the bottom)
+								and the floorName, as set in workshop, or defaulting to the same as floorIndex</p>
+								<pre><code>mpSdk.on(mpSdk.Floor.Event.CHANGE_END,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">floorIndex, floorName</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Arrived at floor &#x27;</span> + floorName);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;it is the &#x27;</span> + floorIndex+<span class="hljs-number">1</span> + <span class="hljs-string">&#x27;th floor from the bottom&#x27;</span>);
+  }
+);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/floor.event.html#change_end" class="tsd-signature-type">Floor.Event.CHANGE_END</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>floorIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, floorName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>floorIndex: <span class="tsd-signature-type">number</span></h5>
+														</li>
+														<li>
+															<h5>floorName: <span class="tsd-signature-type">string</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when the labels&#39; on screen position has changed.</p>
+								</div>
+								<pre><code>mpSdk.on(Label.Event.POSITION_UPDATED,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">labels</span>) </span>{
+    <span class="hljs-comment">// Label data updated.</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;On-screen position of first label: &#x27;</span> + <span class="hljs-built_in">JSON</span>.stringify(labels[<span class="hljs-number">0</span>].position));
+  }
+);</code></pre>
+								<dl class="tsd-comment-tags">
+									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/label.event.html#position_updated" class="tsd-signature-type">Label.Event.POSITION_UPDATED</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>labelData<span class="tsd-signature-symbol">: </span><a href="modules/label.html#label-1" class="tsd-signature-type">Label.Label</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>labelData: <a href="modules/label.html#label-1" class="tsd-signature-type">Label.Label</a><span class="tsd-signature-symbol">[]</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when the input pointer hovers onto or out of a mattertag disc.</p>
+								</div>
+								<pre><code>mpSdk.on(mpSdk.Mattertag.Event.HOVER,
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">tagSid, hovering</span>) </span>{
+    <span class="hljs-keyword">if</span> (hovering) {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Begin Hovering on&#x27;</span>, tagSid);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;End Hovering on&#x27;</span>, tagSid);
+    }
+  }
+);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/mattertag.event.html#hover" class="tsd-signature-type">Mattertag.Event.HOVER</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>tagSid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, hovering<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>tagSid: <span class="tsd-signature-type">string</span></h5>
+														</li>
+														<li>
+															<h5>hovering: <span class="tsd-signature-type">boolean</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when the input pointer clicks a Mattertag disc.</p>
+								</div>
+								<pre><code>mpSdk.on(mpSdk.Mattertag.Event.CLICK,
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">tagSid</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(tagSid + <span class="hljs-string">&#x27; was selected&#x27;</span>);
+  }
+);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/mattertag.event.html#click" class="tsd-signature-type">Mattertag.Event.CLICK</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>tagSid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>tagSid: <span class="tsd-signature-type">string</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when a mattertag link is opened.</p>
+								</div>
+								<pre><code>mpSdk.on(mpSdk.Mattertag.Event.LINK_OPEN,
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">tagSid, url</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;The link &#x27;</span> + <span class="hljs-built_in">url</span> + <span class="hljs-string">&#x27; opened for sid &#x27;</span> + tagSid);
+  }
+);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/mattertag.event.html#link_open" class="tsd-signature-type">Mattertag.Event.LINK_OPEN</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>tagSid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>tagSid: <span class="tsd-signature-type">string</span></h5>
+														</li>
+														<li>
+															<h5>url: <span class="tsd-signature-type">string</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when first entering a sweep.</p>
+								</div>
+								<pre><code>mpSdk.on(mpSdk.Sweep.Event.ENTER,
+  <span class="hljs-function"><span class="hljs-keyword">function</span></span>(oldSweep, <span class="hljs-keyword">new</span><span class="hljs-type">Sweep</span>){
+    console.log(<span class="hljs-string">&#x27;Leaving sweep &#x27;</span> + oldSweep);
+    console.log(<span class="hljs-string">&#x27;Entering sweep &#x27;</span> + <span class="hljs-keyword">new</span><span class="hljs-type">Sweep</span>);
+  }
+);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/sweep.event.html#enter" class="tsd-signature-type">Sweep.Event.ENTER</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldSweep<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, newSweep<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>oldSweep: <span class="tsd-signature-type">string</span></h5>
+														</li>
+														<li>
+															<h5>newSweep: <span class="tsd-signature-type">string</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when exiting a sweep.</p>
+								</div>
+								<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.Sweep.Event.EXIT,
+  function(<span class="hljs-keyword">from</span>Sweep, <span class="hljs-keyword">to</span>Sweep){
+    console.<span class="hljs-keyword">log</span>(&#x27;Leaving sweep &#x27; + <span class="hljs-keyword">from</span>Sweep);
+    console.<span class="hljs-keyword">log</span>(&#x27;Transitioning <span class="hljs-keyword">to</span> sweep &#x27; + <span class="hljs-keyword">to</span>Sweep);
+  }
+);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/sweep.event.html#exit" class="tsd-signature-type">Sweep.Event.EXIT</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>fromSweep<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, toSweep<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>fromSweep: <span class="tsd-signature-type">string</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>The exit sweep.</p>
+															</div>
+														</li>
+														<li>
+															<h5>toSweep: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>The destination sweep. This value is only valid for inside mode. It is undefined for floorplan and dollhouse mode.</p>
+															</div>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when the model has been loaded.</p>
+								</div>
+								<pre><code>mpSdk.on(mpSdk.<span class="hljs-keyword">Model</span>.Event.MODEL_LOADED,
+  function(<span class="hljs-keyword">model</span>){
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Model sid:&#x27;</span> + <span class="hljs-keyword">model</span>.sid);
+  }
+);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/model.event.html#model_loaded" class="tsd-signature-type">Model.Event.MODEL_LOADED</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>model<span class="tsd-signature-symbol">: </span><a href="modules/model.html#modeldata" class="tsd-signature-type">Model.ModelData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>model: <a href="modules/model.html#modeldata" class="tsd-signature-type">Model.ModelData</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when the tour has started.</p>
+									<pre><code>mpSdk.on(mpSdk.Tour.Event.STARTED,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Tour started!&#x27;</span>);
+  }
+);</code></pre>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/tour.event.html#started" class="tsd-signature-type">Tour.Event.STARTED</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when the tour has stopped.</p>
+									<pre><code>mpSdk.on(mpSdk.Tour.Event.STOPPED,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Tour stopped!&#x27;</span>);
+  }
+);</code></pre>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/tour.event.html#stopped" class="tsd-signature-type">Tour.Event.STOPPED</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when the tour has ended.</p>
+									<pre><code>mpSdk.on(mpSdk.Tour.Event.ENDED,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Tour ended!&#x27;</span>);
+  }
+);</code></pre>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/tour.event.html#ended" class="tsd-signature-type">Tour.Event.ENDED</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when the tour has stepped.</p>
+									<pre><code>mpSdk.on(mpSdk.Tour.Event.STEPPED,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">activeIndex</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Tour has reached step &#x27;</span> + activeIndex);
+  }
+);</code></pre>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/tour.event.html#stepped" class="tsd-signature-type">Tour.Event.STEPPED</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>activeIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>activeIndex: <span class="tsd-signature-type">number</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals current ">
+						<a href="index.html"><em>@mpSdk</em></a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/app.html">App</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/camera.html">Camera</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/conversion.html">Conversion</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/floor.html">Floor</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/label.html">Label</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/mattertag.html">Mattertag</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/measurements.html">Measurements</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/mode.html">Mode</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/model.html">Model</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/pointer.html">Pointer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/settings.html">Settings</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/sweep.html">Sweep</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/tour.html">Tour</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/event.html" class="tsd-kind-icon">Event</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/dictionary.html" class="tsd-kind-icon">Dictionary</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/icondition.html" class="tsd-kind-icon">ICondition</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/imapobserver.html" class="tsd-kind-icon">IMap<wbr>Observer</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/iobservable.html" class="tsd-kind-icon">IObservable</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/iobservablemap.html" class="tsd-kind-icon">IObservable<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/iobserver.html" class="tsd-kind-icon">IObserver</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/isubscription.html" class="tsd-kind-icon">ISubscription</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="index.html#color" class="tsd-kind-icon">Color</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="index.html#conditioncallback" class="tsd-kind-icon">Condition<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="index.html#observercallback" class="tsd-kind-icon">Observer<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="index.html#rotation" class="tsd-kind-icon">Rotation</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="index.html#size" class="tsd-kind-icon">Size</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="index.html#vector2" class="tsd-kind-icon">Vector2</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="index.html#vector3" class="tsd-kind-icon">Vector3</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="index.html#off" class="tsd-kind-icon">off</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="index.html#on" class="tsd-kind-icon">on</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+</footer>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
