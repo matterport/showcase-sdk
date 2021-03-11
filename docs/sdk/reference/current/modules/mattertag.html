@@ -153,7 +153,7 @@
 								</div>
 							</li>
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> window<wbr>Path<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> window<wbr>Path<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
 										<p>The path between Showcase&#39;s window and your window (with the sdk).</p>
@@ -273,13 +273,13 @@
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> off<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> off<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> on<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> on<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> send<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> send<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -394,18 +394,17 @@
 							<p>An observable collection of Mattertag data that can be subscribed to.</p>
 						</div>
 						<p>When first subscribing, the current set of Mattertag will call the observer&#39;s <code>onAdded</code> for each Mattertag as the data becomes available.</p>
-						<pre><code><span style="color: #001080">showcase</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #001080">data</span><span style="color: #000000">.</span><span style="color: #795E26">subscribe</span><span style="color: #000000">({</span>
-<span style="color: #000000">  </span><span style="color: #795E26">onAdded</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Mattertag added to the collection&#039;</span><span style="color: #000000">, </span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">);</span>
-<span style="color: #000000">  },</span>
-<span style="color: #000000">  </span><span style="color: #795E26">onRemoved</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Mattertag removed from the collection&#039;</span><span style="color: #000000">, </span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">);</span>
-<span style="color: #000000">  },</span>
-<span style="color: #000000">  </span><span style="color: #795E26">onUpdated</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Mattertag updated in place in the collection&#039;</span><span style="color: #000000">, </span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">);</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">});</span>
-</code></pre>
+						<pre><code>showcase.Mattertag.data.subscribe({
+  onAdded: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Mattertag added to the collection&#x27;</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
+  },
+  onRemoved: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Mattertag removed from the collection&#x27;</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
+  },
+  onUpdated: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Mattertag updated in place in the collection&#x27;</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
+  }
+});</code></pre>
 					</div>
 				</section>
 			</section>
@@ -433,27 +432,26 @@
 								</ul>
 								<p>See <a href="pointer.html#intersection-1">Pointer.intersection</a> for a way to retrive a new <code>anchorPosition</code> and <code>stemVector</code>.</p>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">add</span><span style="color: #000000">([{</span>
-<span style="color: #000000"> </span><span style="color: #001080">label:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;New tag&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000"> </span><span style="color: #001080">description:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;This tag was added through the Matterport SDK&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000"> </span><span style="color: #001080">anchorPosition:</span><span style="color: #000000"> {</span>
-<span style="color: #000000">   </span><span style="color: #001080">x:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
-<span style="color: #000000">   </span><span style="color: #001080">y:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
-<span style="color: #000000">   </span><span style="color: #001080">z:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
-<span style="color: #000000"> },</span>
-<span style="color: #000000"> </span><span style="color: #001080">stemVector:</span><span style="color: #000000"> { </span><span style="color: #008000">// make the Mattertag stick straight up and make it 0.30 meters (~1 foot) tall</span>
-<span style="color: #000000">   </span><span style="color: #001080">x:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
-<span style="color: #000000">   </span><span style="color: #001080">y:</span><span style="color: #000000"> </span><span style="color: #098658">0.30</span><span style="color: #000000">,</span>
-<span style="color: #000000">   </span><span style="color: #001080">z:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
-<span style="color: #000000"> },</span>
-<span style="color: #000000"> </span><span style="color: #001080">color:</span><span style="color: #000000"> { </span><span style="color: #008000">// blue disc</span>
-<span style="color: #000000">   </span><span style="color: #001080">r:</span><span style="color: #000000"> </span><span style="color: #098658">0.0</span><span style="color: #000000">,</span>
-<span style="color: #000000">   </span><span style="color: #001080">g:</span><span style="color: #000000"> </span><span style="color: #098658">0.0</span><span style="color: #000000">,</span>
-<span style="color: #000000">   </span><span style="color: #001080">b:</span><span style="color: #000000"> </span><span style="color: #098658">1.0</span><span style="color: #000000">,</span>
-<span style="color: #000000"> },</span>
-<span style="color: #000000"> </span><span style="color: #001080">floorIndex:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #008000">// optional, if not specified the sdk will provide an estimate of the floor index for the anchor position provided.</span>
-<span style="color: #000000">}])</span>
-</code></pre>
+								<pre><code><span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.add</span>([{
+ <span class="hljs-attribute">label</span>: <span class="hljs-string">&quot;New tag&quot;</span>,
+ <span class="hljs-attribute">description</span>: <span class="hljs-string">&quot;This tag was added through the Matterport SDK&quot;</span>,
+ <span class="hljs-attribute">anchorPosition</span>: {
+   <span class="hljs-attribute">x</span>: <span class="hljs-number">0</span>,
+   <span class="hljs-attribute">y</span>: <span class="hljs-number">0</span>,
+   <span class="hljs-attribute">z</span>: <span class="hljs-number">0</span>,
+ },
+ <span class="hljs-attribute">stemVector</span>: { <span class="hljs-comment">// make the Mattertag stick straight up and make it 0.30 meters (~1 foot) tall</span>
+   <span class="hljs-attribute">x</span>: <span class="hljs-number">0</span>,
+   <span class="hljs-attribute">y</span>: <span class="hljs-number">0.30</span>,
+   <span class="hljs-attribute">z</span>: <span class="hljs-number">0</span>,
+ },
+ <span class="hljs-attribute">color</span>: { <span class="hljs-comment">// blue disc</span>
+   <span class="hljs-attribute">r</span>: <span class="hljs-number">0.0</span>,
+   <span class="hljs-attribute">g</span>: <span class="hljs-number">0.0</span>,
+   <span class="hljs-attribute">b</span>: <span class="hljs-number">1.0</span>,
+ },
+ <span class="hljs-attribute">floorIndex</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// optional, if not specified the sdk will provide an estimate of the floor index for the anchor position provided.</span>
+}])</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -484,15 +482,14 @@
 									<p>Edit the data in a Mattertag billboard.</p>
 								</div>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">editBillboard</span><span style="color: #000000">(</span><span style="color: #001080">sid</span><span style="color: #000000">, {</span>
-<span style="color: #000000">  </span><span style="color: #001080">label:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;This is a new title&#039;</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">description:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;This image was set dynamically by the Showcase sdk&#039;</span>
-<span style="color: #000000">  </span><span style="color: #001080">media</span><span style="color: #000000">: {</span>
-<span style="color: #000000">    </span><span style="color: #001080">type:</span><span style="color: #000000"> </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span>
-<span style="color: #000000">    </span><span style="color: #001080">src</span><span style="color: #000000">: </span><span style="color: #A31515">&#039;https://www.image.site/image.jpg&#039;</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">});</span>
-</code></pre>
+								<pre><code><span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.editBillboard</span>(sid, {
+  <span class="hljs-attribute">label</span>: <span class="hljs-string">&#x27;This is a new title&#x27;</span>,
+  <span class="hljs-attribute">description</span>: <span class="hljs-string">&#x27;This image was set dynamically by the Showcase sdk&#x27;</span>
+  <span class="hljs-attribute">media</span>: {
+    <span class="hljs-attribute">type</span>: mpSdk.Mattertag.
+    <span class="hljs-attribute">src</span>: <span class="hljs-string">&#x27;https://www.image.site/image.jpg&#x27;</span>
+  }
+});</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -527,16 +524,15 @@
 								<div class="lead">
 									<p>Edit the color of a Mattertag</p>
 								</div>
-								<pre><code><span style="color: #008000">// acquired through a previous call to mpSdk.Mattertag.getData();</span>
-<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">mattertagData</span><span style="color: #000000">;</span>
+								<pre><code>// <span class="hljs-selector-tag">acquired</span> <span class="hljs-selector-tag">through</span> <span class="hljs-selector-tag">a</span> <span class="hljs-selector-tag">previous</span> <span class="hljs-selector-tag">call</span> <span class="hljs-selector-tag">to</span> <span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.getData</span>();
+<span class="hljs-selector-tag">var</span> <span class="hljs-selector-tag">mattertagData</span>;
 
-<span style="color: #008000">// change the first Mattertag to yellow</span>
-<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">editColor</span><span style="color: #000000">(</span><span style="color: #001080">mattertagData</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #001080">sid</span><span style="color: #000000">, {</span>
-<span style="color: #000000">  </span><span style="color: #001080">r:</span><span style="color: #000000"> </span><span style="color: #098658">0.9</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">g:</span><span style="color: #000000"> </span><span style="color: #098658">0.9</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">b:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
-<span style="color: #000000">});</span>
-</code></pre>
+// <span class="hljs-selector-tag">change</span> <span class="hljs-selector-tag">the</span> <span class="hljs-selector-tag">first</span> <span class="hljs-selector-tag">Mattertag</span> <span class="hljs-selector-tag">to</span> <span class="hljs-selector-tag">yellow</span>
+<span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.editColor</span>(<span class="hljs-selector-tag">mattertagData</span><span class="hljs-selector-attr">[0]</span><span class="hljs-selector-class">.sid</span>, {
+  <span class="hljs-attribute">r</span>: <span class="hljs-number">0.9</span>,
+  g: <span class="hljs-number">0.9</span>,
+  b: <span class="hljs-number">0</span>,
+});</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -572,12 +568,11 @@
 									<p>Change the icon of the Mattertag disc</p>
 								</div>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code><span style="color: #008000">// acquired through a previous call to mpSdk.Mattertag.getData();</span>
-<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">mattertagData</span><span style="color: #000000">;</span>
+								<pre><code><span class="hljs-comment">// acquired through a previous call to mpSdk.Mattertag.getData();</span>
+var mattertagData;
 
-<span style="color: #008000">// change the icon of the first Mattertag using the id used in a previously registeredIcon call</span>
-<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">editIcon</span><span style="color: #000000">(</span><span style="color: #001080">mattertagData</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #001080">sid</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;customIconId&#039;</span><span style="color: #000000">);</span>
-</code></pre>
+<span class="hljs-comment">// change the icon of the first Mattertag using the id used in a previously registeredIcon call</span>
+mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Mattertag</span>.</span></span>edit<span class="hljs-constructor">Icon(<span class="hljs-params">mattertagData</span>[0].<span class="hljs-params">sid</span>, &#x27;<span class="hljs-params">customIconId</span>&#x27;)</span>;</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -614,18 +609,17 @@
 								<div class="lead">
 									<p>Edit the opacity of a Mattertag</p>
 								</div>
-								<pre><code><span style="color: #008000">// acquired through a previous call to mpSdk.Mattertag.getData();</span>
-<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">mattertagData</span><span style="color: #000000">;</span>
+								<pre><code><span class="hljs-comment">// acquired through a previous call to mpSdk.Mattertag.getData();</span>
+var mattertagData;
 
-<span style="color: #008000">// make the first Mattertag invisible</span>
-<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">editOpacity</span><span style="color: #000000">(</span><span style="color: #001080">mattertagData</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #001080">sid</span><span style="color: #000000">, </span><span style="color: #098658">0</span><span style="color: #000000">);</span>
+<span class="hljs-comment">// make the first Mattertag invisible</span>
+mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Mattertag</span>.</span></span>edit<span class="hljs-constructor">Opacity(<span class="hljs-params">mattertagData</span>[0].<span class="hljs-params">sid</span>, 0)</span>;
 
-<span style="color: #008000">// make another Mattertag transparent</span>
-<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">editOpacity</span><span style="color: #000000">(</span><span style="color: #001080">mattertagData</span><span style="color: #000000">[</span><span style="color: #098658">1</span><span style="color: #000000">].</span><span style="color: #001080">sid</span><span style="color: #000000">, </span><span style="color: #098658">0.5</span><span style="color: #000000">);</span>
+<span class="hljs-comment">// make another Mattertag transparent</span>
+mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Mattertag</span>.</span></span>edit<span class="hljs-constructor">Opacity(<span class="hljs-params">mattertagData</span>[1].<span class="hljs-params">sid</span>, 0.5)</span>;
 
-<span style="color: #008000">// and another completely opaque</span>
-<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">editOpacity</span><span style="color: #000000">(</span><span style="color: #001080">mattertagData</span><span style="color: #000000">[</span><span style="color: #098658">2</span><span style="color: #000000">].</span><span style="color: #001080">sid</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">);</span>
-</code></pre>
+<span class="hljs-comment">// and another completely opaque</span>
+mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Mattertag</span>.</span></span>edit<span class="hljs-constructor">Opacity(<span class="hljs-params">mattertagData</span>[2].<span class="hljs-params">sid</span>, 1)</span>;</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -662,22 +656,21 @@
 								</div>
 								<p>See <a href="pointer.html#intersection-1">Pointer.intersection</a> for a way to retrieve a new <code>anchorPosition</code> and <code>stemVector</code>.</p>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">mattertagData</span><span style="color: #000000">; </span><span style="color: #008000">// ... acquired through a previous call to mpSdk.Mattertag.getData();</span>
+								<pre><code>var mattertagData; <span class="hljs-comment">// ... acquired through a previous call to mpSdk.Mattertag.getData();</span>
 
-<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">editPosition</span><span style="color: #000000">(</span><span style="color: #001080">mattertagData</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #001080">sid</span><span style="color: #000000">, {</span>
-<span style="color: #000000"> </span><span style="color: #001080">anchorPosition:</span><span style="color: #000000"> {</span>
-<span style="color: #000000">   </span><span style="color: #001080">x:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
-<span style="color: #000000">   </span><span style="color: #001080">y:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
-<span style="color: #000000">   </span><span style="color: #001080">z:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
-<span style="color: #000000"> },</span>
-<span style="color: #000000"> </span><span style="color: #001080">stemVector:</span><span style="color: #000000"> { </span><span style="color: #008000">// make the Mattertag stick straight up and make it 0.30 meters (~1 foot) tall</span>
-<span style="color: #000000">   </span><span style="color: #001080">x:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
-<span style="color: #000000">   </span><span style="color: #001080">y:</span><span style="color: #000000"> </span><span style="color: #098658">0.30</span><span style="color: #000000">,</span>
-<span style="color: #000000">   </span><span style="color: #001080">z:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
-<span style="color: #000000"> },</span>
-<span style="color: #000000"> </span><span style="color: #001080">floorIndex:</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000">,</span>
-<span style="color: #000000">});</span>
-</code></pre>
+mpSdk.Mattertag.editPosition(mattertagData[<span class="hljs-number">0</span>].sid, {
+<span class="hljs-symbol"> anchorPosition:</span> {
+<span class="hljs-symbol">   x:</span> <span class="hljs-number">0</span>,
+<span class="hljs-symbol">   y:</span> <span class="hljs-number">0</span>,
+<span class="hljs-symbol">   z:</span> <span class="hljs-number">0</span>,
+ },
+<span class="hljs-symbol"> stemVector:</span> { <span class="hljs-comment">// make the Mattertag stick straight up and make it 0.30 meters (~1 foot) tall</span>
+<span class="hljs-symbol">   x:</span> <span class="hljs-number">0</span>,
+<span class="hljs-symbol">   y:</span> <span class="hljs-number">0.30</span>,
+<span class="hljs-symbol">   z:</span> <span class="hljs-number">0</span>,
+ },
+<span class="hljs-symbol"> floorIndex:</span> <span class="hljs-number">2</span>,
+});</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -712,18 +705,17 @@
 								<div class="lead">
 									<p>This function returns metadata on the collection of Mattertags.</p>
 								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">getData</span><span style="color: #000000">()</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">mattertags</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #008000">// Mattertag data retreival complete.</span>
-<span style="color: #000000">    </span><span style="color: #AF00DB">if</span><span style="color: #000000">(</span><span style="color: #001080">mattertags</span><span style="color: #000000">.</span><span style="color: #001080">length</span><span style="color: #000000"> &gt; </span><span style="color: #098658">0</span><span style="color: #000000">) {</span>
-<span style="color: #000000">      </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;First mattertag label: &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">mattertags</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #001080">label</span><span style="color: #000000">);</span>
-<span style="color: #000000">      </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;First mattertag description: &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">mattertags</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #001080">description</span><span style="color: #000000">);</span>
-<span style="color: #000000">    }</span>
-<span style="color: #000000">  })</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #008000">// Mattertag data retrieval error.</span>
-<span style="color: #000000">  });</span>
-</code></pre>
+								<pre><code>mpSdk.Mattertag.getData()
+  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(mattertags)</span> {</span>
+    <span class="hljs-comment">// Mattertag data retreival complete.</span>
+    <span class="hljs-keyword">if</span>(mattertags.<span class="hljs-built_in">length</span> &gt; <span class="hljs-number">0</span>) {
+      console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;First mattertag label: &#x27;</span> + mattertags[<span class="hljs-number">0</span>].label);
+      console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;First mattertag description: &#x27;</span> + mattertags[<span class="hljs-number">0</span>].description);
+    }
+  })
+  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
+    <span class="hljs-comment">// Mattertag data retrieval error.</span>
+  });</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
 									<dd><p>Use the observable <a href="mattertag.html#data">data</a> collection instead</p>
@@ -749,9 +741,8 @@
 									<p>Get the disc&#39;s (3d) position of a Mattertag.
 									The original data only represent the point that attaches the tag to the model.</p>
 								</div>
-								<pre><code><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">mattertags</span><span style="color: #000000">; </span><span style="color: #008000">// get mattertag collection from mpSdk.Mattertag.getData</span>
-<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">tagDiscPosition</span><span style="color: #000000"> = </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">getDiscPosition</span><span style="color: #000000">(</span><span style="color: #001080">mattertags</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">]);</span>
-</code></pre>
+								<pre><code>var mattertags; <span class="hljs-comment">// get mattertag collection from mpSdk.Mattertag.getData</span>
+var tagDiscPosition = mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Mattertag</span>.</span></span>get<span class="hljs-constructor">DiscPosition(<span class="hljs-params">mattertags</span>[0])</span>;</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -783,36 +774,35 @@
 								<p>The frame that contains your custom code will have certain limitations due to being sandboxed by the <code>sandbox=&#39;allow-scripts</code> attribute.
 								Attempting to access properties of other windows will also be blocked by the browser. (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe">see the MDN pages about iframe sandbox</a>)</p>
 								<p>Currently, the HTML CAN ONLY BE SET ONCE by a call to <code>injectHTML</code>. This includes removing or clearing the HTML.</p>
-								<pre><code><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">mattertagData</span><span style="color: #000000">; </span><span style="color: #008000">// ... acquired through a previous call to mpSdk.Mattertag.getData();</span>
+								<pre><code>var mattertagData; <span class="hljs-comment">// ... acquired through a previous call to mpSdk.Mattertag.getData();</span>
 
-<span style="color: #008000">// create a 100x50px button within the Mattertag and send out an ID when it is clicked</span>
-<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">htmlToInject</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039; </span><span style="color: #EE0000">\</span>
-<span style="color: #A31515">  &lt;style&gt; </span><span style="color: #EE0000">\</span>
-<span style="color: #A31515">    button { </span><span style="color: #EE0000">\</span>
-<span style="color: #A31515">      width: 100px; </span><span style="color: #EE0000">\</span>
-<span style="color: #A31515">      height: 50px; </span><span style="color: #EE0000">\</span>
-<span style="color: #A31515">    } </span><span style="color: #EE0000">\</span>
-<span style="color: #A31515">  &lt;/style&gt; </span><span style="color: #EE0000">\</span>
-<span style="color: #A31515">  &lt;button id=&quot;btn1&quot;&gt;CLICK ME&lt;/button&gt; </span><span style="color: #EE0000">\</span>
-<span style="color: #A31515">  &lt;script&gt; </span><span style="color: #EE0000">\</span>
-<span style="color: #A31515">    var btn1 = document.getElementById(&quot;btn1&quot;); </span><span style="color: #EE0000">\</span>
-<span style="color: #A31515">    btn1.addEventListener(&quot;click&quot;, function () { </span><span style="color: #EE0000">\</span>
-<span style="color: #A31515">      window.send(&quot;buttonClick&quot;, 12345); </span><span style="color: #EE0000">\</span>
-<span style="color: #A31515">    }); </span><span style="color: #EE0000">\</span>
-<span style="color: #A31515">  &lt;/script&gt;&#039;</span><span style="color: #000000">;</span>
+<span class="hljs-comment">// create a 100x50px button within the Mattertag and send out an ID when it is clicked</span>
+var htmlToInject = &#x27; \
+  &lt;style&gt; \
+    button { \
+      width: <span class="hljs-number">100</span>px; \
+      height: <span class="hljs-number">50</span>px; \
+    } \
+  &lt;/style&gt; \
+  &lt;button id=<span class="hljs-string">&quot;btn1&quot;</span>&gt;CLICK ME&lt;/button&gt; \
+  &lt;script&gt; \
+    var btn1 = document.getElementById(<span class="hljs-string">&quot;btn1&quot;</span>); \
+    btn1.addEventListener(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span> \
+      window.send(<span class="hljs-string">&quot;buttonClick&quot;</span>, <span class="hljs-number">12345</span>); \
+    }); \
+  &lt;/script&gt;&#x27;;
 
-<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">injectHTML</span><span style="color: #000000">(</span><span style="color: #001080">mattertagData</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">], </span><span style="color: #001080">htmlToInject</span><span style="color: #000000">, {</span>
-<span style="color: #000000">  </span><span style="color: #001080">size:</span><span style="color: #000000"> {</span>
-<span style="color: #000000">    </span><span style="color: #001080">w:</span><span style="color: #000000"> </span><span style="color: #098658">100</span><span style="color: #000000">,</span>
-<span style="color: #000000">    </span><span style="color: #001080">h:</span><span style="color: #000000"> </span><span style="color: #098658">50</span><span style="color: #000000">,</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">})</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">messenger</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #001080">messenger</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;buttonClick&quot;</span><span style="color: #000000">, </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">buttonId</span><span style="color: #000000">) {</span>
-<span style="color: #000000">      </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;clicked button with id:&#039;</span><span style="color: #000000">, </span><span style="color: #001080">buttonId</span><span style="color: #000000">);</span>
-<span style="color: #000000">    });</span>
-<span style="color: #000000">  });</span>
-
+mpSdk.Mattertag.injectHTML(mattertagData[<span class="hljs-number">0</span>], htmlToInject, {
+  size: {
+    w: <span class="hljs-number">100</span>,
+    h: <span class="hljs-number">50</span>,
+  }
+})
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(messenger)</span> {</span>
+    messenger.on(<span class="hljs-string">&quot;buttonClick&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(buttonId)</span> {</span>
+      console.<span class="hljs-built_in">log</span>(&#x27;clicked button with id:&#x27;, buttonId);
+    });
+  });
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -845,8 +835,7 @@
 								<div class="lead">
 									<p>This function navigates to the Mattertag disc with the provided sid, opening the billboard on arrival.</p>
 								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">navigateToTag</span><span style="color: #000000">(</span><span style="color: #001080">sid</span><span style="color: #000000">, </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #001080">Transition</span><span style="color: #000000">.</span><span style="color: #0070C1">FLY</span><span style="color: #000000">);</span>
-</code></pre>
+								<pre><code><span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.navigateToTag</span>(<span class="hljs-selector-tag">sid</span>, <span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.Transition</span><span class="hljs-selector-class">.FLY</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -881,26 +870,25 @@
 								<div class="lead">
 									<p>Prevents the &quot;default&quot; Showcase action on a Mattertag from occurring: hover to open billboard, click to navigate to view.</p>
 								</div>
-								<pre><code><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">mattertagData</span><span style="color: #000000">; </span><span style="color: #008000">// ... acquired through a previous call to mpSdk.Mattertag.getData();</span>
+								<pre><code><span class="hljs-keyword">var</span> mattertagData; <span class="hljs-comment">// ... acquired through a previous call to mpSdk.Mattertag.getData();</span>
 
-<span style="color: #008000">// prevent navigating to the tag on click</span>
-<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">noNavigationTag</span><span style="color: #000000"> = </span><span style="color: #001080">mattertagData</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">];</span>
-<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">preventAction</span><span style="color: #000000">(</span><span style="color: #001080">noNavigationTag</span><span style="color: #000000">.</span><span style="color: #001080">sid</span><span style="color: #000000">, {</span>
-<span style="color: #000000">  </span><span style="color: #001080">navigating:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">,</span>
-<span style="color: #000000">});</span>
+<span class="hljs-comment">// prevent navigating to the tag on click</span>
+<span class="hljs-keyword">var</span> noNavigationTag = mattertagData[<span class="hljs-number">0</span>];
+mpSdk.Mattertag.preventAction(noNavigationTag.sid, {
+  navigating: <span class="hljs-keyword">true</span>,
+});
 
-<span style="color: #008000">// prevent the billboard from showing</span>
-<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">noBillboardTag</span><span style="color: #000000"> = </span><span style="color: #001080">mattertagData</span><span style="color: #000000">[</span><span style="color: #098658">1</span><span style="color: #000000">];</span>
-<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">preventAction</span><span style="color: #000000">(</span><span style="color: #001080">noBillboardTag</span><span style="color: #000000">.</span><span style="color: #001080">sid</span><span style="color: #000000">, {</span>
-<span style="color: #000000">  </span><span style="color: #001080">opening:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">,</span>
-<span style="color: #000000">});</span>
+<span class="hljs-comment">// prevent the billboard from showing</span>
+<span class="hljs-keyword">var</span> noBillboardTag = mattertagData[<span class="hljs-number">1</span>];
+mpSdk.Mattertag.preventAction(noBillboardTag.sid, {
+  opening: <span class="hljs-keyword">true</span>,
+});
 
-<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">noActionsTag</span><span style="color: #000000"> = </span><span style="color: #001080">mattertagData</span><span style="color: #000000">[</span><span style="color: #098658">2</span><span style="color: #000000">];</span>
-<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">preventAction</span><span style="color: #000000">(</span><span style="color: #001080">noActionsTag</span><span style="color: #000000">.</span><span style="color: #001080">sid</span><span style="color: #000000">, {</span>
-<span style="color: #000000">  </span><span style="color: #001080">opening:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">navigating:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">,</span>
-<span style="color: #000000">});</span>
-</code></pre>
+<span class="hljs-keyword">var</span> noActionsTag = mattertagData[<span class="hljs-number">2</span>];
+mpSdk.Mattertag.preventAction(noActionsTag.sid, {
+  opening: <span class="hljs-keyword">true</span>,
+  navigating: <span class="hljs-keyword">true</span>,
+});</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -936,8 +924,7 @@
 									<p>Register an icon to use with subsequent <a href="mattertag.html#editicon">Mattertag.editIcon</a> calls.</p>
 								</div>
 								<p><strong>Note</strong>: It is recommended to host your own images to mitigate cross origin limitations.</p>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">registerIcon</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;customIconId&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;https://[link.to/image]&#039;</span><span style="color: #000000">);</span>
-</code></pre>
+								<pre><code>mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Mattertag</span>.</span></span>register<span class="hljs-constructor">Icon(&#x27;<span class="hljs-params">customIconId</span>&#x27;, &#x27;<span class="hljs-params">https</span>:<span class="hljs-operator">/</span><span class="hljs-operator">/</span>[<span class="hljs-params">link</span>.<span class="hljs-params">to</span><span class="hljs-operator">/</span><span class="hljs-params">image</span>]&#x27;)</span>;</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -973,14 +960,13 @@
 									<p>Removes one or more Mattertags from Showcase.</p>
 								</div>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">mattertagData</span><span style="color: #000000">; </span><span style="color: #008000">// ... acquired through a previous call to mpSdk.Mattertag.getData();</span>
-<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">first</span><span style="color: #000000"> = </span><span style="color: #001080">mattertagData</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">];</span>
-<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">remove</span><span style="color: #000000">(</span><span style="color: #001080">first</span><span style="color: #000000">.</span><span style="color: #001080">sid</span><span style="color: #000000">);</span>
+								<pre><code><span class="hljs-built_in">var</span> mattertagData; // ... acquired through a previous call to mpSdk.Mattertag.getData();
+<span class="hljs-built_in">var</span> <span class="hljs-built_in">first</span> = mattertagData[<span class="hljs-number">0</span>];
+mpSdk.Mattertag.<span class="hljs-built_in">remove</span>(<span class="hljs-built_in">first</span>.sid);
 
-<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">second</span><span style="color: #000000"> = </span><span style="color: #001080">mattertagData</span><span style="color: #000000">[</span><span style="color: #098658">1</span><span style="color: #000000">];</span>
-<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">third</span><span style="color: #000000"> = </span><span style="color: #001080">mattertagData</span><span style="color: #000000">[</span><span style="color: #098658">2</span><span style="color: #000000">];</span>
-<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">remove</span><span style="color: #000000">([</span><span style="color: #001080">second</span><span style="color: #000000">.</span><span style="color: #001080">sid</span><span style="color: #000000">, </span><span style="color: #001080">third</span><span style="color: #000000">.</span><span style="color: #001080">sid</span><span style="color: #000000">]);</span>
-</code></pre>
+<span class="hljs-built_in">var</span> <span class="hljs-built_in">second</span> = mattertagData[<span class="hljs-number">1</span>];
+<span class="hljs-built_in">var</span> <span class="hljs-built_in">third</span> = mattertagData[<span class="hljs-number">2</span>];
+mpSdk.Mattertag.<span class="hljs-built_in">remove</span>([<span class="hljs-built_in">second</span>.sid, <span class="hljs-built_in">third</span>.sid]);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1010,12 +996,11 @@
 								<div class="lead">
 									<p>Resets the icon of the Mattertag disc back to its original icon.</p>
 								</div>
-								<pre><code><span style="color: #008000">// acquired through a previous call to mpSdk.Mattertag.getData();</span>
-<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">mattertagData</span><span style="color: #000000">;</span>
+								<pre><code><span class="hljs-comment">// acquired through a previous call to mpSdk.Mattertag.getData();</span>
+var mattertagData;
 
-<span style="color: #008000">// reset the icon of the first Mattertag to its original</span>
-<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #795E26">resetIcon</span><span style="color: #000000">(</span><span style="color: #001080">mattertagData</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #001080">sid</span><span style="color: #000000">);</span>
-</code></pre>
+<span class="hljs-comment">// reset the icon of the first Mattertag to its original</span>
+mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Mattertag</span>.</span></span>reset<span class="hljs-constructor">Icon(<span class="hljs-params">mattertagData</span>[0].<span class="hljs-params">sid</span>)</span>;</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1035,8 +1020,8 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class=" ">
-						<a href="../index.html">Exports</a>
+					<li class="globals  ">
+						<a href="../index.html"><em>@mpSdk</em></a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="app.html">App</a>

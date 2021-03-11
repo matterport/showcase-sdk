@@ -83,7 +83,7 @@
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5>mode<span class="tsd-signature-symbol">: </span><a href="../enums/mode.mode-1.html" class="tsd-signature-type">Mode.Mode</a></h5>
+								<h5>mode<span class="tsd-signature-symbol">: </span><a href="mode.html" class="tsd-signature-type">Mode</a></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
@@ -110,7 +110,7 @@
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> speed<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> speed<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
 										<p>Rotation speed in degrees per second.</p>
@@ -153,14 +153,13 @@
 						<div class="lead">
 							<p>An observable pose data object that can be subscribed to.</p>
 						</div>
-						<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Camera</span><span style="color: #000000">.</span><span style="color: #001080">pose</span><span style="color: #000000">.</span><span style="color: #795E26">subscribe</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">pose</span><span style="color: #000000">) {</span>
-<span style="color: #000000">  </span><span style="color: #008000">// Changes to the Camera pose have occurred.</span>
-<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Current position is &#039;</span><span style="color: #000000">, </span><span style="color: #001080">pose</span><span style="color: #000000">.</span><span style="color: #001080">position</span><span style="color: #000000">);</span>
-<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Rotation angle is &#039;</span><span style="color: #000000">, </span><span style="color: #001080">pose</span><span style="color: #000000">.</span><span style="color: #001080">rotation</span><span style="color: #000000">);</span>
-<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Sweep UUID is &#039;</span><span style="color: #000000">, </span><span style="color: #001080">pose</span><span style="color: #000000">.</span><span style="color: #001080">sweep</span><span style="color: #000000">);</span>
-<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;View mode is &#039;</span><span style="color: #000000">, </span><span style="color: #001080">pose</span><span style="color: #000000">.</span><span style="color: #001080">mode</span><span style="color: #000000">);</span>
-<span style="color: #000000">});</span>
-</code></pre>
+						<pre><code>mpSdk.Camera.<span class="hljs-keyword">pose</span>.subscribe(function (<span class="hljs-keyword">pose</span>) {
+  <span class="hljs-comment">// Changes to the Camera pose have occurred.</span>
+  console.<span class="hljs-keyword">log</span>(<span class="hljs-string">&#x27;Current position is &#x27;</span>, <span class="hljs-keyword">pose</span>.position);
+  console.<span class="hljs-keyword">log</span>(<span class="hljs-string">&#x27;Rotation angle is &#x27;</span>, <span class="hljs-keyword">pose</span>.rotation);
+  console.<span class="hljs-keyword">log</span>(<span class="hljs-string">&#x27;Sweep UUID is &#x27;</span>, <span class="hljs-keyword">pose</span>.sweep);
+  console.<span class="hljs-keyword">log</span>(<span class="hljs-string">&#x27;View mode is &#x27;</span>, <span class="hljs-keyword">pose</span>.mode);
+});</code></pre>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-namespace">
@@ -174,11 +173,10 @@
 							<p>An observable zoom level of the camera in Panorama mode.
 							The zoom level will be 1.0 for all other viewmodes.</p>
 						</div>
-						<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Camera</span><span style="color: #000000">.</span><span style="color: #001080">zoom</span><span style="color: #000000">.</span><span style="color: #795E26">subscribe</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">zoom</span><span style="color: #000000">) {</span>
-<span style="color: #000000">  </span><span style="color: #008000">// the zoom level has changed</span>
-<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Current zoom is &#039;</span><span style="color: #000000">, </span><span style="color: #001080">zoom</span><span style="color: #000000">.</span><span style="color: #001080">level</span><span style="color: #000000">);</span>
-<span style="color: #000000">});</span>
-</code></pre>
+						<pre><code>mpSdk.Camera.zoom.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">zoom</span>) </span>{
+  <span class="hljs-comment">// the zoom level has changed</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Current zoom is &#x27;</span>, zoom.level);
+});</code></pre>
 					</div>
 				</section>
 			</section>
@@ -197,14 +195,13 @@
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Returns the current state of camera.</p>
-									<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Camera</span><span style="color: #000000">.</span><span style="color: #795E26">getPose</span><span style="color: #000000">()</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">pose</span><span style="color: #000000">){</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Current position is &#039;</span><span style="color: #000000">, </span><span style="color: #001080">pose</span><span style="color: #000000">.</span><span style="color: #001080">position</span><span style="color: #000000">);</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Rotation angle is &#039;</span><span style="color: #000000">, </span><span style="color: #001080">pose</span><span style="color: #000000">.</span><span style="color: #001080">rotation</span><span style="color: #000000">);</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Sweep UUID is &#039;</span><span style="color: #000000">, </span><span style="color: #001080">pose</span><span style="color: #000000">.</span><span style="color: #001080">sweep</span><span style="color: #000000">);</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;View mode is &#039;</span><span style="color: #000000">, </span><span style="color: #001080">pose</span><span style="color: #000000">.</span><span style="color: #001080">mode</span><span style="color: #000000">);</span>
-<span style="color: #000000">  });</span>
-</code></pre>
+									<pre><code>mpSdk.Camera.getPose()
+  .then(function(<span class="hljs-keyword">pose</span>){
+    console.<span class="hljs-keyword">log</span>(<span class="hljs-string">&#x27;Current position is &#x27;</span>, <span class="hljs-keyword">pose</span>.position);
+    console.<span class="hljs-keyword">log</span>(<span class="hljs-string">&#x27;Rotation angle is &#x27;</span>, <span class="hljs-keyword">pose</span>.rotation);
+    console.<span class="hljs-keyword">log</span>(<span class="hljs-string">&#x27;Sweep UUID is &#x27;</span>, <span class="hljs-keyword">pose</span>.sweep);
+    console.<span class="hljs-keyword">log</span>(<span class="hljs-string">&#x27;View mode is &#x27;</span>, <span class="hljs-keyword">pose</span>.mode);
+  });</code></pre>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
@@ -233,14 +230,13 @@
 										Coordinates are measure in pixels, relative to the WebGL Canvas&#39; top left corner.
 									See <a href="https://www.w3schools.com/graphics/canvas_coordinates.asp">https://www.w3schools.com/graphics/canvas_coordinates.asp</a> for more information on coordinates.</p>
 								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Camera</span><span style="color: #000000">.</span><span style="color: #795E26">lookAtScreenCoords</span><span style="color: #000000">(</span><span style="color: #098658">500</span><span style="color: #000000">, </span><span style="color: #098658">320</span><span style="color: #000000">)</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
-<span style="color: #000000">    </span><span style="color: #008000">// Camera rotation complete.</span>
-<span style="color: #000000">  })</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #008000">// Camera rotation error.</span>
-<span style="color: #000000">  });</span>
-</code></pre>
+								<pre><code>mpSdk.Camera.lookAtScreenCoords(<span class="hljs-number">500</span>, <span class="hljs-number">320</span>)
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// Camera rotation complete.</span>
+  })
+  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> </span>{
+    <span class="hljs-comment">// Camera rotation error.</span>
+  });</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -272,7 +268,7 @@
 					<a name="moveindirection" class="tsd-anchor"></a>
 					<h3>move<wbr>InDirection</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">move<wbr>InDirection<span class="tsd-signature-symbol">(</span>direction<span class="tsd-signature-symbol">: </span><a href="../enums/camera.direction.html" class="tsd-signature-type">Camera.Direction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">move<wbr>InDirection<span class="tsd-signature-symbol">(</span>direction<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CameraImport.Camera.Direction</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -282,21 +278,20 @@
 								<div class="lead">
 									<p>Moves user to a different sweep relative to their current location</p>
 								</div>
-								<pre><code><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">nextDirection</span><span style="color: #000000"> = </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Camera</span><span style="color: #000000">.</span><span style="color: #001080">Direction</span><span style="color: #000000">.</span><span style="color: #0070C1">FORWARD</span><span style="color: #000000">;</span>
+								<pre><code>const nextDirection = mpSdk.Camera.Direction.FORWARD;
 
-<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Camera</span><span style="color: #000000">.</span><span style="color: #795E26">moveInDirection</span><span style="color: #000000">(</span><span style="color: #001080">nextDirection</span><span style="color: #000000">)</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(){</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;The camera has moved forward.&#039;</span><span style="color: #000000">);</span>
-<span style="color: #000000">  })</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(){</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">warning</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;An error occured while moving in that direction.&#039;</span><span style="color: #000000">);</span>
-<span style="color: #000000">  });</span>
-</code></pre>
+mpSdk.Camera.moveInDirection(nextDirection)
+  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;The camera has moved forward.&#x27;</span>);
+  })
+  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    console.<span class="hljs-built_in">warning</span>(<span class="hljs-string">&#x27;An error occured while moving in that direction.&#x27;</span>);
+  });</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>direction: <a href="../enums/camera.direction.html" class="tsd-signature-type">Camera.Direction</a></h5>
+									<h5>direction: <span class="tsd-signature-type">CameraImport.Camera.Direction</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The direction.</p>
 									</div>
@@ -333,14 +328,13 @@
 								<div class="lead">
 									<p>Pans the camera.</p>
 								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Camera</span><span style="color: #000000">.</span><span style="color: #795E26">pan</span><span style="color: #000000">({ </span><span style="color: #001080">x:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #001080">z:</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> })</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
-<span style="color: #000000">    </span><span style="color: #008000">// Pan complete.</span>
-<span style="color: #000000">  })</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #008000">// Pan error.</span>
-<span style="color: #000000">  });</span>
-</code></pre>
+								<pre><code>mpSdk.Camera.pan({ x: <span class="hljs-number">1</span>, z: <span class="hljs-number">1</span> })
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// Pan complete.</span>
+  })
+  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> </span>{
+    <span class="hljs-comment">// Pan error.</span>
+  });</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -393,14 +387,13 @@
 								<div class="lead">
 									<p>Rotates the camera (user’s viewpoint).</p>
 								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Camera</span><span style="color: #000000">.</span><span style="color: #795E26">rotate</span><span style="color: #000000">(</span><span style="color: #098658">10</span><span style="color: #000000">, -</span><span style="color: #098658">20</span><span style="color: #000000">, { </span><span style="color: #001080">speed:</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000"> })</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
-<span style="color: #000000">    </span><span style="color: #008000">// Camera rotation complete.</span>
-<span style="color: #000000">  })</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #008000">// Camera rotation error.</span>
-<span style="color: #000000">  });</span>
-</code></pre>
+								<pre><code>mpSdk.Camera.rotate(<span class="hljs-number">10</span>, <span class="hljs-number">-20</span>, { speed: <span class="hljs-number">2</span> })
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// Camera rotation complete.</span>
+  })
+  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> </span>{
+    <span class="hljs-comment">// Camera rotation error.</span>
+  });</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -463,14 +456,13 @@
 								<div class="lead">
 									<p>Sets the orientation of the camera (user’s viewpoint) while in Panorama View.</p>
 								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Camera</span><span style="color: #000000">.</span><span style="color: #795E26">setRotation</span><span style="color: #000000">({ </span><span style="color: #001080">x:</span><span style="color: #000000"> </span><span style="color: #098658">10</span><span style="color: #000000">, </span><span style="color: #001080">y:</span><span style="color: #000000"> -</span><span style="color: #098658">20</span><span style="color: #000000"> }, { </span><span style="color: #001080">speed:</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000"> })</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
-<span style="color: #000000">    </span><span style="color: #008000">// Camera rotation complete.</span>
-<span style="color: #000000">  })</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #008000">// Camera rotation error.</span>
-<span style="color: #000000">  });</span>
-</code></pre>
+								<pre><code>mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Camera</span>.</span></span>set<span class="hljs-constructor">Rotation({ <span class="hljs-params">x</span>: 10, <span class="hljs-params">y</span>: -20 }, { <span class="hljs-params">speed</span>: 2 })</span>
+  .<span class="hljs-keyword">then</span>(<span class="hljs-keyword">function</span><span class="hljs-literal">()</span> {
+    <span class="hljs-comment">// Camera rotation complete.</span>
+  })
+  .catch(<span class="hljs-keyword">function</span>(error) {
+    <span class="hljs-comment">// Camera rotation error.</span>
+  });</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -515,11 +507,10 @@
 									This means that the delta is strictly added, and not multiplied by the current zoom first.</p>
 								</div>
 								<p>Ex: If at zoom 2.0, zooming by another 0.1x will bring the camera to 2.1x (2.0 + 0.1) not 2.2x (2.0 + 2.0 * 0.1)</p>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Camera</span><span style="color: #000000">.</span><span style="color: #795E26">zoomBy</span><span style="color: #000000">(</span><span style="color: #098658">0.1</span><span style="color: #000000">)</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">newZoom</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Camera zoomed to&#039;</span><span style="color: #000000">, </span><span style="color: #001080">newZoom</span><span style="color: #000000">);</span>
-<span style="color: #000000">  });</span>
-</code></pre>
+								<pre><code>mpSdk.Camera.zoomBy(<span class="hljs-number">0.1</span>)
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span> </span>(<span class="hljs-keyword">new</span><span class="hljs-type">Zoom</span>) {
+    console.log(<span class="hljs-string">&#x27;Camera zoomed to&#x27;</span>, <span class="hljs-keyword">new</span><span class="hljs-type">Zoom</span>);
+  });</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -552,11 +543,10 @@
 								<div class="lead">
 									<p>Reset the zoom of the camera back to 1.0x.</p>
 								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Camera</span><span style="color: #000000">.</span><span style="color: #795E26">zoomReset</span><span style="color: #000000">()</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000"> () {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Camera zoom has been reset&#039;</span><span style="color: #000000">);</span>
-<span style="color: #000000">  })</span>
-</code></pre>
+								<pre><code>mpSdk.Camera.zoomReset()
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Camera zoom has been reset&#x27;</span>);
+  })</code></pre>
 								<p><strong>Errors</strong></p>
 								<ul>
 									<li>Fails if the current mode is not Inside mode.</li>
@@ -581,11 +571,10 @@
 									<p>Zooms the camera to a percentage of the base field of view.</p>
 								</div>
 								<p>Ex: Doubling the zoom, halves the field of view.</p>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Camera</span><span style="color: #000000">.</span><span style="color: #795E26">zoomTo</span><span style="color: #000000">(</span><span style="color: #098658">2.0</span><span style="color: #000000">)</span>
-<span style="color: #000000"> .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">newZoom</span><span style="color: #000000">) {</span>
-<span style="color: #000000">   </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Camera zoomed to&#039;</span><span style="color: #000000">, </span><span style="color: #001080">newZoom</span><span style="color: #000000">);</span>
-<span style="color: #000000"> });</span>
-</code></pre>
+								<pre><code>mpSdk.Camera.zoomTo(<span class="hljs-number">2.0</span>)
+ .then(<span class="hljs-function"><span class="hljs-keyword">function</span> </span>(<span class="hljs-keyword">new</span><span class="hljs-type">Zoom</span>) {
+   console.log(<span class="hljs-string">&#x27;Camera zoomed to&#x27;</span>, <span class="hljs-keyword">new</span><span class="hljs-type">Zoom</span>);
+ });</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -609,8 +598,8 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class=" ">
-						<a href="../index.html">Exports</a>
+					<li class="globals  ">
+						<a href="../index.html"><em>@mpSdk</em></a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="app.html">App</a>

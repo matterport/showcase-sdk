@@ -50,6 +50,12 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum"><a href="enums/event.html" class="tsd-kind-icon">Event</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/dictionary.html" class="tsd-kind-icon">Dictionary</a></li>
@@ -197,7 +203,7 @@
 								<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> z<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> z<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -276,16 +282,15 @@
 								<div class="lead">
 									<p>Unsubscribes from an event.</p>
 								</div>
-								<pre><code><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">callback</span><span style="color: #000000"> = (</span><span style="color: #001080">model</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;My model loaded!&#039;</span><span style="color: #000000">);</span>
-<span style="color: #000000">};</span>
+								<pre><code><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">model</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;My model loaded!&#x27;</span>);
+};
 
-<span style="color: #008000">// Start listening to the event.</span>
-<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">MODEL_LOADED</span><span style="color: #000000">, </span><span style="color: #001080">callback</span><span style="color: #000000">);</span>
+<span class="hljs-comment">// Start listening to the event.</span>
+mpSdk.on(mpSdk.Event.MODEL_LOADED, callback);
 
-<span style="color: #008000">// Stop listening to the event.</span>
-<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">off</span><span style="color: #000000">(</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">MODEL_LOADED</span><span style="color: #000000">, </span><span style="color: #001080">callback</span><span style="color: #000000">);</span>
-</code></pre>
+<span class="hljs-comment">// Stop listening to the event.</span>
+mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -329,6 +334,8 @@
 					<h3>on</h3>
 					<ul class="tsd-signatures tsd-kind-function">
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/app.event.html#phase_change" class="tsd-signature-type">App.Event.PHASE_CHANGE</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mode.event.html#change_start" class="tsd-signature-type">Mode.Event.CHANGE_START</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mode.event.html#change_end" class="tsd-signature-type">Mode.Event.CHANGE_END</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/camera.event.html#move" class="tsd-signature-type">Camera.Event.MOVE</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/floor.event.html#change_start" class="tsd-signature-type">Floor.Event.CHANGE_START</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/floor.event.html#change_end" class="tsd-signature-type">Floor.Event.CHANGE_END</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
@@ -336,11 +343,9 @@
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mattertag.event.html#hover" class="tsd-signature-type">Mattertag.Event.HOVER</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mattertag.event.html#click" class="tsd-signature-type">Mattertag.Event.CLICK</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mattertag.event.html#link_open" class="tsd-signature-type">Mattertag.Event.LINK_OPEN</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mode.event.html#change_start" class="tsd-signature-type">Mode.Event.CHANGE_START</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/mode.event.html#change_end" class="tsd-signature-type">Mode.Event.CHANGE_END</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/model.event.html#model_loaded" class="tsd-signature-type">Model.Event.MODEL_LOADED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/sweep.event.html#enter" class="tsd-signature-type">Sweep.Event.ENTER</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/sweep.event.html#exit" class="tsd-signature-type">Sweep.Event.EXIT</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/model.event.html#model_loaded" class="tsd-signature-type">Model.Event.MODEL_LOADED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/tour.event.html#started" class="tsd-signature-type">Tour.Event.STARTED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/tour.event.html#stopped" class="tsd-signature-type">Tour.Event.STOPPED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="enums/tour.event.html#ended" class="tsd-signature-type">Tour.Event.ENDED</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
@@ -353,7 +358,7 @@
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
 									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
-									<dd><p>Use <a href="modules/app.html#state-1">App.state</a> observable to get phase change notifications.</p>
+									<dd><p>Use <a href="modules/app.html#state-1">state</a> observable to get phase change notifications.</p>
 									</dd>
 								</dl>
 							</div>
@@ -391,23 +396,109 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
+									<p>This event fires when the camera is starting to transition to a mode.</p>
+								</div>
+								<pre><code>mpSdk.on(mpSdk.Mode.Event.CHANGE_START,
+  <span class="hljs-function"><span class="hljs-keyword">function</span></span>(oldMode, <span class="hljs-keyword">new</span><span class="hljs-type">Mode</span>){
+    console.log(<span class="hljs-string">&#x27;Mode changing from &#x27;</span> + oldMode);
+    console.log(<span class="hljs-string">&#x27;Mode changing to  &#x27;</span> + <span class="hljs-keyword">new</span><span class="hljs-type">Mode</span>);
+  }
+);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/mode.event.html#change_start" class="tsd-signature-type">Mode.Event.CHANGE_START</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, newMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>oldMode: <span class="tsd-signature-type">string</span></h5>
+														</li>
+														<li>
+															<h5>newMode: <span class="tsd-signature-type">string</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This event fires when the camera has completed a transition to a mode.</p>
+								</div>
+								<pre><code>mpSdk.on(mpSdk.Mode.Event.CHANGE_END,
+  <span class="hljs-function"><span class="hljs-keyword">function</span></span>(oldMode, <span class="hljs-keyword">new</span><span class="hljs-type">Mode</span>){
+    console.log(<span class="hljs-string">&#x27;Mode changed from &#x27;</span> + oldMode);
+    console.log(<span class="hljs-string">&#x27;Mode changed to  &#x27;</span> + <span class="hljs-keyword">new</span><span class="hljs-type">Mode</span>);
+  }
+);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/mode.event.html#change_end" class="tsd-signature-type">Mode.Event.CHANGE_END</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, newMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>oldMode: <span class="tsd-signature-type">string</span></h5>
+														</li>
+														<li>
+															<h5>newMode: <span class="tsd-signature-type">string</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
 									<p>This event fires when the camera&#39;s pose has changed via a position or orientation change.</p>
 								</div>
 								<p>The callback is called with the new pose of the camera.</p>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Camera</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">MOVE</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">pose</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`Camera moved to position: </span><span style="color: #0000FF">${</span><span style="color: #001080">pose</span><span style="color: #000000FF">.</span><span style="color: #001080">position</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000">);</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`with orientation: </span><span style="color: #0000FF">${</span><span style="color: #001080">pose</span><span style="color: #000000FF">.</span><span style="color: #001080">rotation</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000">);</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`in mode: </span><span style="color: #0000FF">${</span><span style="color: #001080">pose</span><span style="color: #000000FF">.</span><span style="color: #001080">mode</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000">);</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`currently at sweep: </span><span style="color: #0000FF">${</span><span style="color: #001080">pose</span><span style="color: #000000FF">.</span><span style="color: #001080">sweep</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000">);</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">);</span>
-</code></pre>
-								<dl class="tsd-comment-tags">
-									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
-									<dd><p>Use <a href="modules/camera.html#pose-1">Camera.pose</a> observable to get the camera movement notifications.</p>
-									</dd>
-								</dl>
+								<pre><code>mpSdk.on(mpSdk.Camera.Event.MOVE,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">pose</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Camera moved to position: <span class="hljs-subst">${pose.position}</span>`</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`with orientation: <span class="hljs-subst">${pose.rotation}</span>`</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`in mode: <span class="hljs-subst">${pose.mode}</span>`</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`currently at sweep: <span class="hljs-subst">${pose.sweep}</span>`</span>);
+  }
+);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -446,17 +537,11 @@
 									<p>This event fires when a floor change is starting.</p>
 								</div>
 								<p>the callback returns the floor index that we are moving to, and the floor index we are moving from.</p>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Floor</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">CHANGE_START</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">to</span><span style="color: #000000">, </span><span style="color: #001080">from</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Starting to move to floor &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">to</span><span style="color: #000000"> + </span><span style="color: #A31515">&#039; from floor &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">from</span><span style="color: #000000">);</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">);</span>
-</code></pre>
-								<dl class="tsd-comment-tags">
-									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
-									<dd><p>Use <a href="modules/floor.html#current">Floor.current</a> observable to get the current floor.</p>
-									</dd>
-								</dl>
+								<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.Floor.Event.CHANGE_START,
+  function(<span class="hljs-keyword">to</span>, <span class="hljs-keyword">from</span>) {
+    console.<span class="hljs-built_in">log</span>(&#x27;Starting <span class="hljs-keyword">to</span> move <span class="hljs-keyword">to</span> floor &#x27; + <span class="hljs-keyword">to</span> + &#x27; <span class="hljs-keyword">from</span> floor &#x27; + <span class="hljs-keyword">from</span>);
+  }
+);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -499,18 +584,12 @@
 								</div>
 								<p>the callback returns the floor index (0 based, counting from the bottom)
 								and the floorName, as set in workshop, or defaulting to the same as floorIndex</p>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Floor</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">CHANGE_END</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">floorIndex</span><span style="color: #000000">, </span><span style="color: #001080">floorName</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Arrived at floor &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">floorName</span><span style="color: #000000">);</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;it is the &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">floorIndex</span><span style="color: #000000">+</span><span style="color: #098658">1</span><span style="color: #000000"> + </span><span style="color: #A31515">&#039;th floor from the bottom&#039;</span><span style="color: #000000">);</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">);</span>
-</code></pre>
-								<dl class="tsd-comment-tags">
-									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
-									<dd><p>Use <a href="modules/floor.html#current">Floor.current</a> observable to get the current floor.</p>
-									</dd>
-								</dl>
+								<pre><code>mpSdk.on(mpSdk.Floor.Event.CHANGE_END,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">floorIndex, floorName</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Arrived at floor &#x27;</span> + floorName);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;it is the &#x27;</span> + floorIndex+<span class="hljs-number">1</span> + <span class="hljs-string">&#x27;th floor from the bottom&#x27;</span>);
+  }
+);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -551,13 +630,12 @@
 								<div class="lead">
 									<p>This event fires when the labels&#39; on screen position has changed.</p>
 								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">Label</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">POSITION_UPDATED</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">labels</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #008000">// Label data updated.</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;On-screen position of first label: &#039;</span><span style="color: #000000"> + </span><span style="color: #267F99">JSON</span><span style="color: #000000">.</span><span style="color: #795E26">stringify</span><span style="color: #000000">(</span><span style="color: #001080">labels</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #001080">position</span><span style="color: #000000">));</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">);</span>
-</code></pre>
+								<pre><code>mpSdk.on(Label.Event.POSITION_UPDATED,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">labels</span>) </span>{
+    <span class="hljs-comment">// Label data updated.</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;On-screen position of first label: &#x27;</span> + <span class="hljs-built_in">JSON</span>.stringify(labels[<span class="hljs-number">0</span>].position));
+  }
+);</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
 									<dd></dd>
@@ -599,16 +677,15 @@
 								<div class="lead">
 									<p>This event fires when the input pointer hovers onto or out of a mattertag disc.</p>
 								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">HOVER</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">tagSid</span><span style="color: #000000">, </span><span style="color: #001080">hovering</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">hovering</span><span style="color: #000000">) {</span>
-<span style="color: #000000">      </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Begin Hovering on&#039;</span><span style="color: #000000">, </span><span style="color: #001080">tagSid</span><span style="color: #000000">);</span>
-<span style="color: #000000">    } </span><span style="color: #AF00DB">else</span><span style="color: #000000"> {</span>
-<span style="color: #000000">      </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;End Hovering on&#039;</span><span style="color: #000000">, </span><span style="color: #001080">tagSid</span><span style="color: #000000">);</span>
-<span style="color: #000000">    }</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">);</span>
-</code></pre>
+								<pre><code>mpSdk.on(mpSdk.Mattertag.Event.HOVER,
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">tagSid, hovering</span>) </span>{
+    <span class="hljs-keyword">if</span> (hovering) {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Begin Hovering on&#x27;</span>, tagSid);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;End Hovering on&#x27;</span>, tagSid);
+    }
+  }
+);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -649,12 +726,11 @@
 								<div class="lead">
 									<p>This event fires when the input pointer clicks a Mattertag disc.</p>
 								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">CLICK</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">tagSid</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">tagSid</span><span style="color: #000000"> + </span><span style="color: #A31515">&#039; was selected&#039;</span><span style="color: #000000">);</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">);</span>
-</code></pre>
+								<pre><code>mpSdk.on(mpSdk.Mattertag.Event.CLICK,
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(tagSid)</span> {</span>
+    console.<span class="hljs-built_in">log</span>(tagSid + <span class="hljs-string">&#x27; was selected&#x27;</span>);
+  }
+);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -692,12 +768,11 @@
 								<div class="lead">
 									<p>This event fires when a mattertag link is opened.</p>
 								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mattertag</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">LINK_OPEN</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">tagSid</span><span style="color: #000000">, </span><span style="color: #001080">url</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;The link &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">url</span><span style="color: #000000"> + </span><span style="color: #A31515">&#039; opened for sid &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">tagSid</span><span style="color: #000000">);</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">);</span>
-</code></pre>
+								<pre><code>mpSdk.on(mpSdk.Mattertag.Event.LINK_OPEN,
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">tagSid, url</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;The link &#x27;</span> + <span class="hljs-built_in">url</span> + <span class="hljs-string">&#x27; opened for sid &#x27;</span> + tagSid);
+  }
+);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -736,157 +811,14 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>This event fires when the camera is starting to transition to a mode.</p>
-								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mode</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">CHANGE_START</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">oldMode</span><span style="color: #000000">, </span><span style="color: #001080">newMode</span><span style="color: #000000">){</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Mode changing from &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">oldMode</span><span style="color: #000000">);</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Mode changing to  &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">newMode</span><span style="color: #000000">);</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">);</span>
-</code></pre>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>event: <a href="enums/mode.event.html#change_start" class="tsd-signature-type">Mode.Event.CHANGE_START</a></h5>
-								</li>
-								<li>
-									<h5>callback: <span class="tsd-signature-type">function</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, newMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5>oldMode: <span class="tsd-signature-type">string</span></h5>
-														</li>
-														<li>
-															<h5>newMode: <span class="tsd-signature-type">string</span></h5>
-														</li>
-													</ul>
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>This event fires when the camera has completed a transition to a mode.</p>
-								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mode</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">CHANGE_END</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">oldMode</span><span style="color: #000000">, </span><span style="color: #001080">newMode</span><span style="color: #000000">){</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Mode changed from &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">oldMode</span><span style="color: #000000">);</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Mode changed to  &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">newMode</span><span style="color: #000000">);</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">);</span>
-</code></pre>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>event: <a href="enums/mode.event.html#change_end" class="tsd-signature-type">Mode.Event.CHANGE_END</a></h5>
-								</li>
-								<li>
-									<h5>callback: <span class="tsd-signature-type">function</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, newMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5>oldMode: <span class="tsd-signature-type">string</span></h5>
-														</li>
-														<li>
-															<h5>newMode: <span class="tsd-signature-type">string</span></h5>
-														</li>
-													</ul>
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>This event fires when the model has been loaded.</p>
-								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Model</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">MODEL_LOADED</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">model</span><span style="color: #000000">){</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Model sid:&#039;</span><span style="color: #000000"> + </span><span style="color: #001080">model</span><span style="color: #000000">.</span><span style="color: #001080">sid</span><span style="color: #000000">);</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">);</span>
-</code></pre>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>event: <a href="enums/model.event.html#model_loaded" class="tsd-signature-type">Model.Event.MODEL_LOADED</a></h5>
-								</li>
-								<li>
-									<h5>callback: <span class="tsd-signature-type">function</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>model<span class="tsd-signature-symbol">: </span><a href="modules/model.html#modeldata" class="tsd-signature-type">Model.ModelData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5>model: <a href="modules/model.html#modeldata" class="tsd-signature-type">Model.ModelData</a></h5>
-														</li>
-													</ul>
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
 									<p>This event fires when first entering a sweep.</p>
 								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Sweep</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">ENTER</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">oldSweep</span><span style="color: #000000">, </span><span style="color: #001080">newSweep</span><span style="color: #000000">){</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Leaving sweep &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">oldSweep</span><span style="color: #000000">);</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Entering sweep &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">newSweep</span><span style="color: #000000">);</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">);</span>
-</code></pre>
-								<dl class="tsd-comment-tags">
-									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
-									<dd><p>Use <a href="modules/sweep.html#current">Sweep.current</a> observable to get the current sweep.</p>
-									</dd>
-								</dl>
+								<pre><code>mpSdk.on(mpSdk.Sweep.Event.ENTER,
+  <span class="hljs-function"><span class="hljs-keyword">function</span></span>(oldSweep, <span class="hljs-keyword">new</span><span class="hljs-type">Sweep</span>){
+    console.log(<span class="hljs-string">&#x27;Leaving sweep &#x27;</span> + oldSweep);
+    console.log(<span class="hljs-string">&#x27;Entering sweep &#x27;</span> + <span class="hljs-keyword">new</span><span class="hljs-type">Sweep</span>);
+  }
+);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -927,18 +859,12 @@
 								<div class="lead">
 									<p>This event fires when exiting a sweep.</p>
 								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Sweep</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">EXIT</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">fromSweep</span><span style="color: #000000">, </span><span style="color: #001080">toSweep</span><span style="color: #000000">){</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Leaving sweep &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">fromSweep</span><span style="color: #000000">);</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Transitioning to sweep &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">toSweep</span><span style="color: #000000">);</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">);</span>
-</code></pre>
-								<dl class="tsd-comment-tags">
-									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
-									<dd><p>Use <a href="modules/sweep.html#current">Sweep.current</a> observable to get the current sweep.</p>
-									</dd>
-								</dl>
+								<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.Sweep.Event.EXIT,
+  function(<span class="hljs-keyword">from</span>Sweep, <span class="hljs-keyword">to</span>Sweep){
+    console.<span class="hljs-keyword">log</span>(&#x27;Leaving sweep &#x27; + <span class="hljs-keyword">from</span>Sweep);
+    console.<span class="hljs-keyword">log</span>(&#x27;Transitioning <span class="hljs-keyword">to</span> sweep &#x27; + <span class="hljs-keyword">to</span>Sweep);
+  }
+);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -983,13 +909,54 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
+									<p>This event fires when the model has been loaded.</p>
+								</div>
+								<pre><code>mpSdk.on(mpSdk.Model.Event.MODEL_LOADED,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">model</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Model sid:&#x27;</span> + model.sid);
+  }
+);</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="enums/model.event.html#model_loaded" class="tsd-signature-type">Model.Event.MODEL_LOADED</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>model<span class="tsd-signature-symbol">: </span><a href="modules/model.html#modeldata" class="tsd-signature-type">Model.ModelData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>model: <a href="modules/model.html#modeldata" class="tsd-signature-type">Model.ModelData</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
 									<p>This event fires when the tour has started.</p>
-									<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">STARTED</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Tour started!&#039;</span><span style="color: #000000">);</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">);</span>
-</code></pre>
+									<pre><code>mpSdk.on(mpSdk.Tour.Event.STARTED,
+  <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Tour started!&#x27;</span>);
+  }
+);</code></pre>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1021,12 +988,11 @@
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>This event fires when the tour has stopped.</p>
-									<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">STOPPED</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Tour stopped!&#039;</span><span style="color: #000000">);</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">);</span>
-</code></pre>
+									<pre><code>mpSdk.on(mpSdk.Tour.Event.STOPPED,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Tour stopped!&#x27;</span>);
+  }
+);</code></pre>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1058,12 +1024,11 @@
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>This event fires when the tour has ended.</p>
-									<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">ENDED</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Tour ended!&#039;</span><span style="color: #000000">);</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">);</span>
-</code></pre>
+									<pre><code>mpSdk.on(mpSdk.Tour.Event.ENDED,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Tour ended!&#x27;</span>);
+  }
+);</code></pre>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1095,12 +1060,11 @@
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>This event fires when the tour has stepped.</p>
-									<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Tour</span><span style="color: #000000">.</span><span style="color: #001080">Event</span><span style="color: #000000">.</span><span style="color: #0070C1">STEPPED</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">activeIndex</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Tour has reached step &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">activeIndex</span><span style="color: #000000">);</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">);</span>
-</code></pre>
+									<pre><code>mpSdk.on(mpSdk.Tour.Event.STEPPED,
+  <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(activeIndex)</span></span> {
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Tour has reached step &#x27;</span> + activeIndex);
+  }
+);</code></pre>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1139,8 +1103,8 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="current ">
-						<a href="index.html">Exports</a>
+					<li class="globals current ">
+						<a href="index.html"><em>@mpSdk</em></a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="modules/app.html">App</a>
@@ -1191,6 +1155,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/event.html" class="tsd-kind-icon">Event</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="interfaces/dictionary.html" class="tsd-kind-icon">Dictionary</a>
 					</li>

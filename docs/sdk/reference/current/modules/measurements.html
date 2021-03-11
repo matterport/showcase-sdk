@@ -147,21 +147,20 @@
 						<div class="lead">
 							<p>An observable collection of measurement mode data that can be subscribed to.</p>
 						</div>
-						<pre><code><span style="color: #001080">showcase</span><span style="color: #000000">.</span><span style="color: #001080">Measurements</span><span style="color: #000000">.</span><span style="color: #001080">data</span><span style="color: #000000">.</span><span style="color: #795E26">subscribe</span><span style="color: #000000">({</span>
-<span style="color: #000000">  </span><span style="color: #795E26">onAdded</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;item added to the collection&#039;</span><span style="color: #000000">, </span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">);</span>
-<span style="color: #000000">  },</span>
-<span style="color: #000000">  </span><span style="color: #795E26">onRemoved</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;item removed from the collection&#039;</span><span style="color: #000000">, </span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">);</span>
-<span style="color: #000000">  },</span>
-<span style="color: #000000">  </span><span style="color: #795E26">onUpdated</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;item updated in place in the collection&#039;</span><span style="color: #000000">, </span><span style="color: #001080">index</span><span style="color: #000000">, </span><span style="color: #001080">item</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">);</span>
-<span style="color: #000000">  },</span>
-<span style="color: #000000">  </span><span style="color: #795E26">onCollectionUpdated</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">collection</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;the entire up-to-date collection&#039;</span><span style="color: #000000">, </span><span style="color: #001080">collection</span><span style="color: #000000">);</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">});</span>
-</code></pre>
+						<pre><code>showcase.Measurements.data.subscribe({
+  onAdded: <span class="hljs-keyword">function</span> (index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>) {
+    console.log(<span class="hljs-string">&#x27;item added to the collection&#x27;</span>, index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>);
+  },
+  onRemoved: <span class="hljs-keyword">function</span> (index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>) {
+    console.log(<span class="hljs-string">&#x27;item removed from the collection&#x27;</span>, index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>);
+  },
+  onUpdated: <span class="hljs-keyword">function</span> (index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>) {
+    console.log(<span class="hljs-string">&#x27;item updated in place in the collection&#x27;</span>, index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>);
+  },
+  onCollectionUpdated: <span class="hljs-keyword">function</span> <span class="hljs-built_in">(collection</span>) {
+    console.log(<span class="hljs-string">&#x27;the entire up-to-date collection&#x27;</span>,<span class="hljs-built_in"> collection</span>);
+  }
+});</code></pre>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-namespace">
@@ -174,14 +173,13 @@
 						<div class="lead">
 							<p>An observable measurement mode state object.</p>
 						</div>
-						<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Measurements</span><span style="color: #000000">.</span><span style="color: #001080">mode</span><span style="color: #000000">.</span><span style="color: #795E26">subscribe</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">measurementModeState</span><span style="color: #000000">) {</span>
-<span style="color: #000000"> </span><span style="color: #008000">// measurement mode state has changed</span>
-<span style="color: #000000"> </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Is measurement mode currently active? &#039;</span><span style="color: #000000">, </span><span style="color: #001080">measurementModeState</span><span style="color: #000000">.</span><span style="color: #001080">active</span><span style="color: #000000">);</span>
-<span style="color: #000000">});</span>
+						<pre><code>mpSdk.Measurements.mode.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">measurementModeState</span>) </span>{
+ <span class="hljs-comment">// measurement mode state has changed</span>
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Is measurement mode currently active? &#x27;</span>, measurementModeState.active);
+});
 
-<span style="color: #008000">// output</span>
-<span style="color: #008000">// &gt; Is measurement mode currently active? true</span>
-</code></pre>
+<span class="hljs-comment">// output</span>
+<span class="hljs-comment">// &gt; Is measurement mode currently active? true</span></code></pre>
 					</div>
 				</section>
 			</section>
@@ -201,18 +199,17 @@
 								<div class="lead">
 									<p>This function returns metadata on the collection of Measurements.</p>
 								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Measurement</span><span style="color: #000000">.</span><span style="color: #795E26">getData</span><span style="color: #000000">()</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">Measurements</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #008000">// Measurement data retreival complete.</span>
-<span style="color: #000000">    </span><span style="color: #AF00DB">if</span><span style="color: #000000">(</span><span style="color: #001080">Measurements</span><span style="color: #000000">.</span><span style="color: #001080">length</span><span style="color: #000000"> &gt; </span><span style="color: #098658">0</span><span style="color: #000000">) {</span>
-<span style="color: #000000">      </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;First Measurement label: &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">Measurements</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #001080">label</span><span style="color: #000000">);</span>
-<span style="color: #000000">      </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;First Measurement description: &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">Measurements</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #001080">description</span><span style="color: #000000">);</span>
-<span style="color: #000000">    }</span>
-<span style="color: #000000">  })</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #008000">// Measurement data retrieval error.</span>
-<span style="color: #000000">  });</span>
-</code></pre>
+								<pre><code>mpSdk.Measurement.getData()
+  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(Measurements)</span> {</span>
+    <span class="hljs-comment">// Measurement data retreival complete.</span>
+    <span class="hljs-keyword">if</span>(Measurements.<span class="hljs-built_in">length</span> &gt; <span class="hljs-number">0</span>) {
+      console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;First Measurement label: &#x27;</span> + Measurements[<span class="hljs-number">0</span>].label);
+      console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;First Measurement description: &#x27;</span> + Measurements[<span class="hljs-number">0</span>].description);
+    }
+  })
+  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
+    <span class="hljs-comment">// Measurement data retrieval error.</span>
+  });</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="measurements.html#measurementdata" class="tsd-signature-type">Measurements.MeasurementData</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -232,11 +229,10 @@
 								<div class="lead">
 									<p>Activate or deactivate measurement mode. This function can only be used after the application has started playing. Use <a href="app.html#state-1">App.state</a> to determine the phase of the application.</p>
 								</div>
-								<pre><code><span style="color: #001080">showcase</span><span style="color: #000000">.</span><span style="color: #001080">Measurements</span><span style="color: #000000">.</span><span style="color: #795E26">toggleMode</span><span style="color: #000000">(</span><span style="color: #0000FF">true</span><span style="color: #000000">)</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(() </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;measurement mode is now active&#039;</span><span style="color: #000000">);</span>
-<span style="color: #000000">  });</span>
-</code></pre>
+								<pre><code>showcase.Measurements.toggleMode(<span class="hljs-literal">true</span>)
+  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;measurement mode is now active&#x27;</span>);
+  });</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -253,8 +249,8 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class=" ">
-						<a href="../index.html">Exports</a>
+					<li class="globals  ">
+						<a href="../index.html"><em>@mpSdk</em></a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="app.html">App</a>

@@ -76,7 +76,7 @@
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> transition<span class="tsd-signature-symbol">?: </span><a href="../enums/mode.transitiontype.html" class="tsd-signature-type">Mode.TransitionType</a></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> zoom<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> zoom<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -98,26 +98,25 @@
 								<div class="lead">
 									<p>Change the viewing mode in 3D Showcase.</p>
 								</div>
-								<pre><code><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">mode</span><span style="color: #000000"> = </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mode</span><span style="color: #000000">.</span><span style="color: #001080">Mode</span><span style="color: #000000">.</span><span style="color: #0070C1">FLOORPLAN</span><span style="color: #000000">;</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">position</span><span style="color: #000000"> = {</span><span style="color: #001080">x:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #001080">y:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #001080">z:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">};</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">rotation</span><span style="color: #000000"> = {</span><span style="color: #001080">x:</span><span style="color: #000000"> -</span><span style="color: #098658">90</span><span style="color: #000000">, </span><span style="color: #001080">y:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">};</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">transition</span><span style="color: #000000"> = </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mode</span><span style="color: #000000">.</span><span style="color: #001080">TransitionType</span><span style="color: #000000">.</span><span style="color: #0070C1">FLY</span><span style="color: #000000">;</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">zoom</span><span style="color: #000000"> = </span><span style="color: #098658">5</span><span style="color: #000000">;</span>
+								<pre><code><span class="hljs-keyword">const</span> mode = mpSdk.Mode.Mode.FLOORPLAN;
+<span class="hljs-keyword">const</span> position = {x: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span>, z: <span class="hljs-number">0</span>};
+<span class="hljs-keyword">const</span> rotation = {x: <span class="hljs-number">-90</span>, y: <span class="hljs-number">0</span>};
+<span class="hljs-keyword">const</span> transition = mpSdk.Mode.TransitionType.FLY;
+<span class="hljs-keyword">const</span> zoom = <span class="hljs-number">5</span>;
 
-<span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Mode</span><span style="color: #000000">.</span><span style="color: #795E26">moveTo</span><span style="color: #000000">(</span><span style="color: #001080">mode</span><span style="color: #000000">, {</span>
-<span style="color: #000000">    </span><span style="color: #001080">position:</span><span style="color: #000000"> </span><span style="color: #001080">position</span><span style="color: #000000">,</span>
-<span style="color: #000000">    </span><span style="color: #001080">rotation:</span><span style="color: #000000"> </span><span style="color: #001080">rotation</span><span style="color: #000000">,</span>
-<span style="color: #000000">    </span><span style="color: #001080">transition:</span><span style="color: #000000"> </span><span style="color: #001080">transition</span><span style="color: #000000">,</span>
-<span style="color: #000000">    </span><span style="color: #001080">zoom</span><span style="color: #000000">,</span>
-<span style="color: #000000">  })</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">nextMode</span><span style="color: #000000">){</span>
-<span style="color: #000000">    </span><span style="color: #008000">// Move successful.</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Arrived at new view mode &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">nextMode</span><span style="color: #000000">);</span>
-<span style="color: #000000">  })</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">){</span>
-<span style="color: #000000">    </span><span style="color: #008000">// Error with moveTo command</span>
-<span style="color: #000000">  });</span>
-</code></pre>
+mpSdk.Mode.moveTo(mode, {
+    position: position,
+    rotation: rotation,
+    transition: transition,
+    zoom,
+  })
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(nextMode)</span></span>{
+    <span class="hljs-comment">// Move successful.</span>
+    console.log(<span class="hljs-string">&#x27;Arrived at new view mode &#x27;</span> + nextMode);
+  })
+  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span></span>{
+    <span class="hljs-comment">// Error with moveTo command</span>
+  });</code></pre>
 								<p>Notes about transitions to Floorplan mode:</p>
 								<ul>
 									<li><code>zoom</code> option is only taken into account in Floorplan transitions, the lower the number,
@@ -147,8 +146,8 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class=" ">
-						<a href="../index.html">Exports</a>
+					<li class="globals  ">
+						<a href="../index.html"><em>@mpSdk</em></a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="app.html">App</a>

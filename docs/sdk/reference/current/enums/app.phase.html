@@ -35,18 +35,17 @@
 					<div class="lead">
 						<p>Application phases are returned as part of the <a href="../modules/app.html#state-1">state</a> observable.</p>
 					</div>
-					<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">App</span><span style="color: #000000">.</span><span style="color: #001080">state</span><span style="color: #000000">.</span><span style="color: #795E26">subscribe</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">appState</span><span style="color: #000000">) {</span>
-<span style="color: #000000"> </span><span style="color: #AF00DB">if</span><span style="color: #000000">(</span><span style="color: #001080">appState</span><span style="color: #000000">.</span><span style="color: #001080">phase</span><span style="color: #000000"> === </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">App</span><span style="color: #000000">.</span><span style="color: #001080">Phase</span><span style="color: #000000">.</span><span style="color: #0070C1">LOADING</span><span style="color: #000000">) {</span>
-<span style="color: #000000">   </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;The app has started loading!&#039;</span><span style="color: #000000">)</span>
-<span style="color: #000000"> }</span>
-<span style="color: #000000"> </span><span style="color: #AF00DB">if</span><span style="color: #000000">(</span><span style="color: #001080">appState</span><span style="color: #000000">.</span><span style="color: #001080">phase</span><span style="color: #000000"> === </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">App</span><span style="color: #000000">.</span><span style="color: #001080">Phase</span><span style="color: #000000">.</span><span style="color: #0070C1">STARTING</span><span style="color: #000000">) {</span>
-<span style="color: #000000">   </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;The transition into the start location begins!&#039;</span><span style="color: #000000">)</span>
-<span style="color: #000000"> }</span>
-<span style="color: #000000"> </span><span style="color: #AF00DB">if</span><span style="color: #000000">(</span><span style="color: #001080">appState</span><span style="color: #000000">.</span><span style="color: #001080">phase</span><span style="color: #000000"> === </span><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">App</span><span style="color: #000000">.</span><span style="color: #001080">Phase</span><span style="color: #000000">.</span><span style="color: #0070C1">PLAYING</span><span style="color: #000000">) {</span>
-<span style="color: #000000">   </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;The app is ready to take user input now!&#039;</span><span style="color: #000000">)</span>
-<span style="color: #000000"> }</span>
-<span style="color: #000000">});</span>
-</code></pre>
+					<pre><code>mpSdk.App.state.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">appState</span>) </span>{
+ <span class="hljs-keyword">if</span>(appState.phase === mpSdk.App.Phase.LOADING) {
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;The app has started loading!&#x27;</span>)
+ }
+ <span class="hljs-keyword">if</span>(appState.phase === mpSdk.App.Phase.STARTING) {
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;The transition into the start location begins!&#x27;</span>)
+ }
+ <span class="hljs-keyword">if</span>(appState.phase === mpSdk.App.Phase.PLAYING) {
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;The app is ready to take user input now!&#x27;</span>)
+ }
+});</code></pre>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -117,8 +116,8 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class=" ">
-						<a href="../index.html">Exports</a>
+					<li class="globals  ">
+						<a href="../index.html"><em>@mpSdk</em></a>
 					</li>
 					<li class="current tsd-kind-namespace">
 						<a href="../modules/app.html">App</a>

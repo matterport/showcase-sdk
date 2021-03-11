@@ -139,17 +139,16 @@
 								<div class="lead">
 									<p>This function returns the data of all labels.</p>
 								</div>
-								<pre><code><span style="color: #001080">mpSdk</span><span style="color: #000000">.</span><span style="color: #001080">Label</span><span style="color: #000000">.</span><span style="color: #795E26">getData</span><span style="color: #000000">()</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">labels</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #008000">// Label data retrieval complete.</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Total labels: &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">labels</span><span style="color: #000000">.</span><span style="color: #001080">length</span><span style="color: #000000">);</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Text of first label: &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">labels</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #001080">text</span><span style="color: #000000">);</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;On-screen position of first label: &#039;</span><span style="color: #000000"> + </span><span style="color: #267F99">JSON</span><span style="color: #000000">.</span><span style="color: #795E26">stringify</span><span style="color: #000000">(</span><span style="color: #001080">labels</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #001080">position</span><span style="color: #000000">));</span>
-<span style="color: #000000">  })</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">catch</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
-<span style="color: #000000">    </span><span style="color: #008000">// Label data retrieval error.</span>
-<span style="color: #000000">  });</span>
-</code></pre>
+								<pre><code>mpSdk.Label.getData()
+  .<span class="hljs-keyword">then</span>(function(<span class="hljs-built_in">labels</span>) {
+    // Label data retrieval complete.
+    console.<span class="hljs-built_in">log</span>(&#x27;Total <span class="hljs-built_in">labels</span>: &#x27; + <span class="hljs-built_in">labels</span>.<span class="hljs-built_in">length</span>);
+    console.<span class="hljs-built_in">log</span>(&#x27;Text of <span class="hljs-built_in">first</span> <span class="hljs-built_in">label</span>: &#x27; + <span class="hljs-built_in">labels</span>[<span class="hljs-number">0</span>].text);
+    console.<span class="hljs-built_in">log</span>(&#x27;On-screen <span class="hljs-built_in">position</span> of <span class="hljs-built_in">first</span> <span class="hljs-built_in">label</span>: &#x27; + JSON.stringify(<span class="hljs-built_in">labels</span>[<span class="hljs-number">0</span>].<span class="hljs-built_in">position</span>));
+  })
+  .<span class="hljs-built_in">catch</span>(function(<span class="hljs-built_in">error</span>) {
+    // Label data retrieval <span class="hljs-built_in">error</span>.
+  });</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="label.html#label-1" class="tsd-signature-type">Label.Label</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -160,8 +159,8 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class=" ">
-						<a href="../index.html">Exports</a>
+					<li class="globals  ">
+						<a href="../index.html"><em>@mpSdk</em></a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="app.html">App</a>
