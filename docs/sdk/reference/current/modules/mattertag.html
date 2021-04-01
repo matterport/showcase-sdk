@@ -432,25 +432,25 @@
 								</ul>
 								<p>See <a href="pointer.html#intersection-1">Pointer.intersection</a> for a way to retrive a new <code>anchorPosition</code> and <code>stemVector</code>.</p>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code><span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.add</span>([{
- <span class="hljs-attribute">label</span>: <span class="hljs-string">&quot;New tag&quot;</span>,
- <span class="hljs-attribute">description</span>: <span class="hljs-string">&quot;This tag was added through the Matterport SDK&quot;</span>,
- <span class="hljs-attribute">anchorPosition</span>: {
-   <span class="hljs-attribute">x</span>: <span class="hljs-number">0</span>,
-   <span class="hljs-attribute">y</span>: <span class="hljs-number">0</span>,
-   <span class="hljs-attribute">z</span>: <span class="hljs-number">0</span>,
+								<pre><code>mpSdk.Mattertag.add([{
+<span class="hljs-symbol"> label:</span> <span class="hljs-string">&quot;New tag&quot;</span>,
+<span class="hljs-symbol"> description:</span> <span class="hljs-string">&quot;This tag was added through the Matterport SDK&quot;</span>,
+<span class="hljs-symbol"> anchorPosition:</span> {
+<span class="hljs-symbol">   x:</span> <span class="hljs-number">0</span>,
+<span class="hljs-symbol">   y:</span> <span class="hljs-number">0</span>,
+<span class="hljs-symbol">   z:</span> <span class="hljs-number">0</span>,
  },
- <span class="hljs-attribute">stemVector</span>: { <span class="hljs-comment">// make the Mattertag stick straight up and make it 0.30 meters (~1 foot) tall</span>
-   <span class="hljs-attribute">x</span>: <span class="hljs-number">0</span>,
-   <span class="hljs-attribute">y</span>: <span class="hljs-number">0.30</span>,
-   <span class="hljs-attribute">z</span>: <span class="hljs-number">0</span>,
+<span class="hljs-symbol"> stemVector:</span> { <span class="hljs-comment">// make the Mattertag stick straight up and make it 0.30 meters (~1 foot) tall</span>
+<span class="hljs-symbol">   x:</span> <span class="hljs-number">0</span>,
+<span class="hljs-symbol">   y:</span> <span class="hljs-number">0.30</span>,
+<span class="hljs-symbol">   z:</span> <span class="hljs-number">0</span>,
  },
- <span class="hljs-attribute">color</span>: { <span class="hljs-comment">// blue disc</span>
-   <span class="hljs-attribute">r</span>: <span class="hljs-number">0.0</span>,
-   <span class="hljs-attribute">g</span>: <span class="hljs-number">0.0</span>,
-   <span class="hljs-attribute">b</span>: <span class="hljs-number">1.0</span>,
+<span class="hljs-symbol"> color:</span> { <span class="hljs-comment">// blue disc</span>
+<span class="hljs-symbol">   r:</span> <span class="hljs-number">0.0</span>,
+<span class="hljs-symbol">   g:</span> <span class="hljs-number">0.0</span>,
+<span class="hljs-symbol">   b:</span> <span class="hljs-number">1.0</span>,
  },
- <span class="hljs-attribute">floorIndex</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// optional, if not specified the sdk will provide an estimate of the floor index for the anchor position provided.</span>
+<span class="hljs-symbol"> floorIndex:</span> <span class="hljs-number">0</span>, <span class="hljs-comment">// optional, if not specified the sdk will provide an estimate of the floor index for the anchor position provided.</span>
 }])</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -875,19 +875,19 @@ mpSdk.Mattertag.injectHTML(mattertagData[<span class="hljs-number">0</span>], ht
 <span class="hljs-comment">// prevent navigating to the tag on click</span>
 <span class="hljs-keyword">var</span> noNavigationTag = mattertagData[<span class="hljs-number">0</span>];
 mpSdk.Mattertag.preventAction(noNavigationTag.sid, {
-  navigating: <span class="hljs-keyword">true</span>,
+  navigating: <span class="hljs-literal">true</span>,
 });
 
 <span class="hljs-comment">// prevent the billboard from showing</span>
 <span class="hljs-keyword">var</span> noBillboardTag = mattertagData[<span class="hljs-number">1</span>];
 mpSdk.Mattertag.preventAction(noBillboardTag.sid, {
-  opening: <span class="hljs-keyword">true</span>,
+  opening: <span class="hljs-literal">true</span>,
 });
 
 <span class="hljs-keyword">var</span> noActionsTag = mattertagData[<span class="hljs-number">2</span>];
 mpSdk.Mattertag.preventAction(noActionsTag.sid, {
-  opening: <span class="hljs-keyword">true</span>,
-  navigating: <span class="hljs-keyword">true</span>,
+  opening: <span class="hljs-literal">true</span>,
+  navigating: <span class="hljs-literal">true</span>,
 });</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1055,6 +1055,9 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="room.html">Room</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="sensor.html">Sensor</a>

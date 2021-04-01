@@ -85,12 +85,12 @@
 								<div class="lead">
 									<p>This function updates the value of a setting if it exists, returning the new value when it is set</p>
 								</div>
-								<pre><code>mpSdk.Settings.update(<span class="hljs-string">&#x27;labels&#x27;</span>, <span class="hljs-keyword">false</span>)
-  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span> </span>{
+								<pre><code>mpSdk.Settings.update(<span class="hljs-string">&#x27;labels&#x27;</span>, <span class="hljs-literal">false</span>)
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
     <span class="hljs-comment">// Setting update complete.</span>
-    console.log(<span class="hljs-string">&#x27;Labels setting: &#x27;</span> + data);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Labels setting: &#x27;</span> + data);
   })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> </span>{
+  .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>) </span>{
     <span class="hljs-comment">// Setting update error.</span>
   });</code></pre>
 							</div>
@@ -147,6 +147,9 @@
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="room.html">Room</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="sensor.html">Sensor</a>

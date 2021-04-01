@@ -173,13 +173,13 @@
 						<div class="lead">
 							<p>An observable measurement mode state object.</p>
 						</div>
-						<pre><code>mpSdk.Measurements.mode.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">measurementModeState</span>) </span>{
- <span class="hljs-comment">// measurement mode state has changed</span>
- <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Is measurement mode currently active? &#x27;</span>, measurementModeState.active);
+						<pre><code>mpSdk.Measurements.mode.subscribe(<span class="hljs-keyword">function</span> (measurementModeState) {
+ <span class="hljs-regexp">//</span> measurement mode state has changed
+ console.log(<span class="hljs-string">&#x27;Is measurement mode currently active? &#x27;</span>, measurementModeState.active);
 });
 
-<span class="hljs-comment">// output</span>
-<span class="hljs-comment">// &gt; Is measurement mode currently active? true</span></code></pre>
+<span class="hljs-regexp">//</span> output
+<span class="hljs-regexp">//</span> &gt; Is measurement mode currently active? true</code></pre>
 					</div>
 				</section>
 			</section>
@@ -284,6 +284,9 @@
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="room.html">Room</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="sensor.html">Sensor</a>

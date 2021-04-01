@@ -43,6 +43,7 @@
 								<li class="tsd-kind-namespace"><a href="modules/model.html" class="tsd-kind-icon">Model</a></li>
 								<li class="tsd-kind-namespace"><a href="modules/pointer.html" class="tsd-kind-icon">Pointer</a></li>
 								<li class="tsd-kind-namespace"><a href="modules/renderer.html" class="tsd-kind-icon">Renderer</a></li>
+								<li class="tsd-kind-namespace"><a href="modules/room.html" class="tsd-kind-icon">Room</a></li>
 								<li class="tsd-kind-namespace"><a href="modules/sensor.html" class="tsd-kind-icon">Sensor</a></li>
 								<li class="tsd-kind-namespace"><a href="modules/settings.html" class="tsd-kind-icon">Settings</a></li>
 								<li class="tsd-kind-namespace"><a href="modules/sweep.html" class="tsd-kind-icon">Sweep</a></li>
@@ -73,6 +74,7 @@
 								<li class="tsd-kind-type-alias"><a href="index.html#color" class="tsd-kind-icon">Color</a></li>
 								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="index.html#conditioncallback" class="tsd-kind-icon">Condition<wbr>Callback</a></li>
 								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="index.html#observercallback" class="tsd-kind-icon">Observer<wbr>Callback</a></li>
+								<li class="tsd-kind-type-alias"><a href="index.html#orientation" class="tsd-kind-icon">Orientation</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#rotation" class="tsd-kind-icon">Rotation</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#size" class="tsd-kind-icon">Size</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#vector2" class="tsd-kind-icon">Vector2</a></li>
@@ -183,6 +185,32 @@
 										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 									</li>
 								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="orientation" class="tsd-anchor"></a>
+					<h3>Orientation</h3>
+					<div class="tsd-signature tsd-kind-icon">Orientation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An orientation described with Euler-like angles in degrees.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>pitch<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>roll<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>yaw<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -727,8 +755,8 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 									<p>This event fires when the input pointer clicks a Mattertag disc.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Mattertag.Event.CLICK,
-  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(tagSid)</span> {</span>
-    console.<span class="hljs-built_in">log</span>(tagSid + <span class="hljs-string">&#x27; was selected&#x27;</span>);
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">tagSid</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(tagSid + <span class="hljs-string">&#x27; was selected&#x27;</span>);
   }
 );</code></pre>
 							</div>
@@ -911,9 +939,9 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 								<div class="lead">
 									<p>This event fires when the model has been loaded.</p>
 								</div>
-								<pre><code>mpSdk.on(mpSdk.Model.Event.MODEL_LOADED,
-  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">model</span>)</span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Model sid:&#x27;</span> + model.sid);
+								<pre><code>mpSdk.on(mpSdk.<span class="hljs-keyword">Model</span>.Event.MODEL_LOADED,
+  function(<span class="hljs-keyword">model</span>){
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Model sid:&#x27;</span> + <span class="hljs-keyword">model</span>.sid);
   }
 );</code></pre>
 							</div>
@@ -953,8 +981,8 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 								<div class="lead">
 									<p>This event fires when the tour has started.</p>
 									<pre><code>mpSdk.on(mpSdk.Tour.Event.STARTED,
-  <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Tour started!&#x27;</span>);
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Tour started!&#x27;</span>);
   }
 );</code></pre>
 								</div>
@@ -1061,8 +1089,8 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 								<div class="lead">
 									<p>This event fires when the tour has stepped.</p>
 									<pre><code>mpSdk.on(mpSdk.Tour.Event.STEPPED,
-  <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(activeIndex)</span></span> {
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Tour has reached step &#x27;</span> + activeIndex);
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">activeIndex</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Tour has reached step &#x27;</span> + activeIndex);
   }
 );</code></pre>
 								</div>
@@ -1140,6 +1168,9 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 						<a href="modules/renderer.html">Renderer</a>
 					</li>
 					<li class=" tsd-kind-namespace">
+						<a href="modules/room.html">Room</a>
+					</li>
+					<li class=" tsd-kind-namespace">
 						<a href="modules/sensor.html">Sensor</a>
 					</li>
 					<li class=" tsd-kind-namespace">
@@ -1187,6 +1218,9 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);</code></pre>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
 						<a href="index.html#observercallback" class="tsd-kind-icon">Observer<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="index.html#orientation" class="tsd-kind-icon">Orientation</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="index.html#rotation" class="tsd-kind-icon">Rotation</a>

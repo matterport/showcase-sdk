@@ -1,0 +1,193 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Room | Matterport SDK</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">@mpSdk</a>
+				</li>
+				<li>
+					<a href="room.html">Room</a>
+				</li>
+			</ul>
+			<h1>Room Namespace</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Types</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="room.html#roomdata" class="tsd-kind-icon">Room<wbr>Data</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-namespace"><a href="room.html#data" class="tsd-kind-icon">data</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Types</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="roomdata" class="tsd-anchor"></a>
+					<h3>Room<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">Room<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>bounds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>max<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>min<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>center<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>floor<wbr>Info<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>sequence<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>size<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-namespace">
+					<a name="data" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> data</h3>
+					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservablemap.html" class="tsd-signature-type">IObservableMap</a><span class="tsd-signature-symbol">&lt;</span><a href="room.html#roomdata" class="tsd-signature-type">Room.RoomData</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An observable collection of Room data that can be subscribed to.</p>
+						</div>
+						<p>See <a href="../interfaces/iobservablemap.html">IObservableMap</a> to learn how to receive data from the collection.</p>
+						<pre><code><span class="hljs-selector-tag">showcase</span><span class="hljs-selector-class">.Room</span><span class="hljs-selector-class">.data</span><span class="hljs-selector-class">.subscribe</span>({
+  <span class="hljs-attribute">onCollectionUpdated</span>: function (collection) {
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Collection received. There are &#x27;</span>, Object.keys(collection).length, <span class="hljs-string">&#x27;rooms in the collection&#x27;</span>);
+  }
+});</code></pre>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../index.html"><em>@mpSdk</em></a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="app.html">App</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="camera.html">Camera</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="conversion.html">Conversion</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="floor.html">Floor</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="label.html">Label</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="mattertag.html">Mattertag</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="measurements.html">Measurements</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="mode.html">Mode</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="model.html">Model</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="pointer.html">Pointer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="renderer.html">Renderer</a>
+					</li>
+					<li class="current tsd-kind-namespace">
+						<a href="room.html">Room</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="sensor.html">Sensor</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="settings.html">Settings</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="sweep.html">Sweep</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="tour.html">Tour</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="room.html#roomdata" class="tsd-kind-icon">Room<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-namespace">
+						<a href="room.html#data" class="tsd-kind-icon">data</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

@@ -98,7 +98,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="volume" class="tsd-anchor"></a>
 					<h3>volume</h3>
-					<div class="tsd-signature tsd-kind-icon">volume<span class="tsd-signature-symbol">:</span> <a href="../modules/sensor.html#spherevolume" class="tsd-signature-type">Sensor.SphereVolume</a><span class="tsd-signature-symbol"> | </span><a href="../modules/sensor.html#boxvolume" class="tsd-signature-type">Sensor.BoxVolume</a></div>
+					<div class="tsd-signature tsd-kind-icon">volume<span class="tsd-signature-symbol">:</span> <a href="../modules/sensor.html#spherevolume" class="tsd-signature-type">Sensor.SphereVolume</a><span class="tsd-signature-symbol"> | </span><a href="../modules/sensor.html#boxvolume" class="tsd-signature-type">Sensor.BoxVolume</a><span class="tsd-signature-symbol"> | </span><a href="../modules/sensor.html#cylindervolume" class="tsd-signature-type">Sensor.CylinderVolume</a></div>
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -122,7 +122,8 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Let the senseor system know there is an update to this <code>ISource</code>.</p>
+									<p>Let the sensor system know there is an update to this <code>ISource</code>.<br>
+									When changing any properties on <code>volume</code>, no changes will be reflected in Showcase until <code>commit</code> is called.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -169,6 +170,9 @@
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="../modules/renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/room.html">Room</a>
 					</li>
 					<li class="current tsd-kind-namespace">
 						<a href="../modules/sensor.html">Sensor</a>
@@ -221,6 +225,9 @@
 				<ul class="after-current">
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/sensor.html#boxvolume" class="tsd-kind-icon">Box<wbr>Volume</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/sensor.html#cylindervolume" class="tsd-kind-icon">Cylinder<wbr>Volume</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/sensor.html#sensorreading" class="tsd-kind-icon">Sensor<wbr>Reading</a>

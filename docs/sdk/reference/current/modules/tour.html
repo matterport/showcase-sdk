@@ -191,12 +191,12 @@
 								<div class="lead">
 									<p>This function moves the camera to the next snapshot in the tour.</p>
 								</div>
-								<pre><code>mpSdk.Tour.<span class="hljs-keyword">next</span>()
-  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(</span>) {
-    // Tour <span class="hljs-keyword">next</span> complete.
+								<pre><code>mpSdk.Tour.<span class="hljs-built_in">next</span>()
+  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span> {
+    // Tour <span class="hljs-built_in">next</span> complete.
   })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(</span><span class="hljs-built_in">error</span>) {
-    // Tour <span class="hljs-keyword">next</span> <span class="hljs-built_in">error</span>.
+  .catch(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span></span> {
+    // Tour <span class="hljs-built_in">next</span> <span class="hljs-built_in">error</span>.
   });</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -218,10 +218,10 @@
 									<p>This function moves the camera to the previous snapshot in the tour.</p>
 								</div>
 								<pre><code>mpSdk.Tour.prev()
-  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-comment">// Tour prev complete.</span>
   })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> </span>{
+  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
     <span class="hljs-comment">// Tour prev error.</span>
   });</code></pre>
 							</div>
@@ -310,12 +310,12 @@ mpSdk.Tour.<span class="hljs-keyword">step</span>(myStep)
 								<div class="lead">
 									<p>This function stop the tour.</p>
 								</div>
-								<pre><code>mpSdk.Tour.stop()
-  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-comment">// Tour stop complete.</span>
+								<pre><code>mpSdk.Tour.<span class="hljs-keyword">stop</span>()
+  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span> {
+    // Tour <span class="hljs-keyword">stop</span> complete.
   })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> </span>{
-    <span class="hljs-comment">// Tour stop error.</span>
+  .catch(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span></span> {
+    // Tour <span class="hljs-keyword">stop</span> error.
   });</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -362,6 +362,9 @@ mpSdk.Tour.<span class="hljs-keyword">step</span>(myStep)
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="room.html">Room</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="sensor.html">Sensor</a>

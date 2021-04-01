@@ -146,19 +146,19 @@
 						<div class="lead">
 							<p>An observable application state object.</p>
 						</div>
-						<pre><code>mpSdk.App.<span class="hljs-keyword">state</span>.subscribe(function (appState) {
- // app <span class="hljs-keyword">state</span> has changed
- console.<span class="hljs-keyword">log</span>(&#x27;The current application: &#x27;, appState.application);
- console.<span class="hljs-keyword">log</span>(&#x27;The current phase: &#x27;, appState.phase);
- console.<span class="hljs-keyword">log</span>(&#x27;Loaded at time &#x27;, appState.phaseTimes[mpSdk.App.Phase.LOADING]);
- console.<span class="hljs-keyword">log</span>(&#x27;Started at time &#x27;, appState.phaseTimes[mpSdk.App.Phase.STARTING]);
+						<pre><code>mpSdk.App.state.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(appState)</span></span> {
+ // app state has changed
+ console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;The current application: &#x27;</span>, appState.application);
+ console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;The current phase: &#x27;</span>, appState.phase);
+ console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Loaded at time &#x27;</span>, appState.phaseTimes[mpSdk.App.Phase.LOADING]);
+ console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Started at time &#x27;</span>, appState.phaseTimes[mpSdk.App.Phase.STARTING]);
 });
 
-output
+<span class="hljs-built_in">output</span>
 &gt; The current application: application.showcase
 &gt; The current phase: appphase.waiting
-&gt; Loaded at time <span class="hljs-number">1570084156590</span>
-&gt; Started at time <span class="hljs-number">1570084156824</span>
+&gt; Loaded at <span class="hljs-built_in">time</span> <span class="hljs-number">1570084156590</span>
+&gt; Started at <span class="hljs-built_in">time</span> <span class="hljs-number">1570084156824</span>
 &gt;</code></pre>
 					</div>
 				</section>
@@ -247,6 +247,9 @@ output
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="room.html">Room</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="sensor.html">Sensor</a>

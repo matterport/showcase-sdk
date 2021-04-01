@@ -231,10 +231,10 @@
 									See <a href="https://www.w3schools.com/graphics/canvas_coordinates.asp">https://www.w3schools.com/graphics/canvas_coordinates.asp</a> for more information on coordinates.</p>
 								</div>
 								<pre><code>mpSdk.Camera.lookAtScreenCoords(<span class="hljs-number">500</span>, <span class="hljs-number">320</span>)
-  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-comment">// Camera rotation complete.</span>
   })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> </span>{
+  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
     <span class="hljs-comment">// Camera rotation error.</span>
   });</code></pre>
 							</div>
@@ -278,14 +278,14 @@
 								<div class="lead">
 									<p>Moves user to a different sweep relative to their current location</p>
 								</div>
-								<pre><code>const nextDirection = mpSdk.Camera.Direction.FORWARD;
+								<pre><code><span class="hljs-keyword">const</span> nextDirection = mpSdk.Camera.Direction.FORWARD;
 
 mpSdk.Camera.moveInDirection(nextDirection)
-  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;The camera has moved forward.&#x27;</span>);
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;The camera has moved forward.&#x27;</span>);
   })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
-    console.<span class="hljs-built_in">warning</span>(<span class="hljs-string">&#x27;An error occured while moving in that direction.&#x27;</span>);
+  .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-built_in">console</span>.warning(<span class="hljs-string">&#x27;An error occured while moving in that direction.&#x27;</span>);
   });</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -329,10 +329,10 @@ mpSdk.Camera.moveInDirection(nextDirection)
 									<p>Pans the camera.</p>
 								</div>
 								<pre><code>mpSdk.Camera.pan({ x: <span class="hljs-number">1</span>, z: <span class="hljs-number">1</span> })
-  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-comment">// Pan complete.</span>
   })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> </span>{
+  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
     <span class="hljs-comment">// Pan error.</span>
   });</code></pre>
 							</div>
@@ -387,11 +387,11 @@ mpSdk.Camera.moveInDirection(nextDirection)
 								<div class="lead">
 									<p>Rotates the camera (user’s viewpoint).</p>
 								</div>
-								<pre><code>mpSdk.Camera.rotate(<span class="hljs-number">10</span>, <span class="hljs-number">-20</span>, { speed: <span class="hljs-number">2</span> })
-  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+								<pre><code>mpSdk.Camera.<span class="hljs-built_in">rotate</span>(<span class="hljs-number">10</span>, -<span class="hljs-number">20</span>, { speed: <span class="hljs-number">2</span> })
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-comment">// Camera rotation complete.</span>
   })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> </span>{
+  .catch(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
     <span class="hljs-comment">// Camera rotation error.</span>
   });</code></pre>
 							</div>
@@ -633,6 +633,9 @@ mpSdk.Camera.moveInDirection(nextDirection)
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="room.html">Room</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="sensor.html">Sensor</a>

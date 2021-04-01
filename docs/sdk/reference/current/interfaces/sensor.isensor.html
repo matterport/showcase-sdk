@@ -69,7 +69,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="sensor.isensor.html#addsource" class="tsd-kind-icon">add<wbr>Source</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="sensor.isensor.html#dispose" class="tsd-kind-icon">dispose</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="sensor.isensor.html#showdebug" class="tsd-kind-icon">show<wbr>Debug</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="sensor.isensor.html#subscribe-1" class="tsd-kind-icon">subscribe</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite"><a href="sensor.isensor.html#subscribe-1" class="tsd-kind-icon">subscribe</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="sensor.isensor.html#waituntil" class="tsd-kind-icon">wait<wbr>Until</a></li>
 							</ul>
 						</section>
@@ -108,6 +108,11 @@
 					<div class="tsd-signature tsd-kind-icon">readings<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An observable used to get information about assocated <code>ISources</code> added with <a href="sensor.isensor.html#addsource">ISensor.addSource</a></p>
+						</div>
+					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -215,31 +220,30 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite">
 					<a name="subscribe-1" class="tsd-anchor"></a>
 					<h3>subscribe</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">subscribe<span class="tsd-signature-symbol">(</span>observer<span class="tsd-signature-symbol">: </span><a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><a href="sensor.isensor.html" class="tsd-signature-type">Sensor.ISensor</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../index.html#observercallback" class="tsd-signature-type">ObserverCallback</a><span class="tsd-signature-symbol">&lt;</span><a href="sensor.isensor.html" class="tsd-signature-type">Sensor.ISensor</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="isubscription.html" class="tsd-signature-type">ISubscription</a></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">subscribe<span class="tsd-signature-symbol">(</span>observer<span class="tsd-signature-symbol">: </span><a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><a href="" class="tsd-signature-type">IObserver.DataT</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../index.html#observercallback" class="tsd-signature-type">ObserverCallback</a><span class="tsd-signature-symbol">&lt;</span><a href="" class="tsd-signature-type">IObserver.DataT</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="isubscription.html" class="tsd-signature-type">ISubscription</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="iobservable.html">IObservable</a>.<a href="iobservable.html#subscribe">subscribe</a></p>
+								<p>Overrides <a href="iobservable.html">IObservable</a>.<a href="iobservable.html#subscribe">subscribe</a></p>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Subscribe to changes on this object.
-									When this observable detects a change, the <code>observer</code> provided will be called with the data associated with this observable.</p>
+									<p>Start receiving updates when properties of this sensor change, e.g. <code>origin</code> or <code>forward</code>, not its <code>readings</code>.<br>
+									Subscribe to <code>readings</code> to receive updates about associated <code>ISources</code></p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>observer: <a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><a href="sensor.isensor.html" class="tsd-signature-type">Sensor.ISensor</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../index.html#observercallback" class="tsd-signature-type">ObserverCallback</a><span class="tsd-signature-symbol">&lt;</span><a href="sensor.isensor.html" class="tsd-signature-type">Sensor.ISensor</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>observer: <a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><a href="" class="tsd-signature-type">IObserver.DataT</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../index.html#observercallback" class="tsd-signature-type">ObserverCallback</a><span class="tsd-signature-symbol">&lt;</span><a href="" class="tsd-signature-type">IObserver.DataT</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="isubscription.html" class="tsd-signature-type">ISubscription</a></h4>
-							<p>A subscription that can be used to remove the subscribed observer.</p>
 						</li>
 					</ul>
 				</section>
@@ -312,6 +316,9 @@
 					<li class=" tsd-kind-namespace">
 						<a href="../modules/renderer.html">Renderer</a>
 					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/room.html">Room</a>
+					</li>
 					<li class="current tsd-kind-namespace">
 						<a href="../modules/sensor.html">Sensor</a>
 					</li>
@@ -357,7 +364,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="sensor.isensor.html#showdebug" class="tsd-kind-icon">show<wbr>Debug</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite">
 								<a href="sensor.isensor.html#subscribe-1" class="tsd-kind-icon">subscribe</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
@@ -375,6 +382,9 @@
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/sensor.html#boxvolume" class="tsd-kind-icon">Box<wbr>Volume</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/sensor.html#cylindervolume" class="tsd-kind-icon">Cylinder<wbr>Volume</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/sensor.html#sensorreading" class="tsd-kind-icon">Sensor<wbr>Reading</a>

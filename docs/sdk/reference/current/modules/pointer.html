@@ -107,10 +107,10 @@
 						<div class="lead">
 							<p>An observable intersection data object that can be subscribed to.</p>
 						</div>
-						<pre><code>mpSdk.Pointer.intersection.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(intersectionData)</span> {</span>
+						<pre><code>mpSdk.Pointer.intersection.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">intersectionData</span>) </span>{
  <span class="hljs-comment">// Changes to the intersection data have occurred.</span>
- console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Intersection position:&#x27;</span>, intersectionData.position);
- console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Intersection normal:&#x27;</span>, intersectionData.normal);
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Intersection position:&#x27;</span>, intersectionData.position);
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Intersection normal:&#x27;</span>, intersectionData.normal);
 });</code></pre>
 					</div>
 				</section>
@@ -154,6 +154,9 @@
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="room.html">Room</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="sensor.html">Sensor</a>

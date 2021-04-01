@@ -64,6 +64,7 @@
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="sensor.html#boxvolume" class="tsd-kind-icon">Box<wbr>Volume</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="sensor.html#cylindervolume" class="tsd-kind-icon">Cylinder<wbr>Volume</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="sensor.html#sensorreading" class="tsd-kind-icon">Sensor<wbr>Reading</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="sensor.html#sourceoptions" class="tsd-kind-icon">Source<wbr>Options</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="sensor.html#spherevolume" class="tsd-kind-icon">Sphere<wbr>Volume</a></li>
@@ -99,10 +100,54 @@
 								</div>
 							</li>
 							<li class="tsd-parameter">
+								<h5>orientation<span class="tsd-signature-symbol">: </span><a href="../index.html#orientation" class="tsd-signature-type">Orientation</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The orientation of the box. The rotations are applied in yaw, pitch, then roll order.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
 								<h5>size<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
 										<p>The length, width, and depth of the box volume.</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="cylindervolume" class="tsd-anchor"></a>
+					<h3>Cylinder<wbr>Volume</h3>
+					<div class="tsd-signature tsd-kind-icon">Cylinder<wbr>Volume<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>base<wbr>Point<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The point which defines the position (base) from which the height in the +Y, and radius in the XZ-plane are relative to.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The height of the cylinder.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>radius<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The radius of the cylinder.</p>
 									</div>
 								</div>
 							</li>
@@ -233,17 +278,15 @@
 									<p>Create an <a href="../interfaces/sensor.isensor.html"><code>ISensor</code></a> which can sense and provide information about <a href="../interfaces/sensor.isource.html"><code>ISource</code></a>.</p>
 								</div>
 								<pre><code><span class="hljs-keyword">const</span> sensor = <span class="hljs-keyword">await</span> mpSdk.Sensor.createSensor(mpSdk.Sensor.SensorType.CAMERA);
-<span class="hljs-comment">// show debug visuals</span>
-sensor.showDebug(<span class="hljs-literal">true</span>);
 <span class="hljs-comment">// add sources from calls to `Sensor.createSource()`</span>
 sensor.addSource(...sources);
 <span class="hljs-comment">// start listening for changes to the sensor&#x27;s readings</span>
 sensor.readings.subscribe({
   <span class="hljs-function"><span class="hljs-title">onAdded</span>(<span class="hljs-params">source, reading</span>)</span> {
-    <span class="hljs-built_in">console</span>.log(source.userData.id, <span class="hljs-string">&#x27;has a reading of &#x27;</span>, reading);
+    <span class="hljs-built_in">console</span>.log(source.userData.id, <span class="hljs-string">&#x27;has a reading of&#x27;</span>, );
   },
   <span class="hljs-function"><span class="hljs-title">onUpdated</span>(<span class="hljs-params">source, reading</span>)</span> {
-    <span class="hljs-built_in">console</span>.log(source.userData.id, <span class="hljs-string">&#x27;has an updated reading &#x27;</span>, reading);
+    <span class="hljs-built_in">console</span>.log(source.userData.id, <span class="hljs-string">&#x27;has an updated reading&#x27;</span>);
     <span class="hljs-keyword">if</span> (reading.inRange) {
       <span class="hljs-built_in">console</span>.log(source.userData.id, <span class="hljs-string">&#x27;is currently in range&#x27;</span>);
       <span class="hljs-keyword">if</span> (reading.inView) {
@@ -269,6 +312,7 @@ sensor.readings.subscribe({
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">create<wbr>Source<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="../enums/sensor.sourcetype.html#sphere" class="tsd-signature-type">Sensor.SourceType.SPHERE</a>, options<span class="tsd-signature-symbol">: </span><a href="sensor.html#spherevolume" class="tsd-signature-type">Sensor.SphereVolume</a><span class="tsd-signature-symbol"> &amp; </span><a href="sensor.html#sourceoptions" class="tsd-signature-type">Sensor.SourceOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/sensor.isource.html" class="tsd-signature-type">Sensor.ISource</a><span class="tsd-signature-symbol">&lt;</span><a href="sensor.html#spherevolume" class="tsd-signature-type">Sensor.SphereVolume</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 						<li class="tsd-signature tsd-kind-icon">create<wbr>Source<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="../enums/sensor.sourcetype.html#box" class="tsd-signature-type">Sensor.SourceType.BOX</a>, options<span class="tsd-signature-symbol">: </span><a href="sensor.html#boxvolume" class="tsd-signature-type">Sensor.BoxVolume</a><span class="tsd-signature-symbol"> &amp; </span><a href="sensor.html#sourceoptions" class="tsd-signature-type">Sensor.SourceOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/sensor.isource.html" class="tsd-signature-type">Sensor.ISource</a><span class="tsd-signature-symbol">&lt;</span><a href="sensor.html#boxvolume" class="tsd-signature-type">Sensor.BoxVolume</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Source<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="../enums/sensor.sourcetype.html#cylinder" class="tsd-signature-type">Sensor.SourceType.CYLINDER</a>, options<span class="tsd-signature-symbol">: </span><a href="sensor.html#cylindervolume" class="tsd-signature-type">Sensor.CylinderVolume</a><span class="tsd-signature-symbol"> &amp; </span><a href="sensor.html#sourceoptions" class="tsd-signature-type">Sensor.SourceOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/sensor.isource.html" class="tsd-signature-type">Sensor.ISource</a><span class="tsd-signature-symbol">&lt;</span><a href="sensor.html#cylindervolume" class="tsd-signature-type">Sensor.CylinderVolume</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -276,21 +320,23 @@ sensor.readings.subscribe({
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Create an <a href="../interfaces/sensor.isource.html"><code>ISource</code></a> which can be sensed by an <a href="../interfaces/sensor.isensor.html"><code>ISensor</code></a>.
+									<p>Create a spherical <a href="../interfaces/sensor.isource.html"><code>ISource</code></a> which can be sensed by an <a href="../interfaces/sensor.isensor.html"><code>ISensor</code></a>.<br>
 									A shallow copy of <code>options.userData</code> is applied to the Source upon creation.</p>
 								</div>
+								<p>Omitting <code>options.origin</code> will default the source&#39;s <code>volume.origin</code> to <code>{ x: 0, y: 0, z: 0 }</code>.<br>
+								Omitting <code>options.radius</code> will default the source&#39;s <code>volume.radius</code> to <code>Infinity</code>.</p>
 								<pre><code><span class="hljs-string">const</span> <span class="hljs-string">sources</span> <span class="hljs-string">=</span> <span class="hljs-string">await</span> <span class="hljs-string">Promise.all([</span>
   <span class="hljs-string">mpSdk.Sensor.createSource(mpSdk.Sensor.SourceType.SPHERE,</span> {
     <span class="hljs-attr">origin:</span> { <span class="hljs-attr">x:</span> <span class="hljs-number">1</span>, <span class="hljs-attr">y:</span> <span class="hljs-number">2</span>, <span class="hljs-attr">z:</span> <span class="hljs-number">3</span> },
     <span class="hljs-attr">radius:</span> <span class="hljs-number">20</span>,
     <span class="hljs-attr">userData:</span> {
-      <span class="hljs-attr">id:</span> <span class="hljs-string">&#x27;my-sensor-1&#x27;</span>,
+      <span class="hljs-attr">id:</span> <span class="hljs-string">&#x27;sphere-source-1&#x27;</span>,
     },
   }<span class="hljs-string">),</span>
   <span class="hljs-string">mpSdk.Sensor.createSource(mpSdk.Sensor.SourceType.SPHERE,</span> {
     <span class="hljs-attr">radius:</span> <span class="hljs-number">4</span>,
     <span class="hljs-attr">userData:</span> {
-      <span class="hljs-attr">id:</span> <span class="hljs-string">&#x27;my-sensor-2,
+      <span class="hljs-attr">id:</span> <span class="hljs-string">&#x27;sphere-source-2,
     },
   }),
 ]);
@@ -313,6 +359,33 @@ sensor.addSource(...sources);</span></code></pre>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create an box shaped <a href="../interfaces/sensor.isource.html"><code>ISource</code></a> which can be sensed by an <a href="../interfaces/sensor.isensor.html"><code>ISensor</code></a>.<br>
+									A shallow copy of <code>options.userData</code> is applied to the Source upon creation.</p>
+								</div>
+								<p>Omitting <code>options.center</code> will default the source&#39;s <code>volume.center</code> to <code>{ x: 0, y: 0, z: 0 }</code>.<br>
+									Omitting <code>options.size</code> will default the source&#39;s <code>volume.size</code> to <code>{ x: Infinity, y: Infinity, z: Infinity }</code>.
+								Omitting <code>options.orientation</code> will default the source&#39;s <code>volume.orientatin</code> to <code>{ yaw: 0, pitch: 0, roll: 0 }</code>.</p>
+								<pre><code><span class="hljs-string">const</span> <span class="hljs-string">sources</span> <span class="hljs-string">=</span> <span class="hljs-string">await</span> <span class="hljs-string">Promise.all([</span>
+  <span class="hljs-string">mpSdk.Sensor.createSource(mpSdk.Sensor.SourceType.BOX,</span> {
+    <span class="hljs-attr">center:</span> { <span class="hljs-attr">x:</span> <span class="hljs-number">1</span>, <span class="hljs-attr">y:</span> <span class="hljs-number">1</span>, <span class="hljs-attr">z:</span> <span class="hljs-number">1</span> },
+    <span class="hljs-attr">size:</span> { <span class="hljs-attr">x:</span> <span class="hljs-number">2</span>, <span class="hljs-attr">y:</span> <span class="hljs-number">1</span>, <span class="hljs-attr">z:</span> <span class="hljs-number">2</span> },
+    <span class="hljs-attr">userData:</span> {
+      <span class="hljs-attr">id:</span> <span class="hljs-string">&#x27;box-source-1&#x27;</span>,
+    },
+  }<span class="hljs-string">),</span>
+  <span class="hljs-string">mpSdk.Sensor.createSource(mpSdk.Sensor.SourceType.BOX,</span> {
+    <span class="hljs-attr">size:</span> { <span class="hljs-attr">x: 2: y:</span> <span class="hljs-number">2</span>, <span class="hljs-attr">z:</span> <span class="hljs-number">2</span> },
+    <span class="hljs-attr">orientation:</span> { <span class="hljs-attr">yaw:</span> <span class="hljs-number">45</span>, <span class="hljs-attr">pitch:</span> <span class="hljs-number">45</span>, <span class="hljs-attr">roll:</span> <span class="hljs-number">45</span> },
+    <span class="hljs-attr">userData:</span> {
+      <span class="hljs-attr">id:</span> <span class="hljs-string">&#x27;box-source-2,
+    },
+  }),
+]);
+// attach to a sensor previously created with `Sensor.createSensor()`
+sensor.addSource(...sources);</span></code></pre>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -320,9 +393,53 @@ sensor.addSource(...sources);</span></code></pre>
 								</li>
 								<li>
 									<h5>options: <a href="sensor.html#boxvolume" class="tsd-signature-type">Sensor.BoxVolume</a><span class="tsd-signature-symbol"> &amp; </span><a href="sensor.html#sourceoptions" class="tsd-signature-type">Sensor.SourceOptions</a></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/sensor.isource.html" class="tsd-signature-type">Sensor.ISource</a><span class="tsd-signature-symbol">&lt;</span><a href="sensor.html#boxvolume" class="tsd-signature-type">Sensor.BoxVolume</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a cylindrical <a href="../interfaces/sensor.isource.html"><code>ISource</code></a> which can be sensed by an <a href="../interfaces/sensor.isensor.html"><code>ISensor</code></a>.<br>
+									A shallow copy of <code>options.userData</code> is applied to the Source upon creation.</p>
+								</div>
+								<p>Omitting <code>options.basePoint</code> will default the source&#39;s <code>volume.basePoint</code> to <code>{ x: 0, y: 0, z: 0 }</code>.<br>
+									Omitting <code>options.radius</code> will default the source&#39;s <code>volume.radius</code> to <code>Infinity</code>.<br>
+								Omitting <code>options.height</code> will default the source&#39;s <code>volume.height</code> to <code>Infinity</code>.</p>
+								<pre><code><span class="hljs-string">const</span> <span class="hljs-string">sources</span> <span class="hljs-string">=</span> <span class="hljs-string">await</span> <span class="hljs-string">Promise.all([</span>
+  <span class="hljs-string">mpSdk.Sensor.createSource(mpSdk.Sensor.SourceType.CYLINDER,</span> {
+    <span class="hljs-attr">basePoint:</span> { <span class="hljs-attr">x:</span> <span class="hljs-number">0</span>, <span class="hljs-attr">y:</span> <span class="hljs-number">0</span>, <span class="hljs-attr">z:</span> <span class="hljs-number">0</span> },
+    <span class="hljs-attr">radius:</span> <span class="hljs-number">2</span>,
+    <span class="hljs-attr">height:</span> <span class="hljs-number">5</span>,
+    <span class="hljs-attr">userData:</span> {
+      <span class="hljs-attr">id:</span> <span class="hljs-string">&#x27;cylinder-source-1&#x27;</span>,
+    },
+  }<span class="hljs-string">),</span>
+  <span class="hljs-string">mpSdk.Sensor.createSource(mpSdk.Sensor.SourceType.CYLINDER,</span> {
+<span class="hljs-attr">basePoint:</span> { <span class="hljs-attr">x:</span> <span class="hljs-number">1</span>, <span class="hljs-attr">y:</span> <span class="hljs-number">2</span>, <span class="hljs-attr">z:</span> <span class="hljs-number">3</span> },
+<span class="hljs-attr">radius:</span> <span class="hljs-number">3</span>,
+    <span class="hljs-attr">userData:</span> {
+      <span class="hljs-attr">id:</span> <span class="hljs-string">&#x27;cylinder-source-2,
+    },
+  }),
+]);
+// attach to a sensor previously created with `Sensor.createSensor()`
+sensor.addSource(...sources);</span></code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <a href="../enums/sensor.sourcetype.html#cylinder" class="tsd-signature-type">Sensor.SourceType.CYLINDER</a></h5>
+								</li>
+								<li>
+									<h5>options: <a href="sensor.html#cylindervolume" class="tsd-signature-type">Sensor.CylinderVolume</a><span class="tsd-signature-symbol"> &amp; </span><a href="sensor.html#sourceoptions" class="tsd-signature-type">Sensor.SourceOptions</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/sensor.isource.html" class="tsd-signature-type">Sensor.ISource</a><span class="tsd-signature-symbol">&lt;</span><a href="sensor.html#cylindervolume" class="tsd-signature-type">Sensor.CylinderVolume</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -367,6 +484,9 @@ sensor.addSource(...sources);</span></code></pre>
 					<li class=" tsd-kind-namespace">
 						<a href="renderer.html">Renderer</a>
 					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="room.html">Room</a>
+					</li>
 					<li class="current tsd-kind-namespace">
 						<a href="sensor.html">Sensor</a>
 					</li>
@@ -400,6 +520,9 @@ sensor.addSource(...sources);</span></code></pre>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="sensor.html#boxvolume" class="tsd-kind-icon">Box<wbr>Volume</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="sensor.html#cylindervolume" class="tsd-kind-icon">Cylinder<wbr>Volume</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="sensor.html#sensorreading" class="tsd-kind-icon">Sensor<wbr>Reading</a>
