@@ -64,6 +64,7 @@
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="sensor.html#boxvolume" class="tsd-kind-icon">Box<wbr>Volume</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="sensor.html#cylindervolume" class="tsd-kind-icon">Cylinder<wbr>Volume</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="sensor.html#sensorreading" class="tsd-kind-icon">Sensor<wbr>Reading</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="sensor.html#sourceoptions" class="tsd-kind-icon">Source<wbr>Options</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="sensor.html#spherevolume" class="tsd-kind-icon">Sphere<wbr>Volume</a></li>
@@ -99,10 +100,54 @@
 								</div>
 							</li>
 							<li class="tsd-parameter">
+								<h5>orientation<span class="tsd-signature-symbol">: </span><a href="../index.html#orientation" class="tsd-signature-type">Orientation</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The orientation of the box. The rotations are applied in yaw, pitch, then roll order.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
 								<h5>size<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
 										<p>The length, width, and depth of the box volume.</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="cylindervolume" class="tsd-anchor"></a>
+					<h3>Cylinder<wbr>Volume</h3>
+					<div class="tsd-signature tsd-kind-icon">Cylinder<wbr>Volume<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>base<wbr>Point<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The point which defines the position (base) from which the height in the +Y, and radius in the XZ-plane are relative to.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The height of the cylinder.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>radius<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The radius of the cylinder.</p>
 									</div>
 								</div>
 							</li>
@@ -236,7 +281,7 @@
 <span class="hljs-comment">// add sources from calls to `Sensor.createSource()`</span>
 sensor.addSource(...sources);
 <span class="hljs-comment">// start listening for changes to the sensor&#x27;s readings</span>
-sensor.subscribe({
+sensor.readings.subscribe({
   <span class="hljs-function"><span class="hljs-title">onAdded</span>(<span class="hljs-params">source, reading</span>)</span> {
     <span class="hljs-built_in">console</span>.log(source.userData.id, <span class="hljs-string">&#x27;has a reading of&#x27;</span>, );
   },
@@ -366,6 +411,9 @@ sensor.addSource(...sources);</span></code></pre>
 						<a href="renderer.html">Renderer</a>
 					</li>
 					<li class=" tsd-kind-namespace">
+						<a href="room.html">Room</a>
+					</li>
+					<li class=" tsd-kind-namespace">
 						<a href="scene.html">Scene</a>
 					</li>
 					<li class="current tsd-kind-namespace">
@@ -401,6 +449,9 @@ sensor.addSource(...sources);</span></code></pre>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="sensor.html#boxvolume" class="tsd-kind-icon">Box<wbr>Volume</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="sensor.html#cylindervolume" class="tsd-kind-icon">Cylinder<wbr>Volume</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="sensor.html#sensorreading" class="tsd-kind-icon">Sensor<wbr>Reading</a>

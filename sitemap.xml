@@ -106,13 +106,13 @@
   
   
   <url>
-    <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
+    <loc>https://matterport.github.io/docs/reference/index.html</loc>
   </url>
   
   
   
   <url>
-    <loc>https://matterport.github.io/docs/reference/index.html</loc>
+    <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
   </url>
   
   
@@ -667,6 +667,24 @@
   
   <url>
     <loc>https://matterport.github.io/sdk_remote_control.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdk_sensors_source_areas.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdk_sensors_sweep_control.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdk_sensors_tags_level_of_detail.html</loc>
   </url>
   
   
