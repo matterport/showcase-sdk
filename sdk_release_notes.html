@@ -220,6 +220,20 @@
           
           
           
+          
+          
+          <li><a title="Quick Start" href="sdk_quickstart.html">Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Typescript Declarations" href="sdk_types.html">Typescript Declarations</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -347,70 +361,7 @@
           
           
           
-          <li><a title="3.10 (current)" href="docs\sdk\reference\current\index.html">3.10 (current)</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.9" href="docs\sdk\reference\3.9\index.html">3.9</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.8" href="docs\sdk\reference\3.8\index.html">3.8</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.7" href="docs\sdk\reference\3.7\index.html">3.7</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.6" href="docs\sdk\reference\3.6\index.html">3.6</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.5" href="docs\sdk\reference\3.5\index.html">3.5</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.4" href="docs\sdk\reference\3.4\index.html">3.4</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.3" href="docs\sdk\reference\3.3\index.html">3.3</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.2" href="docs\sdk\reference\3.2\index.html">3.2</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.1" href="docs\sdk\reference\3.1\index.html">3.1</a></li>
+          <li><a title="Documentation" href="docs\sdk\reference\current\index.html">Documentation</a></li>
           
           
           
@@ -481,25 +432,34 @@
 
     
 
-   <h2 id="310">3.10</h2>
+   <h2 id="311">3.11</h2>
+<h5 id="jun-10-2021">Jun 10, 2021</h5>
+<ul>
+  <li>Added: <a href="docs/sdk/reference/current/modules/room.html#current">Room.current</a> observable.</li>
+  <li>Added: <a href="sdk_types.html">Typescript type declarations</a>.</li>
+  <li>Fixed: <code class="highlighter-rouge">Sweep.Alignment</code> and <code class="highlighter-rouge">Sweep.Placement</code> are now properly under the <code class="highlighter-rouge">Sweep</code> namespace. Previously they were <code class="highlighter-rouge">Mode.Alignment</code> and <code class="highlighter-rouge">Mode.Placement</code></li>
+  <li>Removed: An interface version no longer needs to be specified when calling <code class="highlighter-rouge">connect</code>.</li>
+</ul>
+
+<h2 id="v310">v3.10</h2>
 <h5 id="apr-1-2021">Apr 1, 2021</h5>
 <ul>
   <li>Added: <a href="docs/sdk/reference/current/modules/room.html#data">Room.data</a> collection.</li>
-  <li>Added: <a href="docs/sdk/references/current/modules/sensor.html#createsource">Cylinder sources</a> for use with Sensors.</li>
-  <li>Added: <a href="docs/sdk/references/current/modules/sensor.html#createsource">Box sources</a> now support orientation.</li>
+  <li>Added: <a href="docs/sdk/reference/current/modules/sensor.html#createsource">Cylinder sources</a> for use with Sensors.</li>
+  <li>Added: <a href="docs/sdk/reference/current/modules/sensor.html#createsource">Box sources</a> now support orientation.</li>
   <li>Fixed: <code class="highlighter-rouge">Mattertag.add</code> now properly sets its stem visible when undefined.</li>
   <li>Fixed: <code class="highlighter-rouge">Sweep.current</code> is more resilient to missing floor info.</li>
 </ul>
 
-<h2 id="39">3.9</h2>
-<h6 id="feb-22-2021">Feb 22, 2021</h6>
+<h2 id="v39">v3.9</h2>
+<h5 id="feb-22-2021">Feb 22, 2021</h5>
 <ul>
   <li>Added: <a href="docs/sdk/reference/current/modules/sensor.html">Sensors</a></li>
   <li>Fixed: <code class="highlighter-rouge">Mattertag.editPosition</code> always giving a stem length of 1 meter.</li>
 </ul>
 
-<h2 id="38">3.8</h2>
-<h6 id="jan-19-2021">Jan 19, 2021</h6>
+<h2 id="v38">v3.8</h2>
+<h5 id="jan-19-2021">Jan 19, 2021</h5>
 <ul>
   <li>Added: <a href="docs/sdk/reference/current/modules/floor.html#data">Floor.current</a> observable</li>
   <li>Added: <a href="docs/sdk/reference/current/modules/sweep.html#current">Sweep.current</a> observable</li>
@@ -508,7 +468,7 @@
 </ul>
 
 <h2 id="v37">v3.7</h2>
-<h6 id="dec-21-2020">Dec 21, 2020</h6>
+<h5 id="dec-21-2020">Dec 21, 2020</h5>
 <ul>
   <li>Fix: Added <code class="highlighter-rouge">enabled</code>, <code class="highlighter-rouge">stemVisible</code> and <code class="highlighter-rouge">floorIndex</code> properties to <a href="docs/sdk/reference/current/modules/mattertag.html#observablemattertagdata">ObservableMattertagData</a> for backwards compatibility with <code class="highlighter-rouge">Mattertag.getData</code></li>
   <li>Fix: Fixed an issue where observable collections would not return initial data</li>
@@ -517,7 +477,7 @@
 </ul>
 
 <h2 id="v36">v3.6</h2>
-<h6 id="dec-1-2020">Dec 1, 2020</h6>
+<h5 id="dec-1-2020">Dec 1, 2020</h5>
 <ul>
   <li>Added: <code class="highlighter-rouge">Mattertag.data</code> observable collection, deprecate <code class="highlighter-rouge">Mattertag.getData</code></li>
   <li>Added: <code class="highlighter-rouge">onCollectionUpdated</code> to collection observers. <code class="highlighter-rouge">onCollectionUpdated</code> aggregates changes to a collection for more coarse, but less often updates</li>
@@ -528,13 +488,13 @@
 </ul>
 
 <h2 id="v35">v3.5</h2>
-<h6 id="aug-5-2020">Aug 5, 2020</h6>
+<h5 id="aug-5-2020">Aug 5, 2020</h5>
 <ul>
   <li>Added <code class="highlighter-rouge">Mattertag.injectHTML</code> which allows embedding of custom HTML and Javascript, with sandboxed iframe limitations.</li>
 </ul>
 
 <h2 id="v34">v3.4</h2>
-<h6 id="june-23-2020">June 23, 2020</h6>
+<h5 id="june-23-2020">June 23, 2020</h5>
 <ul>
   <li>Added <code class="highlighter-rouge">Camera.zoomBy</code>, <code class="highlighter-rouge">Camera.zoomTo</code>, and <code class="highlighter-rouge">Camera.zoomReset</code> to manipulate the zoom level of the camera in Panorama modes.</li>
   <li>Added <code class="highlighter-rouge">Camera.zoom</code> observable to get the zoom level of the camera while in Panorama mode.</li>
@@ -548,7 +508,7 @@
 </ul>
 
 <h2 id="v331">v3.3.1</h2>
-<h6 id="june-1-2020">June 1, 2020</h6>
+<h5 id="june-1-2020">June 1, 2020</h5>
 <ul>
   <li>Added <code class="highlighter-rouge">Measurements.data</code> which allows you to detect when measurements are added, removed, and updated.</li>
   <li>Added <code class="highlighter-rouge">Mattertag.registerIcon</code> and <code class="highlighter-rouge">Mattertag.editIcon</code> function which allows you to change image used as mattertag discs.</li>
@@ -556,34 +516,34 @@
 </ul>
 
 <h2 id="v33">v3.3</h2>
-<h6 id="may-19-2020">May 19, 2020</h6>
+<h5 id="may-19-2020">May 19, 2020</h5>
 <ul>
   <li>Added <code class="highlighter-rouge">Measurements.mode</code> which allows you to detect when measurements mode is activated and deactivated.</li>
   <li>Added <code class="highlighter-rouge">Measurements.toggleMode</code> function which allows you to enable and disable showcase measurement mode.</li>
 </ul>
 
 <h2 id="v323">v3.2.3</h2>
-<h6 id="may-13-2020">May 13, 2020</h6>
+<h5 id="may-13-2020">May 13, 2020</h5>
 <ul>
   <li>Fixed a race condition with <code class="highlighter-rouge">Camera.pose</code> and <code class="highlighter-rouge">Pointer.intersection</code> initialization.</li>
 </ul>
 
 <h2 id="v322">v3.2.2</h2>
-<h6 id="may-11-2020">May 11, 2020</h6>
+<h5 id="may-11-2020">May 11, 2020</h5>
 <ul>
   <li>Added optional <code class="highlighter-rouge">floorId</code> parameter to <code class="highlighter-rouge">Mattertag.add</code> and <code class="highlighter-rouge">Mattertag.editPosition</code>.</li>
   <li>Added <code class="highlighter-rouge">floorId</code> to <code class="highlighter-rouge">Pointer.intersection</code> observable. This property can be used in with transient mattertags.</li>
 </ul>
 
 <h2 id="v321">v3.2.1</h2>
-<h6 id="jan-30-2020">Jan 30, 2020</h6>
+<h5 id="jan-30-2020">Jan 30, 2020</h5>
 <ul>
   <li>Added <code class="highlighter-rouge">Mattertag.LINK_OPEN</code> event. This event fires when the user has clicked on an external mattertag link. See <a href="docs/sdk/reference/current/index.html#on">Mattertag Events</a></li>
   <li>Added <code class="highlighter-rouge">Camera.setRotation</code> function. This function sets the absolute rotation of the camera in inside mode.</li>
 </ul>
 
 <h2 id="v32">v3.2</h2>
-<h6 id="dec-9-2019">Dec 9, 2019</h6>
+<h5 id="dec-9-2019">Dec 9, 2019</h5>
 <ul>
   <li><strong>Transient Mattertags</strong><br />
 Support for creating, updating and deleting mattertags.
@@ -596,7 +556,7 @@ We are adding support for synchronous functions. These functions compute and ret
 </ul>
 
 <h2 id="v31">v3.1</h2>
-<h6 id="aug-22-2019">Aug 22, 2019</h6>
+<h5 id="aug-22-2019">Aug 22, 2019</h5>
 <ul>
   <li>Added <code class="highlighter-rouge">Camera.pose</code> observable property.</li>
   <li><code class="highlighter-rouge">Camera.getPose()</code> is now deprecated. It will be removed in a future update.</li>
@@ -604,13 +564,13 @@ We are adding support for synchronous functions. These functions compute and ret
 </ul>
 
 <h2 id="v301225">v3.0.12.25</h2>
-<h6 id="may-3-2019">May 3, 2019</h6>
+<h5 id="may-3-2019">May 3, 2019</h5>
 <ul>
   <li>Added colors and anchor points <code class="highlighter-rouge">Mattertag.MattertagData</code></li>
 </ul>
 
 <h2 id="v301218">v3.0.12.18</h2>
-<h6 id="april-25-2019">April 25, 2019</h6>
+<h5 id="april-25-2019">April 25, 2019</h5>
 <ul>
   <li>Added <code class="highlighter-rouge">Measurements.getData()</code>. You can now access measurements created from Workshop!</li>
   <li>Added <code class="highlighter-rouge">App.getLoadTimes()</code>. You can now access app phase timing information!</li>
@@ -623,14 +583,14 @@ We are adding support for synchronous functions. These functions compute and ret
 </ul>
 
 <h2 id="v30335">v3.0.3.35</h2>
-<h6 id="june-27-2018">June 27, 2018</h6>
+<h5 id="june-27-2018">June 27, 2018</h5>
 <ul>
   <li>New actions on camera, new namespaces for Renderer, and Settings</li>
   <li><a href="sdk_upgrading.html#upgrading-from-v30-to-v30335">See a list of modified endpoints.</a></li>
 </ul>
 
 <h2 id="v300196">v3.0.0.196</h2>
-<h6 id="february-12-2018">February 12, 2018</h6>
+<h5 id="february-12-2018">February 12, 2018</h5>
 <ul>
   <li>Renamed <code class="highlighter-rouge">toggle()</code> to <code class="highlighter-rouge">setActive()</code></li>
   <li>Renamed <code class="highlighter-rouge">MattertagPositionData</code> to <code class="highlighter-rouge">ActiveMattertagData</code></li>
@@ -666,7 +626,7 @@ We are adding support for synchronous functions. These functions compute and ret
 </ul>
 
 <h2 id="v30">v3.0</h2>
-<h6 id="december-4-2017">December 4, 2017</h6>
+<h5 id="december-4-2017">December 4, 2017</h5>
 <ul>
   <li>New actions and events on floors, labels, and Mattertag™ Posts.</li>
   <li>New set of reference content that covers all actions and events.</li>
@@ -675,14 +635,14 @@ We are adding support for synchronous functions. These functions compute and ret
 </ul>
 
 <h2 id="v11">v1.1</h2>
-<h6 id="august-10-2017">August 10, 2017</h6>
+<h5 id="august-10-2017">August 10, 2017</h5>
 <ul>
   <li>Added <code class="highlighter-rouge">getPose</code> and <code class="highlighter-rouge">takeScreenShot</code> actions.</li>
   <li>Added pano thumbnails from the default pose into the metadata.</li>
 </ul>
 
 <h2 id="v10">v1.0</h2>
-<h6 id="february-16-2017">February 16, 2017</h6>
+<h5 id="february-16-2017">February 16, 2017</h5>
 <ul>
   <li>Initial release of SDK. Focus on movement and the user’s location in the space.</li>
 </ul>
@@ -703,7 +663,7 @@ We are adding support for synchronous functions. These functions compute and ret
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2021 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jun 1, 2021 <br />
+ Site last generated: Jun 10, 2021 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

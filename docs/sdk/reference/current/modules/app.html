@@ -35,9 +35,9 @@
 						<section class="tsd-index-section ">
 							<h3>Enumerations</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/app.application.html" class="tsd-kind-icon">Application</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/app.event.html" class="tsd-kind-icon">Event</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/app.phase.html" class="tsd-kind-icon">Phase</a></li>
-								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/app.sdkapplication.html" class="tsd-kind-icon">Sdk<wbr>Application</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -48,16 +48,16 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Variables</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-namespace"><a href="app.html#state-1" class="tsd-kind-icon">state</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-namespace"><a href="app.html#state-1" class="tsd-kind-icon">state</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="app.html#getloadtimes" class="tsd-kind-icon">get<wbr>Load<wbr>Times</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="app.html#getstate" class="tsd-kind-icon">get<wbr>State</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="app.html#getloadtimes" class="tsd-kind-icon">get<wbr>Load<wbr>Times</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="app.html#getstate" class="tsd-kind-icon">get<wbr>State</a></li>
 							</ul>
 						</section>
 					</div>
@@ -71,18 +71,19 @@
 					<div class="tsd-signature tsd-kind-icon">App<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 					</aside>
+					<dl class="tsd-comment-tags tsd-typography">
+						<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+						<dd>
+							<p>This type is used by deprecated functionality. Use <a href="app.html#state-1">state</a> observable.</p>
+						</dd>
+					</dl>
 					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt class="tsd-comment-tags-deprecated">deprecated</dt>
-							<dd><p>This type is used by deprecated functionality. Use <a href="app.html#state-1">state</a> observable.</p>
-							</dd>
-						</dl>
 					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5>application<span class="tsd-signature-symbol">: </span><a href="../enums/app.sdkapplication.html" class="tsd-signature-type">App.SdkApplication</a></h5>
+								<h5>application<span class="tsd-signature-symbol">: </span><a href="../enums/app.application.html" class="tsd-signature-type">App.Application</a></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>phase<span class="tsd-signature-symbol">: </span><a href="../enums/app.phase.html" class="tsd-signature-type">App.Phase</a></h5>
@@ -100,7 +101,7 @@
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5>application<span class="tsd-signature-symbol">: </span><a href="../enums/app.sdkapplication.html" class="tsd-signature-type">App.SdkApplication</a></h5>
+								<h5>application<span class="tsd-signature-symbol">: </span><a href="../enums/app.application.html" class="tsd-signature-type">App.Application</a></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>phase<span class="tsd-signature-symbol">: </span><a href="../enums/app.phase.html" class="tsd-signature-type">App.Phase</a></h5>
@@ -121,7 +122,8 @@
      <span class="hljs-symbol">&#x27;appphase</span>.playing&#x27;: <span class="hljs-number">0</span>,
      <span class="hljs-symbol">&#x27;appphase</span>.error&#x27;: <span class="hljs-number">0</span>,
    }
-}</code></pre>
+}
+</code></pre>
 									</div>
 								</div>
 								<ul class="tsd-parameters">
@@ -135,10 +137,10 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-namespace">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-namespace">
 					<a name="state-1" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> state</h3>
+					<h3>state</h3>
 					<div class="tsd-signature tsd-kind-icon">state<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservable.html" class="tsd-signature-type">IObservable</a><span class="tsd-signature-symbol">&lt;</span><a href="app.html#state" class="tsd-signature-type">App.State</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 					</aside>
@@ -146,62 +148,65 @@
 						<div class="lead">
 							<p>An observable application state object.</p>
 						</div>
-						<pre><code>mpSdk.App.state.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(appState)</span></span> {
- // app state has changed
- console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;The current application: &#x27;</span>, appState.application);
- console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;The current phase: &#x27;</span>, appState.phase);
- console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Loaded at time &#x27;</span>, appState.phaseTimes[mpSdk.App.Phase.LOADING]);
- console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Started at time &#x27;</span>, appState.phaseTimes[mpSdk.App.Phase.STARTING]);
+						<pre><code>mpSdk.App.<span class="hljs-keyword">state</span>.subscribe(function (appState) {
+ // app <span class="hljs-keyword">state</span> has changed
+ console.<span class="hljs-keyword">log</span>(&#x27;The current application: &#x27;, appState.application);
+ console.<span class="hljs-keyword">log</span>(&#x27;The current phase: &#x27;, appState.phase);
+ console.<span class="hljs-keyword">log</span>(&#x27;Loaded at time &#x27;, appState.phaseTimes[mpSdk.App.Phase.LOADING]);
+ console.<span class="hljs-keyword">log</span>(&#x27;Started at time &#x27;, appState.phaseTimes[mpSdk.App.Phase.STARTING]);
 });
 
-<span class="hljs-built_in">output</span>
+output
 &gt; The current application: application.showcase
 &gt; The current phase: appphase.waiting
-&gt; Loaded at <span class="hljs-built_in">time</span> <span class="hljs-number">1570084156590</span>
-&gt; Started at <span class="hljs-built_in">time</span> <span class="hljs-number">1570084156824</span>
-&gt;</code></pre>
+&gt; Loaded at time <span class="hljs-number">1570084156590</span>
+&gt; Started at time <span class="hljs-number">1570084156824</span>
+&gt;
+</code></pre>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="getloadtimes" class="tsd-anchor"></a>
 					<h3>get<wbr>Load<wbr>Times</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Load<wbr>Times<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="app.html#state-1">state</a> observable to get load times.</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
-									<dd><p>Use <a href="app.html#state-1">state</a> observable to get load times.</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="getstate" class="tsd-anchor"></a>
 					<h3>get<wbr>State</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>State<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="app.html#appstate" class="tsd-signature-type">App.AppState</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="app.html#state-1">state</a> observable to get the current phase or application.</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
-									<dd><p>Use <a href="app.html#state-1">state</a> observable to get the current phase or application.</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="app.html#appstate" class="tsd-signature-type">App.AppState</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -268,13 +273,13 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
+						<a href="../enums/app.application.html" class="tsd-kind-icon">Application</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
 						<a href="../enums/app.event.html" class="tsd-kind-icon">Event</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
 						<a href="../enums/app.phase.html" class="tsd-kind-icon">Phase</a>
-					</li>
-					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
-						<a href="../enums/app.sdkapplication.html" class="tsd-kind-icon">Sdk<wbr>Application</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="app.html#appstate" class="tsd-kind-icon">App<wbr>State</a>
@@ -282,13 +287,13 @@
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="app.html#state" class="tsd-kind-icon">State</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-namespace">
+					<li class=" tsd-kind-property tsd-parent-kind-namespace">
 						<a href="app.html#state-1" class="tsd-kind-icon">state</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="app.html#getloadtimes" class="tsd-kind-icon">get<wbr>Load<wbr>Times</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="app.html#getstate" class="tsd-kind-icon">get<wbr>State</a>
 					</li>
 				</ul>

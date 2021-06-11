@@ -94,7 +94,7 @@
   
   
   <url>
-    <loc>https://matterport.github.io/docs/index.html</loc>
+    <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
   </url>
   
   
@@ -106,13 +106,13 @@
   
   
   <url>
-    <loc>https://matterport.github.io/docs/reference/index.html</loc>
+    <loc>https://matterport.github.io/docs/index.html</loc>
   </url>
   
   
   
   <url>
-    <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
+    <loc>https://matterport.github.io/docs/reference/index.html</loc>
   </url>
   
   
@@ -654,6 +654,12 @@
   
   
   <url>
+    <loc>https://matterport.github.io/sdk_quickstart.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/sdk_reference_summary.html</loc>
   </url>
   
@@ -703,6 +709,12 @@
   
   <url>
     <loc>https://matterport.github.io/sdk_transient_tags_editor.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdk_types.html</loc>
   </url>
   
   
@@ -805,6 +817,12 @@
   
   <url>
     <loc>https://matterport.github.io/sdkbundle_tutorials_using_xr.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdkbundle_types.html</loc>
   </url>
   
   

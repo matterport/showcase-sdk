@@ -220,6 +220,20 @@
           
           
           
+          
+          
+          <li><a title="Quick Start" href="sdk_quickstart.html">Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Typescript Declarations" href="sdk_types.html">Typescript Declarations</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -347,70 +361,7 @@
           
           
           
-          <li><a title="3.10 (current)" href="docs\sdk\reference\current\index.html">3.10 (current)</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.9" href="docs\sdk\reference\3.9\index.html">3.9</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.8" href="docs\sdk\reference\3.8\index.html">3.8</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.7" href="docs\sdk\reference\3.7\index.html">3.7</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.6" href="docs\sdk\reference\3.6\index.html">3.6</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.5" href="docs\sdk\reference\3.5\index.html">3.5</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.4" href="docs\sdk\reference\3.4\index.html">3.4</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.3" href="docs\sdk\reference\3.3\index.html">3.3</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.2" href="docs\sdk\reference\3.2\index.html">3.2</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="3.1" href="docs\sdk\reference\3.1\index.html">3.1</a></li>
+          <li><a title="Documentation" href="docs\sdk\reference\current\index.html">Documentation</a></li>
           
           
           
@@ -487,18 +438,21 @@
 
 <p>First, add the 3D Showcase SDK to your web application by including the Javascript library. This line goes in the <code class="highlighter-rouge">&lt;head&gt;</code> tag with your other includes.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span>
-<span class="nx">src</span><span class="o">=</span><span class="s1">'https://static.matterport.com/showcase-sdk/2.0.1-0-g64e7e88/sdk.js'</span><span class="o">&gt;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s1">'https://static.matterport.com/showcase-sdk/latest.js'</span><span class="o">&gt;</span>
 </code></pre></div></div>
 
 <p>Next, embed a Matterport Space on your web page with an <code class="highlighter-rouge">&lt;iframe&gt;</code> tag. <a href="https://support.matterport.com/hc/en-us/articles/115004549347-Embed-a-Space-with-an-iframe-">Learn more about embedding</a>.</p>
 
 <p>Add the <strong>&amp;play=1</strong> URL parameter to automatically load the <code class="highlighter-rouge">&lt;iframe&gt;</code> when the page loads for a better user experience. Give it an ID you will use later.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">width=</span><span class="s">"853"</span> <span class="na">height=</span><span class="s">"480"</span>
-<span class="na">src=</span><span class="s">"https://my.matterport.com/show?m=SxQL3iGyoDo&amp;play=1"</span>
-<span class="na">frameborder=</span><span class="s">"0"</span> <span class="na">allowfullscreen</span> <span class="na">allow=</span><span class="s">"vr"</span>
-<span class="na">id=</span><span class="s">"showcase_iframe"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span>
+  <span class="na">width=</span><span class="s">"853"</span>
+  <span class="na">height=</span><span class="s">"480"</span>
+  <span class="na">src=</span><span class="s">"https://my.matterport.com/show?m=SxQL3iGyoDo&amp;play=1"</span>
+  <span class="na">frameborder=</span><span class="s">"0"</span>
+  <span class="na">allow=</span><span class="s">"fullscreen; vr"</span>
+  <span class="na">id=</span><span class="s">"showcase-iframe"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/iframe&gt;</span>
 </code></pre></div></div>
 
 <h2 id="connect-to-the-matterport-space">Connect to the Matterport Space</h2>
@@ -507,25 +461,21 @@
 
 <p>You’ll want to wait until the <code class="highlighter-rouge">&lt;iframe&gt;</code> containing the Matterport Space loads. Connecting happens after you’ve included the SDK library.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'showcase_iframe'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// connect the sdk; log an error and stop if there were any connection issues</span>
+<span class="k">try</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="kr">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span>
+    <span class="nx">iframe</span><span class="p">,</span> <span class="c1">// Obtained earlier</span>
+    <span class="s1">'abc123456789'</span><span class="p">,</span> <span class="c1">// Your SDK key</span>
+    <span class="s1">''</span> <span class="c1">// Unused but needs to be a valid string</span>
+  <span class="p">);</span>
+  <span class="nx">onshowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span class="nx">iframe</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'load'</span><span class="p">,</span> <span class="nx">showcaseLoader</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-
-<span class="kd">function</span> <span class="nx">showcaseLoader</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="nb">window</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span>
-      <span class="nx">iframe</span><span class="p">,</span> <span class="c1">// Obtained earlier</span>
-      <span class="s1">'abc123456789'</span><span class="p">,</span> <span class="c1">// Your API key</span>
-      <span class="s1">'3.10'</span> <span class="c1">// SDK version you are using</span>
-      <span class="c1">// Use the latest version you can for your app</span>
-      <span class="p">)</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">loadedShowcaseHandler</span><span class="p">)</span>
-      <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">handleError</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">};</span>
+<span class="kd">function</span> <span class="nx">onShowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// start making calls on mpSdk as described in the reference docs</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <table>
@@ -616,9 +566,9 @@
 
 <h2 id="use-the-metadata">Use the Metadata</h2>
 
-<p>Finally, you can grab metadata about the entire Matterport Space by calling <code class="highlighter-rouge">getModelData()</code> and <code class="highlighter-rouge">getModelDetails()</code> in your web app. For example:</p>
+<p>Finally, you can grab metadata about the entire Matterport Space by calling <code class="highlighter-rouge">getData()</code> and <code class="highlighter-rouge">getDetails()</code> in your web app. For example:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">getModelData</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">getData</span><span class="p">()</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">model</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Model data successfully retrieved</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Model sid:'</span> <span class="o">+</span> <span class="nx">model</span><span class="p">.</span><span class="nx">sid</span><span class="p">);</span>
@@ -646,7 +596,7 @@
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2021 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jun 1, 2021 <br />
+ Site last generated: Jun 10, 2021 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

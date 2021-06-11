@@ -47,9 +47,9 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="mode.html#moveto" class="tsd-kind-icon">move<wbr>To</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="mode.html#moveto" class="tsd-kind-icon">move<wbr>To</a></li>
 							</ul>
 						</section>
 					</div>
@@ -83,11 +83,11 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="moveto" class="tsd-anchor"></a>
 					<h3>move<wbr>To</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">move<wbr>To<span class="tsd-signature-symbol">(</span>mode<span class="tsd-signature-symbol">: </span><a href="../enums/mode.mode-1.html" class="tsd-signature-type">Mode.Mode</a>, options<span class="tsd-signature-symbol">?: </span><a href="mode.html#movetomodeoptions" class="tsd-signature-type">Mode.MoveToModeOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/mode.mode-1.html" class="tsd-signature-type">Mode.Mode</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -101,7 +101,7 @@
 								<pre><code><span class="hljs-keyword">const</span> mode = mpSdk.Mode.Mode.FLOORPLAN;
 <span class="hljs-keyword">const</span> position = {<span class="hljs-attr">x</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">0</span>};
 <span class="hljs-keyword">const</span> rotation = {<span class="hljs-attr">x</span>: -<span class="hljs-number">90</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>};
-<span class="hljs-keyword">const</span> transition = mpSdk.Mode.TransitionType.FLY;
+<span class="hljs-keyword">const</span> transition = mpSdk.Mode.Transition.FLY;
 <span class="hljs-keyword">const</span> zoom = <span class="hljs-number">5</span>;
 
 mpSdk.Mode.moveTo(mode, {
@@ -116,7 +116,8 @@ mpSdk.Mode.moveTo(mode, {
   })
   .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>)</span>{
     <span class="hljs-comment">// Error with moveTo command</span>
-  });</code></pre>
+  });
+</code></pre>
 								<p>Notes about transitions to Floorplan mode:</p>
 								<ul>
 									<li><code>zoom</code> option is only taken into account in Floorplan transitions, the lower the number,
@@ -213,7 +214,7 @@ mpSdk.Mode.moveTo(mode, {
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="mode.html#movetomodeoptions" class="tsd-kind-icon">Move<wbr>ToMode<wbr>Options</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="mode.html#moveto" class="tsd-kind-icon">move<wbr>To</a>
 					</li>
 				</ul>

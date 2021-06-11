@@ -23,7 +23,7 @@
 					<a href="sensor.isource.html">ISource</a>
 				</li>
 			</ul>
-			<h1>ISource Interface</h1>
+			<h1>ISource Interface&lt;Volume&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -38,6 +38,14 @@
 						For example, with a <code>type</code> of <code>SourceType.SPHERE</code> the <code>volume</code> is a <code>SphereVolume</code>; a <code>SourceType.BOX</code> has a <code>BoxVolume</code>.</p>
 					</div>
 				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>Volume</h4>
+					</li>
+				</ul>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
@@ -98,7 +106,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="volume" class="tsd-anchor"></a>
 					<h3>volume</h3>
-					<div class="tsd-signature tsd-kind-icon">volume<span class="tsd-signature-symbol">:</span> <a href="../modules/sensor.html#spherevolume" class="tsd-signature-type">Sensor.SphereVolume</a><span class="tsd-signature-symbol"> | </span><a href="../modules/sensor.html#boxvolume" class="tsd-signature-type">Sensor.BoxVolume</a><span class="tsd-signature-symbol"> | </span><a href="../modules/sensor.html#cylindervolume" class="tsd-signature-type">Sensor.CylinderVolume</a></div>
+					<div class="tsd-signature tsd-kind-icon">volume<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Volume</span></div>
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -114,7 +122,7 @@
 					<a name="commit" class="tsd-anchor"></a>
 					<h3>commit</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">commit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">commit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -126,7 +134,7 @@
 									When changing any properties on <code>volume</code>, no changes will be reflected in Showcase until <code>commit</code> is called.</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -204,7 +212,7 @@
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-namespace">
+					<li class="current tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="sensor.isource.html" class="tsd-kind-icon">ISource</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
@@ -238,10 +246,10 @@
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/sensor.html#spherevolume" class="tsd-kind-icon">Sphere<wbr>Volume</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/sensor.html#createsensor" class="tsd-kind-icon">create<wbr>Sensor</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/sensor.html#createsource" class="tsd-kind-icon">create<wbr>Source</a>
 					</li>
 				</ul>

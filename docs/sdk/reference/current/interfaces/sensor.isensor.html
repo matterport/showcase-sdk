@@ -69,7 +69,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="sensor.isensor.html#addsource" class="tsd-kind-icon">add<wbr>Source</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="sensor.isensor.html#dispose" class="tsd-kind-icon">dispose</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="sensor.isensor.html#showdebug" class="tsd-kind-icon">show<wbr>Debug</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite"><a href="sensor.isensor.html#subscribe-1" class="tsd-kind-icon">subscribe</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-overwrite"><a href="sensor.isensor.html#subscribe-1" class="tsd-kind-icon">subscribe</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="sensor.isensor.html#waituntil" class="tsd-kind-icon">wait<wbr>Until</a></li>
 							</ul>
 						</section>
@@ -140,7 +140,8 @@
 										</ul>
 										<h4 class="tsd-returns-title">Returns <a href="isubscription.html" class="tsd-signature-type">ISubscription</a></h4>
 									</li>
-							</ul>        </li>
+								</ul>
+							</li>
 						</ul>
 					</div>
 				</section>
@@ -197,7 +198,7 @@
 					<a name="showdebug" class="tsd-anchor"></a>
 					<h3>show<wbr>Debug</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">show<wbr>Debug<span class="tsd-signature-symbol">(</span>show<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">show<wbr>Debug<span class="tsd-signature-symbol">(</span>show<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -216,15 +217,15 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-overwrite">
 					<a name="subscribe-1" class="tsd-anchor"></a>
 					<h3>subscribe</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">subscribe<span class="tsd-signature-symbol">(</span>observer<span class="tsd-signature-symbol">: </span><a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><a href="" class="tsd-signature-type">IObserver.DataT</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../index.html#observercallback" class="tsd-signature-type">ObserverCallback</a><span class="tsd-signature-symbol">&lt;</span><a href="" class="tsd-signature-type">IObserver.DataT</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="isubscription.html" class="tsd-signature-type">ISubscription</a></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">subscribe&lt;DataT&gt;<span class="tsd-signature-symbol">(</span>observer<span class="tsd-signature-symbol">: </span><a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DataT</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../index.html#observercallback" class="tsd-signature-type">ObserverCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DataT</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="isubscription.html" class="tsd-signature-type">ISubscription</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -237,10 +238,16 @@
 									Subscribe to <code>readings</code> to receive updates about associated <code>ISources</code></p>
 								</div>
 							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>DataT</h4>
+								</li>
+							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>observer: <a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><a href="" class="tsd-signature-type">IObserver.DataT</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../index.html#observercallback" class="tsd-signature-type">ObserverCallback</a><span class="tsd-signature-symbol">&lt;</span><a href="" class="tsd-signature-type">IObserver.DataT</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>observer: <a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DataT</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../index.html#observercallback" class="tsd-signature-type">ObserverCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DataT</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="isubscription.html" class="tsd-signature-type">ISubscription</a></h4>
@@ -364,7 +371,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="sensor.isensor.html#showdebug" class="tsd-kind-icon">show<wbr>Debug</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-overwrite">
 								<a href="sensor.isensor.html#subscribe-1" class="tsd-kind-icon">subscribe</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
@@ -377,7 +384,7 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="sensor.isensorobserver.html" class="tsd-kind-icon">ISensor<wbr>Observer</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="sensor.isource.html" class="tsd-kind-icon">ISource</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
@@ -395,10 +402,10 @@
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/sensor.html#spherevolume" class="tsd-kind-icon">Sphere<wbr>Volume</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/sensor.html#createsensor" class="tsd-kind-icon">create<wbr>Sensor</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/sensor.html#createsource" class="tsd-kind-icon">create<wbr>Source</a>
 					</li>
 				</ul>

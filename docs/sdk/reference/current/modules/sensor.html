@@ -57,7 +57,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/sensor.isensor.html" class="tsd-kind-icon">ISensor</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/sensor.isensorobserver.html" class="tsd-kind-icon">ISensor<wbr>Observer</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/sensor.isource.html" class="tsd-kind-icon">ISource</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/sensor.isource.html" class="tsd-kind-icon">ISource</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -71,10 +71,10 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="sensor.html#createsensor" class="tsd-kind-icon">create<wbr>Sensor</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="sensor.html#createsource" class="tsd-kind-icon">create<wbr>Source</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="sensor.html#createsensor" class="tsd-kind-icon">create<wbr>Sensor</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="sensor.html#createsource" class="tsd-kind-icon">create<wbr>Source</a></li>
 							</ul>
 						</section>
 					</div>
@@ -262,12 +262,12 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="createsensor" class="tsd-anchor"></a>
 					<h3>create<wbr>Sensor</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Sensor<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Sensor.SourceType.CAMERA</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/sensor.isensor.html" class="tsd-signature-type">Sensor.ISensor</a><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Sensor<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="../enums/sensor.sensortype.html#camera" class="tsd-signature-type">Sensor.SensorType.CAMERA</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/sensor.isensor.html" class="tsd-signature-type">Sensor.ISensor</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -277,39 +277,40 @@
 								<div class="lead">
 									<p>Create an <a href="../interfaces/sensor.isensor.html"><code>ISensor</code></a> which can sense and provide information about <a href="../interfaces/sensor.isource.html"><code>ISource</code></a>.</p>
 								</div>
-								<pre><code><span class="hljs-keyword">const</span> sensor = <span class="hljs-keyword">await</span> mpSdk.Sensor.createSensor(mpSdk.Sensor.SensorType.CAMERA);
-<span class="hljs-comment">// add sources from calls to `Sensor.createSource()`</span>
+								<pre><code>const sensor = <span class="hljs-keyword">await</span> mpSdk.Sensor.createSensor(mpSdk.Sensor.SensorType.CAMERA);
+// add sources <span class="hljs-keyword">from</span> calls to `Sensor.createSource()`
 sensor.addSource(...sources);
-<span class="hljs-comment">// start listening for changes to the sensor&#x27;s readings</span>
+// start listening <span class="hljs-keyword">for</span> changes to the senso<span class="hljs-string">r&#x27;s readings
 sensor.readings.subscribe({
-  <span class="hljs-function"><span class="hljs-title">onAdded</span>(<span class="hljs-params">source, reading</span>)</span> {
-    <span class="hljs-built_in">console</span>.log(source.userData.id, <span class="hljs-string">&#x27;has a reading of&#x27;</span>, );
+  onAdded(source, reading) {
+    console.log(source.userData.id, &#x27;</span>has a reading o<span class="hljs-string">f&#x27;, );
   },
-  <span class="hljs-function"><span class="hljs-title">onUpdated</span>(<span class="hljs-params">source, reading</span>)</span> {
-    <span class="hljs-built_in">console</span>.log(source.userData.id, <span class="hljs-string">&#x27;has an updated reading&#x27;</span>);
+  onUpdated(source, reading) <span class="hljs-subst">{
+    console.log(source.userData.<span class="hljs-built_in">id</span>, <span class="hljs-string">&#x27;has an updated reading&#x27;</span>);
     <span class="hljs-keyword">if</span> (reading.inRange) {
-      <span class="hljs-built_in">console</span>.log(source.userData.id, <span class="hljs-string">&#x27;is currently in range&#x27;</span>);
+      console.log(source.userData.<span class="hljs-built_in">id</span>, <span class="hljs-string">&#x27;is currently in range&#x27;</span>);
       <span class="hljs-keyword">if</span> (reading.inView) {
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;... and currently visible on screen&#x27;</span>);
-      }
+        console.log(<span class="hljs-string">&#x27;... and currently visible on screen&#x27;</span>);
+      }</span>
     }
   }
-});</code></pre>
+});</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>type: <span class="tsd-signature-type">Sensor.SourceType.CAMERA</span></h5>
+									<h5>type: <a href="../enums/sensor.sensortype.html#camera" class="tsd-signature-type">Sensor.SensorType.CAMERA</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/sensor.isensor.html" class="tsd-signature-type">Sensor.ISensor</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="createsource" class="tsd-anchor"></a>
 					<h3>create<wbr>Source</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">create<wbr>Source<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="../enums/sensor.sourcetype.html#sphere" class="tsd-signature-type">Sensor.SourceType.SPHERE</a>, options<span class="tsd-signature-symbol">: </span><a href="sensor.html#spherevolume" class="tsd-signature-type">Sensor.SphereVolume</a><span class="tsd-signature-symbol"> &amp; </span><a href="sensor.html#sourceoptions" class="tsd-signature-type">Sensor.SourceOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/sensor.isource.html" class="tsd-signature-type">Sensor.ISource</a><span class="tsd-signature-symbol">&lt;</span><a href="sensor.html#spherevolume" class="tsd-signature-type">Sensor.SphereVolume</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 						<li class="tsd-signature tsd-kind-icon">create<wbr>Source<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="../enums/sensor.sourcetype.html#box" class="tsd-signature-type">Sensor.SourceType.BOX</a>, options<span class="tsd-signature-symbol">: </span><a href="sensor.html#boxvolume" class="tsd-signature-type">Sensor.BoxVolume</a><span class="tsd-signature-symbol"> &amp; </span><a href="sensor.html#sourceoptions" class="tsd-signature-type">Sensor.SourceOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/sensor.isource.html" class="tsd-signature-type">Sensor.ISource</a><span class="tsd-signature-symbol">&lt;</span><a href="sensor.html#boxvolume" class="tsd-signature-type">Sensor.BoxVolume</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 						<li class="tsd-signature tsd-kind-icon">create<wbr>Source<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="../enums/sensor.sourcetype.html#cylinder" class="tsd-signature-type">Sensor.SourceType.CYLINDER</a>, options<span class="tsd-signature-symbol">: </span><a href="sensor.html#cylindervolume" class="tsd-signature-type">Sensor.CylinderVolume</a><span class="tsd-signature-symbol"> &amp; </span><a href="sensor.html#sourceoptions" class="tsd-signature-type">Sensor.SourceOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/sensor.isource.html" class="tsd-signature-type">Sensor.ISource</a><span class="tsd-signature-symbol">&lt;</span><a href="sensor.html#cylindervolume" class="tsd-signature-type">Sensor.CylinderVolume</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
@@ -341,7 +342,8 @@ sensor.readings.subscribe({
   }),
 ]);
 // attach to a sensor previously created with `Sensor.createSensor()`
-sensor.addSource(...sources);</span></code></pre>
+sensor.addSource(...sources);</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -384,7 +386,8 @@ sensor.addSource(...sources);</span></code></pre>
   }),
 ]);
 // attach to a sensor previously created with `Sensor.createSensor()`
-sensor.addSource(...sources);</span></code></pre>
+sensor.addSource(...sources);</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -428,7 +431,8 @@ sensor.addSource(...sources);</span></code></pre>
   }),
 ]);
 // attach to a sensor previously created with `Sensor.createSensor()`
-sensor.addSource(...sources);</span></code></pre>
+sensor.addSource(...sources);</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -515,7 +519,7 @@ sensor.addSource(...sources);</span></code></pre>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="../interfaces/sensor.isensorobserver.html" class="tsd-kind-icon">ISensor<wbr>Observer</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="../interfaces/sensor.isource.html" class="tsd-kind-icon">ISource</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
@@ -533,10 +537,10 @@ sensor.addSource(...sources);</span></code></pre>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="sensor.html#spherevolume" class="tsd-kind-icon">Sphere<wbr>Volume</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="sensor.html#createsensor" class="tsd-kind-icon">create<wbr>Sensor</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="sensor.html#createsource" class="tsd-kind-icon">create<wbr>Source</a>
 					</li>
 				</ul>

@@ -127,10 +127,10 @@
 
 
 {
-"title": "Redirecting to SDK Home",
+"title": "Redirecting to SDK Bundle Home",
 "tags": "",
 "keywords": "",
-"url": "docsindex.html",
+"url": "docsbundlemainindex.html",
 "summary": ""
 }
 ,
@@ -152,7 +152,7 @@
 "title": "Redirecting to SDK Home",
 "tags": "",
 "keywords": "",
-"url": "docsreferenceindex.html",
+"url": "docsindex.html",
 "summary": ""
 }
 ,
@@ -160,10 +160,10 @@
 
 
 {
-"title": "Redirecting to SDK Bundle Home",
+"title": "Redirecting to SDK Home",
 "tags": "",
 "keywords": "",
-"url": "docsbundlemainindex.html",
+"url": "docsreferenceindex.html",
 "summary": ""
 }
 ,
@@ -1152,6 +1152,17 @@
 
 
 {
+"title": "Quick Start",
+"tags": "",
+"keywords": "",
+"url": "sdk_quickstart.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Summary",
 "tags": "",
 "keywords": "",
@@ -1244,6 +1255,17 @@
 "tags": "",
 "keywords": "",
 "url": "sdk_transient_tags_editor.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Typescript Declarations",
+"tags": "",
+"keywords": "",
+"url": "sdk_types.html",
 "summary": ""
 }
 ,
@@ -1431,6 +1453,17 @@
 "tags": "",
 "keywords": "",
 "url": "sdkbundle_tutorials_using_xr.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Using Typescript Declarations",
+"tags": "",
+"keywords": "",
+"url": "sdkbundle_types.html",
 "summary": ""
 }
 ,
