@@ -41,17 +41,17 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Variables</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-namespace"><a href="measurements.html#data" class="tsd-kind-icon">data</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-namespace"><a href="measurements.html#mode" class="tsd-kind-icon">mode</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-namespace"><a href="measurements.html#data" class="tsd-kind-icon">data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-namespace"><a href="measurements.html#mode" class="tsd-kind-icon">mode</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="measurements.html#getdata" class="tsd-kind-icon">get<wbr>Data</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="measurements.html#togglemode" class="tsd-kind-icon">toggle<wbr>Mode</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="measurements.html#getdata" class="tsd-kind-icon">get<wbr>Data</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="measurements.html#togglemode" class="tsd-kind-icon">toggle<wbr>Mode</a></li>
 							</ul>
 						</section>
 					</div>
@@ -136,10 +136,10 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-namespace">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-namespace">
 					<a name="data" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> data</h3>
+					<h3>data</h3>
 					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservablemap.html" class="tsd-signature-type">IObservableMap</a><span class="tsd-signature-symbol">&lt;</span><a href="measurements.html#measurementmodedata" class="tsd-signature-type">Measurements.MeasurementModeData</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 					</aside>
@@ -160,12 +160,13 @@
   onCollectionUpdated: <span class="hljs-keyword">function</span> <span class="hljs-built_in">(collection</span>) {
     console.log(<span class="hljs-string">&#x27;the entire up-to-date collection&#x27;</span>,<span class="hljs-built_in"> collection</span>);
   }
-});</code></pre>
+});
+</code></pre>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-namespace">
 					<a name="mode" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> mode</h3>
+					<h3>mode</h3>
 					<div class="tsd-signature tsd-kind-icon">mode<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservable.html" class="tsd-signature-type">IObservable</a><span class="tsd-signature-symbol">&lt;</span><a href="measurements.html#state" class="tsd-signature-type">Measurements.State</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 					</aside>
@@ -173,22 +174,23 @@
 						<div class="lead">
 							<p>An observable measurement mode state object.</p>
 						</div>
-						<pre><code>mpSdk.Measurements.mode.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">measurementModeState</span>) </span>{
- <span class="hljs-comment">// measurement mode state has changed</span>
- <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Is measurement mode currently active? &#x27;</span>, measurementModeState.active);
+						<pre><code>mpSdk.Measurements.mode.subscribe(<span class="hljs-keyword">function</span> (measurementModeState) {
+ <span class="hljs-regexp">//</span> measurement mode state has changed
+ console.log(<span class="hljs-string">&#x27;Is measurement mode currently active? &#x27;</span>, measurementModeState.active);
 });
 
-<span class="hljs-comment">// output</span>
-<span class="hljs-comment">// &gt; Is measurement mode currently active? true</span></code></pre>
+<span class="hljs-regexp">//</span> output
+<span class="hljs-regexp">//</span> &gt; Is measurement mode currently active? true
+</code></pre>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="getdata" class="tsd-anchor"></a>
 					<h3>get<wbr>Data</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="measurements.html#measurementdata" class="tsd-signature-type">Measurements.MeasurementData</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -209,16 +211,17 @@
   })
   .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
     <span class="hljs-comment">// Measurement data retrieval error.</span>
-  });</code></pre>
+  });
+</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="measurements.html#measurementdata" class="tsd-signature-type">Measurements.MeasurementData</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="togglemode" class="tsd-anchor"></a>
 					<h3>toggle<wbr>Mode</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">toggle<wbr>Mode<span class="tsd-signature-symbol">(</span>activate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -232,7 +235,8 @@
 								<pre><code>showcase.Measurements.toggleMode(<span class="hljs-literal">true</span>)
   .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;measurement mode is now active&#x27;</span>);
-  });</code></pre>
+  });
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -316,16 +320,16 @@
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="measurements.html#state" class="tsd-kind-icon">State</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-namespace">
+					<li class=" tsd-kind-property tsd-parent-kind-namespace">
 						<a href="measurements.html#data" class="tsd-kind-icon">data</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-namespace">
+					<li class=" tsd-kind-property tsd-parent-kind-namespace">
 						<a href="measurements.html#mode" class="tsd-kind-icon">mode</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="measurements.html#getdata" class="tsd-kind-icon">get<wbr>Data</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="measurements.html#togglemode" class="tsd-kind-icon">toggle<wbr>Mode</a>
 					</li>
 				</ul>

@@ -35,7 +35,7 @@
 						<section class="tsd-index-section ">
 							<h3>Enumerations</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/pointer.intersectedobject.html" class="tsd-kind-icon">Intersected<wbr>Object</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/pointer.colliders.html" class="tsd-kind-icon">Colliders</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -45,9 +45,9 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Variables</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-namespace"><a href="pointer.html#intersection-1" class="tsd-kind-icon">intersection</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-namespace"><a href="pointer.html#intersection-1" class="tsd-kind-icon">intersection</a></li>
 							</ul>
 						</section>
 					</div>
@@ -67,11 +67,6 @@
 							<li class="tsd-parameter">
 								<h5>floor<wbr>Id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
 								<div class="tsd-comment tsd-typography">
-									<dl class="tsd-comment-tags">
-										<dt class="tsd-comment-tags-deprecated">deprecated</dt>
-										<dd><p>Use [[floorIndex]] instead</p>
-										</dd>
-									</dl>
 								</div>
 							</li>
 							<li class="tsd-parameter">
@@ -86,7 +81,7 @@
 								<h5>normal<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>object<span class="tsd-signature-symbol">: </span><a href="../enums/pointer.intersectedobject.html" class="tsd-signature-type">Pointer.IntersectedObject</a></h5>
+								<h5>object<span class="tsd-signature-symbol">: </span><a href="../enums/pointer.colliders.html" class="tsd-signature-type">Pointer.Colliders</a></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
@@ -96,10 +91,10 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-namespace">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-namespace">
 					<a name="intersection-1" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> intersection</h3>
+					<h3>intersection</h3>
 					<div class="tsd-signature tsd-kind-icon">intersection<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservable.html" class="tsd-signature-type">IObservable</a><span class="tsd-signature-symbol">&lt;</span><a href="pointer.html#intersection" class="tsd-signature-type">Pointer.Intersection</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 					</aside>
@@ -107,11 +102,12 @@
 						<div class="lead">
 							<p>An observable intersection data object that can be subscribed to.</p>
 						</div>
-						<pre><code>mpSdk.Pointer.intersection.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(intersectionData)</span> {</span>
+						<pre><code>mpSdk.Pointer.intersection.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">intersectionData</span>) </span>{
  <span class="hljs-comment">// Changes to the intersection data have occurred.</span>
- console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Intersection position:&#x27;</span>, intersectionData.position);
- console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Intersection normal:&#x27;</span>, intersectionData.normal);
-});</code></pre>
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Intersection position:&#x27;</span>, intersectionData.position);
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Intersection normal:&#x27;</span>, intersectionData.normal);
+});
+</code></pre>
 					</div>
 				</section>
 			</section>
@@ -178,12 +174,12 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
-						<a href="../enums/pointer.intersectedobject.html" class="tsd-kind-icon">Intersected<wbr>Object</a>
+						<a href="../enums/pointer.colliders.html" class="tsd-kind-icon">Colliders</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="pointer.html#intersection" class="tsd-kind-icon">Intersection</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-namespace">
+					<li class=" tsd-kind-property tsd-parent-kind-namespace">
 						<a href="pointer.html#intersection-1" class="tsd-kind-icon">intersection</a>
 					</li>
 				</ul>

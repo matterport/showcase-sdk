@@ -68,7 +68,8 @@
       <span class="hljs-comment">// console -&gt; &#x27;Tour stopped&#x27;</span>
       <span class="hljs-keyword">return</span> mpSdk.Tour.stop();
     });
-}</code></pre>
+}
+</code></pre>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -89,14 +90,14 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="tour.html#getdata" class="tsd-kind-icon">get<wbr>Data</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="tour.html#next" class="tsd-kind-icon">next</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="tour.html#prev" class="tsd-kind-icon">prev</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="tour.html#start" class="tsd-kind-icon">start</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="tour.html#step" class="tsd-kind-icon">step</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="tour.html#stop" class="tsd-kind-icon">stop</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tour.html#getdata" class="tsd-kind-icon">get<wbr>Data</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tour.html#next" class="tsd-kind-icon">next</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tour.html#prev" class="tsd-kind-icon">prev</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tour.html#start" class="tsd-kind-icon">start</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tour.html#step" class="tsd-kind-icon">step</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tour.html#stop" class="tsd-kind-icon">stop</a></li>
 							</ul>
 						</section>
 					</div>
@@ -145,11 +146,11 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="getdata" class="tsd-anchor"></a>
 					<h3>get<wbr>Data</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="tour.html#snapshot" class="tsd-signature-type">Tour.Snapshot</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -171,16 +172,17 @@
   })
   .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
     <span class="hljs-comment">// Tour getData error.</span>
-  });</code></pre>
+  });
+</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="tour.html#snapshot" class="tsd-signature-type">Tour.Snapshot</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="next" class="tsd-anchor"></a>
 					<h3>next</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">next<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -192,21 +194,22 @@
 									<p>This function moves the camera to the next snapshot in the tour.</p>
 								</div>
 								<pre><code>mpSdk.Tour.<span class="hljs-keyword">next</span>()
-  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(</span>) {
-    // Tour <span class="hljs-keyword">next</span> complete.
+  .then(<span class="hljs-keyword">function</span>() {
+    <span class="hljs-regexp">//</span> Tour <span class="hljs-keyword">next</span> complete.
   })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(</span><span class="hljs-built_in">error</span>) {
-    // Tour <span class="hljs-keyword">next</span> <span class="hljs-built_in">error</span>.
-  });</code></pre>
+  .catch(<span class="hljs-keyword">function</span>(error) {
+    <span class="hljs-regexp">//</span> Tour <span class="hljs-keyword">next</span> error.
+  });
+</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="prev" class="tsd-anchor"></a>
 					<h3>prev</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">prev<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -217,22 +220,23 @@
 								<div class="lead">
 									<p>This function moves the camera to the previous snapshot in the tour.</p>
 								</div>
-								<pre><code>mpSdk.Tour.prev()
-  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+								<pre><code><span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Tour</span><span class="hljs-selector-class">.prev</span>()
+  <span class="hljs-selector-class">.then</span>(function() {
     <span class="hljs-comment">// Tour prev complete.</span>
   })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> </span>{
+  <span class="hljs-selector-class">.catch</span>(function(error) {
     <span class="hljs-comment">// Tour prev error.</span>
-  });</code></pre>
+  });
+</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="start" class="tsd-anchor"></a>
 					<h3>start</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -246,12 +250,13 @@
 								<pre><code><span class="hljs-keyword">const</span> tourIndex = <span class="hljs-number">1</span>;
 
 mpSdk.Tour.start(tourIndex)
-  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-comment">// Tour start complete.</span>
   })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> </span>{
+  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-built_in">error</span></span>) </span>{
     <span class="hljs-comment">// Tour start error.</span>
-  });</code></pre>
+  });
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -263,10 +268,10 @@ mpSdk.Tour.start(tourIndex)
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="step" class="tsd-anchor"></a>
 					<h3>step</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">step<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -284,7 +289,8 @@ mpSdk.Tour.<span class="hljs-keyword">step</span>(myStep)
   })
   .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(</span><span class="hljs-built_in">error</span>) {
     // Tour <span class="hljs-keyword">step</span> <span class="hljs-built_in">error</span>.
-  });</code></pre>
+  });
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -296,10 +302,10 @@ mpSdk.Tour.<span class="hljs-keyword">step</span>(myStep)
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="stop" class="tsd-anchor"></a>
 					<h3>stop</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">stop<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -310,13 +316,14 @@ mpSdk.Tour.<span class="hljs-keyword">step</span>(myStep)
 								<div class="lead">
 									<p>This function stop the tour.</p>
 								</div>
-								<pre><code>mpSdk.Tour.stop()
-  .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-comment">// Tour stop complete.</span>
+								<pre><code>mpSdk.Tour.<span class="hljs-meta">stop</span>()
+  .th<span class="hljs-meta">en(</span>functi<span class="hljs-meta">on(</span>) {
+    // Tour <span class="hljs-meta">stop</span> complete.
   })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> </span>{
-    <span class="hljs-comment">// Tour stop error.</span>
-  });</code></pre>
+  .catch(functi<span class="hljs-meta">on(</span><span class="hljs-meta">error</span>) {
+    // Tour <span class="hljs-meta">stop</span> <span class="hljs-meta">error</span>.
+  });
+</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -391,22 +398,22 @@ mpSdk.Tour.<span class="hljs-keyword">step</span>(myStep)
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="tour.html#snapshot" class="tsd-kind-icon">Snapshot</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="tour.html#getdata" class="tsd-kind-icon">get<wbr>Data</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="tour.html#next" class="tsd-kind-icon">next</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="tour.html#prev" class="tsd-kind-icon">prev</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="tour.html#start" class="tsd-kind-icon">start</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="tour.html#step" class="tsd-kind-icon">step</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="tour.html#stop" class="tsd-kind-icon">stop</a>
 					</li>
 				</ul>

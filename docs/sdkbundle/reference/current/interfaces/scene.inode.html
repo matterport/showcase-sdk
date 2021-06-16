@@ -49,7 +49,8 @@
 
    <span class="hljs-type">node</span><span class="hljs-built_in">.position</span>.set(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>);
    <span class="hljs-type">node</span>.<span class="hljs-keyword">start</span>();
-});</code></pre>
+});
+</code></pre>
 					<p>Setting the position, rotation, or scale of a scene node affects child components.</p>
 				</div>
 			</section>
@@ -146,7 +147,7 @@
 					<a name="addcomponent" class="tsd-anchor"></a>
 					<h3>add<wbr>Component</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Component<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, initialInputs<span class="tsd-signature-symbol">?: </span><a href="dictionary.html" class="tsd-signature-type">Dictionary</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Component<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, initialInputs<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -167,7 +168,7 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initialInputs: <a href="dictionary.html" class="tsd-signature-type">Dictionary</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initialInputs: <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>initial key-value pairs that will be applied to the component before onInit is called. If the keys do not match the components inputs, they are ignored.</p>
 									</div>
@@ -335,25 +336,25 @@
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#three" class="tsd-kind-icon">THREE</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#configure" class="tsd-kind-icon">configure</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#createnode" class="tsd-kind-icon">create<wbr>Node</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#createnodes" class="tsd-kind-icon">create<wbr>Nodes</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#deserialize" class="tsd-kind-icon">deserialize</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#register" class="tsd-kind-icon">register</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#registercomponents" class="tsd-kind-icon">register<wbr>Components</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#serialize" class="tsd-kind-icon">serialize</a>
 					</li>
 				</ul>

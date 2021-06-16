@@ -41,12 +41,12 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="renderer.html#getscreenposition" class="tsd-kind-icon">get<wbr>Screen<wbr>Position</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="renderer.html#getworldpositiondata" class="tsd-kind-icon">get<wbr>World<wbr>Position<wbr>Data</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="renderer.html#takeequirectangular" class="tsd-kind-icon">take<wbr>Equirectangular</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="renderer.html#takescreenshot" class="tsd-kind-icon">take<wbr>Screen<wbr>Shot</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="renderer.html#getscreenposition" class="tsd-kind-icon">get<wbr>Screen<wbr>Position</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="renderer.html#getworldpositiondata" class="tsd-kind-icon">get<wbr>World<wbr>Position<wbr>Data</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="renderer.html#takeequirectangular" class="tsd-kind-icon">take<wbr>Equirectangular</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="renderer.html#takescreenshot" class="tsd-kind-icon">take<wbr>Screen<wbr>Shot</a></li>
 							</ul>
 						</section>
 					</div>
@@ -108,11 +108,6 @@
 							<li class="tsd-parameter">
 								<h5>floor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 								<div class="tsd-comment tsd-typography">
-									<dl class="tsd-comment-tags">
-										<dt class="tsd-comment-tags-deprecated">deprecated</dt>
-										<dd><p>Use <a href="label.html#label-1.__type.floorinfo">floorInfo</a></p>
-										</dd>
-									</dl>
 								</div>
 							</li>
 							<li class="tsd-parameter">
@@ -134,23 +129,24 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="getscreenposition" class="tsd-anchor"></a>
 					<h3>get<wbr>Screen<wbr>Position</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Screen<wbr>Position<span class="tsd-signature-symbol">(</span>worldPosition<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="conversion.html#worldtoscreen">Conversion.worldToScreen</a> to convert a 3d position to a point on screen.</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt class="tsd-comment-tags-deprecated">deprecated</dt>
-									<dd><p>Use <a href="conversion.html#worldtoscreen">Conversion.worldToScreen</a> to convert a 3d position to a point on screen.</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -162,10 +158,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="getworldpositiondata" class="tsd-anchor"></a>
 					<h3>get<wbr>World<wbr>Position<wbr>Data</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>World<wbr>Position<wbr>Data<span class="tsd-signature-symbol">(</span>screenPosition<span class="tsd-signature-symbol">: </span><a href="../index.html#vector2" class="tsd-signature-type">Vector2</a>, height<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, includeHiddenFloors<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="renderer.html#worldpositiondata" class="tsd-signature-type">Renderer.WorldPositionData</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -180,21 +176,23 @@
 								However, if there is no intersection with the model in that direction, the position will be null and the floor will be -1.</p>
 								<pre><code><span class="hljs-keyword">const</span> screenPosition {x: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span>}; <span class="hljs-comment">// Top left corner of the screen</span>
 
-mpSdk.Renderer.getWorldPositionData(screenPosition)
-.then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span></span>{
+mpSdk.Renderer.<span class="hljs-built_in">getWorldPositionData</span>(screenPosition)
+.<span class="hljs-built_in">then</span>(<span class="hljs-built_in">function</span>(data){
    <span class="hljs-keyword">const</span> worldPosition = data.position; <span class="hljs-comment">// e.g. {x: 2.2323231, y: 4.7523232, z; 7.92893};</span>
    <span class="hljs-keyword">const</span> floor = data.floor; <span class="hljs-comment">// e.g. 2</span>
-});</code></pre>
+});
+</code></pre>
 								<p>If the height is passed in, the function returns the intersection with the plane at that height. However,
 								if there is no intersection with the plane in that direction, the position will be null and the floor will be -1.</p>
 								<pre><code><span class="hljs-keyword">const</span> screenPosition {x: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span>}; <span class="hljs-comment">// Top left corner of the screen</span>
-<span class="hljs-keyword">const</span> <span class="hljs-built_in">height</span> = <span class="hljs-number">20</span>;
+<span class="hljs-keyword">const</span> height = <span class="hljs-number">20</span>;
 
-mpSdk.Renderer.getWorldPositionData(screenPosition, <span class="hljs-built_in">height</span>)
-.then(function(data){
-   <span class="hljs-keyword">const</span> worldPosition = data.<span class="hljs-built_in">position</span>; <span class="hljs-comment">// e.g. {x: 2.2323231, y: 20, z; 7.92893};</span>
-   <span class="hljs-keyword">const</span> <span class="hljs-built_in">floor</span> = data.<span class="hljs-built_in">floor</span> <span class="hljs-comment">// e.g. 2</span>
-});</code></pre>
+mpSdk.Renderer.<span class="hljs-built_in">getWorldPositionData</span>(screenPosition, height)
+.<span class="hljs-built_in">then</span>(<span class="hljs-built_in">function</span>(data){
+   <span class="hljs-keyword">const</span> worldPosition = data.position; <span class="hljs-comment">// e.g. {x: 2.2323231, y: 20, z; 7.92893};</span>
+   <span class="hljs-keyword">const</span> floor = data.floor <span class="hljs-comment">// e.g. 2</span>
+});
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -216,10 +214,10 @@ mpSdk.Renderer.getWorldPositionData(screenPosition, <span class="hljs-built_in">
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="takeequirectangular" class="tsd-anchor"></a>
 					<h3>take<wbr>Equirectangular</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">take<wbr>Equirectangular<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -234,7 +232,8 @@ mpSdk.Renderer.getWorldPositionData(screenPosition, <span class="hljs-built_in">
   .<span class="hljs-keyword">then</span>(<span class="hljs-keyword">function</span> (screenShotUri) {
     <span class="hljs-comment">// set src of an img element</span>
     img.src = screenShotUri
-});</code></pre>
+});
+</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A promise that resolves with the screenshot URI -- a base64 encoded string which is usable as a src of an <code>&lt;img&gt;</code> element.</p>
@@ -245,11 +244,11 @@ mpSdk.Renderer.getWorldPositionData(screenPosition, <span class="hljs-built_in">
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="takescreenshot" class="tsd-anchor"></a>
 					<h3>take<wbr>Screen<wbr>Shot</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">take<wbr>Screen<wbr>Shot<span class="tsd-signature-symbol">(</span>resolution<span class="tsd-signature-symbol">?: </span><a href="renderer.html#resolution" class="tsd-signature-type">Renderer.Resolution</a>, visibility<span class="tsd-signature-symbol">?: </span><a href="renderer.html#visibility" class="tsd-signature-type">Renderer.Visibility</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">take<wbr>Screen<wbr>Shot<span class="tsd-signature-symbol">(</span>resolution<span class="tsd-signature-symbol">?: </span><a href="renderer.html#resolution" class="tsd-signature-type">Renderer.Resolution</a>, visibility<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="renderer.html#visibility" class="tsd-signature-type">Renderer.Visibility</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -273,7 +272,8 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
   .<span class="hljs-keyword">then</span>(<span class="hljs-keyword">function</span> (screenShotUri) {
     <span class="hljs-comment">// set src of an img element</span>
     img.src = screenShotUri
-});</code></pre>
+});
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -287,7 +287,7 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> visibility: <a href="renderer.html#visibility" class="tsd-signature-type">Renderer.Visibility</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> visibility: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="renderer.html#visibility" class="tsd-signature-type">Renderer.Visibility</a><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Toggles certain scene objects such as Mattertag Posts and sweep markers.
 										If no visibility object is specified, then all scene objects are hidden.</p>
@@ -373,16 +373,16 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="renderer.html#worldpositiondata" class="tsd-kind-icon">World<wbr>Position<wbr>Data</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="renderer.html#getscreenposition" class="tsd-kind-icon">get<wbr>Screen<wbr>Position</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="renderer.html#getworldpositiondata" class="tsd-kind-icon">get<wbr>World<wbr>Position<wbr>Data</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="renderer.html#takeequirectangular" class="tsd-kind-icon">take<wbr>Equirectangular</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="renderer.html#takescreenshot" class="tsd-kind-icon">take<wbr>Screen<wbr>Shot</a>
 					</li>
 				</ul>

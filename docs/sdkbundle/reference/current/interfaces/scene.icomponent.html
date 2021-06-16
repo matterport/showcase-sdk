@@ -49,7 +49,7 @@
      <span class="hljs-built_in">this</span>.outputs.objectRoot = mesh;
    };
 
-   <span class="hljs-built_in">this</span>.onEvent = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">type, data</span>) </span>{
+   <span class="hljs-built_in">this</span>.onEvent = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-keyword">type</span>, data</span>) </span>{
    }
 
    <span class="hljs-built_in">this</span>.onInputsUpdated = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">previous</span>) </span>{
@@ -127,7 +127,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="inputs" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> inputs</h3>
-					<div class="tsd-signature tsd-kind-icon">inputs<span class="tsd-signature-symbol">:</span> <a href="dictionary.html" class="tsd-signature-type">Dictionary</a></div>
+					<div class="tsd-signature tsd-kind-icon">inputs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -142,7 +142,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="outputs" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> outputs</h3>
-					<div class="tsd-signature tsd-kind-icon">outputs<span class="tsd-signature-symbol">:</span> <a href="dictionary.html" class="tsd-signature-type">Dictionary</a><span class="tsd-signature-symbol"> &amp; </span><a href="../modules/scene.html#predefinedoutputs" class="tsd-signature-type">Scene.PredefinedOutputs</a></div>
+					<div class="tsd-signature tsd-kind-icon">outputs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><a href="../modules/scene.html#predefinedoutputs" class="tsd-signature-type">Scene.PredefinedOutputs</a></div>
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -163,7 +163,8 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
      <span class="hljs-built_in">this</span>.outputs.objectRoot = mesh;   <span class="hljs-comment">// gets added to the scene node</span>
      <span class="hljs-built_in">this</span>.outputs.collider = mesh;     <span class="hljs-comment">// will now be part of raycast testing</span>
    }
-}</code></pre>
+}
+</code></pre>
 					</div>
 				</section>
 			</section>
@@ -173,7 +174,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 					<a name="bind" class="tsd-anchor"></a>
 					<h3>bind</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">bind<span class="tsd-signature-symbol">(</span>prop<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, src<span class="tsd-signature-symbol">: </span><a href="dictionary.html" class="tsd-signature-type">Dictionary</a>, srcProp<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">bind<span class="tsd-signature-symbol">(</span>prop<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, src<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span>, srcProp<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -204,7 +205,8 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 
    // comp1.inputs.visible will now always equal comp2.outputs.toggleState
 });
-</span></code></pre>
+</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -215,7 +217,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 									</div>
 								</li>
 								<li>
-									<h5>src: <a href="dictionary.html" class="tsd-signature-type">Dictionary</a></h5>
+									<h5>src: <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>source component</p>
 									</div>
@@ -235,7 +237,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 					<a name="bindevent" class="tsd-anchor"></a>
 					<h3>bind<wbr>Event</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">bind<wbr>Event<span class="tsd-signature-symbol">(</span>eventType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, src<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SceneComponent</span>, srcEventType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">bind<wbr>Event<span class="tsd-signature-symbol">(</span>eventType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, src<span class="tsd-signature-symbol">: </span><a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a>, srcEventType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -252,7 +254,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 									<h5>eventType: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>src: <span class="tsd-signature-type">SceneComponent</span></h5>
+									<h5>src: <a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a></h5>
 								</li>
 								<li>
 									<h5>srcEventType: <span class="tsd-signature-type">string</span></h5>
@@ -333,7 +335,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 					<a name="oninputsupdated" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> on<wbr>Inputs<wbr>Updated</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Inputs<wbr>Updated<span class="tsd-signature-symbol">(</span>previousInputs<span class="tsd-signature-symbol">: </span><a href="dictionary.html" class="tsd-signature-type">Dictionary</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Inputs<wbr>Updated<span class="tsd-signature-symbol">(</span>previousInputs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -348,7 +350,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>previousInputs: <a href="dictionary.html" class="tsd-signature-type">Dictionary</a></h5>
+									<h5>previousInputs: <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -535,25 +537,25 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#three" class="tsd-kind-icon">THREE</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#configure" class="tsd-kind-icon">configure</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#createnode" class="tsd-kind-icon">create<wbr>Node</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#createnodes" class="tsd-kind-icon">create<wbr>Nodes</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#deserialize" class="tsd-kind-icon">deserialize</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#register" class="tsd-kind-icon">register</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#registercomponents" class="tsd-kind-icon">register<wbr>Components</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#serialize" class="tsd-kind-icon">serialize</a>
 					</li>
 				</ul>

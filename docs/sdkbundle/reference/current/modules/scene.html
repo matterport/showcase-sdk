@@ -57,15 +57,15 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="scene.html#configure" class="tsd-kind-icon">configure</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="scene.html#createnode" class="tsd-kind-icon">create<wbr>Node</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="scene.html#createnodes" class="tsd-kind-icon">create<wbr>Nodes</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="scene.html#deserialize" class="tsd-kind-icon">deserialize</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="scene.html#register" class="tsd-kind-icon">register</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="scene.html#registercomponents" class="tsd-kind-icon">register<wbr>Components</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="scene.html#serialize" class="tsd-kind-icon">serialize</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#configure" class="tsd-kind-icon">configure</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#createnode" class="tsd-kind-icon">create<wbr>Node</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#createnodes" class="tsd-kind-icon">create<wbr>Nodes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#deserialize" class="tsd-kind-icon">deserialize</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#register" class="tsd-kind-icon">register</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#registercomponents" class="tsd-kind-icon">register<wbr>Components</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#serialize" class="tsd-kind-icon">serialize</a></li>
 							</ul>
 						</section>
 					</div>
@@ -125,17 +125,17 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
 					<a name="three" class="tsd-anchor"></a>
 					<h3>THREE</h3>
-					<div class="tsd-signature tsd-kind-icon">THREE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<div class="tsd-signature tsd-kind-icon">THREE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">typeof THREE</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="configure" class="tsd-anchor"></a>
 					<h3>configure</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">configure<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -147,19 +147,20 @@
 									<p>This is a convenience function that provides access to three.js framework objects.
 									Typically used to configure global properties on the renderer or effect composer.</p>
 								</div>
-								<pre><code><span class="hljs-keyword">await</span> sdk.Scene.configure(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">renderer, three, effectComposer</span>)</span>{
+								<pre><code>await sdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Scene</span>.</span></span>configure(<span class="hljs-keyword">function</span>(renderer, three, effectComposer){
   <span class="hljs-comment">// configure PBR</span>
   renderer.physicallyCorrectLights = <span class="hljs-literal">true</span>;
 
   <span class="hljs-comment">// configure shadow mapping</span>
   renderer.shadowMap.enabled = <span class="hljs-literal">true</span>;
   renderer.shadowMap.bias = <span class="hljs-number">0.0001</span>;
-  renderer.shadowMap.type = three.PCFSoftShadowMap;
+  renderer.shadowMap.<span class="hljs-keyword">type</span> = three.PCFSoftShadowMap;
 
   <span class="hljs-keyword">if</span> (effectsComposer) {
     <span class="hljs-comment">// add a custom pass here</span>
   }
-});</code></pre>
+});
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -168,7 +169,7 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>renderer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">WebGLRenderer</span>, three<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">typeof THREE</span>, effectComposer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Nullable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EffectComposer</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>renderer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">WebGLRenderer</span>, three<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">typeof THREE</span>, effectComposer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EffectComposer</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
@@ -187,7 +188,7 @@
 															</div>
 														</li>
 														<li>
-															<h5>effectComposer: <span class="tsd-signature-type">Nullable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EffectComposer</span><span class="tsd-signature-symbol">&gt;</span></h5>
+															<h5>effectComposer: <span class="tsd-signature-type">EffectComposer</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 															<div class="tsd-comment tsd-typography">
 																<p>Matterport&#39;s EffectComposer object. This value can be null. To enable the effect composer, you must set useEffectComposer: 1 in your application config.</p>
 															</div>
@@ -204,10 +205,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="createnode" class="tsd-anchor"></a>
 					<h3>create<wbr>Node</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">create<wbr>Node<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -224,10 +225,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="createnodes" class="tsd-anchor"></a>
 					<h3>create<wbr>Nodes</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">create<wbr>Nodes<span class="tsd-signature-symbol">(</span>count<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -253,10 +254,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="deserialize" class="tsd-anchor"></a>
 					<h3>deserialize</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">deserialize<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -283,10 +284,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="register" class="tsd-anchor"></a>
 					<h3>register</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">register<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, factory<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -329,11 +330,11 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="registercomponents" class="tsd-anchor"></a>
 					<h3>register<wbr>Components</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">register<wbr>Components<span class="tsd-signature-symbol">(</span>components<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.icomponentdesc.html" class="tsd-signature-type">Scene.IComponentDesc</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">register<wbr>Components<span class="tsd-signature-symbol">(</span>components<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.icomponentdesc.html" class="tsd-signature-type">Scene.IComponentDesc</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -343,24 +344,25 @@
 								<div class="lead">
 									<p>Register an array of component factories all at once.</p>
 								</div>
-								<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myComponent1Factory</span><span class="hljs-params">()</span> </span>{
-   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyComponent1();
+								<pre><code><span class="hljs-keyword">function</span> <span class="hljs-title">myComponent1Factory</span>() {
+   <span class="hljs-keyword">return</span> <span class="hljs-type">new</span> MyComponent1();
 }
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myComponent2Factory</span><span class="hljs-params">()</span> </span>{
-   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyComponent2();
+<span class="hljs-keyword">function</span> <span class="hljs-title">myComponent2Factory</span>() {
+   <span class="hljs-keyword">return</span> <span class="hljs-type">new</span> MyComponent2();
 }
 
 sdk.Scene.registerComponents([
   {
-    name: <span class="hljs-string">&#x27;myComponent1&#x27;</span>,
+    name: <span class="hljs-symbol">&#x27;myComponent1</span>&#x27;,
     factory: myComponent1Factory,
   },
   {
-    name: <span class="hljs-string">&#x27;myComponent2&#x27;</span>,
+    name: <span class="hljs-symbol">&#x27;myComponent2</span>&#x27;,
     factory: myComponent2Factory,
   },
-]);</code></pre>
+]);
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -371,14 +373,14 @@ sdk.Scene.registerComponents([
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="serialize" class="tsd-anchor"></a>
 					<h3>serialize</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
 						<li class="tsd-signature tsd-kind-icon">serialize<span class="tsd-signature-symbol">(</span>sceneNodes<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -494,25 +496,25 @@ sdk.Scene.registerComponents([
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="scene.html#three" class="tsd-kind-icon">THREE</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="scene.html#configure" class="tsd-kind-icon">configure</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="scene.html#createnode" class="tsd-kind-icon">create<wbr>Node</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="scene.html#createnodes" class="tsd-kind-icon">create<wbr>Nodes</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="scene.html#deserialize" class="tsd-kind-icon">deserialize</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="scene.html#register" class="tsd-kind-icon">register</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="scene.html#registercomponents" class="tsd-kind-icon">register<wbr>Components</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="scene.html#serialize" class="tsd-kind-icon">serialize</a>
 					</li>
 				</ul>
