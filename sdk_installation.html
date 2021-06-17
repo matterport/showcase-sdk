@@ -443,12 +443,16 @@
 
 <p>Next, embed a Matterport Space on your web page with an <code class="highlighter-rouge">&lt;iframe&gt;</code> tag. <a href="https://support.matterport.com/hc/en-us/articles/115004549347-Embed-a-Space-with-an-iframe-">Learn more about embedding</a>.</p>
 
-<p>Add the <strong>&amp;play=1</strong> URL parameter to automatically load the <code class="highlighter-rouge">&lt;iframe&gt;</code> when the page loads for a better user experience. Give it an ID you will use later.</p>
+<p>Add the <strong>&amp;play=1</strong> URL parameter to automatically load the <code class="highlighter-rouge">&lt;iframe&gt;</code> when the page loads for a better user experience.</p>
+
+<p>Add the **applicationKey=[YOUR SDK_KEY] to provide your sdk key as part of the url.</p>
+
+<p>Give it an ID you will use later.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span>
   <span class="na">width=</span><span class="s">"853"</span>
   <span class="na">height=</span><span class="s">"480"</span>
-  <span class="na">src=</span><span class="s">"https://my.matterport.com/show?m=SxQL3iGyoDo&amp;play=1"</span>
+  <span class="na">src=</span><span class="s">"https://my.matterport.com/show?m=SxQL3iGyoDo&amp;play=1&amp;applicationKey=[YOUR_SDK_KEY_HERE]"</span>
   <span class="na">frameborder=</span><span class="s">"0"</span>
   <span class="na">allow=</span><span class="s">"fullscreen; vr"</span>
   <span class="na">id=</span><span class="s">"showcase-iframe"</span><span class="nt">&gt;</span>
@@ -461,7 +465,9 @@
 
 <p>You’ll want to wait until the <code class="highlighter-rouge">&lt;iframe&gt;</code> containing the Matterport Space loads. Connecting happens after you’ve included the SDK library.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// connect the sdk; log an error and stop if there were any connection issues</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'showcase-iframe'</span><span class="p">);</span>
+
+<span class="c1">// connect the sdk; log an error and stop if there were any connection issues</span>
 <span class="k">try</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="kr">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span>
     <span class="nx">iframe</span><span class="p">,</span> <span class="c1">// Obtained earlier</span>
@@ -487,7 +493,7 @@
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">showcase_iframe</code></td>
+      <td style="text-align: center"><code class="highlighter-rouge">showcase-iframe</code></td>
       <td>The value you put for the the <code class="highlighter-rouge">id</code> parameter in the <code class="highlighter-rouge">&lt;iframe&gt;</code> tag earlier.</td>
     </tr>
     <tr>
@@ -596,7 +602,7 @@
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2021 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jun 16, 2021 <br />
+ Site last generated: Jun 17, 2021 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
