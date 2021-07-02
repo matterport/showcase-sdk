@@ -447,12 +447,13 @@
 (Hovering <code class="highlighter-rouge">mpSdk.Mattertag.data</code>)</p>
 
 <h2 id="getting-started-with-type-declarations">Getting Started with Type Declarations</h2>
-<p>To get started, the simplest way to use the types is to import the file directly.</p>
+<p>To get started, cast your window to the <code class="highlighter-rouge">ShowcaseEmbedWindow</code> and start using the MP_SDK object on it.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="s1">'./mp/sdk'</span><span class="p">;</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ShowcaseEmbedWindow</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./mp/sdk'</span><span class="p">;</span>
 
 <span class="kd">const</span> <span class="nx">showcaseIframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'showcase-iframe'</span><span class="p">)</span> <span class="k">as</span> <span class="nx">HTMLIFrameElement</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="kr">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseIframe</span><span class="p">,</span> <span class="s1">'{YOUR SDK KEY}'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">embeddingWindow</span> <span class="o">=</span> <span class="nb">window</span> <span class="k">as</span> <span class="nx">ShowcaseEmbedWindow</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">embeddingWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseIframe</span><span class="p">,</span> <span class="s1">'{YOUR SDK KEY}'</span><span class="p">);</span>
 
 <span class="c1">// start using mpSdk</span>
 <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="s1">'sweep1234'</span><span class="p">,</span> <span class="p">{</span> <span class="na">transition</span><span class="p">:</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">TransitionType</span><span class="p">.</span><span class="nx">FADEOUT</span> <span class="p">});</span>
@@ -500,7 +501,7 @@ All namespaces and their types are also available through the root <code class="
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2021 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jun 17, 2021 <br />
+ Site last generated: Jul 2, 2021 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
