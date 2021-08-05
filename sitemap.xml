@@ -94,7 +94,7 @@
   
   
   <url>
-    <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
+    <loc>https://matterport.github.io/docs/reference/index.html</loc>
   </url>
   
   
@@ -106,13 +106,13 @@
   
   
   <url>
-    <loc>https://matterport.github.io/docs/index.html</loc>
+    <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
   </url>
   
   
   
   <url>
-    <loc>https://matterport.github.io/docs/reference/index.html</loc>
+    <loc>https://matterport.github.io/docs/index.html</loc>
   </url>
   
   
@@ -811,6 +811,12 @@
   
   <url>
     <loc>https://matterport.github.io/sdkbundle_tutorials_setup.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdkbundle_tutorials_using_scene_objects.html</loc>
   </url>
   
   

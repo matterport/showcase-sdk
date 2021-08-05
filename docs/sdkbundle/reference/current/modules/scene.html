@@ -46,12 +46,14 @@
 								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/scene.icomponentdesc.html" class="tsd-kind-icon">IComponent<wbr>Desc</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/scene.icomponenteventspy.html" class="tsd-kind-icon">IComponent<wbr>Event<wbr>Spy</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/scene.inode.html" class="tsd-kind-icon">INode</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/scene.iobject.html" class="tsd-kind-icon">IObject</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#intersect" class="tsd-kind-icon">Intersect</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#pathdesc" class="tsd-kind-icon">Path<wbr>Desc</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#predefinedoutputs" class="tsd-kind-icon">Predefined<wbr>Outputs</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#three" class="tsd-kind-icon">THREE</a></li>
 							</ul>
@@ -62,6 +64,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#configure" class="tsd-kind-icon">configure</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#createnode" class="tsd-kind-icon">create<wbr>Node</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#createnodes" class="tsd-kind-icon">create<wbr>Nodes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#createobjects" class="tsd-kind-icon">create<wbr>Objects</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#deserialize" class="tsd-kind-icon">deserialize</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#register" class="tsd-kind-icon">register</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#registercomponents" class="tsd-kind-icon">register<wbr>Components</a></li>
@@ -90,6 +93,55 @@
 							</li>
 							<li class="tsd-parameter">
 								<h5>point<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="pathdesc" class="tsd-anchor"></a>
+					<h3>Path<wbr>Desc</h3>
+					<div class="tsd-signature tsd-kind-icon">Path<wbr>Desc<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A descriptor for a component property contained by a scene object.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>component<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The component.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The user defined id of the path. This id must be a unique string for the scene object.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>node<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The parent scene node of the component.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The input or output property name of the component.</p>
+									</div>
+								</div>
 							</li>
 						</ul>
 					</div>
@@ -255,10 +307,39 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="createobjects" class="tsd-anchor"></a>
+					<h3>create<wbr>Objects</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Objects<span class="tsd-signature-symbol">(</span>count<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scene.iobject.html" class="tsd-signature-type">Scene.IObject</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates an array of scene objects.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>count: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The number of scene objects to create.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scene.iobject.html" class="tsd-signature-type">Scene.IObject</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A promise that resolves with the array of scene objects.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="deserialize" class="tsd-anchor"></a>
 					<h3>deserialize</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">deserialize<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">deserialize<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/scene.iobject.html" class="tsd-signature-type">Scene.IObject</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -279,7 +360,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/scene.iobject.html" class="tsd-signature-type">Scene.IObject</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A promise that resolves with an array of scene nodes.</p>
 						</li>
 					</ul>
@@ -381,7 +462,7 @@ sdk.Scene.registerComponents([
 					<a name="serialize" class="tsd-anchor"></a>
 					<h3>serialize</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">serialize<span class="tsd-signature-symbol">(</span>sceneNodes<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">serialize<span class="tsd-signature-symbol">(</span>sceneNodes<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/scene.iobject.html" class="tsd-signature-type">Scene.IObject</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -395,7 +476,7 @@ sdk.Scene.registerComponents([
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>sceneNodes: <a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>sceneNodes: <a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/scene.iobject.html" class="tsd-signature-type">Scene.IObject</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>An array of scene nodes.</p>
 									</div>
@@ -487,8 +568,14 @@ sdk.Scene.registerComponents([
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="../interfaces/scene.inode.html" class="tsd-kind-icon">INode</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="../interfaces/scene.iobject.html" class="tsd-kind-icon">IObject</a>
+					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="scene.html#intersect" class="tsd-kind-icon">Intersect</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="scene.html#pathdesc" class="tsd-kind-icon">Path<wbr>Desc</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="scene.html#predefinedoutputs" class="tsd-kind-icon">Predefined<wbr>Outputs</a>
@@ -504,6 +591,9 @@ sdk.Scene.registerComponents([
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="scene.html#createnodes" class="tsd-kind-icon">create<wbr>Nodes</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="scene.html#createobjects" class="tsd-kind-icon">create<wbr>Objects</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="scene.html#deserialize" class="tsd-kind-icon">deserialize</a>

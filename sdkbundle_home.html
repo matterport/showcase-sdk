@@ -257,6 +257,13 @@
           
           
           
+          
+          
+          <li><a title="Using scene objects" href="sdkbundle_tutorials_using_scene_objects.html">Using scene objects</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -466,7 +473,7 @@
   <tbody>
     <tr>
       <td>SDK File</td>
-      <td><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.42.14-24-gb057e5145/showcase-bundle.zip">3.1.42.14-24-gb057e5145</a></td>
+      <td><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.46.18-2-g2386aca5f/showcase-bundle.zip">3.1.46.18-2-g2386aca5f</a></td>
     </tr>
     <tr>
       <td>SDK Version *</td>
@@ -474,7 +481,7 @@
     </tr>
     <tr>
       <td>Last Updated</td>
-      <td><strong>June 17, 2021</strong></td>
+      <td><strong>Aug 5, 2021</strong></td>
     </tr>
   </tbody>
 </table>
@@ -490,6 +497,19 @@
 <p>Our developer tools are now out of beta and all accounts are now enabled to generate sandboxed SDK keys. You can find your key management by navigating to your <a href="https://my.matterport.com/settings/account/devtools">Account Settings -&gt; Developer Tools</a>. To learn more about our developer tools, please visit the <a href="https://support.matterport.com/hc/en-us/articles/360057506813-Matterport-Developer-Tools-Pricing-and-Availability">Matterport Developer Tools and Pricing</a></p>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Code snippets in the SDK Bundle pages are in typescript. The Reference section is in es5. Visit <a href="https://www.typescriptlang.org">https://www.typescriptlang.org</a> to learn more about typescript.</div>
+
+<h3 id="8-5-2021">8-5-2021</h3>
+<ul>
+  <li>Fixed an issue where a share link would not link to matterport.com</li>
+  <li>Fixed an issue where <code class="highlighter-rouge">Scene.serialize</code> would return undefined</li>
+  <li>Fixed an issue preventing the use of the my.matterportvr.cn api domain.</li>
+  <li>Fixed an issue where model loader components would not remove meshes from the scene when stopped.</li>
+  <li>Mobile redirects were removed. You can re-enable redirects by setting <code class="highlighter-rouge">disableMobileRedirect</code> to false in your app config.</li>
+  <li>Added the Scene namespace to the sdk type definitions.</li>
+  <li>Added scene objects. See <a href="sdkbundle_tutorials_using_scene_objects.html">Using scene objects</a> and <a href="docs/sdkbundle/reference/current/modules/scene.html#createobjects">Scene.createobjects</a></li>
+  <li><a href="docs/sdkbundle/reference/current/modules/scene.html#serialize">Scene.serialize</a> now serializes to version 2. <a href="docs/sdkbundle/reference/current/modules/scene.html#deserialize">Scene.deserialize</a> takes both version 1 and 2 scene files.</li>
+  <li>Download <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.46.18-2-g2386aca5f/showcase-bundle.zip">SDK Bundle version: 3.1.46.18-2-g2386aca5f</a></li>
+</ul>
 
 <h3 id="6-17-2021">6-17-2021</h3>
 <ul>
@@ -661,7 +681,7 @@
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2021 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jul 2, 2021 <br />
+ Site last generated: Aug 5, 2021 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

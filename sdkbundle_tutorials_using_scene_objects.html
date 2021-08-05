@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Custom Experience | Matterport Developers</title>
+<title>Using Scene Objects | Matterport Developers</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -138,7 +138,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Custom Experience page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Using Scene Objects page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -156,7 +156,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Custom Experience">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Using Scene Objects">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -259,7 +259,7 @@
           
           
           
-          <li><a title="Using scene objects" href="sdkbundle_tutorials_using_scene_objects.html">Using scene objects</a></li>
+          <li class="active"><a title="Using scene objects" href="sdkbundle_tutorials_using_scene_objects.html">Using scene objects</a></li>
           
           
           
@@ -310,7 +310,7 @@
           
           
           
-          <li class="active"><a title="Custom Experience" href="sdkbundle_custom_experience.html">Custom Experience</a></li>
+          <li><a title="Custom Experience" href="sdkbundle_custom_experience.html">Custom Experience</a></li>
           
           
           
@@ -453,7 +453,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Custom Experience</h1>
+   <h1 class="post-title-main">Using Scene Objects</h1>
 </div>
 
 
@@ -463,14 +463,141 @@
    
 
     
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
 
 
     
 
-   <p>Source code: <a href="https://github.com/matterport/showcase-sdk-examples">Showcase SDK Examples</a></p>
+   <h2 id="what-is-a-scene-object">What is a scene object?</h2>
 
-<iframe class="sdkbundle-iframe bunny-iframe" src="https://static.matterport.com/showcase-sdk/examples/current/easter/index.html" allowfullscreen="allowfullscreen" allow="camera" frameborder="0" />
+<p>A scene object is a collection of scene nodes and components that are instantiated and executed together to exhibit complex behaviors.</p>
 
+<h2 id="why-use-scene-objects">Why use scene objects?</h2>
+
+<ul>
+  <li>Scene objects manage the life cycle of their scene nodes, components, and bindings making it easy to start and stop the collection of scene nodes.</li>
+  <li>Scene objects support bindings between components of different scene nodes (version 2.0). Previously, bindings were only supported between components of the same scene node.</li>
+  <li>Scene objects support serialization making it possible to persist node/component/binding configurations and restore their behaviors at runtime. Scene objects are serialized to JSON making them easy to manually edit.</li>
+  <li>Scene objects remove creation and initialization steps, configure scene nodes, and components reducing the amount of code that needs to be maintained.</li>
+</ul>
+
+<h2 id="example-a-simple-fbx-loader">Example: A simple fbx loader</h2>
+
+<p>Manual construction and initialization</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sceneObjects</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">// add a scene node for the fbx model</span>
+<span class="kd">const</span> <span class="nx">gltfNode</span> <span class="o">=</span> <span class="nx">sceneObjects</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">addNode</span><span class="p">();</span>
+
+<span class="c1">// adjust the position of the scene node</span>
+<span class="nx">gltfNode</span><span class="p">.</span><span class="nx">obj3D</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.68</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="c1">// add the gltf loader component that loads a parrot model. Adjust the model's scale to make it fit inside the model.</span>
+<span class="kd">const</span> <span class="nx">gltfComponent</span> <span class="o">=</span> <span class="nx">fbxNode</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'mp.gltfLoader'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://gitcdn.link/repo/mrdoob/three.js/dev/examples/models/gltf/Parrot.glb'</span><span class="p">,</span>
+  <span class="na">localScale</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">x</span><span class="p">:</span> <span class="mf">0.03</span><span class="p">,</span>
+      <span class="na">y</span><span class="p">:</span> <span class="mf">0.03</span><span class="p">,</span>
+      <span class="na">z</span><span class="p">:</span> <span class="mf">0.03</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+
+<span class="c1">// Add a path id 'gltfUrl' to the gltf component url property (not used in the example).</span>
+<span class="nx">sceneObjects</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">addPath</span><span class="p">({</span>
+  <span class="na">id</span><span class="p">:</span> <span class="s1">'gltfUrl'</span><span class="p">,</span>
+  <span class="na">node</span><span class="p">:</span> <span class="nx">gltfNode</span><span class="p">,</span>
+  <span class="na">component</span><span class="p">:</span> <span class="nx">gltfComponent</span><span class="p">,</span>
+  <span class="na">property</span><span class="p">:</span> <span class="s1">'url'</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="c1">// add another scene node to contain the light objects.</span>
+<span class="kd">const</span> <span class="nx">lightsNode</span> <span class="o">=</span> <span class="nx">sceneObjects</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">addNode</span><span class="p">();</span>
+
+<span class="c1">// Add directional and ambient lights</span>
+<span class="kd">const</span> <span class="nx">directionalLightComponet</span> <span class="o">=</span> <span class="nx">lightsNode</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'mp.directionalLight'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">color</span><span class="p">:</span> <span class="p">{</span> <span class="na">r</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span> <span class="na">g</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mf">0.7</span> <span class="p">},</span>
+<span class="p">});</span>
+<span class="nx">lightsNode</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'mp.ambientLight'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">intensity</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+  <span class="na">color</span><span class="p">:</span> <span class="p">{</span> <span class="na">r</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="na">g</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mf">1.0</span> <span class="p">},</span>
+<span class="p">});</span>
+
+<span class="c1">// Add a path id 'ambientIntensity' to the intensity property of the directional light component.</span>
+<span class="c1">// The path id will be used in the update function that follows.</span>
+<span class="nx">sceneObjects</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">addPath</span><span class="p">({</span>
+  <span class="na">id</span><span class="p">:</span> <span class="s1">'ambientIntensity'</span><span class="p">,</span>
+  <span class="na">node</span><span class="p">:</span> <span class="nx">lightsNode</span><span class="p">,</span>
+  <span class="na">component</span><span class="p">:</span> <span class="nx">directionalLightComponet</span><span class="p">,</span>
+  <span class="na">property</span><span class="p">:</span> <span class="s1">'intensity'</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="c1">// Start the scene object and its nodes.</span>
+<span class="nx">sceneObjects</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">start</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Here is an example of an update function that animates the intensity of the directional light component using the path id.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">intensity</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">intensityMax</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">intensityMin</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">intensityDelta</span> <span class="o">=</span> <span class="mf">0.02</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">intensityDirection</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">setInterval</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">intensity</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">intensityDelta</span> <span class="o">*</span> <span class="nx">intensityDirection</span><span class="p">);</span>
+  
+  <span class="k">if</span> <span class="p">(</span><span class="nx">intensity</span> <span class="o">&gt;=</span> <span class="nx">intensityMax</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">intensity</span> <span class="o">=</span> <span class="nx">intensityMax</span><span class="p">;</span>
+    <span class="nx">intensityDirection</span> <span class="o">=</span> <span class="nx">intensityDirection</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">intensity</span> <span class="o">&lt;=</span> <span class="nx">intensityMin</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">intensity</span> <span class="o">=</span> <span class="nx">intensityMin</span><span class="p">;</span>
+    <span class="nx">intensityDirection</span> <span class="o">=</span> <span class="nx">intensityDirection</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// The path ids can be used as the public interface to the component behaviors contained within the scene object.</span>
+  <span class="nx">sceneObjects</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">setValueAtPath</span><span class="p">(</span><span class="s1">'ambientIntensity'</span><span class="p">,</span> <span class="nx">intensity</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">15</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>You can serialize the contents of the scene object to reduce the amount of code required to construct and initialize the scene objects and components as follows:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Starting from the previous example, serialize the scene object to a json string</span>
+<span class="c1">// after having started it. All nodes, components, bindings and paths are preserved.</span>
+<span class="kd">const</span> <span class="nx">serializedString</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="nx">sceneObjects</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+
+<span class="c1">// To restore the scene object, deserialize and start it.</span>
+<span class="kd">const</span> <span class="nx">deserializedSceneObject</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">deserialize</span><span class="p">(</span><span class="nx">serializedString</span><span class="p">);</span>
+<span class="nx">deserializedSceneObject</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+
+<span class="c1">// You can now set the previously defined path.</span>
+<span class="nx">deserializedSceneObject</span><span class="p">.</span><span class="nx">setValueAtPath</span><span class="p">(</span><span class="s1">'ambientIntensity'</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">);</span>
+
+<span class="c1">// or set the url</span>
+<span class="nx">deserializedSceneObject</span><span class="p">.</span><span class="nx">setValueAtPath</span><span class="p">(</span><span class="s1">'gltfUrl'</span><span class="p">,</span> <span class="s1">'https://gitcdn.link/repo/mrdoob/three.js/dev/examples/models/gltf/Stork.glb'</span><span class="p">);</span>
+</code></pre></div></div>
 
 
     <div class="tags">
