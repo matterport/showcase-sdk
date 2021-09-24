@@ -432,7 +432,15 @@
 
     
 
-   <h2 id="311">3.11</h2>
+   <h2 id="3111">3.11.1</h2>
+<h5 id="sep-23-2021">Sep 23, 2021</h5>
+<ul>
+  <li>Updated: <a href="docs/sdk/reference/current/modules/mattertag.html#registericon">Mattertag.registerIcon</a> will now return the result of the fetch. Existing uses (that did not await the result) should not be affected.</li>
+  <li>Fixed: <a href="docs/sdk/reference/current/modules/mattertag.html#remove">Mattertag.remove</a> can now properly remove an array of tags.</li>
+  <li>Fixed: The <a href="docs/sdk/reference/current/interfaces/mattertag.imessenger.html">Mattertag.IMessenger</a> returned from <a href="docs/sdk/reference/current/modules/mattertag.html#injecthtml">Mattertag.injectHTML</a> will no longer see messages coming from the wrong tags.</li>
+</ul>
+
+<h2 id="311">3.11</h2>
 <h5 id="jun-10-2021">Jun 10, 2021</h5>
 <ul>
   <li>Added: <a href="docs/sdk/reference/current/modules/room.html#current">Room.current</a> observable.</li>
@@ -663,7 +671,7 @@ We are adding support for synchronous functions. These functions compute and ret
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2021 Matterport, Inc. All rights reserved. <br />
- Site last generated: Aug 27, 2021 <br />
+ Site last generated: Sep 24, 2021 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
