@@ -56,8 +56,11 @@
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#addnode" class="tsd-kind-icon">add<wbr>Node</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#addpath" class="tsd-kind-icon">add<wbr>Path</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#bind" class="tsd-kind-icon">bind</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#bindpath" class="tsd-kind-icon">bind<wbr>Path</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#getvalueatpath" class="tsd-kind-icon">get<wbr>Value<wbr>AtPath</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#pathiterator" class="tsd-kind-icon">path<wbr>Iterator</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#setvalueatpath" class="tsd-kind-icon">set<wbr>Value<wbr>AtPath</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#spyonevent" class="tsd-kind-icon">spy<wbr>OnEvent</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#start" class="tsd-kind-icon">start</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#stop" class="tsd-kind-icon">stop</a></li>
 							</ul>
@@ -100,7 +103,10 @@
 					<a name="addpath" class="tsd-anchor"></a>
 					<h3>add<wbr>Path</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Path<span class="tsd-signature-symbol">(</span>pathDesc<span class="tsd-signature-symbol">: </span><a href="../modules/scene.html#pathdesc" class="tsd-signature-type">Scene.PathDesc</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Path<span class="tsd-signature-symbol">(</span>pathDesc<span class="tsd-signature-symbol">: </span><a href="../modules/scene.html#inputpathdescriptor" class="tsd-signature-type">Scene.InputPathDescriptor</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="scene.inputpath.html" class="tsd-signature-type">Scene.InputPath</a></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Path<span class="tsd-signature-symbol">(</span>pathDesc<span class="tsd-signature-symbol">: </span><a href="../modules/scene.html#outputpathdescriptor" class="tsd-signature-type">Scene.OutputPathDescriptor</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="scene.outputpath.html" class="tsd-signature-type">Scene.OutputPath</a></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Path<span class="tsd-signature-symbol">(</span>pathDesc<span class="tsd-signature-symbol">: </span><a href="../modules/scene.html#eventpathdescriptor" class="tsd-signature-type">Scene.EventPathDescriptor</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="scene.eventpath.html" class="tsd-signature-type">Scene.EventPath</a></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Path<span class="tsd-signature-symbol">(</span>pathDesc<span class="tsd-signature-symbol">: </span><a href="../modules/scene.html#emitpathdescriptor" class="tsd-signature-type">Scene.EmitPathDescriptor</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="scene.emitpath.html" class="tsd-signature-type">Scene.EmitPath</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -108,19 +114,53 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Add a path identified by a unique string.</p>
+									<p>Add a path identified by a unique string.
+									They <code>pathDesc.type</code> will determine which path type is returned.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>pathDesc: <a href="../modules/scene.html#pathdesc" class="tsd-signature-type">Scene.PathDesc</a></h5>
+									<h5>pathDesc: <a href="../modules/scene.html#inputpathdescriptor" class="tsd-signature-type">Scene.InputPathDescriptor</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The path descriptor to the component property.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="scene.inputpath.html" class="tsd-signature-type">Scene.InputPath</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>pathDesc: <a href="../modules/scene.html#outputpathdescriptor" class="tsd-signature-type">Scene.OutputPathDescriptor</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="scene.outputpath.html" class="tsd-signature-type">Scene.OutputPath</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>pathDesc: <a href="../modules/scene.html#eventpathdescriptor" class="tsd-signature-type">Scene.EventPathDescriptor</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="scene.eventpath.html" class="tsd-signature-type">Scene.EventPath</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>pathDesc: <a href="../modules/scene.html#emitpathdescriptor" class="tsd-signature-type">Scene.EmitPathDescriptor</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="scene.emitpath.html" class="tsd-signature-type">Scene.EmitPath</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -132,6 +172,12 @@
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="scene.iobject.html#bindpath">IObject.bindPath</a> instead.</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -172,6 +218,111 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="bindpath" class="tsd-anchor"></a>
+					<h3>bind<wbr>Path</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">bind<wbr>Path<span class="tsd-signature-symbol">(</span>inputPath<span class="tsd-signature-symbol">: </span><a href="scene.inputpath.html" class="tsd-signature-type">Scene.InputPath</a>, outputPath<span class="tsd-signature-symbol">: </span><a href="scene.outputpath.html" class="tsd-signature-type">Scene.OutputPath</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">bind<wbr>Path<span class="tsd-signature-symbol">(</span>eventPath<span class="tsd-signature-symbol">: </span><a href="scene.eventpath.html" class="tsd-signature-type">Scene.EventPath</a>, emitPath<span class="tsd-signature-symbol">: </span><a href="scene.emitpath.html" class="tsd-signature-type">Scene.EmitPath</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Bind the value referenced by <code>inputPath</code> to the value of <code>outputPath</code>.
+									As the value at <code>outputPath</code> changes, the value of <code>inputPath</code> will reflect it.</p>
+								</div>
+								<pre><code>const [sceneObject] = await sdk.Scene.createObjects(<span class="hljs-number">1</span>);
+const node = sceneObject.createNode();
+
+// mp.objLoader has an outputs.visible property
+const comp1 = node.addComponent(`mp.objLoader<span class="hljs-string">&#x27;);
+const outputPath = sceneObj.addPath({
+  id: &#x27;</span>objLoader-visibl<span class="hljs-string">e&#x27;,
+  type: sdk.Scene.PathType.OUTPUT,
+  node: node,
+  component: comp1,
+  property: &#x27;</span>visibl<span class="hljs-string">e&#x27;,
+});
+
+// myComponent has an inputs.toggleState property
+const comp2 = node.addComponent(&#x27;</span>myComponent<span class="hljs-string">&#x27;);
+const inputPath = sceneObj.addPath({
+  id: &#x27;</span>myComponent-toggl<span class="hljs-string">e&#x27;,
+  type: sdk.Scene.PathType.INPUT,
+  node: node,
+  component: comp2,
+  property: &#x27;</span>toggleStat<span class="hljs-string">e&#x27;,
+});
+sceneObject.bindPath(inputPath, outputPath);
+
+node.start();
+// comp1.inputs.visible will now always equal comp2.outputs.toggleState</span>
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>inputPath: <a href="scene.inputpath.html" class="tsd-signature-type">Scene.InputPath</a></h5>
+								</li>
+								<li>
+									<h5>outputPath: <a href="scene.outputpath.html" class="tsd-signature-type">Scene.OutputPath</a></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Bind an event referenced by <code>eventPath</code> to a <a href="scene.icomponent.html#notify">IComponent.notify</a> call at <code>emitPath</code></p>
+									<p>```
+										const [sceneObject] = await sdk.Scene.createObject(1);
+									const node = sceneObject.createNode();</p>
+								</div>
+								<p>// myReceiver has an <code>onEvent</code> lifecycle function and an <code>events[&#39;do.update&#39;]</code> property
+									const receiver = node.addComponent(`myReceiver&#39;);
+									const eventPath = sceneObj.addPath({
+									id: &#39;objLoader-visible&#39;,
+									type: sdk.Scene.PathType.EVENT,
+									node: node,
+									component: receiver,
+									property: &#39;do.update&#39;,
+								});</p>
+								<p>// myEmitter calls notify with an &#39;updated&#39; event and has an <code>emits[&#39;updated&#39;]</code> property
+									const emitter = node.addComponent(&#39;myEmitter&#39;);
+									const emitPath = sceneObj.addPath({
+									id: &#39;myComponent-toggle&#39;,
+									type: sdk.Scene.PathType.EMIT,
+									node: node,
+									component: emitter,
+									property: &#39;updated&#39;,
+									});
+								sceneObject.bindPath(eventPath, emitPath);</p>
+								<p>node.start();
+									// receiver.onEvent(&#39;do.update&#39;, ...) will now be called whenever emitter calls notify(&#39;updated&#39;)
+								```</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>eventPath: <a href="scene.eventpath.html" class="tsd-signature-type">Scene.EventPath</a></h5>
+								</li>
+								<li>
+									<h5>emitPath: <a href="scene.emitpath.html" class="tsd-signature-type">Scene.EmitPath</a></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="getvalueatpath" class="tsd-anchor"></a>
 					<h3>get<wbr>Value<wbr>AtPath</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -179,6 +330,12 @@
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="scene.inputpath.html#get">InputPath.get</a> or <a href="scene.outputpath.html#get">OutputPath.get</a> instead.</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -198,6 +355,40 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="pathiterator" class="tsd-anchor"></a>
+					<h3>path<wbr>Iterator</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">path<wbr>Iterator<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><a href="scene.pathinfo.html" class="tsd-signature-type">Scene.PathInfo</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an iterator containing a path and its descriptor. Typically used to access the paths from a deserialized scene object.</p>
+								</div>
+								<pre><code><span class="hljs-comment">// This example sets the values of all input paths provided by deserialized scene object.</span>
+
+<span class="hljs-keyword">const</span> deserialized = await sdk.Scene.deserialize(myString);
+<span class="hljs-keyword">const</span> paths = deserialized.pathIterator();
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> { <span class="hljs-keyword">desc</span>, path } of paths) {
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">desc</span>.<span class="hljs-keyword">type</span> === Scene.PathType.<span class="hljs-keyword">INPUT</span>) {
+    <span class="hljs-comment">// we know this path is an input path</span>
+    <span class="hljs-keyword">const</span> inputPath = <span class="hljs-keyword">desc</span>.path <span class="hljs-keyword">as</span> Scene.InputPath;
+
+    <span class="hljs-comment">// Now you can set the value at the path</span>
+    <span class="hljs-comment">// You can cache the returned input path to use it later.</span>
+    inputPath.<span class="hljs-keyword">set</span>(10);
+  }
+}
+</code></pre>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><a href="scene.pathinfo.html" class="tsd-signature-type">Scene.PathInfo</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="setvalueatpath" class="tsd-anchor"></a>
 					<h3>set<wbr>Value<wbr>AtPath</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -205,6 +396,12 @@
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="scene.inputpath.html#set">InputPath.set</a> instead.</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -228,6 +425,55 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="spyonevent" class="tsd-anchor"></a>
+					<h3>spy<wbr>OnEvent</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">spy<wbr>OnEvent<span class="tsd-signature-symbol">(</span>spy<span class="tsd-signature-symbol">: </span><a href="scene.isceneobjectspy.html" class="tsd-signature-type">Scene.ISceneObjectSpy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="isubscription.html" class="tsd-signature-type">ISubscription</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Spy on events or input and output value changes</p>
+									<p>```
+										const [sceneObject] = await sdk.Scene.createObjects(1);
+									const node = sceneObject.createNode();</p>
+								</div>
+								<p>// mp.objLoader has an outputs.visible property
+									const comp1 = node.addComponent(`mp.objLoader&#39;);
+									const outputPath = sceneObj.addPath({
+									id: &#39;objLoader-visible&#39;,
+									type: sdk.Scene.PathType.OUTPUT,
+									node: node,
+									component: comp1,
+									property: &#39;visible&#39;,
+								});</p>
+								<p>const outputSpy = {
+									path: outputPath,
+									onEvent(type, data) {
+									console.log(&#39;outputs updated&#39;, type, data);
+									}
+								};</p>
+								<p>sceneObject.spyOnEvent(outputSpy);</p>
+								<p>node.start();
+									// outputSpy.onEvent(&#39;outputsUpdated&#39;, comp1.outputs.visible) will now be called whenever comp1.outputs.visible changes
+								```</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>spy: <a href="scene.isceneobjectspy.html" class="tsd-signature-type">Scene.ISceneObjectSpy</a></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="isubscription.html" class="tsd-signature-type">ISubscription</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -335,6 +581,15 @@
 					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
 						<a href="../enums/scene.interactiontype.html" class="tsd-kind-icon">Interaction<wbr>Type</a>
 					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
+						<a href="../enums/scene.pathtype.html" class="tsd-kind-icon">Path<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="scene.emitpath.html" class="tsd-kind-icon">Emit<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="scene.eventpath.html" class="tsd-kind-icon">Event<wbr>Path</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="scene.icomponent.html" class="tsd-kind-icon">IComponent</a>
 					</li>
@@ -365,10 +620,19 @@
 								<a href="scene.iobject.html#bind" class="tsd-kind-icon">bind</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="scene.iobject.html#bindpath" class="tsd-kind-icon">bind<wbr>Path</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="scene.iobject.html#getvalueatpath" class="tsd-kind-icon">get<wbr>Value<wbr>AtPath</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="scene.iobject.html#pathiterator" class="tsd-kind-icon">path<wbr>Iterator</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="scene.iobject.html#setvalueatpath" class="tsd-kind-icon">set<wbr>Value<wbr>AtPath</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="scene.iobject.html#spyonevent" class="tsd-kind-icon">spy<wbr>OnEvent</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="scene.iobject.html#start" class="tsd-kind-icon">start</a>
@@ -380,17 +644,32 @@
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="scene.isceneobjectspy.html" class="tsd-kind-icon">IScene<wbr>Object<wbr>Spy</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="scene.inputpath.html" class="tsd-kind-icon">Input<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="scene.outputpath.html" class="tsd-kind-icon">Output<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="scene.pathinfo.html" class="tsd-kind-icon">Path<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/scene.html#emitpathdescriptor" class="tsd-kind-icon">Emit<wbr>Path<wbr>Descriptor</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/scene.html#eventpathdescriptor" class="tsd-kind-icon">Event<wbr>Path<wbr>Descriptor</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/scene.html#inputpathdescriptor" class="tsd-kind-icon">Input<wbr>Path<wbr>Descriptor</a>
+					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#intersect" class="tsd-kind-icon">Intersect</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/scene.html#pathdesc" class="tsd-kind-icon">Path<wbr>Desc</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/scene.html#predefinedoutputs" class="tsd-kind-icon">Predefined<wbr>Outputs</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/scene.html#three" class="tsd-kind-icon">THREE</a>
+						<a href="../modules/scene.html#outputpathdescriptor" class="tsd-kind-icon">Output<wbr>Path<wbr>Descriptor</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#configure" class="tsd-kind-icon">configure</a>

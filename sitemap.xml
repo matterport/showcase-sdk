@@ -91,10 +91,22 @@
   
   
   
+  <url>
+    <loc>https://matterport.github.io/sdkbundle_earlyaccess_21.10.1_connect.html</loc>
+  </url>
+  
+  
+  
   
   
   <url>
-    <loc>https://matterport.github.io/docs/reference/index.html</loc>
+    <loc>https://matterport.github.io/sdkbundle_earlyaccess_21.10.1_idchanges.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/index.html</loc>
   </url>
   
   
@@ -106,13 +118,13 @@
   
   
   <url>
-    <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
+    <loc>https://matterport.github.io/docs/reference/index.html</loc>
   </url>
   
   
   
   <url>
-    <loc>https://matterport.github.io/docs/index.html</loc>
+    <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
   </url>
   
   
@@ -454,6 +466,12 @@
   
   
   <url>
+    <loc>https://matterport.github.io/sdkbundle_earlyaccess_21.10.1_oauth.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/p1_landing_page.html</loc>
   </url>
   
@@ -590,6 +608,12 @@
   </url>
   
   
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdkbundle_earlyaccess_21.10.1_sceneobjects.html</loc>
+  </url>
   
   
   
@@ -745,6 +769,12 @@
   
   <url>
     <loc>https://matterport.github.io/sdkbundle_custom_experience.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdkbundle_earlyaccess.html</loc>
   </url>
   
   

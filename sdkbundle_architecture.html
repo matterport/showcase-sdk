@@ -208,6 +208,13 @@
           
           
           
+          <li><a title="Early Access" href="sdkbundle_earlyaccess.html">Early Access</a></li>
+          
+          
+          
+          
+          
+          
           <li class="active"><a title="Architecture" href="sdkbundle_architecture.html">Architecture</a></li>
           
           
@@ -490,7 +497,26 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <h2 id="scene-nodes">Scene Nodes</h2>
+   <h2 id="scene-objects">Scene Objects</h2>
+
+<p>Scene objects aggregate nodes and are the central place where nodes are created, and data and events between components is connected and managed.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create a scene object. `createObjects` can create multiple objects and returns an array with that number of objects</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">sceneObject</span><span class="p">]</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">// Create a scene node</span>
+<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">(</span><span class="s1">'my-node'</span><span class="p">);</span>
+
+<span class="c1">// Adding a component to 'my-node'</span>
+<span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'mp.fbx'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://www.google.com'</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="c1">// Start 'my-node'</span>
+<span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h2 id="scene-nodes">Scene Nodes</h2>
 
 <p>Scene nodes contain and manage the lifecycle of their child components. Scene nodes have a 3D transform that parent child components.</p>
 
@@ -511,7 +537,7 @@ graph LR&#10;
 <p><br /></p>
 
 <p>The following is an example of scene node usage.</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Creating a scene node</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Creating a scene node</span>
 <span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createNode</span><span class="p">();</span>
 
 <span class="c1">// Adding a component</span>
@@ -536,21 +562,11 @@ Components adhere to a standard interface making them reusable and shareable acr
 <p>Components have five callbacks,</p>
 
 <ul>
-  <li>
-    <p><b>onInit</b> - This function is called when the scene node is started. Peer components are called in the order they were added to the scene node.</p>
-  </li>
-  <li>
-    <p><b>onEvent</b> - This function is called once for each event that occured during the last frame.</p>
-  </li>
-  <li>
-    <p><b>onInputsChanged</b> - This function is called prior to <code class="highlighter-rouge">onTick</code> but after <code class="highlighter-rouge">onEvent</code>. It is called once if any <code class="highlighter-rouge">inputs</code> property has changed during the last frame.</p>
-  </li>
-  <li>
-    <p><b>onTick</b> - This function is called every frame.</p>
-  </li>
-  <li>
-    <p><b>onDestroyed</b> - This function is called when the scene node is stopped. Component <code class="highlighter-rouge">onDestroy</code> callbacks are called in the reverse order they are added to the scene node.</p>
-  </li>
+  <li><b>onInit</b> - This function is called when the scene node is started. Peer components are called in the order they were added to the scene node.</li>
+  <li><b>onEvent</b> - This function is called once for each event that occured during the last frame.</li>
+  <li><b>onInputsChanged</b> - This function is called prior to <code class="highlighter-rouge">onTick</code> but after <code class="highlighter-rouge">onEvent</code>. It is called once if any <code class="highlighter-rouge">inputs</code> property has changed during the last frame.</li>
+  <li><b>onTick</b> - This function is called every frame.</li>
+  <li><b>onDestroyed</b> - This function is called when the scene node is stopped. Component <code class="highlighter-rouge">onDestroy</code> callbacks are called in the reverse order they are added to the scene node.</li>
 </ul>
 
 <p>During the <code class="highlighter-rouge">Initializing</code> state, components can be added and property bindings can be created. Calling <code class="highlighter-rouge">start</code> triggers <code class="highlighter-rouge">onInit</code> to be called on each component prior to entering the <code class="highlighter-rouge">Operating</code> state.</p>
@@ -598,7 +614,7 @@ graph LR&#10;
 <p>Components have properties named <code class="highlighter-rouge">inputs</code> and <code class="highlighter-rouge">outputs</code>. These properties are dictionaries defined by the component. The <code class="highlighter-rouge">inputs</code> dictionary represents properties that affect the components behavior or appearance. The <code class="highlighter-rouge">outputs</code> dictionary represents properties computed by the component.</p>
 
 <p>An example of a computed output,</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Sum</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Sum</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">inputs</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">augend</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
     <span class="na">addend</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -615,23 +631,156 @@ graph LR&#10;
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="property-bindings">Property Bindings</h3>
+<h3 id="context">Context</h3>
+
+<p>Every component has a <code class="highlighter-rouge">context</code> property implicitly defined for it. The <code class="highlighter-rouge">context</code> contains access to</p>
+<ul>
+  <li><code class="highlighter-rouge">root</code>, the node the component is attached to</li>
+  <li><code class="highlighter-rouge">three</code>, the currently loaded THREE.js script from Showcase</li>
+  <li><code class="highlighter-rouge">renderer</code>, Showcase’s active <code class="highlighter-rouge">THREE.WebGLRenderer</code></li>
+</ul>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Any webgl objects, including <code class="highlighter-rouge">Material</code> or <code class="highlighter-rouge">Geometry</code>, MUST be created using <code class="highlighter-rouge">THREE.js</code> provided by <code class="highlighter-rouge">context.three</code> because of THREE.js’s internal id system used to uniquely identify objects.</div>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Renderable</span> <span class="p">{</span>
+  <span class="nx">onInit</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">THREE</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">three</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">objectRoot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">(</span>
+      <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">BoxBufferGeometry</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">),</span>
+      <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">MeshBasicMaterial</span><span class="p">(</span> <span class="p">{</span> <span class="na">color</span><span class="p">:</span> <span class="mh">0xffff00</span> <span class="p">}</span> <span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="emits-and-event-subscriptions">Emits and Event Subscriptions</h3>
+
+<p>Components also have properties named <code class="highlighter-rouge">events</code> and <code class="highlighter-rouge">emits</code>, and a function <code class="highlighter-rouge">notify</code>.</p>
+
+<p>The <code class="highlighter-rouge">events</code> dictionary defines which type of events the component subscribes to. The keys of the dictionary define the event types. The values determine if the component receives those events – truthy values mean the component will, falsy values mean it won’t. Event subscriptions can be changed at will at any time.</p>
+
+<p>The <code class="highlighter-rouge">emits</code> dictionary defines which events the component can emit through a call to its <code class="highlighter-rouge">notify</code> function. If the value of an event in <code class="highlighter-rouge">emits</code> is falsy, then it will not <code class="highlighter-rouge">notify</code> other components of that event. Otherwise, each call to <code class="highlighter-rouge">notify</code> triggers a call to <code class="highlighter-rouge">onEvent</code> of the component bound to it on the next iteration through the component lifecycle.</p>
+
+<p>Receiving user input from the mouse or touch is possible using built-in event types like: <code class="highlighter-rouge">INTERACTION.HOVER</code>, <code class="highlighter-rouge">INTERACTION.CLICK</code>, <code class="highlighter-rouge">INTERACTION.DRAG</code>. For all supported input events, see <a href="docs/sdkbundle/reference/current/enums/scene.interactiontype.html">InteractionType</a></p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> a component will only receive input if they also set their <code class="highlighter-rouge">collider</code> output.</div>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Clickable</span> <span class="p">{</span>
+  <span class="nx">events</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// subscribe to click events</span>
+    <span class="p">[</span><span class="nx">ComponentInteractionType</span><span class="p">.</span><span class="nx">CLICK</span><span class="p">]:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">}</span>
+
+  <span class="nx">emits</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// emit a clicked events</span>
+    <span class="na">clicked</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+
+  <span class="p">};</span>
+
+  <span class="nx">onInit</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">THREE</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">three</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">collider</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="nx">onEvent</span><span class="p">(</span><span class="nx">eventType</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">eventType</span> <span class="o">===</span> <span class="nx">ComponentInteractionType</span><span class="p">.</span><span class="nx">CLICK</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Clickable component was clicked!'</span><span class="p">);</span>
+      <span class="c1">// cancel the click event subscription, this component will no longer receive clicks</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">events</span><span class="p">[</span><span class="nx">ComponentInteractionType</span><span class="p">.</span><span class="nx">CLICK</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+      <span class="c1">// tell other components that this component was clicked</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">notify</span><span class="p">(</span><span class="s1">'clicked'</span><span class="p">,</span> <span class="p">{</span> <span class="cm">/* an optional payload */</span><span class="p">});</span>
+
+      <span class="c1">// disable the 'clicked' emit</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">emits</span><span class="p">.</span><span class="nx">clicked</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="c1">// this will NOT notify other components since `emits.clicked` was set to `false`</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">notify</span><span class="p">(</span><span class="s1">'clicked'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="paths">Paths</h2>
+
+<p>Paths create references to a property of a component’s inputs, outputs, events, or emits.</p>
+
+<p>Paths are the primary mechanism used to connect two components together and to setup spies (more on spies in the next section).
+They can also be used to set values on inputs, and read values from outputs.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">InputPath</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kd">get</span><span class="p">():</span> <span class="nx">T</span><span class="p">;</span>
+  <span class="kd">set</span><span class="p">(</span><span class="na">newVal</span><span class="p">:</span> <span class="nx">T</span><span class="p">):</span> <span class="k">void</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">OutputPath</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kd">get</span><span class="p">():</span> <span class="nx">T</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="creating-a-path">Creating a Path</h3>
+
+<p>Paths are created through a scene object that they will be associated with.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create a scene object, node, and component</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">sceneObject</span><span class="p">]</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">component</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'sum'</span><span class="p">);</span>
+
+<span class="c1">// create and add a path that references the component's output</span>
+<span class="kd">const</span> <span class="nx">sumOutputPath</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addPath</span><span class="p">({</span>
+  <span class="na">id</span><span class="p">:</span> <span class="s1">'my-output-path'</span><span class="p">,</span>
+  <span class="na">type</span><span class="p">:</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">PathType</span><span class="p">.</span><span class="nx">OUTPUT</span><span class="p">,</span>
+  <span class="nx">node</span><span class="p">,</span>
+  <span class="nx">component</span><span class="p">,</span>
+  <span class="na">property</span><span class="p">:</span> <span class="s1">'sum'</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="binding-properties-using-paths">Binding Properties using Paths</h3>
 
 <p>A property binding is a connection from a component’s <code class="highlighter-rouge">inputs</code> property to another component’s <code class="highlighter-rouge">outputs</code> property. The <code class="highlighter-rouge">inputs</code> property is called the <strong>Binding Target</strong> and the <code class="highlighter-rouge">outputs</code> property is called the <strong>Binding Source</strong>. Changes to the <strong>Binding Source</strong> value will propagate to the <strong>Binding Target</strong>.  <strong>Binding Targets</strong> should be treated as <code class="highlighter-rouge">read-only</code>.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// assume Sum() class from Inputs and Outputs Dictionaries section</span>
-<span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createNode</span><span class="p">();</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// some helper function to generate paths</span>
+<span class="kd">function</span> <span class="nx">createOutputPath</span><span class="p">(</span><span class="nx">id</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">component</span><span class="p">:</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">IComponent</span><span class="p">,</span> <span class="nx">property</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addPath</span><span class="p">({</span>
+    <span class="nx">id</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">PathType</span><span class="p">.</span><span class="nx">OUTPUT</span><span class="p">,</span>
+    <span class="nx">node</span><span class="p">,</span>
+    <span class="nx">component</span><span class="p">,</span>
+    <span class="nx">property</span><span class="p">,</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">createInputPath</span><span class="p">(</span><span class="nx">id</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">component</span><span class="p">:</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">IComponent</span><span class="p">,</span> <span class="nx">property</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addPath</span><span class="p">({</span>
+    <span class="nx">id</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">PathType</span><span class="p">.</span><span class="nx">INPUT</span><span class="p">,</span>
+    <span class="nx">node</span><span class="p">,</span>
+    <span class="nx">component</span><span class="p">,</span>
+    <span class="nx">property</span><span class="p">,</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+<span class="c1">// assume Sum() class from Inputs and Outputs Dictionaries section</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">sceneObject</span><span class="p">]</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">comp1</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'sum'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">comp2</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'sum'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">comp3</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'sum'</span><span class="p">);</span>
 
-<span class="c1">// bind comp1.inputs.augend to comp2.outputs.sum</span>
-<span class="c1">// bind comp1.inputs.addend to comp3.outputs.sum</span>
-<span class="nx">comp1</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s1">'augend'</span><span class="p">,</span> <span class="nx">comp2</span><span class="p">.</span><span class="nx">outputs</span><span class="p">,</span> <span class="s1">'sum'</span><span class="p">);</span>
-<span class="nx">comp1</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s1">'addend'</span><span class="p">,</span> <span class="nx">comp3</span><span class="p">.</span><span class="nx">outputs</span><span class="p">,</span> <span class="s1">'sum'</span><span class="p">);</span>
+<span class="c1">// create a path to comp1.inputs.augend</span>
+<span class="kd">const</span> <span class="nx">comp1Augend</span> <span class="o">=</span> <span class="nx">createInputPath</span><span class="p">(</span><span class="s1">'comp1-augend'</span><span class="p">,</span> <span class="nx">comp1</span><span class="p">,</span> <span class="s1">'augend'</span><span class="p">);</span>
+<span class="c1">// create a path to comp1.inputs.addend</span>
+<span class="kd">const</span> <span class="nx">comp1Addend</span> <span class="o">=</span> <span class="nx">createInputPath</span><span class="p">(</span><span class="s1">'comp1-addend'</span><span class="p">,</span> <span class="nx">comp1</span><span class="p">,</span> <span class="s1">'addend'</span><span class="p">)</span>
+<span class="c1">// create a path to comp2.outputs.sum</span>
+<span class="kd">const</span> <span class="nx">comp2Sum</span> <span class="o">=</span> <span class="nx">createOutputPath</span><span class="p">(</span><span class="s1">'comp2-sum'</span><span class="p">,</span> <span class="nx">comp2</span><span class="p">,</span> <span class="s1">'sum'</span><span class="p">);</span>
+<span class="c1">// create a path to comp3.outputs.sum</span>
+<span class="kd">const</span> <span class="nx">comp3Sum</span> <span class="o">=</span> <span class="nx">createOutputPath</span><span class="p">(</span><span class="s1">'comp3-sum'</span><span class="p">,</span> <span class="nx">comp3</span><span class="p">,</span> <span class="s1">'sum'</span><span class="p">);</span>
+
+<span class="c1">// bind the the output (sum) of comp2 to the input (augend) of comp1</span>
+<span class="nx">sceneObject</span><span class="p">.</span><span class="nx">bindPath</span><span class="p">(</span><span class="nx">comp1Augend</span><span class="p">,</span> <span class="nx">comp2Sum</span><span class="p">);</span>
+<span class="c1">// bind the the output (sum) of comp3 to the input (addend) of comp1</span>
+<span class="nx">sceneObject</span><span class="p">.</span><span class="nx">bindPath</span><span class="p">(</span><span class="nx">comp1Addend</span><span class="p">,</span> <span class="nx">comp3Sum</span><span class="p">);</span>
 
 <span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 
+<span class="c1">// start modifying comp2's and comp3's inputs to automatically modify comp1's sum</span>
 <span class="nx">comp2</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">augend</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">comp1</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">sum</span><span class="p">);</span>
 <span class="c1">// output: 5</span>
@@ -668,68 +817,22 @@ graph LR&#10;
   end&#10;
 </div>
 
-<h3 id="context">Context</h3>
-
-<p>Every component has a <code class="highlighter-rouge">context</code> property implicitly defined for it. The <code class="highlighter-rouge">context</code> contains access to</p>
-<ul>
-  <li><code class="highlighter-rouge">root</code>, the node the component is attached to</li>
-  <li><code class="highlighter-rouge">three</code>, the currently loaded THREE.js script from Showcase</li>
-  <li><code class="highlighter-rouge">renderer</code>, Showcase’s active <code class="highlighter-rouge">THREE.WebGLRenderer</code></li>
-</ul>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Any webgl objects, including <code class="highlighter-rouge">Material</code> or <code class="highlighter-rouge">Geometry</code>, MUST be created using <code class="highlighter-rouge">THREE.js</code> provided by <code class="highlighter-rouge">context.three</code> because of THREE.js’s internal id system used to uniquely identify objects.</div>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Renderable</span> <span class="p">{</span>
-  <span class="nx">onInit</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">THREE</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">three</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">objectRoot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">(</span>
-      <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">BoxBufferGeometry</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">),</span>
-      <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">MeshBasicMaterial</span><span class="p">(</span> <span class="p">{</span> <span class="na">color</span><span class="p">:</span> <span class="mh">0xffff00</span> <span class="p">}</span> <span class="p">));</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="event-subscriptions">Event Subscriptions</h3>
-
-<p>Components also have a property named <code class="highlighter-rouge">events</code> and a function <code class="highlighter-rouge">notify</code>. The <code class="highlighter-rouge">events</code> dictionary defines which type of events the component subscribes to. The keys of the dictionary define the event types. The values determine if the component receives those events – truthy values mean the component will, falsy values mean it won’t. Event subscriptions can be changed at will at any time. When a component is <code class="highlighter-rouge">notified</code> of events, each event notification triggers a call to <code class="highlighter-rouge">onEvent</code> on the next iteration through the component lifecycle.</p>
-
-<p>Receiving user input from the mouse or touch is possible using three built-in event types: <code class="highlighter-rouge">INTERACTION.HOVER</code>, <code class="highlighter-rouge">INTERACTION.CLICK</code>, <code class="highlighter-rouge">INTERACTION.DRAG</code>.</p>
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> a component will only receive input if they also set their <code class="highlighter-rouge">collider</code> output.</div>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Clickable</span> <span class="p">{</span>
-  <span class="nx">events</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="c1">// subscribe to click events</span>
-    <span class="p">[</span><span class="nx">ComponentInteractionType</span><span class="p">.</span><span class="nx">CLICK</span><span class="p">]:</span> <span class="kc">true</span><span class="p">,</span> 
-  <span class="p">}</span>
-
-  <span class="nx">onInit</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">THREE</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">three</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">collider</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">();</span>
-  <span class="p">}</span>
-
-  <span class="nx">onEvent</span><span class="p">(</span><span class="nx">eventType</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">eventType</span> <span class="o">===</span> <span class="nx">ComponentInteractionType</span><span class="p">.</span><span class="nx">CLICK</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Clickable component was clicked!'</span><span class="p">);</span>
-      <span class="c1">// cancel the click event subscription, this component will no longer receive clicks</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">events</span><span class="p">[</span><span class="nx">ComponentInteractionType</span><span class="p">.</span><span class="nx">CLICK</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
 <h3 id="event-bindings">Event Bindings</h3>
 
 <p>An event binding is an alternative means of connecting two components. A component can notify other components an event has occurred by calling its <code class="highlighter-rouge">notify</code> function. The components that broadcast events are called <strong>Event Sources</strong> and components that recieve events are called <strong>Event Sinks</strong>.
-A source’s event type doesn’t have to match the sink’s type. The binding will map between the two. Event Bindings are implemented this way in order to facilitate the creation of components that are more reusable, easily swappable, and more decoupled.</p>
+A source’s event name doesn’t have to match the sink’s name. The binding will map between the two. Event Bindings are implemented this way in order to facilitate the creation of components that are more reusable, easily swappable, and more decoupled.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Clickable</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Clickable</span> <span class="p">{</span>
+  <span class="nx">emits</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">clicked</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">};</span>
   <span class="c1">// ...</span>
   <span class="nx">onEvent</span><span class="p">(</span><span class="nx">eventType</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">notify</span><span class="p">(</span><span class="s1">'clicked'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Random</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Random</span> <span class="p">{</span>
   <span class="nx">events</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">randomize</span><span class="p">:</span> <span class="kc">true</span>
   <span class="p">}</span>
@@ -745,13 +848,30 @@ A source’s event type doesn’t have to match the sink’s type. The binding w
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// assume the previous two components have been registered</span>
-<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createNode</span><span class="p">();</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// assume the previous two components have been registered</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">sceneObject</span><span class="p">]</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">createNode</span><span class="p">();</span>
 <span class="kd">const</span> <span class="nx">clickable</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'clickable'</span><span class="p">);</span>
 <span class="kd">const</span> <span class="nx">random</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'random'</span><span class="p">);</span>
 
 <span class="c1">// bind Random's 'randomize' event to Clickable's 'clicked' event</span>
-<span class="nx">random</span><span class="p">.</span><span class="nx">bindEvent</span><span class="p">(</span><span class="s1">'randomize'</span><span class="p">,</span> <span class="nx">clickable</span> <span class="s1">'clicked'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">emitPath</span> <span class="o">=</span> <span class="nx">scenObject</span><span class="p">.</span><span class="nx">addPath</span><span class="p">({</span>
+  <span class="na">id</span><span class="p">:</span> <span class="s1">'emit-clicked'</span><span class="p">,</span>
+  <span class="na">type</span><span class="p">:</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">PathType</span><span class="p">.</span><span class="nx">EMIT</span><span class="p">,</span>
+  <span class="nx">node</span><span class="p">,</span>
+  <span class="na">component</span><span class="p">:</span> <span class="nx">clickable</span><span class="p">,</span>
+  <span class="na">property</span><span class="p">:</span> <span class="s1">'clicked'</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">eventPath</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addPath</span><span class="p">({</span>
+  <span class="na">id</span><span class="p">:</span> <span class="s1">'event-randomize'</span><span class="p">,</span>
+  <span class="na">type</span><span class="p">:</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">PathType</span><span class="p">.</span><span class="nx">EVENT</span><span class="p">,</span>
+  <span class="nx">node</span><span class="p">,</span>
+  <span class="na">component</span><span class="p">:</span> <span class="nx">random</span><span class="p">,</span>
+  <span class="na">property</span><span class="p">:</span> <span class="s1">'randomize'</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="nx">sceneObject</span><span class="p">.</span><span class="nx">bindPath</span><span class="p">(</span><span class="nx">eventPath</span><span class="p">,</span> <span class="nx">emitPath</span><span class="p">);</span>
 
 <span class="c1">// from now on when `clickable` is clicked, `random` updates its `output.num` value</span>
 </code></pre></div></div>
@@ -771,28 +891,46 @@ graph LR
   style map stroke-dasharray: 5, 5
 </div>
 
-<h3 id="event-spies">Event Spies</h3>
+<h2 id="spies">Spies</h2>
 
-<p>It is also possible to spy on components’ events from outside of a component. A spy listens for events with a specific <code class="highlighter-rouge">eventType</code> and will have its <code class="highlighter-rouge">onEvent</code> function called when the component it is attached to calls its <code class="highlighter-rouge">notify</code> function with that <code class="highlighter-rouge">eventType</code>.
-Calling a component’s <code class="highlighter-rouge">spyOnEvent</code> will attach a spy to the component. <code class="highlighter-rouge">spyOnEvent</code> returns an <code class="highlighter-rouge">ISubscription</code> which is used to remove the spy by calling its <code class="highlighter-rouge">cancel</code> function.</p>
+<p>Spies create ways to receive callbacks when a component’s inputs or outputs change, or when it calls <code class="highlighter-rouge">notify</code> to emit an event.
+Spies work outside of Matterport’s component system so it is a way to bridge to other frameworks.</p>
 
-<p>Using spies is a way to bridge Matterport’s component system to other frameworks.</p>
+<p>Calling <code class="highlighter-rouge">spyOnEvent</code> on a scene object will attach a spy to the path it is associated with. <code class="highlighter-rouge">spyOnEvent</code> returns an <code class="highlighter-rouge">ISubscription</code> which is used to remove the spy by calling its <code class="highlighter-rouge">cancel</code> function.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// assume Clickable class from Event Subscriptions section</span>
-<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createNode</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'clickable'</span><span class="p">);</span>
+<h3 id="spying-on-emits">Spying on Emits</h3>
 
-<span class="kd">class</span> <span class="nx">ClickSpy</span> <span class="kr">implements</span> <span class="nx">IComponentEventSpy</span><span class="o">&lt;</span><span class="nx">Intersect</span><span class="o">&gt;</span> <span class="p">{</span>
-  <span class="nx">readonly</span> <span class="nx">eventType</span> <span class="o">=</span> <span class="nx">ComponentInteractionType</span><span class="p">.</span><span class="nx">CLICK</span><span class="p">;</span>
-  <span class="nx">onEvent</span><span class="p">(</span><span class="na">payload</span><span class="p">:</span> <span class="nx">Intersect</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">payload</span><span class="p">.</span><span class="nx">collider</span><span class="p">}</span><span class="s2"> was clicked at point </span><span class="p">${</span><span class="nx">payload</span><span class="p">.</span><span class="nx">point</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<p>It is possible to spy on components’ events from outside of a component. A spy can listen for an emit with a specific eventType and will have its <code class="highlighter-rouge">onEvent</code> function called when the component it is attached to calls its <code class="highlighter-rouge">notify</code> function with that eventType.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// assume Clickable class from "Event Subscriptions" section</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">sceneObject</span><span class="p">]</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">clickComponent</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'clickable'</span><span class="p">);</span>
+
+<span class="kd">class</span> <span class="nx">ClickSpy</span> <span class="kr">implements</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">ISceneObjectSpy</span><span class="o">&lt;</span><span class="nx">Intersect</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">readonly</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">clickPath</span><span class="p">;</span>
+  <span class="nx">onEvent</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'spied a notify. Event type:'</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="s1">'w/ data'</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">const</span> <span class="nx">spySubcription</span> <span class="o">=</span> <span class="nx">source</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">ClickSpy</span><span class="p">());</span>
+<span class="kd">const</span> <span class="nx">clickPath</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addPath</span><span class="p">({</span>
+  <span class="na">id</span><span class="p">:</span> <span class="s1">'emit-click'</span><span class="p">,</span>
+  <span class="na">type</span><span class="p">:</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">PathType</span><span class="p">.</span><span class="nx">EMIT</span><span class="p">,</span>
+  <span class="nx">node</span><span class="p">,</span>
+  <span class="na">component</span><span class="p">:</span> <span class="nx">clickComponent</span><span class="p">,</span>
+  <span class="na">property</span><span class="p">:</span> <span class="s1">'clicked'</span><span class="p">,</span>
+<span class="p">});</span>
 
-<span class="c1">// (some time later) to remove the spy from the component</span>
-<span class="nx">spySubscription</span><span class="p">.</span><span class="nx">cancel</span><span class="p">();</span>
+<span class="c1">// attach spies</span>
+<span class="kd">const</span> <span class="nx">clickSubscription</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">(</span><span class="nx">clickPath</span><span class="p">);</span>
+
+<span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+
+<span class="c1">// from here, any time the Clickable component calls `notify('clicked')`, `ClickSpy.onEvent` will be called</span>
+
+<span class="c1">// stop spying on the click events</span>
+<span class="nx">clickSubscription</span><span class="p">.</span><span class="nx">cancel</span><span class="p">();</span>
 </code></pre></div></div>
 <div class="mermaid">
 graph LR
@@ -804,6 +942,69 @@ graph LR
     handler[onEvent]
   end
 </div>
+
+<h3 id="spying-on-inputs-and-outputs">Spying on Inputs and Outputs</h3>
+
+<p>It is also possible to spy on inputs and outputs and watch them for changes.
+The <code class="highlighter-rouge">type</code> in the callback will either be <code class="highlighter-rouge">'inputsUpdated'</code> or <code class="highlighter-rouge">'outputsUpdated'</code> depending on which property the spy is attached to.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// assume Sum class from "Input and Output Dictionaries" section</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">sceneObject</span><span class="p">]</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">sumComponent</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'sum'</span><span class="p">);</span>
+
+<span class="kd">class</span> <span class="nx">SumSpy</span> <span class="kr">implements</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">ISceneObjectSpy</span> <span class="p">{</span>
+  <span class="nx">readonly</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">sumPath</span><span class="p">;</span>
+  <span class="nx">onEvent</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'spied a change to outputs.sum. New sum:'</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">AddendSpy</span> <span class="kr">implements</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">ISceneObjectSpy</span> <span class="p">{</span>
+  <span class="nx">readonly</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">addendPath</span><span class="p">;</span>
+  <span class="nx">onEvent</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'spied change to inputs.addend. New addend value:'</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// create the output path</span>
+<span class="kd">const</span> <span class="nx">sumPath</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addPath</span><span class="p">({</span>
+  <span class="na">id</span><span class="p">:</span> <span class="s1">'sum-output'</span><span class="p">,</span>
+  <span class="na">type</span><span class="p">:</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">PathType</span><span class="p">.</span><span class="nx">OUTPUT</span><span class="p">,</span>
+  <span class="nx">node</span><span class="p">,</span>
+  <span class="na">component</span><span class="p">:</span> <span class="nx">sumComponent</span><span class="p">,</span>
+  <span class="na">property</span><span class="p">:</span> <span class="s1">'sum'</span><span class="p">,</span>
+<span class="p">});</span>
+<span class="c1">// create the input path</span>
+<span class="kd">const</span> <span class="nx">addendPath</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addPath</span><span class="p">({</span>
+  <span class="na">id</span><span class="p">:</span> <span class="s1">'addend-input'</span><span class="p">,</span>
+  <span class="na">type</span><span class="p">:</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">PathType</span><span class="p">.</span><span class="nx">INPUT</span><span class="p">,</span>
+  <span class="nx">node</span><span class="p">,</span>
+  <span class="na">component</span><span class="p">:</span> <span class="nx">sumComponent</span><span class="p">,</span>
+  <span class="na">property</span><span class="p">:</span> <span class="s1">'addend'</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="c1">// attach spies</span>
+<span class="kd">const</span> <span class="nx">sumSubscription</span> <span class="o">=</span> <span class="nx">constsceneObject</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">SumSpy</span><span class="p">());</span>
+<span class="kd">const</span> <span class="nx">addendSubscription</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">AddendSpy</span><span class="p">());</span>
+
+<span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+
+<span class="c1">// making a change to the "Sum" component's `inputs.augend` will recompute its `output.sum` which will trigger the SumSpy's `onEvent` with the new sum value</span>
+<span class="nx">sumComponent</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">augend</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">// making an input change is possible through paths</span>
+<span class="nx">addendPath</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span> <span class="c1">// will trigger the AddendSpy's `onEvent`</span>
+
+<span class="c1">// after the Sum component updates its `outputs.sum`</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sumPath</span><span class="p">.</span><span class="kd">get</span><span class="p">());</span> <span class="c1">// will have a value of 5 (augend: 1 + addend: 4)</span>
+
+<span class="c1">// stop spying on the input changes</span>
+<span class="nx">addendSubscription</span><span class="p">.</span><span class="nx">cancel</span><span class="p">();</span>
+
+<span class="c1">// stop spying on the output changes</span>
+<span class="nx">sumSubscription</span><span class="p">.</span><span class="nx">cancel</span><span class="p">();</span>
+</code></pre></div></div>
 
 
     <div class="tags">
@@ -821,7 +1022,7 @@ graph LR
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2021 Matterport, Inc. All rights reserved. <br />
- Site last generated: Sep 24, 2021 <br />
+ Site last generated: Oct 28, 2021 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

@@ -208,6 +208,13 @@
           
           
           
+          <li><a title="Early Access" href="sdkbundle_earlyaccess.html">Early Access</a></li>
+          
+          
+          
+          
+          
+          
           <li><a title="Architecture" href="sdkbundle_architecture.html">Architecture</a></li>
           
           
@@ -493,7 +500,7 @@ After unzipping:</p>
 <p>Once you have your <code class="highlighter-rouge">mpSdk</code> object, you’ll likely want to pass it around and/or use other types provided by the sdk.<br />
 All namespaces and their types are also available through the root <code class="highlighter-rouge">MpSdk</code> type.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// tourControls.ts</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Tour</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./mp/sdk'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Tour</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./bundle/sdk'</span>
 
 <span class="k">export</span> <span class="kd">function</span> <span class="nx">startTour</span><span class="p">(</span><span class="nx">tour</span><span class="p">:</span> <span class="nx">Tour</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">tour</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
@@ -505,7 +512,7 @@ All namespaces and their types are also available through the root <code class="
 <span class="p">}</span>
 
 <span class="c1">// index.ts</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">MpSdk</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./mp/sdk'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">MpSdk</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./bundle/sdk'</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">startTour</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./tourControls.ts'</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">useTourControls</span><span class="p">(</span><span class="na">mpSdk</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">)</span> <span class="p">{</span>
@@ -531,7 +538,7 @@ All namespaces and their types are also available through the root <code class="
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2021 Matterport, Inc. All rights reserved. <br />
- Site last generated: Sep 24, 2021 <br />
+ Site last generated: Oct 28, 2021 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

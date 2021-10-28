@@ -80,6 +80,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function"><a href="index.html#disconnect" class="tsd-kind-icon">disconnect</a></li>
 								<li class="tsd-kind-function"><a href="index.html#off" class="tsd-kind-icon">off</a></li>
 								<li class="tsd-kind-function"><a href="index.html#on" class="tsd-kind-icon">on</a></li>
 							</ul>
@@ -292,6 +293,35 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="disconnect" class="tsd-anchor"></a>
+					<h3>disconnect</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">disconnect<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Stop sending and receiving messages and cleanup any resources associated with the sdk</p>
+								</div>
+								<pre><code>mpSdk.disconnect();
+<span class="hljs-comment">// mpSdk can no longer make function calls, receive any callbacks to event, observable, or collection</span>
+
+<span class="hljs-comment">// all sdk functionality should throw errors</span>
+<span class="hljs-keyword">try</span> {
+  <span class="hljs-keyword">await</span> mpSdk.Mode.moveTo( ... );
+} <span class="hljs-keyword">catch</span> (e) {
+  <span class="hljs-built_in">console</span>.error(e);
+}
+</code></pre>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="off" class="tsd-anchor"></a>
 					<h3>off</h3>
@@ -1253,6 +1283,9 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="index.html#vector3" class="tsd-kind-icon">Vector3</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="index.html#disconnect" class="tsd-kind-icon">disconnect</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="index.html#off" class="tsd-kind-icon">off</a>

@@ -36,26 +36,34 @@
 							<h3>Enumerations</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/scene.interactiontype.html" class="tsd-kind-icon">Interaction<wbr>Type</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/scene.pathtype.html" class="tsd-kind-icon">Path<wbr>Type</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/scene.emitpath.html" class="tsd-kind-icon">Emit<wbr>Path</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/scene.eventpath.html" class="tsd-kind-icon">Event<wbr>Path</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/scene.icomponent.html" class="tsd-kind-icon">IComponent</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/scene.icomponentcontext.html" class="tsd-kind-icon">IComponent<wbr>Context</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/scene.icomponentdesc.html" class="tsd-kind-icon">IComponent<wbr>Desc</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/scene.icomponenteventspy.html" class="tsd-kind-icon">IComponent<wbr>Event<wbr>Spy</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/scene.inode.html" class="tsd-kind-icon">INode</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/scene.iobject.html" class="tsd-kind-icon">IObject</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/scene.isceneobjectspy.html" class="tsd-kind-icon">IScene<wbr>Object<wbr>Spy</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/scene.inputpath.html" class="tsd-kind-icon">Input<wbr>Path</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/scene.outputpath.html" class="tsd-kind-icon">Output<wbr>Path</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/scene.pathinfo.html" class="tsd-kind-icon">Path<wbr>Info</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#emitpathdescriptor" class="tsd-kind-icon">Emit<wbr>Path<wbr>Descriptor</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#eventpathdescriptor" class="tsd-kind-icon">Event<wbr>Path<wbr>Descriptor</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#inputpathdescriptor" class="tsd-kind-icon">Input<wbr>Path<wbr>Descriptor</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#intersect" class="tsd-kind-icon">Intersect</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#pathdesc" class="tsd-kind-icon">Path<wbr>Desc</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#predefinedoutputs" class="tsd-kind-icon">Predefined<wbr>Outputs</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#three" class="tsd-kind-icon">THREE</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#outputpathdescriptor" class="tsd-kind-icon">Output<wbr>Path<wbr>Descriptor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -77,35 +85,14 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Types</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
-					<a name="intersect" class="tsd-anchor"></a>
-					<h3>Intersect</h3>
-					<div class="tsd-signature tsd-kind-icon">Intersect<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>collider<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object3D</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>normal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>point<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span></h5>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
-					<a name="pathdesc" class="tsd-anchor"></a>
-					<h3>Path<wbr>Desc</h3>
-					<div class="tsd-signature tsd-kind-icon">Path<wbr>Desc<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<a name="emitpathdescriptor" class="tsd-anchor"></a>
+					<h3>Emit<wbr>Path<wbr>Descriptor</h3>
+					<div class="tsd-signature tsd-kind-icon">Emit<wbr>Path<wbr>Descriptor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>A descriptor for a component property contained by a scene object.</p>
+							<p>A descriptor for an emit component property contained by a scene object.</p>
 						</div>
 					</div>
 					<div class="tsd-type-declaration">
@@ -115,7 +102,7 @@
 								<h5>component<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
-										<p>The component.</p>
+										<p>The component with the property.</p>
 									</div>
 								</div>
 							</li>
@@ -139,7 +126,15 @@
 								<h5>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
-										<p>The input or output property name of the component.</p>
+										<p>The property name of the component.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>type<span class="tsd-signature-symbol">: </span><a href="../enums/scene.pathtype.html#emit" class="tsd-signature-type">Scene.PathType.EMIT</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The type of the path: PathType.EMIT</p>
 									</div>
 								</div>
 							</li>
@@ -147,39 +142,196 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
-					<a name="predefinedoutputs" class="tsd-anchor"></a>
-					<h3>Predefined<wbr>Outputs</h3>
-					<div class="tsd-signature tsd-kind-icon">Predefined<wbr>Outputs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<a name="eventpathdescriptor" class="tsd-anchor"></a>
+					<h3>Event<wbr>Path<wbr>Descriptor</h3>
+					<div class="tsd-signature tsd-kind-icon">Event<wbr>Path<wbr>Descriptor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A descriptor for an event component property contained by a scene object.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>component<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The component with the property.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The user defined id of the path. This id must be a unique string for the scene object.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>node<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The parent scene node of the component.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The property name of the component.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>type<span class="tsd-signature-symbol">: </span><a href="../enums/scene.pathtype.html#event" class="tsd-signature-type">Scene.PathType.EVENT</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The type of the path: PathType.EVENT</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="inputpathdescriptor" class="tsd-anchor"></a>
+					<h3>Input<wbr>Path<wbr>Descriptor</h3>
+					<div class="tsd-signature tsd-kind-icon">Input<wbr>Path<wbr>Descriptor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A descriptor for an input component property contained by a scene object.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>component<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The component with the property.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The user defined id of the path. This id must be a unique string for the scene object.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>node<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The parent scene node of the component.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The property name of the component.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>type<span class="tsd-signature-symbol">: </span><a href="../enums/scene.pathtype.html#input" class="tsd-signature-type">Scene.PathType.INPUT</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The type of the path: PathType.INPUT</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="intersect" class="tsd-anchor"></a>
+					<h3>Intersect</h3>
+					<div class="tsd-signature tsd-kind-icon">Intersect<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> collider<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Object3D</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Set this to any Object3D and it will be interactable. See <a href="../interfaces/scene.icomponent.html#onevent">IComponent.onEvent</a></p>
-									</div>
-								</div>
+								<h5>collider<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object3D</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> object<wbr>Root<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Object3D</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Set this to any Object3D and it will be added to the scene.</p>
-									</div>
-								</div>
+								<h5>normal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>point<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span></h5>
 							</li>
 						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
-					<a name="three" class="tsd-anchor"></a>
-					<h3>THREE</h3>
-					<div class="tsd-signature tsd-kind-icon">THREE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">typeof THREE</span></div>
+					<a name="outputpathdescriptor" class="tsd-anchor"></a>
+					<h3>Output<wbr>Path<wbr>Descriptor</h3>
+					<div class="tsd-signature tsd-kind-icon">Output<wbr>Path<wbr>Descriptor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A descriptor for an output component property contained by a scene object.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>component<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The component with the property.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The user defined id of the path. This id must be a unique string for the scene object.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>node<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The parent scene node of the component.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The property name of the component.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>type<span class="tsd-signature-symbol">: </span><a href="../enums/scene.pathtype.html#output" class="tsd-signature-type">Scene.PathType.OUTPUT</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The type of the path: PathType.OUTPUT</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -265,6 +417,12 @@
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="scene.html#createobjects">createObjects</a> to create an object to then create nodes instead.</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -285,6 +443,12 @@
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="scene.html#createobjects">createObjects</a> to create an object to then create nodes instead.</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -332,6 +496,11 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scene.iobject.html" class="tsd-signature-type">Scene.IObject</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A promise that resolves with the array of scene objects.</p>
+							<pre><code>// create a single object<span class="hljs-built_in"> and </span>destructure it from the returned<span class="hljs-built_in"> array
+</span>const [sceneObject] = await sdk.Scene.createObjects(1);<span class="hljs-built_in">
+const </span>node = sceneObject.createNode();
+// ...
+</code></pre>
 						</li>
 					</ul>
 				</section>
@@ -553,6 +722,15 @@ sdk.Scene.registerComponents([
 					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
 						<a href="../enums/scene.interactiontype.html" class="tsd-kind-icon">Interaction<wbr>Type</a>
 					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
+						<a href="../enums/scene.pathtype.html" class="tsd-kind-icon">Path<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="../interfaces/scene.emitpath.html" class="tsd-kind-icon">Emit<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="../interfaces/scene.eventpath.html" class="tsd-kind-icon">Event<wbr>Path</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="../interfaces/scene.icomponent.html" class="tsd-kind-icon">IComponent</a>
 					</li>
@@ -571,17 +749,32 @@ sdk.Scene.registerComponents([
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="../interfaces/scene.iobject.html" class="tsd-kind-icon">IObject</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../interfaces/scene.isceneobjectspy.html" class="tsd-kind-icon">IScene<wbr>Object<wbr>Spy</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../interfaces/scene.inputpath.html" class="tsd-kind-icon">Input<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../interfaces/scene.outputpath.html" class="tsd-kind-icon">Output<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="../interfaces/scene.pathinfo.html" class="tsd-kind-icon">Path<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="scene.html#emitpathdescriptor" class="tsd-kind-icon">Emit<wbr>Path<wbr>Descriptor</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="scene.html#eventpathdescriptor" class="tsd-kind-icon">Event<wbr>Path<wbr>Descriptor</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="scene.html#inputpathdescriptor" class="tsd-kind-icon">Input<wbr>Path<wbr>Descriptor</a>
+					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="scene.html#intersect" class="tsd-kind-icon">Intersect</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="scene.html#pathdesc" class="tsd-kind-icon">Path<wbr>Desc</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="scene.html#predefinedoutputs" class="tsd-kind-icon">Predefined<wbr>Outputs</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="scene.html#three" class="tsd-kind-icon">THREE</a>
+						<a href="scene.html#outputpathdescriptor" class="tsd-kind-icon">Output<wbr>Path<wbr>Descriptor</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="scene.html#configure" class="tsd-kind-icon">configure</a>
