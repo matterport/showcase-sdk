@@ -271,6 +271,13 @@
           
           
           
+          
+          
+          <li><a title="Using OAuth" href="sdkbundle_tutorials_using_oauth.html">Using OAuth</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -502,35 +509,32 @@ $('#toc').on('click', 'a', function() {
 <p>Early access builds allow developers to prepare for the next SDK release by providing upcoming features and bug fixes prior to general availability.</p>
 
 <h2 id="early-access-features">Early Access Features</h2>
-
 <ul>
-  <li>
-    <p><a href="sdkbundle_earlyaccess_21.10.1_connect.html">Simplified Connect</a></p>
-  </li>
-  <li>
-    <p><a href="sdkbundle_earlyaccess_21.10.1_oauth.html">OAuth</a></p>
-  </li>
-  <li>
-    <p><a href="sdkbundle_earlyaccess_21.10.1_idchanges.html">Sweep and floor id changes</a></p>
-  </li>
+  <li><a href="sdkbundle_earlyaccess_21.12.1_pathfinding.html">Pathfinding</a></li>
+  <li><a href="sdkbundle_earlyaccess_21.12.1_cursor.html">Pointer Reticle</a></li>
 </ul>
+
+<h2 id="get-the-bundle-sdk">Get the Bundle SDK</h2>
+
+<p>Build - <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.55.2-22-g88d9c29c22/showcase-bundle.zip">3.1.55.2-22-g88d9c29c22</a></p>
+
+<h2 id="reference-pages">Reference Pages</h2>
+
+<p><a href="docs/sdkbundle/earlyaccess/reference/index.html">View the Docs</a></p>
 
 <h2 id="changelog">Changelog</h2>
 
-<h3 id="11-05-2021">11-05-2021</h3>
+<h3 id="12-01-2021">12-01-2021</h3>
 <ul>
-  <li>Added <code class="highlighter-rouge">OAuth.createTokenRefresher</code> to automatically refresh and update tokens in Showcase</li>
-  <li>Updated <a href="sdkbundle_earlyaccess_21.10.1_oauth.html#download-the-project">OAuth starter project</a> to include a token refreshing example</li>
-</ul>
-
-<h3 id="10-21-2021">10-21-2021</h3>
-<ul>
-  <li>Fixed an issue where <code class="highlighter-rouge">Mattertag.remove</code> would not remove an array of mattertags.</li>
-  <li>Fixed an issue where <code class="highlighter-rouge">Mattertag.registerIcon</code> would not throw exceptions after an error occurred.</li>
-  <li>Fixed an issue where an interrupted inside mode navigation would display the model correctly.</li>
-  <li>Fixed an issue where you could not navigate to a floor under a hidden floor.</li>
-  <li>Fixed an issue where <code class="highlighter-rouge">Pointer.intersection</code> would not return the correct type for a mattertag.</li>
-  <li>Build - <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.51.7-84-g0dcbe0591/showcase-bundle.zip">21.10.1</a></li>
+  <li>Added iterability to <a href="docs/sdkbundle/earlyaccess/reference/interfaces/dictionary.html#_symbol_iterator_"><code class="highlighter-rouge">Dictionary</code></a> returned in <a href="docs/sdkbundle/earlyaccess/reference/interfaces/imapobserver.html"><code class="highlighter-rouge">IMapObserver</code></a></li>
+  <li>Added pathfinding support
+    <ul>
+      <li>Added the <a href="docs/sdkbundle/earlyaccess/reference/modules/graph.html"><code class="highlighter-rouge">Graph</code></a> namespace for creating connectivity graphs and traversing them using A*</li>
+      <li>Added the ability to create <a href="docs/sdkbundle/earlyaccess/reference/modules/sweep.html#creategraph">Sweep graphs</a></li>
+      <li>See <a href="sdkbundle_earlyaccess_21.12.1_pathfinding.html">Pathfinding</a> for more info</li>
+    </ul>
+  </li>
+  <li>Fixed an issue where unsubscribing from an <code class="highlighter-rouge">IObservableMap</code> would break subsequent subscriptions</li>
 </ul>
 
 
@@ -549,7 +553,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2021 Matterport, Inc. All rights reserved. <br />
- Site last generated: Nov 12, 2021 <br />
+ Site last generated: Dec 9, 2021 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

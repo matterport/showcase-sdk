@@ -1,0 +1,545 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Graph | Matterport SDK</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">@mpSdk</a>
+				</li>
+				<li>
+					<a href="graph.html">Graph</a>
+				</li>
+			</ul>
+			<h1>Graph Namespace</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/graph.astarstatus.html" class="tsd-kind-icon">AStar<wbr>Status</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/graph.astarrunner.html" class="tsd-kind-icon">AStar<wbr>Runner</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/graph.idirectedgraph.html" class="tsd-kind-icon">IDirected<wbr>Graph</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/graph.searchoptions.html" class="tsd-kind-icon">Search<wbr>Options</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Types</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter"><a href="graph.html#astarresult" class="tsd-kind-icon">AStar<wbr>Result</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter"><a href="graph.html#edge" class="tsd-kind-icon">Edge</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter"><a href="graph.html#edgedescriptor" class="tsd-kind-icon">Edge<wbr>Descriptor</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter"><a href="graph.html#vertex" class="tsd-kind-icon">Vertex</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter"><a href="graph.html#vertexdescriptor" class="tsd-kind-icon">Vertex<wbr>Descriptor</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="graph.html#vertexiddescriptor" class="tsd-kind-icon">Vertex<wbr>IdDescriptor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-namespace tsd-has-type-parameter"><a href="graph.html#createastarrunner" class="tsd-kind-icon">createAStar<wbr>Runner</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace tsd-has-type-parameter"><a href="graph.html#createdirectedgraph" class="tsd-kind-icon">create<wbr>Directed<wbr>Graph</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Types</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
+					<a name="astarresult" class="tsd-anchor"></a>
+					<h3>AStar<wbr>Result</h3>
+					<div class="tsd-signature tsd-kind-icon">AStar<wbr>Result<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The result of doing an A* search.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>cost<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The total cost of tranversing the path.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>On success, contains the path of vertices.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>status<span class="tsd-signature-symbol">: </span><a href="../enums/graph.astarstatus.html" class="tsd-signature-type">Graph.AStarStatus</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Whether the search was successful, timed out, or if there was no path found.</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
+					<a name="edge" class="tsd-anchor"></a>
+					<h3>Edge</h3>
+					<div class="tsd-signature tsd-kind-icon">Edge<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A weighted, directed connection between two vertices.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> dst<span class="tsd-signature-symbol">: </span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The vertex at the destination of this edge.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> src<span class="tsd-signature-symbol">: </span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The vertex at the source of this edge.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> weight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The weight associated with this edge.</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
+					<a name="edgedescriptor" class="tsd-anchor"></a>
+					<h3>Edge<wbr>Descriptor</h3>
+					<div class="tsd-signature tsd-kind-icon">Edge<wbr>Descriptor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A descriptor for a graph edge. Used when adding edges to a graph.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>dst<span class="tsd-signature-symbol">: </span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The destination vertex.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>src<span class="tsd-signature-symbol">: </span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The source vertex.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> weight<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The weight of the edge.</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
+					<a name="vertex" class="tsd-anchor"></a>
+					<h3>Vertex</h3>
+					<div class="tsd-signature tsd-kind-icon">Vertex<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A node in the graph.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>User data associated with the vertex.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> edges<wbr>In<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><a href="graph.html#edge" class="tsd-signature-type">Graph.Edge</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>An iterable of all edges that have this vertex as its destination endpoint.</p>
+									</div>
+									<pre><code class="language-typescript"><span class="hljs-keyword">const</span> vertex = graph.vertex(<span class="hljs-string">&#x27;a&#x27;</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> edgeIn <span class="hljs-keyword">of</span> vertex.edgesIn) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`vertex &quot;<span class="hljs-subst">${edgeIn.dst.id}</span>&quot; has an edge coming in from a vertex &quot;<span class="hljs-subst">${edgeIn.src.id}</span>&quot;`</span>);
+}
+</code></pre>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> edges<wbr>Out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><a href="graph.html#edge" class="tsd-signature-type">Graph.Edge</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>An iterable of all edges that have this vertex as its source endpoint.</p>
+									</div>
+									<pre><code class="language-typescript"><span class="hljs-keyword">const</span> vertex = graph.vertex(<span class="hljs-string">&#x27;a&#x27;</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> edgeOut <span class="hljs-keyword">of</span> vertex.edgesOut) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`vertex &quot;<span class="hljs-subst">${edgeOut.src.id}</span>&quot; has an edge going to a vertex &quot;<span class="hljs-subst">${edgeOut.dst.id}</span>&quot;`</span>);
+}
+</code></pre>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The vertex&#39;s id.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> neighbors<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>An iterable of all vertices that can be traversed to from this vertex.</p>
+									</div>
+									<pre><code class="language-typescript"><span class="hljs-keyword">const</span> vertex = graph.vertex(<span class="hljs-string">&#x27;a&#x27;</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> neighbor <span class="hljs-keyword">of</span> vertex.neighbors) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`vertex &quot;<span class="hljs-subst">${vertex.id}</span>&quot; shares an edge with &quot;<span class="hljs-subst">${neighbor.id}</span>&quot;);
+}</span>
+</code></pre>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
+					<a name="vertexdescriptor" class="tsd-anchor"></a>
+					<h3>Vertex<wbr>Descriptor</h3>
+					<div class="tsd-signature tsd-kind-icon">Vertex<wbr>Descriptor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A descriptor for a graph vertex. Used when adding vertices to a graph.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Any user data to be associated with this vertex</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The id that can be used to lookup this vertex in the graph</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="vertexiddescriptor" class="tsd-anchor"></a>
+					<h3>Vertex<wbr>IdDescriptor</h3>
+					<div class="tsd-signature tsd-kind-icon">Vertex<wbr>IdDescriptor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A descriptor for a graph vertex when no extra data will be associated with each vertex. Used when adding vertices to a graph.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The id that can be used to lookup this vertex in the graph</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace tsd-has-type-parameter">
+					<a name="createastarrunner" class="tsd-anchor"></a>
+					<h3>createAStar<wbr>Runner</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">createAStar<wbr>Runner&lt;T&gt;<span class="tsd-signature-symbol">(</span>graph<span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, start<span class="tsd-signature-symbol">: </span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/graph.searchoptions.html" class="tsd-signature-type">Graph.SearchOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.astarrunner.html" class="tsd-signature-type">Graph.AStarRunner</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a &quot;runner&quot; for the A* algorithm around a <code>graph</code>, and <code>start</code> and <code>end</code> vertices.</p>
+								</div>
+								<p>The runner encapsulates the details of the graph and search, caches the results of A*,
+								and provides a way to subscribe to potential changes in the path signifying that the results of <a href="../interfaces/graph.astarrunner.html#exec">Graph.AStarRunner.exec</a> may have changed.</p>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> graph = mpSdk.Graph.createDirectedGraph();
+<span class="hljs-comment">// ... setup graph vertices and edges</span>
+<span class="hljs-keyword">const</span> start = graph.vertex(<span class="hljs-string">&#x27;start&#x27;</span>);
+<span class="hljs-keyword">const</span> end = graph.vertex(<span class="hljs-string">&#x27;end&#x27;</span>);
+<span class="hljs-keyword">const</span> aStarRunner = mpSdk.Graph.createAStarRunner(graph, start, end);
+<span class="hljs-keyword">const</span> result = aStarRunner.exec();
+</code></pre>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>graph: <a href="../interfaces/graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The graph to traverse</p>
+									</div>
+								</li>
+								<li>
+									<h5>start: <a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The start vertex.</p>
+									</div>
+								</li>
+								<li>
+									<h5>end: <a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The end vertex.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/graph.searchoptions.html" class="tsd-signature-type">Graph.SearchOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An optional <code>heuristic</code> function.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/graph.astarrunner.html" class="tsd-signature-type">Graph.AStarRunner</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A runner for A* that can execute the search or be subscribed to.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace tsd-has-type-parameter">
+					<a name="createdirectedgraph" class="tsd-anchor"></a>
+					<h3>create<wbr>Directed<wbr>Graph</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Directed<wbr>Graph&lt;T&gt;<span class="tsd-signature-symbol">(</span>onDispose<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create an empty graph data structure.</p>
+								</div>
+								<pre><code>const graph = mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Graph</span>.</span></span>create<span class="hljs-constructor">DirectedGraph()</span>;
+</code></pre>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+									<div class="tsd-comment tsd-typography">
+										<p>The type of any user data associated with each vertex in the graph.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> onDispose: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An optional callback to be called when <a href="../interfaces/graph.idirectedgraph.html#dispose">IDirectedGraph.dispose</a> is called</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../index.html"><em>@mpSdk</em></a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="app.html">App</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="camera.html">Camera</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="conversion.html">Conversion</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="floor.html">Floor</a>
+					</li>
+					<li class="current tsd-kind-namespace">
+						<a href="graph.html">Graph</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="label.html">Label</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="mattertag.html">Mattertag</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="measurements.html">Measurements</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="mode.html">Mode</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="model.html">Model</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="oauth.html">OAuth</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="pointer.html">Pointer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="room.html">Room</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="scene.html">Scene</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="sensor.html">Sensor</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="settings.html">Settings</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="sweep.html">Sweep</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="tour.html">Tour</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
+						<a href="../enums/graph.astarstatus.html" class="tsd-kind-icon">AStar<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../interfaces/graph.astarrunner.html" class="tsd-kind-icon">AStar<wbr>Runner</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../interfaces/graph.idirectedgraph.html" class="tsd-kind-icon">IDirected<wbr>Graph</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../interfaces/graph.searchoptions.html" class="tsd-kind-icon">Search<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="graph.html#astarresult" class="tsd-kind-icon">AStar<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="graph.html#edge" class="tsd-kind-icon">Edge</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="graph.html#edgedescriptor" class="tsd-kind-icon">Edge<wbr>Descriptor</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="graph.html#vertex" class="tsd-kind-icon">Vertex</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="graph.html#vertexdescriptor" class="tsd-kind-icon">Vertex<wbr>Descriptor</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="graph.html#vertexiddescriptor" class="tsd-kind-icon">Vertex<wbr>IdDescriptor</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="graph.html#createastarrunner" class="tsd-kind-icon">createAStar<wbr>Runner</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="graph.html#createdirectedgraph" class="tsd-kind-icon">create<wbr>Directed<wbr>Graph</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

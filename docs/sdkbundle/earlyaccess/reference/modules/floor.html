@@ -1,0 +1,427 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Floor | Matterport SDK</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">@mpSdk</a>
+				</li>
+				<li>
+					<a href="floor.html">Floor</a>
+				</li>
+			</ul>
+			<h1>Floor Namespace</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/floor.event.html" class="tsd-kind-icon">Event</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Types</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="floor.html#floordata" class="tsd-kind-icon">Floor<wbr>Data</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="floor.html#floors" class="tsd-kind-icon">Floors</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="floor.html#observablefloordata" class="tsd-kind-icon">Observable<wbr>Floor<wbr>Data</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-namespace"><a href="floor.html#current" class="tsd-kind-icon">current</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-namespace"><a href="floor.html#data" class="tsd-kind-icon">data</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="floor.html#getdata" class="tsd-kind-icon">get<wbr>Data</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="floor.html#moveto" class="tsd-kind-icon">move<wbr>To</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="floor.html#showall" class="tsd-kind-icon">show<wbr>All</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Types</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="floordata" class="tsd-anchor"></a>
+					<h3>Floor<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">Floor<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>sequence<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="floors" class="tsd-anchor"></a>
+					<h3>Floors</h3>
+					<div class="tsd-signature tsd-kind-icon">Floors<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>current<wbr>Floor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>floor<wbr>Names<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>total<wbr>Floors<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="observablefloordata" class="tsd-anchor"></a>
+					<h3>Observable<wbr>Floor<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">Observable<wbr>Floor<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>sequence<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-namespace">
+					<a name="current" class="tsd-anchor"></a>
+					<h3>current</h3>
+					<div class="tsd-signature tsd-kind-icon">current<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservable.html" class="tsd-signature-type">IObservable</a><span class="tsd-signature-symbol">&lt;</span><a href="floor.html#observablefloordata" class="tsd-signature-type">Floor.ObservableFloorData</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An observable for the player&#39;s currently active floor.</p>
+						</div>
+						<p>The current floor can tell you when &quot;all floors&quot; are visible and encodes when the camera is transitioning between floors.</p>
+						<p>The following table shows all 4 states of the current floor observable
+						(INSIDE: inside mode, DH: dollhouse mode, FP: floorplan mode).</p>
+						<table>
+							<thead>
+								<tr>
+									<th></th>
+									<th>at sweep (INSIDE) or floor (DH, FP)</th>
+									<th>all floors (DH, FP)</th>
+									<th>transitioning</th>
+									<th>in unplaced 360º view</th>
+								</tr>
+							</thead>
+							<tbody><tr>
+									<td>id</td>
+									<td><code>${current.id}</code></td>
+									<td>&#39;&#39;</td>
+									<td>&#39;&#39;</td>
+									<td>undefined</td>
+								</tr>
+								<tr>
+									<td>sequence</td>
+									<td><code>${current.sequence}</code></td>
+									<td>-1</td>
+									<td>undefined</td>
+									<td>undefined</td>
+								</tr>
+								<tr>
+									<td>name</td>
+									<td><code>${current.name}</code></td>
+									<td>&#39;all&#39;</td>
+									<td>&#39;&#39;</td>
+									<td>&#39;&#39;</td>
+								</tr>
+						</tbody></table>
+						<pre><code>mpSdk.Floor.<span class="hljs-keyword">current</span>.subscribe(<span class="hljs-keyword">function</span> (currentFloor) {
+  // Change <span class="hljs-keyword">to</span> the <span class="hljs-keyword">current</span> floor has occurred.
+  <span class="hljs-keyword">if</span> (currentFloor.<span class="hljs-keyword">sequence</span> === <span class="hljs-number">-1</span>) {
+    console.log(<span class="hljs-string">&#x27;Currently viewing all floors&#x27;</span>);
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (currentFloor.<span class="hljs-keyword">sequence</span> === undefined) {
+    <span class="hljs-keyword">if</span> (currentFloor.id === undefined) {
+      console.log(<span class="hljs-string">&#x27;Current viewing an unplaced unaligned sweep&#x27;</span>);
+    } <span class="hljs-keyword">else</span> {
+      console.log(<span class="hljs-string">&#x27;Currently transitioning between floors&#x27;</span>);
+    }
+  } <span class="hljs-keyword">else</span> {
+    console.log(<span class="hljs-string">&#x27;Currently on floor&#x27;</span>, currentFloor.id);
+    console.log(<span class="hljs-string">&#x27;Current floor\&#x27;</span>s <span class="hljs-keyword">sequence</span> <span class="hljs-keyword">index</span><span class="hljs-string">&#x27;, currentFloor.sequence);
+    console.log(&#x27;</span><span class="hljs-keyword">Current</span> floor\<span class="hljs-string">&#x27;s name&#x27;</span>, currentFloor.name)
+  }
+});
+</code></pre>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-namespace">
+					<a name="data" class="tsd-anchor"></a>
+					<h3>data</h3>
+					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservablemap.html" class="tsd-signature-type">IObservableMap</a><span class="tsd-signature-symbol">&lt;</span><a href="floor.html#floordata" class="tsd-signature-type">Floor.FloorData</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An observable collection of Floor data that can be subscribed to.</p>
+						</div>
+						<p>See <a href="../interfaces/iobservablemap.html">IObservableMap</a> to learn how to receive data from the collection.</p>
+						<pre><code><span class="hljs-title">mpSdk</span>.<span class="hljs-type">Floor</span>.<span class="hljs-class"><span class="hljs-keyword">data</span>.subscribe({
+  <span class="hljs-title">onCollectionUpdated</span>: <span class="hljs-title">function</span> (<span class="hljs-title">collection</span>) {
+    <span class="hljs-title">console</span>.<span class="hljs-title">log</span>(&#x27;<span class="hljs-type">Collection</span> <span class="hljs-title">received</span>. <span class="hljs-type">There</span> <span class="hljs-title">are</span> &#x27;, <span class="hljs-type">Object</span>.<span class="hljs-title">keys</span>(<span class="hljs-title">collection</span>).<span class="hljs-title">length</span>, &#x27;<span class="hljs-title">floors</span> <span class="hljs-title">in</span> <span class="hljs-title">the</span> <span class="hljs-title">collection&#x27;</span>);
+  }</span>
+});
+</code></pre>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="getdata" class="tsd-anchor"></a>
+					<h3>get<wbr>Data</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="floor.html#floors" class="tsd-signature-type">Floor.Floors</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use the observable <a href="floor.html#data">data</a> collection instead</p>
+								</dd>
+							</dl>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This function returns the state of all floors.</p>
+								</div>
+								<pre><code>mpSdk.Floor.getData()
+  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(floors)</span> {</span>
+    <span class="hljs-comment">// Floor data retreival complete.</span>
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Current floor: &#x27;</span> + floors.currentFloor);
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Total floos: &#x27;</span> + floors.totalFloors);
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Name of first floor: &#x27;</span> + floors.floorNames[<span class="hljs-number">0</span>]);
+  })
+  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
+    <span class="hljs-comment">// Floors data retrieval error.</span>
+  });
+</code></pre>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="floor.html#floors" class="tsd-signature-type">Floor.Floors</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="moveto" class="tsd-anchor"></a>
+					<h3>move<wbr>To</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">move<wbr>To<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>When in inside mode, this function changes the active floor, and moves the camera to the nearest position on that floor.
+									When in floorplan/dollhouse mode, this function changes the active floor, but does not modify the camera</p>
+								</div>
+								<pre><code>mpSdk.<span class="hljs-built_in">Floor</span>.moveTo(<span class="hljs-number">2</span>)
+  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(</span>floorIndex) {
+    // Move <span class="hljs-keyword">to</span> <span class="hljs-built_in">floor</span> complete.
+    console.<span class="hljs-built_in">log</span>(<span class="hljs-comment">&#x27;Current floor: &#x27; + floorIndex);</span>
+  })
+  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(</span><span class="hljs-built_in">error</span>) {
+    // <span class="hljs-built_in">Error</span> moving <span class="hljs-keyword">to</span> <span class="hljs-built_in">floor</span>.
+  });
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>The destination floor index.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="showall" class="tsd-anchor"></a>
+					<h3>show<wbr>All</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">show<wbr>All<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This function displays all floors.</p>
+								</div>
+								<pre><code>mpSdk.<span class="hljs-built_in">Floor</span>.showAll()
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-comment">// Show floors complete.</span>
+  })
+  .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-comment">// Error displaying all floors.</span>
+  });
+</code></pre>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../index.html"><em>@mpSdk</em></a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="app.html">App</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="camera.html">Camera</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="conversion.html">Conversion</a>
+					</li>
+					<li class="current tsd-kind-namespace">
+						<a href="floor.html">Floor</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="graph.html">Graph</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="label.html">Label</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="mattertag.html">Mattertag</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="measurements.html">Measurements</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="mode.html">Mode</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="model.html">Model</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="oauth.html">OAuth</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="pointer.html">Pointer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="room.html">Room</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="scene.html">Scene</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="sensor.html">Sensor</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="settings.html">Settings</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="sweep.html">Sweep</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="tour.html">Tour</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
+						<a href="../enums/floor.event.html" class="tsd-kind-icon">Event</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="floor.html#floordata" class="tsd-kind-icon">Floor<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="floor.html#floors" class="tsd-kind-icon">Floors</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="floor.html#observablefloordata" class="tsd-kind-icon">Observable<wbr>Floor<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-property tsd-parent-kind-namespace">
+						<a href="floor.html#current" class="tsd-kind-icon">current</a>
+					</li>
+					<li class=" tsd-kind-property tsd-parent-kind-namespace">
+						<a href="floor.html#data" class="tsd-kind-icon">data</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="floor.html#getdata" class="tsd-kind-icon">get<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="floor.html#moveto" class="tsd-kind-icon">move<wbr>To</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="floor.html#showall" class="tsd-kind-icon">show<wbr>All</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
