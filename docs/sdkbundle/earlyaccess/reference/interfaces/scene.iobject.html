@@ -54,10 +54,12 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#addnode" class="tsd-kind-icon">add<wbr>Node</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#addnodes" class="tsd-kind-icon">add<wbr>Nodes</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#addpath" class="tsd-kind-icon">add<wbr>Path</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#bind" class="tsd-kind-icon">bind</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#bindpath" class="tsd-kind-icon">bind<wbr>Path</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#getvalueatpath" class="tsd-kind-icon">get<wbr>Value<wbr>AtPath</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#nodeiterator" class="tsd-kind-icon">node<wbr>Iterator</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#pathiterator" class="tsd-kind-icon">path<wbr>Iterator</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#setvalueatpath" class="tsd-kind-icon">set<wbr>Value<wbr>AtPath</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#spyonevent" class="tsd-kind-icon">spy<wbr>OnEvent</a></li>
@@ -96,6 +98,35 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="scene.inode.html" class="tsd-signature-type">Scene.INode</a></h4>
 							<p>The new scene node.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="addnodes" class="tsd-anchor"></a>
+					<h3>add<wbr>Nodes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Nodes<span class="tsd-signature-symbol">(</span>nodeCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create an array of scene nodes.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>nodeCount: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the number of nodes to create. This value must be greater than zero.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span></h4>
+							<p>An array of nodes.</p>
 						</li>
 					</ul>
 				</section>
@@ -351,6 +382,25 @@ node.start();
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">unknown</span></h4>
 							<p>the value of the output property.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="nodeiterator" class="tsd-anchor"></a>
+					<h3>node<wbr>Iterator</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">node<wbr>Iterator<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><a href="scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns in iterator iterating over all the nodes contained by this object.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><a href="scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -620,6 +670,9 @@ node.start();
 								<a href="scene.iobject.html#addnode" class="tsd-kind-icon">add<wbr>Node</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="scene.iobject.html#addnodes" class="tsd-kind-icon">add<wbr>Nodes</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="scene.iobject.html#addpath" class="tsd-kind-icon">add<wbr>Path</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
@@ -630,6 +683,9 @@ node.start();
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="scene.iobject.html#getvalueatpath" class="tsd-kind-icon">get<wbr>Value<wbr>AtPath</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="scene.iobject.html#nodeiterator" class="tsd-kind-icon">node<wbr>Iterator</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="scene.iobject.html#pathiterator" class="tsd-kind-icon">path<wbr>Iterator</a>
@@ -672,10 +728,13 @@ node.start();
 						<a href="../modules/scene.html#inputpathdescriptor" class="tsd-kind-icon">Input<wbr>Path<wbr>Descriptor</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/scene.html#intersect" class="tsd-kind-icon">Intersect</a>
+						<a href="../modules/scene.html#interactionevent" class="tsd-kind-icon">Interaction<wbr>Event</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#outputpathdescriptor" class="tsd-kind-icon">Output<wbr>Path<wbr>Descriptor</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/scene.html#predefinedoutputs" class="tsd-kind-icon">Predefined<wbr>Outputs</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#configure" class="tsd-kind-icon">configure</a>

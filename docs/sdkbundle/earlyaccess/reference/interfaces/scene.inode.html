@@ -81,6 +81,7 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.inode.html#addcomponent" class="tsd-kind-icon">add<wbr>Component</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.inode.html#componentiterator" class="tsd-kind-icon">component<wbr>Iterator</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.inode.html#start" class="tsd-kind-icon">start</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.inode.html#stop" class="tsd-kind-icon">stop</a></li>
 							</ul>
@@ -105,13 +106,13 @@
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="name" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> name</h3>
+					<h3>name</h3>
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The read-only name. This value is set during scene import.</p>
+							<p>The node name.</p>
 						</div>
 					</div>
 				</section>
@@ -184,7 +185,8 @@
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initialInputs: <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>initial key-value pairs that will be applied to the component before onInit is called. If the keys do not match the components inputs, they are ignored.</p>
+										<p>initial key-value pairs that will be applied to the component before onInit is called.
+										If the keys do not match the components inputs, they are ignored.</p>
 									</div>
 								</li>
 								<li>
@@ -196,6 +198,25 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a></h4>
 							<p>The newly created component.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="componentiterator" class="tsd-anchor"></a>
+					<h3>component<wbr>Iterator</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">component<wbr>Iterator<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns in iterator iterating over all the components contained by this node.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -356,6 +377,9 @@
 								<a href="scene.inode.html#addcomponent" class="tsd-kind-icon">add<wbr>Component</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="scene.inode.html#componentiterator" class="tsd-kind-icon">component<wbr>Iterator</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="scene.inode.html#start" class="tsd-kind-icon">start</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
@@ -390,10 +414,13 @@
 						<a href="../modules/scene.html#inputpathdescriptor" class="tsd-kind-icon">Input<wbr>Path<wbr>Descriptor</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/scene.html#intersect" class="tsd-kind-icon">Intersect</a>
+						<a href="../modules/scene.html#interactionevent" class="tsd-kind-icon">Interaction<wbr>Event</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#outputpathdescriptor" class="tsd-kind-icon">Output<wbr>Path<wbr>Descriptor</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/scene.html#predefinedoutputs" class="tsd-kind-icon">Predefined<wbr>Outputs</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#configure" class="tsd-kind-icon">configure</a>

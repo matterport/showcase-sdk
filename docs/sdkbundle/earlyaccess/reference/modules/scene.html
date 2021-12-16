@@ -62,8 +62,9 @@
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#emitpathdescriptor" class="tsd-kind-icon">Emit<wbr>Path<wbr>Descriptor</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#eventpathdescriptor" class="tsd-kind-icon">Event<wbr>Path<wbr>Descriptor</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#inputpathdescriptor" class="tsd-kind-icon">Input<wbr>Path<wbr>Descriptor</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#intersect" class="tsd-kind-icon">Intersect</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#interactionevent" class="tsd-kind-icon">Interaction<wbr>Event</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#outputpathdescriptor" class="tsd-kind-icon">Output<wbr>Path<wbr>Descriptor</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#predefinedoutputs" class="tsd-kind-icon">Predefined<wbr>Outputs</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -256,11 +257,16 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
-					<a name="intersect" class="tsd-anchor"></a>
-					<h3>Intersect</h3>
-					<div class="tsd-signature tsd-kind-icon">Intersect<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<a name="interactionevent" class="tsd-anchor"></a>
+					<h3>Interaction<wbr>Event</h3>
+					<div class="tsd-signature tsd-kind-icon">Interaction<wbr>Event<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The payload for a 3D interaction event.</p>
+						</div>
+					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -268,10 +274,16 @@
 								<h5>collider<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object3D</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>normal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> hover<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>point<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span></h5>
+								<h5>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>normal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>point<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -327,6 +339,34 @@
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
 										<p>The type of the path: PathType.OUTPUT</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="predefinedoutputs" class="tsd-anchor"></a>
+					<h3>Predefined<wbr>Outputs</h3>
+					<div class="tsd-signature tsd-kind-icon">Predefined<wbr>Outputs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>collider<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object3D</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Set this to any Object3D and it will be interactable. See <a href="../interfaces/scene.icomponent.html#onevent">IComponent.onEvent</a></p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>object<wbr>Root<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object3D</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Set this to any Object3D and it will be added to the scene.</p>
 									</div>
 								</div>
 							</li>
@@ -394,7 +434,8 @@
 														<li>
 															<h5>effectComposer: <span class="tsd-signature-type">EffectComposer</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 															<div class="tsd-comment tsd-typography">
-																<p>Matterport&#39;s EffectComposer object. This value can be null. To enable the effect composer, you must set useEffectComposer: 1 in your application config.</p>
+																<p>Matterport&#39;s EffectComposer object. This value can be null.
+																To enable the effect composer, you must set useEffectComposer: 1 in your application config.</p>
 															</div>
 														</li>
 													</ul>
@@ -777,10 +818,13 @@ sdk.Scene.registerComponents([
 						<a href="scene.html#inputpathdescriptor" class="tsd-kind-icon">Input<wbr>Path<wbr>Descriptor</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="scene.html#intersect" class="tsd-kind-icon">Intersect</a>
+						<a href="scene.html#interactionevent" class="tsd-kind-icon">Interaction<wbr>Event</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="scene.html#outputpathdescriptor" class="tsd-kind-icon">Output<wbr>Path<wbr>Descriptor</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="scene.html#predefinedoutputs" class="tsd-kind-icon">Predefined<wbr>Outputs</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="scene.html#configure" class="tsd-kind-icon">configure</a>

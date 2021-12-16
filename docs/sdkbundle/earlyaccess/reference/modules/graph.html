@@ -41,7 +41,8 @@
 						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/graph.astarrunner.html" class="tsd-kind-icon">AStar<wbr>Runner</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/graph.iastarrunner.html" class="tsd-kind-icon">IAStar<wbr>Runner</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/graph.icollectionadaptor.html" class="tsd-kind-icon">ICollection<wbr>Adaptor</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/graph.idirectedgraph.html" class="tsd-kind-icon">IDirected<wbr>Graph</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/graph.searchoptions.html" class="tsd-kind-icon">Search<wbr>Options</a></li>
 							</ul>
@@ -329,7 +330,7 @@
 					<a name="createastarrunner" class="tsd-anchor"></a>
 					<h3>createAStar<wbr>Runner</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">createAStar<wbr>Runner&lt;T&gt;<span class="tsd-signature-symbol">(</span>graph<span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, start<span class="tsd-signature-symbol">: </span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/graph.searchoptions.html" class="tsd-signature-type">Graph.SearchOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.astarrunner.html" class="tsd-signature-type">Graph.AStarRunner</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">createAStar<wbr>Runner&lt;T&gt;<span class="tsd-signature-symbol">(</span>graph<span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, start<span class="tsd-signature-symbol">: </span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/graph.searchoptions.html" class="tsd-signature-type">Graph.SearchOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.iastarrunner.html" class="tsd-signature-type">Graph.IAStarRunner</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -340,7 +341,7 @@
 									<p>Create a &quot;runner&quot; for the A* algorithm around a <code>graph</code>, and <code>start</code> and <code>end</code> vertices.</p>
 								</div>
 								<p>The runner encapsulates the details of the graph and search, caches the results of A*,
-								and provides a way to subscribe to potential changes in the path signifying that the results of <a href="../interfaces/graph.astarrunner.html#exec">Graph.AStarRunner.exec</a> may have changed.</p>
+								and provides a way to subscribe to potential changes in the path signifying that the results of [[Graph.AStarRunner.exec]] may have changed.</p>
 								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> graph = mpSdk.Graph.createDirectedGraph();
 <span class="hljs-comment">// ... setup graph vertices and edges</span>
 <span class="hljs-keyword">const</span> start = graph.vertex(<span class="hljs-string">&#x27;start&#x27;</span>);
@@ -382,7 +383,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/graph.astarrunner.html" class="tsd-signature-type">Graph.AStarRunner</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/graph.iastarrunner.html" class="tsd-signature-type">Graph.IAStarRunner</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A runner for A* that can execute the search or be subscribed to.</p>
 						</li>
 					</ul>
@@ -499,7 +500,10 @@
 						<a href="../enums/graph.astarstatus.html" class="tsd-kind-icon">AStar<wbr>Status</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
-						<a href="../interfaces/graph.astarrunner.html" class="tsd-kind-icon">AStar<wbr>Runner</a>
+						<a href="../interfaces/graph.iastarrunner.html" class="tsd-kind-icon">IAStar<wbr>Runner</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../interfaces/graph.icollectionadaptor.html" class="tsd-kind-icon">ICollection<wbr>Adaptor</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="../interfaces/graph.idirectedgraph.html" class="tsd-kind-icon">IDirected<wbr>Graph</a>

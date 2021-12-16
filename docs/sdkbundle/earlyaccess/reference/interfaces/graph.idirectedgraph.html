@@ -87,6 +87,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="graph.idirectedgraph.html#removevertex" class="tsd-kind-icon">remove<wbr>Vertex</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="graph.idirectedgraph.html#setedge" class="tsd-kind-icon">set<wbr>Edge</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="graph.idirectedgraph.html#vertex" class="tsd-kind-icon">vertex</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="graph.idirectedgraph.html#watch" class="tsd-kind-icon">watch</a></li>
 							</ul>
 						</section>
 					</div>
@@ -573,6 +574,55 @@ graph.setEdge(
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="watch" class="tsd-anchor"></a>
+					<h3>watch</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">watch<span class="tsd-signature-symbol">(</span>collectionAdaptor<span class="tsd-signature-symbol">: </span><a href="graph.icollectionadaptor.html" class="tsd-signature-type">Graph.ICollectionAdaptor</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="isubscription.html" class="tsd-signature-type">ISubscription</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Watch a collection and update the graph as the collection changes.</p>
+								</div>
+								<p><strong>Note:</strong> If you need a graph of enabled sweeps, use <a href="../modules/sweep.html#creategraph">Sweep.createGraph</a> instead of the code snippet below</p>
+								<pre><code><span class="hljs-comment">// create a graph of enabled sweeps</span>
+<span class="hljs-keyword">const</span> graph = mpSdk.<span class="hljs-built_in">createGraph</span>();
+<span class="hljs-keyword">const</span> sub = graph.<span class="hljs-built_in">watch</span>({
+  collection: mpSdk.Sweep.collection,
+  <span class="hljs-built_in">neighborsOf</span>(sweep) {
+    <span class="hljs-keyword">return</span> sweep.neighbors.<span class="hljs-built_in">values</span>();
+  },
+  <span class="hljs-built_in">weightBetween</span>(sweepA, sweepB) {
+    <span class="hljs-comment">// set edge weights to the Euclidean distance between sweeps</span>
+    <span class="hljs-keyword">const</span> dx = sweepB.position.x - sweepA.position.x;
+    <span class="hljs-keyword">const</span> dy = sweepB.position.y - sweepA.position.y;
+    <span class="hljs-keyword">const</span> dz = sweepB.position.z - sweepA.position.z;
+    <span class="hljs-keyword">return</span> Math.<span class="hljs-built_in">sqrt</span>(dx ** <span class="hljs-number">2</span> + dy ** <span class="hljs-number">2</span> + dz ** <span class="hljs-number">2</span>);
+  },
+  <span class="hljs-built_in">shouldAdd</span>(sweep) {
+    <span class="hljs-keyword">return</span> sweep.enabled;
+  },
+});
+
+<span class="hljs-comment">// some time later when the graph no longer needs updating</span>
+sub.<span class="hljs-built_in">cancel</span>();
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>collectionAdaptor: <a href="graph.icollectionadaptor.html" class="tsd-signature-type">Graph.ICollectionAdaptor</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="isubscription.html" class="tsd-signature-type">ISubscription</a></h4>
+							<p>ISubscription</p>
+						</li>
+					</ul>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -646,7 +696,10 @@ graph.setEdge(
 						<a href="../enums/graph.astarstatus.html" class="tsd-kind-icon">AStar<wbr>Status</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
-						<a href="graph.astarrunner.html" class="tsd-kind-icon">AStar<wbr>Runner</a>
+						<a href="graph.iastarrunner.html" class="tsd-kind-icon">IAStar<wbr>Runner</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="graph.icollectionadaptor.html" class="tsd-kind-icon">ICollection<wbr>Adaptor</a>
 					</li>
 				</ul>
 				<ul class="current">
@@ -700,6 +753,9 @@ graph.setEdge(
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="graph.idirectedgraph.html#vertex" class="tsd-kind-icon">vertex</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="graph.idirectedgraph.html#watch" class="tsd-kind-icon">watch</a>
 							</li>
 						</ul>
 					</li>
