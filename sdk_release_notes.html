@@ -432,7 +432,18 @@
 
     
 
-   <h2 id="3111">3.11.1</h2>
+   <h2 id="2211">22.1.1</h2>
+<h5 id="jan-24-2022">Jan 24, 2022</h5>
+<p><a href="earlyaccess_home.html">Early Access</a> features that were previously only available in our Bundle SDK are now available in the Embed SDK as well.</p>
+<ul>
+  <li>Added: <a href="docs/earlyaccess/reference/interfaces/dictionary.html#_symbol_iterator_"><code class="highlighter-rouge">Dictionary objects</code></a> returned in <a href="docs/earlyaccess/reference/interfaces/imapobserver.html"><code class="highlighter-rouge">IMapObserver</code></a> are now iterable using <code class="highlighter-rouge">for...of</code> loops.</li>
+  <li>Fixed: <a href="docs/sdk/reference/current/modules/sweep.html#disable">Sweep.disable</a> should now work regardless of the <code class="highlighter-rouge">useLegacyIds</code> param.</li>
+  <li>Fixed: <a href="docs/sdk/reference/current/modules/room.html#roomdata">Room.floorInfo</a> should now be populated instead of always being an invalid floor.</li>
+  <li>Early Access: <a href="earlyaccess_21.12.1_pathfinding.html">Graph and Pathfinding</a>; see the <a href="docs/earlyaccess/reference/modules/graph.html">Reference pages</a>.</li>
+  <li>Early Access: <a href="earlyaccess_21.12.1_cursor.html">Pointer Reticle Customization</a>; see the <a href="docs/earlyaccess/reference/modules/pointer.html">Reference pages</a>.</li>
+</ul>
+
+<h2 id="3111">3.11.1</h2>
 <h5 id="sep-23-2021">Sep 23, 2021</h5>
 <ul>
   <li>Updated: <a href="docs/sdk/reference/current/modules/mattertag.html#registericon">Mattertag.registerIcon</a> will now return the result of the fetch. Existing uses (that did not await the result) should not be affected.</li>
@@ -670,8 +681,8 @@ We are adding support for synchronous functions. These functions compute and ret
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2021 Matterport, Inc. All rights reserved. <br />
- Site last generated: Dec 16, 2021 <br />
+               &copy;2022 Matterport, Inc. All rights reserved. <br />
+ Site last generated: Jan 26, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

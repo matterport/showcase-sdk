@@ -592,7 +592,7 @@ graph.setEdge(
 								<pre><code><span class="hljs-comment">// create a graph of enabled sweeps</span>
 <span class="hljs-keyword">const</span> graph = mpSdk.<span class="hljs-built_in">createGraph</span>();
 <span class="hljs-keyword">const</span> sub = graph.<span class="hljs-built_in">watch</span>({
-  collection: mpSdk.Sweep.collection,
+  collection: mpSdk.Sweep.data,
   <span class="hljs-built_in">neighborsOf</span>(sweep) {
     <span class="hljs-keyword">return</span> sweep.neighbors.<span class="hljs-built_in">values</span>();
   },
