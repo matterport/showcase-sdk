@@ -529,15 +529,16 @@
 <p>This component wraps the three.js <a href="https://threejs.org/docs/#examples/en/controls/TransformControls">transform controls component</a><br />
 It can be used to change the position, orientation, or scale of a scene node.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create a scene node with a model component.</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create a scene object and node with a model component.</span>
 <span class="c1">// This node's transform will be changed by the transform control.</span>
-<span class="kd">const</span> <span class="nx">modelNode</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createNode</span><span class="p">();</span>
+<span class="kd">const</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">modelNode</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
 <span class="nx">modelNode</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'mp.gltfLoader'</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">url</span><span class="p">:</span> <span class="s2">"http://test.com/bunny.gltf"</span><span class="p">,</span>
 <span class="p">});</span>
 
 <span class="c1">// Create a scene node with a transform control component.</span>
-<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createNode</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
 <span class="kd">const</span> <span class="nx">myControl</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'mp.transformControls'</span><span class="p">);</span>
 <span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 
@@ -571,7 +572,7 @@ It can be used to change the position, orientation, or scale of a scene node.</p
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jan 26, 2022 <br />
+ Site last generated: Feb 16, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

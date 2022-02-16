@@ -106,13 +106,19 @@
   
   
   <url>
+    <loc>https://matterport.github.io/earlyaccess_22.2.1_graph_migration.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/sdkbundle_earlyaccess_21.10.1_idchanges.html</loc>
   </url>
   
   
   
   <url>
-    <loc>https://matterport.github.io/docs/reference/index.html</loc>
+    <loc>https://matterport.github.io/docs/index.html</loc>
   </url>
   
   
@@ -124,13 +130,13 @@
   
   
   <url>
-    <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
+    <loc>https://matterport.github.io/docs/reference/index.html</loc>
   </url>
   
   
   
   <url>
-    <loc>https://matterport.github.io/docs/index.html</loc>
+    <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
   </url>
   
   
@@ -917,6 +923,12 @@
   
   <url>
     <loc>https://matterport.github.io/assets/css/style.css</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/earlyaccess/22.2.1/link.html</loc>
   </url>
   
   

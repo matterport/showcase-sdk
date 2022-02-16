@@ -513,7 +513,8 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Assumes MyComponent has a session input and handled</span>
 <span class="c1">// onInputsChanged()</span>
 
-<span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
+<span class="kd">var</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">xr</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'mp.xr'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">my</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'myComponent'</span><span class="p">);</span>
 <span class="nx">my</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s1">'session'</span><span class="p">,</span> <span class="nx">xr</span><span class="p">,</span> <span class="s1">'session'</span><span class="p">);</span>
@@ -521,7 +522,8 @@
 </code></pre></div></div>
 
 <p>Observing the mp.xr session from outside the component system.</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">xr</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'mp.xr'</span><span class="p">);</span>
 <span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 
@@ -549,7 +551,7 @@
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jan 26, 2022 <br />
+ Site last generated: Feb 16, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

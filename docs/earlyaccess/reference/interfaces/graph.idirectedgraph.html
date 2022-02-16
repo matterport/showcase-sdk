@@ -162,7 +162,7 @@
 					<a name="addvertex" class="tsd-anchor"></a>
 					<h3>add<wbr>Vertex</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Vertex<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>vertexData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T extends undefined ? VertexIdDescriptor[] : Array&lt;VertexDescriptor&lt;T&gt;&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Vertex<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>vertexData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T extends undefined | void ? VertexIdDescriptor[] : Array&lt;VertexDescriptor&lt;T&gt;&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -190,7 +190,7 @@ graph.addVertex(
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>vertexData: <span class="tsd-signature-type">T extends undefined ? VertexIdDescriptor[] : Array&lt;VertexDescriptor&lt;T&gt;&gt;</span></h5>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>vertexData: <span class="tsd-signature-type">T extends undefined | void ? VertexIdDescriptor[] : Array&lt;VertexDescriptor&lt;T&gt;&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>A variable number of <a href="../modules/graph.html#vertexdescriptor">VertexDescriptor</a>s to use to create nodes in the graph.</p>
 									</div>
@@ -590,26 +590,28 @@ graph.setEdge(
 								</div>
 								<p><strong>Note:</strong> If you need a graph of enabled sweeps, use <a href="../modules/sweep.html#creategraph">Sweep.createGraph</a> instead of the code snippet below</p>
 								<pre><code><span class="hljs-comment">// create a graph of enabled sweeps</span>
-<span class="hljs-keyword">const</span> graph = mpSdk.<span class="hljs-built_in">createGraph</span>();
-<span class="hljs-keyword">const</span> sub = graph.<span class="hljs-built_in">watch</span>({
-  collection: mpSdk.Sweep.data,
-  <span class="hljs-built_in">neighborsOf</span>(sweep) {
-    <span class="hljs-keyword">return</span> sweep.neighbors.<span class="hljs-built_in">values</span>();
+<span class="hljs-keyword">const</span> graph = mpSdk.createGraph();
+<span class="hljs-keyword">const</span> sub = graph.watch({
+  collection: mpSdk.Sweep.collection,
+  isNeighborOf(sweepSrc, sweepDst) {
+    <span class="hljs-keyword">return</span> sweepSrc.<span class="hljs-keyword">data</span>.neighbors.includes(sweepDst.id);
   },
-  <span class="hljs-built_in">weightBetween</span>(sweepA, sweepB) {
-    <span class="hljs-comment">// set edge weights to the Euclidean distance between sweeps</span>
-    <span class="hljs-keyword">const</span> dx = sweepB.position.x - sweepA.position.x;
-    <span class="hljs-keyword">const</span> dy = sweepB.position.y - sweepA.position.y;
-    <span class="hljs-keyword">const</span> dz = sweepB.position.z - sweepA.position.z;
-    <span class="hljs-keyword">return</span> Math.<span class="hljs-built_in">sqrt</span>(dx ** <span class="hljs-number">2</span> + dy ** <span class="hljs-number">2</span> + dz ** <span class="hljs-number">2</span>);
+  neighborsOf(sweepVertex) {
+    <span class="hljs-keyword">return</span> sweepVertex.<span class="hljs-keyword">data</span>.neighbors.values();
   },
-  <span class="hljs-built_in">shouldAdd</span>(sweep) {
+  weightBetween(sweepSrc, sweepDst) {
+    <span class="hljs-keyword">const</span> dx = sweepDst.<span class="hljs-keyword">data</span>.position.x - sweepSrc.<span class="hljs-keyword">data</span>.position.x;
+    <span class="hljs-keyword">const</span> dy = sweepDst.<span class="hljs-keyword">data</span>.position.y - sweepSrc.<span class="hljs-keyword">data</span>.position.y;
+    <span class="hljs-keyword">const</span> dz = sweepDst.<span class="hljs-keyword">data</span>.position.z - sweepSrc.<span class="hljs-keyword">data</span>.position.z;
+    <span class="hljs-keyword">return</span> Math.sqrt(dx ** <span class="hljs-number">2</span> + dy ** <span class="hljs-number">2</span> + dz ** <span class="hljs-number">2</span>);
+  },
+  shouldAdd(sweep) {
     <span class="hljs-keyword">return</span> sweep.enabled;
   },
 });
 
 <span class="hljs-comment">// some time later when the graph no longer needs updating</span>
-sub.<span class="hljs-built_in">cancel</span>();
+sub.cancel();
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -648,6 +650,9 @@ sub.<span class="hljs-built_in">cancel</span>();
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="../modules/label.html">Label</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/link.html">Link</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="../modules/mattertag.html">Mattertag</a>

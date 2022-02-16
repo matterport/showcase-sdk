@@ -311,12 +311,18 @@ $('#toc').on('click', 'a', function() {
 <h2 id="early-access-features">Early Access Features</h2>
 <ul>
   <li><a href="earlyaccess_21.12.1_pathfinding.html">Pathfinding</a></li>
-  <li><a href="earlyaccess_21.12.1_cursor.html">Pointer Reticle</a></li>
+  <li><a href="earlyaccess_21.12.1_cursor.html">Pointer Reticle</a>
+<!-- TODO: - [Links](earlyaccess_22.2.1_links.html) --></li>
+</ul>
+
+<h3 id="migration-guides">Migration Guides</h3>
+<ul>
+  <li><a href="earlyaccess_22.2.1_graph_migration.html">Graph &amp; Pathfinding</a></li>
 </ul>
 
 <h2 id="get-the-bundle-sdk">Get the Bundle SDK</h2>
 
-<p>Build - <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.55.2-34-ga9934ccd93/showcase-bundle.zip">3.1.55.2-34-ga9934ccd93</a></p>
+<p>Build - <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.60.12-32-g4572017c98/showcase-bundle.zip">3.1.60.12-32-g4572017c98</a></p>
 
 <h2 id="reference-pages">Reference Pages</h2>
 
@@ -324,21 +330,33 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="changelog">Changelog</h2>
 
+<h3 id="2-16-2022">2-16-2022</h3>
+<ul>
+  <li>Changes to <a href="docs/earlyaccess/reference/interfaces/graph.idirectedgraph.html#watch">Graph.watch</a>. If necessary, see <a href="earlyaccess_22.2.1_graph_migration.html">the migration guide</a></li>
+  <li>Added the <a href="docs/earlyaccess/reference/modules/link.html">Link</a> namespace
+    <ul>
+      <li>Added the ability to create share links through <a href="docs/earlyaccess/reference/modules/link.html#createlink">Link.createLink</a> and <a href="docs/earlyaccess/reference/modules/link.html#createdeeplink">Link.createDeepLink</a></li>
+      <li>Added the ability to change the link in the share dialog through <a href="docs/earlyaccess/reference/modules/link.html#setsharelinkpolicy">Link.setShareLinkPolicy</a></li>
+      <li>Added the ability to change the click handler for different link types through <a href="docs/earlyaccess/reference/enums/link.openpolicy.html">policies</a> for example <a href="docs/earlyaccess/reference/modules/link.html#setmodellinkpolicy">Link.setModelLinkPolicy</a></li>
+    </ul>
+  </li>
+</ul>
+
 <h3 id="12-16-2021">12-16-2021</h3>
 <ul>
-  <li>Added a <a href="docs/earlyaccess/reference/interfaces/graph.idirectedgraph.html#watch">watch</a> function to automatically update a graph from an sdk collection.</li>
+  <li>Added a <a href="docs/earlyaccess/reference/interfaces/graph.idirectedgraph.html#watch">Graph.watch</a> function to automatically update a graph from an sdk collection.</li>
   <li>Fixed a situation where all rooms’ <code class="highlighter-rouge">floorInfo</code> could have invalid values.</li>
-  <li>renamed interface <code class="highlighter-rouge">AStarRunner</code> to <code class="highlighter-rouge">IAStarRunner</code></li>
+  <li>Renamed interface <code class="highlighter-rouge">AStarRunner</code> to <code class="highlighter-rouge">IAStarRunner</code></li>
   <li>Fixed some missing and inconsistent types
     <ul>
-      <li>added type <a href="docs/earlyaccess/reference/modules/scene.html#predefinedoutputs">PredefinedOutputs</a> for component output intersection types</li>
-      <li>added the <a href="docs/earlyaccess/reference/modules/scene.html#interactionevent">InteractionEvent</a> type for the mesh interaction callback payload.</li>
+      <li>Added type <a href="docs/earlyaccess/reference/modules/scene.html#predefinedoutputs">PredefinedOutputs</a> for component output intersection types</li>
+      <li>Added the <a href="docs/earlyaccess/reference/modules/scene.html#interactionevent">InteractionEvent</a> type for the mesh interaction callback payload.</li>
       <li><a href="docs/earlyaccess/reference/interfaces/scene.icomponent.html#bind">INode.bind</a> now has the correct type. This function is deprecated.</li>
     </ul>
   </li>
-  <li>added <a href="docs/earlyaccess/reference/interfaces/scene.inode.html#componentiterator">componentIterator</a> method to <code class="highlighter-rouge">INode</code></li>
-  <li>added <a href="docs/earlyaccess/reference/interfaces/scene.icomponent.html#componenttype">componentType</a> property to <code class="highlighter-rouge">IComponent</code></li>
-  <li>added <a href="docs/earlyaccess/reference/interfaces/scene.iobject.html#nodeiterator">nodeIterator</a> to <code class="highlighter-rouge">IObject</code></li>
+  <li>Added <a href="docs/earlyaccess/reference/interfaces/scene.inode.html#componentiterator">componentIterator</a> method to <code class="highlighter-rouge">INode</code></li>
+  <li>Added <a href="docs/earlyaccess/reference/interfaces/scene.icomponent.html#componenttype">componentType</a> property to <code class="highlighter-rouge">IComponent</code></li>
+  <li>Added <a href="docs/earlyaccess/reference/interfaces/scene.iobject.html#nodeiterator">nodeIterator</a> to <code class="highlighter-rouge">IObject</code></li>
 </ul>
 
 <h3 id="12-01-2021">12-01-2021</h3>
@@ -370,7 +388,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jan 26, 2022 <br />
+ Site last generated: Feb 16, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

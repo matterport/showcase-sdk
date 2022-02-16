@@ -543,7 +543,8 @@ url: <code class="highlighter-rouge">https://gitcdn.link/repo/mrdoob/three.js/de
 
 <p>Start after <a href="https://github.com/matterport/showcase-sdk-tutorial/blob/master/src/index.ts#L25" target="_blank">https://github.com/matterport/showcase-sdk-tutorial/blob/master/src/index.ts#L25</a></p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">lights</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createNode</span><span class="p">();</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">lights</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
 <span class="nx">lights</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'mp.lights'</span><span class="p">);</span>
 <span class="nx">lights</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 </code></pre></div></div>
@@ -552,7 +553,7 @@ url: <code class="highlighter-rouge">https://gitcdn.link/repo/mrdoob/three.js/de
 
 <p>The component type will depend on the model you choose. We will use the stanford bunny.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">modelNode</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createNode</span><span class="p">();</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">modelNode</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
 
 <span class="c1">// Store the fbx component since we will need to adjust it in the next step.</span>
 <span class="kd">const</span> <span class="nx">fbxComponent</span> <span class="o">=</span> <span class="nx">modelNode</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">Component</span><span class="p">.</span><span class="nx">FBX_LOADER</span><span class="p">,</span> <span class="p">{</span>
@@ -623,7 +624,7 @@ url: <code class="highlighter-rouge">https://gitcdn.link/repo/mrdoob/three.js/de
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jan 26, 2022 <br />
+ Site last generated: Feb 16, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
