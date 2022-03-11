@@ -128,7 +128,7 @@
 "title": "SDK Connect",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_earlyaccess_21.10.1_connect.html",
+"url": "sdkbundle_connect.html",
 "summary": ""
 }
 ,
@@ -193,10 +193,10 @@
 
 
 {
-"title": "Redirecting to SDK Home",
+"title": "Redirecting to SDK Bundle Home",
 "tags": "",
 "keywords": "",
-"url": "docsreferenceindex.html",
+"url": "docsbundlemainindex.html",
 "summary": ""
 }
 ,
@@ -204,10 +204,10 @@
 
 
 {
-"title": "Redirecting to SDK Bundle Home",
+"title": "Redirecting to SDK Home",
 "tags": "",
 "keywords": "",
-"url": "docsbundlemainindex.html",
+"url": "docsreferenceindex.html",
 "summary": ""
 }
 ,
@@ -1087,7 +1087,7 @@
 "title": "Pathfinding",
 "tags": "",
 "keywords": "",
-"url": "earlyaccess_21.12.1_pathfinding.html",
+"url": "sdkbundle_pathfinding.html",
 "summary": ""
 }
 ,
@@ -1100,7 +1100,7 @@
 "title": "Pointer Reticle",
 "tags": "",
 "keywords": "",
-"url": "earlyaccess_21.12.1_cursor.html",
+"url": "sdkbundle_cursor.html",
 "summary": ""
 }
 ,

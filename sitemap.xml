@@ -92,7 +92,7 @@
   
   
   <url>
-    <loc>https://matterport.github.io/sdkbundle_earlyaccess_21.10.1_connect.html</loc>
+    <loc>https://matterport.github.io/sdkbundle_connect.html</loc>
   </url>
   
   
@@ -130,13 +130,13 @@
   
   
   <url>
-    <loc>https://matterport.github.io/docs/reference/index.html</loc>
+    <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
   </url>
   
   
   
   <url>
-    <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
+    <loc>https://matterport.github.io/docs/reference/index.html</loc>
   </url>
   
   
@@ -616,7 +616,7 @@
   
   
   <url>
-    <loc>https://matterport.github.io/earlyaccess_21.12.1_pathfinding.html</loc>
+    <loc>https://matterport.github.io/sdkbundle_pathfinding.html</loc>
   </url>
   
   
@@ -624,7 +624,7 @@
   
   
   <url>
-    <loc>https://matterport.github.io/earlyaccess_21.12.1_cursor.html</loc>
+    <loc>https://matterport.github.io/sdkbundle_cursor.html</loc>
   </url>
   
   

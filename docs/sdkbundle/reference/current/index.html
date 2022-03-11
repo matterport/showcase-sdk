@@ -36,7 +36,9 @@
 								<li class="tsd-kind-namespace"><a href="modules/camera.html" class="tsd-kind-icon">Camera</a></li>
 								<li class="tsd-kind-namespace"><a href="modules/conversion.html" class="tsd-kind-icon">Conversion</a></li>
 								<li class="tsd-kind-namespace"><a href="modules/floor.html" class="tsd-kind-icon">Floor</a></li>
+								<li class="tsd-kind-namespace"><a href="modules/graph.html" class="tsd-kind-icon">Graph</a></li>
 								<li class="tsd-kind-namespace"><a href="modules/label.html" class="tsd-kind-icon">Label</a></li>
+								<li class="tsd-kind-namespace"><a href="modules/link.html" class="tsd-kind-icon">Link</a></li>
 								<li class="tsd-kind-namespace"><a href="modules/mattertag.html" class="tsd-kind-icon">Mattertag</a></li>
 								<li class="tsd-kind-namespace"><a href="modules/measurements.html" class="tsd-kind-icon">Measurements</a></li>
 								<li class="tsd-kind-namespace"><a href="modules/mode.html" class="tsd-kind-icon">Mode</a></li>
@@ -63,6 +65,7 @@
 								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/iobservablemap.html" class="tsd-kind-icon">IObservable<wbr>Map</a></li>
 								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/iobserver.html" class="tsd-kind-icon">IObserver</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/isubscription.html" class="tsd-kind-icon">ISubscription</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/mp_sdk.html" class="tsd-kind-icon">MP_<wbr>SDK</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -70,9 +73,11 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias"><a href="index.html#color" class="tsd-kind-icon">Color</a></li>
 								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="index.html#conditioncallback" class="tsd-kind-icon">Condition<wbr>Callback</a></li>
+								<li class="tsd-kind-type-alias"><a href="index.html#mpsdk" class="tsd-kind-icon">Mp<wbr>Sdk</a></li>
 								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="index.html#observercallback" class="tsd-kind-icon">Observer<wbr>Callback</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#orientation" class="tsd-kind-icon">Orientation</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#rotation" class="tsd-kind-icon">Rotation</a></li>
+								<li class="tsd-kind-type-alias"><a href="index.html#showcasebundlewindow" class="tsd-kind-icon">Showcase<wbr>Bundle<wbr>Window</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#size" class="tsd-kind-icon">Size</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#vector2" class="tsd-kind-icon">Vector2</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#vector3" class="tsd-kind-icon">Vector3</a></li>
@@ -136,7 +141,7 @@
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DataT</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DataT</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
@@ -146,9 +151,94 @@
 												<h5>data: <span class="tsd-signature-type">DataT</span></h5>
 											</li>
 										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 									</li>
 								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="mpsdk" class="tsd-anchor"></a>
+					<h3>Mp<wbr>Sdk</h3>
+					<div class="tsd-signature tsd-kind-icon">Mp<wbr>Sdk<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The entire MP Sdk returned from a successful call to <code>MP_SDK.connect</code> on the <a href="index.html#showcasebundlewindow">ShowcaseBundleWindow</a>.</p>
+						</div>
+						<pre><code class="language-typescript"><span class="hljs-keyword">const</span> sdk: MpSdk = <span class="hljs-keyword">await</span> bundleWindow.MP_SDK.connect(...);
+</code></pre>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>App<span class="tsd-signature-symbol">: </span><a href="modules/app.html" class="tsd-signature-type">App</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Camera<span class="tsd-signature-symbol">: </span><a href="modules/camera.html" class="tsd-signature-type">Camera</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Conversion<span class="tsd-signature-symbol">: </span><a href="modules/conversion.html" class="tsd-signature-type">Conversion</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Floor<span class="tsd-signature-symbol">: </span><a href="modules/floor.html" class="tsd-signature-type">Floor</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Graph<span class="tsd-signature-symbol">: </span><a href="modules/graph.html" class="tsd-signature-type">Graph</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Label<span class="tsd-signature-symbol">: </span><a href="modules/label.html" class="tsd-signature-type">Label</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Mattertag<span class="tsd-signature-symbol">: </span><a href="modules/mattertag.html" class="tsd-signature-type">Mattertag</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Measurements<span class="tsd-signature-symbol">: </span><a href="modules/measurements.html" class="tsd-signature-type">Measurements</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Mode<span class="tsd-signature-symbol">: </span><a href="modules/mode.html" class="tsd-signature-type">Mode</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Model<span class="tsd-signature-symbol">: </span><a href="modules/model.html" class="tsd-signature-type">Model</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>OAuth<span class="tsd-signature-symbol">: </span><a href="modules/oauth.html" class="tsd-signature-type">OAuth</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Pointer<span class="tsd-signature-symbol">: </span><a href="modules/pointer.html" class="tsd-signature-type">Pointer</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Renderer<span class="tsd-signature-symbol">: </span><a href="modules/renderer.html" class="tsd-signature-type">Renderer</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Room<span class="tsd-signature-symbol">: </span><a href="modules/room.html" class="tsd-signature-type">Room</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Scene<span class="tsd-signature-symbol">: </span><a href="modules/scene.html" class="tsd-signature-type">Scene</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Sensor<span class="tsd-signature-symbol">: </span><a href="modules/sensor.html" class="tsd-signature-type">Sensor</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Settings<span class="tsd-signature-symbol">: </span><a href="modules/settings.html" class="tsd-signature-type">Settings</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Sweep<span class="tsd-signature-symbol">: </span><a href="modules/sweep.html" class="tsd-signature-type">Sweep</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Tour<span class="tsd-signature-symbol">: </span><a href="modules/tour.html" class="tsd-signature-type">Tour</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>disconnect<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">typeof disconnect</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>off<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">typeof off</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>on<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">typeof on</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -232,6 +322,22 @@
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> z<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 							</li>
 						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="showcasebundlewindow" class="tsd-anchor"></a>
+					<h3>Showcase<wbr>Bundle<wbr>Window</h3>
+					<div class="tsd-signature tsd-kind-icon">Showcase<wbr>Bundle<wbr>Window<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Window</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">typeof globalThis</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A Window type that can be used to cast the bundle&#39;s iframe&#39;s contentWindow to hint at the existance of the <a href="interfaces/mp_sdk.html">MP_SDK</a> object.</p>
+							<pre><code class="language-typescript"><span class="hljs-keyword">const</span> bundleIframe = <span class="hljs-built_in">document</span>.getElementById&lt;HTMLIFrameElement&gt;(<span class="hljs-string">&#x27;showcase&#x27;</span>);
+<span class="hljs-keyword">const</span> showcaseWindow = bundleIframe.contentWindow <span class="hljs-keyword">as</span> ShowcaseBundleWindow;
+showcaseWindow.MP_SDK.connect(showcaseWindow);
+</code></pre>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">
@@ -364,14 +470,14 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>any<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>any<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>any: <span class="tsd-signature-type">any</span></h5>
+															<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>any: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1195,7 +1301,13 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 						<a href="modules/floor.html">Floor</a>
 					</li>
 					<li class=" tsd-kind-namespace">
+						<a href="modules/graph.html">Graph</a>
+					</li>
+					<li class=" tsd-kind-namespace">
 						<a href="modules/label.html">Label</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/link.html">Link</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="modules/mattertag.html">Mattertag</a>
@@ -1264,11 +1376,17 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/isubscription.html" class="tsd-kind-icon">ISubscription</a>
 					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/mp_sdk.html" class="tsd-kind-icon">MP_<wbr>SDK</a>
+					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="index.html#color" class="tsd-kind-icon">Color</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
 						<a href="index.html#conditioncallback" class="tsd-kind-icon">Condition<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="index.html#mpsdk" class="tsd-kind-icon">Mp<wbr>Sdk</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
 						<a href="index.html#observercallback" class="tsd-kind-icon">Observer<wbr>Callback</a>
@@ -1278,6 +1396,9 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="index.html#rotation" class="tsd-kind-icon">Rotation</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="index.html#showcasebundlewindow" class="tsd-kind-icon">Showcase<wbr>Bundle<wbr>Window</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="index.html#size" class="tsd-kind-icon">Size</a>

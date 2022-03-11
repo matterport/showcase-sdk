@@ -278,6 +278,20 @@
           
           
           
+          
+          
+          <li><a title="Using Pathfinding" href="sdkbundle_pathfinding.html">Using Pathfinding</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Controlling the Pointer Reticle" href="sdkbundle_cursor.html">Controlling the Pointer Reticle</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -486,16 +500,12 @@
 <table>
   <tbody>
     <tr>
-      <td>SDK Early Access</td>
-      <td><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.60.12-32-g4572017c98/showcase-bundle.zip">3.1.60.12-32-g4572017c98</a></td>
-    </tr>
-    <tr>
       <td>SDK Release</td>
-      <td><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.51.7-84-g0dcbe0591/showcase-bundle.zip">3.1.51.7-84-g0dcbe0591</a></td>
+      <td><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.63.0-123-g4739265d9f/showcase-bundle.zip">3.1.63.0-123-g4739265d9f</a></td>
     </tr>
     <tr>
       <td>Last Updated</td>
-      <td><strong>Dec 6, 2021</strong></td>
+      <td><strong>Mar 11, 2022</strong></td>
     </tr>
   </tbody>
 </table>
@@ -510,7 +520,37 @@
 
 <p>Our developer tools are now out of beta and all accounts are now enabled to generate sandboxed SDK keys. You can find your key management by navigating to your <a href="https://my.matterport.com/settings/account/devtools">Account Settings -&gt; Developer Tools</a>. To learn more about our developer tools, please visit the <a href="https://support.matterport.com/hc/en-us/articles/360057506813-Matterport-Developer-Tools-Pricing-and-Availability">Matterport Developer Tools and Pricing</a></p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Code snippets in the SDK Bundle pages are in typescript. The Reference section is in es5. Visit <a href="https://www.typescriptlang.org">https://www.typescriptlang.org</a> to learn more about typescript.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Code snippets in the SDK Bundle pages are in typescript. Visit <a href="https://www.typescriptlang.org">https://www.typescriptlang.org</a> to learn more about typescript.</div>
+
+<h3 id="3-11-2022">3-11-2022</h3>
+<ul>
+  <li>Added iterability to <a href="docs/sdkbundle/reference/current/interfaces/dictionary.html#_symbol_iterator_"><code class="highlighter-rouge">Dictionary</code></a> returned in <a href="docs/sdkbundle/reference/current/interfaces/imapobserver.html"><code class="highlighter-rouge">IMapObserver</code></a></li>
+  <li>Added pathfinding support
+    <ul>
+      <li>Added the <a href="docs/sdkbundle/reference/current/modules/graph.html"><code class="highlighter-rouge">Graph</code></a> namespace for creating connectivity graphs and traversing them using A*</li>
+      <li>Added the ability to create <a href="docs/sdkbundle/reference/current/modules/sweep.html#creategraph">Sweep graphs</a></li>
+      <li>See <a href="sdkbundle_pathfinding.html">Pathfinding</a> for more info</li>
+    </ul>
+  </li>
+  <li>Added the <a href="docs/sdkbundle/reference/current/modules/link.html">Link</a> namespace
+    <ul>
+      <li>Added the ability to create share links through <a href="docs/sdkbundle/reference/current/modules/link.html#createlink">Link.createLink</a> and <a href="docs/sdkbundle/reference/current/modules/link.html#createdeeplink">Link.createDeepLink</a></li>
+      <li>Added the ability to change the link in the share dialog through <a href="docs/sdkbundle/reference/current/modules/link.html#setsharelinkpolicy">Link.setShareLinkPolicy</a></li>
+      <li>Added the ability to change the click handler for different link types through <a href="docs/sdkbundle/reference/current/enums/link.openpolicy.html">policies</a> for example <a href="docs/sdkbundle/reference/current/modules/link.html#setmodellinkpolicy">Link.setModelLinkPolicy</a></li>
+    </ul>
+  </li>
+  <li>Fixed some missing and inconsistent types
+    <ul>
+      <li>Added type <a href="docs/sdkbundle/reference/current/modules/scene.html#predefinedoutputs">PredefinedOutputs</a> for component output intersection types</li>
+      <li>Added the <a href="docs/sdkbundle/reference/current//modules/scene.html#interactionevent">InteractionEvent</a> type for the mesh interaction callback payload.</li>
+      <li><a href="docs/sdkbundle/reference/current//interfaces/scene.icomponent.html#bind">INode.bind</a> now has the correct type. This function is deprecated.</li>
+    </ul>
+  </li>
+  <li>Added <a href="docs/sdkbundle/reference/current//interfaces/scene.inode.html#componentiterator">componentIterator</a> method to <code class="highlighter-rouge">INode</code></li>
+  <li>Added <a href="docs/sdkbundle/reference/current//interfaces/scene.icomponent.html#componenttype">componentType</a> property to <code class="highlighter-rouge">IComponent</code></li>
+  <li>Added <a href="docs/sdkbundle/reference/current//interfaces/scene.iobject.html#nodeiterator">nodeIterator</a> to <code class="highlighter-rouge">IObject</code></li>
+  <li>Download <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.63.0-123-g4739265d9f/showcase-bundle.zip">SDK Bundle version: 3.1.63.0-123-g4739265d9f</a></li>
+</ul>
 
 <h3 id="12-6-2021">12-6-2021</h3>
 <ul>
@@ -714,7 +754,7 @@
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Feb 16, 2022 <br />
+ Site last generated: Mar 11, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
