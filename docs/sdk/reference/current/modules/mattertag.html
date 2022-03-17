@@ -160,7 +160,8 @@
 										<p>The path between Showcase&#39;s window and your window (with the sdk).</p>
 									</div>
 									<p>If you embed Showcase normally, this can be omitted.</p>
-									<p>If you put Showcase within another level of iframe on your page, the path would be <code>&#39;parent.parent&#39;</code>; Showcase&#39;s parent is the iframe, the parent of that frame is your page.</p>
+									<p>If you put Showcase within another level of iframe on your page, the path would be <code>&#39;parent.parent&#39;</code>;
+									Showcase&#39;s parent is the iframe, the parent of that frame is your page.</p>
 									<p>If you programmatically open Showcase in a new window, use <code>&#39;opener&#39;</code>.</p>
 									<p>When using the Bundle SDK use <code>&#39;&#39;</code>.</p>
 								</div>
@@ -402,7 +403,7 @@
 							<p>An observable collection of Mattertag data that can be subscribed to.</p>
 						</div>
 						<p>When first subscribing, the current set of Mattertag will call the observer&#39;s <code>onAdded</code> for each Mattertag as the data becomes available.</p>
-						<pre><code>showcase.Mattertag.data.subscribe({
+						<pre><code>mpSdk.Mattertag.data.subscribe({
   onAdded: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
     console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Mattertag added to the collection&#x27;</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
   },
@@ -600,7 +601,8 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 									<div class="tsd-comment tsd-typography">
 										<p>The id of the icon to apply</p>
 										<p><strong>Errors</strong></p>
-										<p>Warns if the provided <code>iconSrc</code> is an .svg file which doesn&#39;t have a <code>&#39;width&#39;</code> or <code>&#39;height&#39;</code> attribute. Defaults to a resolution of 128x128 if neither exist.</p>
+										<p>Warns if the provided <code>iconSrc</code> is an .svg file which doesn&#39;t have a <code>&#39;width&#39;</code> or <code>&#39;height&#39;</code> attribute.
+										Defaults to a resolution of 128x128 if neither exist.</p>
 									</div>
 								</li>
 							</ul>
@@ -790,7 +792,8 @@ var tagDiscPosition = mpSdk.<span class="hljs-module-access"><span class="hljs-m
 									<p>Add a custom frame that can host custom HTML and JavaScript, and communicate bi-directionally with your page.</p>
 								</div>
 								<p>The frame that contains your custom code will have certain limitations due to being sandboxed by the <code>sandbox=&#39;allow-scripts</code> attribute.
-								Attempting to access properties of other windows will also be blocked by the browser. (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe">see the MDN pages about iframe sandbox</a>)</p>
+									Attempting to access properties of other windows will also be blocked by the browser.
+								(<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe">see the MDN pages about iframe sandbox</a>)</p>
 								<p>Currently, the HTML CAN ONLY BE SET ONCE by a call to <code>injectHTML</code>. This includes removing or clearing the HTML.</p>
 								<pre><code>var mattertagData; // ... acquired through a previous call to mpSdk.Mattertag.getData();
 
@@ -1059,7 +1062,13 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 						<a href="floor.html">Floor</a>
 					</li>
 					<li class=" tsd-kind-namespace">
+						<a href="graph.html">Graph</a>
+					</li>
+					<li class=" tsd-kind-namespace">
 						<a href="label.html">Label</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="link.html">Link</a>
 					</li>
 					<li class="current tsd-kind-namespace">
 						<a href="mattertag.html">Mattertag</a>

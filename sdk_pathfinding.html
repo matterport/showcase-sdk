@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Pathfinding | Matterport Developers</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-matterport.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+<script src="js/mermaid.min.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.io/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+    
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<img class="navbar-image" src="images/MP-logo_H_lock-RGB_white.svg"></img><span class="projectTitle"> </span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="sdk_home.html">SDK for Embeds</a></li>
+                
+                
+                
+                <li><a href="sdkbundle_home.html">SDK Bundle</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Pathfinding page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Pathfinding">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<div class='global-links-container'>
+  <a
+    class='global-link'
+    href="https://matterport.com/legal/sdk-api-agreement"
+    target="_blank"
+    rel="noopener"
+  >SDK Agreement
+  </a>
+</div>
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">SDK for Embeds </li>
+  
+  
+  
+  <li>
+      <a title="Getting Started" href="#">Getting Started</a>
+      <ul>
+          
+          
+          
+          <li><a title="Vocabulary" href="sdk_vocabulary.html">Vocabulary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Concepts" href="sdk_concepts.html">Concepts</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Installation" href="sdk_installation.html">Installation</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Quick Start" href="sdk_quickstart.html">Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Typescript Declarations" href="sdk_types.html">Typescript Declarations</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tutorials" href="#">Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="Creating Mattertags" href="sdk_creating_mattertags.html">Creating Mattertags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Editing mattertags" href="sdk_editing_mattertags.html">Editing mattertags</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="Using Pathfinding" href="sdk_pathfinding.html">Using Pathfinding</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Controlling the Pointer Reticle" href="sdk_cursor.html">Controlling the Pointer Reticle</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Examples" href="#">Examples</a>
+      <ul>
+          
+          
+          
+          <li><a title="Summary" href="sdk_examples_summary.html">Summary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Navigation Controls" href="sdk_navigation_controls.html">Navigation Controls</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Intersection Inspector" href="sdk_intersection_inspector.html">Intersection Inspector</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Transient Tags Editor" href="sdk_transient_tags_editor.html">Transient Tags Editor</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz" href="sdk_tags_quiz.html">Tags Quiz</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz - Overlay" href="sdk_tags_quiz_overlay.html">Tags Quiz - Overlay</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Kitchen Sink" href="sdk_kitchen_sink.html">Kitchen Sink</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Remote Control" href="sdk_remote_control.html">Remote Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Source Areas" href="sdk_sensors_source_areas.html">Sensors - Source Areas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Tags Level of Detail" href="sdk_sensors_tags_level_of_detail.html">Sensors - Tags Level of Detail</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Sweep Control" href="sdk_sensors_sweep_control.html">Sensors - Sweep Control</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Reference" href="#">Reference</a>
+      <ul>
+          
+          
+          
+          <li><a title="Summary" href="sdk_reference_summary.html">Summary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Documentation" href="docs\sdk\reference\current\index.html">Documentation</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Releases" href="#">Releases</a>
+      <ul>
+          
+          
+          
+          <li><a title="SDK Release Notes" href="sdk_release_notes.html">SDK Release Notes</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SDK Client Release Notes" href="sdk_client_release_notes.html">SDK Client Release Notes</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Upgrading" href="sdk_upgrading.html">Upgrading</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Pathfinding</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+
+
+    
+
+   <p align="center">
+  <img src="images/pathfinding.png" /><br />
+</p>
+
+<h2 id="what-is-pathfinding">What is Pathfinding</h2>
+<p>Pathfinding is the process of finding a route between two points.
+A specific example and use case would be something like: find the set of sweeps that join two areas of a building, like a path from your desk in the office to the office’s exit, or from the desk to the emergency exit, or the desk to the cafeteria, etc.</p>
+
+<h3 id="terminology">Terminology</h3>
+<p>For Matterport’s implementation, we have opted to use (and expose via our SDK) graphs and the A* algorithm.</p>
+
+<p><strong>Graph</strong>: The connectivity chart between points.<br />
+<strong>Vertex</strong>: A point in the graph.<br />
+<strong>Edge</strong>: A connection between two vertices in the graph.<br />
+<strong>Weight</strong>: A value associated with an edge that determines its “difficulty” to traverse. A lower value or easier path to traverse will be chosen first when finding a path.<br />
+<strong>A*</strong>: The search algorithm used to find a path in a graph. A* uses a heuristic, or rough estimation to make a more educated guess about the path to traverse.<br /></p>
+
+<h2 id="general-graph-usage">General Graph Usage</h2>
+<p>(For a specific Sweep example, continue to the following section)
+For this generic example, we will be creating a small graph and traverse it. It will look like this.</p>
+
+<div class="mermaid">
+graph LR
+  A --1--&gt; B
+  B --3--&gt; C
+  A --5--&gt; C
+  B --6--&gt; D
+  C --2--&gt; D
+</div>
+
+<p>We will then use A* to generate a path from <code class="highlighter-rouge">'A'</code> to <code class="highlighter-rouge">'D'</code>. The resulting path should be <code class="highlighter-rouge">[A, B, C, D]</code> despite there being paths with fewer steps. The determining factor for the path is the overall weight. For example:</p>
+<ul>
+  <li>The sub-path <code class="highlighter-rouge">[A, B, C]</code> is chosen over <code class="highlighter-rouge">[A, C]</code> because the total weight is 4 and 5 respectively.</li>
+  <li>The sub-path <code class="highlighter-rouge">[B, C, D]</code> is chosen over <code class="highlighter-rouge">[B, D]</code> because the total weight is 5 and 6 respectively.</li>
+</ul>
+
+<h4 id="creating-the-graph">Creating the Graph</h4>
+<p>To get started, we create an empty graph using the <a href="docs/sdkbundle/reference/current/modules/graph.html#createdirectedgraph"><code class="highlighter-rouge">Graph.createDirectedGraph()</code></a> function.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">graph</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Graph</span><span class="p">.</span><span class="nx">createDirectedGraph</span><span class="p">();</span>
+</code></pre></div></div>
+<p>With an empty graph, we can start adding the vertices.</p>
+
+<h4 id="adding-the-vertices">Adding the Vertices</h4>
+<p>Adding a vertex or set of vertices can be done using <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#addvertex"><code class="highlighter-rouge">IDirectedGraph.addVertex</code></a>. An id MUST be provided for each vertex; each vertex can also contain arbitrary user data. For our example, we’ll just add some arbitrary “indices” to each vertex.</p>
+
+<p>Let’s add vertices <code class="highlighter-rouge">'A' - 'D'</code></p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// add a single vertex</span>
+<span class="nx">graph</span><span class="p">.</span><span class="nx">addVertex</span><span class="p">({</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'A'</span><span class="p">,</span> <span class="na">data</span><span class="p">:</span> <span class="mi">0</span> <span class="p">});</span>
+
+<span class="c1">// add multiple vertices</span>
+<span class="nx">graph</span><span class="p">.</span><span class="nx">addVertex</span><span class="p">(</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'B'</span><span class="p">,</span> <span class="na">data</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'C'</span><span class="p">,</span> <span class="na">data</span><span class="p">:</span> <span class="mi">2</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'D'</span><span class="p">,</span> <span class="na">data</span><span class="p">:</span> <span class="mi">3</span> <span class="p">},</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>Now that we have vertices, we can connect vertices with edges.</p>
+
+<h4 id="adding-edges">Adding Edges</h4>
+<p>Adding an edge or set of edges is done using <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#setedge"><code class="highlighter-rouge">IDirectedGraph.setEdge</code></a>. Since edges are a relationship between vertices, creating an edge requires references to the vertices. Vertices can be queried using <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#vertex"><code class="highlighter-rouge">IDirectedGraph.vertex</code></a>.</p>
+
+<p>Note: edges have directionality so an edge from vertex ‘A’ to vertex ‘B’ is a distinct edge from an edge from vertex ‘B’ to vertex ‘A’.</p>
+
+<p>Let’s add edges as described in the diagram.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// first get references to the vertices</span>
+<span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="s1">'A'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="s1">'B'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="s1">'C'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="s1">'D'</span><span class="p">);</span>
+
+<span class="c1">// check that the vertices were found</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">a</span> <span class="o">||</span> <span class="o">!</span><span class="nx">b</span> <span class="o">||</span> <span class="o">!</span><span class="nx">c</span> <span class="o">||</span> <span class="o">!</span><span class="nx">d</span><span class="p">)</span> <span class="k">throw</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">`one of vertices 'A', 'B', 'C', or 'D' was not in the graph`</span><span class="p">);</span>
+
+<span class="c1">// setting a single edge</span>
+<span class="nx">graph</span><span class="p">.</span><span class="nx">setEdge</span><span class="p">({</span> <span class="na">src</span><span class="p">:</span> <span class="nx">a</span><span class="p">,</span> <span class="na">dst</span><span class="p">:</span> <span class="nx">b</span><span class="p">,</span> <span class="na">weight</span><span class="p">:</span> <span class="mi">1</span> <span class="p">});</span>
+
+<span class="c1">// setting multiple edges</span>
+<span class="nx">graph</span><span class="p">.</span><span class="nx">setEdge</span><span class="p">(</span>
+  <span class="p">{</span> <span class="na">src</span><span class="p">:</span> <span class="nx">a</span><span class="p">,</span> <span class="na">dst</span><span class="p">:</span> <span class="nx">b</span><span class="p">,</span> <span class="na">weight</span><span class="p">:</span> <span class="mi">5</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">src</span><span class="p">:</span> <span class="nx">b</span><span class="p">,</span> <span class="na">dst</span><span class="p">:</span> <span class="nx">c</span><span class="p">,</span> <span class="na">weight</span><span class="p">:</span> <span class="mi">3</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">src</span><span class="p">:</span> <span class="nx">b</span><span class="p">,</span> <span class="na">dst</span><span class="p">:</span> <span class="nx">d</span><span class="p">,</span> <span class="na">weight</span><span class="p">:</span> <span class="mi">6</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">src</span><span class="p">:</span> <span class="nx">c</span><span class="p">,</span> <span class="na">dst</span><span class="p">:</span> <span class="nx">d</span><span class="p">,</span> <span class="na">weight</span><span class="p">:</span> <span class="mi">2</span> <span class="p">},</span>
+<span class="p">);</span>
+</code></pre></div></div>
+<p>We should now have a graph that looks like the one in the diagram. We can start trying to find paths between vertices.</p>
+
+<h4 id="finding-a-path">Finding a Path</h4>
+<p>Finding a path in a graph is done using an “A* Runner”, created by <a href="docs/sdkbundle/reference/current/modules/graph.html#createastarrunner"><code class="highlighter-rouge">Graph.createAStarRunner</code></a> and calling its <a href="docs/sdkbundle/reference/current/interfaces/graph.iastarrunner.html#exec"><code class="highlighter-rouge">IAStarRunner.exec</code></a>. The result of <code class="highlighter-rouge">exec</code> is cached so multiple calls will not recompute the path and will return the same object (until there are changes to the graph – see <a href="sdkbundle_pathfinding.html#observing-changes">Observing Changes</a>).</p>
+
+<p>Let’s compute a path from <code class="highlighter-rouge">'A'</code> to <code class="highlighter-rouge">'D'</code>.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">aStarRunner</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Graph</span><span class="p">.</span><span class="nx">createAStarRunner</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">d</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">aStarRunner</span><span class="p">.</span><span class="nx">exec</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">result</code> should now have a <code class="highlighter-rouge">.status</code> of <code class="highlighter-rouge">mpSdk.Graph.AStarStatus.SUCCESS</code> and a <code class="highlighter-rouge">.path</code> of <code class="highlighter-rouge">[a, b, c, d]</code> like we predicted in our diagram.</p>
+
+<p>If we later decide to add new vertices and/or update edges, our shortest path may have changed. Observability can give us a hint about those changes.</p>
+
+<h4 id="observing-changes">Observing Changes</h4>
+<p>Both Graphs and the A* Runners are observable meaning they can let us know when they have undergone changes. Changes to vertices and the edges of a graph and the path of an A* Runner can all be subscribed to.</p>
+
+<p>Observability is provided by <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#onverticeschanged"><code class="highlighter-rouge">IDirectedGraph.onVerticesChanged</code></a> and <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#onedgeschanged"><code class="highlighter-rouge">IDirectedGraph.onEdgesChanged</code></a> for graphs.</p>
+<blockquote>
+  <p><strong>Important</strong>: After making changes to a graph, it is necessary to call <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#commit"><code class="highlighter-rouge">IDirectedGraph.commit</code></a> to signal that any modification is now finished. <code class="highlighter-rouge">commit</code> will have no effect and no observers notified, if there have been no changes to the graph.</p>
+</blockquote>
+
+<p>Let’s subscribe to a graph and make some changes to it.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// subscribe to vertex changes</span>
+<span class="nx">graph</span><span class="p">.</span><span class="nx">onVerticesChanged</span><span class="p">({</span>
+  <span class="nx">onChanged</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'vertices in the graph have changed'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="c1">// subscribe to edge changes</span>
+<span class="nx">graph</span><span class="p">.</span><span class="nx">onEdgesChanged</span><span class="p">({</span>
+  <span class="nx">onChanged</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'edges in the graph have changed'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">graph</span><span class="p">.</span><span class="nx">addVertex</span><span class="p">({</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'E'</span><span class="p">,</span> <span class="na">data</span><span class="p">:</span> <span class="mi">4</span> <span class="p">});</span>
+<span class="c1">// we can call `graph.commit()` here to trigger the `onVerticesChanged` observer, but ...</span>
+<span class="c1">// ... if we know we'll be making more changes, we should hold off on calling `commit` until then</span>
+
+<span class="kd">const</span> <span class="nx">e</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="s1">'E'</span><span class="p">);</span>
+<span class="nx">graph</span><span class="p">.</span><span class="nx">setEdge</span><span class="p">({</span> <span class="na">src</span><span class="p">:</span> <span class="nx">a</span><span class="p">,</span> <span class="na">dst</span><span class="p">:</span> <span class="nx">e</span><span class="p">,</span> <span class="na">weight</span><span class="p">:</span> <span class="mi">10</span> <span class="p">});</span>
+<span class="nx">graph</span><span class="p">.</span><span class="nx">commit</span><span class="p">();</span> <span class="c1">// &lt;-- will trigger the attached observer in `onVerticesChanged` and `onEdgesChanged`</span>
+<span class="nx">graph</span><span class="p">.</span><span class="nx">commit</span><span class="p">();</span> <span class="c1">// &lt;-- will no-op since the graph has not changed since the last `commit`</span>
+</code></pre></div></div>
+
+<p>A* Runners are observable through <a href="docs/sdkbundle/reference/current/interfaces/graph.iastarrunner.html#subscribe"><code class="highlighter-rouge">IAStarRunner.subscribe</code></a>. The instance of the runner is provided in the callback.</p>
+
+<p>Let’s subscribe to an A* Runner.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">aStarRunner</span><span class="p">.</span><span class="nx">exec</span><span class="p">();</span>
+<span class="c1">// we can subscribe with an object ...</span>
+<span class="nx">aStarRunner</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
+  <span class="nx">onChanged</span><span class="p">(</span><span class="nx">runner</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="nx">runner</span><span class="p">.</span><span class="nx">exec</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="c1">// or a function</span>
+<span class="nx">aStarRunner</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">runner</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">result</span> <span class="o">=</span> <span class="nx">runner</span><span class="p">.</span><span class="nx">exec</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="c1">// reduce the weight of edge AC to make it a more viable option</span>
+<span class="nx">graph</span><span class="p">.</span><span class="nx">setEdge</span><span class="p">({</span> <span class="na">src</span><span class="p">:</span> <span class="nx">a</span><span class="p">,</span> <span class="na">dst</span><span class="p">:</span> <span class="nx">c</span><span class="p">,</span> <span class="na">weight</span><span class="p">:</span> <span class="mi">2</span> <span class="p">});</span>
+<span class="nx">graph</span><span class="p">.</span><span class="nx">commit</span><span class="p">();</span> <span class="c1">// &lt;-- will trigger the A* Runner's observers which will recompute the path.</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">result</code> should have a new <code class="highlighter-rouge">.path</code> of <code class="highlighter-rouge">[a, c, d]</code> since we made the sub-path <code class="highlighter-rouge">[a, c]</code> a better (lighter) option than the previous <code class="highlighter-rouge">[a, b, c]</code>.</p>
+
+<h2 id="finding-a-path-using-sweepcreategraph">Finding a Path Using Sweep.createGraph</h2>
+<p>For a more concrete example of pahtfinding, we also expose a way to create a graph from the Sweeps within a Matterport Digital Twin.</p>
+
+<p>We provide a way to automatically create a graph derived from our <code class="highlighter-rouge">Sweep.data</code> using <a href="docs/sdkbundle/reference/current/modules/sweep.html#creategraph">Sweep.createGraph</a>. When done with the graph, its <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#dispose"><code class="highlighter-rouge">dispose</code></a> should be called to cleanup its resources.
+Some features of this sweep graph:</p>
+<ul>
+  <li>The graph returned will only contain <code class="highlighter-rouge">enabled</code> sweeps</li>
+  <li>The graph is automatically updated as sweep data is changed
+    <ul>
+      <li>enabling sweeps will automatically be added to the graph</li>
+      <li>disabling sweeps will automatically removed them from the graph</li>
+    </ul>
+  </li>
+  <li>Each vertex’s <code class="highlighter-rouge">id</code> is the id of the associated sweep</li>
+  <li>Each vertex’s <code class="highlighter-rouge">data</code> is the same as each item in the sweep collection from <code class="highlighter-rouge">Sweep.data</code></li>
+  <li>Each edge’s <code class="highlighter-rouge">weight</code> is the Euclidean distance between neighboring sweeps</li>
+</ul>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sweepGraph</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">createGraph</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">startSweep</span> <span class="o">=</span> <span class="nx">sweepGraph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="s1">'[start sweep id]'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">endSweep</span> <span class="o">=</span> <span class="nx">sweepGraph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="s1">'[end sweep id]'</span><span class="p">);</span>
+
+<span class="c1">// do standard path finding</span>
+<span class="kd">const</span> <span class="nx">aStarRunner</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Graph</span><span class="p">.</span><span class="nx">createAStarRunner</span><span class="p">(</span><span class="nx">sweepGraph</span><span class="p">,</span> <span class="nx">startSweep</span><span class="p">,</span> <span class="nx">endSweep</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">aStarRunner</span><span class="p">.</span><span class="nx">exec</span><span class="p">().</span><span class="nx">path</span><span class="p">;</span>
+
+<span class="c1">// the runner will be subscribed to the graph, which is subscribed to sweep data</span>
+<span class="nx">aStarRunner</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
+  <span class="nx">onChanged</span><span class="p">(</span><span class="nx">runner</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'sweep graph has changed'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">disable</span><span class="p">(</span><span class="s1">'[intermediate sweep]'</span><span class="p">);</span> <span class="c1">// &lt;-- will trigger the above `onChanged` if the sweep was previously enabled</span>
+
+<span class="c1">// finally, clean up the graph when no longer needed</span>
+<span class="nx">sweepGraph</span><span class="p">.</span><span class="nx">dispose</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h4 id="modifying-the-sweep-graph">Modifying the Sweep Graph</h4>
+<p>Since the sweep graph only uses the Euclidean distance between sweeps, it generally prioritizes long distance “transitions” between sweeps. In order to incentivize taking shorter, but potentially more, “transitions” between sweeps, we can scale the weight of each edge so that they no longer have a linear relationship.</p>
+
+<p>We can iterate all of the edges of the graph using <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#edges"><code class="highlighter-rouge">IDirectedGraph.edges</code></a> and then set each edge’s weight to the square of its current weight.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">{</span> <span class="nx">src</span><span class="p">,</span> <span class="nx">dst</span><span class="p">,</span> <span class="nx">weight</span> <span class="p">}</span> <span class="k">of</span> <span class="nx">sweepGraph</span><span class="p">.</span><span class="nx">edges</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">sweepGraph</span><span class="p">.</span><span class="nx">setEdge</span><span class="p">({</span> <span class="nx">src</span><span class="p">,</span> <span class="nx">dst</span><span class="p">,</span> <span class="na">weight</span><span class="p">:</span> <span class="nx">weight</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Now that we’ve changed the edges’ weights in our graph, we’ve turned a graph like this …</p>
+<div class="mermaid">
+graph LR
+  A --1--&gt; B
+  B --3--&gt; C
+  C --5--&gt; D
+  A --7--&gt; D
+</div>
+
+<p>… into this.</p>
+<div class="mermaid">
+graph LR
+  A --1--&gt; B
+  B --9--&gt; C
+  C --25--&gt; D
+  A --49--&gt; D
+</div>
+
+<p>Traversing either graph from <code class="highlighter-rouge">'A'</code> to <code class="highlighter-rouge">'D'</code> will produce the paths <code class="highlighter-rouge">[A, D]</code> and <code class="highlighter-rouge">[A, B, C, D]</code> respectively.</p>
+
+
+    <div class="tags">
+        
+    </div>
+
+<!-- 
+ -->
+
+</div>
+
+<!-- <hr class="shaded"/> -->
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2022 Matterport, Inc. All rights reserved. <br />
+ Site last generated: Mar 17, 2022 <br />
+<p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-34880260-5','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

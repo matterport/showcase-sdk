@@ -1,0 +1,504 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Link | Matterport SDK</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">@mpSdk</a>
+				</li>
+				<li>
+					<a href="link.html">Link</a>
+				</li>
+			</ul>
+			<h1>Link Namespace</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/link.creationpolicy.html" class="tsd-kind-icon">Creation<wbr>Policy</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/link.openpolicy.html" class="tsd-kind-icon">Open<wbr>Policy</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Types</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="link.html#createlinkoptions" class="tsd-kind-icon">Create<wbr>Link<wbr>Options</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="link.html#openpolicyoptions" class="tsd-kind-icon">Open<wbr>Policy<wbr>Options</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="link.html#createdeeplink" class="tsd-kind-icon">create<wbr>Deep<wbr>Link</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="link.html#createlink" class="tsd-kind-icon">create<wbr>Link</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="link.html#setexternallinkpolicy" class="tsd-kind-icon">set<wbr>External<wbr>Link<wbr>Policy</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="link.html#setmodellinkpolicy" class="tsd-kind-icon">set<wbr>Model<wbr>Link<wbr>Policy</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="link.html#setnavigationlinkpolicy" class="tsd-kind-icon">set<wbr>Navigation<wbr>Link<wbr>Policy</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="link.html#setsameoriginlinkpolicy" class="tsd-kind-icon">set<wbr>Same<wbr>Origin<wbr>Link<wbr>Policy</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="link.html#setsharelinkpolicy" class="tsd-kind-icon">set<wbr>Share<wbr>Link<wbr>Policy</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Types</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="createlinkoptions" class="tsd-anchor"></a>
+					<h3>Create<wbr>Link<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">Create<wbr>Link<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>include<wbr>Params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The list of URL parameters to include in the share link</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="openpolicyoptions" class="tsd-anchor"></a>
+					<h3>Open<wbr>Policy<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">Open<wbr>Policy<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>template<wbr>Href<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>An optional template for the link to use when the policy is not set to <code>SAME_FRAME</code>,
+										that will have any <code>${[param]}</code> substrings interpolated using the current set of URL parameters.</p>
+									</div>
+									<p>If ${[param]} is included in the path  of the URL, it will be replaced by the current URL parameter&#39;s value or undefined (<code>${m}/show</code>: <code>abc123/show</code>).
+										If ${[param]} is included in the search parameters of the URL, it and it&#39;s value wil be appended ot the URL (<code>${m}</code>: <code>&amp;m=abc123</code>).
+									URL parameters that are unset will be appended without a value. (<code>${unset}</code>: <code>&amp;unset</code>)</p>
+									<p>As an example, the string <code>&quot;https://my.domain.com/${m}/show.html?${play}${unset}&quot;</code> interpolated at the URL <code>https://my.domain.com/show/?m=abc123&amp;play=1</code>
+									will result in <code>&quot;https://my.domain.com/abc123/show.html?play=1&amp;unset&quot;</code>.</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="createdeeplink" class="tsd-anchor"></a>
+					<h3>create<wbr>Deep<wbr>Link</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Deep<wbr>Link<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-earlyaccess">earlyaccess</dt>
+								<dd>
+									&nbsp;
+								</dd>
+								<dt class="tsd-comment-tags-bundle">bundle</dt>
+								<dd>
+									<p>3.1.60.12-32-g4572017c98</p>
+								</dd>
+							</dl>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a deep link to the current location of the current Showcase player.</p>
+									<pre><code class="language-typescript"><span class="hljs-keyword">const</span> deepLink = <span class="hljs-keyword">await</span> sdk.Link.createDeepLink();
+</code></pre>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="createlink" class="tsd-anchor"></a>
+					<h3>create<wbr>Link</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Link<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-earlyaccess">earlyaccess</dt>
+								<dd>
+									&nbsp;
+								</dd>
+								<dt class="tsd-comment-tags-bundle">bundle</dt>
+								<dd>
+									<p>3.1.60.12-32-g4572017c98</p>
+								</dd>
+							</dl>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a shareable link to the current Showcase player.</p>
+									<pre><code class="language-typescript"><span class="hljs-keyword">const</span> link = <span class="hljs-keyword">await</span> sdk.Link.createLink();
+</code></pre>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="setexternallinkpolicy" class="tsd-anchor"></a>
+					<h3>set<wbr>External<wbr>Link<wbr>Policy</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>External<wbr>Link<wbr>Policy<span class="tsd-signature-symbol">(</span>openInNewWindow<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-earlyaccess">earlyaccess</dt>
+								<dd>
+									&nbsp;
+								</dd>
+								<dt class="tsd-comment-tags-bundle">bundle</dt>
+								<dd>
+									<p>3.1.60.12-32-g4572017c98</p>
+								</dd>
+							</dl>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Change the behavior of clicking a link to a different origin.</p>
+								</div>
+								<pre><code class="language-typescript">sdk.Link.setExternalLinkPolicy(<span class="hljs-literal">false</span>);
+<span class="hljs-comment">// clicking an external link will now navigate the current page (not the Showcase iframe) to the link</span>
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>openInNewWindow: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Open the link in a new tab or window; otherwise, replace the embedder&#39;s window.
+										true is the default behavior.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="setmodellinkpolicy" class="tsd-anchor"></a>
+					<h3>set<wbr>Model<wbr>Link<wbr>Policy</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Model<wbr>Link<wbr>Policy<span class="tsd-signature-symbol">(</span>policy<span class="tsd-signature-symbol">: </span><a href="../enums/link.openpolicy.html" class="tsd-signature-type">Link.OpenPolicy</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="link.html#openpolicyoptions" class="tsd-signature-type">Link.OpenPolicyOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-earlyaccess">earlyaccess</dt>
+								<dd>
+									&nbsp;
+								</dd>
+								<dt class="tsd-comment-tags-bundle">bundle</dt>
+								<dd>
+									<p>3.1.60.12-32-g4572017c98</p>
+								</dd>
+							</dl>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Change the behavior of clicking a link to another model.</p>
+								</div>
+								<pre><code class="language-typescript">sdk.Link.setModelLinkPolicy(sdk.Link.OpenPolicy.NEW_WINDOW);
+<span class="hljs-comment">// clicking a link to another model will now open a new window</span>
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>policy: <a href="../enums/link.openpolicy.html" class="tsd-signature-type">Link.OpenPolicy</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="link.html#openpolicyoptions" class="tsd-signature-type">Link.OpenPolicyOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="setnavigationlinkpolicy" class="tsd-anchor"></a>
+					<h3>set<wbr>Navigation<wbr>Link<wbr>Policy</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Navigation<wbr>Link<wbr>Policy<span class="tsd-signature-symbol">(</span>policy<span class="tsd-signature-symbol">: </span><a href="../enums/link.openpolicy.html" class="tsd-signature-type">Link.OpenPolicy</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="link.html#openpolicyoptions" class="tsd-signature-type">Link.OpenPolicyOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-earlyaccess">earlyaccess</dt>
+								<dd>
+									&nbsp;
+								</dd>
+								<dt class="tsd-comment-tags-bundle">bundle</dt>
+								<dd>
+									<p>3.1.60.12-32-g4572017c98</p>
+								</dd>
+							</dl>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Change the behavior of clicking a link to a location within the current model.</p>
+								</div>
+								<pre><code class="language-typescript"><span class="hljs-comment">// when clicking a link with a location within the current model, open a new window with the model at the location</span>
+<span class="hljs-comment">// instead of navigating the current model to the new location</span>
+sdk.Link.setNavigationLinkPolicy(sdk.Link.OpenPolicy.NEW_WINDOW, <span class="hljs-string">&#x27;https://example.com/${m}/show.html?&#x27;</span>);
+
+<span class="hljs-comment">// revert the navigation link behavior to the default</span>
+sdk.Link.setNavigationLinkPolicy(sdk.Link.OpenPolicy.DEFAULT);
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>policy: <a href="../enums/link.openpolicy.html" class="tsd-signature-type">Link.OpenPolicy</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="link.html#openpolicyoptions" class="tsd-signature-type">Link.OpenPolicyOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="setsameoriginlinkpolicy" class="tsd-anchor"></a>
+					<h3>set<wbr>Same<wbr>Origin<wbr>Link<wbr>Policy</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Same<wbr>Origin<wbr>Link<wbr>Policy<span class="tsd-signature-symbol">(</span>policy<span class="tsd-signature-symbol">: </span><a href="../enums/link.openpolicy.html" class="tsd-signature-type">Link.OpenPolicy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-earlyaccess">earlyaccess</dt>
+								<dd>
+									&nbsp;
+								</dd>
+								<dt class="tsd-comment-tags-bundle">bundle</dt>
+								<dd>
+									<p>3.1.60.12-32-g4572017c98</p>
+								</dd>
+							</dl>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Change the behavior of clicking a link to a page from the same origin as the one hosting Showcase.</p>
+								</div>
+								<pre><code class="language-typescript">sdk.Link.setSameOriginLinkPolicy(sdk.Link.OpenPolicy.REPLACE);
+<span class="hljs-comment">// clicking a link with the same origin as Showcase&#x27;s embedder will now navigate the embedding page</span>
+
+sdk.Link.setSameOriginLinkPolicy(sdk.Link.OpenPolicy.SAME_FRAME);
+<span class="hljs-comment">// clicking a link with the same origin as Showcase&#x27;s embedder will now navigate Showcase&#x27;s iframe to that page</span>
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>policy: <a href="../enums/link.openpolicy.html" class="tsd-signature-type">Link.OpenPolicy</a></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="setsharelinkpolicy" class="tsd-anchor"></a>
+					<h3>set<wbr>Share<wbr>Link<wbr>Policy</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Share<wbr>Link<wbr>Policy<span class="tsd-signature-symbol">(</span>policy<span class="tsd-signature-symbol">: </span><a href="../enums/link.creationpolicy.html" class="tsd-signature-type">Link.CreationPolicy</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="link.html#createlinkoptions" class="tsd-signature-type">Link.CreateLinkOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-earlyaccess">earlyaccess</dt>
+								<dd>
+									&nbsp;
+								</dd>
+								<dt class="tsd-comment-tags-bundle">bundle</dt>
+								<dd>
+									<p>3.1.60.12-32-g4572017c98</p>
+								</dd>
+							</dl>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Change how the link the share dialog and the <a href="link.html#createlink">createLink</a> and <a href="link.html#createdeeplink">createDeepLink</a> links are created.</p>
+								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">await</span> sdk.Link.setShareLinkPolicy(sdk.Link.CreationPolicy.REFERRER);
+<span class="hljs-keyword">const</span> link = <span class="hljs-keyword">await</span> sdk.Link.createLink();
+<span class="hljs-built_in">console</span>.log(link); <span class="hljs-comment">// should log a link to your page that embeds Showcase</span>
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>policy: <a href="../enums/link.creationpolicy.html" class="tsd-signature-type">Link.CreationPolicy</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="link.html#createlinkoptions" class="tsd-signature-type">Link.CreateLinkOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../index.html"><em>@mpSdk</em></a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="app.html">App</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="camera.html">Camera</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="conversion.html">Conversion</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="floor.html">Floor</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="graph.html">Graph</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="label.html">Label</a>
+					</li>
+					<li class="current tsd-kind-namespace">
+						<a href="link.html">Link</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="mattertag.html">Mattertag</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="measurements.html">Measurements</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="mode.html">Mode</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="model.html">Model</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="pointer.html">Pointer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="room.html">Room</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="sensor.html">Sensor</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="settings.html">Settings</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="sweep.html">Sweep</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="tour.html">Tour</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
+						<a href="../enums/link.creationpolicy.html" class="tsd-kind-icon">Creation<wbr>Policy</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
+						<a href="../enums/link.openpolicy.html" class="tsd-kind-icon">Open<wbr>Policy</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="link.html#createlinkoptions" class="tsd-kind-icon">Create<wbr>Link<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="link.html#openpolicyoptions" class="tsd-kind-icon">Open<wbr>Policy<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="link.html#createdeeplink" class="tsd-kind-icon">create<wbr>Deep<wbr>Link</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="link.html#createlink" class="tsd-kind-icon">create<wbr>Link</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="link.html#setexternallinkpolicy" class="tsd-kind-icon">set<wbr>External<wbr>Link<wbr>Policy</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="link.html#setmodellinkpolicy" class="tsd-kind-icon">set<wbr>Model<wbr>Link<wbr>Policy</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="link.html#setnavigationlinkpolicy" class="tsd-kind-icon">set<wbr>Navigation<wbr>Link<wbr>Policy</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="link.html#setsameoriginlinkpolicy" class="tsd-kind-icon">set<wbr>Same<wbr>Origin<wbr>Link<wbr>Policy</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="link.html#setsharelinkpolicy" class="tsd-kind-icon">set<wbr>Share<wbr>Link<wbr>Policy</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

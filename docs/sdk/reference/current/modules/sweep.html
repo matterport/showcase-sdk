@@ -61,6 +61,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="sweep.html#creategraph" class="tsd-kind-icon">create<wbr>Graph</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="sweep.html#disable" class="tsd-kind-icon">disable</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="sweep.html#enable" class="tsd-kind-icon">enable</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="sweep.html#moveto" class="tsd-kind-icon">move<wbr>To</a></li>
@@ -97,8 +98,10 @@
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p><code>rotation.x</code>: is the amount the camera will rotate up/down, in the range between [-90…90] with -90 being straight down and 90 being straight up, 45 would be looking up at a 45 degree angle., -45 down etc..
-							<code>rotation.y</code>: is the amount the camera rotate around horizontally, between [-360…0…360], negative values to rotate to the left, positive to rotate to the right.</p>
+							<p><code>rotation.x</code>: is the amount the camera will rotate up/down, in the range between [-90…90]
+								with -90 being straight down and 90 being straight up, 45 would be looking up at a 45 degree angle., -45 down etc..
+								<code>rotation.y</code>: is the amount the camera rotate around horizontally, between [-360…0…360],
+							negative values to rotate to the left, positive to rotate to the right.</p>
 						</div>
 						<p>Note: The rotation that Sweep.moveTo uses for input is the same rotation that will get returned from the <a href="camera.html#pose-1">Camera.pose</a> property.</p>
 						<pre><code><span class="hljs-keyword">const</span> cachedPose = <span class="hljs-literal">null</span>;
@@ -300,7 +303,7 @@ mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keywor
 						<div class="lead">
 							<p>An observable collection of sweep data that can be subscribed to.</p>
 						</div>
-						<pre><code>showcase.Sweep.data.subscribe({
+						<pre><code>mpSdk.Sweep.data.subscribe({
   onAdded: <span class="hljs-keyword">function</span> (index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>) {
     console.log(<span class="hljs-string">&#x27;sweep added to the collection&#x27;</span>, index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>);
   },
@@ -320,6 +323,35 @@ mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keywor
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="creategraph" class="tsd-anchor"></a>
+					<h3>create<wbr>Graph</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Graph<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><a href="sweep.html#observablesweepdata" class="tsd-signature-type">Sweep.ObservableSweepData</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>A graph of enabled sweeps that can be used for pathfinding.
+										This graph will automatically update as sweeps change and trigger any observers.
+									The weight of each edge is the Euclidean distance from a sweep to its neighbor.</p>
+								</div>
+								<p>Enabling a sweep will automatically add it and its edges to the graph.<br>
+								Disabling a sweep will automatically remove it and its edges from the graph.</p>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> sweepGraph = <span class="hljs-keyword">await</span> mpSdk.Sweep.createGraph();
+<span class="hljs-keyword">const</span> startSweep = sweepGraph.vertex(<span class="hljs-string">&#x27;[start vertex]&#x27;</span>);
+<span class="hljs-keyword">const</span> endSweep = sweepGraph.vertex(<span class="hljs-string">&#x27;[end vertex]&#x27;</span>);
+
+<span class="hljs-keyword">const</span> path = mpSdk.Graph.createAStarRunner(sweepGraph, startSweep, endSweep).exec();
+</code></pre>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><a href="sweep.html#observablesweepdata" class="tsd-signature-type">Sweep.ObservableSweepData</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="disable" class="tsd-anchor"></a>
 					<h3>disable</h3>
@@ -448,7 +480,13 @@ mpSdk.Sweep.moveTo(sweepId, {
 						<a href="floor.html">Floor</a>
 					</li>
 					<li class=" tsd-kind-namespace">
+						<a href="graph.html">Graph</a>
+					</li>
+					<li class=" tsd-kind-namespace">
 						<a href="label.html">Label</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="link.html">Link</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="mattertag.html">Mattertag</a>
@@ -519,6 +557,9 @@ mpSdk.Sweep.moveTo(sweepId, {
 					</li>
 					<li class=" tsd-kind-property tsd-parent-kind-namespace">
 						<a href="sweep.html#data" class="tsd-kind-icon">data</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="sweep.html#creategraph" class="tsd-kind-icon">create<wbr>Graph</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="sweep.html#disable" class="tsd-kind-icon">disable</a>

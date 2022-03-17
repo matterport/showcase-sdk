@@ -174,7 +174,7 @@
 "title": "Redirecting to SDK Home",
 "tags": "",
 "keywords": "",
-"url": "docsindex.html",
+"url": "docsreferenceindex.html",
 "summary": ""
 }
 ,
@@ -207,7 +207,7 @@
 "title": "Redirecting to SDK Home",
 "tags": "",
 "keywords": "",
-"url": "docsreferenceindex.html",
+"url": "docsindex.html",
 "summary": ""
 }
 ,
@@ -1087,6 +1087,17 @@
 "title": "Pathfinding",
 "tags": "",
 "keywords": "",
+"url": "sdk_pathfinding.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Pathfinding",
+"tags": "",
+"keywords": "",
 "url": "sdkbundle_pathfinding.html",
 "summary": ""
 }
@@ -1101,6 +1112,17 @@
 "tags": "",
 "keywords": "",
 "url": "sdkbundle_cursor.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Pointer Reticle",
+"tags": "",
+"keywords": "",
+"url": "sdk_cursor.html",
 "summary": ""
 }
 ,
