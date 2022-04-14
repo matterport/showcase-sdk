@@ -474,47 +474,47 @@ graph LR
   C --2--&gt; D
 </div>
 
-<p>We will then use A* to generate a path from <code class="highlighter-rouge">'A'</code> to <code class="highlighter-rouge">'D'</code>. The resulting path should be <code class="highlighter-rouge">[A, B, C, D]</code> despite there being paths with fewer steps. The determining factor for the path is the overall weight. For example:</p>
+<p>We will then use A* to generate a path from <code class="language-plaintext highlighter-rouge">'A'</code> to <code class="language-plaintext highlighter-rouge">'D'</code>. The resulting path should be <code class="language-plaintext highlighter-rouge">[A, B, C, D]</code> despite there being paths with fewer steps. The determining factor for the path is the overall weight. For example:</p>
 <ul>
-  <li>The sub-path <code class="highlighter-rouge">[A, B, C]</code> is chosen over <code class="highlighter-rouge">[A, C]</code> because the total weight is 4 and 5 respectively.</li>
-  <li>The sub-path <code class="highlighter-rouge">[B, C, D]</code> is chosen over <code class="highlighter-rouge">[B, D]</code> because the total weight is 5 and 6 respectively.</li>
+  <li>The sub-path <code class="language-plaintext highlighter-rouge">[A, B, C]</code> is chosen over <code class="language-plaintext highlighter-rouge">[A, C]</code> because the total weight is 4 and 5 respectively.</li>
+  <li>The sub-path <code class="language-plaintext highlighter-rouge">[B, C, D]</code> is chosen over <code class="language-plaintext highlighter-rouge">[B, D]</code> because the total weight is 5 and 6 respectively.</li>
 </ul>
 
 <h4 id="creating-the-graph">Creating the Graph</h4>
-<p>To get started, we create an empty graph using the <a href="docs/sdkbundle/reference/current/modules/graph.html#createdirectedgraph"><code class="highlighter-rouge">Graph.createDirectedGraph()</code></a> function.</p>
+<p>To get started, we create an empty graph using the <a href="docs/sdkbundle/reference/current/modules/graph.html#createdirectedgraph"><code class="language-plaintext highlighter-rouge">Graph.createDirectedGraph()</code></a> function.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">graph</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Graph</span><span class="p">.</span><span class="nx">createDirectedGraph</span><span class="p">();</span>
 </code></pre></div></div>
 <p>With an empty graph, we can start adding the vertices.</p>
 
 <h4 id="adding-the-vertices">Adding the Vertices</h4>
-<p>Adding a vertex or set of vertices can be done using <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#addvertex"><code class="highlighter-rouge">IDirectedGraph.addVertex</code></a>. An id MUST be provided for each vertex; each vertex can also contain arbitrary user data. For our example, we’ll just add some arbitrary “indices” to each vertex.</p>
+<p>Adding a vertex or set of vertices can be done using <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#addvertex"><code class="language-plaintext highlighter-rouge">IDirectedGraph.addVertex</code></a>. An id MUST be provided for each vertex; each vertex can also contain arbitrary user data. For our example, we’ll just add some arbitrary “indices” to each vertex.</p>
 
-<p>Let’s add vertices <code class="highlighter-rouge">'A' - 'D'</code></p>
+<p>Let’s add vertices <code class="language-plaintext highlighter-rouge">'A' - 'D'</code></p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// add a single vertex</span>
-<span class="nx">graph</span><span class="p">.</span><span class="nx">addVertex</span><span class="p">({</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'A'</span><span class="p">,</span> <span class="na">data</span><span class="p">:</span> <span class="mi">0</span> <span class="p">});</span>
+<span class="nx">graph</span><span class="p">.</span><span class="nx">addVertex</span><span class="p">({</span> <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">A</span><span class="dl">'</span><span class="p">,</span> <span class="na">data</span><span class="p">:</span> <span class="mi">0</span> <span class="p">});</span>
 
 <span class="c1">// add multiple vertices</span>
 <span class="nx">graph</span><span class="p">.</span><span class="nx">addVertex</span><span class="p">(</span>
-  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'B'</span><span class="p">,</span> <span class="na">data</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span>
-  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'C'</span><span class="p">,</span> <span class="na">data</span><span class="p">:</span> <span class="mi">2</span> <span class="p">},</span>
-  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'D'</span><span class="p">,</span> <span class="na">data</span><span class="p">:</span> <span class="mi">3</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">B</span><span class="dl">'</span><span class="p">,</span> <span class="na">data</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">C</span><span class="dl">'</span><span class="p">,</span> <span class="na">data</span><span class="p">:</span> <span class="mi">2</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">D</span><span class="dl">'</span><span class="p">,</span> <span class="na">data</span><span class="p">:</span> <span class="mi">3</span> <span class="p">},</span>
 <span class="p">);</span>
 </code></pre></div></div>
 
 <p>Now that we have vertices, we can connect vertices with edges.</p>
 
 <h4 id="adding-edges">Adding Edges</h4>
-<p>Adding an edge or set of edges is done using <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#setedge"><code class="highlighter-rouge">IDirectedGraph.setEdge</code></a>. Since edges are a relationship between vertices, creating an edge requires references to the vertices. Vertices can be queried using <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#vertex"><code class="highlighter-rouge">IDirectedGraph.vertex</code></a>.</p>
+<p>Adding an edge or set of edges is done using <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#setedge"><code class="language-plaintext highlighter-rouge">IDirectedGraph.setEdge</code></a>. Since edges are a relationship between vertices, creating an edge requires references to the vertices. Vertices can be queried using <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#vertex"><code class="language-plaintext highlighter-rouge">IDirectedGraph.vertex</code></a>.</p>
 
 <p>Note: edges have directionality so an edge from vertex ‘A’ to vertex ‘B’ is a distinct edge from an edge from vertex ‘B’ to vertex ‘A’.</p>
 
 <p>Let’s add edges as described in the diagram.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// first get references to the vertices</span>
-<span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="s1">'A'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="s1">'B'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="s1">'C'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="s1">'D'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="dl">'</span><span class="s1">A</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="dl">'</span><span class="s1">B</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="dl">'</span><span class="s1">C</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="dl">'</span><span class="s1">D</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="c1">// check that the vertices were found</span>
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">a</span> <span class="o">||</span> <span class="o">!</span><span class="nx">b</span> <span class="o">||</span> <span class="o">!</span><span class="nx">c</span> <span class="o">||</span> <span class="o">!</span><span class="nx">d</span><span class="p">)</span> <span class="k">throw</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">`one of vertices 'A', 'B', 'C', or 'D' was not in the graph`</span><span class="p">);</span>
@@ -533,23 +533,23 @@ graph LR
 <p>We should now have a graph that looks like the one in the diagram. We can start trying to find paths between vertices.</p>
 
 <h4 id="finding-a-path">Finding a Path</h4>
-<p>Finding a path in a graph is done using an “A* Runner”, created by <a href="docs/sdkbundle/reference/current/modules/graph.html#createastarrunner"><code class="highlighter-rouge">Graph.createAStarRunner</code></a> and calling its <a href="docs/sdkbundle/reference/current/interfaces/graph.iastarrunner.html#exec"><code class="highlighter-rouge">IAStarRunner.exec</code></a>. The result of <code class="highlighter-rouge">exec</code> is cached so multiple calls will not recompute the path and will return the same object (until there are changes to the graph – see <a href="sdkbundle_pathfinding.html#observing-changes">Observing Changes</a>).</p>
+<p>Finding a path in a graph is done using an “A* Runner”, created by <a href="docs/sdkbundle/reference/current/modules/graph.html#createastarrunner"><code class="language-plaintext highlighter-rouge">Graph.createAStarRunner</code></a> and calling its <a href="docs/sdkbundle/reference/current/interfaces/graph.iastarrunner.html#exec"><code class="language-plaintext highlighter-rouge">IAStarRunner.exec</code></a>. The result of <code class="language-plaintext highlighter-rouge">exec</code> is cached so multiple calls will not recompute the path and will return the same object (until there are changes to the graph – see <a href="sdkbundle_pathfinding.html#observing-changes">Observing Changes</a>).</p>
 
-<p>Let’s compute a path from <code class="highlighter-rouge">'A'</code> to <code class="highlighter-rouge">'D'</code>.</p>
+<p>Let’s compute a path from <code class="language-plaintext highlighter-rouge">'A'</code> to <code class="language-plaintext highlighter-rouge">'D'</code>.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">aStarRunner</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Graph</span><span class="p">.</span><span class="nx">createAStarRunner</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">d</span><span class="p">);</span>
 <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">aStarRunner</span><span class="p">.</span><span class="nx">exec</span><span class="p">();</span>
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">result</code> should now have a <code class="highlighter-rouge">.status</code> of <code class="highlighter-rouge">mpSdk.Graph.AStarStatus.SUCCESS</code> and a <code class="highlighter-rouge">.path</code> of <code class="highlighter-rouge">[a, b, c, d]</code> like we predicted in our diagram.</p>
+<p><code class="language-plaintext highlighter-rouge">result</code> should now have a <code class="language-plaintext highlighter-rouge">.status</code> of <code class="language-plaintext highlighter-rouge">mpSdk.Graph.AStarStatus.SUCCESS</code> and a <code class="language-plaintext highlighter-rouge">.path</code> of <code class="language-plaintext highlighter-rouge">[a, b, c, d]</code> like we predicted in our diagram.</p>
 
 <p>If we later decide to add new vertices and/or update edges, our shortest path may have changed. Observability can give us a hint about those changes.</p>
 
 <h4 id="observing-changes">Observing Changes</h4>
 <p>Both Graphs and the A* Runners are observable meaning they can let us know when they have undergone changes. Changes to vertices and the edges of a graph and the path of an A* Runner can all be subscribed to.</p>
 
-<p>Observability is provided by <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#onverticeschanged"><code class="highlighter-rouge">IDirectedGraph.onVerticesChanged</code></a> and <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#onedgeschanged"><code class="highlighter-rouge">IDirectedGraph.onEdgesChanged</code></a> for graphs.</p>
+<p>Observability is provided by <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#onverticeschanged"><code class="language-plaintext highlighter-rouge">IDirectedGraph.onVerticesChanged</code></a> and <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#onedgeschanged"><code class="language-plaintext highlighter-rouge">IDirectedGraph.onEdgesChanged</code></a> for graphs.</p>
 <blockquote>
-  <p><strong>Important</strong>: After making changes to a graph, it is necessary to call <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#commit"><code class="highlighter-rouge">IDirectedGraph.commit</code></a> to signal that any modification is now finished. <code class="highlighter-rouge">commit</code> will have no effect and no observers notified, if there have been no changes to the graph.</p>
+  <p><strong>Important</strong>: After making changes to a graph, it is necessary to call <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#commit"><code class="language-plaintext highlighter-rouge">IDirectedGraph.commit</code></a> to signal that any modification is now finished. <code class="language-plaintext highlighter-rouge">commit</code> will have no effect and no observers notified, if there have been no changes to the graph.</p>
 </blockquote>
 
 <p>Let’s subscribe to a graph and make some changes to it.</p>
@@ -557,27 +557,27 @@ graph LR
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// subscribe to vertex changes</span>
 <span class="nx">graph</span><span class="p">.</span><span class="nx">onVerticesChanged</span><span class="p">({</span>
   <span class="nx">onChanged</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'vertices in the graph have changed'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">vertices in the graph have changed</span><span class="dl">'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">});</span>
 <span class="c1">// subscribe to edge changes</span>
 <span class="nx">graph</span><span class="p">.</span><span class="nx">onEdgesChanged</span><span class="p">({</span>
   <span class="nx">onChanged</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'edges in the graph have changed'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">edges in the graph have changed</span><span class="dl">'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">graph</span><span class="p">.</span><span class="nx">addVertex</span><span class="p">({</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'E'</span><span class="p">,</span> <span class="na">data</span><span class="p">:</span> <span class="mi">4</span> <span class="p">});</span>
+<span class="nx">graph</span><span class="p">.</span><span class="nx">addVertex</span><span class="p">({</span> <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">E</span><span class="dl">'</span><span class="p">,</span> <span class="na">data</span><span class="p">:</span> <span class="mi">4</span> <span class="p">});</span>
 <span class="c1">// we can call `graph.commit()` here to trigger the `onVerticesChanged` observer, but ...</span>
 <span class="c1">// ... if we know we'll be making more changes, we should hold off on calling `commit` until then</span>
 
-<span class="kd">const</span> <span class="nx">e</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="s1">'E'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">e</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="dl">'</span><span class="s1">E</span><span class="dl">'</span><span class="p">);</span>
 <span class="nx">graph</span><span class="p">.</span><span class="nx">setEdge</span><span class="p">({</span> <span class="na">src</span><span class="p">:</span> <span class="nx">a</span><span class="p">,</span> <span class="na">dst</span><span class="p">:</span> <span class="nx">e</span><span class="p">,</span> <span class="na">weight</span><span class="p">:</span> <span class="mi">10</span> <span class="p">});</span>
 <span class="nx">graph</span><span class="p">.</span><span class="nx">commit</span><span class="p">();</span> <span class="c1">// &lt;-- will trigger the attached observer in `onVerticesChanged` and `onEdgesChanged`</span>
 <span class="nx">graph</span><span class="p">.</span><span class="nx">commit</span><span class="p">();</span> <span class="c1">// &lt;-- will no-op since the graph has not changed since the last `commit`</span>
 </code></pre></div></div>
 
-<p>A* Runners are observable through <a href="docs/sdkbundle/reference/current/interfaces/graph.iastarrunner.html#subscribe"><code class="highlighter-rouge">IAStarRunner.subscribe</code></a>. The instance of the runner is provided in the callback.</p>
+<p>A* Runners are observable through <a href="docs/sdkbundle/reference/current/interfaces/graph.iastarrunner.html#subscribe"><code class="language-plaintext highlighter-rouge">IAStarRunner.subscribe</code></a>. The instance of the runner is provided in the callback.</p>
 
 <p>Let’s subscribe to an A* Runner.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">aStarRunner</span><span class="p">.</span><span class="nx">exec</span><span class="p">();</span>
@@ -597,29 +597,29 @@ graph LR
 <span class="nx">graph</span><span class="p">.</span><span class="nx">commit</span><span class="p">();</span> <span class="c1">// &lt;-- will trigger the A* Runner's observers which will recompute the path.</span>
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">result</code> should have a new <code class="highlighter-rouge">.path</code> of <code class="highlighter-rouge">[a, c, d]</code> since we made the sub-path <code class="highlighter-rouge">[a, c]</code> a better (lighter) option than the previous <code class="highlighter-rouge">[a, b, c]</code>.</p>
+<p><code class="language-plaintext highlighter-rouge">result</code> should have a new <code class="language-plaintext highlighter-rouge">.path</code> of <code class="language-plaintext highlighter-rouge">[a, c, d]</code> since we made the sub-path <code class="language-plaintext highlighter-rouge">[a, c]</code> a better (lighter) option than the previous <code class="language-plaintext highlighter-rouge">[a, b, c]</code>.</p>
 
 <h2 id="finding-a-path-using-sweepcreategraph">Finding a Path Using Sweep.createGraph</h2>
 <p>For a more concrete example of pahtfinding, we also expose a way to create a graph from the Sweeps within a Matterport Digital Twin.</p>
 
-<p>We provide a way to automatically create a graph derived from our <code class="highlighter-rouge">Sweep.data</code> using <a href="docs/sdkbundle/reference/current/modules/sweep.html#creategraph">Sweep.createGraph</a>. When done with the graph, its <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#dispose"><code class="highlighter-rouge">dispose</code></a> should be called to cleanup its resources.
+<p>We provide a way to automatically create a graph derived from our <code class="language-plaintext highlighter-rouge">Sweep.data</code> using <a href="docs/sdkbundle/reference/current/modules/sweep.html#creategraph">Sweep.createGraph</a>. When done with the graph, its <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#dispose"><code class="language-plaintext highlighter-rouge">dispose</code></a> should be called to cleanup its resources.
 Some features of this sweep graph:</p>
 <ul>
-  <li>The graph returned will only contain <code class="highlighter-rouge">enabled</code> sweeps</li>
+  <li>The graph returned will only contain <code class="language-plaintext highlighter-rouge">enabled</code> sweeps</li>
   <li>The graph is automatically updated as sweep data is changed
     <ul>
       <li>enabling sweeps will automatically be added to the graph</li>
       <li>disabling sweeps will automatically removed them from the graph</li>
     </ul>
   </li>
-  <li>Each vertex’s <code class="highlighter-rouge">id</code> is the id of the associated sweep</li>
-  <li>Each vertex’s <code class="highlighter-rouge">data</code> is the same as each item in the sweep collection from <code class="highlighter-rouge">Sweep.data</code></li>
-  <li>Each edge’s <code class="highlighter-rouge">weight</code> is the Euclidean distance between neighboring sweeps</li>
+  <li>Each vertex’s <code class="language-plaintext highlighter-rouge">id</code> is the id of the associated sweep</li>
+  <li>Each vertex’s <code class="language-plaintext highlighter-rouge">data</code> is the same as each item in the sweep collection from <code class="language-plaintext highlighter-rouge">Sweep.data</code></li>
+  <li>Each edge’s <code class="language-plaintext highlighter-rouge">weight</code> is the Euclidean distance between neighboring sweeps</li>
 </ul>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sweepGraph</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">createGraph</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">startSweep</span> <span class="o">=</span> <span class="nx">sweepGraph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="s1">'[start sweep id]'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">endSweep</span> <span class="o">=</span> <span class="nx">sweepGraph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="s1">'[end sweep id]'</span><span class="p">);</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sweepGraph</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">createGraph</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">startSweep</span> <span class="o">=</span> <span class="nx">sweepGraph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="dl">'</span><span class="s1">[start sweep id]</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">endSweep</span> <span class="o">=</span> <span class="nx">sweepGraph</span><span class="p">.</span><span class="nx">vertex</span><span class="p">(</span><span class="dl">'</span><span class="s1">[end sweep id]</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="c1">// do standard path finding</span>
 <span class="kd">const</span> <span class="nx">aStarRunner</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Graph</span><span class="p">.</span><span class="nx">createAStarRunner</span><span class="p">(</span><span class="nx">sweepGraph</span><span class="p">,</span> <span class="nx">startSweep</span><span class="p">,</span> <span class="nx">endSweep</span><span class="p">);</span>
@@ -628,11 +628,11 @@ Some features of this sweep graph:</p>
 <span class="c1">// the runner will be subscribed to the graph, which is subscribed to sweep data</span>
 <span class="nx">aStarRunner</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
   <span class="nx">onChanged</span><span class="p">(</span><span class="nx">runner</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'sweep graph has changed'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">sweep graph has changed</span><span class="dl">'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">disable</span><span class="p">(</span><span class="s1">'[intermediate sweep]'</span><span class="p">);</span> <span class="c1">// &lt;-- will trigger the above `onChanged` if the sweep was previously enabled</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">disable</span><span class="p">(</span><span class="dl">'</span><span class="s1">[intermediate sweep]</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// &lt;-- will trigger the above `onChanged` if the sweep was previously enabled</span>
 
 <span class="c1">// finally, clean up the graph when no longer needed</span>
 <span class="nx">sweepGraph</span><span class="p">.</span><span class="nx">dispose</span><span class="p">();</span>
@@ -641,7 +641,7 @@ Some features of this sweep graph:</p>
 <h4 id="modifying-the-sweep-graph">Modifying the Sweep Graph</h4>
 <p>Since the sweep graph only uses the Euclidean distance between sweeps, it generally prioritizes long distance “transitions” between sweeps. In order to incentivize taking shorter, but potentially more, “transitions” between sweeps, we can scale the weight of each edge so that they no longer have a linear relationship.</p>
 
-<p>We can iterate all of the edges of the graph using <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#edges"><code class="highlighter-rouge">IDirectedGraph.edges</code></a> and then set each edge’s weight to the square of its current weight.</p>
+<p>We can iterate all of the edges of the graph using <a href="docs/sdkbundle/reference/current/interfaces/graph.idirectedgraph.html#edges"><code class="language-plaintext highlighter-rouge">IDirectedGraph.edges</code></a> and then set each edge’s weight to the square of its current weight.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">{</span> <span class="nx">src</span><span class="p">,</span> <span class="nx">dst</span><span class="p">,</span> <span class="nx">weight</span> <span class="p">}</span> <span class="k">of</span> <span class="nx">sweepGraph</span><span class="p">.</span><span class="nx">edges</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">sweepGraph</span><span class="p">.</span><span class="nx">setEdge</span><span class="p">({</span> <span class="nx">src</span><span class="p">,</span> <span class="nx">dst</span><span class="p">,</span> <span class="na">weight</span><span class="p">:</span> <span class="nx">weight</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">});</span>
@@ -665,7 +665,7 @@ graph LR
   A --49--&gt; D
 </div>
 
-<p>Traversing either graph from <code class="highlighter-rouge">'A'</code> to <code class="highlighter-rouge">'D'</code> will produce the paths <code class="highlighter-rouge">[A, D]</code> and <code class="highlighter-rouge">[A, B, C, D]</code> respectively.</p>
+<p>Traversing either graph from <code class="language-plaintext highlighter-rouge">'A'</code> to <code class="language-plaintext highlighter-rouge">'D'</code> will produce the paths <code class="language-plaintext highlighter-rouge">[A, D]</code> and <code class="language-plaintext highlighter-rouge">[A, B, C, D]</code> respectively.</p>
 
 
     <div class="tags">
@@ -683,7 +683,7 @@ graph LR
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 11, 2022 <br />
+ Site last generated: Apr 14, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

@@ -99,7 +99,7 @@
 										<p>An optional template for the link to use when the policy is not set to <code>SAME_FRAME</code>,
 										that will have any <code>${[param]}</code> substrings interpolated using the current set of URL parameters.</p>
 									</div>
-									<p>If ${[param]} is included in the path  of the URL, it will be replaced by the current URL parameter&#39;s value or undefined (<code>${m}/show</code>: <code>abc123/show</code>).
+									<p>If ${[param]} is included in the path of the URL, it will be replaced by the current URL parameter&#39;s value or undefined (<code>${m}/show</code>: <code>abc123/show</code>).
 										If ${[param]} is included in the search parameters of the URL, it and it&#39;s value wil be appended ot the URL (<code>${m}</code>: <code>&amp;m=abc123</code>).
 									URL parameters that are unset will be appended without a value. (<code>${unset}</code>: <code>&amp;unset</code>)</p>
 									<p>As an example, the string <code>&quot;https://my.domain.com/${m}/show.html?${play}${unset}&quot;</code> interpolated at the URL <code>https://my.domain.com/show/?m=abc123&amp;play=1</code>
@@ -285,7 +285,9 @@
 								</div>
 								<pre><code class="language-typescript"><span class="hljs-comment">// when clicking a link with a location within the current model, open a new window with the model at the location</span>
 <span class="hljs-comment">// instead of navigating the current model to the new location</span>
-sdk.Link.setNavigationLinkPolicy(sdk.Link.OpenPolicy.NEW_WINDOW, <span class="hljs-string">&#x27;https://example.com/${m}/show.html?&#x27;</span>);
+sdk.Link.setNavigationLinkPolicy(sdk.Link.OpenPolicy.NEW_WINDOW, {
+  <span class="hljs-attr">templateHref</span>: <span class="hljs-string">&#x27;https://example.com/${m}/show.html?&#x27;</span>),
+});
 
 <span class="hljs-comment">// revert the navigation link behavior to the default</span>
 sdk.Link.setNavigationLinkPolicy(sdk.Link.OpenPolicy.DEFAULT);
@@ -328,7 +330,7 @@ sdk.Link.setNavigationLinkPolicy(sdk.Link.OpenPolicy.DEFAULT);
 								<div class="lead">
 									<p>Change the behavior of clicking a link to a page from the same origin as the one hosting Showcase.</p>
 								</div>
-								<pre><code class="language-typescript">sdk.Link.setSameOriginLinkPolicy(sdk.Link.OpenPolicy.REPLACE);
+								<pre><code class="language-typescript">sdk.Link.setSameOriginLinkPolicy(sdk.Link.OpenPolicy.CURRENT_WINDOW);
 <span class="hljs-comment">// clicking a link with the same origin as Showcase&#x27;s embedder will now navigate the embedding page</span>
 
 sdk.Link.setSameOriginLinkPolicy(sdk.Link.OpenPolicy.SAME_FRAME);

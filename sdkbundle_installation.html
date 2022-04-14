@@ -495,11 +495,11 @@ noResultsText: '<li><div>No results found.<div></li>',
 
    <h2 id="adding-the-sdk-bundle-to-an-existing-application">Adding the SDK Bundle to an existing application</h2>
 <h3 id="download-the-latest-sdk-bundle-package">Download the latest SDK Bundle package</h3>
-<p><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.64.4-0-gea16b080c2/showcase-bundle.zip">https://static.matterport.com/showcase-sdk/bundle/3.1.64.4-0-gea16b080c2/showcase-bundle.zip</a></p>
+<p><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.64.2-0-g865d491ff5/showcase-bundle.zip">https://static.matterport.com/showcase-sdk/bundle/3.1.64.2-0-g865d491ff5/showcase-bundle.zip</a></p>
 <h3 id="extract-the-contents-of-showcase-bundletargz-to-a-directory-where-your-files-will-be-served">Extract the contents of showcase-bundle.tar.gz to a directory where your files will be served</h3>
 <p>It is important that you preserve the package’s file organization.  We recommend that you keep the bundle files under one directory to make it easy to upgrade in the future. <br /></p>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">cd</span> <span class="o">[</span>path to server root]
-<span class="o">&gt;</span> mkdir bundle
+<span class="o">&gt;</span> <span class="nb">mkdir </span>bundle
 <span class="o">&gt;</span> unzip showcase-bundle.zip <span class="nt">-d</span> bundle
 password:
 <span class="o">&gt;</span> <span class="nb">ls </span>bundle
@@ -508,8 +508,8 @@ cursors		images		locale		terms
 <span class="o">&gt;</span>
 </code></pre></div></div>
 
-<h3 id="add-an-iframe-to-your-existing-page-that-targets-the-showcasehtml-file-of-the-bundle-directory">Add an iframe to your existing page that targets the <code class="highlighter-rouge">showcase.html</code> file of the bundle directory</h3>
-<p>To avoid css conflicts, we are requiring that the showcase be embedded in an iframe. Replace <code class="highlighter-rouge">[MODEL_SID]</code> with your own.</p>
+<h3 id="add-an-iframe-to-your-existing-page-that-targets-the-showcasehtml-file-of-the-bundle-directory">Add an iframe to your existing page that targets the <code class="language-plaintext highlighter-rouge">showcase.html</code> file of the bundle directory</h3>
+<p>To avoid css conflicts, we are requiring that the showcase be embedded in an iframe. Replace <code class="language-plaintext highlighter-rouge">[MODEL_SID]</code> with your own.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">id=</span><span class="s">"showcase"</span> <span class="na">width=</span><span class="s">"740"</span> <span class="na">height=</span><span class="s">"480"</span> <span class="na">src=</span><span class="s">"/bundle/showcase.html?m=[MODEL_SID]&amp;applicationKey=[APPLICATION_KEY]"</span> <span class="na">frameborder=</span><span class="s">”0”</span> <span class="na">allowfullscreen</span> <span class="na">allow=</span><span class="s">"vr"</span><span class="err">'</span><span class="nt">&gt;&lt;/iframe&gt;</span>
 </code></pre></div></div>
@@ -517,31 +517,31 @@ cursors		images		locale		terms
 <h3 id="connect-to-the-sdk">Connect to the SDK</h3>
 <p>Add a script to the page to await the loading of showcase. Connect to it once loaded.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcase</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'showcase'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcase</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
 <span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">;</span>
-<span class="nx">showcase</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'load'</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">showcase</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">load</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">sdk</span><span class="p">;</span>
   <span class="k">try</span> <span class="p">{</span>
-    <span class="nx">sdk</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">);</span>
+    <span class="nx">sdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
     <span class="k">return</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Hello Bundle SDK'</span><span class="p">,</span> <span class="nx">sdk</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello Bundle SDK</span><span class="dl">'</span><span class="p">,</span> <span class="nx">sdk</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
 <h3 id="connect-using-an-oauth-token">Connect using an OAuth Token</h3>
 <p>Contact <a href="mailto:developer@matterport.com">Developer Support</a> to enable OAuth for your application.</p>
 
-<p>To connct to a model using an OAuth token, pass an <code class="highlighter-rouge">access_token</code> as <code class="highlighter-rouge">auth</code> in the options argument to <a href="docs/sdkbundle/reference/current/index.html#mp_sdk">connect</a>.</p>
+<p>To connct to a model using an OAuth token, pass an <code class="language-plaintext highlighter-rouge">access_token</code> as <code class="language-plaintext highlighter-rouge">auth</code> in the options argument to <a href="docs/sdkbundle/reference/current/index.html#mp_sdk">connect</a>.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcase</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'showcase'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcase</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
 <span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">auth</span><span class="p">:</span> <span class="s1">'[access_token]'</span><span class="p">,</span>
+<span class="kd">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">auth</span><span class="p">:</span> <span class="dl">'</span><span class="s1">[access_token]</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
@@ -561,7 +561,7 @@ cursors		images		locale		terms
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 11, 2022 <br />
+ Site last generated: Apr 14, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

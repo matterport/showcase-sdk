@@ -531,18 +531,18 @@ $('#toc').on('click', 'a', function() {
 <p>clone using ssh:</p>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> git clone git@github.com:matterport/showcase-sdk-tutorial.git
 <span class="o">&gt;</span> <span class="nb">cd </span>showcase-sdk-tutorial
-<span class="o">&gt;</span> yarn install
+<span class="o">&gt;</span> yarn <span class="nb">install</span>
 </code></pre></div></div>
 
 <p>or clone using https:</p>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> git clone https://github.com/matterport/showcase-sdk-tutorial.git
 <span class="o">&gt;</span> <span class="nb">cd </span>showcase-sdk-tutorial
-<span class="o">&gt;</span> yarn install
+<span class="o">&gt;</span> yarn <span class="nb">install</span>
 </code></pre></div></div>
 
 <h2 id="download-and-extract-the-latest-bundle-sdk">Download and extract the latest Bundle SDK</h2>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> curl https://static.matterport.com/showcase-sdk/bundle/3.1.64.4-0-gea16b080c2/showcase-bundle.zip <span class="nt">-o</span> bundle.zip
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> curl https://static.matterport.com/showcase-sdk/bundle/3.1.64.2-0-g865d491ff5/showcase-bundle.zip <span class="nt">-o</span> bundle.zip
 <span class="o">&gt;</span> unzip bundle.zip <span class="nt">-d</span> ./bundle
 </code></pre></div></div>
 
@@ -556,7 +556,7 @@ $('#toc').on('click', 'a', function() {
   <li>The function call to connect().<br />Source <a href="https://github.com/matterport/showcase-sdk-tutorial/blob/master/src/index.ts">https://github.com/matterport/showcase-sdk-tutorial/blob/master/src/index.ts</a></li>
 </ul>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">sdk</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcase</span><span class="p">,</span> <span class="s1">'PUT_APPLICATION_KEY_HERE'</span><span class="p">,</span> <span class="s1">'3.5'</span><span class="p">);</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">sdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcase</span><span class="p">,</span> <span class="dl">'</span><span class="s1">PUT_APPLICATION_KEY_HERE</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">3.5</span><span class="dl">'</span><span class="p">);</span>
 </code></pre></div></div>
 
 <ul>
@@ -585,7 +585,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Launch <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a></p>
 
-<p>Open the debug console and you should see:<br /><code class="highlighter-rouge">Hello Bundle SDK!</code></p>
+<p>Open the debug console and you should see:<br /><code class="language-plaintext highlighter-rouge">Hello Bundle SDK!</code></p>
 
 
     <div class="tags">
@@ -603,7 +603,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 11, 2022 <br />
+ Site last generated: Apr 14, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

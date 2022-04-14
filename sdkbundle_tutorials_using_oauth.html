@@ -552,13 +552,13 @@ $('#toc').on('click', 'a', function() {
 
 <p>Run these two commands when you first download the repo.</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> yarn install
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> yarn <span class="nb">install</span>
 <span class="o">&gt;</span> yarn install-bundle
 </code></pre></div></div>
 
 <h2 id="configuring-the-client-and-server">Configuring the client and server</h2>
 
-<p>Both the <code class="highlighter-rouge">@oauth/app</code> and <code class="highlighter-rouge">@oauth/server</code> will need to be configured with a few values from the <a href="https://my.matterport.com/settings/account/devtools">dev tools for your account</a>.</p>
+<p>Both the <code class="language-plaintext highlighter-rouge">@oauth/app</code> and <code class="language-plaintext highlighter-rouge">@oauth/server</code> will need to be configured with a few values from the <a href="https://my.matterport.com/settings/account/devtools">dev tools for your account</a>.</p>
 
 <p>packages/oauth/server/config.ts needs:</p>
 <ul>
@@ -602,7 +602,7 @@ yarn run v1.22.10
 <p><strong>Notes</strong></p>
 <ol>
   <li>changing the server’s port will also require a change in packages/oauth-app/src/redirect.html</li>
-  <li>changing the app’s port will require changing the <code class="highlighter-rouge">requestOrigin</code> in the packages/oauth-app/src/config.ts and the redirect url for your application in your Matterport developer tool settings</li>
+  <li>changing the app’s port will require changing the <code class="language-plaintext highlighter-rouge">requestOrigin</code> in the packages/oauth-app/src/config.ts and the redirect url for your application in your Matterport developer tool settings</li>
 </ol>
 
 
@@ -621,7 +621,7 @@ yarn run v1.22.10
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 11, 2022 <br />
+ Site last generated: Apr 14, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

@@ -220,22 +220,22 @@ noResultsText: '<li><div>No results found.<div></li>',
     
 
    <h2 id="what-has-changed">What has changed?</h2>
-<p><a href="docs/earlyaccess/reference/interfaces/graph.icollectionadaptor.html"><code class="highlighter-rouge">ICollectionAdaptor</code></a></p>
+<p><a href="docs/earlyaccess/reference/interfaces/graph.icollectionadaptor.html"><code class="language-plaintext highlighter-rouge">ICollectionAdaptor</code></a></p>
 <ul>
-  <li>New: <a href="docs/earlyaccess/reference/interfaces/graph.icollectionadaptor.html#isneighborof"><code class="highlighter-rouge">isNeighborOf</code></a> is a new, now required method</li>
-  <li>Change: <a href="docs/earlyaccess/reference/interfaces/graph.icollectionadaptor.html#neighborsof"><code class="highlighter-rouge">neighborsOf</code></a> and <a href="docs/earlyaccess/reference/interfaces/graph.icollectionadaptor.html#weightbetween"><code class="highlighter-rouge">weightBetween</code></a> are now called with the vertices instead of the data within each vertex</li>
+  <li>New: <a href="docs/earlyaccess/reference/interfaces/graph.icollectionadaptor.html#isneighborof"><code class="language-plaintext highlighter-rouge">isNeighborOf</code></a> is a new, now required method</li>
+  <li>Change: <a href="docs/earlyaccess/reference/interfaces/graph.icollectionadaptor.html#neighborsof"><code class="language-plaintext highlighter-rouge">neighborsOf</code></a> and <a href="docs/earlyaccess/reference/interfaces/graph.icollectionadaptor.html#weightbetween"><code class="language-plaintext highlighter-rouge">weightBetween</code></a> are now called with the vertices instead of the data within each vertex</li>
 </ul>
 
 <h3 id="why-these-changes">Why these changes?</h3>
-<p>The inclusion of <code class="highlighter-rouge">isNeighborOf</code> allows the <code class="highlighter-rouge">IDirectedGraph.watch</code> to be more performant when updating the graph structure.</p>
+<p>The inclusion of <code class="language-plaintext highlighter-rouge">isNeighborOf</code> allows the <code class="language-plaintext highlighter-rouge">IDirectedGraph.watch</code> to be more performant when updating the graph structure.</p>
 
-<p>Calling <code class="highlighter-rouge">neighborsOf</code> and <code class="highlighter-rouge">weightBetween</code> with the vertex provides more context about the vertex than just the underlying data and allows for more perfomant updates to the graph’s edges.</p>
+<p>Calling <code class="language-plaintext highlighter-rouge">neighborsOf</code> and <code class="language-plaintext highlighter-rouge">weightBetween</code> with the vertex provides more context about the vertex than just the underlying data and allows for more perfomant updates to the graph’s edges.</p>
 
 <h2 id="migrating-from-31552-34-ga9934ccd93">Migrating from 3.1.55.2-34-ga9934ccd93</h2>
-<p>In order to migrate from a prior version of the <code class="highlighter-rouge">ICollectionAdaptor</code></p>
+<p>In order to migrate from a prior version of the <code class="language-plaintext highlighter-rouge">ICollectionAdaptor</code></p>
 
 <h4 id="add-the-isneighborof-method">Add the ‘isNeighborOf’ method</h4>
-<p>The additional <code class="highlighter-rouge">isNeighborOf</code> method needs to be included in the object passed to <code class="highlighter-rouge">IDirectedGraph.watch</code>.</p>
+<p>The additional <code class="language-plaintext highlighter-rouge">isNeighborOf</code> method needs to be included in the object passed to <code class="language-plaintext highlighter-rouge">IDirectedGraph.watch</code>.</p>
 
 <p>For example with sweeps</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">graph</span><span class="p">.</span><span class="nx">watch</span><span class="p">({</span>
@@ -248,7 +248,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </code></pre></div></div>
 
 <h4 id="access-the-data-of-the-vertices">Access the ‘.data’ of the vertices</h4>
-<p>In the <code class="highlighter-rouge">neighorsOf</code> and <code class="highlighter-rouge">weightBetween</code> methods, when accessing the <code class="highlighter-rouge">src</code> and <code class="highlighter-rouge">dst</code>, access <code class="highlighter-rouge">src.data</code> and <code class="highlighter-rouge">dst.data</code> instead.</p>
+<p>In the <code class="language-plaintext highlighter-rouge">neighorsOf</code> and <code class="language-plaintext highlighter-rouge">weightBetween</code> methods, when accessing the <code class="language-plaintext highlighter-rouge">src</code> and <code class="language-plaintext highlighter-rouge">dst</code>, access <code class="language-plaintext highlighter-rouge">src.data</code> and <code class="language-plaintext highlighter-rouge">dst.data</code> instead.</p>
 
 <p>For example with sweeps</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">graph</span><span class="p">.</span><span class="nx">watch</span><span class="p">({</span>
@@ -298,7 +298,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 11, 2022 <br />
+ Site last generated: Apr 14, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

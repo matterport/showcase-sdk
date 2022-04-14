@@ -750,7 +750,7 @@ $('#toc').on('click', 'a', function() {
 <ol>
   <li>Go to <a href="http://rubyinstaller.org/downloads/">RubyInstaller for Windows</a>.</li>
   <li>Under <strong>RubyInstallers</strong>, download and install one of the Ruby installers under the <strong>WITH DEVKIT</strong> list (usually the recommended/highlighted option).</li>
-  <li>Double-click the downloaded file and proceed through the wizard to install it. Run the <code class="highlighter-rouge">ridk install</code> step on the last stage of the installation wizard.</li>
+  <li>Double-click the downloaded file and proceed through the wizard to install it. Run the <code class="language-plaintext highlighter-rouge">ridk install</code> step on the last stage of the installation wizard.</li>
   <li>Open a new command prompt window or Git Bash session.</li>
 </ol>
 
@@ -758,9 +758,9 @@ $('#toc').on('click', 'a', function() {
 
 <p>At this point you should have Ruby and Rubygem on your machine.</p>
 
-<p>Now use <code class="highlighter-rouge">gem</code> to install Jekyll:</p>
+<p>Now use <code class="language-plaintext highlighter-rouge">gem</code> to install Jekyll:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll
 </code></pre></div></div>
 
 <p>You can now use Jekyll to create new Jekyll sites following the quick-start instructions on <a href="http://jekyllrb.com">Jekyllrb.com</a>.</p>
@@ -777,10 +777,10 @@ $('#toc').on('click', 'a', function() {
 
 <ol>
   <li>Browse to the directory where you downloaded the Documentation theme for Jekyll.</li>
-  <li>Delete or rename the existing <code class="highlighter-rouge">Gemfile</code> and <code class="highlighter-rouge">Gemfile.lock</code> files.</li>
-  <li>Install Bundler: <code class="highlighter-rouge">gem install bundler</code></li>
+  <li>Delete or rename the existing <code class="language-plaintext highlighter-rouge">Gemfile</code> and <code class="language-plaintext highlighter-rouge">Gemfile.lock</code> files.</li>
+  <li>Install Bundler: <code class="language-plaintext highlighter-rouge">gem install bundler</code></li>
   <li>
-    <p>Initialize Bundler: <code class="highlighter-rouge">bundle init</code></p>
+    <p>Initialize Bundler: <code class="language-plaintext highlighter-rouge">bundle init</code></p>
 
     <p>This will create a new Gemfile.</p>
   </li>
@@ -792,7 +792,7 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Remove the existing contents. Then paste in the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source "https://rubygems.org"
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source "https://rubygems.org"
 
 gem 'wdm'
 gem 'jekyll'
@@ -801,7 +801,7 @@ gem 'jekyll'
   </li>
   <li>Save and close the file.</li>
   <li>
-    <p>Type <code class="highlighter-rouge">bundle install</code>.</p>
+    <p>Type <code class="language-plaintext highlighter-rouge">bundle install</code>.</p>
 
     <p>Bundle retrieves all the needed gems and gem dependencies and downloads them to your computer. At this time, Bundle also takes a snapshot of all the gems used in your project and creates a Gemfile.lock file to store this information.</p>
   </li>
@@ -815,9 +815,9 @@ gem 'jekyll'
 
 <ol>
   <li>Browse to the directory where you downloaded the Documentation theme for Jekyll.</li>
-  <li>Type <code class="highlighter-rouge">jekyll serve</code></li>
+  <li>Type <code class="language-plaintext highlighter-rouge">jekyll serve</code></li>
   <li>
-    <p>Go to the preview address in the browser. (Make sure you include the <code class="highlighter-rouge">/</code> at the end.)</p>
+    <p>Go to the preview address in the browser. (Make sure you include the <code class="language-plaintext highlighter-rouge">/</code> at the end.)</p>
 
     <p>Unfortunately, the Command Prompt doesn’t allow you to easily copy and paste the URL, so you’ll have to type it manually.</p>
   </li>
@@ -827,7 +827,7 @@ gem 'jekyll'
 
 <p>After making an edit, Jekyll auto-rebuilds the site. If you have the Gemfile in the theme with the github-pages gem, you may see the following error:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.
 </code></pre></div></div>
 
 <p>If so, you will need to take some additional steps to resolve it. (Note that this error only appears if you have the github-pages gem in your gemfile.) The resolution involves adding a Github token and a cert file.</p>
@@ -851,7 +851,7 @@ gem 'jekyll'
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 11, 2022 <br />
+ Site last generated: Apr 14, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

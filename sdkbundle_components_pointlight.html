@@ -529,19 +529,19 @@ $('#toc').on('click', 'a', function() {
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><strong>enabled</strong>: boolean<br /><em>default</em> <code class="highlighter-rouge">true</code></td>
+      <td style="text-align: left"><strong>enabled</strong>: boolean<br /><em>default</em> <code class="language-plaintext highlighter-rouge">true</code></td>
       <td>If true the point light is active in the scene.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><strong>color</strong>: { r: number, g: number : b number }<br /><em>default</em> <code class="highlighter-rouge">{ r: 1.0, g: 1.0, b: 1.0 }</code></td>
+      <td style="text-align: left"><strong>color</strong>: { r: number, g: number : b number }<br /><em>default</em> <code class="language-plaintext highlighter-rouge">{ r: 1.0, g: 1.0, b: 1.0 }</code></td>
       <td>The color of the light.<br /> Each color component is a number between 0 and 1.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><strong>intensity</strong>: number<br /><em>default</em> <code class="highlighter-rouge">2</code></td>
+      <td style="text-align: left"><strong>intensity</strong>: number<br /><em>default</em> <code class="language-plaintext highlighter-rouge">2</code></td>
       <td>The light intensity.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><strong>position</strong>: { x: number, y: number, z: number }<br /><em>default</em> <code class="highlighter-rouge">{ x: 1, y: 5, z: 1 }</code></td>
+      <td style="text-align: left"><strong>position</strong>: { x: number, y: number, z: number }<br /><em>default</em> <code class="language-plaintext highlighter-rouge">{ x: 1, y: 5, z: 1 }</code></td>
       <td>The world space position of the point light.</td>
     </tr>
     <tr>
@@ -549,17 +549,17 @@ $('#toc').on('click', 'a', function() {
       <td>Maximum range of the light. Default is 0 (no limit).</td>
     </tr>
     <tr>
-      <td style="text-align: left"><strong>decay</strong>: number<br /><em>default</em> <code class="highlighter-rouge">1</code></td>
+      <td style="text-align: left"><strong>decay</strong>: number<br /><em>default</em> <code class="language-plaintext highlighter-rouge">1</code></td>
       <td>The amount the light dims from the point light.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><strong>debug</strong>: boolean<br /><em>default</em> <code class="highlighter-rouge">false</code></td>
+      <td style="text-align: left"><strong>debug</strong>: boolean<br /><em>default</em> <code class="language-plaintext highlighter-rouge">false</code></td>
       <td>Enables debugging visuals.</td>
     </tr>
   </tbody>
 </table>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">initial</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">enabled</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
@@ -575,7 +575,7 @@ $('#toc').on('click', 'a', function() {
   <span class="na">debug</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
 <span class="p">};</span>
 
-<span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'mp.pointLight'</span><span class="p">,</span> <span class="nx">initial</span><span class="p">);</span>
+<span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.pointLight</span><span class="dl">'</span><span class="p">,</span> <span class="nx">initial</span><span class="p">);</span>
 <span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 </code></pre></div></div>
 
@@ -595,7 +595,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 11, 2022 <br />
+ Site last generated: Apr 14, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

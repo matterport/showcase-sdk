@@ -191,6 +191,9 @@
 								<h5>Label<span class="tsd-signature-symbol">: </span><a href="modules/label.html" class="tsd-signature-type">Label</a></h5>
 							</li>
 							<li class="tsd-parameter">
+								<h5>Link<span class="tsd-signature-symbol">: </span><a href="modules/link.html" class="tsd-signature-type">Link</a></h5>
+							</li>
+							<li class="tsd-parameter">
 								<h5>Mattertag<span class="tsd-signature-symbol">: </span><a href="modules/mattertag.html" class="tsd-signature-type">Mattertag</a></h5>
 							</li>
 							<li class="tsd-parameter">
@@ -327,12 +330,13 @@
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>A Window type that can be used to cast the current window to hint at the existance of the <a href="interfaces/mp_sdk.html">MP_SDK</a> object.</p>
-							<pre><code class="language-typescript"><span class="hljs-keyword">const</span> showcaseIframe = <span class="hljs-built_in">document</span>.getElementById&lt;HTMLIFrameElement&gt;(<span class="hljs-string">&#x27;showcase&#x27;</span>);
-<span class="hljs-keyword">const</span> showcaseWindow = <span class="hljs-built_in">window</span> <span class="hljs-keyword">as</span> ShowcaseEmbedWindow;
-showcaseWindow.MP_SDK.connect(showcaseIframe);
-</code></pre>
+							<p>When including the sdk script (<code>&lt;script src=&#39;https://static.matterport.com/showcase-sdk/2.0.1-0-g64e7e88/sdk.js&#39;&gt;</code>) on your page,
+							an <a href="interfaces/mp_sdk.html">MP_SDK</a> will be attached to the window object.</p>
 						</div>
+						<p>This type can be used to cast the window object to access the types available on the MP_SDK object.</p>
+						<pre><code class="language-typescript"><span class="hljs-keyword">const</span> showcaseWindow = <span class="hljs-built_in">window</span> <span class="hljs-keyword">as</span> ShowcaseEmbedWindow;
+showcaseWindow.MP_SDK.connect( ... )
+</code></pre>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">

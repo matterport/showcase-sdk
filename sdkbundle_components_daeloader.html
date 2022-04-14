@@ -506,27 +506,27 @@ noResultsText: '<li><div>No results found.<div></li>',
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><strong>url</strong>: string<br /><em>default</em> <code class="highlighter-rouge">""</code></td>
+      <td style="text-align: left"><strong>url</strong>: string<br /><em>default</em> <code class="language-plaintext highlighter-rouge">""</code></td>
       <td>The url to the dae file.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><strong>visible</strong>: boolean<br /><em>default</em> <code class="highlighter-rouge">true</code></td>
+      <td style="text-align: left"><strong>visible</strong>: boolean<br /><em>default</em> <code class="language-plaintext highlighter-rouge">true</code></td>
       <td>If true, the model is visible.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><strong>localPosition</strong>: { x: number, y: number, z: number } <br /> <em>default</em> <code class="highlighter-rouge">{ x: 0, y: 0, z: 0 }</code></td>
+      <td style="text-align: left"><strong>localPosition</strong>: { x: number, y: number, z: number } <br /> <em>default</em> <code class="language-plaintext highlighter-rouge">{ x: 0, y: 0, z: 0 }</code></td>
       <td>The local offset of the model.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><strong>localRotation</strong>: { x: number, y: number, z: number } <br /> <em>default</em> <code class="highlighter-rouge">{ x: 0, y: 0, z: 0 }</code></td>
+      <td style="text-align: left"><strong>localRotation</strong>: { x: number, y: number, z: number } <br /> <em>default</em> <code class="language-plaintext highlighter-rouge">{ x: 0, y: 0, z: 0 }</code></td>
       <td>The local rotation of model in euler angles.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><strong>localScale</strong>: { x: number, y: number, z: number } <br /> <em>default</em> <code class="highlighter-rouge">{ x: 1, y: 1, z: 1 }</code></td>
+      <td style="text-align: left"><strong>localScale</strong>: { x: number, y: number, z: number } <br /> <em>default</em> <code class="language-plaintext highlighter-rouge">{ x: 1, y: 1, z: 1 }</code></td>
       <td>The local scale of the model.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><strong>colliderEnabled</strong>: boolean <br /> <em>default</em> <code class="highlighter-rouge">true</code></td>
+      <td style="text-align: left"><strong>colliderEnabled</strong>: boolean <br /> <em>default</em> <code class="language-plaintext highlighter-rouge">true</code></td>
       <td>When set, the collider output is set to the loaded model.</td>
     </tr>
   </tbody>
@@ -543,31 +543,31 @@ noResultsText: '<li><div>No results found.<div></li>',
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><strong>loadingState</strong>: string<br /><em>default</em> <code class="highlighter-rouge">"Idle"</code></td>
-      <td><code class="highlighter-rouge">"Idle"</code> - initialized no url is set <br /> <code class="highlighter-rouge">"Loading"</code> - url set, loading the model <br /> <code class="highlighter-rouge">"Loaded"</code> - model has been loaded <br /> <code class="highlighter-rouge">"Error"</code> - there was an error during loading</td>
+      <td style="text-align: left"><strong>loadingState</strong>: string<br /><em>default</em> <code class="language-plaintext highlighter-rouge">"Idle"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">"Idle"</code> - initialized no url is set <br /> <code class="language-plaintext highlighter-rouge">"Loading"</code> - url set, loading the model <br /> <code class="language-plaintext highlighter-rouge">"Loaded"</code> - model has been loaded <br /> <code class="language-plaintext highlighter-rouge">"Error"</code> - there was an error during loading</td>
     </tr>
     <tr>
-      <td style="text-align: left"><strong>objectRoot</strong>: Object3D<br /><em>default</em> <code class="highlighter-rouge">null</code></td>
-      <td><code class="highlighter-rouge">null</code>- no model loaded <br /> <code class="highlighter-rouge">{Object3D}</code> - the root of the loaded model.</td>
+      <td style="text-align: left"><strong>objectRoot</strong>: Object3D<br /><em>default</em> <code class="language-plaintext highlighter-rouge">null</code></td>
+      <td><code class="language-plaintext highlighter-rouge">null</code>- no model loaded <br /> <code class="language-plaintext highlighter-rouge">{Object3D}</code> - the root of the loaded model.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><strong>collider</strong>: Object3D<br /><em>default</em> <code class="highlighter-rouge">{objectRoot}</code></td>
-      <td><code class="highlighter-rouge">null</code>- no collider events if colliderEnabled is set to false <br /> <code class="highlighter-rouge">{objectRoot}</code> - Raycasting will be performed against the loaded model.</td>
+      <td style="text-align: left"><strong>collider</strong>: Object3D<br /><em>default</em> <code class="language-plaintext highlighter-rouge">{objectRoot}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">null</code>- no collider events if colliderEnabled is set to false <br /> <code class="language-plaintext highlighter-rouge">{objectRoot}</code> - Raycasting will be performed against the loaded model.</td>
     </tr>
   </tbody>
 </table>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">initial</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s2">"http://test.com/model.dae"</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">http://test.com/model.dae</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">visible</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="na">localScale</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">x</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="na">z</span><span class="p">:</span> <span class="mf">0.5</span>
   <span class="p">},</span>
 <span class="p">};</span>
 
-<span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="s1">'mp.daeLoader'</span><span class="p">,</span> <span class="nx">initial</span><span class="p">);</span>
+<span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.daeLoader</span><span class="dl">'</span><span class="p">,</span> <span class="nx">initial</span><span class="p">);</span>
 <span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 </code></pre></div></div>
 
@@ -587,7 +587,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 11, 2022 <br />
+ Site last generated: Apr 14, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

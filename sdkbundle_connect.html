@@ -494,24 +494,24 @@ noResultsText: '<li><div>No results found.<div></li>',
     
 
    <h2 id="connecting-to-the-sdk">Connecting to the SDK</h2>
-<p>Add the <code class="highlighter-rouge">applicationKey</code> to your bundle iframe’s URL parameters</p>
+<p>Add the <code class="language-plaintext highlighter-rouge">applicationKey</code> to your bundle iframe’s URL parameters</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;iframe</span> <span class="na">id=</span><span class="s">"showcase"</span> <span class="na">width=</span><span class="s">"740"</span> <span class="na">height=</span><span class="s">"480"</span> <span class="na">src=</span><span class="s">"/bundle/showcase.html?m=[MODEL_SID]&amp;applicationKey=[APPLICATION_KEY]"</span> <span class="na">frameborder=</span><span class="s">”0”</span> <span class="na">allowfullscreen</span> <span class="na">allow=</span><span class="s">"vr"</span><span class="err">'</span><span class="nt">&gt;&lt;/iframe&gt;</span>
 </code></pre></div></div>
 
 <h3 id="connect-to-the-sdk">Connect to the SDK</h3>
-<p>Connect using the simplified syntax <code class="highlighter-rouge">connect(window: Window)</code></p>
+<p>Connect using the simplified syntax <code class="language-plaintext highlighter-rouge">connect(window: Window)</code></p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcase</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'showcase'</span><span class="p">);</span>
-<span class="nx">showcase</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'load'</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Hello Bundle SDK'</span><span class="p">,</span> <span class="nx">sdk</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcase</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">showcase</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">load</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello Bundle SDK</span><span class="dl">'</span><span class="p">,</span> <span class="nx">sdk</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
 <h3 id="connect-using-an-oauth-token">Connect using an OAuth Token</h3>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">,</span> <span class="p">{</span>
-    <span class="na">auth</span><span class="p">:</span> <span class="s1">'[access_token]'</span><span class="p">,</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">auth</span><span class="p">:</span> <span class="dl">'</span><span class="s1">[access_token]</span><span class="dl">'</span><span class="p">,</span>
   <span class="p">});</span>
 </code></pre></div></div>
 
@@ -531,7 +531,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 11, 2022 <br />
+ Site last generated: Apr 14, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

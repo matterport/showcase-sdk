@@ -470,11 +470,11 @@ $('#toc').on('click', 'a', function() {
    <h2 id="adding-a-link-to-the-description">Adding a link to the description</h2>
 <p>The description supports the following markdown link format:</p>
 
-<p><code class="highlighter-rouge">[link text](link url)</code></p>
+<p><code class="language-plaintext highlighter-rouge">[link text](link url)</code></p>
 
 <p>The following code snippets produces the image below it.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sdk</span><span class="p">.</span><span class="nx">Mattertag</span><span class="p">.</span><span class="nx">editBillboard</span><span class="p">(</span><span class="nx">mattertagSid</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">description</span><span class="p">:</span><span class="s2">"[Link to Matterport site!](https://www.matterport.com)"</span><span class="p">,</span>
+  <span class="na">description</span><span class="p">:</span><span class="dl">"</span><span class="s2">[Link to Matterport site!](https://www.matterport.com)</span><span class="dl">"</span><span class="p">,</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
@@ -489,7 +489,7 @@ $('#toc').on('click', 'a', function() {
   <li>Select your image url. For example we will use,</li>
 </ul>
 
-<p>url: <code class="highlighter-rouge">https://static.matterport.com/mp_cms/media/filer_public/71/ca/71cabc75-99a5-41a4-917c-f45203f9254e/pro-21f8ddbae.png</code></p>
+<p>url: <code class="language-plaintext highlighter-rouge">https://static.matterport.com/mp_cms/media/filer_public/71/ca/71cabc75-99a5-41a4-917c-f45203f9254e/pro-21f8ddbae.png</code></p>
 
 <p align="center">
   <a href="https://static.matterport.com/mp_cms/media/filer_public/71/ca/71cabc75-99a5-41a4-917c-f45203f9254e/pro-21f8ddbae.png" target="_blank">
@@ -514,7 +514,7 @@ $('#toc').on('click', 'a', function() {
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sdk</span><span class="p">.</span><span class="nx">Mattertag</span><span class="p">.</span><span class="nx">editBillboard</span><span class="p">(</span><span class="nx">mattertagSid</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">media</span><span class="p">:</span> <span class="p">{</span>
   <span class="na">type</span><span class="p">:</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Mattertag</span><span class="p">.</span><span class="nx">MediaType</span><span class="p">.</span><span class="nx">PHOTO</span><span class="p">,</span>
-  <span class="na">src</span><span class="p">:</span> <span class="s1">'https://static.matterport.com/mp_cms/media/filer_public/71/ca/71cabc75-99a5-41a4-917c-f45203f9254e/pro-21f8ddbae.png'</span><span class="p">,</span>
+  <span class="na">src</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://static.matterport.com/mp_cms/media/filer_public/71/ca/71cabc75-99a5-41a4-917c-f45203f9254e/pro-21f8ddbae.png</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
@@ -529,7 +529,7 @@ $('#toc').on('click', 'a', function() {
   <li>Select your video url. For example we will use,</li>
 </ul>
 
-<p>url: <code class="highlighter-rouge">https://www.youtube.com/watch?v=uO_x9TFNmTk</code></p>
+<p>url: <code class="language-plaintext highlighter-rouge">https://www.youtube.com/watch?v=uO_x9TFNmTk</code></p>
 
 <p><a href="https://www.youtube.com/watch?v=uO_x9TFNmTk" target="_blank"><img src="https://img.youtube.com/vi/uO_x9TFNmTk/0.jpg" alt="IMAGE ALT TEXT HERE" /></a></p>
 
@@ -550,7 +550,7 @@ $('#toc').on('click', 'a', function() {
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sdk</span><span class="p">.</span><span class="nx">Mattertag</span><span class="p">.</span><span class="nx">editBillboard</span><span class="p">(</span><span class="nx">mattertagSid</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">media</span><span class="p">:</span> <span class="p">{</span>
   <span class="na">type</span><span class="p">:</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Mattertag</span><span class="p">.</span><span class="nx">MediaType</span><span class="p">.</span><span class="nx">VIDEO</span><span class="p">,</span>
-  <span class="na">src</span><span class="p">:</span> <span class="s1">'https://www.youtube.com/watch?v=uO_x9TFNmTk'</span><span class="p">,</span>
+  <span class="na">src</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://www.youtube.com/watch?v=uO_x9TFNmTk</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
@@ -574,7 +574,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 11, 2022 <br />
+ Site last generated: Apr 14, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

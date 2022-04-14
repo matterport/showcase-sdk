@@ -451,31 +451,31 @@ noResultsText: '<li><div>No results found.<div></li>',
 <h3 id="code-completion-or-intellisense">Code completion or Intellisense</h3>
 <p>Make fewer mistakes by using your IDE to suggest the available properties on the sdk.<br />
 <img src="images/types-autocomplete.png" /><br />
-(Auto-completing with <code class="highlighter-rouge">subscribe</code> when typing <code class="highlighter-rouge">mpSdk.Mattertag.data.</code>)</p>
+(Auto-completing with <code class="language-plaintext highlighter-rouge">subscribe</code> when typing <code class="language-plaintext highlighter-rouge">mpSdk.Mattertag.data.</code>)</p>
 
 <h3 id="code-comments-and-reference-documentation-in-your-ide">Code comments and reference documentation in your IDE</h3>
 <p>Hover over any property of our sdk (namespace, function, observable, etc) to get access to the same documentation that is available here.<br />
 <img src="images/type-codecomments.png" /><br />
-(Hovering <code class="highlighter-rouge">mpSdk.Mattertag.data</code>)</p>
+(Hovering <code class="language-plaintext highlighter-rouge">mpSdk.Mattertag.data</code>)</p>
 
 <h2 id="getting-started-with-type-declarations">Getting Started with Type Declarations</h2>
-<p>To get started, cast your window to the <code class="highlighter-rouge">ShowcaseEmbedWindow</code> and start using the MP_SDK object on it.</p>
+<p>To get started, cast your window to the <code class="language-plaintext highlighter-rouge">ShowcaseEmbedWindow</code> and start using the MP_SDK object on it.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ShowcaseEmbedWindow</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./mp/sdk'</span><span class="p">;</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ShowcaseEmbedWindow</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./mp/sdk</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">showcaseIframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'showcase-iframe'</span><span class="p">)</span> <span class="k">as</span> <span class="nx">HTMLIFrameElement</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">showcaseIframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase-iframe</span><span class="dl">'</span><span class="p">)</span> <span class="k">as</span> <span class="nx">HTMLIFrameElement</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">embeddingWindow</span> <span class="o">=</span> <span class="nb">window</span> <span class="k">as</span> <span class="nx">ShowcaseEmbedWindow</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">embeddingWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseIframe</span><span class="p">,</span> <span class="s1">'{YOUR SDK KEY}'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">embeddingWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseIframe</span><span class="p">,</span> <span class="dl">'</span><span class="s1">{YOUR SDK KEY}</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="c1">// start using mpSdk</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="s1">'sweep1234'</span><span class="p">,</span> <span class="p">{</span> <span class="na">transition</span><span class="p">:</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">TransitionType</span><span class="p">.</span><span class="nx">FADEOUT</span> <span class="p">});</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="dl">'</span><span class="s1">sweep1234</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">transition</span><span class="p">:</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">TransitionType</span><span class="p">.</span><span class="nx">FADEOUT</span> <span class="p">});</span>
 </code></pre></div></div>
 
 <h2 id="using-individual-namespaces">Using Individual Namespaces</h2>
-<p>Once you have your <code class="highlighter-rouge">mpSdk</code> object, you’ll likely want to pass it around and/or use other types provided by the sdk.<br />
-All namespaces and their types are also available through the root <code class="highlighter-rouge">MpSdk</code> type.</p>
+<p>Once you have your <code class="language-plaintext highlighter-rouge">mpSdk</code> object, you’ll likely want to pass it around and/or use other types provided by the sdk.<br />
+All namespaces and their types are also available through the root <code class="language-plaintext highlighter-rouge">MpSdk</code> type.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// tourControls.ts</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Tour</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./mp/sdk'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Tour</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./mp/sdk</span><span class="dl">'</span>
 
 <span class="k">export</span> <span class="kd">function</span> <span class="nx">startTour</span><span class="p">(</span><span class="nx">tour</span><span class="p">:</span> <span class="nx">Tour</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">tour</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
@@ -487,13 +487,13 @@ All namespaces and their types are also available through the root <code class="
 <span class="p">}</span>
 
 <span class="c1">// index.ts</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">MpSdk</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./mp/sdk'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">startTour</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./tourControls.ts'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">MpSdk</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./mp/sdk</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">startTour</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./tourControls.ts</span><span class="dl">'</span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">useTourControls</span><span class="p">(</span><span class="na">mpSdk</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">useTourControls</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">startTour</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">);</span>
   <span class="c1">// use the Snapshot type through the MpSdk type</span>
-  <span class="kd">const</span> <span class="na">tourSnapshots</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">.</span><span class="nx">Snapshot</span><span class="p">[]</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">getTourSnapshots</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">tourSnapshots</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">.</span><span class="nx">Snapshot</span><span class="p">[]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getTourSnapshots</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -513,7 +513,7 @@ All namespaces and their types are also available through the root <code class="
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 11, 2022 <br />
+ Site last generated: Apr 14, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
