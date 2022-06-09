@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Migrating from Mattertags to Tags | Matterport Developers</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/custom.css">
+
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-matterport.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+<script src="js/mermaid.min.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.io/feed.xml">
+
+    <script>
+      $(document).ready(function () {
+        // Initialize navgoco with default options
+        $("#mysidebar").navgoco({
+          caretHtml: '<i class="fa fa-chevron-down"></i>',
+          accordion: true,
+          openClass: "active", // open
+
+          save: false, // leave false or nav highlighting doesn't work right
+          cookie: {
+            name: "navgoco",
+            expires: false,
+            path: "/",
+          },
+          slide: {
+            duration: 400,
+            easing: "swing",
+          },
+        });
+
+        $("#collapseAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", false);
+        });
+
+        $("#expandAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", true);
+        });
+      });
+    </script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#tg-sb-link").change(function () {
+          $("#tg-sb-sidebar").toggle();
+          $("#tg-sb-content").toggleClass("col-md-9");
+          $("#tg-sb-content").toggleClass("col-md-12");
+        });
+      });
+    </script>
+     
+  </head>
+  <body>
+    <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div>
+    <div class="row">
+      <a class="navbrand col-md-3" href="index.html"
+        >&nbsp;<img
+          class="navbar-image"
+          src="images/MP-logo_H_lock-RGB_white.svg"
+        /><span class="projectTitle"> </span></a
+      >
+      <div class="dev-nav-links col-md-9">
+        <div class="dropdown-items">
+          <div class="dropdown ">
+            <a class="dropbtn active" href="index.html">SDK Docs</a>
+            <div class="dropdown-content">
+              <a href="sdk_home.html" class="">SDK for Embeds</a>
+              <a href="sdkbundle_home.html" class="" href="#">SDK Bundle</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://api.matterport.com/docs/reference">API Docs</a>
+            <div class="dropdown-content">
+              <a href="https://api.matterport.com/docs/reference">API Reference</a>
+              <a href="https://api.matterport.com/graphiql">Interactive Console</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="dev-bottom-bar">
+    <h3></h3>
+    <div class="right-content">
+      <div>
+        <label id="tg-sb-link" class="pure-material-switch">
+          <input type="checkbox" checked />
+          <span>Nav</span>
+        </label>
+      </div>
+      
+      
+
+
+  <a title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Migrating from Mattertags to Tags page: ' + window.location.href;">Give us feedback</a>
+
+
+ 
+    </div>
+  </div>
+  
+  <!-- /.container -->
+</nav> <div class='global-links-container'>
+  <a
+    class='global-link'
+    href="https://matterport.com/legal/sdk-api-agreement"
+    target="_blank"
+    rel="noopener"
+  >SDK Agreement
+  </a>
+</div>
+    <!-- Page Content -->
+    <div class="dev-page-wrapper">
+      <div id="main">
+        <!-- Content Row -->
+        <div class="row">
+          <!-- Sidebar Column -->
+          
+          <aside class="col-md-3" id="tg-sb-sidebar">
+            
+<div id="mysidebar" class="nav">
+  <div class="dev-input-container">
+    <!-- Add roboto font to search bar -->
+    <img src="images/search_button.png" />
+    <input id="search-input" type="text" placeholder="Search"/>
+    <div id="results-container"></div>
+
+  </div>
+  
+  
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</div>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+<script src="js/jekyll-search.js" type="text/javascript"></script>
+<script type="text/javascript">
+        SimpleJekyllSearch.init({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            dataSource: 'search.json',
+            searchResultTemplate: '<li><a href="{url}" title="Migrating from Mattertags to Tags">{title}</a></li>',
+noResultsText: '<li><div>No results found.<div></li>',
+        limit: 10,
+        fuzzy: true,
+})
+</script>
+          </aside>
+           
+          <!-- Content Column -->
+          <div
+            class=" col-md-9" 
+            id="tg-sb-content"
+          >
+            <div class="post-header">
+   <h1 class="post-title-main">Migrating from Mattertags to Tags</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+   <p>Tags (2.0), is the successor to Mattertags.</p>
+
+<p>Most operations that are available in the <code class="language-plaintext highlighter-rouge">Mattertag</code> namespace have an equivalent operation in the <code class="language-plaintext highlighter-rouge">Tag</code> namespace.
+Some have slight syntactic changes.
+Some are now more robust and require more than a single step to use.</p>
+
+<h3 id="why-the-migration">Why the migration?</h3>
+
+<p>Traditional Mattertags allow for the viewing of embedded content and information about particular locations within a Matterport space. However, the Mattertag interface and architecture doesn’t directly support future extended capabilities, such as hosted content. Rather than shoehorning a new interface on top of an existing namespace, Tags 2.0 (Tags) seek to provide the foundation for more powerful tag-based capabilities in the future.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">Mattertag</code> namespace should continue to work whether or not the application is using Tags 2.0. After the full release, the <code class="language-plaintext highlighter-rouge">Mattertag</code> namespace will be considered deprecated, but still functional. However, any future Tag capabilities will be added to the <code class="language-plaintext highlighter-rouge">Tag</code> namespace.</p>
+
+<h3 id="a-brief-summary-of-the-major-changes">A brief summary of the major changes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Existing Functionality</th>
+      <th>New Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Mattertag.registerIcon</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Asset.registerTexture</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Mattertag.preventAction</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Tag.allowAction</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Mattertag.injectHTML</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Tag.addSandbox</code></td>
+    </tr>
+    <tr>
+      <td>“media” in <code class="language-plaintext highlighter-rouge">Mattertag.add</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Tag.registerAttachment</code><br /><code class="language-plaintext highlighter-rouge">Tag.attach</code></td>
+    </tr>
+    <tr>
+      <td>“media” in <code class="language-plaintext highlighter-rouge">Mattertag.editBillboard</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Tag.registerAttachment</code><br /><code class="language-plaintext highlighter-rouge">Tag.attach</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Mattertag.navigateTo</code></td>
+      <td>(no equivalent)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="registering-and-using-icons">Registering and Using Icons</h3>
+<p><code class="language-plaintext highlighter-rouge">Mattertag.registerIcon</code> should be migrated from <code class="language-plaintext highlighter-rouge">Mattertag.registerIcon</code> to <code class="language-plaintext highlighter-rouge">Asset.registerTexture</code>.</p>
+
+<p>We have moved to a unified texture registry for icons and other visuals. The <code class="language-plaintext highlighter-rouge">Tag</code> namespace does not have a <code class="language-plaintext highlighter-rouge">registerIcon</code> function like the <code class="language-plaintext highlighter-rouge">Mattertag</code> namespace does. Instead, <code class="language-plaintext highlighter-rouge">Asset.registerTexture</code> should be used. Eventually, this will also be the case for <code class="language-plaintext highlighter-rouge">Pointer.editTexture</code>.</p>
+
+<h3 id="adding-attachments-media-to-tags">Adding Attachments (Media) to Tags</h3>
+<p>Providing media in <code class="language-plaintext highlighter-rouge">Mattertag.add</code> or <code class="language-plaintext highlighter-rouge">Mattertag.editBillboard</code> should be migrated to use <code class="language-plaintext highlighter-rouge">Tag.registerAttachment</code> and <code class="language-plaintext highlighter-rouge">Tag.attach</code>.</p>
+
+<p>Tags now support multiple media (or attachments) per tag.</p>
+
+<h3 id="adding-custom-html-widgets">Adding Custom HTML Widgets</h3>
+<p>Adding custom HTML (or code sandbox) to a tag should be migrated from <code class="language-plaintext highlighter-rouge">Mattertag.injectHTML</code> to <code class="language-plaintext highlighter-rouge">Tag.addSandbox</code>.</p>
+
+<p>Tags have unified file uploads, external media attachments through OEmbed, and custom HTML Sandboxes under attachments.</p>
+
+<h3 id="preventing-mouse-actions">Preventing Mouse Actions</h3>
+<p>In order to prevent actions on tags, migrate from <code class="language-plaintext highlighter-rouge">Mattertag.preventAction</code> to <code class="language-plaintext highlighter-rouge">Tag.allowAction</code></p>
+
+<p>We identified that <code class="language-plaintext highlighter-rouge">preventAction</code> had a confusing double negative where a <code class="language-plaintext highlighter-rouge">false</code> equated to the action being allowed (<code class="language-plaintext highlighter-rouge">!prevented</code>). <code class="language-plaintext highlighter-rouge">Tag.allowAction</code> accepts the actions that are allowed so that <code class="language-plaintext highlighter-rouge">false</code> is <code class="language-plaintext highlighter-rouge">false</code> and <code class="language-plaintext highlighter-rouge">true</code> is <code class="language-plaintext highlighter-rouge">true</code>.
+The billboard UI component currently doesn’t property prevent actions yet. See <a href="earlyaccess_home.html#known-issues">Known Issues</a>.</p>
+
+<h3 id="navigating-to-view-a-tag">Navigating to View a Tag</h3>
+<p>There is currently no functionality in the <code class="language-plaintext highlighter-rouge">Tag</code> namespace to navigate to a tag. Continue to use <code class="language-plaintext highlighter-rouge">Mattertag.navigateToTag</code>.</p>
+
+<p>Note, we are looking into providing general “look at” functionality as well as the ability to open, close, and dock tags programmatically.</p>
+
+<h2 id="minor-changes">Minor Changes</h2>
+<p>There are a number of other smaller changes between the current <code class="language-plaintext highlighter-rouge">Mattertag</code> namespace and the new <code class="language-plaintext highlighter-rouge">Tag</code> namespace.</p>
+
+<h3 id="preferring-rooms-over-floors">Preferring Rooms over Floors</h3>
+<p>Each tag’s associated data now prefers room information over floors info. Floors can be derived from the room.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Tag.add</code> and <code class="language-plaintext highlighter-rouge">Tag.editPosition</code> no longer accept a floor, nor do they accept a room. Instead, floor and room information is automatically inferred by the position specified. A side-effect of this is that when adding tags, any floor information (id) provided to <code class="language-plaintext highlighter-rouge">Mattertag.add</code> and <code class="language-plaintext highlighter-rouge">Mattertag.editPosition</code> will be ignored.</p>
+
+
+    <div class="tags">
+        
+    </div>
+
+<!-- 
+ -->
+
+</div>
+
+<!-- <hr class="shaded"/> -->
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2022 Matterport, Inc. All rights reserved. <br />
+ Site last generated: Jun 8, 2022 <br />
+<p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /#main -->
+    </div>
+
+    
+  </body>
+   <!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-34880260-5','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+ 
+</html>

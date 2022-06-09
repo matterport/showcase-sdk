@@ -118,7 +118,7 @@
   
   
   <url>
-    <loc>https://matterport.github.io/docs/reference/index.html</loc>
+    <loc>https://matterport.github.io/docs/index.html</loc>
   </url>
   
   
@@ -130,13 +130,19 @@
   
   
   <url>
+    <loc>https://matterport.github.io/docs/reference/index.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
   </url>
   
   
   
   <url>
-    <loc>https://matterport.github.io/docs/index.html</loc>
+    <loc>https://matterport.github.io/mattertagtotag.html</loc>
   </url>
   
   
@@ -616,13 +622,13 @@
   
   
   <url>
-    <loc>https://matterport.github.io/sdk_pathfinding.html</loc>
+    <loc>https://matterport.github.io/sdkbundle_pathfinding.html</loc>
   </url>
   
   
   
   <url>
-    <loc>https://matterport.github.io/sdkbundle_pathfinding.html</loc>
+    <loc>https://matterport.github.io/sdk_pathfinding.html</loc>
   </url>
   
   

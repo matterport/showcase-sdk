@@ -280,12 +280,45 @@ $('#toc').on('click', 'a', function() {
     
 
    <h2 id="what-are-early-access-builds">What are Early Access Builds?</h2>
-
 <p>Early access builds allow developers to prepare for the next SDK release by providing upcoming features and bug fixes prior to general availability.</p>
 
-<h3 id="there-are-currently-no-early-access-builds">There are currently no Early Access builds</h3>
+<h2 id="early-access-features">Early Access Features</h2>
+<p>This Early Access release is focused on our Tags 2.0 (formerly Mattertags) beta.</p>
 
-<p>Get started with the <a href="sdk_home.html">Embed SDK</a> or <a href="sdkbundle_home.html">Bundle SDK</a> instead.</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Before being able to use Tags 2.0, please contact developer support to be opted into the beta.</div>
+
+<h3 id="how-to--migration-guides">How To / Migration Guides</h3>
+<ul>
+  <li><a href="mattertagtotag.html">Migrating from Mattertags to Tags</a></li>
+</ul>
+
+<h2 id="get-the-early-access-bundle-sdk">Get the Early Access Bundle SDK</h2>
+<p>Build - <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.68.12-7-g858688944a/showcase-bundle.zip">3.1.68.12-7-g858688944a</a></p>
+
+<h2 id="reference-pages">Reference Pages</h2>
+<p><a href="docs/reference/current/modules/tag.html">View the Tag reference</a></p>
+
+<p><a href="docs/reference/current/index.html">View the full Docs</a></p>
+
+<h2 id="known-issues">Known Issues</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Tag.allowAction</code> doesn’t always prevent actions when interacting with the billboard UI component</li>
+  <li>Removing a tag with <code class="language-plaintext highlighter-rouge">Tag.remove</code> doesn’t close it billboard if it was open when removing it</li>
+  <li>When editing a tag, editing the text content or attaching media, isn’t immediately rendered and requires the tag’s billboard be closed and reopened to display the updated contents</li>
+  <li>Mattertag <code class="language-plaintext highlighter-rouge">Events</code> no longer fire</li>
+</ul>
+
+<h2 id="changelog">Changelog</h2>
+
+<h5 id="june-7-2022">June 7, 2022</h5>
+<ul>
+  <li>Added the <a href="docs/reference/current/modules/tag.html">Tag</a> namespace.</li>
+  <li>Added <a href="docs/reference/current/modules/label.html#data">Label.data</a> collection to receive Labels data</li>
+  <li>Added <a href="docs/reference/current/modules/tour.html#currentstep">Tour.currentStep</a>, <a href="docs/reference/current/modules/tour.html#transition">Tour.transition</a>, and <a href="docs/reference/current/modules/tour.html#state">Tour.state</a> to get information about what the tour is currently doing</li>
+  <li>Added <a href="docs/reference/current/modules/mode.html#current">Mode.current</a> and <a href="docs/reference/current/modules/mode.html#transition-1">Mode.transition</a> to get information about the current view mode and any transitions between them taking place</li>
+  <li>Added <a href="docs/reference/current/modules/asset.html#registertexture">Asset.registerTexture</a> to be used a central place for registering icons like those for Tags or Mattertags</li>
+  <li>Updated internal Three.js from r136 to r139</li>
+</ul>
 
 
 
@@ -304,7 +337,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 14, 2022 <br />
+ Site last generated: Jun 8, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

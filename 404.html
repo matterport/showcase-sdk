@@ -247,12 +247,21 @@ $('#toc').on('click', 'a', function() {
 <!-- redirect /docs to / -->
 
 <head>
-  <meta http-equiv="refresh" content="0; url=https://matterport.github.io/showcase-sdk/index.html" />
+  <meta http-equiv="refresh" content="1;url=https://matterport.github.io/showcase-sdk/index.html" />
 </head>
 <body>
   <p>
     <a href="https://matterport.github.io/showcase-sdk/index.html">Redirect</a>
   </p>
+  <script>
+    if (window.location.href.indexOf('/docs/sdk/reference/') > -1) {
+      window.location.replace(window.location.href.replace('/docs/sdk/reference/', '/docs/reference/'));
+    }
+    if (window.location.href.indexOf('/docs/sdkbundle/reference/') > -1) {
+      window.location.replace(window.location.href.replace('/docs/sdkbundle/reference/', '/docs/reference/'));
+    }
+  </script>
+
 </body>
 
 
@@ -271,7 +280,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 14, 2022 <br />
+ Site last generated: Jun 8, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

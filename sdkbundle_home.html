@@ -498,12 +498,16 @@ noResultsText: '<li><div>No results found.<div></li>',
 <table>
   <tbody>
     <tr>
+      <td>SDK Early Access</td>
+      <td><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.68.12-7-g858688944a/showcase-bundle.zip">3.1.68.12-7-g858688944a</a></td>
+    </tr>
+    <tr>
       <td>SDK Release</td>
-      <td><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.64.2-0-g865d491ff5/showcase-bundle.zip">3.1.64.2-0-g865d491ff5</a></td>
+      <td><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.64.4-0-gea16b080c2/showcase-bundle.zip">3.1.64.4-0-gea16b080c2</a></td>
     </tr>
     <tr>
       <td>Last Updated</td>
-      <td><strong>Apr 5, 2022</strong></td>
+      <td><strong>Apr 11, 2022</strong></td>
     </tr>
   </tbody>
 </table>
@@ -520,6 +524,11 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Code snippets in the SDK Bundle pages are in typescript. Visit <a href="https://www.typescriptlang.org">https://www.typescriptlang.org</a> to learn more about typescript.</div>
 
+<h3 id="6-7-2022">6-7-2022</h3>
+<ul>
+  <li>A new <a href="earlyaccess_home.html">Early Access</a> build with a focus on Tags 2.0 is now available</li>
+</ul>
+
 <h3 id="4-11-2022">4-11-2022</h3>
 <ul>
   <li>Fixed an issue with deep links not taking you to the correct pose in Tags</li>
@@ -534,31 +543,31 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <h3 id="3-11-2022">3-11-2022</h3>
 <ul>
-  <li>Added iterability to <a href="docs/sdkbundle/reference/current/interfaces/dictionary.html#_symbol_iterator_"><code class="language-plaintext highlighter-rouge">Dictionary</code></a> returned in <a href="docs/sdkbundle/reference/current/interfaces/imapobserver.html"><code class="language-plaintext highlighter-rouge">IMapObserver</code></a></li>
+  <li>Added iterability to <a href="docs/reference/current/interfaces/dictionary.html#_symbol_iterator_"><code class="language-plaintext highlighter-rouge">Dictionary</code></a> returned in <a href="docs/reference/current/interfaces/imapobserver.html"><code class="language-plaintext highlighter-rouge">IMapObserver</code></a></li>
   <li>Added pathfinding support
     <ul>
-      <li>Added the <a href="docs/sdkbundle/reference/current/modules/graph.html"><code class="language-plaintext highlighter-rouge">Graph</code></a> namespace for creating connectivity graphs and traversing them using A*</li>
-      <li>Added the ability to create <a href="docs/sdkbundle/reference/current/modules/sweep.html#creategraph">Sweep graphs</a></li>
+      <li>Added the <a href="docs/reference/current/modules/graph.html"><code class="language-plaintext highlighter-rouge">Graph</code></a> namespace for creating connectivity graphs and traversing them using A*</li>
+      <li>Added the ability to create <a href="docs/reference/current/modules/sweep.html#creategraph">Sweep graphs</a></li>
       <li>See <a href="sdkbundle_pathfinding.html">Pathfinding</a> for more info</li>
     </ul>
   </li>
-  <li>Added the <a href="docs/sdkbundle/reference/current/modules/link.html">Link</a> namespace
+  <li>Added the <a href="docs/reference/current/modules/link.html">Link</a> namespace
     <ul>
-      <li>Added the ability to create share links through <a href="docs/sdkbundle/reference/current/modules/link.html#createlink">Link.createLink</a> and <a href="docs/sdkbundle/reference/current/modules/link.html#createdeeplink">Link.createDeepLink</a></li>
-      <li>Added the ability to change the link in the share dialog through <a href="docs/sdkbundle/reference/current/modules/link.html#setsharelinkpolicy">Link.setShareLinkPolicy</a></li>
-      <li>Added the ability to change the click handler for different link types through <a href="docs/sdkbundle/reference/current/enums/link.openpolicy.html">policies</a> for example <a href="docs/sdkbundle/reference/current/modules/link.html#setmodellinkpolicy">Link.setModelLinkPolicy</a></li>
+      <li>Added the ability to create share links through <a href="docs/reference/current/modules/link.html#createlink">Link.createLink</a> and <a href="docs/reference/current/modules/link.html#createdeeplink">Link.createDeepLink</a></li>
+      <li>Added the ability to change the link in the share dialog through <a href="docs/reference/current/modules/link.html#setsharelinkpolicy">Link.setShareLinkPolicy</a></li>
+      <li>Added the ability to change the click handler for different link types through <a href="docs/reference/current/enums/link.openpolicy.html">policies</a> for example <a href="docs/reference/current/modules/link.html#setmodellinkpolicy">Link.setModelLinkPolicy</a></li>
     </ul>
   </li>
   <li>Fixed some missing and inconsistent types
     <ul>
-      <li>Added type <a href="docs/sdkbundle/reference/current/modules/scene.html#predefinedoutputs">PredefinedOutputs</a> for component output intersection types</li>
-      <li>Added the <a href="docs/sdkbundle/reference/current//modules/scene.html#interactionevent">InteractionEvent</a> type for the mesh interaction callback payload.</li>
-      <li><a href="docs/sdkbundle/reference/current//interfaces/scene.icomponent.html#bind">INode.bind</a> now has the correct type. This function is deprecated.</li>
+      <li>Added type <a href="docs/reference/current/modules/scene.html#predefinedoutputs">PredefinedOutputs</a> for component output intersection types</li>
+      <li>Added the <a href="docs/reference/current//modules/scene.html#interactionevent">InteractionEvent</a> type for the mesh interaction callback payload.</li>
+      <li><a href="docs/reference/current//interfaces/scene.icomponent.html#bind">INode.bind</a> now has the correct type. This function is deprecated.</li>
     </ul>
   </li>
-  <li>Added <a href="docs/sdkbundle/reference/current//interfaces/scene.inode.html#componentiterator">componentIterator</a> method to <code class="language-plaintext highlighter-rouge">INode</code></li>
-  <li>Added <a href="docs/sdkbundle/reference/current//interfaces/scene.icomponent.html#componenttype">componentType</a> property to <code class="language-plaintext highlighter-rouge">IComponent</code></li>
-  <li>Added <a href="docs/sdkbundle/reference/current//interfaces/scene.iobject.html#nodeiterator">nodeIterator</a> to <code class="language-plaintext highlighter-rouge">IObject</code></li>
+  <li>Added <a href="docs/reference/current//interfaces/scene.inode.html#componentiterator">componentIterator</a> method to <code class="language-plaintext highlighter-rouge">INode</code></li>
+  <li>Added <a href="docs/reference/current//interfaces/scene.icomponent.html#componenttype">componentType</a> property to <code class="language-plaintext highlighter-rouge">IComponent</code></li>
+  <li>Added <a href="docs/reference/current//interfaces/scene.iobject.html#nodeiterator">nodeIterator</a> to <code class="language-plaintext highlighter-rouge">IObject</code></li>
   <li>Download <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.63.0-123-g4739265d9f/showcase-bundle.zip">SDK Bundle version: 3.1.63.0-123-g4739265d9f</a></li>
 </ul>
 
@@ -588,8 +597,8 @@ noResultsText: '<li><div>No results found.<div></li>',
   <li>Fixed an issue where model loader components would not remove meshes from the scene when stopped.</li>
   <li>Mobile redirects were removed. You can re-enable redirects by setting <code class="language-plaintext highlighter-rouge">disableMobileRedirect</code> to false in your app config.</li>
   <li>Added the Scene namespace to the sdk type definitions.</li>
-  <li>Added scene objects. See <a href="sdkbundle_tutorials_using_scene_objects.html">Using scene objects</a> and <a href="docs/sdkbundle/reference/current/modules/scene.html#createobjects">Scene.createobjects</a></li>
-  <li><a href="docs/sdkbundle/reference/current/modules/scene.html#serialize">Scene.serialize</a> now serializes to version 2. <a href="docs/sdkbundle/reference/current/modules/scene.html#deserialize">Scene.deserialize</a> takes both version 1 and 2 scene files.</li>
+  <li>Added scene objects. See <a href="sdkbundle_tutorials_using_scene_objects.html">Using scene objects</a> and <a href="docs/reference/current/modules/scene.html#createobjects">Scene.createobjects</a></li>
+  <li><a href="docs/reference/current/modules/scene.html#serialize">Scene.serialize</a> now serializes to version 2. <a href="docs/reference/current/modules/scene.html#deserialize">Scene.deserialize</a> takes both version 1 and 2 scene files.</li>
   <li>Updated embedded three.js to version r128</li>
   <li>Download <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.46.18-2-g2386aca5f/showcase-bundle.zip">SDK Bundle version: 3.1.46.18-2-g2386aca5f</a></li>
 </ul>
@@ -637,7 +646,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 <h3 id="2-24-2021">2-24-2021</h3>
 <ul>
   <li>Interface version updated to 3.9</li>
-  <li>Added <a href="docs/sdkbundle/reference/current/modules/sensor.html">Sensor</a> namespace.</li>
+  <li>Added <a href="docs/reference/current/modules/sensor.html">Sensor</a> namespace.</li>
   <li>Download: <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.35.16-8-ga7993a5c3/showcase-bundle.zip">SDK Bundle version: 3.1.35.16-8-ga7993a5c3</a></li>
 </ul>
 
@@ -648,7 +657,7 @@ noResultsText: '<li><div>No results found.<div></li>',
   <li>Fixed an issue with password submission on password protected spaces.</li>
   <li>Fixed an issue with drag gesture ending prior to pointer release(improves transform control and mesh dragging).</li>
   <li>Added optional effect composer. You must set useEffectComposer: true in the application config object in showcase.html.</li>
-  <li>Added <a href="docs/sdkbundle/reference/current/modules/scene.html#configure">Scene.configure</a> function.</li>
+  <li>Added <a href="docs/reference/current/modules/scene.html#configure">Scene.configure</a> function.</li>
   <li>Download: <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.33.13-14-gb10ecafc1/showcase-bundle.zip">SDK Bundle version: 3.1.33.13-14-gb10ecafc1</a></li>
 </ul>
 
@@ -673,7 +682,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <h3 id="11-6-2020">11-6-2020</h3>
 <ul>
-  <li>Scene: Added support for creating arrays of components and nodes. See <a href="docs/sdkbundle/reference/current/modules/scene.html#registercomponents">Scene.registerComponents</a> and <a href="docs/sdkbundle/reference/current/modules/scene.html#createnodes">Scene.createNodes</a>.</li>
+  <li>Scene: Added support for creating arrays of components and nodes. See <a href="docs/reference/current/modules/scene.html#registercomponents">Scene.registerComponents</a> and <a href="docs/reference/current/modules/scene.html#createnodes">Scene.createNodes</a>.</li>
   <li>Components: Fixed an issue where mp.input would not dispatch a models <code class="language-plaintext highlighter-rouge">INTERACTION.CLICK</code> event.</li>
   <li>General: Fixed an sdk connection issue on the oculus browser. You can now connect to the sdk while in xr immersive mode. See <a href="sdkbundle_tutorials_using_xr.html">Using xr</a></li>
   <li>Added the <code class="language-plaintext highlighter-rouge">mp.xr</code> component which provides an XRSession. See <a href="sdkbundle_components_xr.html">mp.xr</a></li>
@@ -714,7 +723,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <h3 id="5-13-2020">5-13-2020</h3>
 <ul>
-  <li>Added event spies to components. See <a href="sdkbundle_architecture.html#event-spies">Event Spies Overview</a> and <a href="docs/sdkbundle/reference/current/interfaces/scene.icomponent.html#spyonevent">Event Spies Reference</a>.</li>
+  <li>Added event spies to components. See <a href="sdkbundle_architecture.html#event-spies">Event Spies Overview</a> and <a href="docs/reference/current/interfaces/scene.icomponent.html#spyonevent">Event Spies Reference</a>.</li>
   <li>Internal Three.js version upgraded to 0.115.0</li>
   <li>Download: <a href="https://static.matterport.com/misc/bundle/showcase/3.0.35.31-25-g9563c7a6c/showcase-bundle.zip">SDK Bundle version: 3.0.35.31-25-g9563c7a6c</a></li>
 </ul>
@@ -764,7 +773,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 14, 2022 <br />
+ Site last generated: Jun 8, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

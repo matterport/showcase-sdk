@@ -361,7 +361,7 @@
           
           
           
-          <li><a title="Documentation" href="docs\sdk\reference\current\index.html">Documentation</a></li>
+          <li><a title="Documentation" href="docs\reference\current\index.html">Documentation</a></li>
           
           
           
@@ -444,13 +444,23 @@ noResultsText: '<li><div>No results found.<div></li>',
 
     
 
-   <h2 id="2231">22.3.1</h2>
+   <h2 id="2251">22.5.1</h2>
+<h5 id="jun-7-2022">Jun 7, 2022</h5>
+<ul>
+  <li>Added <a href="docs/reference/current/modules/label.html#data">Label.data</a> collection to receive Labels data</li>
+  <li>Added <a href="docs/reference/current/modules/tour.html#currentstep">Tour.currentStep</a>, <a href="docs/reference/current/modules/tour.html#transition">Tour.transition</a>, and <a href="docs/reference/current/modules/tour.html#state">Tour.state</a> to get information about what the tour is currently doing</li>
+  <li>Added <a href="docs/reference/current/modules/mode.html#current">Mode.current</a> and <a href="docs/reference/current/modules/mode.html#transition-1">Mode.transition</a> to get information about the current view mode and any transitions between them taking place</li>
+  <li>Added <a href="docs/reference/current/modules/asset.html#registertexture">Asset.registerTexture</a> to be used as a central place for registering icons like those for Mattertags</li>
+  <li><a href="earlyaccess_home.html">Early Access</a> for Tags 2.0</li>
+</ul>
+
+<h2 id="2231">22.3.1</h2>
 <h5 id="mar-17-2022">Mar 17, 2022</h5>
 <p>The previous Early Access is now closed and all features are now available generally available.</p>
 <ul>
-  <li>Updated: <a href="docs/sdk/reference/current/modules/pointer.html"><code class="language-plaintext highlighter-rouge">Pointer</code></a> now has ways to control the reticle that follows the mouse pointer. <a href="sdk_cursor.html">See the tutorial</a>.</li>
-  <li>Updated: <a href="docs/sdk/reference/current/modules/graph.html"><code class="language-plaintext highlighter-rouge">Graph</code></a> namespace for pathfinding has improved watch-ability. <a href="sdk_pathfinding.html">See the tutorial</a>.</li>
-  <li>Added: <a href="docs/sdk/reference/current/modules/link.html"><code class="language-plaintext highlighter-rouge">Link</code></a> namespace to control how links are generated and how links are handled.</li>
+  <li>Updated: <a href="docs/reference/current/modules/pointer.html"><code class="language-plaintext highlighter-rouge">Pointer</code></a> now has ways to control the reticle that follows the mouse pointer. <a href="sdk_cursor.html">See the tutorial</a>.</li>
+  <li>Updated: <a href="docs/reference/current/modules/graph.html"><code class="language-plaintext highlighter-rouge">Graph</code></a> namespace for pathfinding has improved watch-ability. <a href="sdk_pathfinding.html">See the tutorial</a>.</li>
+  <li>Added: <a href="docs/reference/current/modules/link.html"><code class="language-plaintext highlighter-rouge">Link</code></a> namespace to control how links are generated and how links are handled.</li>
 </ul>
 
 <h2 id="2211">22.1.1</h2>
@@ -458,8 +468,8 @@ noResultsText: '<li><div>No results found.<div></li>',
 <p><a href="earlyaccess_home.html">Early Access</a> features that were previously only available in our Bundle SDK are now available in the Embed SDK as well.</p>
 <ul>
   <li>Added: <a href="docs/earlyaccess/reference/interfaces/dictionary.html#_symbol_iterator_"><code class="language-plaintext highlighter-rouge">Dictionary objects</code></a> returned in <a href="docs/earlyaccess/reference/interfaces/imapobserver.html"><code class="language-plaintext highlighter-rouge">IMapObserver</code></a> are now iterable using <code class="language-plaintext highlighter-rouge">for...of</code> loops.</li>
-  <li>Fixed: <a href="docs/sdk/reference/current/modules/sweep.html#disable">Sweep.disable</a> should now work regardless of the <code class="language-plaintext highlighter-rouge">useLegacyIds</code> param.</li>
-  <li>Fixed: <a href="docs/sdk/reference/current/modules/room.html#roomdata">Room.floorInfo</a> should now be populated instead of always being an invalid floor.</li>
+  <li>Fixed: <a href="docs/reference/current/modules/sweep.html#disable">Sweep.disable</a> should now work regardless of the <code class="language-plaintext highlighter-rouge">useLegacyIds</code> param.</li>
+  <li>Fixed: <a href="docs/reference/current/modules/room.html#roomdata">Room.floorInfo</a> should now be populated instead of always being an invalid floor.</li>
   <li>Early Access: <a href="earlyaccess_21.12.1_pathfinding.html">Graph and Pathfinding</a>; see the <a href="docs/earlyaccess/reference/modules/graph.html">Reference pages</a>.</li>
   <li>Early Access: <a href="earlyaccess_21.12.1_cursor.html">Pointer Reticle Customization</a>; see the <a href="docs/earlyaccess/reference/modules/pointer.html">Reference pages</a>.</li>
 </ul>
@@ -467,15 +477,15 @@ noResultsText: '<li><div>No results found.<div></li>',
 <h2 id="3111">3.11.1</h2>
 <h5 id="sep-23-2021">Sep 23, 2021</h5>
 <ul>
-  <li>Updated: <a href="docs/sdk/reference/current/modules/mattertag.html#registericon">Mattertag.registerIcon</a> will now return the result of the fetch. Existing uses (that did not await the result) should not be affected.</li>
-  <li>Fixed: <a href="docs/sdk/reference/current/modules/mattertag.html#remove">Mattertag.remove</a> can now properly remove an array of tags.</li>
-  <li>Fixed: The <a href="docs/sdk/reference/current/interfaces/mattertag.imessenger.html">Mattertag.IMessenger</a> returned from <a href="docs/sdk/reference/current/modules/mattertag.html#injecthtml">Mattertag.injectHTML</a> will no longer see messages coming from the wrong tags.</li>
+  <li>Updated: <a href="docs/reference/current/modules/mattertag.html#registericon">Mattertag.registerIcon</a> will now return the result of the fetch. Existing uses (that did not await the result) should not be affected.</li>
+  <li>Fixed: <a href="docs/reference/current/modules/mattertag.html#remove">Mattertag.remove</a> can now properly remove an array of tags.</li>
+  <li>Fixed: The <a href="docs/reference/current/interfaces/mattertag.imessenger.html">Mattertag.IMessenger</a> returned from <a href="docs/reference/current/modules/mattertag.html#injecthtml">Mattertag.injectHTML</a> will no longer see messages coming from the wrong tags.</li>
 </ul>
 
 <h2 id="311">3.11</h2>
 <h5 id="jun-10-2021">Jun 10, 2021</h5>
 <ul>
-  <li>Added: <a href="docs/sdk/reference/current/modules/room.html#current">Room.current</a> observable.</li>
+  <li>Added: <a href="docs/reference/current/modules/room.html#current">Room.current</a> observable.</li>
   <li>Added: <a href="sdk_types.html">Typescript type declarations</a>.</li>
   <li>Fixed: <code class="language-plaintext highlighter-rouge">Sweep.Alignment</code> and <code class="language-plaintext highlighter-rouge">Sweep.Placement</code> are now properly under the <code class="language-plaintext highlighter-rouge">Sweep</code> namespace. Previously they were <code class="language-plaintext highlighter-rouge">Mode.Alignment</code> and <code class="language-plaintext highlighter-rouge">Mode.Placement</code></li>
   <li>Removed: An interface version no longer needs to be specified when calling <code class="language-plaintext highlighter-rouge">connect</code>.</li>
@@ -484,9 +494,9 @@ noResultsText: '<li><div>No results found.<div></li>',
 <h2 id="v310">v3.10</h2>
 <h5 id="apr-1-2021">Apr 1, 2021</h5>
 <ul>
-  <li>Added: <a href="docs/sdk/reference/current/modules/room.html#data">Room.data</a> collection.</li>
-  <li>Added: <a href="docs/sdk/reference/current/modules/sensor.html#createsource">Cylinder sources</a> for use with Sensors.</li>
-  <li>Added: <a href="docs/sdk/reference/current/modules/sensor.html#createsource">Box sources</a> now support orientation.</li>
+  <li>Added: <a href="docs/reference/current/modules/room.html#data">Room.data</a> collection.</li>
+  <li>Added: <a href="docs/reference/current/modules/sensor.html#createsource">Cylinder sources</a> for use with Sensors.</li>
+  <li>Added: <a href="docs/reference/current/modules/sensor.html#createsource">Box sources</a> now support orientation.</li>
   <li>Fixed: <code class="language-plaintext highlighter-rouge">Mattertag.add</code> now properly sets its stem visible when undefined.</li>
   <li>Fixed: <code class="language-plaintext highlighter-rouge">Sweep.current</code> is more resilient to missing floor info.</li>
 </ul>
@@ -494,25 +504,25 @@ noResultsText: '<li><div>No results found.<div></li>',
 <h2 id="v39">v3.9</h2>
 <h5 id="feb-22-2021">Feb 22, 2021</h5>
 <ul>
-  <li>Added: <a href="docs/sdk/reference/current/modules/sensor.html">Sensors</a></li>
+  <li>Added: <a href="docs/reference/current/modules/sensor.html">Sensors</a></li>
   <li>Fixed: <code class="language-plaintext highlighter-rouge">Mattertag.editPosition</code> always giving a stem length of 1 meter.</li>
 </ul>
 
 <h2 id="v38">v3.8</h2>
 <h5 id="jan-19-2021">Jan 19, 2021</h5>
 <ul>
-  <li>Added: <a href="docs/sdk/reference/current/modules/floor.html#data">Floor.current</a> observable</li>
-  <li>Added: <a href="docs/sdk/reference/current/modules/sweep.html#current">Sweep.current</a> observable</li>
-  <li>Added: <a href="docs/sdk/reference/current/modules/sweep.html#enable">Sweep.enable</a> and <a href="docs/sdk/reference/current/modules/sweep.html#disable">Sweep.disable</a></li>
-  <li>Fixed: <code class="language-plaintext highlighter-rouge">options.size</code> should now work again in <a href="docs/sdk/reference/current/modules/mattertag.html#injecthtml">Mattertag.injectHTML</a></li>
+  <li>Added: <a href="docs/reference/current/modules/floor.html#data">Floor.current</a> observable</li>
+  <li>Added: <a href="docs/reference/current/modules/sweep.html#current">Sweep.current</a> observable</li>
+  <li>Added: <a href="docs/reference/current/modules/sweep.html#enable">Sweep.enable</a> and <a href="docs/reference/current/modules/sweep.html#disable">Sweep.disable</a></li>
+  <li>Fixed: <code class="language-plaintext highlighter-rouge">options.size</code> should now work again in <a href="docs/reference/current/modules/mattertag.html#injecthtml">Mattertag.injectHTML</a></li>
 </ul>
 
 <h2 id="v37">v3.7</h2>
 <h5 id="dec-21-2020">Dec 21, 2020</h5>
 <ul>
-  <li>Fix: Added <code class="language-plaintext highlighter-rouge">enabled</code>, <code class="language-plaintext highlighter-rouge">stemVisible</code> and <code class="language-plaintext highlighter-rouge">floorIndex</code> properties to <a href="docs/sdk/reference/current/modules/mattertag.html#observablemattertagdata">ObservableMattertagData</a> for backwards compatibility with <code class="language-plaintext highlighter-rouge">Mattertag.getData</code></li>
+  <li>Fix: Added <code class="language-plaintext highlighter-rouge">enabled</code>, <code class="language-plaintext highlighter-rouge">stemVisible</code> and <code class="language-plaintext highlighter-rouge">floorIndex</code> properties to <a href="docs/reference/current/modules/mattertag.html#observablemattertagdata">ObservableMattertagData</a> for backwards compatibility with <code class="language-plaintext highlighter-rouge">Mattertag.getData</code></li>
   <li>Fix: Fixed an issue where observable collections would not return initial data</li>
-  <li>Added: <a href="docs/sdk/reference/current/modules/floor.html#data">Floor.data</a> observable collection, deprecate <code class="language-plaintext highlighter-rouge">Floor.getData</code></li>
+  <li>Added: <a href="docs/reference/current/modules/floor.html#data">Floor.data</a> observable collection, deprecate <code class="language-plaintext highlighter-rouge">Floor.getData</code></li>
   <li>Added: FloorInfo to <code class="language-plaintext highlighter-rouge">Label</code> and <code class="language-plaintext highlighter-rouge">SweepData</code></li>
 </ul>
 
@@ -578,7 +588,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 <h2 id="v321">v3.2.1</h2>
 <h5 id="jan-30-2020">Jan 30, 2020</h5>
 <ul>
-  <li>Added <code class="language-plaintext highlighter-rouge">Mattertag.LINK_OPEN</code> event. This event fires when the user has clicked on an external mattertag link. See <a href="docs/sdk/reference/current/index.html#on">Mattertag Events</a></li>
+  <li>Added <code class="language-plaintext highlighter-rouge">Mattertag.LINK_OPEN</code> event. This event fires when the user has clicked on an external mattertag link. See <a href="docs/reference/current/index.html#on">Mattertag Events</a></li>
   <li>Added <code class="language-plaintext highlighter-rouge">Camera.setRotation</code> function. This function sets the absolute rotation of the camera in inside mode.</li>
 </ul>
 
@@ -703,7 +713,7 @@ We are adding support for synchronous functions. These functions compute and ret
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 14, 2022 <br />
+ Site last generated: Jun 8, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
