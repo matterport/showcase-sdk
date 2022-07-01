@@ -199,39 +199,25 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<dl class="tsd-comment-tags tsd-typography">
-								<dt class="tsd-comment-tags-embed">embed</dt>
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
 								<dd>
-									&nbsp;
-								</dd>
-								<dt class="tsd-comment-tags-bundle">bundle</dt>
-								<dd>
-									<p>3.1.55.2-34-ga9934ccd93</p>
+									<p>Use <a href="asset.html#registertexture">Asset.registerTexture</a> to register new textures instead.</p>
 								</dd>
 							</dl>
+							<h4 class="tsd-introduced-title">Introduced
+								<span class="tsd-introduced-vers">3.1.55.2-34-ga9934ccd93</span>
+							</h4>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Register a texture image to be used with subsequent [[Pointer.editTextre]] calls.
-									You can register multiple textures by calling this function multiple times with unique texture ids.</p>
-								</div>
-								<p><strong>Note</strong>: It is recommended to host your own images to mitigate cross origin limitations.</p>
-								<pre><code class="language-typescript"><span class="hljs-keyword">await</span> mpSdk.Pointer.registerTexture(<span class="hljs-string">&#x27;customTextureId&#x27;</span>, <span class="hljs-string">&#x27;https://[link.to/image]&#x27;</span>);
-</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>textureId: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>A user specified string to use as a lookup of this texture.</p>
-									</div>
 								</li>
 								<li>
 									<h5>textureSrc: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The src of the texture, like the src of an <img>.</p>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>

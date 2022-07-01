@@ -35,7 +35,6 @@
 						<section class="tsd-index-section ">
 							<h3>Enumerations</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/tag.attachmentdescriptortype.html" class="tsd-kind-icon">Attachment<wbr>Descriptor<wbr>Type</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/tag.attachmenttype.html" class="tsd-kind-icon">Attachment<wbr>Type</a></li>
 							</ul>
 						</section>
@@ -50,12 +49,12 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="tag.html#allowableactions" class="tsd-kind-icon">Allowable<wbr>Actions</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="tag.html#attachment" class="tsd-kind-icon">Attachment</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="tag.html#attachmentdescriptor" class="tsd-kind-icon">Attachment<wbr>Descriptor</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="tag.html#descriptor" class="tsd-kind-icon">Descriptor</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="tag.html#editableproperties" class="tsd-kind-icon">Editable<wbr>Properties</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="tag.html#messengermapping" class="tsd-kind-icon">Messenger<wbr>Mapping</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="tag.html#positionoptions" class="tsd-kind-icon">Position<wbr>Options</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="tag.html#sandboxoptions" class="tsd-kind-icon">Sandbox<wbr>Options</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="tag.html#stemheighteditoptions" class="tsd-kind-icon">Stem<wbr>Height<wbr>Edit<wbr>Options</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="tag.html#tagdata" class="tsd-kind-icon">Tag<wbr>Data</a></li>
 							</ul>
 						</section>
@@ -73,12 +72,15 @@
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#addsandbox" class="tsd-kind-icon">add<wbr>Sandbox</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#allowaction" class="tsd-kind-icon">allow<wbr>Action</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#attach" class="tsd-kind-icon">attach</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#detach" class="tsd-kind-icon">detach</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#editbillboard" class="tsd-kind-icon">edit<wbr>Billboard</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#editcolor" class="tsd-kind-icon">edit<wbr>Color</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#editicon" class="tsd-kind-icon">edit<wbr>Icon</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#editopacity" class="tsd-kind-icon">edit<wbr>Opacity</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#editposition" class="tsd-kind-icon">edit<wbr>Position</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#editstem" class="tsd-kind-icon">edit<wbr>Stem</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#registerattachment" class="tsd-kind-icon">register<wbr>Attachment</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#registersandbox" class="tsd-kind-icon">register<wbr>Sandbox</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#remove" class="tsd-kind-icon">remove</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#reseticon" class="tsd-kind-icon">reset<wbr>Icon</a></li>
 							</ul>
@@ -144,29 +146,6 @@
 							</li>
 							<li class="tsd-parameter">
 								<h5>type<span class="tsd-signature-symbol">: </span><a href="../enums/tag.attachmenttype.html" class="tsd-signature-type">Tag.AttachmentType</a></h5>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
-					<a name="attachmentdescriptor" class="tsd-anchor"></a>
-					<h3>Attachment<wbr>Descriptor</h3>
-					<div class="tsd-signature tsd-kind-icon">Attachment<wbr>Descriptor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>A descriptor for a new attachment being registered</p>
-						</div>
-					</div>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>src<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>type<span class="tsd-signature-symbol">: </span><a href="../enums/tag.attachmentdescriptortype.html" class="tsd-signature-type">Tag.AttachmentDescriptorType</a></h5>
 							</li>
 						</ul>
 					</div>
@@ -289,6 +268,24 @@
 										Only needs to be used if scripts you are importing also have a global <code>send</code>, <code>on</code>, or <code>off</code> function.</p>
 									</div>
 								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="stemheighteditoptions" class="tsd-anchor"></a>
+					<h3>Stem<wbr>Height<wbr>Edit<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">Stem<wbr>Height<wbr>Edit<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>stem<wbr>Height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>stem<wbr>Visible<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -441,37 +438,37 @@
 								</ul>
 								<p>See <a href="pointer.html#intersection-1">Pointer.intersection</a> for a way to retrive a new <code>anchorPosition</code> and <code>stemVector</code>.</p>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code>mpSdk.Tag.add({
-<span class="hljs-symbol"> label:</span> <span class="hljs-string">&quot;New tag&quot;</span>,
-<span class="hljs-symbol"> description:</span> <span class="hljs-string">&quot;This tag was added through the Matterport SDK&quot;</span>,
-<span class="hljs-symbol"> anchorPosition:</span> {
-<span class="hljs-symbol">   x:</span> <span class="hljs-number">0</span>,
-<span class="hljs-symbol">   y:</span> <span class="hljs-number">0</span>,
-<span class="hljs-symbol">   z:</span> <span class="hljs-number">0</span>,
- },
-<span class="hljs-symbol"> stemVector:</span> { <span class="hljs-comment">// make the Tag stick straight up and make it 0.30 meters (~1 foot) tall</span>
-<span class="hljs-symbol">   x:</span> <span class="hljs-number">0</span>,
-<span class="hljs-symbol">   y:</span> <span class="hljs-number">0.30</span>,
-<span class="hljs-symbol">   z:</span> <span class="hljs-number">0</span>,
- },
-<span class="hljs-symbol"> color:</span> { <span class="hljs-comment">// blue disc</span>
-<span class="hljs-symbol">   r:</span> <span class="hljs-number">0.0</span>,
-<span class="hljs-symbol">   g:</span> <span class="hljs-number">0.0</span>,
-<span class="hljs-symbol">   b:</span> <span class="hljs-number">1.0</span>,
- },
-}, {
-<span class="hljs-symbol"> label:</span> <span class="hljs-string">&quot;New tag 2&quot;</span>,
-<span class="hljs-symbol"> anchorPosition:</span> {
-<span class="hljs-symbol">   x:</span> <span class="hljs-number">1</span>,
-<span class="hljs-symbol">   y:</span> <span class="hljs-number">2</span>,
-<span class="hljs-symbol">   z:</span> <span class="hljs-number">3</span>,
- },
-<span class="hljs-symbol"> stemVector:</span> {
-<span class="hljs-symbol">   x:</span> ,
-<span class="hljs-symbol">   y:</span> ,
-<span class="hljs-symbol">   z:</span> ,
- }
-});
+								<pre><code><span class="hljs-attr">mpSdk.Tag.add({</span>
+ <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;New tag&#x27;,</span>
+ <span class="hljs-attr">description</span>: <span class="hljs-string">&#x27;This tag was added through the Matterport SDK&#x27;,</span>
+ <span class="hljs-attr">anchorPosition</span>: <span class="hljs-string">{</span>
+   <span class="hljs-attr">x</span>: <span class="hljs-string">0,</span>
+   <span class="hljs-attr">y</span>: <span class="hljs-string">0,</span>
+   <span class="hljs-attr">z</span>: <span class="hljs-string">0,</span>
+ <span class="hljs-attr">},</span>
+ <span class="hljs-attr">stemVector</span>: <span class="hljs-string">{ // make the Tag stick straight up and make it 0.30 meters (~1 foot) tall</span>
+   <span class="hljs-attr">x</span>: <span class="hljs-string">0,</span>
+   <span class="hljs-attr">y</span>: <span class="hljs-string">0.30,</span>
+   <span class="hljs-attr">z</span>: <span class="hljs-string">0,</span>
+ <span class="hljs-attr">},</span>
+ <span class="hljs-attr">color</span>: <span class="hljs-string">{ // blue disc</span>
+   <span class="hljs-attr">r</span>: <span class="hljs-string">0.0,</span>
+   <span class="hljs-attr">g</span>: <span class="hljs-string">0.0,</span>
+   <span class="hljs-attr">b</span>: <span class="hljs-string">1.0,</span>
+ <span class="hljs-attr">},</span>
+<span class="hljs-meta">},</span> <span class="hljs-string">{</span>
+ <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;New tag 2&#x27;,</span>
+ <span class="hljs-attr">anchorPosition</span>: <span class="hljs-string">{</span>
+   <span class="hljs-attr">x</span>: <span class="hljs-string">1,</span>
+   <span class="hljs-attr">y</span>: <span class="hljs-string">2,</span>
+   <span class="hljs-attr">z</span>: <span class="hljs-string">3,</span>
+ <span class="hljs-attr">},</span>
+ <span class="hljs-attr">stemVector</span>: <span class="hljs-string">{</span>
+   <span class="hljs-attr">x</span>: <span class="hljs-string">,</span>
+   <span class="hljs-attr">y</span>: <span class="hljs-string">,</span>
+   <span class="hljs-attr">z</span>: <span class="hljs-string">,</span>
+ <span class="hljs-attr">}</span>
+<span class="hljs-attr">});</span>
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -497,6 +494,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="tag.html#registersandbox">Tag.registerSandbox</a> and <a href="tag.html#attach">Tag.attach</a> to add custom HTML to a tag instead.</p>
+								</dd>
 								<dt class="tsd-comment-tags-earlyaccess">earlyaccess</dt>
 								<dd>
 									&nbsp;
@@ -509,31 +510,6 @@
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Add an HTML sandbox that diplays custom HTML and runs custom scripts.
-									Data can be sent and received from the sandbox by using the returned <a href="../interfaces/tag.imessenger.html">IMessenger</a>.</p>
-								</div>
-								<pre><code>const htmlToInject = `
-  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
-    <span class="hljs-selector-tag">button</span> {
-      <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
-      <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
-    }
-  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;btn1&quot;</span>&gt;</span>CLICK ME<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-    <span class="hljs-keyword">var</span> btn1 = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;btn1&quot;</span>);
-    btn1.addEventListener(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-      <span class="hljs-built_in">window</span>.send(<span class="hljs-string">&quot;buttonClick&quot;</span>, <span class="hljs-number">12345</span>);
-    });
-  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-`;
-
-const messenger = await mpSdk.Tag.addSandbox(tagId, htmlToInject);
-messenger.on(&quot;buttonClick&quot;, function (buttonId) {
-  console.log(&#x27;clicked button with id:&#x27;, buttonId);
-});
-</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -548,7 +524,6 @@ messenger.on(&quot;buttonClick&quot;, function (buttonId) {
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/tag.imessenger.html" class="tsd-signature-type">Tag.IMessenger</a><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>An <a href="../interfaces/tag.imessenger.html">IMessenger</a> that can be used to communicate with the sandbox by sending and receiving data</p>
 						</li>
 					</ul>
 				</section>
@@ -622,7 +597,7 @@ mpSdk.Tag.preventAction(allowAction.<span class="hljs-symbol">id</span>, {
 					<a name="attach" class="tsd-anchor"></a>
 					<h3>attach</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">attach<span class="tsd-signature-symbol">(</span>tagId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, attachmentId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">attach<span class="tsd-signature-symbol">(</span>tagId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, <span class="tsd-signature-symbol">...</span>attachmentIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -640,12 +615,14 @@ mpSdk.Tag.preventAction(allowAction.<span class="hljs-symbol">id</span>, {
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Attach an <a href="tag.html#attachment">Attachment</a> to a Tag.</p>
+									<p>Attach <a href="tag.html#attachment">Attachment</a> to a Tag.</p>
 								</div>
 								<pre><code><span class="hljs-keyword">const</span> tagId: string; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
-<span class="hljs-keyword">const</span> attachmentId: string; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.registerAttachment` or through `mpSdk.Tag.attachments`</span>
+<span class="hljs-keyword">const</span> attachmentIds: string[]; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.registerAttachment` or through `mpSdk.Tag.attachments`</span>
 
-mpSdk.Tag.<span class="hljs-built_in">attach</span>(tagId, attachmentId);
+mpSdk.Tag.<span class="hljs-built_in">attach</span>(tagId, ...attachmentIds);
+<span class="hljs-comment">// or</span>
+mpSdk.Tag.<span class="hljs-built_in">attach</span>(tagId, attachmentId[<span class="hljs-number">0</span>], attachmentId[<span class="hljs-number">1</span>]);
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -654,11 +631,52 @@ mpSdk.Tag.<span class="hljs-built_in">attach</span>(tagId, attachmentId);
 									<h5>tagId: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>attachmentId: <span class="tsd-signature-type">string</span></h5>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>attachmentIds: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A promise that resolves when the Attachment is added to the Tag</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="detach" class="tsd-anchor"></a>
+					<h3>detach</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">detach<span class="tsd-signature-symbol">(</span>tagId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, <span class="tsd-signature-symbol">...</span>attachmentIds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+							</dl>
+							<h4 class="tsd-introduced-title">Introduced
+								<span class="tsd-introduced-vers">3.1.70.10-0-ge9cb83b28c
+								</span>
+							</h4>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Detach <a href="tag.html#attachment">Attachment</a> from a Tag.</p>
+								</div>
+								<pre><code><span class="hljs-keyword">const</span> tagId: string; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
+<span class="hljs-keyword">const</span> attachmentIds: string[]; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.registerAttachment` or through `mpSdk.Tag.attachments`</span>
+
+mpSdk.Tag.<span class="hljs-built_in">detach</span>(tagId, ...attachmentIds);
+<span class="hljs-comment">// or</span>
+mpSdk.Tag.<span class="hljs-built_in">detach</span>(tagId, attachmentId[<span class="hljs-number">0</span>], attachmentId[<span class="hljs-number">1</span>]);
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>tagId: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>attachmentIds: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -930,10 +948,51 @@ mpSdk.Tag.editPosition(tagId, {
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="editstem" class="tsd-anchor"></a>
+					<h3>edit<wbr>Stem</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">edit<wbr>Stem<span class="tsd-signature-symbol">(</span>tagSid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="tag.html#stemheighteditoptions" class="tsd-signature-type">Tag.StemHeightEditOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Edit the stem of a Tag</p>
+								</div>
+								<pre><code>const tagId: <span class="hljs-built_in">string</span> = tagData<span class="hljs-literal">[<span class="hljs-number">0</span>]</span>.id; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
+
+<span class="hljs-comment">// make the first Tag have an invsible stem</span>
+mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Tag</span>.</span></span>edit<span class="hljs-constructor">Stem(<span class="hljs-params">tagId</span>, {<span class="hljs-params">stemVisible</span>: <span class="hljs-params">false</span>})</span>;
+
+<span class="hljs-comment">// make another Tag have a long stem</span>
+mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Tag</span>.</span></span>edit<span class="hljs-constructor">Stem(<span class="hljs-params">tagId</span>, {<span class="hljs-params">stemHeight</span>: 1})</span>;
+
+
+@param tagSid The sid <span class="hljs-keyword">of</span> the Tag <span class="hljs-keyword">to</span> edit
+@param stemOptions What <span class="hljs-keyword">to</span> change about the Tag&#x27;s stem - can <span class="hljs-keyword">include</span> stemHeight <span class="hljs-keyword">and</span> stemVisible
+@introduced <span class="hljs-number">3.1</span>.<span class="hljs-number">70.10</span>-<span class="hljs-number">0</span>-ge9cb83b28c
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>tagSid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="tag.html#stemheighteditoptions" class="tsd-signature-type">Tag.StemHeightEditOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="registerattachment" class="tsd-anchor"></a>
 					<h3>register<wbr>Attachment</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">register<wbr>Attachment<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>srcs<span class="tsd-signature-symbol">: </span><a href="tag.html#attachmentdescriptor" class="tsd-signature-type">Tag.AttachmentDescriptor</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">register<wbr>Attachment<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>srcs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -953,18 +1012,18 @@ mpSdk.Tag.editPosition(tagId, {
 								<div class="lead">
 									<p>Register a new <a href="tag.html#attachment">Attachment</a> that can later be attached as media to a Tag.</p>
 								</div>
-								<p>Attachments with type <a href="../enums/tag.attachmenttype.html#sandbox">Tag.AttachmentType.SANDBOX</a> should be added through <a href="tag.html#addsandbox">addSandbox</a> instead</p>
+								<p>Custom HTML can be added as an attachment through the use of <a href="tag.html#addsandbox">addSandbox</a> instead.</p>
 								<pre><code><span class="hljs-comment">// register a couple of attachments to use later</span>
 <span class="hljs-keyword">const</span> [attachmentId1, attachmentId2] = mpSdk.Tag.registerAttachment(
-  { src: <span class="hljs-string">&#x27;https://[link.to/media]&#x27;</span>, <span class="hljs-keyword">type</span>: mpSdk.Tag.AttachmentDescriptorType.VIDEO },
-  { src: <span class="hljs-string">&#x27;https://[link.to/other_media]&#x27;</span>, <span class="hljs-keyword">type</span>: mpSdk.Tag.AttachmentDescriptorType.IMAGE }
+  <span class="hljs-symbol">&#x27;https</span>:<span class="hljs-comment">//[link.to/media]&#x27;,</span>
+  <span class="hljs-symbol">&#x27;https</span>:<span class="hljs-comment">//[link.to/other_media]&#x27;,</span>
 );
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>srcs: <a href="tag.html#attachmentdescriptor" class="tsd-signature-type">Tag.AttachmentDescriptor</a><span class="tsd-signature-symbol">[]</span></h5>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>srcs: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The src URLs of the media</p>
 									</div>
@@ -972,6 +1031,79 @@ mpSdk.Tag.editPosition(tagId, {
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A promise that resolves to an array of ids associated with the newly added Attachments</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="registersandbox" class="tsd-anchor"></a>
+					<h3>register<wbr>Sandbox</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">register<wbr>Sandbox<span class="tsd-signature-symbol">(</span>html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="tag.html#sandboxoptions" class="tsd-signature-type">Tag.SandboxOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/tag.imessenger.html" class="tsd-signature-type">Tag.IMessenger</a><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-earlyaccess">earlyaccess</dt>
+								<dd>
+									&nbsp;
+								</dd>
+							</dl>
+							<h4 class="tsd-introduced-title">Introduced
+								<span class="tsd-introduced-vers">3.1.70.10-0-ge9cb83b28c
+								</span>
+							</h4>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Register an HTML sandbox that diplays custom HTML and runs custom scripts as an attachment.
+									Data can be sent and received from the sandbox by using the returned <a href="../interfaces/tag.imessenger.html">IMessenger</a>.</p>
+								</div>
+								<pre><code><span class="hljs-keyword">const</span> htmlToInject = `
+  &lt;style&gt;
+    button {
+      width: <span class="hljs-number">100</span>px;
+      height: <span class="hljs-number">50</span>px;
+    }
+  &lt;/style&gt;
+  &lt;button id=<span class="hljs-string">&#x27;btn1&#x27;</span>&gt;CLICK ME&lt;/button&gt;
+  &lt;script&gt;
+    <span class="hljs-keyword">var</span> btn1 = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;btn1&#x27;</span>);
+    btn1.addEventListener(<span class="hljs-string">&#x27;click&#x27;</span>, () =&gt; {
+      <span class="hljs-comment">// send data out of the sandbox</span>
+      <span class="hljs-built_in">window</span>.send(<span class="hljs-string">&#x27;buttonClick&#x27;</span>, <span class="hljs-number">12345</span>);
+    });
+    <span class="hljs-comment">// receive data from outside of the sandbox</span>
+    <span class="hljs-built_in">window</span>.<span class="hljs-keyword">on</span>(<span class="hljs-string">&#x27;updateButton&#x27;</span>, (newLabel, color) =&gt; {
+      btn1.innerText = newLabel;
+      btn1.style.backgroundColor = color;
+    });
+  &lt;/script&gt;
+`;
+
+<span class="hljs-comment">// create and register the sandbox</span>
+<span class="hljs-keyword">const</span> [sandboxId, messenger] = <span class="hljs-keyword">await</span> mpSdk.Tag.registerSandbox(tagId, htmlToInject);
+<span class="hljs-comment">// attach the sandbox to a tag</span>
+mpSdk.Tag.attach(tagId, sandboxId);
+<span class="hljs-comment">// receive data from the sandbox</span>
+messenger.<span class="hljs-keyword">on</span>(<span class="hljs-string">&#x27;buttonClick&#x27;</span>, (buttonId) =&gt; {
+  console.log(<span class="hljs-string">&#x27;clicked button with id:&#x27;</span>, buttonId);
+});
+<span class="hljs-comment">// send data to the sandbox</span>
+messenger.send(<span class="hljs-string">&#x27;I send messages&#x27;</span>, <span class="hljs-string">&#x27;red&#x27;</span>);
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>html: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="tag.html#sandboxoptions" class="tsd-signature-type">Tag.SandboxOptions</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/tag.imessenger.html" class="tsd-signature-type">Tag.IMessenger</a><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An <a href="../interfaces/tag.imessenger.html">IMessenger</a> that can be used to communicate with the sandbox by sending and receiving data</p>
 						</li>
 					</ul>
 				</section>
@@ -1144,9 +1276,6 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
-						<a href="../enums/tag.attachmentdescriptortype.html" class="tsd-kind-icon">Attachment<wbr>Descriptor<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
 						<a href="../enums/tag.attachmenttype.html" class="tsd-kind-icon">Attachment<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
@@ -1157,9 +1286,6 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="tag.html#attachment" class="tsd-kind-icon">Attachment</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="tag.html#attachmentdescriptor" class="tsd-kind-icon">Attachment<wbr>Descriptor</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="tag.html#descriptor" class="tsd-kind-icon">Descriptor</a>
@@ -1175,6 +1301,9 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="tag.html#sandboxoptions" class="tsd-kind-icon">Sandbox<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="tag.html#stemheighteditoptions" class="tsd-kind-icon">Stem<wbr>Height<wbr>Edit<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="tag.html#tagdata" class="tsd-kind-icon">Tag<wbr>Data</a>
@@ -1198,6 +1327,9 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 						<a href="tag.html#attach" class="tsd-kind-icon">attach</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="tag.html#detach" class="tsd-kind-icon">detach</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="tag.html#editbillboard" class="tsd-kind-icon">edit<wbr>Billboard</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
@@ -1213,7 +1345,13 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 						<a href="tag.html#editposition" class="tsd-kind-icon">edit<wbr>Position</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="tag.html#editstem" class="tsd-kind-icon">edit<wbr>Stem</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="tag.html#registerattachment" class="tsd-kind-icon">register<wbr>Attachment</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="tag.html#registersandbox" class="tsd-kind-icon">register<wbr>Sandbox</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="tag.html#remove" class="tsd-kind-icon">remove</a>

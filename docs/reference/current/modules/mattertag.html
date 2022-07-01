@@ -78,6 +78,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="mattertag.html#editicon" class="tsd-kind-icon">edit<wbr>Icon</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="mattertag.html#editopacity" class="tsd-kind-icon">edit<wbr>Opacity</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="mattertag.html#editposition" class="tsd-kind-icon">edit<wbr>Position</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="mattertag.html#editstem" class="tsd-kind-icon">edit<wbr>Stem</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="mattertag.html#getdata" class="tsd-kind-icon">get<wbr>Data</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="mattertag.html#getdiscposition" class="tsd-kind-icon">get<wbr>Disc<wbr>Position</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="mattertag.html#injecthtml" class="tsd-kind-icon">injectHTML</a></li>
@@ -648,7 +649,7 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 								<li>
 									<h5>opacity: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>THe target opacity for the Mattertag in the range of [0, 1]</p>
+										<p>The target opacity for the Mattertag in the range of [0, 1]</p>
 									</div>
 								</li>
 							</ul>
@@ -702,6 +703,56 @@ mpSdk.Mattertag.editPosition(mattertagData[<span class="hljs-number">0</span>].s
 									<div class="tsd-comment tsd-typography">
 										<p>The new anchorPosition, stemVector and/or floorId.</p>
 									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="editstem" class="tsd-anchor"></a>
+					<h3>edit<wbr>Stem</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">edit<wbr>Stem<span class="tsd-signature-symbol">(</span>tagSid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Edit the stem of a Mattertag</p>
+								</div>
+								<pre><code><span class="hljs-comment">// acquired through a previous call to mpSdk.Mattertag.getData();</span>
+<span class="hljs-selector-tag">var</span> <span class="hljs-selector-tag">mattertagData</span>;
+
+<span class="hljs-comment">// make the first Mattertag have an invsible stem</span>
+<span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.editStem</span>(mattertagData[<span class="hljs-number">0</span>].sid, {stemVisible: false});
+
+<span class="hljs-comment">// make another Mattertag have a long stem</span>
+<span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.editStem</span>(mattertagData[<span class="hljs-number">1</span>].sid, {stemHeight: 1});
+
+
+<span class="hljs-variable">@param</span> tagSid The sid of the Mattertag to edit
+<span class="hljs-variable">@param</span> stemOptions What to change about the Mattertag&#x27;s stem - can include stemHeight and stemVisible
+<span class="hljs-variable">@introduced</span> <span class="hljs-number">3.1</span>.<span class="hljs-number">70.10</span>-<span class="hljs-number">0</span>-ge9cb83b28c
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>tagSid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>options: <span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> stem<wbr>Height<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> stem<wbr>Visible<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1187,6 +1238,9 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="mattertag.html#editposition" class="tsd-kind-icon">edit<wbr>Position</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="mattertag.html#editstem" class="tsd-kind-icon">edit<wbr>Stem</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="mattertag.html#getdata" class="tsd-kind-icon">get<wbr>Data</a>
