@@ -942,7 +942,7 @@ Spies work outside of Matterport’s component system so it is a way to bridge t
 <span class="p">});</span>
 
 <span class="c1">// attach spies</span>
-<span class="kd">const</span> <span class="nx">clickSubscription</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">(</span><span class="nx">clickPath</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">clickSubscription</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">ClickSpy</span><span class="p">());</span>
 
 <span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 
@@ -1041,7 +1041,7 @@ The <code class="language-plaintext highlighter-rouge">type</code> in the callba
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jul 1, 2022 <br />
+ Site last generated: Jul 7, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
