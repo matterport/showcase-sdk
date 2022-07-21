@@ -53,8 +53,12 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#addemitpath" class="tsd-kind-icon">add<wbr>Emit<wbr>Path</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#addeventpath" class="tsd-kind-icon">add<wbr>Event<wbr>Path</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#addinputpath" class="tsd-kind-icon">add<wbr>Input<wbr>Path</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#addnode" class="tsd-kind-icon">add<wbr>Node</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#addnodes" class="tsd-kind-icon">add<wbr>Nodes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#addoutputpath" class="tsd-kind-icon">add<wbr>Output<wbr>Path</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#addpath" class="tsd-kind-icon">add<wbr>Path</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#bind" class="tsd-kind-icon">bind</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.iobject.html#bindpath" class="tsd-kind-icon">bind<wbr>Path</a></li>
@@ -72,6 +76,184 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="addemitpath" class="tsd-anchor"></a>
+					<h3>add<wbr>Emit<wbr>Path</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Emit<wbr>Path<span class="tsd-signature-symbol">(</span>component<span class="tsd-signature-symbol">: </span><a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a>, property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="scene.emitpath.html" class="tsd-signature-type">Scene.EmitPath</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+							</dl>
+							<h4 class="tsd-introduced-title">Introduced
+								<span class="tsd-introduced-vers">3.1.71.14-0-gaf77add383
+								</span>
+							</h4>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add and receive an <a href="scene.emitpath.html">EmitPath</a> for an <a href="scene.icomponent.html">IComponent</a>.
+										It is also possible to spy when an event is emitted by creating an <a href="scene.isceneobjectspy.html">ISceneObjectSpy</a> and calling <a href="scene.iobject.html#spyonevent">spyOnEvent</a>.
+									The path can be bound to an <a href="scene.eventpath.html">EventPath</a> of another (or the same) component to automatically trigger the component&#39;s <a href="scene.icomponent.html#onevent">IComponent.onEvent</a>.</p>
+								</div>
+								<pre><code class="language-typescript"> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clickable</span> </span>{
+   <span class="hljs-keyword">public</span> events = {
+     <span class="hljs-attr">clicked</span>: <span class="hljs-literal">true</span>,
+   };
+ }
+ <span class="hljs-comment">// create an `IObject`, add an `INode` and an `IComponent` to the node, see the relevant functions (createObject, addNode, addComponent)</span>
+ <span class="hljs-keyword">const</span> [<span class="hljs-built_in">object</span>, node, component];
+
+ <span class="hljs-comment">// create the path</span>
+ <span class="hljs-keyword">const</span> emitPath = <span class="hljs-built_in">object</span>.addOutput(component, <span class="hljs-string">&#x27;clicked&#x27;</span>);
+
+ <span class="hljs-comment">// bind the emit path so that it triggers the `emitPath`&#x27;s associated component&#x27;s onEvent when an event is emitted</span>
+ <span class="hljs-built_in">object</span>.bindPath(eventPath, emitPath);
+
+ <span class="hljs-comment">// observe emissions of &#x27;clicked&#x27; events in component</span>
+ <span class="hljs-built_in">object</span>.spyOnEvent({
+   <span class="hljs-attr">path</span>: emitPath,
+   <span class="hljs-function"><span class="hljs-title">onEvent</span>(<span class="hljs-params">eventData</span>)</span> {
+     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`a &#x27;clicked&#x27; event was emitted with the data: <span class="hljs-subst">${eventData}</span>`</span>);
+   },
+ });
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>component: <a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a></h5>
+								</li>
+								<li>
+									<h5>property: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> id: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="scene.emitpath.html" class="tsd-signature-type">Scene.EmitPath</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="addeventpath" class="tsd-anchor"></a>
+					<h3>add<wbr>Event<wbr>Path</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Path<span class="tsd-signature-symbol">(</span>component<span class="tsd-signature-symbol">: </span><a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a>, property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="scene.eventpath.html" class="tsd-signature-type">Scene.EventPath</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+							</dl>
+							<h4 class="tsd-introduced-title">Introduced
+								<span class="tsd-introduced-vers">3.1.71.14-0-gaf77add383
+								</span>
+							</h4>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add and receive an <a href="scene.eventpath.html">EventPath</a> for an <a href="scene.icomponent.html">IComponent</a>.
+									The path can be bound to an <a href="scene.emitpath.html">EmitPath</a> of another (or the same) component to automatically trigger the component&#39;s <a href="scene.icomponent.html#onevent">IComponent.onEvent</a>.</p>
+								</div>
+								<pre><code class="language-typescript"> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Renderable</span> </span>{
+   <span class="hljs-keyword">public</span> events = {
+     <span class="hljs-attr">rerender</span>: <span class="hljs-literal">true</span>,
+   };
+ }
+ <span class="hljs-comment">// create an `IObject`, add an `INode` and an `IComponent` to the node, see the relevant functions (createObject, addNode, addComponent)</span>
+ <span class="hljs-keyword">const</span> [<span class="hljs-built_in">object</span>, node, component];
+
+ <span class="hljs-comment">// create the path</span>
+ <span class="hljs-keyword">const</span> eventPath = <span class="hljs-built_in">object</span>.addOutput(component, <span class="hljs-string">&#x27;rerender&#x27;</span>);
+
+ <span class="hljs-comment">// bind the event path so that it triggers the component&#x27;s onEvent when `emitPath` emits an event</span>
+ <span class="hljs-built_in">object</span>.bindPath(eventPath, emitPath);
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>component: <a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a></h5>
+								</li>
+								<li>
+									<h5>property: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> id: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="scene.eventpath.html" class="tsd-signature-type">Scene.EventPath</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="addinputpath" class="tsd-anchor"></a>
+					<h3>add<wbr>Input<wbr>Path</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Input<wbr>Path<span class="tsd-signature-symbol">(</span>component<span class="tsd-signature-symbol">: </span><a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a>, property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="scene.inputpath.html" class="tsd-signature-type">Scene.InputPath</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+							</dl>
+							<h4 class="tsd-introduced-title">Introduced
+								<span class="tsd-introduced-vers">3.1.71.14-0-gaf77add383
+								</span>
+							</h4>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add and receive an <a href="scene.inputpath.html">InputPath</a> to the property of an <a href="scene.icomponent.html">IComponent</a>.
+										The returned <a href="scene.inputpath.html">InputPath</a> can be used to read or set the value of <code>property</code> on <code>component</code>&#39;s inputs.
+										Changes to the value can also be observed by creating an <a href="scene.isceneobjectspy.html">ISceneObjectSpy</a> and calling <a href="scene.iobject.html#spyonevent">spyOnEvent</a>.
+									The path can also be bound to an <a href="scene.outputpath.html">OutputPath</a> of another (or the same) component to automatically update a component&#39;s input value.</p>
+								</div>
+								<pre><code class="language-typescript"> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Counter</span> </span>{
+   <span class="hljs-keyword">public</span> inputs = {
+     <span class="hljs-attr">count</span>: <span class="hljs-number">1</span>,
+   };
+ }
+ <span class="hljs-comment">// create an `IObject`, add an `INode` and an `IComponent` to the node, see the relevant functions (createObject, addNode, addComponent)</span>
+ <span class="hljs-keyword">const</span> [<span class="hljs-built_in">object</span>, node, component];
+
+ <span class="hljs-comment">// create the path</span>
+ <span class="hljs-keyword">const</span> inputPath = <span class="hljs-built_in">object</span>.addInputPath(component, <span class="hljs-string">&#x27;count&#x27;</span>);
+
+ <span class="hljs-comment">// observe changes to the value of `inputs.count` in component</span>
+ <span class="hljs-built_in">object</span>.spyOnEvent({
+   <span class="hljs-attr">path</span>: inputPath,
+   <span class="hljs-function"><span class="hljs-title">onEvent</span>(<span class="hljs-params">newValue</span>)</span> {
+     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`input.count&#x27;s new value is <span class="hljs-subst">${newValue}</span>`</span>);
+   },
+ });
+ <span class="hljs-comment">// read and change the value of the input in the component</span>
+ <span class="hljs-keyword">const</span> countValue = inputPath.get();
+ inputPath.set(count+ + <span class="hljs-number">1</span>);
+
+<span class="hljs-comment">// bind the path to the value from another (output) path</span>
+ <span class="hljs-built_in">object</span>.bindPath(inputPath, outputPath);
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>component: <a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a></h5>
+								</li>
+								<li>
+									<h5>property: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> id: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="scene.inputpath.html" class="tsd-signature-type">Scene.InputPath</a></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="addnode" class="tsd-anchor"></a>
 					<h3>add<wbr>Node</h3>
@@ -131,6 +313,68 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="addoutputpath" class="tsd-anchor"></a>
+					<h3>add<wbr>Output<wbr>Path</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Output<wbr>Path<span class="tsd-signature-symbol">(</span>component<span class="tsd-signature-symbol">: </span><a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a>, property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="scene.outputpath.html" class="tsd-signature-type">Scene.OutputPath</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+							</dl>
+							<h4 class="tsd-introduced-title">Introduced
+								<span class="tsd-introduced-vers">3.1.71.14-0-gaf77add383
+								</span>
+							</h4>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add and receive an <a href="scene.outputpath.html">OutputPath</a> to the property of an <a href="scene.icomponent.html">IComponent</a>.
+										The returned <a href="scene.outputpath.html">OutputPath</a> can be used to read the value of <code>component</code>&#39;s output <code>property</code>.
+										Changes to the value can also be observed by creating an <a href="scene.isceneobjectspy.html">ISceneObjectSpy</a> and calling <a href="scene.iobject.html#spyonevent">spyOnEvent</a>.
+									The path can also be bound to an <a href="scene.inputpath.html">InputPath</a> of another (or the same) component to automatically update a component&#39;s input value.</p>
+								</div>
+								<pre><code class="language-typescript"> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NumberGenerator</span> </span>{
+   <span class="hljs-keyword">public</span> outputs = {
+     <span class="hljs-attr">current</span>: <span class="hljs-number">1</span>,
+   };
+ }
+ <span class="hljs-comment">// create an `IObject`, add an `INode` and an `IComponent` to the node, see the relevant functions (createObject, addNode, addComponent)</span>
+ <span class="hljs-keyword">const</span> [<span class="hljs-built_in">object</span>, node, component];
+
+ <span class="hljs-comment">// create the path</span>
+ <span class="hljs-keyword">const</span> outputPath = <span class="hljs-built_in">object</span>.addOutput(component, <span class="hljs-string">&#x27;current&#x27;</span>);
+
+ <span class="hljs-comment">// observe changes to the value of `outputs.current` in component</span>
+ <span class="hljs-built_in">object</span>.spyOnEvent({
+   <span class="hljs-attr">path</span>: outputPath,
+   <span class="hljs-function"><span class="hljs-title">onEvent</span>(<span class="hljs-params">newValue</span>)</span> {
+     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`input.current&#x27;s new value is <span class="hljs-subst">${newValue}</span>`</span>);
+   },
+ });
+ <span class="hljs-comment">// read and bind the value of the output to another component&#x27;s input value</span>
+ <span class="hljs-keyword">const</span> currentValue = outputPath.get();
+ <span class="hljs-built_in">object</span>.bindPath(inputPath, outputPath);
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>component: <a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a></h5>
+								</li>
+								<li>
+									<h5>property: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> id: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="scene.outputpath.html" class="tsd-signature-type">Scene.OutputPath</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="addpath" class="tsd-anchor"></a>
 					<h3>add<wbr>Path</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -141,6 +385,12 @@
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use one of <a href="scene.iobject.html#addinputpath">addInputPath</a>, <a href="scene.iobject.html#addoutputpath">addOutputPath</a>, <a href="scene.iobject.html#addeventpath">addEventPath</a>, or <a href="scene.iobject.html#addemitpath">addEmitPath</a></p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -265,7 +515,7 @@
 									As the value at <code>outputPath</code> changes, the value of <code>inputPath</code> will reflect it.</p>
 								</div>
 								<pre><code>const [sceneObject] = await sdk.Scene.createObjects(<span class="hljs-number">1</span>);
-const node = sceneObject.createNode();
+const node = sceneObject.addNode();
 
 // mp.objLoader has an outputs.visible property
 const comp1 = node.addComponent(`mp.objLoader<span class="hljs-string">&#x27;);
@@ -311,32 +561,34 @@ node.start();
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Bind an event referenced by <code>eventPath</code> to a <a href="scene.icomponent.html#notify">IComponent.notify</a> call at <code>emitPath</code></p>
-									<p>```
-										const [sceneObject] = await sdk.Scene.createObject(1);
-									const node = sceneObject.createNode();</p>
 								</div>
-								<p>// myReceiver has an <code>onEvent</code> lifecycle function and an <code>events[&#39;do.update&#39;]</code> property
-									const receiver = node.addComponent(`myReceiver&#39;);
-									const eventPath = sceneObj.addPath({
-									id: &#39;objLoader-visible&#39;,
-									type: sdk.Scene.PathType.EVENT,
-									node: node,
-									component: receiver,
-									property: &#39;do.update&#39;,
-								});</p>
-								<p>// myEmitter calls notify with an &#39;updated&#39; event and has an <code>emits[&#39;updated&#39;]</code> property
-									const emitter = node.addComponent(&#39;myEmitter&#39;);
-									const emitPath = sceneObj.addPath({
-									id: &#39;myComponent-toggle&#39;,
-									type: sdk.Scene.PathType.EMIT,
-									node: node,
-									component: emitter,
-									property: &#39;updated&#39;,
-									});
-								sceneObject.bindPath(eventPath, emitPath);</p>
-								<p>node.start();
-									// receiver.onEvent(&#39;do.update&#39;, ...) will now be called whenever emitter calls notify(&#39;updated&#39;)
-								```</p>
+								<pre><code>const [sceneObject] = await sdk.Scene.createObject(<span class="hljs-number">1</span>);
+const node = sceneObject.createNode();
+
+// myReceiver has an `onEvent` lifecycle <span class="hljs-keyword">function</span> <span class="hljs-keyword">and</span> an `events[<span class="hljs-string">&#x27;do.update&#x27;</span>]` property
+const receiver = node.addComponent(`myReceiver<span class="hljs-string">&#x27;);
+const eventPath = sceneObj.addPath({
+  id: &#x27;</span>objLoader-visibl<span class="hljs-string">e&#x27;,
+  type: sdk.Scene.PathType.EVENT,
+  node: node,
+  component: receiver,
+  property: &#x27;</span><span class="hljs-keyword">do</span>.updat<span class="hljs-string">e&#x27;,
+});
+
+// myEmitter calls notify with an &#x27;</span>updated<span class="hljs-string">&#x27; event and has an `emits[&#x27;</span>updated<span class="hljs-string">&#x27;]` property
+const emitter = node.addComponent(&#x27;</span>myEmitter<span class="hljs-string">&#x27;);
+const emitPath = sceneObj.addPath({
+  id: &#x27;</span>myComponent-toggl<span class="hljs-string">e&#x27;,
+  type: sdk.Scene.PathType.EMIT,
+  node: node,
+  component: emitter,
+  property: &#x27;</span>updated<span class="hljs-string">&#x27;,
+});
+sceneObject.bindPath(eventPath, emitPath);
+
+node.start();
+// receiver.onEvent(&#x27;</span><span class="hljs-keyword">do</span>.updat<span class="hljs-string">e&#x27;, ...) will now be called whenever emitter calls notify(&#x27;</span>updated<span class="hljs-string">&#x27;)</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -491,29 +743,32 @@ node.start();
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Spy on events or input and output value changes</p>
-									<p>```
-										const [sceneObject] = await sdk.Scene.createObjects(1);
-									const node = sceneObject.createNode();</p>
 								</div>
-								<p>// mp.objLoader has an outputs.visible property
-									const comp1 = node.addComponent(`mp.objLoader&#39;);
-									const outputPath = sceneObj.addPath({
-									id: &#39;objLoader-visible&#39;,
-									type: sdk.Scene.PathType.OUTPUT,
-									node: node,
-									component: comp1,
-									property: &#39;visible&#39;,
-								});</p>
-								<p>const outputSpy = {
-									path: outputPath,
-									onEvent(type, data) {
-									console.log(&#39;outputs updated&#39;, type, data);
-									}
-								};</p>
-								<p>sceneObject.spyOnEvent(outputSpy);</p>
-								<p>node.start();
-									// outputSpy.onEvent(&#39;outputsUpdated&#39;, comp1.outputs.visible) will now be called whenever comp1.outputs.visible changes
-								```</p>
+								<pre><code>const [sceneObject] = await sdk.Scene.createObjects(<span class="hljs-number">1</span>);
+const node = sceneObject.createNode();
+
+// mp.objLoader has an outputs.visible property
+const comp1 = node.addComponent(`mp.objLoader<span class="hljs-string">&#x27;);
+const outputPath = sceneObj.addPath({
+  id: &#x27;</span>objLoader-visibl<span class="hljs-string">e&#x27;,
+  type: sdk.Scene.PathType.OUTPUT,
+  node: node,
+  component: comp1,
+  property: &#x27;</span>visibl<span class="hljs-string">e&#x27;,
+});
+
+const outputSpy = {
+  path: outputPath,
+  onEvent(type, data) {
+    console.log(&#x27;</span>outputs updated<span class="hljs-string">&#x27;, type, data);
+  }
+};
+
+sceneObject.spyOnEvent(outputSpy);
+
+node.start();
+// outputSpy.onEvent(&#x27;</span>outputsUpdated<span class="hljs-string">&#x27;, comp1.outputs.visible) will now be called whenever comp1.outputs.visible changes</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -676,10 +931,22 @@ node.start();
 						<a href="scene.iobject.html" class="tsd-kind-icon">IObject</a>
 						<ul>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="scene.iobject.html#addemitpath" class="tsd-kind-icon">add<wbr>Emit<wbr>Path</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="scene.iobject.html#addeventpath" class="tsd-kind-icon">add<wbr>Event<wbr>Path</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="scene.iobject.html#addinputpath" class="tsd-kind-icon">add<wbr>Input<wbr>Path</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="scene.iobject.html#addnode" class="tsd-kind-icon">add<wbr>Node</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="scene.iobject.html#addnodes" class="tsd-kind-icon">add<wbr>Nodes</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="scene.iobject.html#addoutputpath" class="tsd-kind-icon">add<wbr>Output<wbr>Path</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="scene.iobject.html#addpath" class="tsd-kind-icon">add<wbr>Path</a>
@@ -768,6 +1035,9 @@ node.start();
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#serialize" class="tsd-kind-icon">serialize</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="../modules/scene.html#unregistercomponents" class="tsd-kind-icon">unregister<wbr>Components</a>
 					</li>
 				</ul>
 			</nav>

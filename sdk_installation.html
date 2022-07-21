@@ -477,13 +477,15 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>You’ll want to wait until the <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> containing the Matterport Space loads. Connecting happens after you’ve included the SDK library.</p>
 
+<p>Replace the <strong>[YOUR_SDK_KEY_HERE]</strong> string with your sdk key.</p>
+
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase-iframe</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="c1">// connect the sdk; log an error and stop if there were any connection issues</span>
 <span class="k">try</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span>
     <span class="nx">iframe</span><span class="p">,</span> <span class="c1">// Obtained earlier</span>
-    <span class="dl">'</span><span class="s1">abc123456789</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// Your SDK key</span>
+    <span class="dl">'</span><span class="s1">[YOUR_SDK_KEY_HERE]</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// Your SDK key</span>
     <span class="dl">''</span> <span class="c1">// Unused but needs to be a valid string</span>
   <span class="p">);</span>
   <span class="nx">onShowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">);</span>
@@ -614,7 +616,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jul 7, 2022 <br />
+ Site last generated: Jul 21, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

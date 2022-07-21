@@ -509,9 +509,13 @@ cursors		images		locale		terms
 </code></pre></div></div>
 
 <h3 id="add-an-iframe-to-your-existing-page-that-targets-the-showcasehtml-file-of-the-bundle-directory">Add an iframe to your existing page that targets the <code class="language-plaintext highlighter-rouge">showcase.html</code> file of the bundle directory</h3>
-<p>To avoid css conflicts, we are requiring that the showcase be embedded in an iframe. Replace <code class="language-plaintext highlighter-rouge">[MODEL_SID]</code> with your own.</p>
+<p>To avoid css conflicts, we are requiring that the showcase be embedded in an iframe.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">id=</span><span class="s">"showcase"</span> <span class="na">width=</span><span class="s">"740"</span> <span class="na">height=</span><span class="s">"480"</span> <span class="na">src=</span><span class="s">"/bundle/showcase.html?m=[MODEL_SID]&amp;applicationKey=[APPLICATION_KEY]"</span> <span class="na">frameborder=</span><span class="s">”0”</span> <span class="na">allowfullscreen</span> <span class="na">allow=</span><span class="s">"vr"</span><span class="err">'</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+<p>Replace <code class="language-plaintext highlighter-rouge">[MODEL_SID]</code> with your own.</p>
+
+<p>Add the <strong>applicationKey=[YOUR SDK_KEY]</strong> URL parameter to provide your sdk key as part of the url.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">id=</span><span class="s">"showcase"</span> <span class="na">width=</span><span class="s">"740"</span> <span class="na">height=</span><span class="s">"480"</span> <span class="na">src=</span><span class="s">"/bundle/showcase.html?m=[MODEL_SID]&amp;applicationKey=[YOUR_SDK_KEY_HERE]"</span> <span class="na">frameborder=</span><span class="s">”0”</span> <span class="na">allowfullscreen</span> <span class="na">allow=</span><span class="s">"vr"</span><span class="err">'</span><span class="nt">&gt;&lt;/iframe&gt;</span>
 </code></pre></div></div>
 
 <h3 id="connect-to-the-sdk">Connect to the SDK</h3>
@@ -561,7 +565,7 @@ cursors		images		locale		terms
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jul 7, 2022 <br />
+ Site last generated: Jul 21, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

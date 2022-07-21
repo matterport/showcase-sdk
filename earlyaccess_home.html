@@ -293,7 +293,7 @@ $('#toc').on('click', 'a', function() {
 </ul>
 
 <h2 id="get-the-early-access-bundle-sdk">Get the Early Access Bundle SDK</h2>
-<p>Build - <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.70.10-0-ge9cb83b28c/showcase-bundle.zip">3.1.70.10-0-ge9cb83b28c</a></p>
+<p>Build - <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.71.5-0-g47739ecd37/showcase-bundle.zip">3.1.71.5-0-g47739ecd37</a></p>
 
 <h2 id="reference-pages">Reference Pages</h2>
 <p><a href="docs/reference/current/modules/tag.html">View the Tag reference</a></p>
@@ -310,23 +310,37 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="changelog">Changelog</h2>
 
+<h5 id="july-21-2022">July 21, 2022</h5>
+<ul>
+  <li>Split <a href="docs/reference/current/interfaces/scene.iobject.html#addpath"><code class="language-plaintext highlighter-rouge">IObject.addPath</code></a> into individual functions to reduce boilerplate
+    <ul>
+      <li>use <a href="docs/reference/current/interfaces/scene.iobject.html#addinputpath"><code class="language-plaintext highlighter-rouge">IObject.addInputPath</code></a> for inputs</li>
+      <li>use <a href="docs/reference/current/interfaces/scene.iobject.html#addoutputpath"><code class="language-plaintext highlighter-rouge">IObject.addOutputPath</code></a> for outputs</li>
+      <li>use <a href="docs/reference/current/interfaces/scene.iobject.html#addeventpath"><code class="language-plaintext highlighter-rouge">IObject.addEventPath</code></a> for events</li>
+      <li>use <a href="docs/reference/current/interfaces/scene.iobject.html#addemitpath"><code class="language-plaintext highlighter-rouge">IObject.addEmitPath</code></a> for emits</li>
+    </ul>
+  </li>
+  <li>In an effort to streamline the interfaces of Scene objects (<a href="docs/reference/current/interfaces/scene.iobject.html"><code class="language-plaintext highlighter-rouge">IObject</code></a>, <a href="docs/reference/current/interfaces/scene.inode.html"><code class="language-plaintext highlighter-rouge">INode</code></a>, <a href="docs/reference/current/interfaces/scene.icomponent.html"><code class="language-plaintext highlighter-rouge">IComponent</code></a>), numerous properties and functions have been removed</li>
+  <li>Similarly, the <code class="language-plaintext highlighter-rouge">renderer</code> returned in callbacks to <a href="docs/reference/current/modules/scene.html#configure"><code class="language-plaintext highlighter-rouge">Scene.configure</code></a> or that exists on <a href="docs/reference/current/interfaces/scene.icomponentcontext.html"><code class="language-plaintext highlighter-rouge">ISceneComponent.context</code></a> has a limited <code class="language-plaintext highlighter-rouge">canvas</code> object that no longer grants access to the DOM and numerous other functions</li>
+</ul>
+
 <h5 id="june-30-2022">June 30, 2022</h5>
 <ul>
-  <li>Added <a href="docs/reference/current/modules/tag.html#detach">Tag.detach</a> to remove attachments from a tag</li>
-  <li>Removed the need to specify the <code class="language-plaintext highlighter-rouge">type</code> when calling <a href="docs/reference/current/modules/tag.html#registerattachment">Tag.registerAttachment</a></li>
-  <li>Added <a href="docs/reference/current/modules/tag.html#registersandbox">Tag.registerSandbox</a> which should be used as a replacement for <a href="docs/reference/current/modules/tag.html#addsandbox">Tag.addSandbox</a></li>
-  <li>Added <a href="docs/reference/current/modules/tag.html#editstem">Tag.editStem</a> and <a href="docs/reference/current/modules/mattertag.html#editstem">Mattertag.editStem</a> to control the stem’s length and/or visibility</li>
-  <li><a href="docs/reference/current/modules/asset.html#registertexture">Asset.registerTexture</a> should now be used in place <a href="docs/reference/current/modules/pointer.html#registertexture">Pointer.registerTexture</a>. Assets from <code class="language-plaintext highlighter-rouge">Asset.registerTexture</code> can be used in <a href="docs/reference/current/modules/pointer.html#edittexture">Pointer.editTexture</a>, <a href="docs/reference/current/modules/mattertag.html#editicon">Mattertag.editIcon</a>, and <a href="docs/reference/current/modules/tag.html#editicon">Tag.editIcon</a></li>
+  <li>Added <a href="docs/reference/current/modules/tag.html#detach"><code class="language-plaintext highlighter-rouge">Tag.detach</code></a> to remove attachments from a tag</li>
+  <li>Removed the need to specify the <code class="language-plaintext highlighter-rouge">type</code> when calling <a href="docs/reference/current/modules/tag.html#registerattachment"><code class="language-plaintext highlighter-rouge">Tag.registerAttachment</code></a></li>
+  <li>Added <a href="docs/reference/current/modules/tag.html#registersandbox"><code class="language-plaintext highlighter-rouge">Tag.registerSandbox</code></a> which should be used as a replacement for <a href="docs/reference/current/modules/tag.html#addsandbox"><code class="language-plaintext highlighter-rouge">Tag.addSandbox</code></a></li>
+  <li>Added <a href="docs/reference/current/modules/tag.html#editstem"><code class="language-plaintext highlighter-rouge">Tag.editStem</code></a> and <a href="docs/reference/current/modules/mattertag.html#editstem"><code class="language-plaintext highlighter-rouge">Mattertag.editStem</code></a> to control the stem’s length and/or visibility</li>
+  <li><a href="docs/reference/current/modules/asset.html#registertexture"><code class="language-plaintext highlighter-rouge">Asset.registerTexture</code></a> should now be used in place <a href="docs/reference/current/modules/pointer.html#registertexture">Pointer.registerTexture</a>. Assets from <code class="language-plaintext highlighter-rouge">Asset.registerTexture</code> can be used in <a href="docs/reference/current/modules/pointer.html#edittexture"><code class="language-plaintext highlighter-rouge">Pointer.editTexture</code></a>, <a href="docs/reference/current/modules/mattertag.html#editicon">Mattertag.editIcon</a>, and <a href="docs/reference/current/modules/tag.html#editicon"><code class="language-plaintext highlighter-rouge">Tag.editIcon</code></a></li>
   <li>Fixed an issue where <a href="sdkbundle_tutorials_setting_up_embedly">Embed.ly key overrides</a> were not respected</li>
 </ul>
 
 <h5 id="june-7-2022">June 7, 2022</h5>
 <ul>
   <li>Added the <a href="docs/reference/current/modules/tag.html">Tag</a> namespace.</li>
-  <li>Added <a href="docs/reference/current/modules/label.html#data">Label.data</a> collection to receive Labels data</li>
-  <li>Added <a href="docs/reference/current/modules/tour.html#currentstep">Tour.currentStep</a>, <a href="docs/reference/current/modules/tour.html#transition">Tour.transition</a>, and <a href="docs/reference/current/modules/tour.html#state">Tour.state</a> to get information about what the tour is currently doing</li>
-  <li>Added <a href="docs/reference/current/modules/mode.html#current">Mode.current</a> and <a href="docs/reference/current/modules/mode.html#transition-1">Mode.transition</a> to get information about the current view mode and any transitions between them taking place</li>
-  <li>Added <a href="docs/reference/current/modules/asset.html#registertexture">Asset.registerTexture</a> to be used a central place for registering icons like those for Tags or Mattertags</li>
+  <li>Added <a href="docs/reference/current/modules/label.html#data"><code class="language-plaintext highlighter-rouge">Label.data</code></a> collection to receive Labels data</li>
+  <li>Added <a href="docs/reference/current/modules/tour.html#currentstep"><code class="language-plaintext highlighter-rouge">Tour.currentStep</code></a>, <a href="docs/reference/current/modules/tour.html#transition"><code class="language-plaintext highlighter-rouge">Tour.transition</code></a>, and <a href="docs/reference/current/modules/tour.html#state">Tour.state</a> to get information about what the tour is currently doing</li>
+  <li>Added <a href="docs/reference/current/modules/mode.html#current">Mode.current</a> and <a href="docs/reference/current/modules/mode.html#transition-1"><code class="language-plaintext highlighter-rouge">Mode.transition</code></a> to get information about the current view mode and any transitions between them taking place</li>
+  <li>Added <a href="docs/reference/current/modules/asset.html#registertexture"><code class="language-plaintext highlighter-rouge">Asset.registerTexture</code></a> to be used a central place for registering icons like those for Tags or Mattertags</li>
   <li>Updated internal Three.js from r136 to r139</li>
 </ul>
 
@@ -347,7 +361,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jul 7, 2022 <br />
+ Site last generated: Jul 21, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

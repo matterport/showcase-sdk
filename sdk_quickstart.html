@@ -450,7 +450,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>This sample HTML creates an iframe containing a Matteport model. It then connects the Embed SDK, retrieves data about the model, and finally logs the model’s id.</p>
 
-<p>You only need to replace the <code class="language-plaintext highlighter-rouge">sdkKey</code> variable (marked with TODO) with your own key.</p>
+<p>You only need to replace the <strong>two</strong> <code class="language-plaintext highlighter-rouge">[YOUR_SDK_KEY_HERE]</code> strings with your own key (without the square brackets “[”, “]”).</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
@@ -460,7 +460,7 @@ noResultsText: '<li><div>No results found.<div></li>',
     <span class="nt">&lt;iframe</span>
       <span class="na">width=</span><span class="s">"853"</span>
       <span class="na">height=</span><span class="s">"480"</span>
-      <span class="na">src=</span><span class="s">"https://my.matterport.com/show?m=SxQL3iGyoDo&amp;play=1&amp;applicationKey=[sdkKey]"</span>
+      <span class="na">src=</span><span class="s">"https://my.matterport.com/show?m=SxQL3iGyoDo&amp;play=1&amp;applicationKey=[YOUR_SDK_KEY_HERE]"</span>
       <span class="na">frameborder=</span><span class="s">"0"</span>
       <span class="na">allow=</span><span class="s">"fullscreen; vr"</span>
       <span class="na">id=</span><span class="s">"showcase-iframe"</span><span class="nt">&gt;</span>
@@ -468,7 +468,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
     <span class="nt">&lt;script&gt;</span>
       <span class="p">(</span><span class="k">async</span> <span class="kd">function</span> <span class="nx">connectSdk</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">sdkKey</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">abc123456789</span><span class="dl">'</span> <span class="c1">// TODO: replace with your sdk key</span>
+        <span class="kd">const</span> <span class="nx">sdkKey</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">[YOUR_SDK_KEY_HERE]</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// TODO: replace with your sdk key</span>
         <span class="kd">const</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase-iframe</span><span class="dl">'</span><span class="p">);</span>
 
         <span class="c1">// connect the sdk; log an error and stop if there were any connection issues</span>
@@ -516,7 +516,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jul 7, 2022 <br />
+ Site last generated: Jul 21, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

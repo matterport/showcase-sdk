@@ -86,6 +86,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#register" class="tsd-kind-icon">register</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#registercomponents" class="tsd-kind-icon">register<wbr>Components</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#serialize" class="tsd-kind-icon">serialize</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="scene.html#unregistercomponents" class="tsd-kind-icon">unregister<wbr>Components</a></li>
 							</ul>
 						</section>
 					</div>
@@ -608,13 +609,14 @@ const </span>node = sceneObject.createNode();
 					<a name="register" class="tsd-anchor"></a>
 					<h3>register</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">register<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, factory<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">register<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, factory<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/idisposable.html" class="tsd-signature-type">IDisposable</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<dl class="tsd-comment-tags tsd-typography">
 								<dt class="tsd-comment-tags-bundle">bundle</dt>
 								<dd>
+									&nbsp;
 								</dd>
 							</dl>
 							<aside class="tsd-sources">
@@ -651,7 +653,8 @@ const </span>node = sceneObject.createNode();
 									</ul>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/idisposable.html" class="tsd-signature-type">IDisposable</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>a disposable that can be used to unregister the component.</p>
 						</li>
 					</ul>
 				</section>
@@ -659,7 +662,7 @@ const </span>node = sceneObject.createNode();
 					<a name="registercomponents" class="tsd-anchor"></a>
 					<h3>register<wbr>Components</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">register<wbr>Components<span class="tsd-signature-symbol">(</span>components<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.icomponentdesc.html" class="tsd-signature-type">Scene.IComponentDesc</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">register<wbr>Components<span class="tsd-signature-symbol">(</span>components<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.icomponentdesc.html" class="tsd-signature-type">Scene.IComponentDesc</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/idisposable.html" class="tsd-signature-type">IDisposable</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -672,26 +675,32 @@ const </span>node = sceneObject.createNode();
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Register an array of component factories all at once.</p>
+									<p>Register an array of component factories all at once and return an array of disposables.
+									Calling dispose on any of the returned disposables, unregisters the component.</p>
 								</div>
-								<pre><code><span class="hljs-keyword">function</span> <span class="hljs-title">myComponent1Factory</span>() {
-   <span class="hljs-keyword">return</span> <span class="hljs-type">new</span> MyComponent1();
+								<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myComponent1Factory</span>(<span class="hljs-params"></span>) </span>{
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyComponent1();
 }
 
-<span class="hljs-keyword">function</span> <span class="hljs-title">myComponent2Factory</span>() {
-   <span class="hljs-keyword">return</span> <span class="hljs-type">new</span> MyComponent2();
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myComponent2Factory</span>(<span class="hljs-params"></span>) </span>{
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyComponent2();
 }
 
-sdk.Scene.registerComponents([
+<span class="hljs-keyword">const</span> disposables = <span class="hljs-keyword">await</span> sdk.Scene.registerComponents([
   {
-    name: <span class="hljs-symbol">&#x27;myComponent1</span>&#x27;,
-    factory: myComponent1Factory,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;myComponent1&#x27;</span>,
+    <span class="hljs-attr">factory</span>: myComponent1Factory,
   },
   {
-    name: <span class="hljs-symbol">&#x27;myComponent2</span>&#x27;,
-    factory: myComponent2Factory,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;myComponent2&#x27;</span>,
+    <span class="hljs-attr">factory</span>: myComponent2Factory,
   },
 ]);
+
+<span class="hljs-comment">// when you are done with the components, you can unregister the components by calling dispose on each item in the return result.</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> disposable <span class="hljs-keyword">of</span> disposables) {
+  disposable.dispose();
+}
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -703,7 +712,8 @@ sdk.Scene.registerComponents([
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/idisposable.html" class="tsd-signature-type">IDisposable</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>an array of disposables that unregister the components when disposed.</p>
 						</li>
 					</ul>
 				</section>
@@ -738,6 +748,26 @@ sdk.Scene.registerComponents([
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A promise that resolves with the serialized string.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="unregistercomponents" class="tsd-anchor"></a>
+					<h3>unregister<wbr>Components</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">unregister<wbr>Components<span class="tsd-signature-symbol">(</span>components<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.icomponentdesc.html" class="tsd-signature-type">Scene.IComponentDesc</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>components: <a href="../interfaces/scene.icomponentdesc.html" class="tsd-signature-type">Scene.IComponentDesc</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -902,6 +932,9 @@ sdk.Scene.registerComponents([
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="scene.html#serialize" class="tsd-kind-icon">serialize</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="scene.html#unregistercomponents" class="tsd-kind-icon">unregister<wbr>Components</a>
 					</li>
 				</ul>
 			</nav>
