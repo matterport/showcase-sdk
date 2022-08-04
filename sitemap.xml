@@ -112,13 +112,19 @@
   
   
   <url>
+    <loc>https://matterport.github.io/htmlsandbox.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/sdkbundle_earlyaccess_21.10.1_idchanges.html</loc>
   </url>
   
   
   
   <url>
-    <loc>https://matterport.github.io/docs/index.html</loc>
+    <loc>https://matterport.github.io/docs/reference/index.html</loc>
   </url>
   
   
@@ -130,7 +136,7 @@
   
   
   <url>
-    <loc>https://matterport.github.io/docs/reference/index.html</loc>
+    <loc>https://matterport.github.io/docs/index.html</loc>
   </url>
   
   
@@ -622,13 +628,13 @@
   
   
   <url>
-    <loc>https://matterport.github.io/sdkbundle_pathfinding.html</loc>
+    <loc>https://matterport.github.io/sdk_pathfinding.html</loc>
   </url>
   
   
   
   <url>
-    <loc>https://matterport.github.io/sdk_pathfinding.html</loc>
+    <loc>https://matterport.github.io/sdkbundle_pathfinding.html</loc>
   </url>
   
   
