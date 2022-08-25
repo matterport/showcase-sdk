@@ -113,6 +113,7 @@
             <div class="dropdown-content">
               <a href="sdk_home.html" class="active">SDK for Embeds</a>
               <a href="sdkbundle_home.html" class="" href="#">SDK Bundle</a>
+              <a href="earlyaccess_home.html" class="" href="#">SDK Early Access</a>
             </div>
           </div>
           <div class="dropdown">
@@ -148,7 +149,8 @@
   </div>
   
   <!-- /.container -->
-</nav> <div class='global-links-container'>
+</nav>
+ <div class='global-links-container'>
   <a
     class='global-link'
     href="https://matterport.com/legal/sdk-api-agreement"
@@ -213,6 +215,13 @@
           
           
           <li><a title="Typescript Declarations" href="sdk_types.html">Typescript Declarations</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Early Access" href="earlyaccess_home.html">Early Access</a></li>
           
           
           
@@ -444,7 +453,14 @@ noResultsText: '<li><div>No results found.<div></li>',
 
     
 
-   <h2 id="how-do-i-obtain-an-sdk-key">How do I obtain an SDK key?</h2>
+   <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> <br />
+    Tags 2.0 will become the new default soon, replacing Mattertags.<br />
+    We will continue to support Mattertags (Tags 1.0) until March 1, 2023, after which Tags 2.0 will become the only available implementation.<br />
+    Until that date, by including an <code class="language-plaintext highlighter-rouge">&amp;applicationKey</code> URL parameter, the default Tag implementation will remain Mattertags.<br />
+    This mostly only affects visuals. All SDK functionality provided by the <code class="language-plaintext highlighter-rouge">Mattertag</code> namespace will continue to work as is with Tags 2.0<br />
+</div>
+
+<h2 id="how-do-i-obtain-an-sdk-key">How do I obtain an SDK key?</h2>
 
 <p>Our developer tools are now out of beta and all accounts are now enabled to generate sandboxed SDK keys. You can find your key management by navigating to your <a href="https://my.matterport.com/settings/account/devtools">Account Settings -&gt; Developer Tools</a>. To learn more about our developer tools, please visit the <a href="https://support.matterport.com/hc/en-us/articles/360057506813-Matterport-Developer-Tools-Pricing-and-Availability">Matterport Developer Tools and Pricing</a></p>
 
@@ -558,7 +574,7 @@ See <a href="sdk_release_notes#v321">Releases Notes 3.2.1</a></p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Aug 4, 2022 <br />
+ Site last generated: Aug 25, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

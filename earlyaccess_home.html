@@ -113,6 +113,7 @@
             <div class="dropdown-content">
               <a href="sdk_home.html" class="">SDK for Embeds</a>
               <a href="sdkbundle_home.html" class="" href="#">SDK Bundle</a>
+              <a href="earlyaccess_home.html" class="active" href="#">SDK Early Access</a>
             </div>
           </div>
           <div class="dropdown">
@@ -148,7 +149,8 @@
   </div>
   
   <!-- /.container -->
-</nav> <div class='global-links-container'>
+</nav>
+ <div class='global-links-container'>
   <a
     class='global-link'
     href="https://matterport.com/legal/sdk-api-agreement"
@@ -223,6 +225,13 @@
       <a title="Reference" href="#">Reference</a>
       <ul>
           
+          
+          
+          <li><a title="Documentation" href="docs\reference\current\index.html">Documentation</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -293,14 +302,17 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> 
-    Tags 2.0 will become the new default soon.<br />
-    Until Q1 2023, by including an <code class="language-plaintext highlighter-rouge">&amp;applicationKey</code> URL parameter, the default Tag implementation will be the older Mattertags.<br />
-    If you are a Bundle SDK user, and want the older tags as the default, update to the latest Early Access version.<br />
+   <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> <br />
+    Tags 2.0 will become the new default soon, replacing Mattertags.<br />
+    We will continue to support Mattertags (Tags 1.0) until March 1, 2023, after which Tags 2.0 will become the only available implementation.<br />
+    Until that date, by including an <code class="language-plaintext highlighter-rouge">&amp;applicationKey</code> URL parameter, the default Tag implementation will remain Mattertags.<br />
+    If you are an Early Access Bundle SDK user and want the older tags as the default, update to the latest Early Access version.
+    <br />
+    This mostly only affects visuals. All SDK functionality provided by the <code class="language-plaintext highlighter-rouge">Mattertag</code> namespace will continue to work as is with Tags 2.0<br />
 </div>
 
 <h2 id="what-are-early-access-builds">What are Early Access Builds?</h2>
-<p>Early access builds allow developers to prepare for the next SDK release by providing upcoming features and bug fixes prior to general availability.</p>
+<p>Early access builds allow developers to prepare for the next SDK release by providing upcoming, sometimes experimental features and bug fixes prior to general availability.</p>
 
 <h2 id="early-access-features">Early Access Features</h2>
 <p>This Early Access release is focused on our Tags 2.0 (formerly Mattertags) beta.</p>
@@ -314,22 +326,26 @@ $('#toc').on('click', 'a', function() {
 </ul>
 
 <h2 id="get-the-early-access-bundle-sdk">Get the Early Access Bundle SDK</h2>
-<p>Build - <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.72.3-0-gb8a7d4e4b2/showcase-bundle.zip">3.1.72.3-0-gb8a7d4e4b2</a></p>
+<p>Build - <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.74.5-0-g5bf460d184/showcase-bundle.zip">3.1.74.5-0-g5bf460d184</a></p>
 
-<h2 id="reference-pages">Reference Pages</h2>
+<h2 id="reference-pages-and-types">Reference Pages and Types</h2>
 <p><a href="docs/reference/current/modules/tag.html">View the Tag reference</a></p>
 
 <p><a href="docs/reference/current/index.html">View the full Docs</a></p>
 
+<p><a href="https://static.matterport.com/showcase-sdk/types/3.1.74.5-0-g5bf460d184/sdk.d.ts">Get types for the Embed SDK</a></p>
+
 <h2 id="known-issues">Known Issues</h2>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">Tag.allowAction</code> doesn’t always prevent actions when interacting with the billboard UI component</li>
-  <li>Removing a tag with <code class="language-plaintext highlighter-rouge">Tag.remove</code> doesn’t close its billboard or dock if it was open when removing it</li>
-  <li>When editing a tag, editing the text content or attaching media, isn’t immediately rendered and requires the tag’s billboard or dock be closed and reopened to display the updated contents</li>
-  <li>Mattertag <code class="language-plaintext highlighter-rouge">Events</code> no longer fire</li>
-</ul>
 
 <h2 id="changelog">Changelog</h2>
+
+<h5 id="aug-24-2022">Aug 24, 2022</h5>
+<ul>
+  <li>Fixed issues with <a href="docs/reference/current/modules/tag.html#allowaction"><code class="language-plaintext highlighter-rouge">Tag.allowAction</code></a> as well as backward compatibility with <a href="docs/reference/current/modules/mattertag.html#preventaction"><code class="language-plaintext highlighter-rouge">Mattetag.preventAction</code></a> when using Tags 2.0</li>
+  <li>The tag billboard and/or dock now close when the tag is removed</li>
+  <li>Editing a tag now displays the changes immediately; no need to close and re-open the tag to display the new contents</li>
+  <li>Events from the <code class="language-plaintext highlighter-rouge">Mattertag</code> namespace now properly fire when using Tags 2.0</li>
+</ul>
 
 <h5 id="aug-4-2022">Aug 4, 2022</h5>
 <ul>
@@ -387,7 +403,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Aug 4, 2022 <br />
+ Site last generated: Aug 25, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

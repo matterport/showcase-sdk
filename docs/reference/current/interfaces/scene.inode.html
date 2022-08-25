@@ -64,6 +64,20 @@
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+				<div class="tsd-panel-group" id="typescript-declarations" style="display: none;">
+					<h2>Typescript Declarations File</h2>
+					<section class="tsd-panel">
+						<div class="tsd-index-content">
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.74.5-0-g5bf460d184/sdk.d.ts">3.1.74.5-0-g5bf460d184</a><br>
+							Declarations are already include in the Bundle SDK distribution.
+						</div>
+					</section>
+				</div>
+				<script>
+  if (window.location.href.endsWith('index.html')) {
+    document.getElementById('typescript-declarations').style = 'display: block;';
+  }
+</script>
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
@@ -80,7 +94,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.inode.html#addcomponent" class="tsd-kind-icon">add<wbr>Component</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter"><a href="scene.inode.html#addcomponent" class="tsd-kind-icon">add<wbr>Component</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.inode.html#componentiterator" class="tsd-kind-icon">component<wbr>Iterator</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.inode.html#start" class="tsd-kind-icon">start</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.inode.html#stop" class="tsd-kind-icon">stop</a></li>
@@ -158,11 +172,11 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
 					<a name="addcomponent" class="tsd-anchor"></a>
 					<h3>add<wbr>Component</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Component<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, initialInputs<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span>, id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Component&lt;T&gt;<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, initialInputs<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">SceneComponentOptions[T]</span>, id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="scene.icomponent.html" class="tsd-signature-type">Scene.IComponent</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -174,16 +188,22 @@
 									This function does nothing if the node is in the Operating or Destroyed state.</p>
 								</div>
 							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../modules/scene.html#scenecomponentname" class="tsd-signature-type">Scene.SceneComponentName</a></h4>
+								</li>
+							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<h5>name: <span class="tsd-signature-type">T</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The registered component name.</p>
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initialInputs: <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initialInputs: <span class="tsd-signature-type">SceneComponentOptions[T]</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>initial key-value pairs that will be applied to the component before onInit is called.
 										If the keys do not match the components inputs, they are ignored.</p>
@@ -339,6 +359,9 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
+						<a href="../enums/scene.componenttype.html" class="tsd-kind-icon">Component<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
 						<a href="../enums/scene.interactiontype.html" class="tsd-kind-icon">Interaction<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
@@ -382,7 +405,7 @@
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="scene.inode.html#scale" class="tsd-kind-icon">scale</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
 								<a href="scene.inode.html#addcomponent" class="tsd-kind-icon">add<wbr>Component</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
@@ -413,6 +436,9 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="scene.pathinfo.html" class="tsd-kind-icon">Path<wbr>Info</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="scene.scenecomponentoptions.html" class="tsd-kind-icon">Scene<wbr>Component<wbr>Options</a>
+					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#emitpathdescriptor" class="tsd-kind-icon">Emit<wbr>Path<wbr>Descriptor</a>
 					</li>
@@ -430,6 +456,9 @@
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#predefinedoutputs" class="tsd-kind-icon">Predefined<wbr>Outputs</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/scene.html#scenecomponentname" class="tsd-kind-icon">Scene<wbr>Component<wbr>Name</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/scene.html#configure" class="tsd-kind-icon">configure</a>

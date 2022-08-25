@@ -37,12 +37,27 @@
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+				<div class="tsd-panel-group" id="typescript-declarations" style="display: none;">
+					<h2>Typescript Declarations File</h2>
+					<section class="tsd-panel">
+						<div class="tsd-index-content">
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.74.5-0-g5bf460d184/sdk.d.ts">3.1.74.5-0-g5bf460d184</a><br>
+							Declarations are already include in the Bundle SDK distribution.
+						</div>
+					</section>
+				</div>
+				<script>
+  if (window.location.href.endsWith('index.html')) {
+    document.getElementById('typescript-declarations').style = 'display: block;';
+  }
+</script>
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
 							<h3>Enumerations</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/scene.componenttype.html" class="tsd-kind-icon">Component<wbr>Type</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/scene.interactiontype.html" class="tsd-kind-icon">Interaction<wbr>Type</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/scene.pathtype.html" class="tsd-kind-icon">Path<wbr>Type</a></li>
 							</ul>
@@ -62,6 +77,7 @@
 								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/scene.inputpath.html" class="tsd-kind-icon">Input<wbr>Path</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/scene.outputpath.html" class="tsd-kind-icon">Output<wbr>Path</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/scene.pathinfo.html" class="tsd-kind-icon">Path<wbr>Info</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/scene.scenecomponentoptions.html" class="tsd-kind-icon">Scene<wbr>Component<wbr>Options</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -73,6 +89,7 @@
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#interactionevent" class="tsd-kind-icon">Interaction<wbr>Event</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#outputpathdescriptor" class="tsd-kind-icon">Output<wbr>Path<wbr>Descriptor</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#predefinedoutputs" class="tsd-kind-icon">Predefined<wbr>Outputs</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="scene.html#scenecomponentname" class="tsd-kind-icon">Scene<wbr>Component<wbr>Name</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -381,6 +398,13 @@
 							</li>
 						</ul>
 					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="scenecomponentname" class="tsd-anchor"></a>
+					<h3>Scene<wbr>Component<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">Scene<wbr>Component<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"mp.objLoader"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mp.fbxLoader"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mp.daeLoader"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mp.gltfLoader"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mp.scrollingTube"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mp.transformControls"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mp.lights"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mp.pointLight"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mp.directionalLight"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mp.ambientLight"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mp.camera"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mp.input"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mp.xr"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -850,6 +874,9 @@ const </span>node = sceneObject.createNode();
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
+						<a href="../enums/scene.componenttype.html" class="tsd-kind-icon">Component<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
 						<a href="../enums/scene.interactiontype.html" class="tsd-kind-icon">Interaction<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
@@ -891,6 +918,9 @@ const </span>node = sceneObject.createNode();
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="../interfaces/scene.pathinfo.html" class="tsd-kind-icon">Path<wbr>Info</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="../interfaces/scene.scenecomponentoptions.html" class="tsd-kind-icon">Scene<wbr>Component<wbr>Options</a>
+					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="scene.html#emitpathdescriptor" class="tsd-kind-icon">Emit<wbr>Path<wbr>Descriptor</a>
 					</li>
@@ -908,6 +938,9 @@ const </span>node = sceneObject.createNode();
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="scene.html#predefinedoutputs" class="tsd-kind-icon">Predefined<wbr>Outputs</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="scene.html#scenecomponentname" class="tsd-kind-icon">Scene<wbr>Component<wbr>Name</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="scene.html#configure" class="tsd-kind-icon">configure</a>

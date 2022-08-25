@@ -29,6 +29,20 @@
 		<div class="col-8 col-content">
 			<section class="tsd-panel-group tsd-index-group">
 				<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+				<div class="tsd-panel-group" id="typescript-declarations" style="display: none;">
+					<h2>Typescript Declarations File</h2>
+					<section class="tsd-panel">
+						<div class="tsd-index-content">
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.74.5-0-g5bf460d184/sdk.d.ts">3.1.74.5-0-g5bf460d184</a><br>
+							Declarations are already include in the Bundle SDK distribution.
+						</div>
+					</section>
+				</div>
+				<script>
+  if (window.location.href.endsWith('index.html')) {
+    document.getElementById('typescript-declarations').style = 'display: block;';
+  }
+</script>
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
@@ -357,12 +371,12 @@
 						<div class="lead">
 							<p>An observable collection of the <a href="tag.html#attachment">Attachment</a>.</p>
 						</div>
-						<pre><code>mpSdk.Tag.attachments.subscribe({
-  onAdded: <span class="hljs-keyword">function</span> (index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>) {
-    console.log(<span class="hljs-string">&#x27;An attachemnt was added to the collection&#x27;</span>, index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>);
+						<pre><code class="language-typescript">mpSdk.Tag.attachments.subscribe({
+  <span class="hljs-attr">onAdded</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">index, item, collection</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;An attachemnt was added to the collection&#x27;</span>, index, item, collection);
   },
-  onCollectionUpdated<span class="hljs-built_in">(collection</span>) {
-    console.log(<span class="hljs-string">&#x27;The entire collection of attachments&#x27;</span>,<span class="hljs-built_in"> collection</span>);
+  <span class="hljs-function"><span class="hljs-title">onCollectionUpdated</span>(<span class="hljs-params">collection</span>)</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;The entire collection of attachments&#x27;</span>, collection);
   },
 });
 </code></pre>
@@ -389,15 +403,15 @@
 							<p>An observable collection of Tag data that can be subscribed to.</p>
 						</div>
 						<p>When first subscribing, the current set of Tags will call the observer&#39;s <code>onAdded</code> for each Tag as the data becomes available.</p>
-						<pre><code>mpSdk.Tag.data.subscribe({
-  onAdded: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Tag added to the collection&#x27;</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
+						<pre><code class="language-typescript">mpSdk.Tag.data.subscribe({
+  <span class="hljs-attr">onAdded</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">index, item, collection</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Tag added to the collection&#x27;</span>, index, item, collection);
   },
-  onRemoved: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Tag removed from the collection&#x27;</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
+  <span class="hljs-attr">onRemoved</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">index, item, collection</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Tag removed from the collection&#x27;</span>, index, item, collection);
   },
-  onUpdated: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Tag updated in place in the collection&#x27;</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
+  <span class="hljs-attr">onUpdated</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">index, item, collection</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Tag updated in place in the collection&#x27;</span>, index, item, collection);
   }
 });
 </code></pre>
@@ -438,37 +452,37 @@
 								</ul>
 								<p>See <a href="pointer.html#intersection-1">Pointer.intersection</a> for a way to retrive a new <code>anchorPosition</code> and <code>stemVector</code>.</p>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code><span class="hljs-attr">mpSdk.Tag.add({</span>
- <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;New tag&#x27;,</span>
- <span class="hljs-attr">description</span>: <span class="hljs-string">&#x27;This tag was added through the Matterport SDK&#x27;,</span>
- <span class="hljs-attr">anchorPosition</span>: <span class="hljs-string">{</span>
-   <span class="hljs-attr">x</span>: <span class="hljs-string">0,</span>
-   <span class="hljs-attr">y</span>: <span class="hljs-string">0,</span>
-   <span class="hljs-attr">z</span>: <span class="hljs-string">0,</span>
- <span class="hljs-attr">},</span>
- <span class="hljs-attr">stemVector</span>: <span class="hljs-string">{ // make the Tag stick straight up and make it 0.30 meters (~1 foot) tall</span>
-   <span class="hljs-attr">x</span>: <span class="hljs-string">0,</span>
-   <span class="hljs-attr">y</span>: <span class="hljs-string">0.30,</span>
-   <span class="hljs-attr">z</span>: <span class="hljs-string">0,</span>
- <span class="hljs-attr">},</span>
- <span class="hljs-attr">color</span>: <span class="hljs-string">{ // blue disc</span>
-   <span class="hljs-attr">r</span>: <span class="hljs-string">0.0,</span>
-   <span class="hljs-attr">g</span>: <span class="hljs-string">0.0,</span>
-   <span class="hljs-attr">b</span>: <span class="hljs-string">1.0,</span>
- <span class="hljs-attr">},</span>
-<span class="hljs-meta">},</span> <span class="hljs-string">{</span>
- <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;New tag 2&#x27;,</span>
- <span class="hljs-attr">anchorPosition</span>: <span class="hljs-string">{</span>
-   <span class="hljs-attr">x</span>: <span class="hljs-string">1,</span>
-   <span class="hljs-attr">y</span>: <span class="hljs-string">2,</span>
-   <span class="hljs-attr">z</span>: <span class="hljs-string">3,</span>
- <span class="hljs-attr">},</span>
- <span class="hljs-attr">stemVector</span>: <span class="hljs-string">{</span>
-   <span class="hljs-attr">x</span>: <span class="hljs-string">,</span>
-   <span class="hljs-attr">y</span>: <span class="hljs-string">,</span>
-   <span class="hljs-attr">z</span>: <span class="hljs-string">,</span>
- <span class="hljs-attr">}</span>
-<span class="hljs-attr">});</span>
+								<pre><code class="language-typescript">mpSdk.Tag.add({
+ <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;New tag&#x27;</span>,
+ <span class="hljs-attr">description</span>: <span class="hljs-string">&#x27;This tag was added through the Matterport SDK&#x27;</span>,
+ <span class="hljs-attr">anchorPosition</span>: {
+   <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>,
+   <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>,
+   <span class="hljs-attr">z</span>: <span class="hljs-number">0</span>,
+ },
+ <span class="hljs-attr">stemVector</span>: { <span class="hljs-comment">// make the Tag stick straight up and make it 0.30 meters (~1 foot) tall</span>
+   <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>,
+   <span class="hljs-attr">y</span>: <span class="hljs-number">0.30</span>,
+   <span class="hljs-attr">z</span>: <span class="hljs-number">0</span>,
+ },
+ <span class="hljs-attr">color</span>: { <span class="hljs-comment">// blue disc</span>
+   <span class="hljs-attr">r</span>: <span class="hljs-number">0.0</span>,
+   <span class="hljs-attr">g</span>: <span class="hljs-number">0.0</span>,
+   <span class="hljs-attr">b</span>: <span class="hljs-number">1.0</span>,
+ },
+}, {
+ <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;New tag 2&#x27;</span>,
+ <span class="hljs-attr">anchorPosition</span>: {
+   <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>,
+   <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>,
+   <span class="hljs-attr">z</span>: <span class="hljs-number">3</span>,
+ },
+ <span class="hljs-attr">stemVector</span>: {
+   <span class="hljs-attr">x</span>: ,
+   y: ,
+   z: ,
+ }
+});
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -552,24 +566,24 @@
 									<p>Sets the allowed &quot;default&quot; Showcase actions on a Tag from occurring: hover to open billboard, click to navigate to view.
 									If an action is ommited from the actions argument, it will be considered false by default.</p>
 								</div>
-								<pre><code>const tagIds: <span class="hljs-built_in">string</span>[]; <span class="hljs-comment">// ... acquired through previous calls to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> tagIds: <span class="hljs-built_in">string</span>[]; <span class="hljs-comment">// ... acquired through previous calls to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
 
 <span class="hljs-comment">// prevent navigating to the tag on click</span>
-<span class="hljs-keyword">var</span> noNavigationTag = tagIds[<span class="hljs-number">0</span>];
-mpSdk.Tag.allowAction(noNavigationTag.<span class="hljs-symbol">id</span>, {
-  opening: <span class="hljs-literal">true</span>,
+<span class="hljs-keyword">const</span> noNavigationTag = tagIds[<span class="hljs-number">0</span>];
+mpSdk.Tag.allowAction(noNavigationTag, {
+  <span class="hljs-attr">opening</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-comment">// implies navigating: false</span>
 });
 
 <span class="hljs-comment">// prevent the billboard from showing</span>
-<span class="hljs-keyword">var</span> noBillboardTag = tagIds[<span class="hljs-number">1</span>];
-mpSdk.Tag.allowAction(noBillboardTag.<span class="hljs-symbol">id</span>, {
-  navigating: <span class="hljs-literal">true</span>,
+<span class="hljs-keyword">const</span> noBillboardTag = tagIds[<span class="hljs-number">1</span>];
+mpSdk.Tag.allowAction(noBillboardTag, {
+  <span class="hljs-attr">navigating</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-comment">// implies opening: false</span>
 });
 
-<span class="hljs-keyword">var</span> noActionsTag = tagIds[<span class="hljs-number">2</span>];
-mpSdk.Tag.preventAction(allowAction.<span class="hljs-symbol">id</span>, {
+<span class="hljs-keyword">const</span> noActionsTag = tagIds[<span class="hljs-number">2</span>];
+mpSdk.Tag.allowAction(noActionsTag, {
   <span class="hljs-comment">// implies opeing: false and navigating: false</span>
 });
 </code></pre>
@@ -617,12 +631,12 @@ mpSdk.Tag.preventAction(allowAction.<span class="hljs-symbol">id</span>, {
 								<div class="lead">
 									<p>Attach <a href="tag.html#attachment">Attachment</a> to a Tag.</p>
 								</div>
-								<pre><code><span class="hljs-keyword">const</span> tagId: string; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
-<span class="hljs-keyword">const</span> attachmentIds: string[]; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.registerAttachment` or through `mpSdk.Tag.attachments`</span>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> tagId: <span class="hljs-built_in">string</span>; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
+<span class="hljs-keyword">const</span> attachmentIds: <span class="hljs-built_in">string</span>[]; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.registerAttachment` or through `mpSdk.Tag.attachments`</span>
 
-mpSdk.Tag.<span class="hljs-built_in">attach</span>(tagId, ...attachmentIds);
+mpSdk.Tag.attach(tagId, ...attachmentIds);
 <span class="hljs-comment">// or</span>
-mpSdk.Tag.<span class="hljs-built_in">attach</span>(tagId, attachmentId[<span class="hljs-number">0</span>], attachmentId[<span class="hljs-number">1</span>]);
+mpSdk.Tag.attach(tagId, attachmentId[<span class="hljs-number">0</span>], attachmentId[<span class="hljs-number">1</span>]);
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -659,12 +673,12 @@ mpSdk.Tag.<span class="hljs-built_in">attach</span>(tagId, attachmentId[<span cl
 								<div class="lead">
 									<p>Detach <a href="tag.html#attachment">Attachment</a> from a Tag.</p>
 								</div>
-								<pre><code><span class="hljs-keyword">const</span> tagId: string; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
-<span class="hljs-keyword">const</span> attachmentIds: string[]; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.registerAttachment` or through `mpSdk.Tag.attachments`</span>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> tagId: <span class="hljs-built_in">string</span>; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
+<span class="hljs-keyword">const</span> attachmentIds: <span class="hljs-built_in">string</span>[]; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.registerAttachment` or through `mpSdk.Tag.attachments`</span>
 
-mpSdk.Tag.<span class="hljs-built_in">detach</span>(tagId, ...attachmentIds);
+mpSdk.Tag.detach(tagId, ...attachmentIds);
 <span class="hljs-comment">// or</span>
-mpSdk.Tag.<span class="hljs-built_in">detach</span>(tagId, attachmentId[<span class="hljs-number">0</span>], attachmentId[<span class="hljs-number">1</span>]);
+mpSdk.Tag.detach(tagId, attachmentId[<span class="hljs-number">0</span>], attachmentId[<span class="hljs-number">1</span>]);
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -705,9 +719,9 @@ mpSdk.Tag.<span class="hljs-built_in">detach</span>(tagId, attachmentId[<span cl
 									<p>Edit the text content in a Tag&#39;s billboard.</p>
 								</div>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code>mpSdk.Tag.editBillboard(id, {
-  <span class="hljs-built_in">label</span>: &#x27;This <span class="hljs-built_in">is</span> a <span class="hljs-built_in">new</span> <span class="hljs-built_in">title</span>&#x27;,
-  description: &#x27;This <span class="hljs-built_in">image</span> was set dynamically by the Showcase sdk&#x27;,
+								<pre><code class="language-typescript">mpSdk.Tag.editBillboard(id, {
+  <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;This is a new title&#x27;</span>,
+  <span class="hljs-attr">description</span>: <span class="hljs-string">&#x27;This image was set dynamically by the Showcase sdk&#x27;</span>,
 });
 </code></pre>
 							</div>
@@ -754,13 +768,13 @@ mpSdk.Tag.<span class="hljs-built_in">detach</span>(tagId, attachmentId[<span cl
 								<div class="lead">
 									<p>Edit the color of a Tag&#39;s disc.</p>
 								</div>
-								<pre><code>const tagIds: <span class="hljs-keyword">string</span>[]; // ... acquired through previous calls to `mpSdk.<span class="hljs-keyword">Tag</span>.add` <span class="hljs-keyword">or</span> through `mpSdk.<span class="hljs-keyword">Tag</span>.data`
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> tagIds: <span class="hljs-built_in">string</span>[]; <span class="hljs-comment">// ... acquired through previous calls to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
 
-// change the first <span class="hljs-keyword">Tag</span> <span class="hljs-title">to</span> yellow
-mpSdk.<span class="hljs-keyword">Tag</span>.editColor(tagIds[<span class="hljs-number">0</span>], {
-  r: <span class="hljs-number">0.9</span>,
-  g: <span class="hljs-number">0</span>,
-  b: <span class="hljs-number">0.9</span>,
+<span class="hljs-comment">// change the first Tag to yellow</span>
+mpSdk.Tag.editColor(tagIds[<span class="hljs-number">0</span>], {
+  <span class="hljs-attr">r</span>: <span class="hljs-number">0.9</span>,
+  <span class="hljs-attr">g</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">b</span>: <span class="hljs-number">0.9</span>,
 });
 </code></pre>
 							</div>
@@ -808,8 +822,8 @@ mpSdk.<span class="hljs-keyword">Tag</span>.editColor(tagIds[<span class="hljs-n
 									<p>Change the icon of the Tag disc</p>
 								</div>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code><span class="hljs-comment">// change the icon of the Tag using the id used in a previous registeredIcon call</span>
-mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Tag</span>.</span></span>edit<span class="hljs-constructor">Icon(<span class="hljs-params">id</span>, &#x27;<span class="hljs-params">customIconId</span>&#x27;)</span>;
+								<pre><code class="language-typescript"><span class="hljs-comment">// change the icon of the Tag using the id used in a previous registeredIcon call</span>
+mpSdk.Tag.editIcon(id, <span class="hljs-string">&#x27;customIconId&#x27;</span>);
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -856,15 +870,15 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 									<p>Edit the opacity of a Tag.</p>
 								</div>
 								<p>A completely transparent/invisible Tag is still interactable and will respond to mouse hovers and clicks.</p>
-								<pre><code>const tagIds: <span class="hljs-built_in">string</span><span class="hljs-literal">[]</span>; <span class="hljs-comment">// ... acquired through previous calls to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> tagIds: <span class="hljs-built_in">string</span>[]; <span class="hljs-comment">// ... acquired through previous calls to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
 <span class="hljs-comment">// make the first Tag invisible</span>
-mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Tag</span>.</span></span>edit<span class="hljs-constructor">Opacity(<span class="hljs-params">tagIds</span>[0], 0)</span>;
+mpSdk.Tag.editOpacity(tagIds[<span class="hljs-number">0</span>], <span class="hljs-number">0</span>);
 
 <span class="hljs-comment">// make another Tag transparent</span>
-mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Tag</span>.</span></span>edit<span class="hljs-constructor">Opacity(<span class="hljs-params">tagIds</span>[1], 0.5)</span>;
+mpSdk.Tag.editOpacity(tagIds[<span class="hljs-number">1</span>], <span class="hljs-number">0.5</span>);
 
 <span class="hljs-comment">// and another completely opaque</span>
-mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Tag</span>.</span></span>edit<span class="hljs-constructor">Opacity(<span class="hljs-params">tagIds</span>[2], 1)</span>;
+mpSdk.Tag.editOpacity(tagIds[<span class="hljs-number">2</span>], <span class="hljs-number">1</span>);
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -912,18 +926,18 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 								</div>
 								<p>See <a href="pointer.html#intersection-1">Pointer.intersection</a> for a way to retrieve a new <code>anchorPosition</code> and <code>stemVector</code>.</p>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code>const tagId: string; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> tagId: <span class="hljs-built_in">string</span>; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
 
 mpSdk.Tag.editPosition(tagId, {
-<span class="hljs-symbol"> anchorPosition:</span> {
-<span class="hljs-symbol">   x:</span> <span class="hljs-number">0</span>,
-<span class="hljs-symbol">   y:</span> <span class="hljs-number">0</span>,
-<span class="hljs-symbol">   z:</span> <span class="hljs-number">0</span>,
+ <span class="hljs-attr">anchorPosition</span>: {
+   <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>,
+   <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>,
+   <span class="hljs-attr">z</span>: <span class="hljs-number">0</span>,
  },
-<span class="hljs-symbol"> stemVector:</span> { <span class="hljs-comment">// make the Tag stick straight up and make it 0.30 meters (~1 foot) tall</span>
-<span class="hljs-symbol">   x:</span> <span class="hljs-number">0</span>,
-<span class="hljs-symbol">   y:</span> <span class="hljs-number">0.30</span>,
-<span class="hljs-symbol">   z:</span> <span class="hljs-number">0</span>,
+ <span class="hljs-attr">stemVector</span>: { <span class="hljs-comment">// make the Tag stick straight up and make it 0.30 meters (~1 foot) tall</span>
+   <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>,
+   <span class="hljs-attr">y</span>: <span class="hljs-number">0.30</span>,
+   <span class="hljs-attr">z</span>: <span class="hljs-number">0</span>,
  },
 });
 </code></pre>
@@ -961,18 +975,18 @@ mpSdk.Tag.editPosition(tagId, {
 								<div class="lead">
 									<p>Edit the stem of a Tag</p>
 								</div>
-								<pre><code>const tagId: <span class="hljs-built_in">string</span> = tagData<span class="hljs-literal">[<span class="hljs-number">0</span>]</span>.id; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
+								<pre><code class="language-typescript">const tagId: string = tagData[0].id; // ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`
 
-<span class="hljs-comment">// make the first Tag have an invsible stem</span>
-mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Tag</span>.</span></span>edit<span class="hljs-constructor">Stem(<span class="hljs-params">tagId</span>, {<span class="hljs-params">stemVisible</span>: <span class="hljs-params">false</span>})</span>;
+// make the first Tag have an invsible stem
+mpSdk.Tag.editStem(tagId, {stemVisible: false});
 
-<span class="hljs-comment">// make another Tag have a long stem</span>
-mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Tag</span>.</span></span>edit<span class="hljs-constructor">Stem(<span class="hljs-params">tagId</span>, {<span class="hljs-params">stemHeight</span>: 1})</span>;
+// make another Tag have a long stem
+mpSdk.Tag.editStem(tagId, {stemHeight: 1});
 
 
-@param tagSid The sid <span class="hljs-keyword">of</span> the Tag <span class="hljs-keyword">to</span> edit
-@param stemOptions What <span class="hljs-keyword">to</span> change about the Tag&#x27;s stem - can <span class="hljs-keyword">include</span> stemHeight <span class="hljs-keyword">and</span> stemVisible
-@introduced <span class="hljs-number">3.1</span>.<span class="hljs-number">70.10</span>-<span class="hljs-number">0</span>-ge9cb83b28c
+@param tagSid The sid of the Tag to edit
+@param stemOptions What to change about the Tag&#x27;s stem - can include stemHeight and stemVisible
+@introduced 3.1.70.10-0-ge9cb83b28c
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1012,11 +1026,11 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 								<div class="lead">
 									<p>Register a new <a href="tag.html#attachment">Attachment</a> that can later be attached as media to a Tag.</p>
 								</div>
-								<p>Custom HTML can be added as an attachment through the use of <a href="tag.html#addsandbox">addSandbox</a> instead.</p>
-								<pre><code><span class="hljs-comment">// register a couple of attachments to use later</span>
+								<p>Custom HTML can be added as an attachment through the use of <a href="tag.html#registersandbox">registerSandbox</a> instead.</p>
+								<pre><code class="language-typescript"><span class="hljs-comment">// register a couple of attachments to use later</span>
 <span class="hljs-keyword">const</span> [attachmentId1, attachmentId2] = mpSdk.Tag.registerAttachment(
-  <span class="hljs-symbol">&#x27;https</span>:<span class="hljs-comment">//[link.to/media]&#x27;,</span>
-  <span class="hljs-symbol">&#x27;https</span>:<span class="hljs-comment">//[link.to/other_media]&#x27;,</span>
+  <span class="hljs-string">&#x27;https://[link.to/media]&#x27;</span>,
+  <span class="hljs-string">&#x27;https://[link.to/other_media]&#x27;</span>,
 );
 </code></pre>
 							</div>
@@ -1059,35 +1073,35 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 									<p>Register an HTML sandbox that diplays custom HTML and runs custom scripts as an attachment.
 									Data can be sent and received from the sandbox by using the returned <a href="../interfaces/tag.imessenger.html">IMessenger</a>.</p>
 								</div>
-								<pre><code><span class="hljs-keyword">const</span> htmlToInject = `
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> htmlToInject = <span class="hljs-string">`
   &lt;style&gt;
     button {
-      width: <span class="hljs-number">100</span>px;
-      height: <span class="hljs-number">50</span>px;
+      width: 100px;
+      height: 50px;
     }
   &lt;/style&gt;
-  &lt;button id=<span class="hljs-string">&#x27;btn1&#x27;</span>&gt;CLICK ME&lt;/button&gt;
+  &lt;button id=&#x27;btn1&#x27;&gt;CLICK ME&lt;/button&gt;
   &lt;script&gt;
-    <span class="hljs-keyword">var</span> btn1 = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;btn1&#x27;</span>);
-    btn1.addEventListener(<span class="hljs-string">&#x27;click&#x27;</span>, () =&gt; {
-      <span class="hljs-comment">// send data out of the sandbox</span>
-      <span class="hljs-built_in">window</span>.send(<span class="hljs-string">&#x27;buttonClick&#x27;</span>, <span class="hljs-number">12345</span>);
+    var btn1 = document.getElementById(&#x27;btn1&#x27;);
+    btn1.addEventListener(&#x27;click&#x27;, () =&gt; {
+      // send data out of the sandbox
+      window.send(&#x27;buttonClick&#x27;, 12345);
     });
-    <span class="hljs-comment">// receive data from outside of the sandbox</span>
-    <span class="hljs-built_in">window</span>.<span class="hljs-keyword">on</span>(<span class="hljs-string">&#x27;updateButton&#x27;</span>, (newLabel, color) =&gt; {
+    // receive data from outside of the sandbox
+    window.on(&#x27;updateButton&#x27;, (newLabel, color) =&gt; {
       btn1.innerText = newLabel;
       btn1.style.backgroundColor = color;
     });
   &lt;/script&gt;
-`;
+`</span>;
 
 <span class="hljs-comment">// create and register the sandbox</span>
 <span class="hljs-keyword">const</span> [sandboxId, messenger] = <span class="hljs-keyword">await</span> mpSdk.Tag.registerSandbox(tagId, htmlToInject);
 <span class="hljs-comment">// attach the sandbox to a tag</span>
 mpSdk.Tag.attach(tagId, sandboxId);
 <span class="hljs-comment">// receive data from the sandbox</span>
-messenger.<span class="hljs-keyword">on</span>(<span class="hljs-string">&#x27;buttonClick&#x27;</span>, (buttonId) =&gt; {
-  console.log(<span class="hljs-string">&#x27;clicked button with id:&#x27;</span>, buttonId);
+messenger.on(<span class="hljs-string">&#x27;buttonClick&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">buttonId</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;clicked button with id:&#x27;</span>, buttonId);
 });
 <span class="hljs-comment">// send data to the sandbox</span>
 messenger.send(<span class="hljs-string">&#x27;I send messages&#x27;</span>, <span class="hljs-string">&#x27;red&#x27;</span>);
@@ -1132,12 +1146,12 @@ messenger.send(<span class="hljs-string">&#x27;I send messages&#x27;</span>, <sp
 									<p>Removes one or more Tags from Showcase.</p>
 								</div>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code>const tagIds: <span class="hljs-built_in">string</span><span class="hljs-literal">[]</span>; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> tagIds: <span class="hljs-built_in">string</span>[]; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
 <span class="hljs-comment">// remove one tag</span>
-mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Tag</span>.</span></span>remove(tagIds<span class="hljs-literal">[<span class="hljs-number">0</span>]</span>);
+mpSdk.Tag.remove(tagIds[<span class="hljs-number">0</span>]);
 
 <span class="hljs-comment">// or remove multiple at the same time</span>
-mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Tag</span>.</span></span>remove(...tagIds);
+mpSdk.Tag.remove(...tagIds);
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1178,10 +1192,10 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 								<div class="lead">
 									<p>Resets the icon of the Tag disc back to its original icon.</p>
 								</div>
-								<pre><code>const tagIds: <span class="hljs-built_in">string</span><span class="hljs-literal">[]</span>; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> tagIds: <span class="hljs-built_in">string</span>[]; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
 
 <span class="hljs-comment">// reset the icon of the first Tag to its original</span>
-mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Tag</span>.</span></span>reset<span class="hljs-constructor">Icon(<span class="hljs-params">tagIds</span>[0].<span class="hljs-params">id</span>)</span>;
+mpSdk.Tag.resetIcon(tagIds[<span class="hljs-number">0</span>].id);
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>

@@ -113,6 +113,7 @@
             <div class="dropdown-content">
               <a href="sdk_home.html" class="">SDK for Embeds</a>
               <a href="sdkbundle_home.html" class="active" href="#">SDK Bundle</a>
+              <a href="earlyaccess_home.html" class="" href="#">SDK Early Access</a>
             </div>
           </div>
           <div class="dropdown">
@@ -148,7 +149,8 @@
   </div>
   
   <!-- /.container -->
-</nav> <div class='global-links-container'>
+</nav>
+ <div class='global-links-container'>
   <a
     class='global-link'
     href="https://matterport.com/legal/sdk-api-agreement"
@@ -359,6 +361,13 @@
           
           
           
+          
+          
+          <li><a title="Documentation" href="docs\reference\current\index.html">Documentation</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -533,10 +542,10 @@ $('#toc').on('click', 'a', function() {
 
 <p>Manual construction and initialization</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sceneObjects</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">sceneObject</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 
 <span class="c1">// add a scene node for the fbx model</span>
-<span class="kd">const</span> <span class="nx">gltfNode</span> <span class="o">=</span> <span class="nx">sceneObjects</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">addNode</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">gltfNode</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
 
 <span class="c1">// adjust the position of the scene node</span>
 <span class="nx">gltfNode</span><span class="p">.</span><span class="nx">obj3D</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.68</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
@@ -551,17 +560,11 @@ $('#toc').on('click', 'a', function() {
   <span class="p">},</span>
 <span class="p">});</span>
 
-<span class="c1">// Add a path id 'gltfUrl' to the gltf component url property (not used in the example).</span>
-<span class="nx">sceneObjects</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">addPath</span><span class="p">({</span>
-  <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">gltfUrl</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">type</span><span class="p">:</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">PathType</span><span class="p">.</span><span class="nx">INPUT</span><span class="p">,</span>
-  <span class="na">node</span><span class="p">:</span> <span class="nx">gltfNode</span><span class="p">,</span>
-  <span class="na">component</span><span class="p">:</span> <span class="nx">gltfComponent</span><span class="p">,</span>
-  <span class="na">property</span><span class="p">:</span> <span class="dl">'</span><span class="s1">url</span><span class="dl">'</span><span class="p">,</span>
-<span class="p">});</span>
+<span class="c1">// Add a path id 'gltfUrl' to the gltf component url property (not used in the this example).</span>
+<span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addInputPath</span><span class="p">(</span><span class="nx">gltfComponent</span><span class="p">,</span> <span class="dl">'</span><span class="s1">url</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">gltfUrl</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="c1">// add another scene node to contain the light objects.</span>
-<span class="kd">const</span> <span class="nx">lightsNode</span> <span class="o">=</span> <span class="nx">sceneObjects</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">addNode</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">lightsNode</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
 
 <span class="c1">// Add directional and ambient lights</span>
 <span class="kd">const</span> <span class="nx">directionalLightComponet</span> <span class="o">=</span> <span class="nx">lightsNode</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.directionalLight</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
@@ -573,17 +576,11 @@ $('#toc').on('click', 'a', function() {
 <span class="p">});</span>
 
 <span class="c1">// Add a path id 'ambientIntensity' to the intensity property of the directional light component.</span>
-<span class="c1">// The path id will be used in the update function that follows.</span>
-<span class="nx">sceneObjects</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">addPath</span><span class="p">({</span>
-  <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ambientIntensity</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">type</span><span class="p">:</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">PathType</span><span class="p">.</span><span class="nx">INPUT</span><span class="p">,</span>
-  <span class="na">node</span><span class="p">:</span> <span class="nx">lightsNode</span><span class="p">,</span>
-  <span class="na">component</span><span class="p">:</span> <span class="nx">directionalLightComponet</span><span class="p">,</span>
-  <span class="na">property</span><span class="p">:</span> <span class="dl">'</span><span class="s1">intensity</span><span class="dl">'</span><span class="p">,</span>
-<span class="p">});</span>
+<span class="c1">// The path will be used to set the value later.</span>
+<span class="kd">const</span> <span class="nx">ambientIntensityPath</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addInputPath</span><span class="p">(</span><span class="nx">directionalLightComponet</span><span class="p">,</span> <span class="dl">'</span><span class="s1">intensity</span><span class="dl">'</span> <span class="dl">'</span><span class="s1">ambientIntensity</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="c1">// Start the scene object and its nodes.</span>
-<span class="nx">sceneObjects</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">start</span><span class="p">();</span>
+<span class="nx">sceneObject</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p>Here is an example of an update function that animates the intensity of the directional light component using the path id.</p>
@@ -605,8 +602,8 @@ $('#toc').on('click', 'a', function() {
     <span class="nx">intensityDirection</span> <span class="o">=</span> <span class="nx">intensityDirection</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="c1">// The path ids can be used as the public interface to the component behaviors contained within the scene object.</span>
-  <span class="nx">sceneObjects</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">setValueAtPath</span><span class="p">(</span><span class="dl">'</span><span class="s1">ambientIntensity</span><span class="dl">'</span><span class="p">,</span> <span class="nx">intensity</span><span class="p">);</span>
+  <span class="c1">// The path can be used as the public interface to the component behaviors contained within the scene object.</span>
+  <span class="nx">ambientIntensityPath</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">intensity</span><span class="p">);</span>
 <span class="p">},</span> <span class="mi">15</span><span class="p">);</span>
 </code></pre></div></div>
 
@@ -614,17 +611,29 @@ $('#toc').on('click', 'a', function() {
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Starting from the previous example, serialize the scene object to a json string</span>
 <span class="c1">// after having started it. All nodes, components, bindings and paths are preserved.</span>
-<span class="kd">const</span> <span class="nx">serializedString</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="nx">sceneObjects</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="kd">const</span> <span class="nx">serializedString</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(</span><span class="nx">sceneObject</span><span class="p">);</span>
 
 <span class="c1">// To restore the scene object, deserialize and start it.</span>
 <span class="kd">const</span> <span class="nx">deserializedSceneObject</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">deserialize</span><span class="p">(</span><span class="nx">serializedString</span><span class="p">);</span>
 <span class="nx">deserializedSceneObject</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 
+<span class="c1">// iterate over the paths to find  the ones that we previously set by using their ids</span>
+<span class="kd">let</span> <span class="nx">ambientIntensityPath</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">InputPath</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">gltfUrlPath</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">InputPath</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">{</span> <span class="nx">desc</span><span class="p">,</span> <span class="nx">path</span> <span class="p">}</span> <span class="k">of</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">pathIterator</span><span class="p">())</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">ambientIntensity</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ambientIntensityPath</span> <span class="o">=</span> <span class="nx">path</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">gltfUrl</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">gltfUrlPath</span> <span class="o">=</span> <span class="nx">path</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
 <span class="c1">// You can now set the previously defined path.</span>
-<span class="nx">deserializedSceneObject</span><span class="p">.</span><span class="nx">setValueAtPath</span><span class="p">(</span><span class="dl">'</span><span class="s1">ambientIntensity</span><span class="dl">'</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">);</span>
+<span class="nx">ambientIntensityPath</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mf">1.5</span><span class="p">);</span>
 
 <span class="c1">// or set the url</span>
-<span class="nx">deserializedSceneObject</span><span class="p">.</span><span class="nx">setValueAtPath</span><span class="p">(</span><span class="dl">'</span><span class="s1">gltfUrl</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">https://cdn.jsdelivr.net/gh/mrdoob/three.js@dev/examples/models/gltf/Stork.glb</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">gltfUrlPath</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://cdn.jsdelivr.net/gh/mrdoob/three.js@dev/examples/models/gltf/Stork.glb</span><span class="dl">'</span><span class="p">);</span>
 </code></pre></div></div>
 
 
@@ -643,7 +652,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Aug 4, 2022 <br />
+ Site last generated: Aug 25, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
