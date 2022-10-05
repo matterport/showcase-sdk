@@ -802,7 +802,7 @@ Some are now more robust and require more than a single step to use.</p>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">Mattertag.injectHTML</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Tag.addSandbox</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Tag.registerSandbox</code><br /><code class="language-plaintext highlighter-rouge">Tag.attach</code></td>
     </tr>
     <tr>
       <td>“media” in <code class="language-plaintext highlighter-rouge">Mattertag.add</code></td>
@@ -834,7 +834,7 @@ Some are now more robust and require more than a single step to use.</p>
 <p>Tags now support multiple media (or attachments) per tag.</p>
 
 <h3 id="adding-custom-html-widgets">Adding Custom HTML Widgets</h3>
-<p>Adding custom HTML (or code sandbox) to a tag should be migrated from <code class="language-plaintext highlighter-rouge">Mattertag.injectHTML</code> to <code class="language-plaintext highlighter-rouge">Tag.addSandbox</code>.</p>
+<p>Adding custom HTML (or code sandbox) to a tag should be migrated from <code class="language-plaintext highlighter-rouge">Mattertag.injectHTML</code> to <code class="language-plaintext highlighter-rouge">Tag.registerSandbox</code> and <code class="language-plaintext highlighter-rouge">Tag.attach</code>.</p>
 
 <p>Tags have unified file uploads, external media attachments through OEmbed, and custom HTML Sandboxes under attachments.</p>
 
