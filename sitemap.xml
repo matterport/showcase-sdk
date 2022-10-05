@@ -74,6 +74,18 @@
   
   
   <url>
+    <loc>https://matterport.github.io/api_home.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdk_tutorials_collections.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/sdkbundle_connect.html</loc>
   </url>
   
@@ -88,13 +100,7 @@
   
   
   <url>
-    <loc>https://matterport.github.io/earlyaccess_22.2.1_graph_migration.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://matterport.github.io/htmlsandbox.html</loc>
+    <loc>https://matterport.github.io/sdk_tutorials_htmlsandbox.html</loc>
   </url>
   
   
@@ -105,10 +111,6 @@
   
   
   
-  <url>
-    <loc>https://matterport.github.io/docs/bundle/main/index.html</loc>
-  </url>
-  
   
   
   <url>
@@ -117,44 +119,28 @@
   
   
   
+  
+  
   <url>
-    <loc>https://matterport.github.io/docs/index.html</loc>
+    <loc>https://matterport.github.io/sdk_tutorials_mattertagtotag.html</loc>
   </url>
   
   
   
   <url>
-    <loc>https://matterport.github.io/docs/reference/index.html</loc>
+    <loc>https://matterport.github.io/sdk_tutorials_observables.html</loc>
   </url>
   
   
   
   <url>
-    <loc>https://matterport.github.io/mattertagtotag.html</loc>
+    <loc>https://matterport.github.io/sdk_tutorials_pathfinding.html</loc>
   </url>
   
   
   
   <url>
-    <loc>https://matterport.github.io/sdkbundle_pathfinding.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://matterport.github.io/sdk_pathfinding.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://matterport.github.io/sdk_cursor.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://matterport.github.io/sdkbundle_cursor.html</loc>
+    <loc>https://matterport.github.io/sdk_tutorials_cursor.html</loc>
   </url>
   
   
@@ -358,12 +344,6 @@
   
   
   <url>
-    <loc>https://matterport.github.io/sdkbundle_reference.html</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://matterport.github.io/sdkbundle_security_camera.html</loc>
   </url>
   
@@ -423,12 +403,6 @@
   
   <url>
     <loc>https://matterport.github.io/assets/css/style.css</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://matterport.github.io/docs/earlyaccess/22.2.1/link.html</loc>
   </url>
   
   

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>SDK Installation | Matterport Developers</title>
+<title>Using Observable Data | Matterport Developers</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -141,7 +141,7 @@
       
 
 
-  <a title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the SDK Installation page: ' + window.location.href;">Give us feedback</a>
+  <a title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Using Observable Data page: ' + window.location.href;">Give us feedback</a>
 
 
  
@@ -304,7 +304,7 @@
           
           
           
-          <li class="active"><a title="Installation" href="sdkbundle_installation.html">Installation</a></li>
+          <li><a title="Installation" href="sdkbundle_installation.html">Installation</a></li>
           
           
           
@@ -420,7 +420,7 @@
           
           
           
-          <li><a title="Using Observables" href="sdk_tutorials_observables.html">Using Observables</a></li>
+          <li class="active"><a title="Using Observables" href="sdk_tutorials_observables.html">Using Observables</a></li>
           
           
           
@@ -719,7 +719,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: 'search.json',
-            searchResultTemplate: '<li><a href="{url}" title="SDK Installation">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Using Observable Data">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -733,7 +733,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">SDK Installation</h1>
+   <h1 class="post-title-main">Using Observable Data</h1>
 </div>
 
 
@@ -770,60 +770,172 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <h2 id="adding-the-sdk-bundle-to-an-existing-application">Adding the SDK Bundle to an existing application</h2>
-<h3 id="download-the-latest-sdk-bundle-package">Download the latest SDK Bundle package</h3>
-<p><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.76.3-0-ge164487ced/showcase-bundle.zip">https://static.matterport.com/showcase-sdk/bundle/3.1.76.3-0-ge164487ced/showcase-bundle.zip</a></p>
-<h3 id="extract-the-contents-of-showcase-bundletargz-to-a-directory-where-your-files-will-be-served">Extract the contents of showcase-bundle.tar.gz to a directory where your files will be served</h3>
-<p>It is important that you preserve the package’s file organization.  We recommend that you keep the bundle files under one directory to make it easy to upgrade in the future. <br /></p>
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">cd</span> <span class="o">[</span>path to server root]
-<span class="o">&gt;</span> <span class="nb">mkdir </span>bundle
-<span class="o">&gt;</span> unzip showcase-bundle.zip <span class="nt">-d</span> bundle
-password:
-<span class="o">&gt;</span> <span class="nb">ls </span>bundle
-css		fonts		js		showcase.html	version.txt
-cursors		images		locale		terms
-<span class="o">&gt;</span>
+   <p>The SDK provides access to state through <a href="docs/reference/current/interfaces/iobservable.html"><code class="language-plaintext highlighter-rouge">Observables</code></a>. Observers can subscribe to Observables to watch and receive updates of the state.</p>
+
+<h2 id="receiving-state-from-an-observable">Receiving State from an Observable</h2>
+<p>State is provided by subscribing to an Observable. Two types of Observers are supported: functional, and object-oriented.
+Observables always give an up-to-date view of its state to all of its subscribed Observers. In a sense, Observables and Observers are very similar to Events and Event Handlers.</p>
+
+<p>With our Observable implementation</p>
+<ul>
+  <li>when first subscribing an Observer to an Observable, the Observer will always be called back as soon as the state is available – similar in functionality to a “getData” call</li>
+  <li>all subscribed Observers will be called back for all subsequent updates to the observed state – similar in functionality to an event handler</li>
+  <li>subscribing multiple Observers to a single Observable does not increase the complexity of calculating the state of the Observable</li>
+  <li>the Observable state used in the Observers’ callbacks is cached and shared between all Observers</li>
+</ul>
+
+<h3 id="using-a-functional-observer">Using a Functional Observer</h3>
+<p>Functional Observers are merely callback functions that accept the state as their argument.</p>
+
+<p>For example, to subscribe to the current camera pose:</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">poseObserver</span><span class="p">(</span><span class="nx">pose</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">Pose</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// use the current pose of the camera</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pose</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">pose</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">poseObserver</span><span class="p">);</span>
 </code></pre></div></div>
 
-<h3 id="add-an-iframe-to-your-existing-page-that-targets-the-showcasehtml-file-of-the-bundle-directory">Add an iframe to your existing page that targets the <code class="language-plaintext highlighter-rouge">showcase.html</code> file of the bundle directory</h3>
-<p>To avoid css conflicts, we are requiring that the showcase be embedded in an iframe.</p>
+<h3 id="using-an-object-oriented-observer">Using an Object-Oriented Observer</h3>
+<p>Object-Orieneted Observers are objects that conform to the <a href="docs/reference/current/interfaces/iobserver.html"><code class="language-plaintext highlighter-rouge">IObserver</code></a> interface, or implement a member <code class="language-plaintext highlighter-rouge">onChanged</code> function.</p>
 
-<p>Replace <code class="language-plaintext highlighter-rouge">[MODEL_SID]</code> with your own.</p>
+<p>For example, to subscribe to the current camera pose:</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">PoseObserver</span> <span class="k">implements</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">IObserver</span><span class="o">&lt;</span><span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">Pose</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">onChanged</span><span class="p">(</span><span class="na">pose</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">Pose</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// use the current pose of the camera</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pose</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-<p>Add the <strong>applicationKey=[YOUR SDK_KEY]</strong> URL parameter to provide your sdk key as part of the url.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">id=</span><span class="s">"showcase"</span> <span class="na">width=</span><span class="s">"740"</span> <span class="na">height=</span><span class="s">"480"</span> <span class="na">src=</span><span class="s">"/bundle/showcase.html?m=[MODEL_SID]&amp;applicationKey=[YOUR_SDK_KEY_HERE]"</span> <span class="na">frameborder=</span><span class="s">”0”</span> <span class="na">allowfullscreen</span> <span class="na">allow=</span><span class="s">"vr"</span><span class="err">'</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">pose</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="k">new</span> <span class="nx">PoseObserver</span><span class="p">());</span>
 </code></pre></div></div>
 
-<h3 id="connect-to-the-sdk">Connect to the SDK</h3>
-<p>Add a script to the page to await the loading of showcase. Connect to it once loaded.</p>
+<h3 id="using-multiple-observers">Using Multiple Observers</h3>
+<p>As mentioned, since Observables always have an up-to-date shared view of state, having multiple Observers is supported and encouraged.
+To use the camera pose in two different systems within the same application is a matter of adding two Observers.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcase</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">;</span>
-<span class="nx">showcase</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">load</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">sdk</span><span class="p">;</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="nx">sdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
-    <span class="k">return</span><span class="p">;</span>
-  <span class="p">}</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Component1.ts</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">pose</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">pose</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* use pose */</span> <span class="p">});</span>
 
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello Bundle SDK</span><span class="dl">'</span><span class="p">,</span> <span class="nx">sdk</span><span class="p">);</span>
+
+<span class="c1">// Component2.ts</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">pose</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
+  <span class="nx">onChanged</span><span class="p">(</span><span class="nx">pose</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* use pose */</span> <span class="p">},</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
-<h3 id="connect-using-an-oauth-token">Connect using an OAuth Token</h3>
-<p>Contact <a href="mailto:developer@matterport.com">Developer Support</a> to enable OAuth for your application.</p>
+<h3 id="shutting-down-an-observer">Shutting down an Observer</h3>
+<p>When updates to state are no longer required, Observers should be removed from the Observable. When subscribing to an Observable, an <a href="docs/reference/current/interfaces/isubscription.html"><code class="language-plaintext highlighter-rouge">ISubscription</code></a> object is returned. The <code class="language-plaintext highlighter-rouge">ISubscription</code> object is the object used to remove the subscribed Observer and stop any callback it would have received.</p>
 
-<p>To connct to a model using an OAuth token, pass an <code class="language-plaintext highlighter-rouge">access_token</code> as <code class="language-plaintext highlighter-rouge">auth</code> in the options argument to <a href="docs/reference/current/index.html#mp_sdk">connect</a>.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcase</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">auth</span><span class="p">:</span> <span class="dl">'</span><span class="s1">[access_token]</span><span class="dl">'</span><span class="p">,</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">poseSubscription</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">pose</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
+  <span class="nx">onChanged</span><span class="p">(</span><span class="nx">pose</span><span class="p">)</span> <span class="p">{</span> <span class="p">},</span>
 <span class="p">});</span>
+
+<span class="c1">// ... some time later</span>
+<span class="nx">poseSubscription</span><span class="p">.</span><span class="nx">cancel</span><span class="p">();</span>
+<span class="c1">// from here on, the Observer associated with `poseSubscriptoin` will no longer be called back</span>
+</code></pre></div></div>
+
+<h3 id="cloning-an-observers-view-of-state">Cloning an Observer’s View of State</h3>
+<p>Because state is cached and shared between Observers of the same Observable, any mutations that are done to the state object in the callback can be seen by all Observers and are subject to be blown away by changes to the Observable coming from the application.
+If a snapshot of the state is needed, saving a reference to the argument in the callback is not enough. In such a case, cloning the state object is needed.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">poseStack</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">Pose</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">pose</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">pose</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// create a deep clone of the pose and push it into a stack</span>
+  <span class="nx">poseStack</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+    <span class="p">...</span><span class="nx">pose</span><span class="p">,</span>
+    <span class="na">position</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span><span class="nx">pose</span><span class="p">.</span><span class="nx">position</span> <span class="p">},</span>
+    <span class="na">projection</span><span class="p">:</span> <span class="p">[</span> <span class="p">...</span><span class="nx">pose</span><span class="p">.</span><span class="nx">projection</span> <span class="p">],</span>
+    <span class="na">rotation</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span><span class="nx">pose</span><span class="p">.</span><span class="nx">rotation</span> <span class="p">},</span>
+    <span class="na">sweep</span><span class="p">:</span> <span class="nx">pose</span><span class="p">.</span><span class="nx">sweep</span><span class="p">.</span><span class="nx">slice</span><span class="p">(),</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="benefits-of-observables">Benefits of Observables</h2>
+<p>Observable state has multiple benefits over our previous implementations of state.</p>
+
+<h3 id="less-boilerplate">Less Boilerplate</h3>
+<p>Before Observables, events (<code class="language-plaintext highlighter-rouge">on</code>) could be used to watch for some state changes. However, events can be missed. Getting the state of infrequently changing data required polling the data using something like <code class="language-plaintext highlighter-rouge">getData</code> to seed the data if the event is missed.</p>
+
+<p><strong>DON’T</strong>: Setting up a <code class="language-plaintext highlighter-rouge">Camera.MOVE</code> handler and seeding the data using <code class="language-plaintext highlighter-rouge">getPose</code> is verbose.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">pose</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">Pose</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">updatePose</span><span class="p">(</span><span class="nx">newPose</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">Pose</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// update the pose when the camera moves</span>
+  <span class="nx">pose</span> <span class="o">=</span> <span class="nx">newPose</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// listen for camera changes</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">MOVE</span><span class="p">,</span> <span class="nx">updatePose</span><span class="p">);</span>
+<span class="c1">// poll the data once in case the camera hasn't been moved yet</span>
+<span class="nx">pose</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">getPose</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><strong>DO</strong>: Use the Observable camera pose to reduce the above code to only one call: its <code class="language-plaintext highlighter-rouge">subscribe</code> function.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">pose</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
+  <span class="nx">onChanged</span><span class="p">(</span><span class="nx">newPose</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// log the current camera pose</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newPose</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="better-efficiency">Better Efficiency</h3>
+<p>Another benefit to Observables is that once subscribed, Observers are only called when changes occur. When a “get” call would return the same state as the previous call, it is doing unnecessary work. The excessive “get” calls and extra work done for each call are a potential for decreasing the performance of the application.</p>
+
+<p><strong>DON’T</strong>: Polling the current camera pose by using an update loop triggers unnecessary updates</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">updatePose</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">newPose</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">getPose</span><span class="p">();</span>
+  <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">updatePose</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">updatePose</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong>DO</strong>: Use an Observable to track state and automatically update only as needed</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// only called on first subscribe and when pose has changed</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">pose</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">newPose</span><span class="p">)</span> <span class="p">{</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="callback-consistency">Callback Consistency</h3>
+<p>Previously mentioned, both an event callback and a “get” call were required to successfully fetch and watch data. With an Observable, all of that behavior is completely encapsulated. Any new Observers that <code class="language-plaintext highlighter-rouge">subscribe</code> to an Observable will always be called at least once to ensure that they have an accurate view of the state and called again as state changes to ensure that it is kept up-to-date.</p>
+
+<p><strong>DON’T</strong>: Subscribing to events will miss prior updates</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// may or may not be called depending on if the camera is ever moved after the callback is registered</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">MOVE</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">newPose</span><span class="p">)</span> <span class="p">{</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<p><strong>DO</strong>: Subscribing to an Observable always has an up-to-date view of state</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// always called at a minimum of once with the current state, and with any subsequent updates afterward</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">pose</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">newPose</span><span class="p">)</span> <span class="p">{</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="waiting-for-a-condition-of-state">Waiting for a Condition of State</h2>
+<p>A “Condition” can be registered to an Observable as a one-off to wait for a certain condition to be met with a given state. Functional and object-oriented Conditions are supported.</p>
+
+<h3 id="using-a-functional-condition">Using a Functional Condition</h3>
+<p>Similar to Observers, functional Conditions are merely callback functions that receive the state as their argument, but return a boolean to determine if the condition was met.</p>
+
+<p>For example, to wait for the camera pose to be in FLOORPLAN mode:</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">floorplanCondition</span><span class="p">(</span><span class="nx">pose</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">Pose</span><span class="p">):</span> <span class="nx">boolean</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">pose</span><span class="p">.</span><span class="nx">mode</span> <span class="o">===</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Mode</span><span class="p">.</span><span class="nx">Mode</span><span class="p">.</span><span class="nx">FLOORPLAN</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// wait for the camera pose to be in FLOORPLAN MODE ...</span>
+<span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">pose</span><span class="p">.</span><span class="nx">waitUntil</span><span class="p">(</span><span class="nx">floorplanCondition</span><span class="p">);</span>
+<span class="c1">// ... before continuing</span>
+</code></pre></div></div>
+
+<h3 id="using-an-object-oriented-condition">Using an Object-Oriented Condition</h3>
+<p>Object-Oriented Conditions are objects that conform to the <a href="docs/reference/current/interfaces/icondition.html"><code class="language-plaintext highlighter-rouge">ICondition</code></a> interface, or implement a member <code class="language-plaintext highlighter-rouge">waitUntil</code> function that returns a boolean to determine if the condition was met.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">FloorplanCondition</span> <span class="k">implements</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">ICondition</span><span class="o">&lt;</span><span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">Pose</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">waitUntil</span><span class="p">(</span><span class="na">pose</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">Pose</span><span class="p">):</span> <span class="nx">boolean</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">pose</span><span class="p">.</span><span class="nx">mode</span> <span class="o">===</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Mode</span><span class="p">.</span><span class="nx">Mode</span><span class="p">.</span><span class="nx">FLOORPLAN</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// wait for the camera pose to be in FLOORPLAN MODE ...</span>
+<span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">pose</span><span class="p">.</span><span class="nx">waitUntil</span><span class="p">(</span><span class="k">new</span> <span class="nx">FloorplanCondition</span><span class="p">());</span>
+<span class="c1">// ... before continuing</span>
 </code></pre></div></div>
 
 

@@ -229,4 +229,8 @@ div#main {
   }
 }
 
+a > code {
+  color: #444444;
+}
+
 @import "./nav", "./topav", "./material-swtich";
