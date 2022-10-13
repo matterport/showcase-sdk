@@ -51,7 +51,7 @@
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.76.3-0-ge164487ced/sdk.d.ts">3.1.76.3-0-ge164487ced</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.77.2-1-g3baaac4893/sdk.d.ts">3.1.77.2-1-g3baaac4893</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -528,32 +528,20 @@
 									<p>Bind the value referenced by <code>inputPath</code> to the value of <code>outputPath</code>.
 									As the value at <code>outputPath</code> changes, the value of <code>inputPath</code> will reflect it.</p>
 								</div>
-								<pre><code>const [sceneObject] = await sdk.Scene.createObjects(<span class="hljs-number">1</span>);
-const node = sceneObject.addNode();
+								<pre><code>const <span class="hljs-literal">[<span class="hljs-identifier">sceneObject</span>]</span> = await sdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Scene</span>.</span></span>create<span class="hljs-constructor">Objects(1)</span>;
+const node = sceneObject.add<span class="hljs-constructor">Node()</span>;
 
-// mp.objLoader has an outputs.visible property
-const comp1 = node.addComponent(`mp.objLoader<span class="hljs-string">&#x27;);
-const outputPath = sceneObj.addPath({
-  id: &#x27;</span>objLoader-visibl<span class="hljs-string">e&#x27;,
-  type: sdk.Scene.PathType.OUTPUT,
-  node: node,
-  component: comp1,
-  property: &#x27;</span>visibl<span class="hljs-string">e&#x27;,
-});
+<span class="hljs-comment">// mp.objLoader has an outputs.visible property</span>
+const comp1 = node.add<span class="hljs-constructor">Component(&#x27;<span class="hljs-params">mp</span>.<span class="hljs-params">objLoader</span>&#x27;)</span>;
+const outputPath = sceneObject.add<span class="hljs-constructor">OutputPath(<span class="hljs-params">comp1</span>, &#x27;<span class="hljs-params">visible</span>&#x27;, &#x27;<span class="hljs-params">objLoader</span>-<span class="hljs-params">visible</span>&#x27;)</span>;
 
-// myComponent has an inputs.toggleState property
-const comp2 = node.addComponent(&#x27;</span>myComponent<span class="hljs-string">&#x27;);
-const inputPath = sceneObj.addPath({
-  id: &#x27;</span>myComponent-toggl<span class="hljs-string">e&#x27;,
-  type: sdk.Scene.PathType.INPUT,
-  node: node,
-  component: comp2,
-  property: &#x27;</span>toggleStat<span class="hljs-string">e&#x27;,
-});
-sceneObject.bindPath(inputPath, outputPath);
+<span class="hljs-comment">// myComponent has an inputs.toggleState property</span>
+const comp2 = node.add<span class="hljs-constructor">Component(&#x27;<span class="hljs-params">myComponent</span>&#x27;)</span>;
+const inputPath = sceneObject.add<span class="hljs-constructor">InputPath(<span class="hljs-params">comp2</span>, &#x27;<span class="hljs-params">toggleState</span>&#x27;, &#x27;<span class="hljs-params">myComponent</span>-<span class="hljs-params">toggle</span>&#x27;)</span>;
+sceneObject.bind<span class="hljs-constructor">Path(<span class="hljs-params">inputPath</span>, <span class="hljs-params">outputPath</span>)</span>;
 
-node.start();
-// comp1.inputs.visible will now always equal comp2.outputs.toggleState</span>
+node.start<span class="hljs-literal">()</span>;
+<span class="hljs-comment">// comp1.inputs.visible will now always equal comp2.outputs.toggleState</span>
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -581,23 +569,11 @@ const node = sceneObject.createNode();
 
 // myReceiver has an `onEvent` lifecycle <span class="hljs-keyword">function</span> <span class="hljs-keyword">and</span> an `events[<span class="hljs-string">&#x27;do.update&#x27;</span>]` property
 const receiver = node.addComponent(`myReceiver<span class="hljs-string">&#x27;);
-const eventPath = sceneObj.addPath({
-  id: &#x27;</span>objLoader-visibl<span class="hljs-string">e&#x27;,
-  type: sdk.Scene.PathType.EVENT,
-  node: node,
-  component: receiver,
-  property: &#x27;</span><span class="hljs-keyword">do</span>.updat<span class="hljs-string">e&#x27;,
-});
+const eventPath = sceneObject.addEventPath(receiver, &#x27;</span><span class="hljs-keyword">do</span>.updat<span class="hljs-string">e&#x27;, &#x27;</span>my-reciever-updat<span class="hljs-string">e&#x27;);
 
 // myEmitter calls notify with an &#x27;</span>updated<span class="hljs-string">&#x27; event and has an `emits[&#x27;</span>updated<span class="hljs-string">&#x27;]` property
 const emitter = node.addComponent(&#x27;</span>myEmitter<span class="hljs-string">&#x27;);
-const emitPath = sceneObj.addPath({
-  id: &#x27;</span>myComponent-toggl<span class="hljs-string">e&#x27;,
-  type: sdk.Scene.PathType.EMIT,
-  node: node,
-  component: emitter,
-  property: &#x27;</span>updated<span class="hljs-string">&#x27;,
-});
+const emitPath = sceneObject.addEmitPath(emitter, &#x27;</span>updated<span class="hljs-string">&#x27;, &#x27;</span>my-component-updated<span class="hljs-string">&#x27;);
 sceneObject.bindPath(eventPath, emitPath);
 
 node.start();
@@ -758,30 +734,24 @@ node.start();
 								<div class="lead">
 									<p>Spy on events or input and output value changes</p>
 								</div>
-								<pre><code>const [sceneObject] = await sdk.Scene.createObjects(<span class="hljs-number">1</span>);
-const node = sceneObject.createNode();
+								<pre><code>const <span class="hljs-literal">[<span class="hljs-identifier">sceneObject</span>]</span> = await sdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Scene</span>.</span></span>create<span class="hljs-constructor">Objects(1)</span>;
+const node = sceneObject.create<span class="hljs-constructor">Node()</span>;
 
-// mp.objLoader has an outputs.visible property
-const comp1 = node.addComponent(`mp.objLoader<span class="hljs-string">&#x27;);
-const outputPath = sceneObj.addPath({
-  id: &#x27;</span>objLoader-visibl<span class="hljs-string">e&#x27;,
-  type: sdk.Scene.PathType.OUTPUT,
-  node: node,
-  component: comp1,
-  property: &#x27;</span>visibl<span class="hljs-string">e&#x27;,
-});
+<span class="hljs-comment">// mp.objLoader has an outputs.visible property</span>
+const comp1 = node.add<span class="hljs-constructor">Component(&#x27;<span class="hljs-params">mp</span>.<span class="hljs-params">objLoader</span>&#x27;)</span>;
+const outputPath = sceneObject.add<span class="hljs-constructor">OutputPath(<span class="hljs-params">comp1</span>, &#x27;<span class="hljs-params">visible</span>&#x27;, &#x27;<span class="hljs-params">objLoader</span>-<span class="hljs-params">visible</span>&#x27;)</span>;
 
 const outputSpy = {
   path: outputPath,
-  onEvent(type, data) {
-    console.log(&#x27;</span>outputs updated<span class="hljs-string">&#x27;, type, data);
+  on<span class="hljs-constructor">Event(<span class="hljs-params">type</span>, <span class="hljs-params">data</span>)</span> {
+    console.log(&#x27;outputs updated&#x27;, <span class="hljs-keyword">type</span>, data);
   }
 };
 
-sceneObject.spyOnEvent(outputSpy);
+sceneObject.spy<span class="hljs-constructor">OnEvent(<span class="hljs-params">outputSpy</span>)</span>;
 
-node.start();
-// outputSpy.onEvent(&#x27;</span>outputsUpdated<span class="hljs-string">&#x27;, comp1.outputs.visible) will now be called whenever comp1.outputs.visible changes</span>
+node.start<span class="hljs-literal">()</span>;
+<span class="hljs-comment">// outputSpy.onEvent(&#x27;outputsUpdated&#x27;, comp1.outputs.visible) will now be called whenever comp1.outputs.visible changes</span>
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>

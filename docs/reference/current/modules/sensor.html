@@ -46,7 +46,7 @@
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.76.3-0-ge164487ced/sdk.d.ts">3.1.76.3-0-ge164487ced</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.77.2-1-g3baaac4893/sdk.d.ts">3.1.77.2-1-g3baaac4893</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -291,24 +291,24 @@
 								<div class="lead">
 									<p>Create an <a href="../interfaces/sensor.isensor.html"><code>ISensor</code></a> which can sense and provide information about <a href="../interfaces/sensor.isource.html"><code>ISource</code></a>.</p>
 								</div>
-								<pre><code>const sensor = <span class="hljs-keyword">await</span> mpSdk.Sensor.createSensor(mpSdk.Sensor.SensorType.CAMERA);
-// add sources <span class="hljs-keyword">from</span> calls to `Sensor.createSource()`
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> sensor = <span class="hljs-keyword">await</span> mpSdk.Sensor.createSensor(mpSdk.Sensor.SensorType.CAMERA);
+<span class="hljs-comment">// add sources from calls to `Sensor.createSource()`</span>
 sensor.addSource(...sources);
-// start listening <span class="hljs-keyword">for</span> changes to the senso<span class="hljs-string">r&#x27;s readings
+<span class="hljs-comment">// start listening for changes to the sensor&#x27;s readings</span>
 sensor.readings.subscribe({
-  onAdded(source, reading) {
-    console.log(source.userData.id, &#x27;</span>has a reading o<span class="hljs-string">f&#x27;, );
+  <span class="hljs-function"><span class="hljs-title">onAdded</span>(<span class="hljs-params">source, reading</span>)</span> {
+    <span class="hljs-built_in">console</span>.log(source.userData.id, <span class="hljs-string">&#x27;has a reading of&#x27;</span>, reading);
   },
-  onUpdated(source, reading) <span class="hljs-subst">{
-    console.log(source.userData.<span class="hljs-built_in">id</span>, <span class="hljs-string">&#x27;has an updated reading&#x27;</span>);
+  <span class="hljs-function"><span class="hljs-title">onUpdated</span>(<span class="hljs-params">source, reading</span>)</span> {
+    <span class="hljs-built_in">console</span>.log(source.userData.id, <span class="hljs-string">&#x27;has an updated reading&#x27;</span>);
     <span class="hljs-keyword">if</span> (reading.inRange) {
-      console.log(source.userData.<span class="hljs-built_in">id</span>, <span class="hljs-string">&#x27;is currently in range&#x27;</span>);
+      <span class="hljs-built_in">console</span>.log(source.userData.id, <span class="hljs-string">&#x27;is currently in range&#x27;</span>);
       <span class="hljs-keyword">if</span> (reading.inView) {
-        console.log(<span class="hljs-string">&#x27;... and currently visible on screen&#x27;</span>);
-      }</span>
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;... and currently visible on screen&#x27;</span>);
+      }
     }
   }
-});</span>
+});
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -351,12 +351,12 @@ sensor.readings.subscribe({
   <span class="hljs-string">mpSdk.Sensor.createSource(mpSdk.Sensor.SourceType.SPHERE,</span> {
     <span class="hljs-attr">radius:</span> <span class="hljs-number">4</span>,
     <span class="hljs-attr">userData:</span> {
-      <span class="hljs-attr">id:</span> <span class="hljs-string">&#x27;sphere-source-2,
+      <span class="hljs-attr">id:</span> <span class="hljs-string">&#x27;sphere-source-2&#x27;</span>,
     },
-  }),
-]);
-// attach to a sensor previously created with `Sensor.createSensor()`
-sensor.addSource(...sources);</span>
+  }<span class="hljs-string">),</span>
+<span class="hljs-string">]);</span>
+<span class="hljs-string">//</span> <span class="hljs-string">attach</span> <span class="hljs-string">to</span> <span class="hljs-string">a</span> <span class="hljs-string">sensor</span> <span class="hljs-string">previously</span> <span class="hljs-string">created</span> <span class="hljs-string">with</span> <span class="hljs-string">`Sensor.createSensor()`</span>
+<span class="hljs-string">sensor.addSource(...sources);</span>
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -395,12 +395,12 @@ sensor.addSource(...sources);</span>
     <span class="hljs-attr">size:</span> { <span class="hljs-attr">x: 2: y:</span> <span class="hljs-number">2</span>, <span class="hljs-attr">z:</span> <span class="hljs-number">2</span> },
     <span class="hljs-attr">orientation:</span> { <span class="hljs-attr">yaw:</span> <span class="hljs-number">45</span>, <span class="hljs-attr">pitch:</span> <span class="hljs-number">45</span>, <span class="hljs-attr">roll:</span> <span class="hljs-number">45</span> },
     <span class="hljs-attr">userData:</span> {
-      <span class="hljs-attr">id:</span> <span class="hljs-string">&#x27;box-source-2,
+      <span class="hljs-attr">id:</span> <span class="hljs-string">&#x27;box-source-2&#x27;</span>,
     },
-  }),
-]);
-// attach to a sensor previously created with `Sensor.createSensor()`
-sensor.addSource(...sources);</span>
+  }<span class="hljs-string">),</span>
+<span class="hljs-string">]);</span>
+<span class="hljs-string">//</span> <span class="hljs-string">attach</span> <span class="hljs-string">to</span> <span class="hljs-string">a</span> <span class="hljs-string">sensor</span> <span class="hljs-string">previously</span> <span class="hljs-string">created</span> <span class="hljs-string">with</span> <span class="hljs-string">`Sensor.createSensor()`</span>
+<span class="hljs-string">sensor.addSource(...sources);</span>
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -440,12 +440,12 @@ sensor.addSource(...sources);</span>
 <span class="hljs-attr">basePoint:</span> { <span class="hljs-attr">x:</span> <span class="hljs-number">1</span>, <span class="hljs-attr">y:</span> <span class="hljs-number">2</span>, <span class="hljs-attr">z:</span> <span class="hljs-number">3</span> },
 <span class="hljs-attr">radius:</span> <span class="hljs-number">3</span>,
     <span class="hljs-attr">userData:</span> {
-      <span class="hljs-attr">id:</span> <span class="hljs-string">&#x27;cylinder-source-2,
+      <span class="hljs-attr">id:</span> <span class="hljs-string">&#x27;cylinder-source-2&#x27;</span>,
     },
-  }),
-]);
-// attach to a sensor previously created with `Sensor.createSensor()`
-sensor.addSource(...sources);</span>
+  }<span class="hljs-string">),</span>
+<span class="hljs-string">]);</span>
+<span class="hljs-string">//</span> <span class="hljs-string">attach</span> <span class="hljs-string">to</span> <span class="hljs-string">a</span> <span class="hljs-string">sensor</span> <span class="hljs-string">previously</span> <span class="hljs-string">created</span> <span class="hljs-string">with</span> <span class="hljs-string">`Sensor.createSensor()`</span>
+<span class="hljs-string">sensor.addSource(...sources);</span>
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>

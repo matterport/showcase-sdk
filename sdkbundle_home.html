@@ -259,20 +259,6 @@
           
           
           
-          <li><a title="SDK Release Notes" href="sdk_release_notes.html">SDK Release Notes</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="SDK Client Release Notes" href="sdk_client_release_notes.html">SDK Client Release Notes</a></li>
-          
-          
-          
-          
-          
-          
           <li><a title="Upgrading" href="sdk_upgrading.html">Upgrading</a></li>
           
           
@@ -784,11 +770,11 @@ $('#toc').on('click', 'a', function() {
   <tbody>
     <tr>
       <td>SDK Release</td>
-      <td><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.76.3-0-ge164487ced/showcase-bundle.zip">3.1.76.3-0-ge164487ced</a></td>
+      <td><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.77.2-1-g3baaac4893/showcase-bundle.zip">3.1.77.2-1-g3baaac4893</a></td>
     </tr>
     <tr>
       <td>Last Updated</td>
-      <td><strong>Oct 4, 2022</strong></td>
+      <td><strong>Oct 13, 2022</strong></td>
     </tr>
   </tbody>
 </table>
@@ -807,7 +793,14 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> To try Tags 2.0, add the &amp;newtags=1 URL parameter to the Showcase’s iframe</div>
 
-<h5 id="oct-4-2022">Oct 4, 2022</h5>
+<h3 id="oct-13-2022">Oct 13, 2022</h3>
+<ul>
+  <li>Restored the THREE.FontLoader exposed through component contexts</li>
+  <li>Fixed an issue where signed URLs used in <code class="language-plaintext highlighter-rouge">Tag.attachments</code> were not refreshing</li>
+  <li>Removed deprecated Tag namespace functions</li>
+</ul>
+
+<h3 id="oct-4-2022">Oct 4, 2022</h3>
 <ul>
   <li>Tags 2.0 Early Access is now considered Generally Available
     <ul>
@@ -817,14 +810,14 @@ $('#toc').on('click', 'a', function() {
   </li>
 </ul>
 
-<h5 id="sep-13-2022">Sep 13, 2022</h5>
+<h3 id="sep-13-2022">Sep 13, 2022</h3>
 <ul>
   <li>Fixed an issue where <a href="docs/reference/current/modules/tag.html#allowaction"><code class="language-plaintext highlighter-rouge">Tag.allowAction</code></a> would throw an error if called to early</li>
   <li>Fixed an issue with <a href="docs/reference/current/modules/mattertag.html#add"><code class="language-plaintext highlighter-rouge">Mattertag.add</code></a> when using a media type of <code class="language-plaintext highlighter-rouge">MediaType.NONE</code></li>
   <li>Fixed <code class="language-plaintext highlighter-rouge">media.src</code> returned in the items of <a href="docs/reference/current/modules/mattertag.html#data"><code class="language-plaintext highlighter-rouge">Mattertag.data</code></a></li>
 </ul>
 
-<h5 id="aug-24-2022">Aug 24, 2022</h5>
+<h3 id="aug-24-2022">Aug 24, 2022</h3>
 <ul>
   <li>Fixed issues with <a href="docs/reference/current/modules/tag.html#allowaction"><code class="language-plaintext highlighter-rouge">Tag.allowAction</code></a> as well as backward compatibility with <a href="docs/reference/current/modules/mattertag.html#preventaction"><code class="language-plaintext highlighter-rouge">Mattetag.preventAction</code></a> when using Tags 2.0</li>
   <li>The tag billboard and/or dock now close when the tag is removed</li>
@@ -832,12 +825,12 @@ $('#toc').on('click', 'a', function() {
   <li>Events from the <code class="language-plaintext highlighter-rouge">Mattertag</code> namespace now properly fire when using Tags 2.0</li>
 </ul>
 
-<h5 id="aug-4-2022">Aug 4, 2022</h5>
+<h3 id="aug-4-2022">Aug 4, 2022</h3>
 <ul>
   <li>The default Mattertag/Tag implementation is “classic” Mattertags ignoring any external feature policies overrides. To use Tags 2.0, a manual opt-in is necessary using the <code class="language-plaintext highlighter-rouge">newtags=1</code> URL parameter on Showcase’s iframe.</li>
 </ul>
 
-<h5 id="july-21-2022">July 21, 2022</h5>
+<h3 id="july-21-2022">July 21, 2022</h3>
 <ul>
   <li>Split <a href="docs/reference/current/interfaces/scene.iobject.html#addpath"><code class="language-plaintext highlighter-rouge">IObject.addPath</code></a> into individual functions to reduce boilerplate
     <ul>
@@ -851,7 +844,7 @@ $('#toc').on('click', 'a', function() {
   <li>Similarly, the <code class="language-plaintext highlighter-rouge">renderer</code> returned in callbacks to <a href="docs/reference/current/modules/scene.html#configure"><code class="language-plaintext highlighter-rouge">Scene.configure</code></a> or that exists on <a href="docs/reference/current/interfaces/scene.icomponentcontext.html"><code class="language-plaintext highlighter-rouge">ISceneComponent.context</code></a> has a limited <code class="language-plaintext highlighter-rouge">canvas</code> object that no longer grants access to the DOM and numerous other functions</li>
 </ul>
 
-<h5 id="june-30-2022">June 30, 2022</h5>
+<h3 id="june-30-2022">June 30, 2022</h3>
 <ul>
   <li>Added <a href="docs/reference/current/modules/tag.html#detach"><code class="language-plaintext highlighter-rouge">Tag.detach</code></a> to remove attachments from a tag</li>
   <li>Removed the need to specify the <code class="language-plaintext highlighter-rouge">type</code> when calling <a href="docs/reference/current/modules/tag.html#registerattachment"><code class="language-plaintext highlighter-rouge">Tag.registerAttachment</code></a></li>
@@ -861,7 +854,7 @@ $('#toc').on('click', 'a', function() {
   <li>Fixed an issue where <a href="sdkbundle_tutorials_setting_up_embedly">Embed.ly key overrides</a> were not respected</li>
 </ul>
 
-<h5 id="june-7-2022">June 7, 2022</h5>
+<h3 id="june-7-2022">June 7, 2022</h3>
 <ul>
   <li>Added the <a href="docs/reference/current/modules/tag.html">Tag</a> namespace.</li>
   <li>Added <a href="docs/reference/current/modules/label.html#data"><code class="language-plaintext highlighter-rouge">Label.data</code></a> collection to receive Labels data</li>
@@ -1115,7 +1108,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Oct 5, 2022 <br />
+ Site last generated: Oct 13, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

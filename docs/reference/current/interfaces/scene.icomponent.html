@@ -86,7 +86,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.76.3-0-ge164487ced/sdk.d.ts">3.1.76.3-0-ge164487ced</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.77.2-1-g3baaac4893/sdk.d.ts">3.1.77.2-1-g3baaac4893</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -249,20 +249,20 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 									<p>Call this function to bind an input property to an output property on another
 									component.</p>
 								</div>
-								<pre><code>const <span class="hljs-literal">[<span class="hljs-identifier">sceneObject</span>]</span> = await sdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Scene</span>.</span></span>create<span class="hljs-constructor">Objects(1)</span>;
-const node1 = sceneObject.create<span class="hljs-constructor">Node()</span>;
-const node2 = sceneObject.create<span class="hljs-constructor">Node()</span>;
+								<pre><code><span class="hljs-keyword">const</span> [sceneObject] = <span class="hljs-keyword">await</span> sdk.Scene.createObjects(<span class="hljs-number">1</span>);
+<span class="hljs-keyword">const</span> node1 = sceneObject.createNode();
+<span class="hljs-keyword">const</span> node2 = sceneObject.createNode();
 
 <span class="hljs-comment">// mp.objLoader has an outputs.visible property</span>
-const comp1 = node1.add<span class="hljs-constructor">Component(`<span class="hljs-params">mp</span>.<span class="hljs-params">objLoader</span>&#x27;)</span>;
+<span class="hljs-keyword">const</span> comp1 = node1.addComponent(<span class="hljs-string">&#x27;mp.objLoader&#x27;</span>);
 
 <span class="hljs-comment">// myComponent has an inputs.toggleState property</span>
-const comp2 = node2.add<span class="hljs-constructor">Component(&#x27;<span class="hljs-params">myComponent</span>&#x27;)</span>;
+<span class="hljs-keyword">const</span> comp2 = node2.addComponent(<span class="hljs-string">&#x27;myComponent&#x27;</span>);
 
-comp1.bind(&#x27;visible&#x27;, comp2, &#x27;toggleState&#x27;);
+comp1.bind(<span class="hljs-string">&#x27;visible&#x27;</span>, comp2, <span class="hljs-string">&#x27;toggleState&#x27;</span>);
 
-node1.start<span class="hljs-literal">()</span>;
-node2.start<span class="hljs-literal">()</span>;
+node1.start();
+node2.start();
 
 <span class="hljs-comment">// comp1.inputs.visible will now always equal comp2.outputs.toggleState</span>
 });
