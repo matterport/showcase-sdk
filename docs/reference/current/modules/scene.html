@@ -41,7 +41,7 @@
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.78.4-0-gdde5f65e3a/sdk.d.ts">3.1.78.4-0-gdde5f65e3a</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.80.4-0-gc3bde6e75f/sdk.d.ts">3.1.80.4-0-gc3bde6e75f</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -76,6 +76,7 @@
 								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/scene.isceneobjectspy.html" class="tsd-kind-icon">IScene<wbr>Object<wbr>Spy</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/scene.inputpath.html" class="tsd-kind-icon">Input<wbr>Path</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/scene.outputpath.html" class="tsd-kind-icon">Output<wbr>Path</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/scene.pathbase.html" class="tsd-kind-icon">Path<wbr>Base</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/scene.pathinfo.html" class="tsd-kind-icon">Path<wbr>Info</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/scene.scenecomponentoptions.html" class="tsd-kind-icon">Scene<wbr>Component<wbr>Options</a></li>
 							</ul>
@@ -598,7 +599,7 @@ const </span>node = sceneObject.createNode();
 					<a name="deserialize" class="tsd-anchor"></a>
 					<h3>deserialize</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">deserialize<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/scene.iobject.html" class="tsd-signature-type">Scene.IObject</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">deserialize<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scene.iobject.html" class="tsd-signature-type">Scene.IObject</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -611,8 +612,8 @@ const </span>node = sceneObject.createNode();
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>This function returns an array of scene nodes from serialized scene.
-									The returned scene nodes have not been started yet.</p>
+									<p>This function returns a scene object with all of its scene nodes from a serialized scene.
+									The returned scene object has not been started yet.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -624,8 +625,8 @@ const </span>node = sceneObject.createNode();
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/scene.iobject.html" class="tsd-signature-type">Scene.IObject</a><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A promise that resolves with an array of scene nodes.</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/scene.iobject.html" class="tsd-signature-type">Scene.IObject</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A promise that resolves with a scene object.</p>
 						</li>
 					</ul>
 				</section>
@@ -745,7 +746,8 @@ const </span>node = sceneObject.createNode();
 					<a name="serialize" class="tsd-anchor"></a>
 					<h3>serialize</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">serialize<span class="tsd-signature-symbol">(</span>sceneNodes<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/scene.iobject.html" class="tsd-signature-type">Scene.IObject</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">serialize<span class="tsd-signature-symbol">(</span>sceneObject<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.iobject.html" class="tsd-signature-type">Scene.IObject</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">serialize<span class="tsd-signature-symbol">(</span>sceneNodes<span class="tsd-signature-symbol">: </span><a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -758,13 +760,41 @@ const </span>node = sceneObject.createNode();
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>This function serializes an array of scene nodes and their components to a string.</p>
+									<p>Serialize a scene object, its nodes, and their components to a string.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>sceneNodes: <a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/scene.iobject.html" class="tsd-signature-type">Scene.IObject</a></h5>
+									<h5>sceneObject: <a href="../interfaces/scene.iobject.html" class="tsd-signature-type">Scene.IObject</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A promise that resolves with the serialized string.</p>
+						</li>
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Prefer to serialize an array of <code>Scene.INode</code> through their containing <code>Scene.IObject</code> instead.</p>
+								</dd>
+								<dt class="tsd-comment-tags-bundle">bundle</dt>
+								<dd>
+									&nbsp;
+								</dd>
+							</dl>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This function serializes an array of scene nodes and their components to a string.
+									This function is only provided to provide an upgrade path from nodes that were created before the introduction of <code>IObject</code>s.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>sceneNodes: <a href="../interfaces/scene.inode.html" class="tsd-signature-type">Scene.INode</a><span class="tsd-signature-symbol">[]</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>An array of scene nodes.</p>
 									</div>
@@ -914,6 +944,9 @@ const </span>node = sceneObject.createNode();
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="../interfaces/scene.outputpath.html" class="tsd-kind-icon">Output<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="../interfaces/scene.pathbase.html" class="tsd-kind-icon">Path<wbr>Base</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="../interfaces/scene.pathinfo.html" class="tsd-kind-icon">Path<wbr>Info</a>

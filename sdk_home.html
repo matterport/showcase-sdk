@@ -193,6 +193,13 @@
           
           
           
+          <li><a title="Change Log" href="sdk_changelog.html">Change Log</a></li>
+          
+          
+          
+          
+          
+          
           <li><a title="Vocabulary" href="sdk_vocabulary.html">Vocabulary</a></li>
           
           
@@ -238,13 +245,6 @@
           
           
           
-          <li><a title="Installation" href="sdk_installation.html">Installation</a></li>
-          
-          
-          
-          
-          
-          
           <li><a title="Quick Start" href="sdk_quickstart.html">Quick Start</a></li>
           
           
@@ -284,13 +284,6 @@
           
           
           <li><a title="Architecture" href="sdkbundle_architecture.html">Architecture</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Installation" href="sdkbundle_installation.html">Installation</a></li>
           
           
           
@@ -756,7 +749,9 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> <br />
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developer@matterport.com">developer@matterport.com</a> with any questions.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> <br />
     Tags 2.0 will become the new default soon, replacing Mattertags.<br />
     We will continue to support Mattertags (Tags 1.0) until March 1, 2023, after which Tags 2.0 will become the only available implementation.<br />
     Until that date, by including an <code class="language-plaintext highlighter-rouge">&amp;applicationKey</code> URL parameter, the default Tag implementation will remain Mattertags.<br />
@@ -771,315 +766,164 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="updates">Updates</h2>
 
-<h2 id="22103">22.10.3</h2>
-<h5 id="oct-27-2022">Oct 27, 2022</h5>
-<ul>
-  <li>Fixed issues where the subscription to a <code class="language-plaintext highlighter-rouge">Collection</code> or <code class="language-plaintext highlighter-rouge">Observable</code> could be undefined in their callbacks.</li>
-</ul>
+<p>Latest Embed SDK update: Nov 10, 2022<br />
+See the <a href="/sdk_changelog.html">change log</a></p>
 
-<h2 id="22102">22.10.2</h2>
-<h5 id="oct-13-2022">Oct 13, 2022</h5>
-<ul>
-  <li>Fixed an issue where signed URLs used in <code class="language-plaintext highlighter-rouge">Tag.attachments</code> were not refreshing</li>
-  <li>Removed deprecated Tag namespace functions</li>
-</ul>
+<h2 id="getting-started">Getting Started</h2>
 
-<h2 id="22101">22.10.1</h2>
-<h5 id="oct-4-2022">Oct 4, 2022</h5>
-<ul>
-  <li>Tags 2.0 Early Access is now considered Generally Available
-    <ul>
-      <li>Any features in the Tag namespace marked deprecated will be removed in the next release</li>
-      <li>All other features are considered stable and will continue to be supported</li>
-    </ul>
-  </li>
-</ul>
+<h3 id="include-the-library-and-add-a-matterport-space">Include the Library and Add a Matterport Space</h3>
 
-<h2 id="2291">22.9.1</h2>
-<h5 id="sep-13-2022">Sep 13, 2022</h5>
-<p>If opted into Tags 2.0</p>
-<ul>
-  <li>Fixed an issue where <a href="docs/reference/current/modules/tag.html#allowaction"><code class="language-plaintext highlighter-rouge">Tag.allowAction</code></a> would throw an error if called to early</li>
-  <li>Fixed an issue with <a href="docs/reference/current/modules/mattertag.html#add"><code class="language-plaintext highlighter-rouge">Mattertag.add</code></a> when using a media type of <code class="language-plaintext highlighter-rouge">MediaType.NONE</code></li>
-  <li>Fixed <code class="language-plaintext highlighter-rouge">media.src</code> returned in the items of <a href="docs/reference/current/modules/mattertag.html#data"><code class="language-plaintext highlighter-rouge">Mattertag.data</code></a></li>
-</ul>
+<p>First, add the 3D Showcase SDK to your web application by including the Javascript library. This line goes in the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> tag with your other includes.</p>
 
-<h2 id="2282">22.8.2</h2>
-<ul>
-  <li>Fixed issues with <a href="docs/reference/current/modules/tag.html#allowaction"><code class="language-plaintext highlighter-rouge">Tag.allowAction</code></a> as well as backward compatibility with <a href="docs/reference/current/modules/mattertag.html#preventaction"><code class="language-plaintext highlighter-rouge">Mattetag.preventAction</code></a> when using Tags 2.0</li>
-  <li>The tag billboard and/or dock now close when the tag is removed</li>
-  <li>Editing a tag now displays the changes immediately; no need to close and re-open the tag to display the new contents</li>
-  <li>Events from the <code class="language-plaintext highlighter-rouge">Mattertag</code> namespace now properly fire when using Tags 2.0</li>
-</ul>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">'</span><span class="s1">https://static.matterport.com/showcase-sdk/latest.js</span><span class="dl">'</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
-<h2 id="2281">22.8.1</h2>
-<h5 id="aug-4-2022">Aug 4, 2022</h5>
-<ul>
-  <li>The default Mattertag/Tag implementation is “classic” Mattertags ignoring any external feature policies overrides. To use Tags 2.0, a manual opt-in is necessary using the <code class="language-plaintext highlighter-rouge">newtags=1</code> URL parameter on Showcase’s iframe.</li>
-</ul>
+<p>Next, embed a Matterport Space on your web page with an <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> tag. <a href="https://support.matterport.com/hc/en-us/articles/115004549347-Embed-a-Space-with-an-iframe-">Learn more about embedding</a>.</p>
 
-<h2 id="2261">22.6.1</h2>
-<h5 id="jun-30-2022">Jun 30, 2022</h5>
-<ul>
-  <li>Added <a href="docs/reference/current/modules/tag.html#detach"><code class="language-plaintext highlighter-rouge">Tag.detach</code></a> to remove attachments from a tag</li>
-  <li>Removed the need to specify the <code class="language-plaintext highlighter-rouge">type</code> when calling <a href="docs/reference/current/modules/tag.html#registerattachment"><code class="language-plaintext highlighter-rouge">Tag.registerAttachment</code></a></li>
-  <li>Added <a href="docs/reference/current/modules/tag.html#registersandbox"><code class="language-plaintext highlighter-rouge">Tag.registerSandbox</code></a></li>
-  <li>Added <a href="docs/reference/current/modules/tag.html#editstem"><code class="language-plaintext highlighter-rouge">Tag.editStem</code></a> and <a href="docs/reference/current/modules/mattertag.html#editstem"><code class="language-plaintext highlighter-rouge">Mattertag.editStem</code></a> to control the stem’s length and/or visibility</li>
-  <li><a href="docs/reference/current/modules/asset.html#registertexture"><code class="language-plaintext highlighter-rouge">Asset.registerTexture</code></a> should now be used in place <a href="docs/reference/current/modules/pointer.html#registertexture">Pointer.registerTexture</a>. Assets from <code class="language-plaintext highlighter-rouge">Asset.registerTexture</code> can be used in <a href="docs/reference/current/modules/pointer.html#edittexture"><code class="language-plaintext highlighter-rouge">Pointer.editTexture</code></a>, <a href="docs/reference/current/modules/mattertag.html#editicon">Mattertag.editIcon</a>, and <a href="docs/reference/current/modules/tag.html#editicon"><code class="language-plaintext highlighter-rouge">Tag.editIcon</code></a></li>
-</ul>
+<p>Add the <strong>&amp;play=1</strong> URL parameter to automatically load the <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> when the page loads for a better user experience.</p>
 
-<h2 id="2251">22.5.1</h2>
-<h5 id="jun-7-2022">Jun 7, 2022</h5>
-<ul>
-  <li>Added the <a href="docs/reference/current/modules/tag.html">Tag</a> namespace.</li>
-  <li>Added <a href="docs/reference/current/modules/label.html#data">Label.data</a> collection to receive Labels data</li>
-  <li>Added <a href="docs/reference/current/modules/tour.html#currentstep">Tour.currentStep</a>, <a href="docs/reference/current/modules/tour.html#transition">Tour.transition</a>, and <a href="docs/reference/current/modules/tour.html#state">Tour.state</a> to get information about what the tour is currently doing</li>
-  <li>Added <a href="docs/reference/current/modules/mode.html#current">Mode.current</a> and <a href="docs/reference/current/modules/mode.html#transition-1">Mode.transition</a> to get information about the current view mode and any transitions between them taking place</li>
-  <li>Added <a href="docs/reference/current/modules/asset.html#registertexture">Asset.registerTexture</a> to be used as a central place for registering icons like those for Mattertags</li>
-</ul>
+<p>Add the <strong>applicationKey=[YOUR SDK_KEY]</strong> URL parameter to provide your sdk key as part of the url.</p>
 
-<h2 id="2231">22.3.1</h2>
-<h5 id="mar-17-2022">Mar 17, 2022</h5>
-<p>The previous Early Access is now closed and all features are now available generally available.</p>
-<ul>
-  <li>Updated: <a href="docs/reference/current/modules/pointer.html"><code class="language-plaintext highlighter-rouge">Pointer</code></a> now has ways to control the reticle that follows the mouse pointer. <a href="sdk_tutorials_cursor.html">See the tutorial</a>.</li>
-  <li>Updated: <a href="docs/reference/current/modules/graph.html"><code class="language-plaintext highlighter-rouge">Graph</code></a> namespace for pathfinding has improved watch-ability. <a href="sdk_tutorials_pathfinding.html">See the tutorial</a>.</li>
-  <li>Added: <a href="docs/reference/current/modules/link.html"><code class="language-plaintext highlighter-rouge">Link</code></a> namespace to control how links are generated and how links are handled.</li>
-</ul>
+<p>Give the <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> an ID you will use later.</p>
 
-<h2 id="2211">22.1.1</h2>
-<h5 id="jan-24-2022">Jan 24, 2022</h5>
-<p><a href="earlyaccess_home.html">Early Access</a> features that were previously only available in our Bundle SDK are now available in the Embed SDK as well.</p>
-<ul>
-  <li>Added: <a href="docs/reference/interfaces/dictionary.html#_symbol_iterator_"><code class="language-plaintext highlighter-rouge">Dictionary objects</code></a> returned in <a href="docs/reference/interfaces/imapobserver.html"><code class="language-plaintext highlighter-rouge">IMapObserver</code></a> are now iterable using <code class="language-plaintext highlighter-rouge">for...of</code> loops.</li>
-  <li>Fixed: <a href="docs/reference/current/modules/sweep.html#disable">Sweep.disable</a> should now work regardless of the <code class="language-plaintext highlighter-rouge">useLegacyIds</code> param.</li>
-  <li>Fixed: <a href="docs/reference/current/modules/room.html#roomdata">Room.floorInfo</a> should now be populated instead of always being an invalid floor.</li>
-  <li>Early Access: <a href="sdk_tutorials_pathfinding.html">Graph and Pathfinding</a>; see the <a href="docs/reference/current/modules/graph.html">Reference pages</a>.</li>
-  <li>Early Access: <a href="sdk_tutorials_cursor.html">Pointer Reticle Customization</a>; see the <a href="docs/reference/current/modules/pointer.html">Reference pages</a>.</li>
-</ul>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span>
+  <span class="na">width=</span><span class="s">"853"</span>
+  <span class="na">height=</span><span class="s">"480"</span>
+  <span class="na">src=</span><span class="s">"https://my.matterport.com/show?m=SxQL3iGyoDo&amp;play=1&amp;applicationKey=[YOUR_SDK_KEY_HERE]"</span>
+  <span class="na">frameborder=</span><span class="s">"0"</span>
+  <span class="na">allow=</span><span class="s">"fullscreen; vr"</span>
+  <span class="na">id=</span><span class="s">"showcase-iframe"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/iframe&gt;</span>
+</code></pre></div></div>
 
-<h2 id="3111">3.11.1</h2>
-<h5 id="sep-23-2021">Sep 23, 2021</h5>
-<ul>
-  <li>Updated: <a href="docs/reference/current/modules/mattertag.html#registericon">Mattertag.registerIcon</a> will now return the result of the fetch. Existing uses (that did not await the result) should not be affected.</li>
-  <li>Fixed: <a href="docs/reference/current/modules/mattertag.html#remove">Mattertag.remove</a> can now properly remove an array of tags.</li>
-  <li>Fixed: The <a href="docs/reference/current/interfaces/mattertag.imessenger.html">Mattertag.IMessenger</a> returned from <a href="docs/reference/current/modules/mattertag.html#injecthtml">Mattertag.injectHTML</a> will no longer see messages coming from the wrong tags.</li>
-</ul>
+<h3 id="connect-to-the-matterport-space">Connect to the Matterport Space</h3>
 
-<h2 id="311">3.11</h2>
-<h5 id="jun-10-2021">Jun 10, 2021</h5>
-<ul>
-  <li>Added: <a href="docs/reference/current/modules/room.html#current">Room.current</a> observable.</li>
-  <li>Added: <a href="sdk_types.html">Typescript type declarations</a>.</li>
-  <li>Fixed: <code class="language-plaintext highlighter-rouge">Sweep.Alignment</code> and <code class="language-plaintext highlighter-rouge">Sweep.Placement</code> are now properly under the <code class="language-plaintext highlighter-rouge">Sweep</code> namespace. Previously they were <code class="language-plaintext highlighter-rouge">Mode.Alignment</code> and <code class="language-plaintext highlighter-rouge">Mode.Placement</code></li>
-  <li>Removed: An interface version no longer needs to be specified when calling <code class="language-plaintext highlighter-rouge">connect</code>.</li>
-</ul>
+<p>Now in the Javascript code for your web application, connect to the Matterport Space.</p>
 
-<h2 id="v310">v3.10</h2>
-<h5 id="apr-1-2021">Apr 1, 2021</h5>
-<ul>
-  <li>Added: <a href="docs/reference/current/modules/room.html#data">Room.data</a> collection.</li>
-  <li>Added: <a href="docs/reference/current/modules/sensor.html#createsource">Cylinder sources</a> for use with Sensors.</li>
-  <li>Added: <a href="docs/reference/current/modules/sensor.html#createsource">Box sources</a> now support orientation.</li>
-  <li>Fixed: <code class="language-plaintext highlighter-rouge">Mattertag.add</code> now properly sets its stem visible when undefined.</li>
-  <li>Fixed: <code class="language-plaintext highlighter-rouge">Sweep.current</code> is more resilient to missing floor info.</li>
-</ul>
+<p>You’ll want to wait until the <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> containing the Matterport Space loads. Connecting happens after you’ve included the SDK library.</p>
 
-<h2 id="v39">v3.9</h2>
-<h5 id="feb-22-2021">Feb 22, 2021</h5>
-<ul>
-  <li>Added: <a href="docs/reference/current/modules/sensor.html">Sensors</a></li>
-  <li>Fixed: <code class="language-plaintext highlighter-rouge">Mattertag.editPosition</code> always giving a stem length of 1 meter.</li>
-</ul>
+<p>Replace the <strong>[YOUR_SDK_KEY_HERE]</strong> string with your sdk key.</p>
 
-<h2 id="v38">v3.8</h2>
-<h5 id="jan-19-2021">Jan 19, 2021</h5>
-<ul>
-  <li>Added: <a href="docs/reference/current/modules/floor.html#data">Floor.current</a> observable</li>
-  <li>Added: <a href="docs/reference/current/modules/sweep.html#current">Sweep.current</a> observable</li>
-  <li>Added: <a href="docs/reference/current/modules/sweep.html#enable">Sweep.enable</a> and <a href="docs/reference/current/modules/sweep.html#disable">Sweep.disable</a></li>
-  <li>Fixed: <code class="language-plaintext highlighter-rouge">options.size</code> should now work again in <a href="docs/reference/current/modules/mattertag.html#injecthtml">Mattertag.injectHTML</a></li>
-</ul>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase-iframe</span><span class="dl">'</span><span class="p">);</span>
 
-<h2 id="v37">v3.7</h2>
-<h5 id="dec-21-2020">Dec 21, 2020</h5>
-<ul>
-  <li>Fix: Added <code class="language-plaintext highlighter-rouge">enabled</code>, <code class="language-plaintext highlighter-rouge">stemVisible</code> and <code class="language-plaintext highlighter-rouge">floorIndex</code> properties to <a href="docs/reference/current/modules/mattertag.html#observablemattertagdata">ObservableMattertagData</a> for backwards compatibility with <code class="language-plaintext highlighter-rouge">Mattertag.getData</code></li>
-  <li>Fix: Fixed an issue where observable collections would not return initial data</li>
-  <li>Added: <a href="docs/reference/current/modules/floor.html#data">Floor.data</a> observable collection, deprecate <code class="language-plaintext highlighter-rouge">Floor.getData</code></li>
-  <li>Added: FloorInfo to <code class="language-plaintext highlighter-rouge">Label</code> and <code class="language-plaintext highlighter-rouge">SweepData</code></li>
-</ul>
+<span class="c1">// connect the sdk; log an error and stop if there were any connection issues</span>
+<span class="k">try</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span>
+    <span class="nx">iframe</span><span class="p">,</span> <span class="c1">// Obtained earlier</span>
+    <span class="dl">'</span><span class="s1">[YOUR_SDK_KEY_HERE]</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// Your SDK key</span>
+    <span class="dl">''</span> <span class="c1">// Unused but needs to be a valid string</span>
+  <span class="p">);</span>
+  <span class="nx">onShowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+<span class="p">}</span>
 
-<h2 id="v36">v3.6</h2>
-<h5 id="dec-1-2020">Dec 1, 2020</h5>
-<ul>
-  <li>Added: <code class="language-plaintext highlighter-rouge">Mattertag.data</code> observable collection, deprecate <code class="language-plaintext highlighter-rouge">Mattertag.getData</code></li>
-  <li>Added: <code class="language-plaintext highlighter-rouge">onCollectionUpdated</code> to collection observers. <code class="language-plaintext highlighter-rouge">onCollectionUpdated</code> aggregates changes to a collection for more coarse, but less often updates</li>
-  <li>Added: <code class="language-plaintext highlighter-rouge">views</code> option to <code class="language-plaintext highlighter-rouge">Renderer.takeScreenShot</code> to hide 360 views</li>
-  <li>Fix: Failures to load replace tag icons via <code class="language-plaintext highlighter-rouge">Mattertag.editIcon</code> will now properly propagate errors</li>
-  <li>Fix: Fallback dimensions are now provided for svgs used in <code class="language-plaintext highlighter-rouge">Mattertag.editIcon</code> – this should help in some cases where Firefox determines the size is 0x0</li>
-  <li>Improved: More descriptive error messages around tagIds provided in most Mattertag calls</li>
-</ul>
+<span class="kd">function</span> <span class="nx">onShowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// start making calls on mpSdk as described in the reference docs</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<h2 id="v35">v3.5</h2>
-<h5 id="aug-5-2020">Aug 5, 2020</h5>
-<ul>
-  <li>Added <code class="language-plaintext highlighter-rouge">Mattertag.injectHTML</code> which allows embedding of custom HTML and Javascript, with sandboxed iframe limitations.</li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">showcase-iframe</code></td>
+      <td>The value you put for the the <code class="language-plaintext highlighter-rouge">id</code> parameter in the <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> tag earlier.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">applicationKey</code></td>
+      <td>Your SDK key is unique to your website domain. Go to Matterport Account Settings -&gt; Developer Tools to create an SDK key for your application.</td>
+    </tr>
+  </tbody>
+</table>
 
-<h2 id="v34">v3.4</h2>
-<h5 id="june-23-2020">June 23, 2020</h5>
-<ul>
-  <li>Added <code class="language-plaintext highlighter-rouge">Camera.zoomBy</code>, <code class="language-plaintext highlighter-rouge">Camera.zoomTo</code>, and <code class="language-plaintext highlighter-rouge">Camera.zoomReset</code> to manipulate the zoom level of the camera in Panorama modes.</li>
-  <li>Added <code class="language-plaintext highlighter-rouge">Camera.zoom</code> observable to get the zoom level of the camera while in Panorama mode.</li>
-  <li>Added <code class="language-plaintext highlighter-rouge">Mattertag.editOpacity</code> to control opacity of each Mattertag.</li>
-  <li>Added <code class="language-plaintext highlighter-rouge">Mattertag.preventAction</code> to disable Showcase’s default hover and click handlers allowing for the billboard to be hidden and/or the click to navigate to be suppressed.</li>
-  <li>Added <code class="language-plaintext highlighter-rouge">Sweep.data</code> as a replacement for the <code class="language-plaintext highlighter-rouge">sweeps</code> property of <code class="language-plaintext highlighter-rouge">Model.getData</code>.</li>
-  <li>Added <code class="language-plaintext highlighter-rouge">IObserver</code> support to <code class="language-plaintext highlighter-rouge">IObservable</code> for the more object-oriented programmer.</li>
-  <li>Added transitionTime to <code class="language-plaintext highlighter-rouge">Sweep.moveTo</code> options.</li>
-  <li>Fixed an issue with <code class="language-plaintext highlighter-rouge">Camera.setRotation</code> where certain orientations would rotate in the wrong direction.</li>
-  <li>Fixed a race condition between <code class="language-plaintext highlighter-rouge">Mattertag.registerIcon</code> and <code class="language-plaintext highlighter-rouge">Mattertag.editIcon</code>.</li>
-</ul>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Visit <a href="https://support.matterport.com/hc/en-us/articles/360057506813-Developer-Tools-Pricing-and-Availability#sandbox-vs-production-access-0-0">Sandbox vs. Production Access</a> to learn more about developer tools access restrictions.</div>
 
-<h2 id="v331">v3.3.1</h2>
-<h5 id="june-1-2020">June 1, 2020</h5>
-<ul>
-  <li>Added <code class="language-plaintext highlighter-rouge">Measurements.data</code> which allows you to detect when measurements are added, removed, and updated.</li>
-  <li>Added <code class="language-plaintext highlighter-rouge">Mattertag.registerIcon</code> and <code class="language-plaintext highlighter-rouge">Mattertag.editIcon</code> function which allows you to change image used as mattertag discs.</li>
-  <li>Added <code class="language-plaintext highlighter-rouge">Mattertag.resetIcon</code> to undo changes done by <code class="language-plaintext highlighter-rouge">Mattertag.editIcon</code>.</li>
-</ul>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> For local development, you’ll need to run your app off a local web server. We recommend using a NodeJS server.</div>
 
-<h2 id="v33">v3.3</h2>
-<h5 id="may-19-2020">May 19, 2020</h5>
-<ul>
-  <li>Added <code class="language-plaintext highlighter-rouge">Measurements.mode</code> which allows you to detect when measurements mode is activated and deactivated.</li>
-  <li>Added <code class="language-plaintext highlighter-rouge">Measurements.toggleMode</code> function which allows you to enable and disable showcase measurement mode.</li>
-</ul>
+<h3 id="control-3d-showcase-with-actions">Control 3D Showcase with Actions</h3>
 
-<h2 id="v323">v3.2.3</h2>
-<h5 id="may-13-2020">May 13, 2020</h5>
-<ul>
-  <li>Fixed a race condition with <code class="language-plaintext highlighter-rouge">Camera.pose</code> and <code class="language-plaintext highlighter-rouge">Pointer.intersection</code> initialization.</li>
-</ul>
+<p>Now you’ll want to make an action for 3D Showcase to execute. In the code for your web application, add this to a Javascript function where desired. Refer to the <a href="sdk_reference_summary">reference docs</a> for a list of all the actions you can do.</p>
 
-<h2 id="v322">v3.2.2</h2>
-<h5 id="may-11-2020">May 11, 2020</h5>
-<ul>
-  <li>Added optional <code class="language-plaintext highlighter-rouge">floorId</code> parameter to <code class="language-plaintext highlighter-rouge">Mattertag.add</code> and <code class="language-plaintext highlighter-rouge">Mattertag.editPosition</code>.</li>
-  <li>Added <code class="language-plaintext highlighter-rouge">floorId</code> to <code class="language-plaintext highlighter-rouge">Pointer.intersection</code> observable. This property can be used in with transient mattertags.</li>
-</ul>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">showcase</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">action</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">arguments</span><span class="o">&gt;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">successCallback</span><span class="p">)</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">errorCallback</span><span class="p">);</span>
 
-<h2 id="v321">v3.2.1</h2>
-<h5 id="jan-30-2020">Jan 30, 2020</h5>
-<ul>
-  <li>Added <code class="language-plaintext highlighter-rouge">Mattertag.LINK_OPEN</code> event. This event fires when the user has clicked on an external mattertag link. See <a href="docs/reference/current/index.html#on">Mattertag Events</a></li>
-  <li>Added <code class="language-plaintext highlighter-rouge">Camera.setRotation</code> function. This function sets the absolute rotation of the camera in inside mode.</li>
-</ul>
+<span class="c1">// ...</span>
 
-<h2 id="v32">v3.2</h2>
-<h5 id="dec-9-2019">Dec 9, 2019</h5>
-<ul>
-  <li><strong>Transient Mattertags</strong><br />
-Support for creating, updating and deleting mattertags.
-Changes to mattertags disappear once the user leaves showcase. Added <code class="language-plaintext highlighter-rouge">Mattertag.add</code>, <code class="language-plaintext highlighter-rouge">Mattertag.editColor</code>, <code class="language-plaintext highlighter-rouge">Mattertag.editBillboard</code>, <code class="language-plaintext highlighter-rouge">Mattertag.editPosition</code>, and <code class="language-plaintext highlighter-rouge">Mattertag.remove</code> See <a href="sdk_editing_mattertags.html">Tutorials</a> section for help on editing transient mattertag content.</li>
-  <li><strong>Synchronous Functions</strong><br />
-We are adding support for synchronous functions. These functions compute and return your data immediately, no promise involved. In general, synchronous functions are more performant since they dont directly interact with the showcase. Use them when you can. To start, we have selected a function that is called frequently <code class="language-plaintext highlighter-rouge">Renderer.getScreenPosition()</code>. This function is now being deprecated, and the new synchronous function is <code class="language-plaintext highlighter-rouge">Renderer.worldToScreen()</code>. In order to use synchronous functions, you will need to update your sdk client reference to <code class="language-plaintext highlighter-rouge">https://static.matterport.com/showcase-sdk/2.0.0-0-g7edd6b8/sdk.js</code></li>
-  <li>Added <code class="language-plaintext highlighter-rouge">Mattertag.getDiscPosition</code> synchronous function.</li>
-  <li>Deprecating <code class="language-plaintext highlighter-rouge">window.SHOWCASE_SDK</code>, use <code class="language-plaintext highlighter-rouge">window.MP_SDK instead</code>.</li>
-  <li>Update your iframe links. We are no longer using <code class="language-plaintext highlighter-rouge">/showcase-beta</code> in the iframe link, use <code class="language-plaintext highlighter-rouge">/show</code> e.g. <code class="language-plaintext highlighter-rouge">https://my.matterport.com/show?m=SxQL3iGyoDo&amp;play=1</code>. See <a href="sdk_installation.html#include-the-library-and-add-a-matterport-space">Installation</a></li>
-</ul>
+<span class="c1">// What to do if action was successful</span>
+<span class="kd">function</span> <span class="nx">successCallback</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span> <span class="p">}</span>
 
-<h2 id="v31">v3.1</h2>
-<h5 id="aug-22-2019">Aug 22, 2019</h5>
-<ul>
-  <li>Added <code class="language-plaintext highlighter-rouge">Camera.pose</code> observable property.</li>
-  <li><code class="language-plaintext highlighter-rouge">Camera.getPose()</code> is now deprecated. It will be removed in a future update.</li>
-  <li>Added Pointer namespace and <code class="language-plaintext highlighter-rouge">Pointer.intersection</code> observable property</li>
-</ul>
+<span class="c1">// What to do if the action failed</span>
+<span class="kd">function</span> <span class="nx">errorCallback</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">}</span>
+</code></pre></div></div>
 
-<h2 id="v301225">v3.0.12.25</h2>
-<h5 id="may-3-2019">May 3, 2019</h5>
-<ul>
-  <li>Added colors and anchor points <code class="language-plaintext highlighter-rouge">Mattertag.MattertagData</code></li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">&lt;action&gt;</code></td>
+      <td>The action you want 3D Showcase to do.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">&lt;arguments&gt;</code></td>
+      <td>The arguments for that action.</td>
+    </tr>
+  </tbody>
+</table>
 
-<h2 id="v301218">v3.0.12.18</h2>
-<h5 id="april-25-2019">April 25, 2019</h5>
-<ul>
-  <li>Added <code class="language-plaintext highlighter-rouge">Measurements.getData()</code>. You can now access measurements created from Workshop!</li>
-  <li>Added <code class="language-plaintext highlighter-rouge">App.getLoadTimes()</code>. You can now access app phase timing information!</li>
-  <li>Added transition type parameter to <code class="language-plaintext highlighter-rouge">Mattertag.navigateToTag()</code></li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">Mattertag.ActiveMattertagData</code> type</li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">Mattertag.Event.UPDATE</code></li>
-  <li>Added projection property to <code class="language-plaintext highlighter-rouge">Camera.getPose()</code></li>
-  <li>Added optional includeHiddenFloors parameter to <code class="language-plaintext highlighter-rouge">Renderer.getWorldPositionData()</code></li>
-  <li>Added <code class="language-plaintext highlighter-rouge">Renderer.takeEquirectangular()</code></li>
-</ul>
+<h3 id="listen-to-events-from-3d-showcase">Listen to Events from 3D Showcase</h3>
 
-<h2 id="v30335">v3.0.3.35</h2>
-<h5 id="june-27-2018">June 27, 2018</h5>
-<ul>
-  <li>New actions on camera, new namespaces for Renderer, and Settings</li>
-  <li><a href="sdk_upgrading.html#upgrading-from-v30-to-v30335">See a list of modified endpoints.</a></li>
-</ul>
+<p>Listening for events from 3D Showcase is done in a similar way.</p>
 
-<h2 id="v300196">v3.0.0.196</h2>
-<h5 id="february-12-2018">February 12, 2018</h5>
-<ul>
-  <li>Renamed <code class="language-plaintext highlighter-rouge">toggle()</code> to <code class="language-plaintext highlighter-rouge">setActive()</code></li>
-  <li>Renamed <code class="language-plaintext highlighter-rouge">MattertagPositionData</code> to <code class="language-plaintext highlighter-rouge">ActiveMattertagData</code></li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">HoverState</code> event, redundant with <code class="language-plaintext highlighter-rouge">Event.HOVER</code></li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">SelectedState</code> event, use <code class="language-plaintext highlighter-rouge">Event.CLICK</code> instead`</li>
-  <li>Renamed <code class="language-plaintext highlighter-rouge">getMattertagData</code> to <code class="language-plaintext highlighter-rouge">getData</code></li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">BoardState</code> enum.</li>
-  <li>Added <code class="language-plaintext highlighter-rouge">MattertagData.isActive</code> property</li>
-  <li>Added <code class="language-plaintext highlighter-rouge">TagDescriptionChunkType</code> enum</li>
-  <li>Added <code class="language-plaintext highlighter-rouge">TagMediaType</code> enum</li>
-  <li>Added <code class="language-plaintext highlighter-rouge">LinkType</code> enum</li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">MattertagData.floorIndex</code> property</li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">MattertagData.mode</code> property</li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">MattertagData.color</code> property</li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">MattertagData.anchorPosition</code> property</li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">MattertagData.stemVector</code> property</li>
-  <li>Renamed <code class="language-plaintext highlighter-rouge">SweepInfo.newPano</code> to <code class="language-plaintext highlighter-rouge">SweepInfo.newSweep</code></li>
-  <li>Renamed <code class="language-plaintext highlighter-rouge">SweepInfo.oldPano</code> to <code class="language-plaintext highlighter-rouge">SweepInfo.oldSweep</code></li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">ModelData.panos</code> property</li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">SweepData.modelSupportsVr</code> property</li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">SweepData.neighbourUUIDs</code> property</li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">SweepData.thumbnail</code> property</li>
-  <li>Renamed <code class="language-plaintext highlighter-rouge">getModelData()</code> to <code class="language-plaintext highlighter-rouge">getData()</code></li>
-  <li>Renamed <code class="language-plaintext highlighter-rouge">getModelDetails()</code><code class="language-plaintext highlighter-rouge"> to </code>getDetails()`</li>
-  <li>Renamed <code class="language-plaintext highlighter-rouge">ModelDetails.contact_email</code> to <code class="language-plaintext highlighter-rouge">ModelDetails.contactEmail</code></li>
-  <li>Renamed <code class="language-plaintext highlighter-rouge">ModelDetails.contact_name</code> to <code class="language-plaintext highlighter-rouge">ModelDetails.contactName</code></li>
-  <li>Renamed <code class="language-plaintext highlighter-rouge">ModelDetails.formatted_address</code> to <code class="language-plaintext highlighter-rouge">ModelDetails.formattedAddress</code></li>
-  <li>Renamed <code class="language-plaintext highlighter-rouge">ModelDetails.formatted_contact_phone</code> to <code class="language-plaintext highlighter-rouge">ModelDetails.formattedContactPhone</code></li>
-  <li>Renamed <code class="language-plaintext highlighter-rouge">Pose.pano</code> to <code class="language-plaintext highlighter-rouge">Pose.sweep</code></li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">rotateInDirection()</code> function</li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">Event.CHANGE</code> event</li>
-  <li>Renamed <code class="language-plaintext highlighter-rouge">Event.PLAYING</code> to <code class="language-plaintext highlighter-rouge">Event.PHASE_CHANGE</code></li>
-</ul>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">showcase</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">event_name</span><span class="o">&gt;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">state_arguments</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// what to do when this event happens</span>
+<span class="p">});</span>
+</code></pre></div></div>
 
-<h2 id="v30">v3.0</h2>
-<h5 id="december-4-2017">December 4, 2017</h5>
-<ul>
-  <li>New actions and events on floors, labels, and Mattertag™ Posts.</li>
-  <li>New set of reference content that covers all actions and events.</li>
-  <li>Version 1.x no longer supported. Version 2.0 skipped.</li>
-  <li><a href="sdk_upgrading.html#upgrading-from-v11-to-v30">See a list of modified endpoints.</a></li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">&lt;event_name&gt;</code></td>
+      <td>Event you’re listening for</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">&lt;state_arguments&gt;</code></td>
+      <td>Return values related to this event. These tell you about the new state of 3D Showcase after this event has happened.</td>
+    </tr>
+  </tbody>
+</table>
 
-<h2 id="v11">v1.1</h2>
-<h5 id="august-10-2017">August 10, 2017</h5>
-<ul>
-  <li>Added <code class="language-plaintext highlighter-rouge">getPose</code> and <code class="language-plaintext highlighter-rouge">takeScreenShot</code> actions.</li>
-  <li>Added pano thumbnails from the default pose into the metadata.</li>
-</ul>
+<h3 id="use-the-metadata">Use the Metadata</h3>
 
-<h2 id="v10">v1.0</h2>
-<h5 id="february-16-2017">February 16, 2017</h5>
-<ul>
-  <li>Initial release of SDK. Focus on movement and the user’s location in the space.</li>
-</ul>
+<p>Finally, you can grab metadata about the entire Matterport Space by calling <code class="language-plaintext highlighter-rouge">getData()</code> and <code class="language-plaintext highlighter-rouge">getDetails()</code> in your web app. For example:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">getData</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">model</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Model data successfully retrieved</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Model sid:</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">model</span><span class="p">.</span><span class="nx">sid</span><span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Problem retrieving model data</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<p>Metadata is only available <strong>after</strong> you have successfully connected to the Matterport Space.</p>
 
 
     <div class="tags">
@@ -1097,7 +941,7 @@ We are adding support for synchronous functions. These functions compute and ret
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Oct 27, 2022 <br />
+ Site last generated: Nov 9, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

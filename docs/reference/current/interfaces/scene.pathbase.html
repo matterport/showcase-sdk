@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>PathInfo | Matterport SDK</title>
+	<title>PathBase | Matterport SDK</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -20,29 +20,35 @@
 					<a href="../modules/scene.html">Scene</a>
 				</li>
 				<li>
-					<a href="scene.pathinfo.html">PathInfo</a>
+					<a href="scene.pathbase.html">PathBase</a>
 				</li>
 			</ul>
-			<h1>PathInfo Interface</h1>
+			<h1>PathBase Interface</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>The objects returned by the <a href="scene.iobject.html#pathiterator">pathIterator</a> implement this interface. Each descriptor and path should correlate by type.
-						For example, a path of type <a href="../enums/scene.pathtype.html#input">PathType.INPUT</a> would have a descriptor of type <a href="../modules/scene.html#inputpathdescriptor">InputPathDescriptor</a> and path of type <a href="scene.inputpath.html">InputPath</a>.</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">PathInfo</span>
+						<span class="target">PathBase</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<a href="scene.inputpath.html" class="tsd-signature-type">Scene.InputPath</a>
+							</li>
+							<li>
+								<a href="scene.outputpath.html" class="tsd-signature-type">Scene.OutputPath</a>
+							</li>
+							<li>
+								<a href="scene.eventpath.html" class="tsd-signature-type">Scene.EventPath</a>
+							</li>
+							<li>
+								<a href="scene.emitpath.html" class="tsd-signature-type">Scene.EmitPath</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -68,8 +74,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.pathinfo.html#desc" class="tsd-kind-icon">desc</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.pathinfo.html#path" class="tsd-kind-icon">path</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.pathbase.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.pathbase.html#object" class="tsd-kind-icon">object</a></li>
 							</ul>
 						</section>
 					</div>
@@ -78,18 +84,28 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="desc" class="tsd-anchor"></a>
-					<h3>desc</h3>
-					<div class="tsd-signature tsd-kind-icon">desc<span class="tsd-signature-symbol">:</span> <a href="../modules/scene.html#inputpathdescriptor" class="tsd-signature-type">Scene.InputPathDescriptor</a><span class="tsd-signature-symbol"> | </span><a href="../modules/scene.html#outputpathdescriptor" class="tsd-signature-type">Scene.OutputPathDescriptor</a><span class="tsd-signature-symbol"> | </span><a href="../modules/scene.html#emitpathdescriptor" class="tsd-signature-type">Scene.EmitPathDescriptor</a><span class="tsd-signature-symbol"> | </span><a href="../modules/scene.html#eventpathdescriptor" class="tsd-signature-type">Scene.EventPathDescriptor</a></div>
+					<a name="id" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The id of this path. Set to a random string, or the id provided when creating the path</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="path" class="tsd-anchor"></a>
-					<h3>path</h3>
-					<div class="tsd-signature tsd-kind-icon">path<span class="tsd-signature-symbol">:</span> <a href="scene.inputpath.html" class="tsd-signature-type">Scene.InputPath</a><span class="tsd-signature-symbol"> | </span><a href="scene.outputpath.html" class="tsd-signature-type">Scene.OutputPath</a><span class="tsd-signature-symbol"> | </span><a href="scene.emitpath.html" class="tsd-signature-type">Scene.EmitPath</a><span class="tsd-signature-symbol"> | </span><a href="scene.eventpath.html" class="tsd-signature-type">Scene.EventPath</a></div>
+					<a name="object" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> object</h3>
+					<div class="tsd-signature tsd-kind-icon">object<span class="tsd-signature-symbol">:</span> <a href="scene.iobject.html" class="tsd-signature-type">Scene.IObject</a></div>
 					<aside class="tsd-sources">
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The object this path is associated with</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -211,24 +227,24 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="scene.outputpath.html" class="tsd-kind-icon">Output<wbr>Path</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="scene.pathbase.html" class="tsd-kind-icon">Path<wbr>Base</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="scene.pathinfo.html" class="tsd-kind-icon">Path<wbr>Info</a>
+						<a href="scene.pathbase.html" class="tsd-kind-icon">Path<wbr>Base</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="scene.pathinfo.html#desc" class="tsd-kind-icon">desc</a>
+								<a href="scene.pathbase.html#id" class="tsd-kind-icon">id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="scene.pathinfo.html#path" class="tsd-kind-icon">path</a>
+								<a href="scene.pathbase.html#object" class="tsd-kind-icon">object</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="scene.pathinfo.html" class="tsd-kind-icon">Path<wbr>Info</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="scene.scenecomponentoptions.html" class="tsd-kind-icon">Scene<wbr>Component<wbr>Options</a>
 					</li>

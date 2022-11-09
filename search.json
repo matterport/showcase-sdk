@@ -136,6 +136,17 @@
 
 
 {
+"title": "Change Log",
+"tags": "",
+"keywords": "",
+"url": "sdk_changelog.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Using Collection Data",
 "tags": "",
 "keywords": "",
@@ -322,17 +333,6 @@
 "tags": "",
 "keywords": "",
 "url": "sdk_home.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Installation",
-"tags": "",
-"keywords": "",
-"url": "sdk_installation.html",
 "summary": ""
 }
 ,
@@ -564,17 +564,6 @@
 "tags": "",
 "keywords": "",
 "url": "sdkbundle_html_livestream.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "SDK Installation",
-"tags": "",
-"keywords": "",
-"url": "sdkbundle_installation.html",
 "summary": ""
 }
 ,

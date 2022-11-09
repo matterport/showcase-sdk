@@ -193,6 +193,13 @@
           
           
           
+          <li><a title="Change Log" href="sdk_changelog.html">Change Log</a></li>
+          
+          
+          
+          
+          
+          
           <li><a title="Vocabulary" href="sdk_vocabulary.html">Vocabulary</a></li>
           
           
@@ -238,13 +245,6 @@
           
           
           
-          <li><a title="Installation" href="sdk_installation.html">Installation</a></li>
-          
-          
-          
-          
-          
-          
           <li><a title="Quick Start" href="sdk_quickstart.html">Quick Start</a></li>
           
           
@@ -284,13 +284,6 @@
           
           
           <li><a title="Architecture" href="sdkbundle_architecture.html">Architecture</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Installation" href="sdkbundle_installation.html">Installation</a></li>
           
           
           
@@ -772,11 +765,11 @@ $('#toc').on('click', 'a', function() {
   <tbody>
     <tr>
       <td>SDK Release</td>
-      <td><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.78.4-0-gdde5f65e3a/showcase-bundle.zip">3.1.78.4-0-gdde5f65e3a</a></td>
+      <td><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.80.4-0-gc3bde6e75f/showcase-bundle.zip">3.1.80.4-0-gc3bde6e75f</a></td>
     </tr>
     <tr>
       <td>Last Updated</td>
-      <td><strong>Oct 27, 2022</strong></td>
+      <td><strong>Nov 10, 2022</strong></td>
     </tr>
   </tbody>
 </table>
@@ -793,309 +786,64 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="updates">Updates</h2>
 
-<h3 id="oct-27-2022">Oct 27, 2022</h3>
-<ul>
-  <li>Fixed issues where the subscription to a <code class="language-plaintext highlighter-rouge">Collection</code> or <code class="language-plaintext highlighter-rouge">Observable</code> could be undefined in their callbacks.</li>
-</ul>
+<p>Latest Bundle SDK update: Nov 10, 2022<br />
+See the <a href="/sdk_changelog.html">change log</a></p>
 
-<h3 id="oct-13-2022">Oct 13, 2022</h3>
-<ul>
-  <li>Restored the THREE.FontLoader exposed through component contexts</li>
-  <li>Fixed an issue where signed URLs used in <code class="language-plaintext highlighter-rouge">Tag.attachments</code> were not refreshing</li>
-  <li>Removed deprecated Tag namespace functions</li>
-</ul>
+<h2 id="adding-the-sdk-bundle-to-an-existing-application">Adding the SDK Bundle to an existing application</h2>
+<h3 id="download-the-latest-sdk-bundle-package">Download the latest SDK Bundle package</h3>
+<p><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.80.4-0-gc3bde6e75f/showcase-bundle.zip">https://static.matterport.com/showcase-sdk/bundle/3.1.80.4-0-gc3bde6e75f/showcase-bundle.zip</a></p>
+<h3 id="extract-the-contents-of-showcase-bundletargz-to-a-directory-where-your-files-will-be-served">Extract the contents of showcase-bundle.tar.gz to a directory where your files will be served</h3>
+<p>It is important that you preserve the package’s file organization.  We recommend that you keep the bundle files under one directory to make it easy to upgrade in the future. <br /></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">cd</span> <span class="o">[</span>path to server root]
+<span class="o">&gt;</span> <span class="nb">mkdir </span>bundle
+<span class="o">&gt;</span> unzip showcase-bundle.zip <span class="nt">-d</span> bundle
+password:
+<span class="o">&gt;</span> <span class="nb">ls </span>bundle
+css		fonts		js		showcase.html	version.txt
+cursors		images		locale		terms
+<span class="o">&gt;</span>
+</code></pre></div></div>
 
-<h3 id="oct-4-2022">Oct 4, 2022</h3>
-<ul>
-  <li>Tags 2.0 Early Access is now considered Generally Available
-    <ul>
-      <li>Any features in the Tag namespace marked deprecated will be removed in the next release</li>
-      <li>All other features are considered stable and will continue to be supported</li>
-    </ul>
-  </li>
-</ul>
+<h3 id="add-an-iframe-to-your-existing-page-that-targets-the-showcasehtml-file-of-the-bundle-directory">Add an iframe to your existing page that targets the <code class="language-plaintext highlighter-rouge">showcase.html</code> file of the bundle directory</h3>
+<p>To avoid css conflicts, we are requiring that the showcase be embedded in an iframe.</p>
 
-<h3 id="sep-13-2022">Sep 13, 2022</h3>
-<ul>
-  <li>Fixed an issue where <a href="docs/reference/current/modules/tag.html#allowaction"><code class="language-plaintext highlighter-rouge">Tag.allowAction</code></a> would throw an error if called to early</li>
-  <li>Fixed an issue with <a href="docs/reference/current/modules/mattertag.html#add"><code class="language-plaintext highlighter-rouge">Mattertag.add</code></a> when using a media type of <code class="language-plaintext highlighter-rouge">MediaType.NONE</code></li>
-  <li>Fixed <code class="language-plaintext highlighter-rouge">media.src</code> returned in the items of <a href="docs/reference/current/modules/mattertag.html#data"><code class="language-plaintext highlighter-rouge">Mattertag.data</code></a></li>
-</ul>
+<p>Replace <code class="language-plaintext highlighter-rouge">[MODEL_SID]</code> with your own.</p>
 
-<h3 id="aug-24-2022">Aug 24, 2022</h3>
-<ul>
-  <li>Fixed issues with <a href="docs/reference/current/modules/tag.html#allowaction"><code class="language-plaintext highlighter-rouge">Tag.allowAction</code></a> as well as backward compatibility with <a href="docs/reference/current/modules/mattertag.html#preventaction"><code class="language-plaintext highlighter-rouge">Mattetag.preventAction</code></a> when using Tags 2.0</li>
-  <li>The tag billboard and/or dock now close when the tag is removed</li>
-  <li>Editing a tag now displays the changes immediately; no need to close and re-open the tag to display the new contents</li>
-  <li>Events from the <code class="language-plaintext highlighter-rouge">Mattertag</code> namespace now properly fire when using Tags 2.0</li>
-</ul>
+<p>Add the <strong>applicationKey=[YOUR SDK_KEY]</strong> URL parameter to provide your sdk key as part of the url.</p>
 
-<h3 id="aug-4-2022">Aug 4, 2022</h3>
-<ul>
-  <li>The default Mattertag/Tag implementation is “classic” Mattertags ignoring any external feature policies overrides. To use Tags 2.0, a manual opt-in is necessary using the <code class="language-plaintext highlighter-rouge">newtags=1</code> URL parameter on Showcase’s iframe.</li>
-</ul>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">id=</span><span class="s">"showcase"</span> <span class="na">width=</span><span class="s">"740"</span> <span class="na">height=</span><span class="s">"480"</span> <span class="na">src=</span><span class="s">"/bundle/showcase.html?m=[MODEL_SID]&amp;applicationKey=[YOUR_SDK_KEY_HERE]"</span> <span class="na">frameborder=</span><span class="s">”0”</span> <span class="na">allowfullscreen</span> <span class="na">allow=</span><span class="s">"vr"</span><span class="err">'</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+</code></pre></div></div>
 
-<h3 id="july-21-2022">July 21, 2022</h3>
-<ul>
-  <li>Split <a href="docs/reference/current/interfaces/scene.iobject.html#addpath"><code class="language-plaintext highlighter-rouge">IObject.addPath</code></a> into individual functions to reduce boilerplate
-    <ul>
-      <li>use <a href="docs/reference/current/interfaces/scene.iobject.html#addinputpath"><code class="language-plaintext highlighter-rouge">IObject.addInputPath</code></a> for inputs</li>
-      <li>use <a href="docs/reference/current/interfaces/scene.iobject.html#addoutputpath"><code class="language-plaintext highlighter-rouge">IObject.addOutputPath</code></a> for outputs</li>
-      <li>use <a href="docs/reference/current/interfaces/scene.iobject.html#addeventpath"><code class="language-plaintext highlighter-rouge">IObject.addEventPath</code></a> for events</li>
-      <li>use <a href="docs/reference/current/interfaces/scene.iobject.html#addemitpath"><code class="language-plaintext highlighter-rouge">IObject.addEmitPath</code></a> for emits</li>
-    </ul>
-  </li>
-  <li>In an effort to streamline the interfaces of Scene objects (<a href="docs/reference/current/interfaces/scene.iobject.html"><code class="language-plaintext highlighter-rouge">IObject</code></a>, <a href="docs/reference/current/interfaces/scene.inode.html"><code class="language-plaintext highlighter-rouge">INode</code></a>, <a href="docs/reference/current/interfaces/scene.icomponent.html"><code class="language-plaintext highlighter-rouge">IComponent</code></a>), numerous properties and functions have been removed</li>
-  <li>Similarly, the <code class="language-plaintext highlighter-rouge">renderer</code> returned in callbacks to <a href="docs/reference/current/modules/scene.html#configure"><code class="language-plaintext highlighter-rouge">Scene.configure</code></a> or that exists on <a href="docs/reference/current/interfaces/scene.icomponentcontext.html"><code class="language-plaintext highlighter-rouge">ISceneComponent.context</code></a> has a limited <code class="language-plaintext highlighter-rouge">canvas</code> object that no longer grants access to the DOM and numerous other functions</li>
-</ul>
+<h3 id="connect-to-the-sdk">Connect to the SDK</h3>
+<p>Add a script to the page to await the loading of showcase. Connect to it once loaded.</p>
 
-<h3 id="june-30-2022">June 30, 2022</h3>
-<ul>
-  <li>Added <a href="docs/reference/current/modules/tag.html#detach"><code class="language-plaintext highlighter-rouge">Tag.detach</code></a> to remove attachments from a tag</li>
-  <li>Removed the need to specify the <code class="language-plaintext highlighter-rouge">type</code> when calling <a href="docs/reference/current/modules/tag.html#registerattachment"><code class="language-plaintext highlighter-rouge">Tag.registerAttachment</code></a></li>
-  <li>Added <a href="docs/reference/current/modules/tag.html#registersandbox"><code class="language-plaintext highlighter-rouge">Tag.registerSandbox</code></a></li>
-  <li>Added <a href="docs/reference/current/modules/tag.html#editstem"><code class="language-plaintext highlighter-rouge">Tag.editStem</code></a> and <a href="docs/reference/current/modules/mattertag.html#editstem"><code class="language-plaintext highlighter-rouge">Mattertag.editStem</code></a> to control the stem’s length and/or visibility</li>
-  <li><a href="docs/reference/current/modules/asset.html#registertexture"><code class="language-plaintext highlighter-rouge">Asset.registerTexture</code></a> should now be used in place <a href="docs/reference/current/modules/pointer.html#registertexture">Pointer.registerTexture</a>. Assets from <code class="language-plaintext highlighter-rouge">Asset.registerTexture</code> can be used in <a href="docs/reference/current/modules/pointer.html#edittexture"><code class="language-plaintext highlighter-rouge">Pointer.editTexture</code></a>, <a href="docs/reference/current/modules/mattertag.html#editicon">Mattertag.editIcon</a>, and <a href="docs/reference/current/modules/tag.html#editicon"><code class="language-plaintext highlighter-rouge">Tag.editIcon</code></a></li>
-  <li>Fixed an issue where <a href="sdkbundle_tutorials_setting_up_embedly">Embed.ly key overrides</a> were not respected</li>
-</ul>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcase</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">;</span>
+<span class="nx">showcase</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">load</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">sdk</span><span class="p">;</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="nx">sdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
 
-<h3 id="june-7-2022">June 7, 2022</h3>
-<ul>
-  <li>Added the <a href="docs/reference/current/modules/tag.html">Tag</a> namespace.</li>
-  <li>Added <a href="docs/reference/current/modules/label.html#data"><code class="language-plaintext highlighter-rouge">Label.data</code></a> collection to receive Labels data</li>
-  <li>Added <a href="docs/reference/current/modules/tour.html#currentstep"><code class="language-plaintext highlighter-rouge">Tour.currentStep</code></a>, <a href="docs/reference/current/modules/tour.html#transition"><code class="language-plaintext highlighter-rouge">Tour.transition</code></a>, and <a href="docs/reference/current/modules/tour.html#state">Tour.state</a> to get information about what the tour is currently doing</li>
-  <li>Added <a href="docs/reference/current/modules/mode.html#current">Mode.current</a> and <a href="docs/reference/current/modules/mode.html#transition-1"><code class="language-plaintext highlighter-rouge">Mode.transition</code></a> to get information about the current view mode and any transitions between them taking place</li>
-  <li>Added <a href="docs/reference/current/modules/asset.html#registertexture"><code class="language-plaintext highlighter-rouge">Asset.registerTexture</code></a> to be used a central place for registering icons like those for Tags or Mattertags</li>
-  <li>Updated internal Three.js from r136 to r139</li>
-</ul>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello Bundle SDK</span><span class="dl">'</span><span class="p">,</span> <span class="nx">sdk</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
 
-<h3 id="4-11-2022">4-11-2022</h3>
-<ul>
-  <li>Fixed an issue with deep links not taking you to the correct pose in Tags</li>
-  <li>Download <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.64.4-0-gea16b080c2/showcase-bundle.zip">SDK Bundle version: 3.1.64.4-0-gea16b080c2</a></li>
-</ul>
+<h3 id="connect-using-an-oauth-token">Connect using an OAuth Token</h3>
+<p>Contact <a href="mailto:developer@matterport.com">Developer Support</a> to enable OAuth for your application.</p>
 
-<h3 id="3-15-2022">3-15-2022</h3>
-<ul>
-  <li>Fixed some issues with Space Search</li>
-  <li>Download <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.63.0-125-g1fd7fd3bed/showcase-bundle.zip">SDK Bundle version: 3.1.63.0-125-g1fd7fd3bed</a></li>
-</ul>
+<p>To connct to a model using an OAuth token, pass an <code class="language-plaintext highlighter-rouge">access_token</code> as <code class="language-plaintext highlighter-rouge">auth</code> in the options argument to <a href="docs/reference/current/index.html#mp_sdk">connect</a>.</p>
 
-<h3 id="3-11-2022">3-11-2022</h3>
-<ul>
-  <li>Added iterability to <a href="docs/reference/current/interfaces/dictionary.html#_symbol_iterator_"><code class="language-plaintext highlighter-rouge">Dictionary</code></a> returned in <a href="docs/reference/current/interfaces/imapobserver.html"><code class="language-plaintext highlighter-rouge">IMapObserver</code></a></li>
-  <li>Added pathfinding support
-    <ul>
-      <li>Added the <a href="docs/reference/current/modules/graph.html"><code class="language-plaintext highlighter-rouge">Graph</code></a> namespace for creating connectivity graphs and traversing them using A*</li>
-      <li>Added the ability to create <a href="docs/reference/current/modules/sweep.html#creategraph">Sweep graphs</a></li>
-      <li>See <a href="sdk_tutorials_pathfinding.html">Pathfinding</a> for more info</li>
-    </ul>
-  </li>
-  <li>Added the <a href="docs/reference/current/modules/link.html">Link</a> namespace
-    <ul>
-      <li>Added the ability to create share links through <a href="docs/reference/current/modules/link.html#createlink">Link.createLink</a> and <a href="docs/reference/current/modules/link.html#createdeeplink">Link.createDeepLink</a></li>
-      <li>Added the ability to change the link in the share dialog through <a href="docs/reference/current/modules/link.html#setsharelinkpolicy">Link.setShareLinkPolicy</a></li>
-      <li>Added the ability to change the click handler for different link types through <a href="docs/reference/current/enums/link.openpolicy.html">policies</a> for example <a href="docs/reference/current/modules/link.html#setmodellinkpolicy">Link.setModelLinkPolicy</a></li>
-    </ul>
-  </li>
-  <li>Fixed some missing and inconsistent types
-    <ul>
-      <li>Added type <a href="docs/reference/current/modules/scene.html#predefinedoutputs">PredefinedOutputs</a> for component output intersection types</li>
-      <li>Added the <a href="docs/reference/current//modules/scene.html#interactionevent">InteractionEvent</a> type for the mesh interaction callback payload.</li>
-      <li><a href="docs/reference/current//interfaces/scene.icomponent.html#bind">INode.bind</a> now has the correct type. This function is deprecated.</li>
-    </ul>
-  </li>
-  <li>Added <a href="docs/reference/current//interfaces/scene.inode.html#componentiterator">componentIterator</a> method to <code class="language-plaintext highlighter-rouge">INode</code></li>
-  <li>Added <a href="docs/reference/current//interfaces/scene.icomponent.html#componenttype">componentType</a> property to <code class="language-plaintext highlighter-rouge">IComponent</code></li>
-  <li>Added <a href="docs/reference/current//interfaces/scene.iobject.html#nodeiterator">nodeIterator</a> to <code class="language-plaintext highlighter-rouge">IObject</code></li>
-  <li>Download <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.63.0-123-g4739265d9f/showcase-bundle.zip">SDK Bundle version: 3.1.63.0-123-g4739265d9f</a></li>
-</ul>
-
-<h3 id="12-6-2021">12-6-2021</h3>
-<ul>
-  <li>Added <a href="sdkbundle_tutorials_using_oauth.html">OAuth support</a>. Contact <a href="mailto:developer@matterport.com">Developer Support</a> to enable OAuth for your application.</li>
-  <li>Fixed an issue where <code class="language-plaintext highlighter-rouge">Mattertag.remove</code> would not remove an array of mattertags.</li>
-  <li>Fixed an issue where <code class="language-plaintext highlighter-rouge">Mattertag.registerIcon</code> would not throw exceptions after an error occurred.</li>
-  <li>Fixed an issue where an interrupted inside mode navigation would display the model correctly.</li>
-  <li>Fixed an issue where a user could not navigate to a floor under a hidden floor.</li>
-  <li>Fixed an issue where <code class="language-plaintext highlighter-rouge">Pointer.intersection</code> would not return the correct type for a mattertag.</li>
-  <li>Download <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.51.7-84-g0dcbe0591/showcase-bundle.zip">SDK Bundle version: 3.1.51.7-84-g0dcbe0591</a></li>
-</ul>
-
-<h3 id="8-25-2021">8-25-2021</h3>
-<ul>
-  <li>Update threejs transform controls to version 129.</li>
-  <li>Fix an issue where Sweep.moveTo would ignore the transitionTime option.</li>
-  <li>Download <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.46.18-6-gbc4c5114b/showcase-bundle.zip">SDK Bundle version: 3.1.46.18-6-gbc4c5114b</a></li>
-</ul>
-
-<h3 id="8-5-2021">8-5-2021</h3>
-<ul>
-  <li>Fixed an issue where a share link would not link to matterport.com</li>
-  <li>Fixed an issue where <code class="language-plaintext highlighter-rouge">Scene.serialize</code> would return undefined</li>
-  <li>Fixed an issue preventing the use of the my.matterportvr.cn api domain.</li>
-  <li>Fixed an issue where model loader components would not remove meshes from the scene when stopped.</li>
-  <li>Mobile redirects were removed. You can re-enable redirects by setting <code class="language-plaintext highlighter-rouge">disableMobileRedirect</code> to false in your app config.</li>
-  <li>Added the Scene namespace to the sdk type definitions.</li>
-  <li>Added scene objects. See <a href="sdkbundle_tutorials_using_scene_objects.html">Using scene objects</a> and <a href="docs/reference/current/modules/scene.html#createobjects">Scene.createobjects</a></li>
-  <li><a href="docs/reference/current/modules/scene.html#serialize">Scene.serialize</a> now serializes to version 2. <a href="docs/reference/current/modules/scene.html#deserialize">Scene.deserialize</a> takes both version 1 and 2 scene files.</li>
-  <li>Updated embedded three.js to version r128</li>
-  <li>Download <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.46.18-2-g2386aca5f/showcase-bundle.zip">SDK Bundle version: 3.1.46.18-2-g2386aca5f</a></li>
-</ul>
-
-<h3 id="6-17-2021">6-17-2021</h3>
-<ul>
-  <li>Fixed missing <code class="language-plaintext highlighter-rouge">App</code> namespace enums</li>
-  <li>Download <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.42.14-24-gb057e5145/showcase-bundle.zip">SDK Bundle version: 3.1.42.14-24-gb057e5145</a></li>
-</ul>
-
-<h3 id="6-16-2021">6-16-2021</h3>
-<ul>
-  <li>Added <code class="language-plaintext highlighter-rouge">Room.current</code> observable<br /></li>
-  <li>Maintenance bug fixes and improvements.</li>
-  <li>Download <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.42.14-22-g7fd9ebd24/showcase-bundle.zip">SDK Bundle version: 3.1.42.14-22-g7fd9ebd24</a></li>
-</ul>
-
-<h3 id="5-27-2021">5-27-2021</h3>
-<ul>
-  <li>Maintenance bug fixes and improvements.</li>
-  <li>Download <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.41.5-19-g5133fdd3e/showcase-bundle.zip">SDK Bundle version: 3.1.41.5-19-g5133fdd3e</a></li>
-</ul>
-
-<h3 id="4-21-2021">4-21-2021</h3>
-<ul>
-  <li>Fixed a CORS issue when using the bundle on a custom domain.</li>
-  <li>Download <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.38.10-15-g5a5323ef0/showcase-bundle.zip">SDK Bundle version: 3.1.38.10-15-g5a5323ef0</a></li>
-</ul>
-
-<h3 id="4-16-2021">4-16-2021</h3>
-<ul>
-  <li>Interface version updated to 3.10</li>
-  <li>Added scene parameter to ‘Scene.configure’ callback.</li>
-  <li>Added ‘INTERACTION.DRAG_BEGIN’ and ‘INTERACTION.DRAG_END’ events to scene node colliders.</li>
-  <li>Added ‘colliderEnabled` boolean to the gltf, fbx, dae and obj model loaders.</li>
-  <li>Download <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.38.10-14-gaf0ef87a5/showcase-bundle.zip">SDK Bundle version: 3.1.38.10-14-gaf0ef87a5</a></li>
-</ul>
-
-<h3 id="3-2-2021">3-2-2021</h3>
-<ul>
-  <li>Fixed an issue with Mattertag.injectHTML</li>
-  <li>Download: <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.35.16-9-g01b2a7b60/showcase-bundle.zip">SDK Bundle version: 3.1.35.16-9-g01b2a7b60</a></li>
-</ul>
-
-<h3 id="2-24-2021">2-24-2021</h3>
-<ul>
-  <li>Interface version updated to 3.9</li>
-  <li>Added <a href="docs/reference/current/modules/sensor.html">Sensor</a> namespace.</li>
-  <li>Download: <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.35.16-8-ga7993a5c3/showcase-bundle.zip">SDK Bundle version: 3.1.35.16-8-ga7993a5c3</a></li>
-</ul>
-
-<h3 id="2-16-2021">2-16-2021</h3>
-<ul>
-  <li>Updated embedded three.js to version r124</li>
-  <li>Fixed an issue with disabling measurement mode.</li>
-  <li>Fixed an issue with password submission on password protected spaces.</li>
-  <li>Fixed an issue with drag gesture ending prior to pointer release(improves transform control and mesh dragging).</li>
-  <li>Added optional effect composer. You must set useEffectComposer: true in the application config object in showcase.html.</li>
-  <li>Added <a href="docs/reference/current/modules/scene.html#configure">Scene.configure</a> function.</li>
-  <li>Download: <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.33.13-14-gb10ecafc1/showcase-bundle.zip">SDK Bundle version: 3.1.33.13-14-gb10ecafc1</a></li>
-</ul>
-
-<h3 id="2-3-2021">2-3-2021</h3>
-<ul>
-  <li>Interface version updated to 3.8.</li>
-  <li>Added input data to mesh CLICK, HOVER, and DRAG interactions.</li>
-  <li>Fixed an issue with the appearance of password protected spaces.</li>
-  <li>Fixed an issue with toggling measurement mode.</li>
-  <li>Download: <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.28.5-4-g911543b43/showcase-bundle.zip">SDK Bundle version: 3.1.28.5-4-g911543b43</a></li>
-</ul>
-
-<h3>12-11-2020
-<span class="label label-success">General Availability</span>
-</h3>
-<ul>
-  <li>Components: Added <code class="language-plaintext highlighter-rouge">unfiltered</code> property to <a href="sdkbundle_components_input.html">mp.input</a> component.</li>
-  <li>Additional setup instructions for application keys required for CORS, see <a href="sdkbundle_tutorials_setup.html#set-your-application-key.html">Set your application key</a></li>
-  <li>Fixed an issue with where Sweep.data would return no sweeps.</li>
-  <li>Download: <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.16.9-17-gacf9fb85e/showcase-bundle.zip">SDK Bundle version: 3.1.16.9-17-gacf9fb85e</a></li>
-</ul>
-
-<h3 id="11-6-2020">11-6-2020</h3>
-<ul>
-  <li>Scene: Added support for creating arrays of components and nodes. See <a href="docs/reference/current/modules/scene.html#registercomponents">Scene.registerComponents</a> and <a href="docs/reference/current/modules/scene.html#createnodes">Scene.createNodes</a>.</li>
-  <li>Components: Fixed an issue where mp.input would not dispatch a models <code class="language-plaintext highlighter-rouge">INTERACTION.CLICK</code> event.</li>
-  <li>General: Fixed an sdk connection issue on the oculus browser. You can now connect to the sdk while in xr immersive mode. See <a href="sdkbundle_tutorials_using_xr.html">Using xr</a></li>
-  <li>Added the <code class="language-plaintext highlighter-rouge">mp.xr</code> component which provides an XRSession. See <a href="sdkbundle_components_xr.html">mp.xr</a></li>
-  <li>Download: <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.10.3-30-g034a60845/showcase-bundle.zip">SDK Bundle version: 3.1.10.3-30-g034a60845</a></li>
-</ul>
-
-<h3 id="9-25-2020">9-25-2020</h3>
-<ul>
-  <li>General: Added support for a custom embedly key. Mattertag videos and images can now be viewed with bundle applications. See <a href="sdkbundle_tutorials_setting_up_embedly.html">Setting up Embedly</a></li>
-  <li>Conversion: Fixed an issue where Conversion.worldToScreen returned stale screen coordinates.</li>
-  <li>Components: Added support for arrays as inputs.</li>
-  <li>Added <code class="language-plaintext highlighter-rouge">showX</code>, <code class="language-plaintext highlighter-rouge">showY</code>, <code class="language-plaintext highlighter-rouge">showZ</code> and <code class="language-plaintext highlighter-rouge">size</code> to <a href="sdkbundle_components_transformcontrols.html">mp.transformControls</a> inputs.</li>
-  <li>Download: <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.8.2-12-g86e1cdce6/showcase-bundle.zip">SDK Bundle version: 3.1.8.2-12-g86e1cdce6</a></li>
-</ul>
-
-<h3 id="8-13-2020">8-13-2020</h3>
-<ul>
-  <li>Added <a href="sdkbundle_components_input.html">mp.input</a>, <a href="sdkbundle_components_camera.html">mp.camera</a>, and <a href="sdkbundle_components_transformcontrols.html">mp.transformControls</a> components.</li>
-  <li>Inspector: added component list panel, 6DOF camera controls. Source code updated.</li>
-  <li>General: Includes SDK for embeds v3.5 features and bug fixes.</li>
-  <li>General: Fixed an issue where mattertags and labels were being loaded from localhost.</li>
-  <li>General: Fixed an issue where textures were not properly loaded on safari.</li>
-  <li>Download: <a href="https://static.matterport.com/showcase-sdk/bundle/3.1.6.1-15-ged398ca2e/showcase-bundle.zip">SDK Bundle version: 3.1.6.1-15-ged398ca2e</a></li>
-</ul>
-
-<h3 id="7-31-2020">7-31-2020</h3>
-<ul>
-  <li>Models: Fixed an issue with loading OBJ models with a material.</li>
-  <li>Scenes: Fixed an issue with orphaned colliders from deleted scene nodes.</li>
-  <li>Download: <a href="https://static.matterport.com/misc/bundle/showcase/3.1.4.1-6-gac2d8cfea/showcase-bundle.zip">SDK Bundle version: 3.1.4.1-6-gac2d8cfea</a></li>
-</ul>
-
-<h3 id="6-23-2020">6-23-2020</h3>
-<ul>
-  <li>Maintenance update includes SDK for embeds v3.4 features and bug fixes.</li>
-  <li>Download: <a href="https://static.matterport.com/misc/bundle/showcase/3.1.1.8-0-g023d0d5c6/showcase-bundle.zip">SDK Bundle version: 3.1.1.8-0-g023d0d5c6</a></li>
-</ul>
-
-<h3 id="5-13-2020">5-13-2020</h3>
-<ul>
-  <li>Added event spies to components. See <a href="sdkbundle_architecture.html#event-spies">Event Spies Overview</a> and <a href="docs/reference/current/interfaces/scene.icomponent.html#spyonevent">Event Spies Reference</a>.</li>
-  <li>Internal Three.js version upgraded to 0.115.0</li>
-  <li>Download: <a href="https://static.matterport.com/misc/bundle/showcase/3.0.35.31-25-g9563c7a6c/showcase-bundle.zip">SDK Bundle version: 3.0.35.31-25-g9563c7a6c</a></li>
-</ul>
-
-<h3 id="4-10-2020">4-10-2020</h3>
-<ul>
-  <li>Models: Web workers load textures in the background.</li>
-  <li>Models: Added <code class="language-plaintext highlighter-rouge">loadingState</code> property to the output of the gltf, dae, fbx, and obj loaders.</li>
-  <li>Models: Fixed an issue where reloading models would not release resources.</li>
-  <li>Scenes: Scene files support property and event bindings.</li>
-  <li>Scenes: Scene files support multiple components per node.</li>
-  <li>Components: Added most of the three/js/examples to the component context.</li>
-  <li>Fixed a startup race condition with createNode.</li>
-</ul>
-
-<h3 id="2-6-2020">2-6-2020</h3>
-<ul>
-  <li>Fixed an issue where transform controls interrupted camera motion.</li>
-</ul>
-
-<h3 id="1-30-2020">1-30-2020</h3>
-<ul>
-  <li>Added light objects: <code class="language-plaintext highlighter-rouge">mp.ambientLight</code>,  <code class="language-plaintext highlighter-rouge">mp.directionalLight</code>, and <code class="language-plaintext highlighter-rouge">mp.pointLight</code>.</li>
-  <li>Added support for objects as component inputs.</li>
-  <li>Fixed an issue where <code class="language-plaintext highlighter-rouge">onInteraction</code> would not fire if the collider was a Mesh object.</li>
-  <li>Fixed a bug with the github showcase-sdk-tutorial repo where the app would load the bundle twice.  <a href="https://github.com/matterport/showcase-sdk-tutorial">github showcase-sdk-tutorial link</a>.</li>
-</ul>
-
-<h3 id="12-20-2019">12-20-2019</h3>
-<ul>
-  <li>First release</li>
-</ul>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcase</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">auth</span><span class="p">:</span> <span class="dl">'</span><span class="s1">[access_token]</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">});</span>
+</code></pre></div></div>
 
 
     <div class="tags">
@@ -1113,7 +861,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Oct 27, 2022 <br />
+ Site last generated: Nov 9, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

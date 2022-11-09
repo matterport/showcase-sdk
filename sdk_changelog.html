@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Change Log | Matterport Developers</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/custom.css">
+
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-matterport.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+<script src="js/mermaid.min.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.io/feed.xml">
+
+    <script>
+      $(document).ready(function () {
+        // Initialize navgoco with default options
+        $("#mysidebar").navgoco({
+          caretHtml: '<i class="fa fa-chevron-down"></i>',
+          accordion: true,
+          openClass: "active", // open
+
+          save: false, // leave false or nav highlighting doesn't work right
+          cookie: {
+            name: "navgoco",
+            expires: false,
+            path: "/",
+          },
+          slide: {
+            duration: 400,
+            easing: "swing",
+          },
+        });
+
+        $("#collapseAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", false);
+        });
+
+        $("#expandAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", true);
+        });
+      });
+    </script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#tg-sb-link").change(function () {
+          $("#tg-sb-sidebar").toggle();
+          $("#tg-sb-content").toggleClass("col-md-9");
+          $("#tg-sb-content").toggleClass("col-md-12");
+        });
+      });
+    </script>
+     
+  </head>
+  <body>
+    <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div>
+    <div class="row">
+      <a class="navbrand col-md-3" href="index.html"
+        >&nbsp;<img
+          class="navbar-image"
+          src="images/MP-logo_H_lock-RGB_white.svg"
+        /><span class="projectTitle"> </span></a
+      >
+      <div class="dev-nav-links col-md-9">
+        <div class="dropdown-items">
+          <div class="dropdown ">
+            <a class="dropbtn active" href="index.html">SDK Docs</a>
+            <div class="dropdown-content">
+              <a href="sdk_home.html" class="">SDK for Embeds</a>
+              <a href="sdkbundle_home.html" class="" href="#">SDK Bundle</a>
+              <a href="earlyaccess_home.html" class="" href="#">SDK Early Access</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://api.matterport.com/docs/reference">API Docs</a>
+            <div class="dropdown-content">
+              <a href="https://api.matterport.com/docs/reference">API Reference</a>
+              <a href="https://api.matterport.com/graphiql">Interactive Console</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="dev-bottom-bar">
+    <h3></h3>
+    <div class="right-content">
+      <div>
+        <label id="tg-sb-link" class="pure-material-switch">
+          <input type="checkbox" checked />
+          <span>Nav</span>
+        </label>
+      </div>
+      
+      
+
+
+  <a title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Change Log page: ' + window.location.href;">Give us feedback</a>
+
+
+ 
+    </div>
+  </div>
+  
+  <!-- /.container -->
+</nav>
+ <div class='global-links-container'>
+  <a
+    class='global-link'
+    href="https://matterport.com/legal/sdk-api-agreement"
+    target="_blank"
+    rel="noopener"
+  >SDK Agreement
+  </a>
+</div>
+    <!-- Page Content -->
+    <div class="dev-page-wrapper">
+      <div id="main">
+        <!-- Content Row -->
+        <div class="row">
+          <!-- Sidebar Column -->
+          
+          <aside class="col-md-3" id="tg-sb-sidebar">
+            
+<div id="mysidebar" class="nav">
+  <div class="dev-input-container">
+    <!-- Add roboto font to search bar -->
+    <img src="images/search_button.png" />
+    <input id="search-input" type="text" placeholder="Search"/>
+    <div id="results-container"></div>
+
+  </div>
+  
+  
+  
+  
+  <li>
+      <a title="Overview" href="#">Overview</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="index.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="Change Log" href="sdk_changelog.html">Change Log</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Vocabulary" href="sdk_vocabulary.html">Vocabulary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Concepts" href="sdk_concepts.html">Concepts</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Docs Summary" href="sdk_reference_summary.html">Reference Docs Summary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Documentation" href="docs\reference\current\index.html">Reference Documentation</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  <li>
+      <a title="SDK for Embeds" href="#">SDK for Embeds</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="sdk_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Quick Start" href="sdk_quickstart.html">Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Typescript Declarations" href="sdk_types.html">Typescript Declarations</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Upgrading" href="sdk_upgrading.html">Upgrading</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  <li>
+      <a title="SDK Bundle" href="#">SDK Bundle</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="sdkbundle_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Architecture" href="sdkbundle_architecture.html">Architecture</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setup" href="sdkbundle_tutorials_setup.html">Setup</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Components" href="#">Components</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Ambient Light" href="sdkbundle_components_ambientlight.html">Ambient Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Directional Light" href="sdkbundle_components_directionallight.html">Directional Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Point Light" href="sdkbundle_components_pointlight.html">Point Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="GLTF Loader" href="sdkbundle_components_gltfloader.html">GLTF Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="DAE Loader" href="sdkbundle_components_daeloader.html">DAE Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="FBX Loader" href="sdkbundle_components_fbxloader.html">FBX Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="OBJ Loader" href="sdkbundle_components_objloader.html">OBJ Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transform Controls" href="sdkbundle_components_transformcontrols.html">Transform Controls</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Input" href="sdkbundle_components_input.html">Input</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Camera" href="sdkbundle_components_camera.html">Camera</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="XR" href="sdkbundle_components_xr.html">XR</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  <li>
+      <a title="SDK Early Access" href="#">SDK Early Access</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="earlyaccess_home.html">Home</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  <li>
+      <a title="SDK Tutorials" href="#">SDK Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="Using Observables" href="sdk_tutorials_observables.html">Using Observables</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Collections" href="sdk_tutorials_collections.html">Using Collections</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Creating Mattertags" href="sdk_creating_mattertags.html">Creating Mattertags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Editing mattertags" href="sdk_editing_mattertags.html">Editing mattertags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags 2.0 Migration" href="sdk_tutorials_mattertagtotag.html">Tags 2.0 Migration</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Code Sandboxes" href="sdk_tutorials_htmlsandbox.html">Using Code Sandboxes</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Pathfinding" href="sdk_tutorials_pathfinding.html">Using Pathfinding</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Controlling the Pointer Reticle" href="sdk_tutorials_cursor.html">Controlling the Pointer Reticle</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Working with models" href="sdkbundle_tutorials_models.html">Working with models</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setting up Embedly" href="sdkbundle_tutorials_setting_up_embedly.html">Setting up Embedly</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using xr" href="sdkbundle_tutorials_using_xr.html">Using xr</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using scene objects" href="sdkbundle_tutorials_using_scene_objects.html">Using scene objects</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using OAuth" href="sdkbundle_tutorials_using_oauth.html">Using OAuth</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  <li>
+      <a title="SDK Examples" href="#">SDK Examples</a>
+      <ul>
+          
+          
+          
+          <li><a title="Navigation Controls" href="sdk_navigation_controls.html">Navigation Controls</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Intersection Inspector" href="sdk_intersection_inspector.html">Intersection Inspector</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Transient Tags Editor" href="sdk_transient_tags_editor.html">Transient Tags Editor</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz" href="sdk_tags_quiz.html">Tags Quiz</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz - Overlay" href="sdk_tags_quiz_overlay.html">Tags Quiz - Overlay</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Kitchen Sink" href="sdk_kitchen_sink.html">Kitchen Sink</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Remote Control" href="sdk_remote_control.html">Remote Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Source Areas" href="sdk_sensors_source_areas.html">Sensors - Source Areas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Tags Level of Detail" href="sdk_sensors_tags_level_of_detail.html">Sensors - Tags Level of Detail</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Sweep Control" href="sdk_sensors_sweep_control.html">Sensors - Sweep Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Virtual Staging" href="sdkbundle_virtual_staging.html">Virtual Staging</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Local Webcam" href="sdkbundle_local_webcam.html">Local Webcam</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Livestream" href="sdkbundle_html_livestream.html">HTML Livestream</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="IoT Canvas" href="sdkbundle_iot_canvas.html">IoT Canvas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Custom Experience" href="sdkbundle_custom_experience.html">Custom Experience</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Security Camera FOV" href="sdkbundle_security_camera.html">Security Camera FOV</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Content Attribution" href="sdkbundle_content_attribution.html">Content Attribution</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  <li>
+      <a title="Matterport APIs" href="#">Matterport APIs</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="api_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="API Reference Docs" href="https://api.matterport.com/model/docs/reference" target="_blank" rel="noopener">API Reference Docs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="API Interactive Console" href="https://api.matterport.com/model/graphiql" target="_blank" rel="noopener">API Interactive Console</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  <li>
+      <a title="Learn More" href="#">Learn More</a>
+      <ul>
+          
+          
+          
+          <li><a title="Developer Tools Overview" href="https://support.matterport.com/s/article/API-SDK-Developer-Tools-Overview" target="_blank" rel="noopener">Developer Tools Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pricing and Availability" href="https://support.matterport.com/s/article/Developer-Tools-Pricing-and-Availability" target="_blank" rel="noopener">Pricing and Availability</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Developer Program FAQ" href="https://support.matterport.com/s/article/Developer-Program-FAQ" target="_blank" rel="noopener">Developer Program FAQ</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</div>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+<script src="js/jekyll-search.js" type="text/javascript"></script>
+<script type="text/javascript">
+        SimpleJekyllSearch.init({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            dataSource: 'search.json',
+            searchResultTemplate: '<li><a href="{url}" title="Change Log">{title}</a></li>',
+noResultsText: '<li><div>No results found.<div></li>',
+        limit: 10,
+        fuzzy: true,
+})
+</script>
+          </aside>
+           
+          <!-- Content Column -->
+          <div
+            class=" col-md-9" 
+            id="tg-sb-content"
+          >
+            <div class="post-header">
+   <h1 class="post-title-main">Change Log</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+   <h2 id="22111">22.11.1</h2>
+<h5 id="nov-10-2022">Nov 10, 2022</h5>
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Added the ability for <a href="docs/reference/current/interfaces/scene.isceneobjectspy.html"><code class="language-plaintext highlighter-rouge">ISceneObjectSpy</code></a> to spy on events “emitted” by an <a href="docs/reference/current/interfaces/scene.icomponent.html#notify"><code class="language-plaintext highlighter-rouge">IComponent</code></a></li>
+  <li>Fixed issues with <a href="docs/reference/current/modules/scene.html#serialize_"><code class="language-plaintext highlighter-rouge">serializing</code></a> an <code class="language-plaintext highlighter-rouge">INode[]</code>.</li>
+  <li><span style="color: red">Breaking Change</span> <a href="docs/reference/current/modules/scene.html#deserialize"><code class="language-plaintext highlighter-rouge">deserializing</code></a> now always returns an <code class="language-plaintext highlighter-rouge">IObject</code>.
+    <ul>
+      <li>Depending on the asset format being deserialized, either an <code class="language-plaintext highlighter-rouge">INode[]</code> or <code class="language-plaintext highlighter-rouge">IObject</code> was being returned. For consistency, we have opted to only return the latter.</li>
+      <li>To get references to the nodes after deserialization
+        <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sceneObject</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">deserialize</span><span class="p">(</span><span class="cm">/* ... */</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">nodes</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">sceneObject</span><span class="p">.</span><span class="nx">nodeIterator</span><span class="p">()];</span>
+<span class="c1">// from here continue using the nodes as usual</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="22103">22.10.3</h2>
+<h5 id="oct-27-2022">Oct 27, 2022</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Fixed issues where the subscription to a <code class="language-plaintext highlighter-rouge">Collection</code> or <code class="language-plaintext highlighter-rouge">Observable</code> could be undefined in their callbacks.</li>
+</ul>
+
+<h2 id="22102">22.10.2</h2>
+<h5 id="oct-13-2022">Oct 13, 2022</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Fixed an issue where signed URLs used in <code class="language-plaintext highlighter-rouge">Tag.attachments</code> were not refreshing</li>
+  <li>Removed deprecated Tag namespace functions</li>
+</ul>
+
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Restored the THREE.FontLoader exposed through component contexts</li>
+</ul>
+
+<h2 id="22101">22.10.1</h2>
+<h5 id="oct-4-2022">Oct 4, 2022</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Tags 2.0 Early Access is now considered Generally Available
+    <ul>
+      <li>Any features in the Tag namespace marked deprecated will be removed in the next release</li>
+      <li>All other features are considered stable and will continue to be supported</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="2291">22.9.1</h2>
+<h5 id="sep-13-2022">Sep 13, 2022</h5>
+<p><strong>General</strong>
+If opted into Tags 2.0:</p>
+<ul>
+  <li>Fixed an issue where <a href="docs/reference/current/modules/tag.html#allowaction"><code class="language-plaintext highlighter-rouge">Tag.allowAction</code></a> would throw an error if called to early</li>
+  <li>Fixed an issue with <a href="docs/reference/current/modules/mattertag.html#add"><code class="language-plaintext highlighter-rouge">Mattertag.add</code></a> when using a media type of <code class="language-plaintext highlighter-rouge">MediaType.NONE</code></li>
+  <li>Fixed <code class="language-plaintext highlighter-rouge">media.src</code> returned in the items of <a href="docs/reference/current/modules/mattertag.html#data"><code class="language-plaintext highlighter-rouge">Mattertag.data</code></a></li>
+</ul>
+
+<h2 id="2282">22.8.2</h2>
+<h5 id="aug-24-2022">Aug 24, 2022</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Fixed issues with <a href="docs/reference/current/modules/tag.html#allowaction"><code class="language-plaintext highlighter-rouge">Tag.allowAction</code></a> as well as backward compatibility with <a href="docs/reference/current/modules/mattertag.html#preventaction"><code class="language-plaintext highlighter-rouge">Mattetag.preventAction</code></a> when using Tags 2.0</li>
+  <li>The tag billboard and/or dock now close when the tag is removed</li>
+  <li>Editing a tag now displays the changes immediately; no need to close and re-open the tag to display the new contents</li>
+  <li>Events from the <code class="language-plaintext highlighter-rouge">Mattertag</code> namespace now properly fire when using Tags 2.0</li>
+</ul>
+
+<h2 id="2281">22.8.1</h2>
+<h5 id="aug-4-2022">Aug 4, 2022</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>The default Mattertag/Tag implementation is “classic” Mattertags ignoring any external feature policies overrides. To use Tags 2.0, a manual opt-in is necessary using the <code class="language-plaintext highlighter-rouge">newtags=1</code> URL parameter on Showcase’s iframe.</li>
+</ul>
+
+<h2 id="2271">22.7.1</h2>
+<h5 id="july-21-2022">July 21, 2022</h5>
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Split <a href="docs/reference/current/interfaces/scene.iobject.html#addpath"><code class="language-plaintext highlighter-rouge">IObject.addPath</code></a> into individual functions to reduce boilerplate
+    <ul>
+      <li>use <a href="docs/reference/current/interfaces/scene.iobject.html#addinputpath"><code class="language-plaintext highlighter-rouge">IObject.addInputPath</code></a> for inputs</li>
+      <li>use <a href="docs/reference/current/interfaces/scene.iobject.html#addoutputpath"><code class="language-plaintext highlighter-rouge">IObject.addOutputPath</code></a> for outputs</li>
+      <li>use <a href="docs/reference/current/interfaces/scene.iobject.html#addeventpath"><code class="language-plaintext highlighter-rouge">IObject.addEventPath</code></a> for events</li>
+      <li>use <a href="docs/reference/current/interfaces/scene.iobject.html#addemitpath"><code class="language-plaintext highlighter-rouge">IObject.addEmitPath</code></a> for emits</li>
+    </ul>
+  </li>
+  <li>In an effort to streamline the interfaces of Scene objects (<a href="docs/reference/current/interfaces/scene.iobject.html"><code class="language-plaintext highlighter-rouge">IObject</code></a>, <a href="docs/reference/current/interfaces/scene.inode.html"><code class="language-plaintext highlighter-rouge">INode</code></a>, <a href="docs/reference/current/interfaces/scene.icomponent.html"><code class="language-plaintext highlighter-rouge">IComponent</code></a>), numerous properties and functions have been removed</li>
+  <li>Similarly, the <code class="language-plaintext highlighter-rouge">renderer</code> returned in callbacks to <a href="docs/reference/current/modules/scene.html#configure"><code class="language-plaintext highlighter-rouge">Scene.configure</code></a> or that exists on <a href="docs/reference/current/interfaces/scene.icomponentcontext.html"><code class="language-plaintext highlighter-rouge">ISceneComponent.context</code></a> has a limited <code class="language-plaintext highlighter-rouge">canvas</code> object that no longer grants access to the DOM and numerous other functions</li>
+</ul>
+
+<h2 id="2261">22.6.1</h2>
+<h5 id="jun-30-2022">Jun 30, 2022</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added <a href="docs/reference/current/modules/tag.html#detach"><code class="language-plaintext highlighter-rouge">Tag.detach</code></a> to remove attachments from a tag</li>
+  <li>Removed the need to specify the <code class="language-plaintext highlighter-rouge">type</code> when calling <a href="docs/reference/current/modules/tag.html#registerattachment"><code class="language-plaintext highlighter-rouge">Tag.registerAttachment</code></a></li>
+  <li>Added <a href="docs/reference/current/modules/tag.html#registersandbox"><code class="language-plaintext highlighter-rouge">Tag.registerSandbox</code></a></li>
+  <li>Added <a href="docs/reference/current/modules/tag.html#editstem"><code class="language-plaintext highlighter-rouge">Tag.editStem</code></a> and <a href="docs/reference/current/modules/mattertag.html#editstem"><code class="language-plaintext highlighter-rouge">Mattertag.editStem</code></a> to control the stem’s length and/or visibility</li>
+  <li><a href="docs/reference/current/modules/asset.html#registertexture"><code class="language-plaintext highlighter-rouge">Asset.registerTexture</code></a> should now be used in place <a href="docs/reference/current/modules/pointer.html#registertexture">Pointer.registerTexture</a>. Assets from <code class="language-plaintext highlighter-rouge">Asset.registerTexture</code> can be used in <a href="docs/reference/current/modules/pointer.html#edittexture"><code class="language-plaintext highlighter-rouge">Pointer.editTexture</code></a>, <a href="docs/reference/current/modules/mattertag.html#editicon">Mattertag.editIcon</a>, and <a href="docs/reference/current/modules/tag.html#editicon"><code class="language-plaintext highlighter-rouge">Tag.editIcon</code></a></li>
+</ul>
+
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Fixed an issue where <a href="sdkbundle_tutorials_setting_up_embedly">Embed.ly key overrides</a> were not respected</li>
+</ul>
+
+<h2 id="2251">22.5.1</h2>
+<h5 id="jun-7-2022">Jun 7, 2022</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added the <a href="docs/reference/current/modules/tag.html">Tag</a> namespace.</li>
+  <li>Added <a href="docs/reference/current/modules/label.html#data">Label.data</a> collection to receive Labels data</li>
+  <li>Added <a href="docs/reference/current/modules/tour.html#currentstep">Tour.currentStep</a>, <a href="docs/reference/current/modules/tour.html#transition">Tour.transition</a>, and <a href="docs/reference/current/modules/tour.html#state">Tour.state</a> to get information about what the tour is currently doing</li>
+  <li>Added <a href="docs/reference/current/modules/mode.html#current">Mode.current</a> and <a href="docs/reference/current/modules/mode.html#transition-1">Mode.transition</a> to get information about the current view mode and any transitions between them taking place</li>
+  <li>Added <a href="docs/reference/current/modules/asset.html#registertexture">Asset.registerTexture</a> to be used as a central place for registering icons like those for Mattertags</li>
+</ul>
+
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Updated internal Three.js from r136 to r139</li>
+</ul>
+
+<h2 id="2241">22.4.1</h2>
+<h5 id="apr-11-2022">Apr 11, 2022</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Fixed an issue with deep links not taking you to the correct pose in Tags</li>
+</ul>
+
+<h2 id="2233">22.3.3</h2>
+<h5 id="mar-17-2022">Mar 17, 2022</h5>
+<p><strong>General</strong>
+The previous Early Access is now closed and all features are now available generally available.</p>
+<ul>
+  <li>Updated: <a href="docs/reference/current/modules/pointer.html"><code class="language-plaintext highlighter-rouge">Pointer</code></a> now has ways to control the reticle that follows the mouse pointer. <a href="sdk_tutorials_cursor.html">See the tutorial</a>.</li>
+  <li>Updated: <a href="docs/reference/current/modules/graph.html"><code class="language-plaintext highlighter-rouge">Graph</code></a> namespace for pathfinding has improved watch-ability. <a href="sdk_tutorials_pathfinding.html">See the tutorial</a>.</li>
+  <li>Added: <a href="docs/reference/current/modules/link.html"><code class="language-plaintext highlighter-rouge">Link</code></a> namespace to control how links are generated and how links are handled.</li>
+</ul>
+
+<h2 id="2232">22.3.2</h2>
+<h5 id="mar-15-2022">Mar 15, 2022</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Fixed some issues with Space Search</li>
+</ul>
+
+<h2 id="2231">22.3.1</h2>
+<h5 id="mar-11-2022">Mar 11, 2022</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added iterability to <a href="docs/reference/current/interfaces/dictionary.html#_symbol_iterator_"><code class="language-plaintext highlighter-rouge">Dictionary</code></a> returned in <a href="docs/reference/current/interfaces/imapobserver.html"><code class="language-plaintext highlighter-rouge">IMapObserver</code></a></li>
+  <li>Added pathfinding support
+    <ul>
+      <li>Added the <a href="docs/reference/current/modules/graph.html"><code class="language-plaintext highlighter-rouge">Graph</code></a> namespace for creating connectivity graphs and traversing them using A*</li>
+      <li>Added the ability to create <a href="docs/reference/current/modules/sweep.html#creategraph">Sweep graphs</a></li>
+      <li>See <a href="sdk_tutorials_pathfinding.html">Pathfinding</a> for more info</li>
+    </ul>
+  </li>
+  <li>Added the <a href="docs/reference/current/modules/link.html">Link</a> namespace
+    <ul>
+      <li>Added the ability to create share links through <a href="docs/reference/current/modules/link.html#createlink">Link.createLink</a> and <a href="docs/reference/current/modules/link.html#createdeeplink">Link.createDeepLink</a></li>
+      <li>Added the ability to change the link in the share dialog through <a href="docs/reference/current/modules/link.html#setsharelinkpolicy">Link.setShareLinkPolicy</a></li>
+      <li>Added the ability to change the click handler for different link types through <a href="docs/reference/current/enums/link.openpolicy.html">policies</a> for example <a href="docs/reference/current/modules/link.html#setmodellinkpolicy">Link.setModelLinkPolicy</a></li>
+    </ul>
+  </li>
+  <li>Fixed some missing and inconsistent types
+    <ul>
+      <li>Added type <a href="docs/reference/current/modules/scene.html#predefinedoutputs">PredefinedOutputs</a> for component output intersection types</li>
+      <li>Added the <a href="docs/reference/current//modules/scene.html#interactionevent">InteractionEvent</a> type for the mesh interaction callback payload.</li>
+      <li><a href="docs/reference/current//interfaces/scene.icomponent.html#bind">INode.bind</a> now has the correct type. This function is deprecated.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Added <a href="docs/reference/current//interfaces/scene.inode.html#componentiterator">componentIterator</a> method to <code class="language-plaintext highlighter-rouge">INode</code></li>
+  <li>Added <a href="docs/reference/current//interfaces/scene.icomponent.html#componenttype">componentType</a> property to <code class="language-plaintext highlighter-rouge">IComponent</code></li>
+  <li>Added <a href="docs/reference/current//interfaces/scene.iobject.html#nodeiterator">nodeIterator</a> to <code class="language-plaintext highlighter-rouge">IObject</code></li>
+</ul>
+
+<h2 id="2211">22.1.1</h2>
+<h5 id="jan-24-2022">Jan 24, 2022</h5>
+<p><strong>General</strong>
+<a href="earlyaccess_home.html">Early Access</a> features that were previously only available in our Bundle SDK are now available in the Embed SDK as well.</p>
+<ul>
+  <li>Added: <a href="docs/reference/interfaces/dictionary.html#_symbol_iterator_"><code class="language-plaintext highlighter-rouge">Dictionary objects</code></a> returned in <a href="docs/reference/interfaces/imapobserver.html"><code class="language-plaintext highlighter-rouge">IMapObserver</code></a> are now iterable using <code class="language-plaintext highlighter-rouge">for...of</code> loops.</li>
+  <li>Fixed: <a href="docs/reference/current/modules/sweep.html#disable">Sweep.disable</a> should now work regardless of the <code class="language-plaintext highlighter-rouge">useLegacyIds</code> param.</li>
+  <li>Fixed: <a href="docs/reference/current/modules/room.html#roomdata">Room.floorInfo</a> should now be populated instead of always being an invalid floor.</li>
+  <li>Early Access: <a href="sdk_tutorials_pathfinding.html">Graph and Pathfinding</a>; see the <a href="docs/reference/current/modules/graph.html">Reference pages</a>.</li>
+  <li>Early Access: <a href="sdk_tutorials_cursor.html">Pointer Reticle Customization</a>; see the <a href="docs/reference/current/modules/pointer.html">Reference pages</a>.</li>
+</ul>
+
+<h2 id="21121">21.12.1</h2>
+<h5 id="dec-6-2021">Dec 6, 2021</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Fixed an issue where <code class="language-plaintext highlighter-rouge">Mattertag.remove</code> would not remove an array of mattertags.</li>
+  <li>Fixed an issue where <code class="language-plaintext highlighter-rouge">Mattertag.registerIcon</code> would not throw exceptions after an error occurred.</li>
+  <li>Fixed an issue where an interrupted inside mode navigation would display the model correctly.</li>
+  <li>Fixed an issue where a user could not navigate to a floor under a hidden floor.</li>
+  <li>Fixed an issue where <code class="language-plaintext highlighter-rouge">Pointer.intersection</code> would not return the correct type for a mattertag.</li>
+</ul>
+
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Added <a href="sdkbundle_tutorials_using_oauth.html">OAuth support</a>. Contact <a href="mailto:developer@matterport.com">Developer Support</a> to enable OAuth for your application.</li>
+</ul>
+
+<h2 id="2191">21.9.1</h2>
+<h5 id="sep-23-2021">Sep 23, 2021</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Updated: <a href="docs/reference/current/modules/mattertag.html#registericon">Mattertag.registerIcon</a> will now return the result of the fetch. Existing uses (that did not await the result) should not be affected.</li>
+  <li>Fixed: <a href="docs/reference/current/modules/mattertag.html#remove">Mattertag.remove</a> can now properly remove an array of tags.</li>
+  <li>Fixed: The <a href="docs/reference/current/interfaces/mattertag.imessenger.html">Mattertag.IMessenger</a> returned from <a href="docs/reference/current/modules/mattertag.html#injecthtml">Mattertag.injectHTML</a> will no longer see messages coming from the wrong tags.</li>
+</ul>
+
+<h2 id="2182">21.8.2</h2>
+<h5 id="aug-25-2021">Aug 25, 2021</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Fix an issue where Sweep.moveTo would ignore the transitionTime option.</li>
+</ul>
+
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Update threejs transform controls to version 129.</li>
+</ul>
+
+<h2 id="2181">21.8.1</h2>
+<h5 id="aug-5-2021">Aug 5, 2021</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Fixed an issue where a share link would not link to matterport.com</li>
+  <li>Fixed an issue preventing the use of the my.matterportvr.cn api domain.</li>
+</ul>
+
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Fixed an issue where <code class="language-plaintext highlighter-rouge">Scene.serialize</code> would return undefined</li>
+  <li>Fixed an issue where model loader components would not remove meshes from the scene when stopped.</li>
+  <li>Mobile redirects were removed. You can re-enable redirects by setting <code class="language-plaintext highlighter-rouge">disableMobileRedirect</code> to false in your app config.</li>
+  <li>Added the Scene namespace to the sdk type definitions.</li>
+  <li>Added scene objects. See <a href="sdkbundle_tutorials_using_scene_objects.html">Using scene objects</a> and <a href="docs/reference/current/modules/scene.html#createobjects">Scene.createobjects</a></li>
+  <li><a href="docs/reference/current/modules/scene.html#serialize">Scene.serialize</a> now serializes to version 2. <a href="docs/reference/current/modules/scene.html#deserialize">Scene.deserialize</a> takes both version 1 and 2 scene files.</li>
+  <li>Updated embedded three.js to version r128</li>
+</ul>
+
+<h2 id="2162">21.6.2</h2>
+<h5 id="jun-17-2021">Jun 17, 2021</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Fixed missing <code class="language-plaintext highlighter-rouge">App</code> namespace enums</li>
+</ul>
+
+<h2 id="2161">21.6.1</h2>
+<h5 id="jun-10-2021">Jun 10, 2021</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added: <a href="docs/reference/current/modules/room.html#current">Room.current</a> observable.</li>
+  <li>Added: <a href="sdk_types.html">Typescript type declarations</a>.</li>
+  <li>Fixed: <code class="language-plaintext highlighter-rouge">Sweep.Alignment</code> and <code class="language-plaintext highlighter-rouge">Sweep.Placement</code> are now properly under the <code class="language-plaintext highlighter-rouge">Sweep</code> namespace. Previously they were <code class="language-plaintext highlighter-rouge">Mode.Alignment</code> and <code class="language-plaintext highlighter-rouge">Mode.Placement</code></li>
+  <li>Removed: An interface version no longer needs to be specified when calling <code class="language-plaintext highlighter-rouge">connect</code>.</li>
+</ul>
+
+<h2 id="2151">21.5.1</h2>
+<h5 id="may-27-2021">May 27, 2021</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Maintenance bug fixes and improvements.</li>
+</ul>
+
+<h2 id="2143">21.4.3</h2>
+<h5 id="apr-21-2021">Apr 21, 2021</h5>
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Fixed a CORS issue when using the bundle on a custom domain.</li>
+</ul>
+
+<h2 id="2142">21.4.2</h2>
+<h5 id="apr-16-2021">Apr 16, 2021</h5>
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Added scene parameter to ‘Scene.configure’ callback.</li>
+  <li>Added ‘INTERACTION.DRAG_BEGIN’ and ‘INTERACTION.DRAG_END’ events to scene node colliders.</li>
+  <li>Added ‘colliderEnabled` boolean to the gltf, fbx, dae and obj model loaders.</li>
+</ul>
+
+<h2 id="2141">21.4.1</h2>
+<h5 id="apr-1-2021">Apr 1, 2021</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added: <a href="docs/reference/current/modules/room.html#data">Room.data</a> collection.</li>
+  <li>Added: <a href="docs/reference/current/modules/sensor.html#createsource">Cylinder sources</a> for use with Sensors.</li>
+  <li>Added: <a href="docs/reference/current/modules/sensor.html#createsource">Box sources</a> now support orientation.</li>
+  <li>Fixed: <code class="language-plaintext highlighter-rouge">Mattertag.add</code> now properly sets its stem visible when undefined.</li>
+  <li>Fixed: <code class="language-plaintext highlighter-rouge">Sweep.current</code> is more resilient to missing floor info.</li>
+</ul>
+
+<h2 id="2132">21.3.2</h2>
+<h5 id="mar-2-2021">Mar 2, 2021</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Fixed an issue with Mattertag.injectHTML</li>
+</ul>
+
+<h2 id="2123">21.2.3</h2>
+<h5 id="feb-22-2021">Feb 22, 2021</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added: <a href="docs/reference/current/modules/sensor.html">Sensors</a></li>
+  <li>Fixed: <code class="language-plaintext highlighter-rouge">Mattertag.editPosition</code> always giving a stem length of 1 meter.</li>
+</ul>
+
+<h2 id="2122">21.2.2</h2>
+<h5 id="feb-16-2021">Feb 16, 2021</h5>
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Updated embedded three.js to version r124</li>
+  <li>Fixed an issue with disabling measurement mode.</li>
+  <li>Fixed an issue with password submission on password protected spaces.</li>
+  <li>Fixed an issue with drag gesture ending prior to pointer release(improves transform control and mesh dragging).</li>
+  <li>Added optional effect composer. You must set useEffectComposer: true in the application config object in showcase.html.</li>
+  <li>Added <a href="docs/reference/current/modules/scene.html#configure">Scene.configure</a> function.</li>
+</ul>
+
+<h2 id="2121">21.2.1</h2>
+<h5 id="feb-3-2021">Feb 3, 2021</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Fixed an issue with the appearance of password protected spaces.</li>
+  <li>Fixed an issue with toggling measurement mode.</li>
+</ul>
+
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Added input data to mesh CLICK, HOVER, and DRAG interactions.</li>
+</ul>
+
+<h2 id="2111">21.1.1</h2>
+<h5 id="jan-19-2021">Jan 19, 2021</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added: <a href="docs/reference/current/modules/floor.html#data">Floor.current</a> observable</li>
+  <li>Added: <a href="docs/reference/current/modules/sweep.html#current">Sweep.current</a> observable</li>
+  <li>Added: <a href="docs/reference/current/modules/sweep.html#enable">Sweep.enable</a> and <a href="docs/reference/current/modules/sweep.html#disable">Sweep.disable</a></li>
+  <li>Fixed: <code class="language-plaintext highlighter-rouge">options.size</code> should now work again in <a href="docs/reference/current/modules/mattertag.html#injecthtml">Mattertag.injectHTML</a></li>
+</ul>
+
+<h2 id="20123">20.12.3</h2>
+<h5 id="dec-21-2020">Dec 21, 2020</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Fix: Added <code class="language-plaintext highlighter-rouge">enabled</code>, <code class="language-plaintext highlighter-rouge">stemVisible</code> and <code class="language-plaintext highlighter-rouge">floorIndex</code> properties to <a href="docs/reference/current/modules/mattertag.html#observablemattertagdata">ObservableMattertagData</a> for backwards compatibility with <code class="language-plaintext highlighter-rouge">Mattertag.getData</code></li>
+  <li>Fix: Fixed an issue where observable collections would not return initial data</li>
+  <li>Added: <a href="docs/reference/current/modules/floor.html#data">Floor.data</a> observable collection, deprecate <code class="language-plaintext highlighter-rouge">Floor.getData</code></li>
+  <li>Added: FloorInfo to <code class="language-plaintext highlighter-rouge">Label</code> and <code class="language-plaintext highlighter-rouge">SweepData</code></li>
+</ul>
+
+<h2 id="20122">20.12.2</h2>
+<h5 id="dec-11-2020-general-availability">Dec 11, 2020 <span class="label label-success">General Availability</span></h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Fixed an issue with where Sweep.data would return no sweeps.</li>
+</ul>
+
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Components: Added <code class="language-plaintext highlighter-rouge">unfiltered</code> property to <a href="sdkbundle_components_input.html">mp.input</a> component.</li>
+  <li>Additional setup instructions for application keys required for CORS, see <a href="sdkbundle_tutorials_setup.html#set-your-application-key.html">Set your application key</a></li>
+</ul>
+
+<h2 id="20121">20.12.1</h2>
+<h5 id="dec-1-2020">Dec 1, 2020</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added: <code class="language-plaintext highlighter-rouge">Mattertag.data</code> observable collection, deprecate <code class="language-plaintext highlighter-rouge">Mattertag.getData</code></li>
+  <li>Added: <code class="language-plaintext highlighter-rouge">onCollectionUpdated</code> to collection observers. <code class="language-plaintext highlighter-rouge">onCollectionUpdated</code> aggregates changes to a collection for more coarse, but less often updates</li>
+  <li>Added: <code class="language-plaintext highlighter-rouge">views</code> option to <code class="language-plaintext highlighter-rouge">Renderer.takeScreenShot</code> to hide 360 views</li>
+  <li>Fix: Failures to load replace tag icons via <code class="language-plaintext highlighter-rouge">Mattertag.editIcon</code> will now properly propagate errors</li>
+  <li>Fix: Fallback dimensions are now provided for svgs used in <code class="language-plaintext highlighter-rouge">Mattertag.editIcon</code> – this should help in some cases where Firefox determines the size is 0x0</li>
+  <li>Improved: More descriptive error messages around tagIds provided in most Mattertag calls</li>
+</ul>
+
+<h2 id="20111">20.11.1</h2>
+<h5 id="nov-6-2020">Nov 6, 2020</h5>
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Scene: Added support for creating arrays of components and nodes. See <a href="docs/reference/current/modules/scene.html#registercomponents">Scene.registerComponents</a> and <a href="docs/reference/current/modules/scene.html#createnodes">Scene.createNodes</a>.</li>
+  <li>Components: Fixed an issue where mp.input would not dispatch a models <code class="language-plaintext highlighter-rouge">INTERACTION.CLICK</code> event.</li>
+  <li>General: Fixed an sdk connection issue on the oculus browser. You can now connect to the sdk while in xr immersive mode. See <a href="sdkbundle_tutorials_using_xr.html">Using xr</a></li>
+  <li>Added the <code class="language-plaintext highlighter-rouge">mp.xr</code> component which provides an XRSession. See <a href="sdkbundle_components_xr.html">mp.xr</a></li>
+</ul>
+
+<h2 id="2091">20.9.1</h2>
+<h5 id="sep-25-2020">Sep 25, 2020</h5>
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>General: Added support for a custom embedly key. Mattertag videos and images can now be viewed with bundle applications. See <a href="sdkbundle_tutorials_setting_up_embedly.html">Setting up Embedly</a></li>
+  <li>Conversion: Fixed an issue where Conversion.worldToScreen returned stale screen coordinates.</li>
+  <li>Components: Added support for arrays as inputs.</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">showX</code>, <code class="language-plaintext highlighter-rouge">showY</code>, <code class="language-plaintext highlighter-rouge">showZ</code> and <code class="language-plaintext highlighter-rouge">size</code> to <a href="sdkbundle_components_transformcontrols.html">mp.transformControls</a> inputs.</li>
+</ul>
+
+<h2 id="2082">20.8.2</h2>
+<h5 id="aug-13-2020">Aug 13, 2020</h5>
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Added <a href="sdkbundle_components_input.html">mp.input</a>, <a href="sdkbundle_components_camera.html">mp.camera</a>, and <a href="sdkbundle_components_transformcontrols.html">mp.transformControls</a> components.</li>
+  <li>Inspector: added component list panel, 6DOF camera controls. Source code updated.</li>
+  <li>General: Includes SDK for embeds v3.5 features and bug fixes.</li>
+  <li>General: Fixed an issue where mattertags and labels were being loaded from localhost.</li>
+  <li>General: Fixed an issue where textures were not properly loaded on safari.</li>
+</ul>
+
+<h2 id="2081">20.8.1</h2>
+<h5 id="aug-5-2020">Aug 5, 2020</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added <code class="language-plaintext highlighter-rouge">Mattertag.injectHTML</code> which allows embedding of custom HTML and Javascript, with sandboxed iframe limitations.</li>
+</ul>
+
+<h2 id="2071">20.7.1</h2>
+<h5 id="jul-31-2020">Jul 31, 2020</h5>
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Models: Fixed an issue with loading OBJ models with a material.</li>
+  <li>Scenes: Fixed an issue with orphaned colliders from deleted scene nodes.</li>
+</ul>
+
+<h2 id="2062">20.6.2</h2>
+<h5 id="jun-23-2020">Jun 23, 2020</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added <code class="language-plaintext highlighter-rouge">Camera.zoomBy</code>, <code class="language-plaintext highlighter-rouge">Camera.zoomTo</code>, and <code class="language-plaintext highlighter-rouge">Camera.zoomReset</code> to manipulate the zoom level of the camera in Panorama modes.</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">Camera.zoom</code> observable to get the zoom level of the camera while in Panorama mode.</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">Mattertag.editOpacity</code> to control opacity of each Mattertag.</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">Mattertag.preventAction</code> to disable Showcase’s default hover and click handlers allowing for the billboard to be hidden and/or the click to navigate to be suppressed.</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">Sweep.data</code> as a replacement for the <code class="language-plaintext highlighter-rouge">sweeps</code> property of <code class="language-plaintext highlighter-rouge">Model.getData</code>.</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">IObserver</code> support to <code class="language-plaintext highlighter-rouge">IObservable</code> for the more object-oriented programmer.</li>
+  <li>Added transitionTime to <code class="language-plaintext highlighter-rouge">Sweep.moveTo</code> options.</li>
+  <li>Fixed an issue with <code class="language-plaintext highlighter-rouge">Camera.setRotation</code> where certain orientations would rotate in the wrong direction.</li>
+  <li>Fixed a race condition between <code class="language-plaintext highlighter-rouge">Mattertag.registerIcon</code> and <code class="language-plaintext highlighter-rouge">Mattertag.editIcon</code>.</li>
+</ul>
+
+<h2 id="2061">20.6.1</h2>
+<h5 id="jun-1-2020">Jun 1, 2020</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added <code class="language-plaintext highlighter-rouge">Measurements.data</code> which allows you to detect when measurements are added, removed, and updated.</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">Mattertag.registerIcon</code> and <code class="language-plaintext highlighter-rouge">Mattertag.editIcon</code> function which allows you to change image used as mattertag discs.</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">Mattertag.resetIcon</code> to undo changes done by <code class="language-plaintext highlighter-rouge">Mattertag.editIcon</code>.</li>
+</ul>
+
+<h2 id="2053">20.5.3</h2>
+<h5 id="may-19-2020">May 19, 2020</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added <code class="language-plaintext highlighter-rouge">Measurements.mode</code> which allows you to detect when measurements mode is activated and deactivated.</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">Measurements.toggleMode</code> function which allows you to enable and disable showcase measurement mode.</li>
+</ul>
+
+<h2 id="2052">20.5.2</h2>
+<h5 id="may-13-2020">May 13, 2020</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Fixed a race condition with <code class="language-plaintext highlighter-rouge">Camera.pose</code> and <code class="language-plaintext highlighter-rouge">Pointer.intersection</code> initialization.</li>
+</ul>
+
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Added event spies to components. See <a href="sdkbundle_architecture.html#event-spies">Event Spies Overview</a> and <a href="docs/reference/current/interfaces/scene.icomponent.html#spyonevent">Event Spies Reference</a>.</li>
+  <li>Internal Three.js version upgraded to 0.115.0</li>
+</ul>
+
+<h2 id="2051">20.5.1</h2>
+<h5 id="may-11-2020">May 11, 2020</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added optional <code class="language-plaintext highlighter-rouge">floorId</code> parameter to <code class="language-plaintext highlighter-rouge">Mattertag.add</code> and <code class="language-plaintext highlighter-rouge">Mattertag.editPosition</code>.</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">floorId</code> to <code class="language-plaintext highlighter-rouge">Pointer.intersection</code> observable. This property can be used in with transient mattertags.</li>
+</ul>
+
+<h2 id="2041">20.4.1</h2>
+<h5 id="apr-10-2020">Apr 10, 2020</h5>
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Models: Web workers load textures in the background.</li>
+  <li>Models: Added <code class="language-plaintext highlighter-rouge">loadingState</code> property to the output of the gltf, dae, fbx, and obj loaders.</li>
+  <li>Models: Fixed an issue where reloading models would not release resources.</li>
+  <li>Scenes: Scene files support property and event bindings.</li>
+  <li>Scenes: Scene files support multiple components per node.</li>
+  <li>Components: Added most of the three/js/examples to the component context.</li>
+  <li>Fixed a startup race condition with createNode.</li>
+</ul>
+
+<h2 id="2021">20.2.1</h2>
+<h5 id="feb-6-2020">Feb 6, 2020</h5>
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Fixed an issue where transform controls interrupted camera motion.</li>
+</ul>
+
+<h2 id="2011">20.1.1</h2>
+<h5 id="jan-30-2020">Jan 30, 2020</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added <code class="language-plaintext highlighter-rouge">Mattertag.LINK_OPEN</code> event. This event fires when the user has clicked on an external mattertag link. See <a href="docs/reference/current/index.html#on">Mattertag Events</a></li>
+  <li>Added <code class="language-plaintext highlighter-rouge">Camera.setRotation</code> function. This function sets the absolute rotation of the camera in inside mode.</li>
+</ul>
+
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>Added light objects: <code class="language-plaintext highlighter-rouge">mp.ambientLight</code>,  <code class="language-plaintext highlighter-rouge">mp.directionalLight</code>, and <code class="language-plaintext highlighter-rouge">mp.pointLight</code>.</li>
+  <li>Added support for objects as component inputs.</li>
+  <li>Fixed an issue where <code class="language-plaintext highlighter-rouge">onInteraction</code> would not fire if the collider was a Mesh object.</li>
+  <li>Fixed a bug with the github showcase-sdk-tutorial repo where the app would load the bundle twice. <a href="https://github.com/matterport/showcase-sdk-tutorial">github showcase-sdk-tutorial link</a>.</li>
+</ul>
+
+<h2 id="19122">19.12.2</h2>
+<h5 id="dec-20-2019">Dec 20, 2019</h5>
+<p><strong>Bundle</strong></p>
+<ul>
+  <li>First release</li>
+</ul>
+
+<h2 id="19121">19.12.1</h2>
+<h5 id="dec-9-2019">Dec 9, 2019</h5>
+<ul>
+  <li><strong>Transient Mattertags</strong><br />
+Support for creating, updating and deleting mattertags.
+Changes to mattertags disappear once the user leaves showcase. Added <code class="language-plaintext highlighter-rouge">Mattertag.add</code>, <code class="language-plaintext highlighter-rouge">Mattertag.editColor</code>, <code class="language-plaintext highlighter-rouge">Mattertag.editBillboard</code>, <code class="language-plaintext highlighter-rouge">Mattertag.editPosition</code>, and <code class="language-plaintext highlighter-rouge">Mattertag.remove</code> See <a href="sdk_editing_mattertags.html">Tutorials</a> section for help on editing transient mattertag content.</li>
+  <li><strong>Synchronous Functions</strong><br />
+We are adding support for synchronous functions. These functions compute and return your data immediately, no promise involved. In general, synchronous functions are more performant since they dont directly interact with the showcase. Use them when you can. To start, we have selected a function that is called frequently <code class="language-plaintext highlighter-rouge">Renderer.getScreenPosition()</code>. This function is now being deprecated, and the new synchronous function is <code class="language-plaintext highlighter-rouge">Renderer.worldToScreen()</code>. In order to use synchronous functions, you will need to update your sdk client reference to <code class="language-plaintext highlighter-rouge">https://static.matterport.com/showcase-sdk/2.0.0-0-g7edd6b8/sdk.js</code></li>
+  <li>Added <code class="language-plaintext highlighter-rouge">Mattertag.getDiscPosition</code> synchronous function.</li>
+  <li>Deprecating <code class="language-plaintext highlighter-rouge">window.SHOWCASE_SDK</code>, use <code class="language-plaintext highlighter-rouge">window.MP_SDK instead</code>.</li>
+  <li>Update your iframe links. We are no longer using <code class="language-plaintext highlighter-rouge">/showcase-beta</code> in the iframe link, use <code class="language-plaintext highlighter-rouge">/show</code> e.g. <code class="language-plaintext highlighter-rouge">https://my.matterport.com/show?m=SxQL3iGyoDo&amp;play=1</code>. See <a href="sdk_installation.html#include-the-library-and-add-a-matterport-space">Installation</a></li>
+</ul>
+
+<h2 id="1981">19.8.1</h2>
+<h5 id="aug-22-2019">Aug 22, 2019</h5>
+<ul>
+  <li>Added <code class="language-plaintext highlighter-rouge">Camera.pose</code> observable property.</li>
+  <li><code class="language-plaintext highlighter-rouge">Camera.getPose()</code> is now deprecated. It will be removed in a future update.</li>
+  <li>Added Pointer namespace and <code class="language-plaintext highlighter-rouge">Pointer.intersection</code> observable property</li>
+</ul>
+
+<h2 id="1951">19.5.1</h2>
+<h5 id="may-3-2019">May 3, 2019</h5>
+<ul>
+  <li>Added colors and anchor points <code class="language-plaintext highlighter-rouge">Mattertag.MattertagData</code></li>
+</ul>
+
+<h2 id="1941">19.4.1</h2>
+<h5 id="apr-25-2019">Apr 25, 2019</h5>
+<ul>
+  <li>Added <code class="language-plaintext highlighter-rouge">Measurements.getData()</code>. You can now access measurements created from Workshop!</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">App.getLoadTimes()</code>. You can now access app phase timing information!</li>
+  <li>Added transition type parameter to <code class="language-plaintext highlighter-rouge">Mattertag.navigateToTag()</code></li>
+  <li>Removed <code class="language-plaintext highlighter-rouge">Mattertag.ActiveMattertagData</code> type</li>
+  <li>Removed <code class="language-plaintext highlighter-rouge">Mattertag.Event.UPDATE</code></li>
+  <li>Added projection property to <code class="language-plaintext highlighter-rouge">Camera.getPose()</code></li>
+  <li>Added optional includeHiddenFloors parameter to <code class="language-plaintext highlighter-rouge">Renderer.getWorldPositionData()</code></li>
+  <li>Added <code class="language-plaintext highlighter-rouge">Renderer.takeEquirectangular()</code></li>
+</ul>
+
+<h2 id="1861">18.6.1</h2>
+<h5 id="jun-27-2018">Jun 27, 2018</h5>
+<ul>
+  <li>New actions on camera, new namespaces for Renderer, and Settings</li>
+  <li><a href="sdk_upgrading.html#upgrading-from-v30-to-v30335">See a list of modified endpoints.</a></li>
+</ul>
+
+<h2 id="1821">18.2.1</h2>
+<h5 id="feb-12-2018">Feb 12, 2018</h5>
+<ul>
+  <li>Renamed <code class="language-plaintext highlighter-rouge">toggle()</code> to <code class="language-plaintext highlighter-rouge">setActive()</code></li>
+  <li>Renamed <code class="language-plaintext highlighter-rouge">MattertagPositionData</code> to <code class="language-plaintext highlighter-rouge">ActiveMattertagData</code></li>
+  <li>Removed <code class="language-plaintext highlighter-rouge">HoverState</code> event, redundant with <code class="language-plaintext highlighter-rouge">Event.HOVER</code></li>
+  <li>Removed <code class="language-plaintext highlighter-rouge">SelectedState</code> event, use <code class="language-plaintext highlighter-rouge">Event.CLICK</code> instead`</li>
+  <li>Renamed <code class="language-plaintext highlighter-rouge">getMattertagData</code> to <code class="language-plaintext highlighter-rouge">getData</code></li>
+  <li>Removed <code class="language-plaintext highlighter-rouge">BoardState</code> enum.</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">MattertagData.isActive</code> property</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">TagDescriptionChunkType</code> enum</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">TagMediaType</code> enum</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">LinkType</code> enum</li>
+  <li>Removed <code class="language-plaintext highlighter-rouge">MattertagData.floorIndex</code> property</li>
+  <li>Removed <code class="language-plaintext highlighter-rouge">MattertagData.mode</code> property</li>
+  <li>Removed <code class="language-plaintext highlighter-rouge">MattertagData.color</code> property</li>
+  <li>Removed <code class="language-plaintext highlighter-rouge">MattertagData.anchorPosition</code> property</li>
+  <li>Removed <code class="language-plaintext highlighter-rouge">MattertagData.stemVector</code> property</li>
+  <li>Renamed <code class="language-plaintext highlighter-rouge">SweepInfo.newPano</code> to <code class="language-plaintext highlighter-rouge">SweepInfo.newSweep</code></li>
+  <li>Renamed <code class="language-plaintext highlighter-rouge">SweepInfo.oldPano</code> to <code class="language-plaintext highlighter-rouge">SweepInfo.oldSweep</code></li>
+  <li>Removed <code class="language-plaintext highlighter-rouge">ModelData.panos</code> property</li>
+  <li>Removed <code class="language-plaintext highlighter-rouge">SweepData.modelSupportsVr</code> property</li>
+  <li>Removed <code class="language-plaintext highlighter-rouge">SweepData.neighbourUUIDs</code> property</li>
+  <li>Removed <code class="language-plaintext highlighter-rouge">SweepData.thumbnail</code> property</li>
+  <li>Renamed <code class="language-plaintext highlighter-rouge">getModelData()</code> to <code class="language-plaintext highlighter-rouge">getData()</code></li>
+  <li>Renamed <code class="language-plaintext highlighter-rouge">getModelDetails()</code><code class="language-plaintext highlighter-rouge"> to </code>getDetails()`</li>
+  <li>Renamed <code class="language-plaintext highlighter-rouge">ModelDetails.contact_email</code> to <code class="language-plaintext highlighter-rouge">ModelDetails.contactEmail</code></li>
+  <li>Renamed <code class="language-plaintext highlighter-rouge">ModelDetails.contact_name</code> to <code class="language-plaintext highlighter-rouge">ModelDetails.contactName</code></li>
+  <li>Renamed <code class="language-plaintext highlighter-rouge">ModelDetails.formatted_address</code> to <code class="language-plaintext highlighter-rouge">ModelDetails.formattedAddress</code></li>
+  <li>Renamed <code class="language-plaintext highlighter-rouge">ModelDetails.formatted_contact_phone</code> to <code class="language-plaintext highlighter-rouge">ModelDetails.formattedContactPhone</code></li>
+  <li>Renamed <code class="language-plaintext highlighter-rouge">Pose.pano</code> to <code class="language-plaintext highlighter-rouge">Pose.sweep</code></li>
+  <li>Removed <code class="language-plaintext highlighter-rouge">rotateInDirection()</code> function</li>
+  <li>Removed <code class="language-plaintext highlighter-rouge">Event.CHANGE</code> event</li>
+  <li>Renamed <code class="language-plaintext highlighter-rouge">Event.PLAYING</code> to <code class="language-plaintext highlighter-rouge">Event.PHASE_CHANGE</code></li>
+</ul>
+
+<h2 id="v30">v3.0</h2>
+<h5 id="dec-4-2017">Dec 4, 2017</h5>
+<ul>
+  <li>New actions and events on floors, labels, and Mattertag™ Posts.</li>
+  <li>New set of reference content that covers all actions and events.</li>
+  <li>Version 1.x no longer supported. Version 2.0 skipped.</li>
+  <li><a href="sdk_upgrading.html#upgrading-from-v11-to-v30">See a list of modified endpoints.</a></li>
+</ul>
+
+<h2 id="v11">v1.1</h2>
+<h5 id="aug-10-2017">Aug 10, 2017</h5>
+<ul>
+  <li>Added <code class="language-plaintext highlighter-rouge">getPose</code> and <code class="language-plaintext highlighter-rouge">takeScreenShot</code> actions.</li>
+  <li>Added pano thumbnails from the default pose into the metadata.</li>
+</ul>
+
+<h2 id="v10">v1.0</h2>
+<h5 id="feb-16-2017">Feb 16, 2017</h5>
+<ul>
+  <li>Initial release of SDK. Focus on movement and the user’s location in the space.</li>
+</ul>
+
+
+    <div class="tags">
+        
+    </div>
+
+<!-- 
+ -->
+
+</div>
+
+<!-- <hr class="shaded"/> -->
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2022 Matterport, Inc. All rights reserved. <br />
+ Site last generated: Nov 9, 2022 <br />
+<p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /#main -->
+    </div>
+
+    
+  </body>
+   <!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-34880260-5','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+ 
+</html>

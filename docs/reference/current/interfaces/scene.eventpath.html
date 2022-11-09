@@ -41,9 +41,106 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">EventPath</span>
+						<a href="scene.pathbase.html" class="tsd-signature-type">Scene.PathBase</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">EventPath</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+				<div class="tsd-panel-group" id="typescript-declarations" style="display: none;">
+					<h2>Typescript Declarations File</h2>
+					<section class="tsd-panel">
+						<div class="tsd-index-content">
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.80.4-0-gc3bde6e75f/sdk.d.ts">3.1.80.4-0-gc3bde6e75f</a><br>
+							Declarations are already include in the Bundle SDK distribution.
+						</div>
+					</section>
+				</div>
+				<script>
+  if (window.location.href.endsWith('index.html')) {
+    document.getElementById('typescript-declarations').style = 'display: block;';
+  }
+</script>
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="scene.eventpath.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="scene.eventpath.html#object" class="tsd-kind-icon">object</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="scene.eventpath.html#bind" class="tsd-kind-icon">bind</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="id" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="scene.pathbase.html">PathBase</a>.<a href="scene.pathbase.html#id">id</a></p>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The id of this path. Set to a random string, or the id provided when creating the path</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="object" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> object</h3>
+					<div class="tsd-signature tsd-kind-icon">object<span class="tsd-signature-symbol">:</span> <a href="scene.iobject.html" class="tsd-signature-type">Scene.IObject</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="scene.pathbase.html">PathBase</a>.<a href="scene.pathbase.html#object">object</a></p>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The object this path is associated with</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="bind" class="tsd-anchor"></a>
+					<h3>bind</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">bind<span class="tsd-signature-symbol">(</span>emitPath<span class="tsd-signature-symbol">: </span><a href="scene.emitpath.html" class="tsd-signature-type">Scene.EmitPath</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Bind this path to an <a href="scene.emitpath.html">EmitPath</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>emitPath: <a href="scene.emitpath.html" class="tsd-signature-type">Scene.EmitPath</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -138,6 +235,17 @@
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="scene.eventpath.html" class="tsd-kind-icon">Event<wbr>Path</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="scene.eventpath.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="scene.eventpath.html#object" class="tsd-kind-icon">object</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="scene.eventpath.html#bind" class="tsd-kind-icon">bind</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
@@ -167,6 +275,9 @@
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="scene.outputpath.html" class="tsd-kind-icon">Output<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="scene.pathbase.html" class="tsd-kind-icon">Path<wbr>Base</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="scene.pathinfo.html" class="tsd-kind-icon">Path<wbr>Info</a>
