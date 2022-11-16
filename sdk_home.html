@@ -399,6 +399,13 @@
           
           
           
+          <li><a title="SDK Package" href="sdk_tutorials_package.html">SDK Package</a></li>
+          
+          
+          
+          
+          
+          
           <li><a title="Using Observables" href="sdk_tutorials_observables.html">Using Observables</a></li>
           
           
@@ -760,16 +767,29 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> To use Tags 2.0, add the &amp;newtags=1 URL parameter to the Showcase’s iframe</div>
 
-<h2 id="how-do-i-obtain-an-sdk-key">How do I obtain an SDK key?</h2>
+<h2 id="installation">Installation</h2>
 
-<p>Our developer tools are now out of beta and all accounts are now enabled to generate sandboxed SDK keys. You can find your key management by navigating to your <a href="https://my.matterport.com/settings/account/devtools">Account Settings -&gt; Developer Tools</a>. To learn more about our developer tools, please visit the <a href="https://support.matterport.com/hc/en-us/articles/360057506813-Matterport-Developer-Tools-Pricing-and-Availability">Matterport Developer Tools and Pricing</a></p>
+<p>Before installing, you will need to create an SDK key.</p>
+
+<p>To manage keys, log in to your account, navigate to <a href="https://my.matterport.com/settings/account/devtools">Account Settings -&gt; Developer Tools</a>, and scroll down to “SDK Key Management”. Click “Add an SDK Key” and add any desired local domains to the allow list (for example, <code class="language-plaintext highlighter-rouge">localhost</code> and <code class="language-plaintext highlighter-rouge">localhost:8080</code>).</p>
+
+<p>To learn more about our developer tools, please visit the <a href="https://support.matterport.com/hc/en-us/articles/360057506813-Matterport-Developer-Tools-Pricing-and-Availability">Matterport Developer Tools and Pricing</a></p>
+
+<p>Once you have an SDK key, there are two methods for adding the Embed SDK to your site:</p>
+
+<ol>
+  <li><a href="#script-support"><strong>Script tag</strong></a> (standard method)</li>
+  <li><a href="#npm-sdk-embed-package"><strong>NPM package</strong></a> (beta)</li>
+</ol>
 
 <h2 id="updates">Updates</h2>
 
 <p>Latest Embed SDK update: Nov 10, 2022<br />
 See the <a href="sdk_changelog.html">change log</a></p>
 
-<h2 id="getting-started">Getting Started</h2>
+<h2 id="script-support"><code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> support</h2>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> These instructions are for including the SDK from <code>static.matterport.com</code> via a <code>&lt;script&gt;</code> tag. There is also an <a href="#npm-sdk-embed-package">NPM package</a> available.</div>
 
 <h3 id="include-the-library-and-add-a-matterport-space">Include the Library and Add a Matterport Space</h3>
 
@@ -925,6 +945,93 @@ See the <a href="sdk_changelog.html">change log</a></p>
 
 <p>Metadata is only available <strong>after</strong> you have successfully connected to the Matterport Space.</p>
 
+<h2 id="npm-sdk-embed-package">NPM SDK Embed Package</h2>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This section is a copy of the <a href="https://www.npmjs.com/package/@matterport/sdk" target="_blank">docs included with the package.</a><br /><br />See <a href="#script-support">here</a> for instructions on including the SDK via a <code>&lt;script&gt;</code> tag. The NPM package is in beta - feedback to <a href="mailto:developer@matterport.com">developer@matterport.com</a> is welcome.</div>
+
+<p>To use the NPM SDK Embed package, first <a href="https://matterport.github.io/showcase-sdk/sdk_home.html#how-do-i-obtain-an-sdk-key">obtain an SDK key</a>, then install the <code class="language-plaintext highlighter-rouge">@matterport/sdk</code> package:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># npm</span>
+npm <span class="nb">install</span> @matterport/sdk
+ 
+<span class="c"># yarn </span>
+yarn add @matterport/sdk
+</code></pre></div></div>
+
+<p>Use <code class="language-plaintext highlighter-rouge">mpSdk</code> to interact with your Matterport space (<a href="https://matterport.github.io/showcase-sdk/docs/sdk/reference/current/index.html">see embed SDK documentation here</a>). For example:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">setupSdk</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@matterport/sdk</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">setupSdk</span><span class="p">(</span><span class="dl">'</span><span class="s1">YOUR_SDK_KEY</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="c1">// commands</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">.</span><span class="nx">start</span><span class="p">()</span>
+<span class="c1">// observables</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">pose</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">pose</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">})</span>
+<span class="c1">// etc</span>
+</code></pre></div></div>
+
+<p>See <a href="/sdk_tutorials_package.html">here</a> for a tutorial on getting started with the package.</p>
+
+<h2 id="setupsdk-options">setupSdk Options</h2>
+
+<p>You can pass an object with SDK options as the second argument of <code class="language-plaintext highlighter-rouge">setupSdk</code>. Allowed properties and their defaults:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="cm">/**
+   * Array of options to pass on SDK connection.
+   * Anything from sdk.connect will work here.
+   */</span>
+  <span class="na">connectOptions</span><span class="p">:</span> <span class="p">[],</span>
+
+  <span class="cm">/**
+   * The element or selector that will attach the created iframe.
+   * Defaults to document.body if not specified. Ignored if the `iframe` option is provided.
+   */</span>
+  <span class="na">container</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">,</span>
+
+  <span class="cm">/**
+   * The domain to connect to. Defaults to `my.matterport.com`.
+   */</span>
+  <span class="na">domain</span><span class="p">:</span> <span class="dl">'</span><span class="s1">my.matterport.com</span><span class="dl">'</span><span class="p">,</span>
+
+  <span class="cm">/**
+   * The element or selector to use as the iframe for space display.
+   * Creates a new iframe if falsy. Default `undefined`.
+   */</span>
+  <span class="na">iframe</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">,</span>
+
+  <span class="cm">/**
+   * The options to pass to the iframe, as an object of attribute keys and values.
+   *
+   * { width: '500px', height: '500px' }
+   * creates: &lt;iframe width="500px" height="500px"&gt;
+   * ```
+   */</span>
+  <span class="na">iframeAttributes</span><span class="p">:</span> <span class="p">{},</span>
+
+  <span class="cm">/**
+   * The query params to include in the iframe's `src` URL. See https://support.matterport.com/s/article/URL-Parameters
+   * for a full list.
+   *
+   * Do not specify the `m` param in these params - use the `space` option instead.
+   *
+   * ```
+   * { qs: 1 }
+   * creates: &lt;iframe src="...&amp;qs=1"&gt;
+   * ```
+   */</span>
+  <span class="na">iframeQueryParams</span><span class="p">:</span> <span class="p">{},</span>
+
+  <span class="cm">/**
+   * Space ID. Defaults to an example if not specified.
+   */</span>
+  <span class="na">space</span><span class="p">:</span> <span class="dl">'</span><span class="s1">SxQL3iGyoDo</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">setupSdk</span><span class="p">(</span><span class="dl">'</span><span class="s1">YOUR_SDK_KEY</span><span class="dl">'</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span>
+</code></pre></div></div>
+
 
     <div class="tags">
         
@@ -941,7 +1048,7 @@ See the <a href="sdk_changelog.html">change log</a></p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Nov 10, 2022 <br />
+ Site last generated: Nov 16, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

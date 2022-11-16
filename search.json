@@ -205,6 +205,8 @@
 
 
 
+
+
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -213,8 +215,6 @@
 "summary": ""
 }
 ,
-
-
 
 
 
@@ -465,6 +465,17 @@
 "tags": "",
 "keywords": "",
 "url": "sdk_transient_tags_editor.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "SDK Embed Package Tutorial",
+"tags": "",
+"keywords": "",
+"url": "sdk_tutorials_package.html",
 "summary": ""
 }
 ,
