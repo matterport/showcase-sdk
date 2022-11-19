@@ -870,7 +870,7 @@ See the <a href="sdk_changelog.html">change log</a></p>
 
 <p>Now you’ll want to make an action for 3D Showcase to execute. In the code for your web application, add this to a Javascript function where desired. Refer to the <a href="sdk_reference_summary">reference docs</a> for a list of all the actions you can do.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">showcase</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">action</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">arguments</span><span class="o">&gt;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">successCallback</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mpSdk</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">action</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">arguments</span><span class="o">&gt;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">successCallback</span><span class="p">)</span>
 <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">errorCallback</span><span class="p">);</span>
 
 <span class="c1">// ...</span>
@@ -905,7 +905,7 @@ See the <a href="sdk_changelog.html">change log</a></p>
 
 <p>Listening for events from 3D Showcase is done in a similar way.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">showcase</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">event_name</span><span class="o">&gt;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">state_arguments</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">event_name</span><span class="o">&gt;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">state_arguments</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// what to do when this event happens</span>
 <span class="p">});</span>
 </code></pre></div></div>
@@ -1048,7 +1048,7 @@ yarn add @matterport/sdk
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Nov 16, 2022 <br />
+ Site last generated: Nov 18, 2022 <br />
 <p><img class="footer-logo" src="images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

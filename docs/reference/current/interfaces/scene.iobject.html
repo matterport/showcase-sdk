@@ -121,7 +121,7 @@
  <span class="hljs-keyword">const</span> [<span class="hljs-built_in">object</span>, node, component];
 
  <span class="hljs-comment">// create the path</span>
- <span class="hljs-keyword">const</span> emitPath = <span class="hljs-built_in">object</span>.addOutput(component, <span class="hljs-string">&#x27;clicked&#x27;</span>);
+ <span class="hljs-keyword">const</span> emitPath = <span class="hljs-built_in">object</span>.addEmitPath(component, <span class="hljs-string">&#x27;clicked&#x27;</span>);
 
  <span class="hljs-comment">// bind the emit path so that it triggers the `emitPath`&#x27;s associated component&#x27;s onEvent when an event is emitted</span>
  <span class="hljs-built_in">object</span>.bindPath(eventPath, emitPath);
@@ -181,7 +181,7 @@
  <span class="hljs-keyword">const</span> [<span class="hljs-built_in">object</span>, node, component];
 
  <span class="hljs-comment">// create the path</span>
- <span class="hljs-keyword">const</span> eventPath = <span class="hljs-built_in">object</span>.addOutput(component, <span class="hljs-string">&#x27;rerender&#x27;</span>);
+ <span class="hljs-keyword">const</span> eventPath = <span class="hljs-built_in">object</span>.addEventPath(component, <span class="hljs-string">&#x27;rerender&#x27;</span>);
 
  <span class="hljs-comment">// bind the event path so that it triggers the component&#x27;s onEvent when `emitPath` emits an event</span>
  <span class="hljs-built_in">object</span>.bindPath(eventPath, emitPath);
@@ -358,7 +358,7 @@
  <span class="hljs-keyword">const</span> [<span class="hljs-built_in">object</span>, node, component];
 
  <span class="hljs-comment">// create the path</span>
- <span class="hljs-keyword">const</span> outputPath = <span class="hljs-built_in">object</span>.addOutput(component, <span class="hljs-string">&#x27;current&#x27;</span>);
+ <span class="hljs-keyword">const</span> outputPath = <span class="hljs-built_in">object</span>.addOutputPath(component, <span class="hljs-string">&#x27;current&#x27;</span>);
 
  <span class="hljs-comment">// observe changes to the value of `outputs.current` in component</span>
  <span class="hljs-built_in">object</span>.spyOnEvent({
