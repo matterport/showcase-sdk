@@ -241,12 +241,12 @@
  <span class="hljs-built_in">object</span>.spyOnEvent({
    <span class="hljs-attr">path</span>: inputPath,
    <span class="hljs-function"><span class="hljs-title">onEvent</span>(<span class="hljs-params">newValue</span>)</span> {
-     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`input.count&#x27;s new value is <span class="hljs-subst">${newValue}</span>`</span>);
+     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`component.input.count&#x27;s new value is <span class="hljs-subst">${newValue}</span>`</span>);
    },
  });
  <span class="hljs-comment">// read and change the value of the input in the component</span>
  <span class="hljs-keyword">const</span> countValue = inputPath.get();
- inputPath.set(count+ + <span class="hljs-number">1</span>);
+ inputPath.set(count + <span class="hljs-number">1</span>);
 
 <span class="hljs-comment">// bind the path to the value from another (output) path</span>
  <span class="hljs-built_in">object</span>.bindPath(inputPath, outputPath);
@@ -364,7 +364,7 @@
  <span class="hljs-built_in">object</span>.spyOnEvent({
    <span class="hljs-attr">path</span>: outputPath,
    <span class="hljs-function"><span class="hljs-title">onEvent</span>(<span class="hljs-params">newValue</span>)</span> {
-     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`input.current&#x27;s new value is <span class="hljs-subst">${newValue}</span>`</span>);
+     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`component.output.current&#x27;s new value is <span class="hljs-subst">${newValue}</span>`</span>);
    },
  });
  <span class="hljs-comment">// read and bind the value of the output to another component&#x27;s input value</span>
