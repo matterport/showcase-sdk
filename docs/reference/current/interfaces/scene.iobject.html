@@ -51,7 +51,7 @@
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.80.4-0-gc3bde6e75f/sdk.d.ts">3.1.80.4-0-gc3bde6e75f</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.81.2-0-g5aaec2355c/sdk.d.ts">3.1.81.2-0-g5aaec2355c</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -121,7 +121,7 @@
  <span class="hljs-keyword">const</span> [<span class="hljs-built_in">object</span>, node, component];
 
  <span class="hljs-comment">// create the path</span>
- <span class="hljs-keyword">const</span> emitPath = <span class="hljs-built_in">object</span>.addOutput(component, <span class="hljs-string">&#x27;clicked&#x27;</span>);
+ <span class="hljs-keyword">const</span> emitPath = <span class="hljs-built_in">object</span>.addEmitPath(component, <span class="hljs-string">&#x27;clicked&#x27;</span>);
 
  <span class="hljs-comment">// bind the emit path so that it triggers the `emitPath`&#x27;s associated component&#x27;s onEvent when an event is emitted</span>
  <span class="hljs-built_in">object</span>.bindPath(eventPath, emitPath);
@@ -181,7 +181,7 @@
  <span class="hljs-keyword">const</span> [<span class="hljs-built_in">object</span>, node, component];
 
  <span class="hljs-comment">// create the path</span>
- <span class="hljs-keyword">const</span> eventPath = <span class="hljs-built_in">object</span>.addOutput(component, <span class="hljs-string">&#x27;rerender&#x27;</span>);
+ <span class="hljs-keyword">const</span> eventPath = <span class="hljs-built_in">object</span>.addEventPath(component, <span class="hljs-string">&#x27;rerender&#x27;</span>);
 
  <span class="hljs-comment">// bind the event path so that it triggers the component&#x27;s onEvent when `emitPath` emits an event</span>
  <span class="hljs-built_in">object</span>.bindPath(eventPath, emitPath);
@@ -241,12 +241,12 @@
  <span class="hljs-built_in">object</span>.spyOnEvent({
    <span class="hljs-attr">path</span>: inputPath,
    <span class="hljs-function"><span class="hljs-title">onEvent</span>(<span class="hljs-params">newValue</span>)</span> {
-     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`input.count&#x27;s new value is <span class="hljs-subst">${newValue}</span>`</span>);
+     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`component.input.count&#x27;s new value is <span class="hljs-subst">${newValue}</span>`</span>);
    },
  });
  <span class="hljs-comment">// read and change the value of the input in the component</span>
  <span class="hljs-keyword">const</span> countValue = inputPath.get();
- inputPath.set(count+ + <span class="hljs-number">1</span>);
+ inputPath.set(count + <span class="hljs-number">1</span>);
 
 <span class="hljs-comment">// bind the path to the value from another (output) path</span>
  <span class="hljs-built_in">object</span>.bindPath(inputPath, outputPath);
@@ -358,13 +358,13 @@
  <span class="hljs-keyword">const</span> [<span class="hljs-built_in">object</span>, node, component];
 
  <span class="hljs-comment">// create the path</span>
- <span class="hljs-keyword">const</span> outputPath = <span class="hljs-built_in">object</span>.addOutput(component, <span class="hljs-string">&#x27;current&#x27;</span>);
+ <span class="hljs-keyword">const</span> outputPath = <span class="hljs-built_in">object</span>.addOutputPath(component, <span class="hljs-string">&#x27;current&#x27;</span>);
 
  <span class="hljs-comment">// observe changes to the value of `outputs.current` in component</span>
  <span class="hljs-built_in">object</span>.spyOnEvent({
    <span class="hljs-attr">path</span>: outputPath,
    <span class="hljs-function"><span class="hljs-title">onEvent</span>(<span class="hljs-params">newValue</span>)</span> {
-     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`input.current&#x27;s new value is <span class="hljs-subst">${newValue}</span>`</span>);
+     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`component.output.current&#x27;s new value is <span class="hljs-subst">${newValue}</span>`</span>);
    },
  });
  <span class="hljs-comment">// read and bind the value of the output to another component&#x27;s input value</span>
