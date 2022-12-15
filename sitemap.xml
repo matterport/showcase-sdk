@@ -80,6 +80,54 @@
   
   
   <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/app.application.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/app.event.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/app.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/app.phase.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/asset.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/camera.direction.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/camera.event.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/camera.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/sdk_changelog.html</loc>
   </url>
   
@@ -98,10 +146,76 @@
   
   
   <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/conversion.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/dictionary.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/earlyaccess_home.html</loc>
   </url>
   
   
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/emitter.html</loc>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/floor.event.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/floor.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/graph.astarstatus.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/graph.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/graph.iastarrunner.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/graph.icollectionadaptor.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/graph.idirectedgraph.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/graph.searchoptions.html</loc>
+  </url>
   
   
   
@@ -112,12 +226,32 @@
   
   
   <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/icondition.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/sdkbundle_earlyaccess_21.10.1_idchanges.html</loc>
   </url>
   
   
   
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/idisposable.html</loc>
+  </url>
   
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/imapobserver.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/index.html</loc>
+  </url>
   
   
   
@@ -127,8 +261,210 @@
   
   
   
+  
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/iobservable.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/iobservablemap.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/iobserver.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/isubscription.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/label.event.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/label.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/link.creationpolicy.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/link.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/link.openpolicy.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/mattertag.descriptionchunk.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/mattertag.descriptionchunktype.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/mattertag.event.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/mattertag.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/mattertag.imessenger.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/mattertag.link.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/mattertag.linktype.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/mattertag.mattertagdescriptor.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/mattertag.mediatype.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/mattertag.positionoptions.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/mattertag.transition.html</loc>
+  </url>
+  
+  
+  
   <url>
     <loc>https://matterport.github.io/sdk_tutorials_mattertagtotag.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/measurements.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/mode.event.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/mode.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/mode.mode-1.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/mode.transitiontype.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/model.event.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/model.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/mp_sdk.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/oauth.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/oauth.irefreshobserver.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/oauth.itokenfetcher.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/oauth.itokenrefresher.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/oauth.tokeninfo.html</loc>
   </url>
   
   
@@ -146,7 +482,139 @@
   
   
   <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/pointer.colliders.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/pointer.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/renderer.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/sdk_tutorials_cursor.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/room.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/scene.componenttype.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/scene.emitpath.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/scene.eventpath.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/scene.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/scene.icomponent.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/scene.icomponentcontext.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/scene.icomponentdesc.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/scene.icomponenteventspy.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/scene.inode.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/scene.inputpath.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/scene.interactiontype.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/scene.iobject.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/scene.isceneobjectspy.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/scene.outputpath.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/scene.pathbase.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/scene.pathinfo.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/scene.pathtype.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/scene.scenecomponentoptions.html</loc>
   </url>
   
   
@@ -392,6 +860,114 @@
   
   
   
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/sensor.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/sensor.isensor.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/sensor.isensorobserver.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/sensor.isource.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/sensor.sensortype.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/sensor.sourcetype.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/settings.html</loc>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/sweep.alignment.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/sweep.event.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/sweep.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/sweep.placement.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/sweep.transition.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/tag.attachmenttype.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/tag.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/tag.imessenger.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/tour.event.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/tour.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/tour.playstate.html</loc>
+  </url>
   
   
   

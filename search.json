@@ -7,7 +7,7 @@
 "title": "Ambient Light",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_components_ambientlight.html",
+"url": "/showcase-sdk/sdkbundle_components_ambientlight.html",
 "summary": ""
 }
 ,
@@ -18,7 +18,7 @@
 "title": "Camera",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_components_camera.html",
+"url": "/showcase-sdk/sdkbundle_components_camera.html",
 "summary": ""
 }
 ,
@@ -29,7 +29,7 @@
 "title": "DAE Loader",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_components_daeloader.html",
+"url": "/showcase-sdk/sdkbundle_components_daeloader.html",
 "summary": ""
 }
 ,
@@ -40,7 +40,7 @@
 "title": "Directional Light",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_components_directionallight.html",
+"url": "/showcase-sdk/sdkbundle_components_directionallight.html",
 "summary": ""
 }
 ,
@@ -51,7 +51,7 @@
 "title": "FBX Loader",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_components_fbxloader.html",
+"url": "/showcase-sdk/sdkbundle_components_fbxloader.html",
 "summary": ""
 }
 ,
@@ -62,7 +62,7 @@
 "title": "GLTF Loader",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_components_gltfloader.html",
+"url": "/showcase-sdk/sdkbundle_components_gltfloader.html",
 "summary": ""
 }
 ,
@@ -73,7 +73,7 @@
 "title": "Input",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_components_input.html",
+"url": "/showcase-sdk/sdkbundle_components_input.html",
 "summary": ""
 }
 ,
@@ -84,7 +84,7 @@
 "title": "OBJ Loader",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_components_objloader.html",
+"url": "/showcase-sdk/sdkbundle_components_objloader.html",
 "summary": ""
 }
 ,
@@ -95,7 +95,7 @@
 "title": "Point Light",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_components_pointlight.html",
+"url": "/showcase-sdk/sdkbundle_components_pointlight.html",
 "summary": ""
 }
 ,
@@ -106,7 +106,7 @@
 "title": "Transform Controls",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_components_transformcontrols.html",
+"url": "/showcase-sdk/sdkbundle_components_transformcontrols.html",
 "summary": ""
 }
 ,
@@ -117,7 +117,7 @@
 "title": "XR (Limited Functionality)",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_components_xr.html",
+"url": "/showcase-sdk/sdkbundle_components_xr.html",
 "summary": ""
 }
 ,
@@ -128,7 +128,95 @@
 "title": "API Home",
 "tags": "",
 "keywords": "",
-"url": "api_home.html",
+"url": "/showcase-sdk/api_home.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Application",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsapp.application.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Event",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsapp.event.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: App",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulesapp.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Phase",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsapp.phase.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Asset",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulesasset.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Direction",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumscamera.direction.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Event",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumscamera.event.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Camera",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulescamera.html",
 "summary": ""
 }
 ,
@@ -139,7 +227,7 @@
 "title": "Change Log",
 "tags": "",
 "keywords": "",
-"url": "sdk_changelog.html",
+"url": "/showcase-sdk/sdk_changelog.html",
 "summary": ""
 }
 ,
@@ -150,7 +238,7 @@
 "title": "Using Collection Data",
 "tags": "",
 "keywords": "",
-"url": "sdk_tutorials_collections.html",
+"url": "/showcase-sdk/sdk_tutorials_collections.html",
 "summary": ""
 }
 ,
@@ -161,7 +249,29 @@
 "title": "SDK Connect",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_connect.html",
+"url": "/showcase-sdk/sdkbundle_connect.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Conversion",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulesconversion.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: Dictionary",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesdictionary.html",
 "summary": ""
 }
 ,
@@ -172,7 +282,18 @@
 "title": "Early Access",
 "tags": "",
 "keywords": "",
-"url": "earlyaccess_home.html",
+"url": "/showcase-sdk/earlyaccess_home.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: Emitter",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesemitter.html",
 "summary": ""
 }
 ,
@@ -182,10 +303,109 @@
 
 
 {
+"title": "Enumeration: Event",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsfloor.event.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Floor",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulesfloor.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: AStarStatus",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsgraph.astarstatus.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Graph",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulesgraph.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: IAStarRunner",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesgraph.iastarrunner.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: ICollectionAdaptor",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesgraph.icollectionadaptor.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: IDirectedGraph",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesgraph.idirectedgraph.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: SearchOptions",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesgraph.searchoptions.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Using Tag Sandbox for Custom HTML",
 "tags": "",
 "keywords": "",
-"url": "sdk_tutorials_htmlsandbox.html",
+"url": "/showcase-sdk/sdk_tutorials_htmlsandbox.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: ICondition",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesicondition.html",
 "summary": ""
 }
 ,
@@ -196,7 +416,51 @@
 "title": "Sweep and floor id changes",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_earlyaccess_21.10.1_idchanges.html",
+"url": "/showcase-sdk/sdkbundle_earlyaccess_21.10.1_idchanges.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: IDisposable",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesidisposable.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: IMapObserver",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesimapobserver.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Reference Documentation",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentindex.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Matterport Developers",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/index.html",
 "summary": ""
 }
 ,
@@ -208,10 +472,219 @@
 
 
 {
-"title": "Matterport Developers",
+"title": "Interface: IObservable",
 "tags": "",
 "keywords": "",
-"url": "index.html",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesiobservable.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: IObservableMap",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesiobservablemap.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: IObserver",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesiobserver.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: ISubscription",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesisubscription.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Event",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumslabel.event.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Label",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmoduleslabel.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: CreationPolicy",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumslink.creationpolicy.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Link",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmoduleslink.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: OpenPolicy",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumslink.openpolicy.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: DescriptionChunk",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesmattertag.descriptionchunk.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: DescriptionChunkType",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsmattertag.descriptionchunktype.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Event",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsmattertag.event.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Mattertag",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulesmattertag.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: IMessenger",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesmattertag.imessenger.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: Link",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesmattertag.link.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: LinkType",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsmattertag.linktype.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: MattertagDescriptor",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesmattertag.mattertagdescriptor.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: MediaType",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsmattertag.mediatype.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: PositionOptions",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesmattertag.positionoptions.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Transition",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsmattertag.transition.html",
 "summary": ""
 }
 ,
@@ -222,7 +695,150 @@
 "title": "Migrating from Mattertags to Tags",
 "tags": "",
 "keywords": "",
-"url": "sdk_tutorials_mattertagtotag.html",
+"url": "/showcase-sdk/sdk_tutorials_mattertagtotag.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Measurements",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulesmeasurements.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Event",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsmode.event.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Mode",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulesmode.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Mode",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsmode.mode-1.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: TransitionType",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsmode.transitiontype.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Event",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsmodel.event.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Model",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulesmodel.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: MP_SDK",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesmp_sdk.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: OAuth",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulesoauth.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: IRefreshObserver",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesoauth.irefreshobserver.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: ITokenFetcher",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesoauth.itokenfetcher.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: ITokenRefresher",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesoauth.itokenrefresher.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: TokenInfo",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesoauth.tokeninfo.html",
 "summary": ""
 }
 ,
@@ -233,7 +849,7 @@
 "title": "Using Observable Data",
 "tags": "",
 "keywords": "",
-"url": "sdk_tutorials_observables.html",
+"url": "/showcase-sdk/sdk_tutorials_observables.html",
 "summary": ""
 }
 ,
@@ -244,7 +860,40 @@
 "title": "Pathfinding",
 "tags": "",
 "keywords": "",
-"url": "sdk_tutorials_pathfinding.html",
+"url": "/showcase-sdk/sdk_tutorials_pathfinding.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Colliders",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumspointer.colliders.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Pointer",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulespointer.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Renderer",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulesrenderer.html",
 "summary": ""
 }
 ,
@@ -255,7 +904,216 @@
 "title": "Pointer Reticle",
 "tags": "",
 "keywords": "",
-"url": "sdk_tutorials_cursor.html",
+"url": "/showcase-sdk/sdk_tutorials_cursor.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Room",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulesroom.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: ComponentType",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsscene.componenttype.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: EmitPath",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.emitpath.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: EventPath",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.eventpath.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Scene",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulesscene.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: IComponent",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.icomponent.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: IComponentContext",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.icomponentcontext.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: IComponentDesc",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.icomponentdesc.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: IComponentEventSpy",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.icomponenteventspy.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: INode",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.inode.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: InputPath",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.inputpath.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: InteractionType",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsscene.interactiontype.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: IObject",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.iobject.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: ISceneObjectSpy",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.isceneobjectspy.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: OutputPath",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.outputpath.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: PathBase",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.pathbase.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: PathInfo",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.pathinfo.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: PathType",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsscene.pathtype.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: SceneComponentOptions",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.scenecomponentoptions.html",
 "summary": ""
 }
 ,
@@ -266,7 +1124,7 @@
 "title": "Scene Object Improvements",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_earlyaccess_21.10.1_sceneobjects.html",
+"url": "/showcase-sdk/sdkbundle_earlyaccess_21.10.1_sceneobjects.html",
 "summary": ""
 }
 ,
@@ -277,7 +1135,7 @@
 "title": "SDK Client Release Notes",
 "tags": "",
 "keywords": "",
-"url": "sdk_client_release_notes.html",
+"url": "/showcase-sdk/sdk_client_release_notes.html",
 "summary": ""
 }
 ,
@@ -288,7 +1146,7 @@
 "title": "Concepts",
 "tags": "",
 "keywords": "",
-"url": "sdk_concepts.html",
+"url": "/showcase-sdk/sdk_concepts.html",
 "summary": ""
 }
 ,
@@ -299,7 +1157,7 @@
 "title": "Creating Mattertags",
 "tags": "",
 "keywords": "",
-"url": "sdk_creating_mattertags.html",
+"url": "/showcase-sdk/sdk_creating_mattertags.html",
 "summary": ""
 }
 ,
@@ -310,7 +1168,7 @@
 "title": "Editing Mattertags",
 "tags": "",
 "keywords": "",
-"url": "sdk_editing_mattertags.html",
+"url": "/showcase-sdk/sdk_editing_mattertags.html",
 "summary": ""
 }
 ,
@@ -321,7 +1179,7 @@
 "title": "Examples Summary",
 "tags": "",
 "keywords": "",
-"url": "sdk_examples_summary.html",
+"url": "/showcase-sdk/sdk_examples_summary.html",
 "summary": ""
 }
 ,
@@ -332,7 +1190,7 @@
 "title": "SDK for Embeds",
 "tags": "",
 "keywords": "",
-"url": "sdk_home.html",
+"url": "/showcase-sdk/sdk_home.html",
 "summary": ""
 }
 ,
@@ -343,7 +1201,7 @@
 "title": "Intersection Inspector",
 "tags": "",
 "keywords": "",
-"url": "sdk_intersection_inspector.html",
+"url": "/showcase-sdk/sdk_intersection_inspector.html",
 "summary": ""
 }
 ,
@@ -354,7 +1212,7 @@
 "title": "Kitchen Sink",
 "tags": "",
 "keywords": "",
-"url": "sdk_kitchen_sink.html",
+"url": "/showcase-sdk/sdk_kitchen_sink.html",
 "summary": ""
 }
 ,
@@ -365,7 +1223,7 @@
 "title": "Navigation Controls",
 "tags": "",
 "keywords": "",
-"url": "sdk_navigation_controls.html",
+"url": "/showcase-sdk/sdk_navigation_controls.html",
 "summary": ""
 }
 ,
@@ -376,7 +1234,7 @@
 "title": "Quick Start",
 "tags": "",
 "keywords": "",
-"url": "sdk_quickstart.html",
+"url": "/showcase-sdk/sdk_quickstart.html",
 "summary": ""
 }
 ,
@@ -387,7 +1245,7 @@
 "title": "Reference Documentation Summary",
 "tags": "",
 "keywords": "",
-"url": "sdk_reference_summary.html",
+"url": "/showcase-sdk/sdk_reference_summary.html",
 "summary": ""
 }
 ,
@@ -398,7 +1256,7 @@
 "title": "Remote Control",
 "tags": "",
 "keywords": "",
-"url": "sdk_remote_control.html",
+"url": "/showcase-sdk/sdk_remote_control.html",
 "summary": ""
 }
 ,
@@ -409,7 +1267,7 @@
 "title": "Sensors - Source Areas",
 "tags": "",
 "keywords": "",
-"url": "sdk_sensors_source_areas.html",
+"url": "/showcase-sdk/sdk_sensors_source_areas.html",
 "summary": ""
 }
 ,
@@ -420,7 +1278,7 @@
 "title": "Sensors - Sweep Control",
 "tags": "",
 "keywords": "",
-"url": "sdk_sensors_sweep_control.html",
+"url": "/showcase-sdk/sdk_sensors_sweep_control.html",
 "summary": ""
 }
 ,
@@ -431,7 +1289,7 @@
 "title": "Sensors - Tags Level of Detail",
 "tags": "",
 "keywords": "",
-"url": "sdk_sensors_tags_level_of_detail.html",
+"url": "/showcase-sdk/sdk_sensors_tags_level_of_detail.html",
 "summary": ""
 }
 ,
@@ -442,7 +1300,7 @@
 "title": "Tags Quiz",
 "tags": "",
 "keywords": "",
-"url": "sdk_tags_quiz.html",
+"url": "/showcase-sdk/sdk_tags_quiz.html",
 "summary": ""
 }
 ,
@@ -453,7 +1311,7 @@
 "title": "Tags Quiz - Overlay",
 "tags": "",
 "keywords": "",
-"url": "sdk_tags_quiz_overlay.html",
+"url": "/showcase-sdk/sdk_tags_quiz_overlay.html",
 "summary": ""
 }
 ,
@@ -464,7 +1322,7 @@
 "title": "Transient Tags Editor",
 "tags": "",
 "keywords": "",
-"url": "sdk_transient_tags_editor.html",
+"url": "/showcase-sdk/sdk_transient_tags_editor.html",
 "summary": ""
 }
 ,
@@ -475,7 +1333,7 @@
 "title": "SDK Embed Package Tutorial",
 "tags": "",
 "keywords": "",
-"url": "sdk_tutorials_package.html",
+"url": "/showcase-sdk/sdk_tutorials_package.html",
 "summary": ""
 }
 ,
@@ -486,7 +1344,7 @@
 "title": "Typescript Declarations",
 "tags": "",
 "keywords": "",
-"url": "sdk_types.html",
+"url": "/showcase-sdk/sdk_types.html",
 "summary": ""
 }
 ,
@@ -497,7 +1355,7 @@
 "title": "Upgrading",
 "tags": "",
 "keywords": "",
-"url": "sdk_upgrading.html",
+"url": "/showcase-sdk/sdk_upgrading.html",
 "summary": ""
 }
 ,
@@ -508,7 +1366,7 @@
 "title": "Vocabulary",
 "tags": "",
 "keywords": "",
-"url": "sdk_vocabulary.html",
+"url": "/showcase-sdk/sdk_vocabulary.html",
 "summary": ""
 }
 ,
@@ -519,7 +1377,7 @@
 "title": "Architecture",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_architecture.html",
+"url": "/showcase-sdk/sdkbundle_architecture.html",
 "summary": ""
 }
 ,
@@ -530,7 +1388,7 @@
 "title": "Content Attribution",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_content_attribution.html",
+"url": "/showcase-sdk/sdkbundle_content_attribution.html",
 "summary": ""
 }
 ,
@@ -541,7 +1399,7 @@
 "title": "Custom Experience",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_custom_experience.html",
+"url": "/showcase-sdk/sdkbundle_custom_experience.html",
 "summary": ""
 }
 ,
@@ -552,7 +1410,7 @@
 "title": "Examples Summary",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_examples_summary.html",
+"url": "/showcase-sdk/sdkbundle_examples_summary.html",
 "summary": ""
 }
 ,
@@ -563,7 +1421,7 @@
 "title": "SDK Bundle",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_home.html",
+"url": "/showcase-sdk/sdkbundle_home.html",
 "summary": ""
 }
 ,
@@ -574,7 +1432,7 @@
 "title": "HTML Live Stream",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_html_livestream.html",
+"url": "/showcase-sdk/sdkbundle_html_livestream.html",
 "summary": ""
 }
 ,
@@ -585,7 +1443,7 @@
 "title": "IoT Canvas",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_iot_canvas.html",
+"url": "/showcase-sdk/sdkbundle_iot_canvas.html",
 "summary": ""
 }
 ,
@@ -596,7 +1454,7 @@
 "title": "Local Webcam",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_local_webcam.html",
+"url": "/showcase-sdk/sdkbundle_local_webcam.html",
 "summary": ""
 }
 ,
@@ -607,7 +1465,7 @@
 "title": "Security Camera FOV",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_security_camera.html",
+"url": "/showcase-sdk/sdkbundle_security_camera.html",
 "summary": ""
 }
 ,
@@ -618,7 +1476,7 @@
 "title": "Working With Models",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_tutorials_models.html",
+"url": "/showcase-sdk/sdkbundle_tutorials_models.html",
 "summary": ""
 }
 ,
@@ -629,7 +1487,7 @@
 "title": "Setting up Embedly",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_tutorials_setting_up_embedly.html",
+"url": "/showcase-sdk/sdkbundle_tutorials_setting_up_embedly.html",
 "summary": ""
 }
 ,
@@ -640,7 +1498,7 @@
 "title": "Setting up a local environment",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_tutorials_setup.html",
+"url": "/showcase-sdk/sdkbundle_tutorials_setup.html",
 "summary": ""
 }
 ,
@@ -651,7 +1509,7 @@
 "title": "Using OAuth",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_tutorials_using_oauth.html",
+"url": "/showcase-sdk/sdkbundle_tutorials_using_oauth.html",
 "summary": ""
 }
 ,
@@ -662,7 +1520,7 @@
 "title": "Using Scene Objects",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_tutorials_using_scene_objects.html",
+"url": "/showcase-sdk/sdkbundle_tutorials_using_scene_objects.html",
 "summary": ""
 }
 ,
@@ -673,7 +1531,7 @@
 "title": "Using XR",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_tutorials_using_xr.html",
+"url": "/showcase-sdk/sdkbundle_tutorials_using_xr.html",
 "summary": ""
 }
 ,
@@ -684,7 +1542,7 @@
 "title": "Using Typescript Declarations",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_types.html",
+"url": "/showcase-sdk/sdkbundle_types.html",
 "summary": ""
 }
 ,
@@ -695,7 +1553,7 @@
 "title": "Virtual Staging",
 "tags": "",
 "keywords": "",
-"url": "sdkbundle_virtual_staging.html",
+"url": "/showcase-sdk/sdkbundle_virtual_staging.html",
 "summary": ""
 }
 ,
@@ -704,13 +1562,211 @@
 
 
 
+{
+"title": "Namespace: Sensor",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulessensor.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: ISensor",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacessensor.isensor.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: ISensorObserver",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacessensor.isensorobserver.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: ISource",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacessensor.isource.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: SensorType",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumssensor.sensortype.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: SourceType",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumssensor.sourcetype.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Settings",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulessettings.html",
+"summary": ""
+}
+,
+
+
+
+
+
+{
+"title": "Enumeration: Alignment",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumssweep.alignment.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Event",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumssweep.event.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Sweep",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulessweep.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Placement",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumssweep.placement.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Transition",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumssweep.transition.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: AttachmentType",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumstag.attachmenttype.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Tag",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulestag.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: IMessenger",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentinterfacestag.imessenger.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Event",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumstour.event.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Tour",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentmodulestour.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: PlayState",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumstour.playstate.html",
+"summary": ""
+}
+,
+
 
 
 {
 "title": "",
 "tags": "",
 "keywords": "",
-"url": "assetscssstyle.css",
+"url": "/showcase-sdk/assetscssstyle.css",
 "summary": ""
 }
 
