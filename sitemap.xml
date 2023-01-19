@@ -255,11 +255,11 @@
   
   
   
+  
+  
   <url>
     <loc>https://matterport.github.io/index.html</loc>
   </url>
-  
-  
   
   
   
@@ -434,6 +434,12 @@
   
   
   <url>
+    <loc>https://matterport.github.io/modelapi_changelog.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/docs/reference/current/interfaces/mp_sdk.html</loc>
   </url>
   
@@ -507,6 +513,12 @@
   
   <url>
     <loc>https://matterport.github.io/docs/reference/current/modules/room.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/scene.component.html</loc>
   </url>
   
   
@@ -746,12 +758,6 @@
   
   
   <url>
-    <loc>https://matterport.github.io/sdk_upgrading.html</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://matterport.github.io/sdk_vocabulary.html</loc>
   </url>
   
@@ -801,6 +807,12 @@
   
   <url>
     <loc>https://matterport.github.io/sdkbundle_local_webcam.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdkbundle_quickstart.html</loc>
   </url>
   
   
@@ -949,6 +961,12 @@
   
   <url>
     <loc>https://matterport.github.io/docs/reference/current/interfaces/tag.imessenger.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/tags_icons_reference.html</loc>
   </url>
   
   

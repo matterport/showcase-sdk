@@ -456,6 +456,8 @@
 
 
 
+
+
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -464,8 +466,6 @@
 "summary": ""
 }
 ,
-
-
 
 
 
@@ -780,6 +780,17 @@
 
 
 {
+"title": "Model API Changelog",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/modelapi_changelog.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Interface: MP_SDK",
 "tags": "",
 "keywords": "",
@@ -916,6 +927,17 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/docsreferencecurrentmodulesroom.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Component",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docsreferencecurrentenumsscene.component.html",
 "summary": ""
 }
 ,
@@ -1231,7 +1253,7 @@
 
 
 {
-"title": "Quick Start",
+"title": "SDK for Embeds Quick Start",
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/sdk_quickstart.html",
@@ -1352,17 +1374,6 @@
 
 
 {
-"title": "Upgrading",
-"tags": "",
-"keywords": "",
-"url": "/showcase-sdk/sdk_upgrading.html",
-"summary": ""
-}
-,
-
-
-
-{
 "title": "Vocabulary",
 "tags": "",
 "keywords": "",
@@ -1455,6 +1466,17 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/sdkbundle_local_webcam.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Showcase SDK Bundle Quick Start",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/sdkbundle_quickstart.html",
 "summary": ""
 }
 ,
@@ -1723,6 +1745,17 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/docsreferencecurrentinterfacestag.imessenger.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Tags 2.0 Icons Reference",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/tags_icons_reference.html",
 "summary": ""
 }
 ,

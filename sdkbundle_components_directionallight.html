@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="/showcase-sdk/css/customstyles.css">
 <link rel="stylesheet" href="/showcase-sdk/css/custom.css">
+<link rel="stylesheet" href="/showcase-sdk/css/tags2.css">
 
 <link rel="stylesheet" href="/showcase-sdk/css/boxshadowproperties.css">
 <!-- most color styles are extracted out to here -->
@@ -106,7 +107,7 @@
           src="/showcase-sdk/images/MP-logo_H_lock-RGB_white.svg"
         /><span class="projectTitle"> </span></a
       >
-      <div class="dev-nav-links col-md-9">
+      <div class="dev-nav-links col-md-6">
         <div class="dropdown-items">
           <div class="dropdown ">
             <a class="dropbtn active" href="index.html">SDK Docs</a>
@@ -123,42 +124,27 @@
               <a href="https://api.matterport.com/graphiql">Interactive Console</a>
             </div>
           </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms">Terms</a>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Directional Light page: ' + window.location.href;">Feedback</a>
+          </div>
+        </div>
+      </div>
+      <div class="right-content col-md-3">
+        <div class="dev-input-container">
+          <!-- Add roboto font to search bar -->
+          <img src="/showcase-sdk/images/search_button.png" />
+          <input id="search-input" type="text" placeholder="Search"/>
+          <div id="results-container"></div>        
         </div>
       </div>
     </div>
   </div>
-  
-  <div class="dev-bottom-bar">
-    <h3></h3>
-    <div class="right-content">
-      <div>
-        <label id="tg-sb-link" class="pure-material-switch">
-          <input type="checkbox" checked />
-          <span>Nav</span>
-        </label>
-      </div>
-      
-      
-
-
-  <a title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Directional Light page: ' + window.location.href;">Give us feedback</a>
-
-
- 
-    </div>
-  </div>
-  
   <!-- /.container -->
 </nav>
- <div class='global-links-container'>
-  <a
-    class='global-link'
-    href="https://matterport.com/legal/sdk-api-agreement"
-    target="_blank"
-    rel="noopener"
-  >SDK Agreement
-  </a>
-</div>
+ 
     <!-- Page Content -->
     <div class="dev-page-wrapper">
       <div id="main">
@@ -169,13 +155,6 @@
           <aside class="col-md-3" id="tg-sb-sidebar">
             
 <div id="mysidebar" class="nav">
-  <div class="dev-input-container">
-    <!-- Add roboto font to search bar -->
-    <img src="/showcase-sdk/images/search_button.png" />
-    <input id="search-input" type="text" placeholder="Search"/>
-    <div id="results-container"></div>
-
-  </div>
   
   
   
@@ -245,7 +224,14 @@
           
           
           
-          <li><a title="Quick Start" href="/showcase-sdk/sdk_quickstart.html">Quick Start</a></li>
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdk_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
           
           
           
@@ -253,13 +239,6 @@
           
           
           <li><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Upgrading" href="/showcase-sdk/sdk_upgrading.html">Upgrading</a></li>
           
           
           
@@ -283,14 +262,28 @@
           
           
           
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdkbundle_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setting up Embed.ly" href="/showcase-sdk/sdkbundle_tutorials_setting_up_embedly.html">Setting up Embed.ly</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setup a Local Environment" href="/showcase-sdk/sdkbundle_tutorials_setup.html">Setup a Local Environment</a></li>
+          
+          
+          
+          
+          
+          
           <li><a title="Architecture" href="/showcase-sdk/sdkbundle_architecture.html">Architecture</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Setup" href="/showcase-sdk/sdkbundle_tutorials_setup.html">Setup</a></li>
           
           
           
@@ -399,7 +392,7 @@
           
           
           
-          <li><a title="SDK Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Package</a></li>
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
           
           
           
@@ -427,7 +420,7 @@
           
           
           
-          <li><a title="Editing mattertags" href="/showcase-sdk/sdk_editing_mattertags.html">Editing mattertags</a></li>
+          <li><a title="Editing Mattertags" href="/showcase-sdk/sdk_editing_mattertags.html">Editing Mattertags</a></li>
           
           
           
@@ -441,35 +434,28 @@
           
           
           
-          <li><a title="Using Code Sandboxes" href="/showcase-sdk/sdk_tutorials_htmlsandbox.html">Using Code Sandboxes</a></li>
+          <li><a title="Tags Code Sandboxes" href="/showcase-sdk/sdk_tutorials_htmlsandbox.html">Tags Code Sandboxes</a></li>
           
           
           
           
           
           
-          <li><a title="Using Pathfinding" href="/showcase-sdk/sdk_tutorials_pathfinding.html">Using Pathfinding</a></li>
+          <li><a title="Pathfinding" href="/showcase-sdk/sdk_tutorials_pathfinding.html">Pathfinding</a></li>
           
           
           
           
           
           
-          <li><a title="Controlling the Pointer Reticle" href="/showcase-sdk/sdk_tutorials_cursor.html">Controlling the Pointer Reticle</a></li>
+          <li><a title="Pointer Reticle" href="/showcase-sdk/sdk_tutorials_cursor.html">Pointer Reticle</a></li>
           
           
           
           
           
           
-          <li><a title="Working with models" href="/showcase-sdk/sdkbundle_tutorials_models.html">Working with models</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Setting up Embedly" href="/showcase-sdk/sdkbundle_tutorials_setting_up_embedly.html">Setting up Embedly</a></li>
+          <li><a title="Working with Models" href="/showcase-sdk/sdkbundle_tutorials_models.html">Working with Models</a></li>
           
           
           
@@ -483,7 +469,7 @@
           
           
           
-          <li><a title="Using scene objects" href="/showcase-sdk/sdkbundle_tutorials_using_scene_objects.html">Using scene objects</a></li>
+          <li><a title="Using Scene Objects" href="/showcase-sdk/sdkbundle_tutorials_using_scene_objects.html">Using Scene Objects</a></li>
           
           
           
@@ -643,7 +629,21 @@
           
           
           
+          <li><a title="Model API Changelog" href="/showcase-sdk/modelapi_changelog.html">Model API Changelog</a></li>
+          
+          
+          
+          
+          
+          
           <li><a title="API Reference Docs" href="https://api.matterport.com/model/docs/reference" target="_blank" rel="noopener">API Reference Docs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags 2.0 Icons Reference" href="/showcase-sdk/tags_icons_reference.html">Tags 2.0 Icons Reference</a></li>
           
           
           
@@ -832,8 +832,8 @@ $('#toc').on('click', 'a', function() {
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Dec 15, 2022 <br />
+               &copy;2023 Matterport, Inc. All rights reserved. <br />
+ Site last generated: Jan 19, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

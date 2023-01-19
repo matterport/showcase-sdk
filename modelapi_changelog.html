@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Upgrading | Matterport Developers</title>
+<title>Model API Changelog | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="/showcase-sdk/css/customstyles.css">
 <link rel="stylesheet" href="/showcase-sdk/css/custom.css">
+<link rel="stylesheet" href="/showcase-sdk/css/tags2.css">
 
 <link rel="stylesheet" href="/showcase-sdk/css/boxshadowproperties.css">
 <!-- most color styles are extracted out to here -->
@@ -106,7 +107,7 @@
           src="/showcase-sdk/images/MP-logo_H_lock-RGB_white.svg"
         /><span class="projectTitle"> </span></a
       >
-      <div class="dev-nav-links col-md-9">
+      <div class="dev-nav-links col-md-6">
         <div class="dropdown-items">
           <div class="dropdown ">
             <a class="dropbtn active" href="index.html">SDK Docs</a>
@@ -123,42 +124,27 @@
               <a href="https://api.matterport.com/graphiql">Interactive Console</a>
             </div>
           </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms">Terms</a>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Model API Changelog page: ' + window.location.href;">Feedback</a>
+          </div>
+        </div>
+      </div>
+      <div class="right-content col-md-3">
+        <div class="dev-input-container">
+          <!-- Add roboto font to search bar -->
+          <img src="/showcase-sdk/images/search_button.png" />
+          <input id="search-input" type="text" placeholder="Search"/>
+          <div id="results-container"></div>        
         </div>
       </div>
     </div>
   </div>
-  
-  <div class="dev-bottom-bar">
-    <h3></h3>
-    <div class="right-content">
-      <div>
-        <label id="tg-sb-link" class="pure-material-switch">
-          <input type="checkbox" checked />
-          <span>Nav</span>
-        </label>
-      </div>
-      
-      
-
-
-  <a title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Upgrading page: ' + window.location.href;">Give us feedback</a>
-
-
- 
-    </div>
-  </div>
-  
   <!-- /.container -->
 </nav>
- <div class='global-links-container'>
-  <a
-    class='global-link'
-    href="https://matterport.com/legal/sdk-api-agreement"
-    target="_blank"
-    rel="noopener"
-  >SDK Agreement
-  </a>
-</div>
+ 
     <!-- Page Content -->
     <div class="dev-page-wrapper">
       <div id="main">
@@ -169,13 +155,6 @@
           <aside class="col-md-3" id="tg-sb-sidebar">
             
 <div id="mysidebar" class="nav">
-  <div class="dev-input-container">
-    <!-- Add roboto font to search bar -->
-    <img src="/showcase-sdk/images/search_button.png" />
-    <input id="search-input" type="text" placeholder="Search"/>
-    <div id="results-container"></div>
-
-  </div>
   
   
   
@@ -245,7 +224,14 @@
           
           
           
-          <li><a title="Quick Start" href="/showcase-sdk/sdk_quickstart.html">Quick Start</a></li>
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdk_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
           
           
           
@@ -253,13 +239,6 @@
           
           
           <li><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
-          
-          
-          
-          
-          
-          
-          <li class="active"><a title="Upgrading" href="/showcase-sdk/sdk_upgrading.html">Upgrading</a></li>
           
           
           
@@ -283,14 +262,28 @@
           
           
           
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdkbundle_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setting up Embed.ly" href="/showcase-sdk/sdkbundle_tutorials_setting_up_embedly.html">Setting up Embed.ly</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setup a Local Environment" href="/showcase-sdk/sdkbundle_tutorials_setup.html">Setup a Local Environment</a></li>
+          
+          
+          
+          
+          
+          
           <li><a title="Architecture" href="/showcase-sdk/sdkbundle_architecture.html">Architecture</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Setup" href="/showcase-sdk/sdkbundle_tutorials_setup.html">Setup</a></li>
           
           
           
@@ -399,7 +392,7 @@
           
           
           
-          <li><a title="SDK Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Package</a></li>
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
           
           
           
@@ -427,7 +420,7 @@
           
           
           
-          <li><a title="Editing mattertags" href="/showcase-sdk/sdk_editing_mattertags.html">Editing mattertags</a></li>
+          <li><a title="Editing Mattertags" href="/showcase-sdk/sdk_editing_mattertags.html">Editing Mattertags</a></li>
           
           
           
@@ -441,35 +434,28 @@
           
           
           
-          <li><a title="Using Code Sandboxes" href="/showcase-sdk/sdk_tutorials_htmlsandbox.html">Using Code Sandboxes</a></li>
+          <li><a title="Tags Code Sandboxes" href="/showcase-sdk/sdk_tutorials_htmlsandbox.html">Tags Code Sandboxes</a></li>
           
           
           
           
           
           
-          <li><a title="Using Pathfinding" href="/showcase-sdk/sdk_tutorials_pathfinding.html">Using Pathfinding</a></li>
+          <li><a title="Pathfinding" href="/showcase-sdk/sdk_tutorials_pathfinding.html">Pathfinding</a></li>
           
           
           
           
           
           
-          <li><a title="Controlling the Pointer Reticle" href="/showcase-sdk/sdk_tutorials_cursor.html">Controlling the Pointer Reticle</a></li>
+          <li><a title="Pointer Reticle" href="/showcase-sdk/sdk_tutorials_cursor.html">Pointer Reticle</a></li>
           
           
           
           
           
           
-          <li><a title="Working with models" href="/showcase-sdk/sdkbundle_tutorials_models.html">Working with models</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Setting up Embedly" href="/showcase-sdk/sdkbundle_tutorials_setting_up_embedly.html">Setting up Embedly</a></li>
+          <li><a title="Working with Models" href="/showcase-sdk/sdkbundle_tutorials_models.html">Working with Models</a></li>
           
           
           
@@ -483,7 +469,7 @@
           
           
           
-          <li><a title="Using scene objects" href="/showcase-sdk/sdkbundle_tutorials_using_scene_objects.html">Using scene objects</a></li>
+          <li><a title="Using Scene Objects" href="/showcase-sdk/sdkbundle_tutorials_using_scene_objects.html">Using Scene Objects</a></li>
           
           
           
@@ -643,7 +629,21 @@
           
           
           
+          <li class="active"><a title="Model API Changelog" href="/showcase-sdk/modelapi_changelog.html">Model API Changelog</a></li>
+          
+          
+          
+          
+          
+          
           <li><a title="API Reference Docs" href="https://api.matterport.com/model/docs/reference" target="_blank" rel="noopener">API Reference Docs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags 2.0 Icons Reference" href="/showcase-sdk/tags_icons_reference.html">Tags 2.0 Icons Reference</a></li>
           
           
           
@@ -705,7 +705,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="Upgrading">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Model API Changelog">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -720,7 +720,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">Upgrading</h1>
+   <h1 class="post-title-main">Model API Changelog</h1>
 </div>
 
 
@@ -730,143 +730,149 @@ noResultsText: '<li><div>No results found.<div></li>',
    
 
     
+
+
     
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
 
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+   <h3 id="january-18-2023">January 18, 2023</h3>
 
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">icon</code> attribute on <a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/mattertag.doc.html">Mattertags</a> may now be read and patched.  Please see <a href="tags_icons_reference.html">Tags 2.0 Icons Reference</a> for the full icon set.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">floor</code> attribute on Labels may now be <a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/label.doc.html">queried</a> and mutated.</li>
+  <li>Added ID for the resource (denoting SID of the resource) in <code class="language-plaintext highlighter-rouge">AccessInfo</code> type for access query</li>
+</ul>
 
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
+<h3 id="december-14-2023">December 14, 2023</h3>
+
+<ul>
+  <li>Folder and model api query for <code class="language-plaintext highlighter-rouge">access</code> now in <code class="language-plaintext highlighter-rouge">@beta</code></li>
+  <li>The HTTP status code will be more accurate in cases where the entire graph query fails to process.</li>
+  <li>The error structure will also now include an additional httpStatus attribute which indicates what the equivalent HTTP status for each sub-error would have been</li>
+</ul>
+
+<p>API Changes
+Example model query:</p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="s2">"$modelId"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">access</span><span class="p">(</span><span class="n">pageSize</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="n">orderBy</span><span class="p">:</span><span class="n">ROLE</span><span class="p">,</span><span class="w"> </span><span class="n">filters</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">Admin</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">email</span><span class="w">
+        </span><span class="n">type</span><span class="w">
+        </span><span class="n">role</span><span class="w">
+        </span><span class="n">name</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="n">nextOffset</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Example folder query:</p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">folder</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">folder</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="s2">"$folderId"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">access</span><span class="p">(</span><span class="n">filters</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">FolderCreator</span><span class="p">],</span><span class="w"> </span><span class="n">pageSize</span><span class="p">:</span><span class="mi">500</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">email</span><span class="w">
+        </span><span class="n">name</span><span class="w">
+        </span><span class="n">role</span><span class="w">
+        </span><span class="n">type</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="n">nextOffset</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="november-16-2023">November 16, 2023</h3>
+
+<ul>
+  <li><a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/folder.doc.html">Folder API query</a> for <code class="language-plaintext highlighter-rouge">modelCountSummary</code> is now out of <code class="language-plaintext highlighter-rouge">@beta</code></li>
+</ul>
+
+<h3 id="october-26-2023">October 26, 2023</h3>
+
+<ul>
+  <li><a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/folder.doc.html">Folder</a> extensions now out of <code class="language-plaintext highlighter-rouge">@beta</code></li>
+  <li>Webhook Mutations now available. (Enterprise only)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># @beta Model Event Webhooks
+#
+# Add a new Model event callback for the org that the user belongs to
+#
+# Arguments
+# input: undefined
+
+  addModelEventWebhookCallback(
+    input: ModelEventCallbackInput
+  ): ModelEventWebhookCallback
+
+# @beta Model Event Webhooks
+#
+# Update a Model event callback for an existing subscription
+#
+# Arguments
+# id: undefined
+# input: undefined
+  patchModelEventWebhookCallback(
+    id: ID!,
+    input: ModelEventCallbackInput
+  ): ModelEventWebhookCallback
+
+# @beta Model Event Webhooks
+#
+# Remove Model event webhook callback for the org that the user belongs to
+#
+# Arguments
+# id: Remove the model event webhook callback for the callback id
+# that is provided.
+# If not provided the delete all the callbacks for the organization.
+
+  removeModelEventWebhookCallback(id: ID!): Boolean
+
+# @beta Model Event Webhooks
+#
+# Ping Model event webhook callback for the org that the user belongs to.
+# This will result in a callback to the registered webhook.
+#
+# Arguments
+# id: Ping the model event webhook callback for the callback id
+# that is provided.
+
+  pingModelEventWebhookCallback(id: ID!): Boolean
+
+# @beta Model Event Webhooks
+#
+# Add a model Event to webhook callback
+#
+# Arguments
+# id: Add the model event to the webhook subscription for the
+# callback id that is provided.
+# eventTypes: undefined
+
+  addModelEventToCallback(
+    id: ID!,
+    eventTypes: [ModelEventType!]
+  ): ModelEventWebhookCallback
   
-});
-</script>
+# @beta Model Event Webhooks
+#
+# Remove a model event from webhook subscription
+#
+# Arguments
+# id: Remove the model event from the webhook subscription for
+# the callback id that is provided.
+# eventTypes: undefined
 
-<div id="toc"></div>
-
-    
-
-
-    
-
-   <h2 id="v30-to-v30335">v3.0 to v3.0.3.35</h2>
-
-<h3 id="changes">Changes</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Version 3.0</th>
-      <th>Version 3.0.3.35</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Camera.takeScreenshot()</td>
-      <td>Renderer.takeScreenshot()</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Sweep.alignment changes to Sweep.alignmentType<br />
-Sweep.floor added to the Sweep definition<br />
-Sweep.placementType added to differentiate a sweep aligned by a user, and a sweep aligned space processing<br />
-Mode.Transition has an enum of transition styles (Instant/blackout etc)</p>
-
-<h3 id="new-functionality">New Functionality</h3>
-
-<p>Version 3.0.3.35<br />
-Camera.lookAtScreenCoords<br />
-Renderer.getScreenPosition<br />
-Renderer.getWorldPositionData<br />
-Renderer.takeScreenshot<br />
-Settings.get<br />
-Settings.update</p>
-
-<h2 id="v11-to-v30">v1.1 to v3.0</h2>
-
-<p>In version 3.0 of the SDK, we refactored our code into modules that are easier for us to maintain. As a result, some of the endpoints have changed from version 1.1. We’ve listed what’s changed below.</p>
-
-<h3 id="actions">Actions</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Version 1.1</th>
-      <th>Version 3.0</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>moveToMode()</td>
-      <td>Mode.moveTo()</td>
-    </tr>
-    <tr>
-      <td>moveToPano()</td>
-      <td>Sweep.moveTo()</td>
-    </tr>
-    <tr>
-      <td>rotate()</td>
-      <td>Camera.rotate()</td>
-    </tr>
-    <tr>
-      <td>rotateDirection()</td>
-      <td>Camera.rotateInDirection()</td>
-    </tr>
-    <tr>
-      <td>panCamera()</td>
-      <td>Camera.pan()</td>
-    </tr>
-    <tr>
-      <td>moveInDirection()</td>
-      <td>Camera.moveInDirection()</td>
-    </tr>
-    <tr>
-      <td>getPose()</td>
-      <td>Camera.getPose()</td>
-    </tr>
-    <tr>
-      <td>takeScreenshot()</td>
-      <td>Camera.takeScreenshot()</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="events">Events</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Version 1.1</th>
-      <th>Version 3.0</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Event.ENTER_PANO</td>
-      <td>Sweep.Event.ENTER</td>
-    </tr>
-    <tr>
-      <td>Event.MOVE</td>
-      <td><strong>Deprecated</strong></td>
-    </tr>
-    <tr>
-      <td>Event.MODEL_LOADED</td>
-      <td>Model.Event.MODEL_LOADED</td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="note">We've skipped SDK version 2.0 so the SDK version number and the end-user (web player) version number are the same.</div>
-<p><br /></p>
+removeModelEventFromCallback(
+  id: ID!,
+  eventTypes: [ModelEventType!]
+): ModelEventWebhookCallback
+</code></pre></div></div>
 
 
     <div class="tags">
@@ -883,8 +889,8 @@ Settings.update</p>
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2022 Matterport, Inc. All rights reserved. <br />
- Site last generated: Dec 15, 2022 <br />
+               &copy;2023 Matterport, Inc. All rights reserved. <br />
+ Site last generated: Jan 19, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

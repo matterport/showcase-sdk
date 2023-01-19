@@ -127,8 +127,8 @@ body {
 @mixin p-text {
   font-family: Roboto;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 16px;
+  line-height: 1.5em;
   letter-spacing: 0.2px;
   padding: 0;
   margin-block-start: 0em;
@@ -166,12 +166,14 @@ div#main {
   padding-top: $spacing-sm;
 }
 .post-header {
+  padding-top: 20px;
   h1 {
     @include h1-text();
   }
 }
 .post-content {
   margin-top: $spacing-lg;
+  max-width: 800px;
   > figure {
     > img {
       max-width: 60%;
