@@ -507,13 +507,6 @@
           
           
           
-          <li><a title="Transient Tags Editor" href="/showcase-sdk/sdk_transient_tags_editor.html">Transient Tags Editor</a></li>
-          
-          
-          
-          
-          
-          
           <li><a title="Tags Quiz" href="/showcase-sdk/sdk_tags_quiz.html">Tags Quiz</a></li>
           
           
@@ -757,7 +750,9 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> <br />
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developer@matterport.com">developer@matterport.com</a> with any questions.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> <br />
     Tags 2.0 will become the new default soon, replacing Mattertags.<br />
     We will continue to support Mattertags (Tags 1.0) until March 1, 2023, after which Tags 2.0 will become the only available implementation.<br />
     Until that date, by including an <code class="language-plaintext highlighter-rouge">&amp;applicationKey</code> URL parameter, the default Tag implementation will remain Mattertags.<br />
@@ -786,9 +781,21 @@ $('#toc').on('click', 'a', function() {
 
 <p>It is an extension of the SDK for embeds and provides a framework for deep third-party integration with Matterport models. You get direct access to the 3d engine, renderer, scene graph and more.</p>
 
-<h2 id="how-do-i-obtain-an-sdk-key">How do I obtain an SDK key?</h2>
+<h2 id="installation">Installation</h2>
 
-<p>Our developer tools are now out of beta and all accounts are now enabled to generate sandboxed SDK keys. You can find your key management by navigating to your <a href="https://my.matterport.com/settings/account/devtools">Account Settings -&gt; Developer Tools</a>. To learn more about our developer tools, please visit the <a href="https://support.matterport.com/hc/en-us/articles/360057506813-Matterport-Developer-Tools-Pricing-and-Availability">Matterport Developer Tools and Pricing</a></p>
+<p>Before installing, you will need to create an SDK key.</p>
+
+<p>To manage keys, log in to your account, navigate to <a href="https://my.matterport.com/settings/account/devtools">Account Settings -&gt; Developer Tools</a>, and scroll down to “SDK Key Management”. Click “Add an SDK Key” and add any desired local domains to the allow list (for example, <code class="language-plaintext highlighter-rouge">localhost</code> and <code class="language-plaintext highlighter-rouge">localhost:8080</code>).</p>
+
+<p>To learn more about our developer tools, please visit the <a href="https://support.matterport.com/hc/en-us/articles/360057506813-Matterport-Developer-Tools-Pricing-and-Availability">Matterport Developer Tools and Pricing</a></p>
+
+<p>Once you have an SDK key, there are two methods for adding the Bundle SDK to your site:</p>
+
+<ol>
+  <li><a href="#iframe-method"><strong>Iframe</strong></a> (standard method)</li>
+  <li><a href="#web-component-method"><strong>Custom Web Component/NPM package</strong></a> (beta)
+<!-- 2. [**NPM package**](#npm-sdk-embed-package) (beta) --></li>
+</ol>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Code snippets in the SDK Bundle pages are in typescript. Visit <a href="https://www.typescriptlang.org">https://www.typescriptlang.org</a> to learn more about typescript.</div>
 
@@ -797,7 +804,10 @@ $('#toc').on('click', 'a', function() {
 <p>Latest Bundle SDK update: Jan 19, 2023<br />
 See the <a href="sdk_changelog.html">change log</a></p>
 
-<h2 id="adding-the-sdk-bundle-to-an-existing-application">Adding the SDK Bundle to an existing application</h2>
+<h2 id="iframe-method">Iframe Method</h2>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> These instructions are for including the SDK Bundle via an iframe. There is also a <a href="#web-component-method">custom Web Component</a> (installable via NPM or manually) available.</div>
+
 <h3 id="download-the-latest-sdk-bundle-package">Download the latest SDK Bundle package</h3>
 <p><a href="https://static.matterport.com/showcase-sdk/bundle/3.1.86.4-0-g4a2432b652/showcase-bundle.zip">https://static.matterport.com/showcase-sdk/bundle/3.1.86.4-0-g4a2432b652/showcase-bundle.zip</a></p>
 <h3 id="extract-the-contents-of-showcase-bundletargz-to-a-directory-where-your-files-will-be-served">Extract the contents of showcase-bundle.tar.gz to a directory where your files will be served</h3>
@@ -857,6 +867,392 @@ cursors		images		locale		terms
 <span class="p">});</span>
 </code></pre></div></div>
 
+<h2 id="web-component-method">Web Component Method</h2>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> These instructions are for including the SDK Bundle via a custom Web Component, either manually or through NPM. There is also an <a href="#iframe-method">iframe workflow</a> (installable manually) available.</div>
+
+<h3 id="about">About</h3>
+<p>⚠️ <strong>Note that the Matterport Web Component is currently in public beta - interface and syntax are subject to change.</strong> ⚠️ Please email <a href="mailto:developer@matterport.com">developer@matterport.com</a> with any suggestions or questions.</p>
+
+<p>The Matterport Web Component (NPM package name: <code>@matterport/webcomponent</code>) is a <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">Web Component (custom HTML element)</a> that encapsulates the Matterport experience in a single DOM element:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Create a full 3D viewer on your site --&gt;</span>
+<span class="nt">&lt;matterport-viewer</span> <span class="na">m=</span><span class="s">"SxQL3iGyoDo"</span><span class="nt">&gt;&lt;/matterport-viewer&gt;</span>
+</code></pre></div></div>
+
+<p>Read the <a href="#adding-on-an-existing-frontend-project-tldr">quick installation instructions</a>, check out <a href="#advanced-workflow">advanced usage tips</a>, or continue to the tutorial to learn more.</p>
+
+<h2 id="tutorial">Tutorial</h2>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<ul>
+  <li>You should be familiar with the <a href="https://www.davidbaumgold.com/tutorials/command-line/">command line</a>.</li>
+  <li>You should have <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">NPM</a> or <a href="https://yarnpkg.com/getting-started/install">Yarn</a> installed.</li>
+  <li>Finally, you should <a href="https://matterport.github.io/showcase-sdk/sdk_home.html#installation">obtain an SDK key</a>.</li>
+</ul>
+
+<h3 id="starting-your-project">Starting Your Project</h3>
+
+<p>The Web Component package will work with any framework (React, Vue, Svelte, etc) or vanilla JavaScript or TypeScript.</p>
+
+<p>Let’s start a project using vanilla JS and Webpack. Tools like <a href="https://vitejs.dev/">Vite</a> can be useful if you’d like to skip some of the setup work, but for now we’ll stick with creating the project manually. (If you know how to create a project where you can <code>npm install</code> or <code>yarn add</code> dependencies, you can do so and <a href="#adding-the-web-component">skip ahead</a>.)</p>
+
+<p>Open the command line and navigate to the folder where you want your project. Then create a project folder and navigate into it. We’ll call our project and its folder mp-webcomponent:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>mp-webcomponent
+<span class="nb">cd </span>mp-webcomponent
+</code></pre></div></div>
+
+<p>Initialize a new NPM or Yarn project. (Choose one or the other, whichever you prefer - we will provide instructions for both in this tutorial.) You can accept the default values in all of the prompts.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn init
+
+<span class="c"># npm</span>
+npm init
+</code></pre></div></div>
+
+<p>Next, install Webpack and a few plugins:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn add <span class="nt">--dev</span> webpack webpack-cli webpack-dev-server html-webpack-plugin
+
+<span class="c"># npm</span>
+npm <span class="nb">install</span> <span class="nt">--save-dev</span> webpack webpack-cli webpack-dev-server html-webpack-plugin
+</code></pre></div></div>
+
+<p>And install <a href="https://threejs.org/">Three</a>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn add three@0.146
+
+<span class="c"># npm</span>
+npm <span class="nb">install </span>three@0.146
+</code></pre></div></div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The Web Component is only tested with the version of Three listed in <code class="language-plaintext highlighter-rouge">package.json</code>’s <code class="language-plaintext highlighter-rouge">peerDependencies</code> field. You may try using a different version if you prefer, but only the listed version is supported.</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If you’re going to use TypeScript, install the Three types: <code>yarn add --dev @types/three</code> or <code>npm install --save-dev @types/three</code></div>
+
+<p>Create a file called <code class="language-plaintext highlighter-rouge">webpack.config.js</code> at your project root and set it up by pasting the following content:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">HtmlWebpackPlugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">html-webpack-plugin</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">entry</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./src/index.js</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">./dist</span><span class="dl">"</span><span class="p">),</span>
+    <span class="na">filename</span><span class="p">:</span> <span class="dl">"</span><span class="s2">index_bundle.js</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span>
+    <span class="k">new</span> <span class="nx">HtmlWebpackPlugin</span><span class="p">({</span>
+      <span class="na">template</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">./src/index.html</span><span class="dl">"</span><span class="p">),</span>
+    <span class="p">}),</span>
+  <span class="p">],</span>
+  <span class="na">devServer</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">static</span><span class="p">:</span> <span class="p">[</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">static</span><span class="dl">"</span><span class="p">)],</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Add the following <code class="language-plaintext highlighter-rouge">scripts</code> property (or replace the existing one) at the top level of your package.json file:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webpack serve --mode=development"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webpack"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Finally, add a folder called <code class="language-plaintext highlighter-rouge">src</code> to the project root, and add a file called <code class="language-plaintext highlighter-rouge">index.js</code> and one called <code class="language-plaintext highlighter-rouge">index.html</code> inside <code class="language-plaintext highlighter-rouge">src</code>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>src
+<span class="nb">touch </span>src/index.html
+<span class="nb">touch </span>src/index.js
+Your project folder should now look like this:
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| node_modules
+| package.json
+| src/
+|-- index.html
+|-- index.js
+| webpack.config.json
+</code></pre></div></div>
+
+<p>Your terminal should be in the <code class="language-plaintext highlighter-rouge">mp-webcomponent</code> directory</p>
+
+<p>(Don’t worry if you see extra <code class="language-plaintext highlighter-rouge">package-lock.json</code> or <code class="language-plaintext highlighter-rouge">yarn.lock</code> files - those are generated for internal use by NPM and Yarn, respectively.)</p>
+
+<h3 id="adding-the-web-component">Adding the Web Component</h3>
+
+<p>Next, we’ll add the Web Component:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn add @matterport/webcomponent
+
+<span class="c"># npm</span>
+npm <span class="nb">install</span> @matterport/webcomponent
+</code></pre></div></div>
+
+<p>And we’ll add the static assets:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn matterport-assets static
+
+<span class="c"># npm</span>
+npx matterport-assets static
+</code></pre></div></div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The Web Component requires several static assets, like font files, textures, WASM files, compiled JS files, and more; this script is meant to be a single-step solution for copying those assets to your site.<br /><br />You may, but do not need to, check these files into source control - instead, you can include the yarn/npx matterport-assets your/static/folder command in your build script if you’re using a static site generator like Netlify. More on this workflow later.</div>
+
+<p>Open <code class="language-plaintext highlighter-rouge">index.js</code> and import the Web Component by adding this line:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">'</span><span class="s1">@matterport/webcomponent</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">Then</span> <span class="nx">open</span> <span class="nx">index</span><span class="p">.</span><span class="nx">html</span> <span class="nx">and</span> <span class="nx">add</span> <span class="k">this</span> <span class="nx">line</span><span class="p">:</span>
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;matterport-viewer</span> <span class="na">m=</span><span class="s">"SxQL3iGyoDo"</span><span class="nt">&gt;&lt;/matterport-viewer&gt;</span>
+</code></pre></div></div>
+
+<p>The Web Component wraps a custom web component that contains the 3D Matterport viewer; the m attribute sets the ID of the model you’d like to load. The value of m here is a sample space you can use for testing and dev.</p>
+
+<p>Start your server:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn dev
+
+<span class="c"># npm</span>
+npm run dev
+</code></pre></div></div>
+
+<p>and navigate to <code class="language-plaintext highlighter-rouge">localhost:8080</code>. You should see a Matterport viewer and a sample space on your page.</p>
+
+<h3 id="interacting-with-the-space">Interacting with the Space</h3>
+<p>You can interact with the space by providing your SDK key to the <code class="language-plaintext highlighter-rouge">application-key</code> attribute (see <a href="https://matterport.github.io/showcase-sdk/sdk_home.html#installation">here</a> if you don’t have an SDK key yet):</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;matterport-viewer</span> <span class="na">m=</span><span class="s">"SxQL3iGyoDo"</span> <span class="na">application-key=</span><span class="s">"YOUR_SDK_KEY"</span><span class="nt">&gt;&lt;/matterport-viewer&gt;</span>
+</code></pre></div></div>
+
+<p>Once you’ve done that, the viewer will emit two events you can listen for:</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">mpSdkConnected</code> - the SDK is connected and ready to use.</li>
+  <li><code class="language-plaintext highlighter-rouge">mpSdkPlaying</code> - the SDK is connected and ready to use, and the camera is ready to start accepting commands (ie, any intro fly-in has completed and the camera has stopped moving).</li>
+</ol>
+
+<p>Both events have the same call signature, so you can swap out <code class="language-plaintext highlighter-rouge">mpSdkPlaying</code> for <code class="language-plaintext highlighter-rouge">mpSdkConnected</code> if needed. In <code class="language-plaintext highlighter-rouge">index.js</code>:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">viewer</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mpSdkPlaying</span><span class="dl">'</span><span class="p">,</span> <span class="nx">evt</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">mpSdk</span><span class="p">;</span>
+  <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">rotate</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>An even easier route is using the <code class="language-plaintext highlighter-rouge">sdkPromise</code>/<code class="language-plaintext highlighter-rouge">playingPromise</code> properties provided by the component, which correspond with the mpSdkConnected event and the mpSdkPlaying event, respectively.</p>
+
+<p>To use those properties, add the following to your index.js file:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">main</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">).</span><span class="nx">playingPromise</span><span class="p">;</span>
+  <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">rotate</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">main</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Note that if you’re using TypeScript you can set up querySelector to preserve strong typing:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="o">&lt;</span><span class="nx">MatterportViewer</span><span class="o">&gt;</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">)</span><span class="o">!</span><span class="p">.</span><span class="nx">playingPromise</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>If you’ve added a working SDK key, you should see the model load, fly in, and turn to the right.</p>
+
+<h3 id="next-steps">Next Steps</h3>
+
+<p>At this point, you can work with anything from any of the mpSdk namespaces, including Tags, Measurements, Scene objects, and more. Enjoy, and please reach out to developer@matterport.com with any questions or issues!</p>
+
+<h2 id="advanced-workflow">Advanced Workflow</h2>
+
+<h3 id="url-parametersiframe-migration">URL parameters/iframe migration</h3>
+
+<p>Any <a href="https://support.matterport.com/s/article/URL-Parameters?language=en_US&amp;ardId=kA05d000001DWztCAG">URL parameter</a> can be added as an attribute to the <code class="language-plaintext highlighter-rouge">&lt;matterport-viewer&gt;</code> component. For example, to turn on quickstart (<code class="language-plaintext highlighter-rouge">qs</code>) and set MLS (<code class="language-plaintext highlighter-rouge">mls</code>) to option 2:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;matterport-viewer</span> <span class="na">m=</span><span class="s">"SxQL3iGyoDo"</span> <span class="na">qs=</span><span class="s">"1"</span> <span class="na">mls=</span><span class="s">"2"</span><span class="nt">&gt;&lt;/matterport-viewer&gt;</span>
+</code></pre></div></div>
+
+<p>If you’re migrating from the old iframe-based workflow, you can also reuse your <code class="language-plaintext highlighter-rouge">src</code> attribute in the new viewer and preserve the same options:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- You can turn this: --&gt;</span>
+<span class="nt">&lt;iframe</span>
+  <span class="na">src=</span><span class="s">"/bundle/showcase.html?m=22Ub5eknCVx&amp;play=1&amp;qs=1&amp;log=0&amp;applicationKey=PUT_APPLICATION_KEY_HERE"</span><span class="nt">&gt;</span>
+  
+<span class="c">&lt;!-- into this, and keep the same functionality: --&gt;</span>
+<span class="nt">&lt;matterport-viewer</span>
+  <span class="na">src=</span><span class="s">"/bundle/showcase.html?m=22Ub5eknCVx&amp;play=1&amp;qs=1&amp;log=0&amp;applicationKey=PUT_APPLICATION_KEY_HERE"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="non-root-static-assets">Non-root static assets</h3>
+
+<p>You don’t have to put the static assets in the root of your static assets directory. For example, if you want to keep your Matterport assets in a folder called foo inside your static assets directory called public:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn matterport-assets public/foo
+
+<span class="c"># npm</span>
+npx matterport-assets public/foo
+</code></pre></div></div>
+
+<p>Then, in your <code class="language-plaintext highlighter-rouge">matterport-viewer</code> component, add the <code class="language-plaintext highlighter-rouge">asset-base</code> attribute:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;matterport-viewer</span> <span class="na">asset-base=</span><span class="s">"foo"</span><span class="nt">&gt;&lt;/matterport-viewer&gt;</span>
+</code></pre></div></div>
+
+<p>This indicates that static assets for the viewer that would normally be served at <code class="language-plaintext highlighter-rouge">/</code> are instead served at <code class="language-plaintext highlighter-rouge">/foo/</code>.</p>
+
+<h3 id="gitignore-ing-static-assets-and-copying-at-build-time">.gitignore-ing static assets and copying at build time</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">matterport-assets</code> command copies &gt;20mb of files to your static asset directory; this can be cumbersome to check into source control, especially since those static assets are downloaded each time you install <code class="language-plaintext highlighter-rouge">@matterport/webcomponent</code>.</p>
+
+<p>You can make the process easier if you’re using a build process to generate your site. For this example, let’s assume you’re serving viewer assets from a subdirectory <code class="language-plaintext highlighter-rouge">foo</code> of your static assets directory <code class="language-plaintext highlighter-rouge">public</code>, like in the “Non-root static assets” section above.</p>
+
+<ol>
+  <li>When installing the viewer, run <code class="language-plaintext highlighter-rouge">yarn matterport-assets public/foo</code> (or <code class="language-plaintext highlighter-rouge">npx matterport-assets public/foo</code>) like you normally would.</li>
+  <li>Add <code class="language-plaintext highlighter-rouge">public/foo</code> to your <code class="language-plaintext highlighter-rouge">.gitignore</code> file.</li>
+  <li>Add the same command you used in step 1 (<code class="language-plaintext highlighter-rouge">yarn matterport-assets public/foo</code> or <code class="language-plaintext highlighter-rouge">npx matterport-assets public/foo</code>) to your <code class="language-plaintext highlighter-rouge">postinstall</code> script in package.json:
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+ </span><span class="err">...</span><span class="w">
+ </span><span class="nl">"postinstall"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yarn matterport-assets public/foo"</span><span class="p">,</span><span class="w">
+ </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+    <p>This will automatically copy static assets to the correct location any time you <code class="language-plaintext highlighter-rouge">yarn/npm install</code> this project in the future.</p>
+  </li>
+  <li>Develop locally like you normally would.</li>
+  <li>When pushing to CI: this should normally take care of asset installation, since CI should install dependencies (and therefore run <code class="language-plaintext highlighter-rouge">postinstall</code> afterward) automatically. If needed, you can add the same command from step 1 to the CI’s build command (for example, <code class="language-plaintext highlighter-rouge">yarn matterport-assets public/foo &amp;&amp; yarn build</code>).</li>
+</ol>
+
+<h3 id="reactvuesvelteetc-interoperability">React/Vue/Svelte/etc interoperability</h3>
+
+<p>Custom Web Components like this one are part of <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">browsers’ built-in capability</a> and all usable within popular frameworks like React, Vue, Svelte, Next, Nuxt, etc. If you’re using the web component in one of those frameworks, search <code class="language-plaintext highlighter-rouge">use custom web component [framework name]</code> to find steps for your specific environment.</p>
+
+<h3 id="upgradingversion-pinning">Upgrading/Version pinning</h3>
+<p>To upgrade your project’s version of the package, run:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn upgrade @matterport/viewer
+
+<span class="c"># npm</span>
+npm upgrade @matterport/viewer
+</code></pre></div></div>
+
+<p>Then run the <code class="language-plaintext highlighter-rouge">matterport-assets</code> command to copy the latest version of the viewer assets:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn matterport-assets YOUR_STATIC_ASSETS_DIR
+
+<span class="c"># npm</span>
+npx matterport-assets YOUR_STATIC_ASSETS_DIR
+</code></pre></div></div>
+
+<p>If you’re committing static assets to source control, you’ll probably see some changes to those assets marked at this point. That’s expected - the assets you’re copying are specific to the version of the <code class="language-plaintext highlighter-rouge">@matterport/viewer</code> package you’ve installed.</p>
+
+<p>(Note that this also means you can pin which version of the Matterport viewer you want on your page by leaving the package’s version as-is; you can also upgrade to a specific version of the viewer by installing a desired version of the package.)</p>
+
+<h3 id="iframe-to-webcomponent-migration-made-easy">Iframe to Webcomponent Migration Made Easy</h3>
+
+<p>You can follow the <a href="https://matterport.github.io/showcase-sdk/sdkbundle_home.html">existing bundle steps</a> exactly as written using the new webcomponent package, <strong>with one exception</strong>: you’ll download the zipped file from the “Download” button on NPM and move the “built-bundle” folder from the unzipped file to your project.</p>
+
+<h4 id="progressively-adapting-the-webcomponent">Progressively Adapting the Webcomponent</h4>
+
+<p>While the iframe bundle is still usable, we recommend moving to the webcomponent, since SDK work going forward will be focused there. You can start your move to the webcomponent by adding a file and a few lines of code:</p>
+
+<ol>
+  <li>Add the <code class="language-plaintext highlighter-rouge">dist</code> directory from the .tgz you downloaded in the previous step to your project.</li>
+  <li>Add Three to your project: <code class="language-plaintext highlighter-rouge">&lt;script src="built-bundle/vendors/three/0.146.0/three.min.js"&gt;&lt;/script&gt;</code> (assuming you moved built-bundle to your project).</li>
+  <li>Add the webcomponent to your project: <code class="language-plaintext highlighter-rouge">&lt;script src="dist/matterport-viewer.umd.js"&gt;&lt;/script&gt;</code></li>
+  <li>Change the <code class="language-plaintext highlighter-rouge">iframe</code> tag to a <code class="language-plaintext highlighter-rouge">matterport-viewer</code> tag.</li>
+</ol>
+
+<p>That’s it! The webcomponent should now be running instead of the iframe.</p>
+
+<h2 id="adding-on-an-existing-frontend-project-tldr">Adding on an Existing Frontend Project TL;DR</h2>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">yarn add @matterport/webcomponent three</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">yarn matterport-assets YOUR_STATIC_ASSETS_DIR</code>, replacing <code class="language-plaintext highlighter-rouge">YOUR_STATIC_ASSETS_DIR</code> with your static assets dir</li>
+  <li><code class="language-plaintext highlighter-rouge">import @matterport/webcomponent</code> in your JS/TS</li>
+  <li>Add a <code class="language-plaintext highlighter-rouge">&lt;matterport-viewer&gt;</code> to your HTML. Add the <code class="language-plaintext highlighter-rouge">m</code> attribute with the SID of the model you want to use.</li>
+  <li>To use the SDK:
+    <ol>
+      <li>Add the application-key attribute with the value set to your SDK key</li>
+      <li>Either:
+        <ol>
+          <li>Wait for the <code class="language-plaintext highlighter-rouge">playingPromise</code>:
+            <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="kd">const</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">);</span>
+   <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">viewer</span><span class="p">.</span><span class="nx">playingPromise</span><span class="p">;</span>
+</code></pre></div>            </div>
+          </li>
+          <li><strong>OR</strong> listen for the <code class="language-plaintext highlighter-rouge">mpSdkPlaying</code> event:
+            <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="kd">const</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">);</span>
+   <span class="nx">viewer</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mpSdkPlaying</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+ <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">mpSdk</span><span class="p">;</span>
+ <span class="cm">/* do something with mpSdk... */</span>
+   <span class="p">});</span>
+</code></pre></div>            </div>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h2 id="selecting-your-tools">Selecting Your Tools</h2>
+<p>You can use the <a href="https://matterport.github.io/showcase-sdk/sdk_tutorials_package.html">Matterport Embed package</a> or the Matterport Web Component to view spaces on your site. Generally, the Embed package provides a set-it-and-forget-it environment, while the Web Component is more powerful but requires some more manual maintenance.</p>
+
+<p>Use the following grid to determine whether you need the Embed package or the Web Component:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>I want to…</th>
+      <th>Embed (<code class="language-plaintext highlighter-rouge">yarn add @matterport/sdk</code>)</th>
+      <th>Web Component (<code class="language-plaintext highlighter-rouge">yarn add @matterport/viewer</code>)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>…use the SDK to interact with a Matterport space</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>…always automatically use the latest version of the Matterport viewer</td>
+      <td>✅</td>
+      <td>❌</td>
+    </tr>
+    <tr>
+      <td>…pin the version of the Matterport viewer and be responsible for upgrades myself</td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>…add objects/lighting/textures to the scene</td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="caveats">Caveats</h2>
+<p>As mentioned earlier, ⚠️ <strong>the Matterport Web Component is currently in public beta - interface and syntax are subject to change.</strong> ⚠️ Please email <a href="mailto:developer@matterport.com">developer@matterport.com</a> with any suggestions or questions.</p>
+
+<p>Some other caveats to note:</p>
+
+<ul>
+  <li>The web component will load some assets and code (including fonts, scripts, images, polyfills, etc) into the global scope of your page. The Matterport team is currently working on reducing global content as much as possible; until then, note that some issues (like <a href="https://dev.to/akdevcraft/use-font-in-web-component-51a4">loading custom fonts</a>, using a compatibility checker to detect outdated browsers, and using the <a href="https://github.com/greggman/webgl-memory">webgl-memory</a> WebGL extension) necessitate working in the global scope.</li>
+</ul>
+
 
     <div class="tags">
         
@@ -873,7 +1269,7 @@ cursors		images		locale		terms
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jan 20, 2023 <br />
+ Site last generated: Jan 25, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
