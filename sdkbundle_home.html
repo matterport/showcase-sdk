@@ -1160,6 +1160,23 @@ npx matterport-assets YOUR_STATIC_ASSETS_DIR
 
 <p>(Note that this also means you can pin which version of the Matterport viewer you want on your page by leaving the package’s version as-is; you can also upgrade to a specific version of the viewer by installing a desired version of the package.)</p>
 
+<h3 id="oauthother-connect-options">OAuth/other connect options</h3>
+
+<p>You may be familiar with passing options to the SDK in the connect function:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span>
+  <span class="nx">myShowcaseWindow</span><span class="p">,</span> 
+  <span class="p">{</span> <span class="na">auth</span><span class="p">:</span> <span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span><span class="p">,</span> <span class="na">provider</span><span class="p">:</span> <span class="dl">'</span><span class="s1">xyz</span><span class="dl">'</span> <span class="p">}</span> <span class="c1">// &lt;-- these options</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>You can provide options to <code class="language-plaintext highlighter-rouge">connect</code> by adding attributes starting with <code class="language-plaintext highlighter-rouge">connect-</code> to your component. For example:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;matterport-viewer</span> <span class="na">connect-auth=</span><span class="s">"abc"</span> <span class="na">connect-provider=</span><span class="s">"xyz"</span><span class="nt">&gt;&lt;/matterport-viewer&gt;</span>
+</code></pre></div></div>
+
+<p>This will match the JS above, and any future connect options will follow this same pattern automatically.</p>
+
 <h3 id="iframe-to-webcomponent-migration-made-easy">Iframe to Webcomponent Migration Made Easy</h3>
 
 <p>You can follow the <a href="https://matterport.github.io/showcase-sdk/sdkbundle_home.html">existing bundle steps</a> exactly as written using the new webcomponent package, <strong>with one exception</strong>: you’ll download the zipped file from the “Download” button on NPM and move the “built-bundle” folder from the unzipped file to your project.</p>
