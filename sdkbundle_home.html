@@ -794,7 +794,10 @@ $('#toc').on('click', 'a', function() {
 <ol>
   <li><a href="#iframe-method"><strong>Iframe</strong></a> (standard method)</li>
   <li><a href="#web-component-method"><strong>Custom Web Component/NPM package</strong></a> (beta)
-<!-- 2. [**NPM package**](#npm-sdk-embed-package) (beta) --></li>
+    <ol>
+      <li><a href="#iframe-to-webcomponent-migration">Migrating from iframe to web component</a></li>
+    </ol>
+  </li>
 </ol>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Code snippets in the SDK Bundle pages are in typescript. Visit <a href="https://www.typescriptlang.org">https://www.typescriptlang.org</a> to learn more about typescript.</div>
@@ -1010,8 +1013,9 @@ npx matterport-assets static
 <p>Open <code class="language-plaintext highlighter-rouge">index.js</code> and import the Web Component by adding this line:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">'</span><span class="s1">@matterport/webcomponent</span><span class="dl">'</span><span class="p">;</span>
-<span class="nx">Then</span> <span class="nx">open</span> <span class="nx">index</span><span class="p">.</span><span class="nx">html</span> <span class="nx">and</span> <span class="nx">add</span> <span class="k">this</span> <span class="nx">line</span><span class="p">:</span>
 </code></pre></div></div>
+
+<p>Then open index.html and add this line:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;matterport-viewer</span> <span class="na">m=</span><span class="s">"SxQL3iGyoDo"</span><span class="nt">&gt;&lt;/matterport-viewer&gt;</span>
 </code></pre></div></div>
@@ -1072,6 +1076,28 @@ npm run dev
 <h3 id="next-steps">Next Steps</h3>
 
 <p>At this point, you can work with anything from any of the mpSdk namespaces, including Tags, Measurements, Scene objects, and more. Enjoy, and please reach out to developer@matterport.com with any questions or issues!</p>
+
+<h2 id="iframe-to-webcomponent-migration">Iframe to Webcomponent Migration</h2>
+
+<p>You can follow the <a href="#iframe-method">existing bundle steps</a> exactly as written using the new webcomponent package, <strong>with one exception</strong>: you’ll download the zipped file by following these instructions:</p>
+
+<ol>
+  <li>Install <a href="#prerequisites">npm</a> on your machine if it isn’t already. (Run <code class="language-plaintext highlighter-rouge">npm -v</code> in your terminal to check if it is - if you see a number, you’re all set.)</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">npm view @matterport/webcomponent</code>.</li>
+  <li>Download the linked .tarball file (for example, <a href="https://registry.npmjs.org/@matterport/webcomponent/-/webcomponent-0.1.1.tgz">this link for version 0.1.1</a>).</li>
+  <li>Move the <code class="language-plaintext highlighter-rouge">built-bundle</code> directory to your project, not <code class="language-plaintext highlighter-rouge">bundle</code>.</li>
+</ol>
+
+<p>From there, follow these steps:</p>
+
+<ol>
+  <li>Add the <code class="language-plaintext highlighter-rouge">dist</code> directory from the .tgz you downloaded in the previous step to your project.</li>
+  <li>Add Three to your project: <code class="language-plaintext highlighter-rouge">&lt;script src="built-bundle/vendors/three/0.146.0/three.min.js"&gt;&lt;/script&gt;</code> (assuming you moved built-bundle to your project).</li>
+  <li>Add the webcomponent to your project: <code class="language-plaintext highlighter-rouge">&lt;script src="dist/matterport-viewer.umd.js"&gt;&lt;/script&gt;</code></li>
+  <li>Change the <code class="language-plaintext highlighter-rouge">iframe</code> tag to a <code class="language-plaintext highlighter-rouge">matterport-viewer</code> tag. (You can leave the <code class="language-plaintext highlighter-rouge">src</code> attribute as-is on <code class="language-plaintext highlighter-rouge">matterport-viewer</code>).</li>
+</ol>
+
+<p>That’s it! The webcomponent should now be running instead of the iframe.</p>
 
 <h2 id="advanced-workflow">Advanced Workflow</h2>
 
@@ -1141,10 +1167,10 @@ npx matterport-assets public/foo
 <p>To upgrade your project’s version of the package, run:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
-yarn upgrade @matterport/viewer
+yarn upgrade @matterport/webcomponent
 
 <span class="c"># npm</span>
-npm upgrade @matterport/viewer
+npm upgrade @matterport/webcomponent
 </code></pre></div></div>
 
 <p>Then run the <code class="language-plaintext highlighter-rouge">matterport-assets</code> command to copy the latest version of the viewer assets:</p>
@@ -1156,7 +1182,7 @@ yarn matterport-assets YOUR_STATIC_ASSETS_DIR
 npx matterport-assets YOUR_STATIC_ASSETS_DIR
 </code></pre></div></div>
 
-<p>If you’re committing static assets to source control, you’ll probably see some changes to those assets marked at this point. That’s expected - the assets you’re copying are specific to the version of the <code class="language-plaintext highlighter-rouge">@matterport/viewer</code> package you’ve installed.</p>
+<p>If you’re committing static assets to source control, you’ll probably see some changes to those assets marked at this point. That’s expected - the assets you’re copying are specific to the version of the <code class="language-plaintext highlighter-rouge">@matterport/webcomponent</code> package you’ve installed.</p>
 
 <p>(Note that this also means you can pin which version of the Matterport viewer you want on your page by leaving the package’s version as-is; you can also upgrade to a specific version of the viewer by installing a desired version of the package.)</p>
 
@@ -1176,23 +1202,6 @@ npx matterport-assets YOUR_STATIC_ASSETS_DIR
 </code></pre></div></div>
 
 <p>This will match the JS above, and any future connect options will follow this same pattern automatically.</p>
-
-<h3 id="iframe-to-webcomponent-migration-made-easy">Iframe to Webcomponent Migration Made Easy</h3>
-
-<p>You can follow the <a href="https://matterport.github.io/showcase-sdk/sdkbundle_home.html">existing bundle steps</a> exactly as written using the new webcomponent package, <strong>with one exception</strong>: you’ll download the zipped file from the “Download” button on NPM and move the “built-bundle” folder from the unzipped file to your project.</p>
-
-<h4 id="progressively-adapting-the-webcomponent">Progressively Adapting the Webcomponent</h4>
-
-<p>While the iframe bundle is still usable, we recommend moving to the webcomponent, since SDK work going forward will be focused there. You can start your move to the webcomponent by adding a file and a few lines of code:</p>
-
-<ol>
-  <li>Add the <code class="language-plaintext highlighter-rouge">dist</code> directory from the .tgz you downloaded in the previous step to your project.</li>
-  <li>Add Three to your project: <code class="language-plaintext highlighter-rouge">&lt;script src="built-bundle/vendors/three/0.146.0/three.min.js"&gt;&lt;/script&gt;</code> (assuming you moved built-bundle to your project).</li>
-  <li>Add the webcomponent to your project: <code class="language-plaintext highlighter-rouge">&lt;script src="dist/matterport-viewer.umd.js"&gt;&lt;/script&gt;</code></li>
-  <li>Change the <code class="language-plaintext highlighter-rouge">iframe</code> tag to a <code class="language-plaintext highlighter-rouge">matterport-viewer</code> tag.</li>
-</ol>
-
-<p>That’s it! The webcomponent should now be running instead of the iframe.</p>
 
 <h2 id="adding-on-an-existing-frontend-project-tldr">Adding on an Existing Frontend Project TL;DR</h2>
 <ol>
@@ -1234,7 +1243,7 @@ npx matterport-assets YOUR_STATIC_ASSETS_DIR
     <tr>
       <th>I want to…</th>
       <th>Embed (<code class="language-plaintext highlighter-rouge">yarn add @matterport/sdk</code>)</th>
-      <th>Web Component (<code class="language-plaintext highlighter-rouge">yarn add @matterport/viewer</code>)</th>
+      <th>Web Component (<code class="language-plaintext highlighter-rouge">yarn add @matterport/webcomponent</code>)</th>
     </tr>
   </thead>
   <tbody>
@@ -1286,7 +1295,7 @@ npx matterport-assets YOUR_STATIC_ASSETS_DIR
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jan 25, 2023 <br />
+ Site last generated: Jan 26, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
