@@ -784,7 +784,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.86.4-0-g4a2432b652/sdk.d.ts">3.1.86.4-0-g4a2432b652</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.87.4-0-g304d35dded/sdk.d.ts">3.1.87.4-0-g304d35dded</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -877,7 +877,7 @@ $('#toc').on('click', 'a', function() {
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> speed<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 								<div class="tsd-comment tsd-typography">
-									<div class="lead">
+									<div class="tsd-lead">
 										<p>Rotation speed in degrees per second.</p>
 									</div>
 								</div>
@@ -897,7 +897,7 @@ $('#toc').on('click', 'a', function() {
 							<li class="tsd-parameter">
 								<h5>level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 								<div class="tsd-comment tsd-typography">
-									<div class="lead">
+									<div class="tsd-lead">
 										<p>The current zoom level</p>
 									</div>
 								</div>
@@ -915,7 +915,7 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>An observable pose data object that can be subscribed to.</p>
 						</div>
 						<pre><code>mpSdk.Camera.<span class="hljs-keyword">pose</span>.subscribe(function (<span class="hljs-keyword">pose</span>) {
@@ -935,7 +935,7 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>An observable zoom level of the camera in Panorama mode.
 							The zoom level will be 1.0 for all other viewmodes.</p>
 						</div>
@@ -966,7 +966,7 @@ $('#toc').on('click', 'a', function() {
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Returns the current state of camera.</p>
 									<pre><code>mpSdk.Camera.getPose()
   .then(function(<span class="hljs-keyword">pose</span>){
@@ -994,7 +994,7 @@ $('#toc').on('click', 'a', function() {
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Rotates the camera to a specific screen coordinate.
 										Coordinates are measure in pixels, relative to the WebGL Canvas&#39; top left corner.
 									See <a href="https://www.w3schools.com/graphics/canvas_coordinates.asp">https://www.w3schools.com/graphics/canvas_coordinates.asp</a> for more information on coordinates.</p>
@@ -1045,7 +1045,7 @@ $('#toc').on('click', 'a', function() {
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Moves user to a different sweep relative to their current location</p>
 								</div>
 								<pre><code><span class="hljs-keyword">const</span> nextDirection = mpSdk.Camera.Direction.FORWARD;
@@ -1096,7 +1096,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Pans the camera.</p>
 								</div>
 								<pre><code>mpSdk.Camera.pan({ x: <span class="hljs-number">1</span>, z: <span class="hljs-number">1</span> })
@@ -1156,7 +1156,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Rotates the camera (user’s viewpoint).</p>
 								</div>
 								<pre><code>mpSdk.Camera.<span class="hljs-built_in">rotate</span>(<span class="hljs-number">10</span>, -<span class="hljs-number">20</span>, { speed: <span class="hljs-number">2</span> })
@@ -1226,7 +1226,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Sets the orientation of the camera (user’s viewpoint) while in Panorama View.</p>
 								</div>
 								<pre><code>mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Camera</span>.</span></span>set<span class="hljs-constructor">Rotation({ <span class="hljs-params">x</span>: 10, <span class="hljs-params">y</span>: -20 }, { <span class="hljs-params">speed</span>: 2 })</span>
@@ -1276,7 +1276,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Zooms the camera by a percentage. The zoom delta is defined relative to the base field of view, not the current zoom.
 									This means that the delta is strictly added, and not multiplied by the current zoom first.</p>
 								</div>
@@ -1315,7 +1315,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Reset the zoom of the camera back to 1.0x.</p>
 								</div>
 								<pre><code>mpSdk.Camera.zoomReset()
@@ -1343,7 +1343,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Zooms the camera to a percentage of the base field of view.</p>
 								</div>
 								<p>Ex: Doubling the zoom, halves the field of view.</p>
@@ -1522,7 +1522,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jan 26, 2023 <br />
+ Site last generated: Feb 1, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

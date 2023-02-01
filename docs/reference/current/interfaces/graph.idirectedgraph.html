@@ -784,7 +784,7 @@ $('#toc').on('click', 'a', function() {
 			<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<div class="lead">
+					<div class="tsd-lead">
 						<p>A directed, weighted graph data structure.</p>
 					</div>
 				</div>
@@ -795,7 +795,7 @@ $('#toc').on('click', 'a', function() {
 					<li>
 						<h4>T</h4>
 						<div class="tsd-comment tsd-typography">
-							<div class="lead">
+							<div class="tsd-lead">
 								<p>The type of any user data associated with each vertex in the graph.</p>
 							</div>
 						</div>
@@ -815,7 +815,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.86.4-0-g4a2432b652/sdk.d.ts">3.1.86.4-0-g4a2432b652</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.87.4-0-g304d35dded/sdk.d.ts">3.1.87.4-0-g304d35dded</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -867,7 +867,7 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>The number of edges in the graph.</p>
 						</div>
 						<pre><code class="language-typescript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">`the graph has <span class="hljs-subst">${graph.edgeCount}</span> edges`</span>);
@@ -881,7 +881,7 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>An iterable of all edges in the graph.</p>
 						</div>
 						<pre><code class="language-typescript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> edge <span class="hljs-keyword">of</span> graph.edges) {
@@ -897,7 +897,7 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>The number of vertices in the graph.</p>
 						</div>
 						<pre><code class="language-typescript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">`the graph has <span class="hljs-subst">${graph.vertexCount}</span> vertices`</span>);
@@ -911,7 +911,7 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>An iterable of all vertices in the graph.</p>
 						</div>
 						<pre><code class="language-typescript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> vertex <span class="hljs-keyword">of</span> graph.vertices) {
@@ -934,7 +934,7 @@ $('#toc').on('click', 'a', function() {
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Add a vertex or set of vertices to the graph.</p>
 								</div>
 								<pre><code class="language-typescript"><span class="hljs-comment">// for vertices with undefined &quot;data&quot; (no data associated with each vertex)</span>
@@ -976,7 +976,7 @@ graph.addVertex(
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Trigger any attached observers if there were changes to this graph.
 									If there are no changes to the graph, this is a no-op and no callbacks will be triggered.</p>
 								</div>
@@ -998,7 +998,7 @@ graph.addVertex(
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Remove all vertices and edges from the graph.
 									Also call an optional <code>onDispose</code> provided at construction.</p>
 								</div>
@@ -1022,7 +1022,7 @@ graph.addVertex(
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Get the edge that connects one vertex to another.</p>
 								</div>
 								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> edge = graph.edge(a, b);
@@ -1065,7 +1065,7 @@ graph.addVertex(
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Test if an edge from one vertex to another is present in the graph.</p>
 								</div>
 								<pre><code class="language-typescript"><span class="hljs-keyword">if</span> (graph.hasEdge(a, b)) {
@@ -1104,7 +1104,7 @@ graph.addVertex(
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Test if a vertex associated with <code>id</code> is present in the graph.</p>
 								</div>
 								<pre><code class="language-typescript"><span class="hljs-keyword">if</span> (graph.hasVertex(<span class="hljs-string">&#x27;a&#x27;</span>)) {
@@ -1137,7 +1137,7 @@ graph.addVertex(
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Subscribe to edge changes.</p>
 								</div>
 								<p>After this graph&#39;s edges have been updated using <a href="graph.idirectedgraph.html#setedge">setEdge</a> or <a href="graph.idirectedgraph.html#removeedge">removeEdge</a>,
@@ -1172,7 +1172,7 @@ graph.addVertex(
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Subscribe to vertex changes.</p>
 								</div>
 								<p>After this graph&#39;s vertices have been updated using <a href="graph.idirectedgraph.html#addvertex">addVertex</a> or <a href="graph.idirectedgraph.html#removevertex">removeVertex</a>,
@@ -1207,7 +1207,7 @@ graph.addVertex(
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Remove an edge or a set of edges from the graph.</p>
 								</div>
 								<pre><code class="language-typescript">graph.removeEdge(e1, e2);
@@ -1237,7 +1237,7 @@ graph.addVertex(
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Remove a vertex or a set of vertices from the graph.</p>
 								</div>
 								<pre><code class="language-typescript">graph.removeVertex(a, b);
@@ -1277,7 +1277,7 @@ graph.addVertex(
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Set the weight of an edge or set of edges between pairs of vertices representing the connections from <code>src</code> to <code>dst</code>.</p>
 								</div>
 								<p>If an error is thrown, the graph is left untouched, no edges are added.</p>
@@ -1313,7 +1313,7 @@ graph.setEdge(
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Get the vertex associated with <code>id</code>.</p>
 								</div>
 								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> a = graph.vertex(<span class="hljs-string">&#x27;a&#x27;</span>);
@@ -1350,7 +1350,7 @@ graph.setEdge(
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Watch a collection and update the graph as the collection changes.</p>
 								</div>
 								<p><strong>Note:</strong> If you need a graph of enabled sweeps, use <a href="../modules/sweep.html#creategraph">Sweep.createGraph</a> instead of the code snippet below</p>
@@ -1590,7 +1590,7 @@ sub.cancel();
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jan 26, 2023 <br />
+ Site last generated: Feb 1, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

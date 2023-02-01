@@ -784,7 +784,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.86.4-0-g4a2432b652/sdk.d.ts">3.1.86.4-0-g4a2432b652</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.87.4-0-g304d35dded/sdk.d.ts">3.1.87.4-0-g304d35dded</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -840,7 +840,7 @@ $('#toc').on('click', 'a', function() {
 							<li class="tsd-parameter">
 								<h5>include<wbr>Params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 								<div class="tsd-comment tsd-typography">
-									<div class="lead">
+									<div class="tsd-lead">
 										<p>The list of URL parameters to include in the share link</p>
 									</div>
 								</div>
@@ -860,7 +860,7 @@ $('#toc').on('click', 'a', function() {
 							<li class="tsd-parameter">
 								<h5>template<wbr>Href<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 								<div class="tsd-comment tsd-typography">
-									<div class="lead">
+									<div class="tsd-lead">
 										<p>An optional template for the link to use when the policy is not set to <code>SAME_FRAME</code>,
 										that will have any <code>${[param]}</code> substrings interpolated using the current set of URL parameters.</p>
 									</div>
@@ -898,7 +898,7 @@ $('#toc').on('click', 'a', function() {
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Create a deep link to the current location of the current Showcase player.</p>
 									<pre><code class="language-typescript"><span class="hljs-keyword">const</span> deepLink = <span class="hljs-keyword">await</span> sdk.Link.createDeepLink();
 </code></pre>
@@ -929,7 +929,7 @@ $('#toc').on('click', 'a', function() {
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Create a shareable link to the current Showcase player.</p>
 									<pre><code class="language-typescript"><span class="hljs-keyword">const</span> link = <span class="hljs-keyword">await</span> sdk.Link.createLink();
 </code></pre>
@@ -960,7 +960,7 @@ $('#toc').on('click', 'a', function() {
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Change the behavior of clicking a link to a different origin.</p>
 								</div>
 								<pre><code class="language-typescript">sdk.Link.setExternalLinkPolicy(<span class="hljs-literal">false</span>);
@@ -1002,7 +1002,7 @@ $('#toc').on('click', 'a', function() {
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Change the behavior of clicking a link to another model.</p>
 								</div>
 								<pre><code class="language-typescript">sdk.Link.setModelLinkPolicy(sdk.Link.OpenPolicy.NEW_WINDOW);
@@ -1045,7 +1045,7 @@ $('#toc').on('click', 'a', function() {
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Change the behavior of clicking a link to a location within the current model.</p>
 								</div>
 								<pre><code class="language-typescript"><span class="hljs-comment">// when clicking a link with a location within the current model, open a new window with the model at the location</span>
@@ -1092,7 +1092,7 @@ sdk.Link.setNavigationLinkPolicy(sdk.Link.OpenPolicy.DEFAULT);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Change the behavior of clicking a link to a page from the same origin as the one hosting Showcase.</p>
 								</div>
 								<pre><code class="language-typescript">sdk.Link.setSameOriginLinkPolicy(sdk.Link.OpenPolicy.CURRENT_WINDOW);
@@ -1135,7 +1135,7 @@ sdk.Link.setSameOriginLinkPolicy(sdk.Link.OpenPolicy.SAME_FRAME);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Change how the link the share dialog and the <a href="link.html#createlink">createLink</a> and <a href="link.html#createdeeplink">createDeepLink</a> links are created.</p>
 								</div>
 								<pre><code class="language-typescript"><span class="hljs-keyword">await</span> sdk.Link.setShareLinkPolicy(sdk.Link.CreationPolicy.REFERRER);
@@ -1295,7 +1295,7 @@ sdk.Link.setSameOriginLinkPolicy(sdk.Link.OpenPolicy.SAME_FRAME);
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jan 26, 2023 <br />
+ Site last generated: Feb 1, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

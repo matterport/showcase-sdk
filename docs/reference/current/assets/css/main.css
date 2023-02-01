@@ -649,8 +649,8 @@ dl.tsd-comment-tags dt.tsd-comment-tags-deprecated {color: white; background-col
 dl.tsd-comment-tags dd { margin: 0 0 10px 0; }
 dl.tsd-comment-tags p { margin: 0; padding-top: 3px; }
 
-.tsd-panel.tsd-comment .lead { font-size: 1.1em; line-height: 1.333em; margin-bottom: 2em; }
-.tsd-panel.tsd-comment .lead:last-child { margin-bottom: 0; }
+.tsd-panel.tsd-comment .tsd-lead { font-size: 1.1em; line-height: 1.333em; margin-bottom: 2em; }
+.tsd-panel.tsd-comment .tsd-lead:last-child { margin-bottom: 0; }
 
 .toggle-protected .tsd-is-private { display: none; }
 
@@ -773,7 +773,7 @@ dl.tsd-comment-tags p { margin: 0; padding-top: 3px; }
 #tsd-search.loading .results li.state.loading { display: block; }
 #tsd-search.failure .results li.state.failure { display: block; }
 
-.tsd-signature { margin: 0 0 1em 0; padding: 10px; border: 1px solid #eee; font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px; }
+.tsd-signature { margin: 0 0 1em 0; padding: 10px; border: 1px solid #eee; font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px; line-height: 2.5em; }
 .tsd-signature.tsd-kind-icon { padding-left: 30px; }
 .tsd-signature.tsd-kind-icon:before { top: 10px; left: 10px; }
 .tsd-panel > .tsd-signature { margin-left: -20px; margin-right: -20px; border-width: 1px 0; }

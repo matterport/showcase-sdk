@@ -781,7 +781,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.86.4-0-g4a2432b652/sdk.d.ts">3.1.86.4-0-g4a2432b652</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.87.4-0-g304d35dded/sdk.d.ts">3.1.87.4-0-g304d35dded</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -872,7 +872,7 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>An RGB represenation of a color.
 							Each property is normalized to the range [0, 1]</p>
 						</div>
@@ -899,7 +899,7 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>A callback that describes a condition of an <a href="interfaces/iobservable.html">IObservable</a> to wait for.
 							Returning true will resolve the promise returned by <a href="interfaces/iobservable.html#waituntil">IObservable.waitUntil</a></p>
 						</div>
@@ -934,7 +934,7 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>The entire MP Sdk returned from a successful call to <code>MP_SDK.connect</code>.
 							The <code>Scene</code> namespace is only available when connecting using the Bundle SDK</p>
 						</div>
@@ -1032,7 +1032,7 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>A callback that can be subscribed to changes of an <a href="interfaces/iobservable.html">IObservable</a></p>
 						</div>
 						<p>The functional style version of the <a href="interfaces/iobserver.html">IObserver</a></p>
@@ -1066,7 +1066,7 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>An orientation described with Euler-like angles in degrees.</p>
 						</div>
 					</div>
@@ -1113,7 +1113,7 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>A Window type that can be used to cast the bundle&#39;s iframe&#39;s contentWindow to hint at the existance of the <a href="interfaces/mp_sdk.html">MP_SDK</a> object.</p>
 						</div>
 						<pre><code class="language-typescript"><span class="hljs-keyword">const</span> bundleIframe = <span class="hljs-built_in">document</span>.getElementById&lt;HTMLIFrameElement&gt;(<span class="hljs-string">&#x27;showcase&#x27;</span>);
@@ -1129,7 +1129,7 @@ showcaseWindow.MP_SDK.connect(showcaseWindow);
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>When including the sdk script (<code>&lt;script src=&#39;https://static.matterport.com/showcase-sdk/2.0.1-0-g64e7e88/sdk.js&#39;&gt;</code>) on your page,
 							an <a href="interfaces/mp_sdk.html">MP_SDK</a> will be attached to the window object.</p>
 						</div>
@@ -1210,7 +1210,7 @@ showcaseEmbeddingWindow.MP_SDK.connect( ... )
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Stop sending and receiving messages and cleanup any resources associated with the sdk</p>
 								</div>
 								<pre><code>mpSdk.disconnect();
@@ -1239,7 +1239,7 @@ showcaseEmbeddingWindow.MP_SDK.connect( ... )
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Unsubscribes from an event.</p>
 								</div>
 								<pre><code><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">model</span>) =&gt;</span> {
@@ -1357,7 +1357,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This event fires when the camera&#39;s pose has changed via a position or orientation change.</p>
 								</div>
 								<p>The callback is called with the new pose of the camera.</p>
@@ -1406,7 +1406,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This event fires when a floor change is starting.</p>
 								</div>
 								<p>the callback returns the floor index that we are moving to, and the floor index we are moving from.</p>
@@ -1453,7 +1453,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This event fires when a floor change is ending.</p>
 								</div>
 								<p>the callback returns the floor index (0 based, counting from the bottom)
@@ -1507,7 +1507,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This event fires when the labels&#39; on screen position has changed.</p>
 								</div>
 								<pre><code>mpSdk.on(Label.Event.POSITION_UPDATED,
@@ -1551,7 +1551,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This event fires when the input pointer hovers onto or out of a mattertag disc.</p>
 								</div>
 								<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.Mattertag.Event.HOVER,
@@ -1601,7 +1601,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This event fires when the input pointer clicks a Mattertag disc.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Mattertag.Event.CLICK,
@@ -1644,7 +1644,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This event fires when a mattertag link is opened.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Mattertag.Event.LINK_OPEN,
@@ -1690,7 +1690,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This event fires when the camera is starting to transition to a mode.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Mode.Event.CHANGE_START,
@@ -1737,7 +1737,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This event fires when the camera has completed a transition to a mode.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Mode.Event.CHANGE_END,
@@ -1784,7 +1784,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This event fires when the model has been loaded.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.<span class="hljs-keyword">Model</span>.Event.MODEL_LOADED,
@@ -1827,7 +1827,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This event fires when first entering a sweep.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Sweep.Event.ENTER,
@@ -1874,7 +1874,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This event fires when exiting a sweep.</p>
 								</div>
 								<pre><code>mpSdk.<span class="hljs-keyword">on</span>(mpSdk.Sweep.Event.EXIT,
@@ -1927,7 +1927,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This event fires when the tour has started.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Tour.Event.STARTED,
@@ -1964,7 +1964,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This event fires when the tour has stopped.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Tour.Event.STOPPED,
@@ -2001,7 +2001,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This event fires when the tour has ended.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Tour.Event.ENDED,
@@ -2038,7 +2038,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This event fires when the tour has stepped.</p>
 								</div>
 								<pre><code>mpSdk.on(mpSdk.Tour.Event.STEPPED,
@@ -2255,7 +2255,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jan 26, 2023 <br />
+ Site last generated: Feb 1, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

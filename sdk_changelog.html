@@ -750,7 +750,19 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <h2 id="2311">23.1.1</h2>
+   <h2 id="2312">23.1.2</h2>
+<h5 id="feb-1-2023">Feb 1, 2023</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added the ability add sizes to sandboxes created through <a href="docs/reference/current/modules/tag.html#registersandbox"><code class="language-plaintext highlighter-rouge">Tag.registerSandbox</code></a>.</li>
+  <li>Fixed a race condition in <a href="docs/reference/current/modules/tag.html#editopacity"><code class="language-plaintext highlighter-rouge">Tag.editOpacity</code></a>. Opacity can now be set much sooner.</li>
+  <li>Fixed the media properties in <a href="docs/reference/current/modules/mattertag.html#getdata"><code class="language-plaintext highlighter-rouge">Mattertag.getData</code></a>.</li>
+  <li>Addressed some performance issues when adding numerous tags at once using <a href="docs/reference/current/modules/tag.html#add">Tag.add</a>.</li>
+  <li>Removed “share” buttons from transient Tags created through the SDK <strong>temporarily</strong> since the links created weren’t always valid.</li>
+  <li>Updated the type definition of <a href="docs/reference/current/modules/mattertag.html#getdiscposition"><code class="language-plaintext highlighter-rouge">Mattertag.getDiscPosition</code></a> to accept both data from <code class="language-plaintext highlighter-rouge">Mattertag.getData</code> and <code class="language-plaintext highlighter-rouge">Mattertag.data</code>.</li>
+</ul>
+
+<h2 id="2311">23.1.1</h2>
 <h5 id="jan-19-2023">Jan 19, 2023</h5>
 <p><strong>General</strong></p>
 <ul>
@@ -1432,7 +1444,7 @@ We are adding support for synchronous functions. These functions compute and ret
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jan 26, 2023 <br />
+ Site last generated: Feb 1, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

@@ -784,7 +784,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.86.4-0-g4a2432b652/sdk.d.ts">3.1.86.4-0-g4a2432b652</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.87.4-0-g304d35dded/sdk.d.ts">3.1.87.4-0-g304d35dded</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -861,7 +861,7 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>The actions that can be taken when interacting with a tag</p>
 						</div>
 					</div>
@@ -871,7 +871,7 @@ $('#toc').on('click', 'a', function() {
 							<li class="tsd-parameter">
 								<h5>navigating<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 								<div class="tsd-comment tsd-typography">
-									<div class="lead">
+									<div class="tsd-lead">
 										<p>Whether navigation towared the tag will occur when clicked</p>
 									</div>
 								</div>
@@ -879,7 +879,7 @@ $('#toc').on('click', 'a', function() {
 							<li class="tsd-parameter">
 								<h5>opening<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 								<div class="tsd-comment tsd-typography">
-									<div class="lead">
+									<div class="tsd-lead">
 										<p>Whether the tag can be opened via a mouse hover</p>
 									</div>
 								</div>
@@ -894,7 +894,7 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>Things such as media, etc that can be attached to a Tag.
 							Attachments are the new equivalent to Media in Mattertags.</p>
 						</div>
@@ -921,7 +921,7 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>A subset of the TagData used when adding Tags.
 							Most properties are optional except those used for positioning: <code>anchorPosition</code>, <code>stemVector</code>.</p>
 						</div>
@@ -943,6 +943,9 @@ $('#toc').on('click', 'a', function() {
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> label<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> opacity<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>stem<wbr>Vector<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
@@ -978,7 +981,7 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>Map the globals we provide in your sandbox to other names.</p>
 						</div>
 					</div>
@@ -1031,19 +1034,28 @@ $('#toc').on('click', 'a', function() {
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> global<wbr>Variable<wbr>Map<span class="tsd-signature-symbol">?: </span><a href="tag.html#globalvariablemap" class="tsd-signature-type">Tag.GlobalVariableMap</a></h5>
+								<h5>global<wbr>Variable<wbr>Map<span class="tsd-signature-symbol">: </span><a href="tag.html#globalvariablemap" class="tsd-signature-type">Tag.GlobalVariableMap</a></h5>
 								<div class="tsd-comment tsd-typography">
-									<div class="lead">
+									<div class="tsd-lead">
 										<p>A map for the three global functions we provide in your sandbox.
 										Only needs to be used if scripts you are importing also have a global <code>send</code>, <code>on</code>, <code>off</code>, or <code>tag</code>.</p>
 									</div>
 								</div>
 							</li>
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> name<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 								<div class="tsd-comment tsd-typography">
-									<div class="lead">
+									<div class="tsd-lead">
 										<p>A human readable name that will be used as the <code>src</code> in the attachments collection.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>size<span class="tsd-signature-symbol">: </span><a href="../index.html#size" class="tsd-signature-type">Size</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="tsd-lead">
+										<p>The size of the sandbox to display
+										Providing <code>0</code> as one of the dimensions will instead use the default: 150px for height, 100% for width.</p>
 									</div>
 								</div>
 							</li>
@@ -1083,7 +1095,7 @@ $('#toc').on('click', 'a', function() {
 							<li class="tsd-parameter">
 								<h5>attachments<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 								<div class="tsd-comment tsd-typography">
-									<div class="lead">
+									<div class="tsd-lead">
 										<p>The ids of the attachments currently attached to this tag</p>
 									</div>
 								</div>
@@ -1136,7 +1148,7 @@ $('#toc').on('click', 'a', function() {
 						</span>
 					</h4>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>An observable collection of the <a href="tag.html#attachment">Attachment</a>.</p>
 						</div>
 						<pre><code class="language-typescript">mpSdk.Tag.attachments.subscribe({
@@ -1171,19 +1183,22 @@ $('#toc').on('click', 'a', function() {
 						</span>
 					</h4>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>An observable collection of Tag data that can be subscribed to.</p>
 						</div>
 						<p>When first subscribing, the current set of Tags will call the observer&#39;s <code>onAdded</code> for each Tag as the data becomes available.</p>
 						<pre><code class="language-typescript">mpSdk.Tag.data.subscribe({
-  <span class="hljs-attr">onAdded</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">index, item, collection</span>) </span>{
+  <span class="hljs-function"><span class="hljs-title">onAdded</span>(<span class="hljs-params">index, item, collection</span>)</span> {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Tag added to the collection&#x27;</span>, index, item, collection);
   },
-  <span class="hljs-attr">onRemoved</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">index, item, collection</span>) </span>{
+  <span class="hljs-function"><span class="hljs-title">onRemoved</span>(<span class="hljs-params">index, item, collection</span>)</span> {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Tag removed from the collection&#x27;</span>, index, item, collection);
   },
-  <span class="hljs-attr">onUpdated</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">index, item, collection</span>) </span>{
+  <span class="hljs-function"><span class="hljs-title">onUpdated</span>(<span class="hljs-params">index, item, collection</span>)</span> {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Tag updated in place in the collection&#x27;</span>, index, item, collection);
+  }
+  <span class="hljs-function"><span class="hljs-title">onCollectionUpdated</span>(<span class="hljs-params">collection</span>)</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;The full collection of Tags looks like&#x27;</span>, collection);
   }
 });
 </code></pre>
@@ -1217,7 +1232,7 @@ $('#toc').on('click', 'a', function() {
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Add one or more Tags to Showcase.
 									Each input Tag supports setting the label, description, color or icon, anchorPosition, stemVector, and attachments.</p>
 								</div>
@@ -1226,8 +1241,9 @@ $('#toc').on('click', 'a', function() {
 									<li><code>anchorPosition</code>, the point where the tag connects to the model</li>
 									<li><code>stemVector</code>, the direction, aka normal, and height that the Tag stem points</li>
 								</ul>
-								<p>See <a href="pointer.html#intersection-1">Pointer.intersection</a> for a way to retrive a new <code>anchorPosition</code> and <code>stemVector</code>.</p>
-								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
+								<p>See <a href="pointer.html#intersection-1">Pointer.intersection</a> for a way to retrieve a new <code>anchorPosition</code> and <code>stemVector</code>.</p>
+								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.
+								They also do not have &quot;share&quot; buttons as they associated with them.</p>
 								<pre><code class="language-typescript">mpSdk.Tag.add({
  <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;New tag&#x27;</span>,
  <span class="hljs-attr">description</span>: <span class="hljs-string">&#x27;This tag was added through the Matterport SDK&#x27;</span>,
@@ -1300,7 +1316,7 @@ $('#toc').on('click', 'a', function() {
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Sets the allowed &quot;default&quot; Showcase actions on a Tag from occurring: hover to open billboard, click to navigate to view.
 									If an action is ommited from the actions argument, it will be considered false by default.</p>
 								</div>
@@ -1370,7 +1386,7 @@ mpSdk.Tag.allowAction(noActionsTag, {
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Attach <a href="tag.html#attachment">Attachment</a> to a Tag.</p>
 								</div>
 								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> tagId: <span class="hljs-built_in">string</span>; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
@@ -1412,7 +1428,7 @@ mpSdk.Tag.attach(tagId, attachmentId[<span class="hljs-number">0</span>], attach
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Detach <a href="tag.html#attachment">Attachment</a> from a Tag.</p>
 								</div>
 								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> tagId: <span class="hljs-built_in">string</span>; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
@@ -1461,7 +1477,7 @@ mpSdk.Tag.detach(tagId, attachmentId[<span class="hljs-number">0</span>], attach
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Edit the text content in a Tag&#39;s billboard.</p>
 								</div>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
@@ -1515,7 +1531,7 @@ mpSdk.Tag.detach(tagId, attachmentId[<span class="hljs-number">0</span>], attach
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Edit the color of a Tag&#39;s disc.</p>
 								</div>
 								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> tagIds: <span class="hljs-built_in">string</span>[]; <span class="hljs-comment">// ... acquired through previous calls to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
@@ -1572,11 +1588,11 @@ mpSdk.Tag.editColor(tagIds[<span class="hljs-number">0</span>], {
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Change the icon of the Tag disc</p>
 								</div>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code class="language-typescript"><span class="hljs-comment">// change the icon of the Tag using the id used in a previous registeredIcon call</span>
+								<pre><code class="language-typescript"><span class="hljs-comment">// change the icon of the Tag using the id used in a previous &lt;a href=&quot;asset.html#registertexture&quot;&gt;Asset.registerTexture&lt;/a&gt; call</span>
 mpSdk.Tag.editIcon(id, <span class="hljs-string">&#x27;customIconId&#x27;</span>);
 </code></pre>
 							</div>
@@ -1624,7 +1640,7 @@ mpSdk.Tag.editIcon(id, <span class="hljs-string">&#x27;customIconId&#x27;</span>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Edit the opacity of a Tag.</p>
 								</div>
 								<p>A completely transparent/invisible Tag is still interactable and will respond to mouse hovers and clicks.</p>
@@ -1683,7 +1699,7 @@ mpSdk.Tag.editOpacity(tagIds[<span class="hljs-number">2</span>], <span class="h
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Move and reorient a Tag.</p>
 								</div>
 								<p>See <a href="pointer.html#intersection-1">Pointer.intersection</a> for a way to retrieve a new <code>anchorPosition</code> and <code>stemVector</code>.</p>
@@ -1734,7 +1750,7 @@ mpSdk.Tag.editPosition(tagId, {
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Edit the stem of a Tag</p>
 								</div>
 								<pre><code class="language-typescript">const tagId: string = tagData[0].id; // ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`
@@ -1789,7 +1805,7 @@ mpSdk.Tag.editStem(tagId, {stemHeight: 1});
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Register a new <a href="tag.html#attachment">Attachment</a> that can later be attached as media to a Tag.</p>
 								</div>
 								<p>Custom HTML can be added as an attachment through the use of <a href="tag.html#registersandbox">registerSandbox</a> instead.</p>
@@ -1818,7 +1834,7 @@ mpSdk.Tag.editStem(tagId, {stemHeight: 1});
 					<a name="registersandbox" class="tsd-anchor"></a>
 					<h3>register<wbr>Sandbox</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">register<wbr>Sandbox<span class="tsd-signature-symbol">(</span>html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="tag.html#sandboxoptions" class="tsd-signature-type">Tag.SandboxOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/tag.imessenger.html" class="tsd-signature-type">Tag.IMessenger</a><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">register<wbr>Sandbox<span class="tsd-signature-symbol">(</span>html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="tag.html#sandboxoptions" class="tsd-signature-type">Tag.SandboxOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/tag.imessenger.html" class="tsd-signature-type">Tag.IMessenger</a><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1839,7 +1855,7 @@ mpSdk.Tag.editStem(tagId, {stemHeight: 1});
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Register an HTML sandbox that diplays custom HTML and runs custom scripts as an attachment.
 									Data can be sent and received from the sandbox by using the returned <a href="../interfaces/tag.imessenger.html">IMessenger</a>.</p>
 								</div>
@@ -1883,7 +1899,7 @@ messenger.send(<span class="hljs-string">&#x27;I send messages&#x27;</span>, <sp
 									<h5>html: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="tag.html#sandboxoptions" class="tsd-signature-type">Tag.SandboxOptions</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="tag.html#sandboxoptions" class="tsd-signature-type">Tag.SandboxOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/tag.imessenger.html" class="tsd-signature-type">Tag.IMessenger</a><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1916,7 +1932,7 @@ messenger.send(<span class="hljs-string">&#x27;I send messages&#x27;</span>, <sp
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Removes one or more Tags from Showcase.</p>
 								</div>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
@@ -1967,7 +1983,7 @@ mpSdk.Tag.remove(...tagIds);
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Resets the icon of the Tag disc back to its original icon.</p>
 								</div>
 								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> tagIds: <span class="hljs-built_in">string</span>[]; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
@@ -2174,7 +2190,7 @@ mpSdk.Tag.resetIcon(tagIds[<span class="hljs-number">0</span>].id);
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jan 26, 2023 <br />
+ Site last generated: Feb 1, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

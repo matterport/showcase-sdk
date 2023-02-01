@@ -784,7 +784,7 @@ $('#toc').on('click', 'a', function() {
 			<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<div class="lead">
+					<div class="tsd-lead">
 						<p>IComponent</p>
 					</div>
 					<p>Use this interface to implement a component and register it with the sdk.</p>
@@ -837,7 +837,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.86.4-0-g4a2432b652/sdk.d.ts">3.1.86.4-0-g4a2432b652</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/3.1.87.4-0-g304d35dded/sdk.d.ts">3.1.87.4-0-g304d35dded</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -887,7 +887,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>The component type. This value is the same string used to identify the component factory.</p>
 						</div>
 					</div>
@@ -899,7 +899,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>The context provides access to the underlying rendering engine. The sdk framework adds it
 							to the component during construction.</p>
 						</div>
@@ -912,7 +912,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>An optional dictionary of events emitted by this component.
 								Setting an emit to a falsy value will prevent the component from emitting the event when using <code>.notify</code>.
 								These properties can be changed by an external source at any time.
@@ -927,7 +927,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>An optional dictionary of events that this component handles through its <code>onEvent</code>.
 							Setting an event to a falsy value temporarily stops this component from receiving said event.</p>
 						</div>
@@ -940,7 +940,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>An optional dictionary of properties that affects the behavior of the component.
 								These properties can be changed by an external source at any time. It is up to the component
 								to respond appropriately to the changes. These input properties can also be bind targets to an
@@ -955,7 +955,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
+						<div class="tsd-lead">
 							<p>An optional dictionary of properties that this component computes.
 							This dictionary is observable and can be the source of a bind target.</p>
 						</div>
@@ -996,7 +996,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Call this function to bind an input property to an output property on another
 									component.</p>
 								</div>
@@ -1061,7 +1061,7 @@ node2.start();
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Notifies this component of an <code>eventType</code> when the <code>src</code> Component calls <code>notify</code> with a <code>srcEventType</code> event</p>
 								</div>
 							</div>
@@ -1092,7 +1092,7 @@ node2.start();
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Emit an event to other components</p>
 								</div>
 							</div>
@@ -1120,7 +1120,7 @@ node2.start();
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This function is called once right before the scene node has stopped.</p>
 								</div>
 							</div>
@@ -1139,7 +1139,7 @@ node2.start();
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This function is called once for each interaction or event that occurred during the last frame.
 									The component must set outputs.collider with an Object3D to get interaction callbacks or bindEvent to receive other events.</p>
 								</div>
@@ -1168,7 +1168,7 @@ node2.start();
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This function is called once after the scene node its attached to has started.</p>
 								</div>
 							</div>
@@ -1187,7 +1187,7 @@ node2.start();
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>This function is called after one or more input properties have changed.
 									It will be called at most once a frame.</p>
 								</div>
@@ -1213,7 +1213,7 @@ node2.start();
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p> This function is called once a frame after input changes have been detected.</p>
 								</div>
 							</div>
@@ -1244,7 +1244,7 @@ node2.start();
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
+								<div class="tsd-lead">
 									<p>Spy on a component&#39;s notify from outside of the component system</p>
 								</div>
 							</div>
@@ -1516,7 +1516,7 @@ node2.start();
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jan 26, 2023 <br />
+ Site last generated: Feb 1, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
