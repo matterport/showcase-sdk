@@ -750,7 +750,20 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <h2 id="2312">23.1.2</h2>
+   <h2 id="2321">23.2.1</h2>
+<h5 id="feb-16-2023">Feb 16, 2023</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added the ability to open and close Tags using <a href="docs/reference/current/modules/tag.html#open"><code class="language-plaintext highlighter-rouge">Tag.open</code></a>, <a href="docs/reference/current/modules/tag.html#close"><code class="language-plaintext highlighter-rouge">Tag.close</code></a>, <a href="docs/reference/current/modules/tag.html#dock"><code class="language-plaintext highlighter-rouge">Tag.dock</code></a>.</li>
+  <li>Added the ability to set the id of Tag when calling <a href="docs/reference/current/modules/tag.html#add"><code class="language-plaintext highlighter-rouge">Tag.add</code></a>.</li>
+  <li>Added a <code class="language-plaintext highlighter-rouge">docking</code> option to disable docking when using <a href="docs/reference/current/modules/tag.html#allowaction"><code class="language-plaintext highlighter-rouge">Tag.allowAction</code></a>.</li>
+  <li>Added <a href="docs/reference/current/modules/tag.html#opentags-1"><code class="language-plaintext highlighter-rouge">Tag.openTags</code></a> that reports the hovered, selected (clicked/opened), and docked state of Tags.</li>
+  <li>Added the extra properties to each <a href="docs/reference/current/modules/tag.html#tagdata">Tag</a>: <code class="language-plaintext highlighter-rouge">Tag.keywords</code>, <code class="language-plaintext highlighter-rouge">Tag.stemHeight</code>, <code class="language-plaintext highlighter-rouge">Tag.discPosition</code>.</li>
+  <li>Fixed thrown errors for .svg in <a href="docs/reference/current/modules/asset.html#registertexture"><code class="language-plaintext highlighter-rouge">Asset.registerTexture</code></a>.</li>
+  <li>Added a delay to the SDK loading screen message and changed the messaging to remove mention of the SDK.</li>
+</ul>
+
+<h2 id="2312">23.1.2</h2>
 <h5 id="feb-1-2023">Feb 1, 2023</h5>
 <p><strong>General</strong></p>
 <ul>
@@ -1444,7 +1457,7 @@ We are adding support for synchronous functions. These functions compute and ret
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Feb 1, 2023 <br />
+ Site last generated: Feb 16, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
