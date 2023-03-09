@@ -853,6 +853,7 @@ $('#toc').on('click', 'a', function() {
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#registersandbox" class="tsd-kind-icon">register<wbr>Sandbox</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#remove" class="tsd-kind-icon">remove</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#reseticon" class="tsd-kind-icon">reset<wbr>Icon</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#togglenavcontrols" class="tsd-kind-icon">toggle<wbr>Nav<wbr>Controls</a></li>
 							</ul>
 						</section>
 					</div>
@@ -2269,6 +2270,42 @@ mpSdk.Tag.resetIcon(tagIds[<span class="hljs-number">0</span>].id);
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="togglenavcontrols" class="tsd-anchor"></a>
+					<h3>toggle<wbr>Nav<wbr>Controls</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">toggle<wbr>Nav<wbr>Controls<span class="tsd-signature-symbol">(</span>enable<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="tsd-lead">
+									<p>Toggle the overhead navigation UI</p>
+								</div>
+								<pre><code class="language-typescript"><span class="hljs-comment">// hide the controls</span>
+mpSdk.Tag.toggleNavControls(<span class="hljs-literal">false</span>);
+
+<span class="hljs-comment">// show the controls</span>
+mpSdk.Tag.toggleNavControls(<span class="hljs-literal">true</span>);
+
+<span class="hljs-comment">// toggle the current visibility of the controls</span>
+mpSdk.Tag.toggleNavControls();
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> enable: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -2446,6 +2483,9 @@ mpSdk.Tag.resetIcon(tagIds[<span class="hljs-number">0</span>].id);
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="tag.html#reseticon" class="tsd-kind-icon">reset<wbr>Icon</a>
 					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="tag.html#togglenavcontrols" class="tsd-kind-icon">toggle<wbr>Nav<wbr>Controls</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -2472,7 +2512,7 @@ mpSdk.Tag.resetIcon(tagIds[<span class="hljs-number">0</span>].id);
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Mar 3, 2023 <br />
+ Site last generated: Mar 9, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
