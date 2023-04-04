@@ -74,6 +74,12 @@
   
   
   <url>
+    <loc>https://matterport.github.io/accountapi_changelog.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/api_home.html</loc>
   </url>
   
@@ -435,6 +441,18 @@
   
   <url>
     <loc>https://matterport.github.io/modelapi_changelog.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/modelapi_postman.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/modelapi_snippets.html</loc>
   </url>
   
   

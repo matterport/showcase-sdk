@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>SDK for Embeds Quick Start | Matterport Developers</title>
+<title>Using Model API with Postman | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -128,7 +128,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the SDK for Embeds Quick Start page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Using Model API with Postman page: ' + window.location.href;">Feedback</a>
           </div>
         </div>
       </div>
@@ -224,7 +224,7 @@
           
           
           
-          <li class="active"><a title="HTML Quick Start" href="/showcase-sdk/sdk_quickstart.html">HTML Quick Start</a></li>
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdk_quickstart.html">HTML Quick Start</a></li>
           
           
           
@@ -636,7 +636,7 @@
           
           
           
-          <li><a title="Using Model API with Postman" href="/showcase-sdk/modelapi_postman.html">Using Model API with Postman</a></li>
+          <li class="active"><a title="Using Model API with Postman" href="/showcase-sdk/modelapi_postman.html">Using Model API with Postman</a></li>
           
           
           
@@ -719,7 +719,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="SDK for Embeds Quick Start">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Using Model API with Postman">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -734,7 +734,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">SDK for Embeds Quick Start</h1>
+   <h1 class="post-title-main">Using Model API with Postman</h1>
 </div>
 
 
@@ -744,88 +744,22 @@ noResultsText: '<li><div>No results found.<div></li>',
    
 
     
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-  
-});
-</script>
-
-<div id="toc"></div>
-
-    
 
 
     
 
-   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developer@matterport.com">developer@matterport.com</a> with any questions.</div>
+   <p><a href="https://www.postman.com/">Postman</a> has built-in support for sending GraphQL queries, using GraphQL variables, custom pre-request scripting and running batch functions.</p>
 
-<h2 id="a-complete-example-to-get-started">A Complete Example to Get Started</h2>
+<p>With Postman, you can build a library of Matterport API queries and mutations to re-use easily with Postman.</p>
 
-<p>This sample HTML creates an iframe containing a Matterport model. It then connects the Embed SDK, retrieves data about the model, and finally logs the model’s id.</p>
+<p>Postman will automatically load the schema from our API endpoints to help you quickly autocomplete queries and provide insights to syntax errors when queries are malformed.</p>
 
-<p>You only need to replace the <strong>two</strong> <code class="language-plaintext highlighter-rouge">[YOUR_SDK_KEY_HERE]</code> strings with your own key (without the square brackets “[”, “]”).</p>
+<p>You can access an online version of Postman with all of our Model API snippets at: <a href="https://www.postman.com/matterport-developer-support/workspace/model-api-snippets">https://www.postman.com/matterport-developer-support/workspace/model-api-snippets</a>.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">'https://static.matterport.com/showcase-sdk/latest.js'</span><span class="nt">&gt;&lt;/script&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;iframe</span>
-      <span class="na">width=</span><span class="s">"853"</span>
-      <span class="na">height=</span><span class="s">"480"</span>
-      <span class="na">src=</span><span class="s">"https://my.matterport.com/show?m=SxQL3iGyoDo&amp;play=1&amp;applicationKey=[YOUR_SDK_KEY_HERE]"</span>
-      <span class="na">frameborder=</span><span class="s">"0"</span>
-      <span class="na">allow=</span><span class="s">"fullscreen; vr"</span>
-      <span class="na">id=</span><span class="s">"showcase-iframe"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;/iframe&gt;</span>
+<p>The public collection is setup to work with an account that we have setup that has one demo model on it.  All queries have the demo model entered into their $modelId variables.</p>
 
-    <span class="nt">&lt;script&gt;</span>
-      <span class="p">(</span><span class="k">async</span> <span class="kd">function</span> <span class="nx">connectSdk</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">sdkKey</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">[YOUR_SDK_KEY_HERE]</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// TODO: replace with your sdk key</span>
-        <span class="kd">const</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase-iframe</span><span class="dl">'</span><span class="p">);</span>
+<p>You can export these collections and import them into your own Postman projects.</p>
 
-        <span class="c1">// connect the sdk; log an error and stop if there were any connection issues</span>
-        <span class="k">try</span> <span class="p">{</span>
-          <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span>
-            <span class="nx">iframe</span><span class="p">,</span> <span class="c1">// Obtained earlier</span>
-            <span class="nx">sdkKey</span><span class="p">,</span> <span class="c1">// Your SDK key</span>
-            <span class="dl">''</span> <span class="c1">// Unused but needs to be a valid string</span>
-          <span class="p">);</span>
-          <span class="nx">onShowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
-        <span class="p">}</span>
-      <span class="p">})();</span>
-
-      <span class="k">async</span> <span class="kd">function</span> <span class="nx">onShowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// insert your sdk code here. See the ref https://matterport.github.io/showcase-sdk//docs/reference/current/index.html</span>
-
-        <span class="c1">// try retrieving the model data and log the model's sid</span>
-        <span class="k">try</span> <span class="p">{</span>
-          <span class="kd">const</span> <span class="nx">modelData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">getData</span><span class="p">();</span>
-          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Model sid:</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">modelData</span><span class="p">.</span><span class="nx">sid</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="nt">&lt;/script&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>
 
 
     <div class="tags">

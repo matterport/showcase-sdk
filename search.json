@@ -125,7 +125,18 @@
 
 
 {
-"title": "API Home",
+"title": "Account API Changelog",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/accountapi_changelog.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Matterport APIs Overview",
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/api_home.html",
@@ -784,6 +795,28 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/modelapi_changelog.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Using Model API with Postman",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/modelapi_postman.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Model API Code Snippets",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/modelapi_snippets.html",
 "summary": ""
 }
 ,

@@ -118,3 +118,58 @@ li.sidebarTitle {
 .navbar-inverse .navbar-toggle {
     border-color: #015CAE;
 }
+
+
+details {
+  border: 1px solid #ccc;
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+details a {
+  font-size: 1.5rem;
+}
+details + details {
+  border-top: none;
+}
+details[open] {
+    padding-bottom: 1em;
+}  
+details pre {
+  background: #272822;
+  color: #a6e22e;
+}
+summary {
+  padding: 1rem 2em 1rem 2rem;
+  font-size: 1.75rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+summary {
+  position: relative;
+}
+summary::marker {
+  content: none;
+}
+summary::before,
+summary::after {
+  content: '';
+}
+summary::before,
+summary::after {
+    width: .75em;
+    height: 0;
+    border-bottom: 2px solid;
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    transform: translateY(-50%);
+  }
+summary::after {
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
+}
+[open] summary::after {
+  transform: rotate(0deg);
+}

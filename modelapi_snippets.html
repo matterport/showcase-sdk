@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Model API Code Snippets | Matterport Developers</title>
+<link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/showcase-sdk/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="/showcase-sdk/css/customstyles.css">
+<link rel="stylesheet" href="/showcase-sdk/css/custom.css">
+<link rel="stylesheet" href="/showcase-sdk/css/tags2.css">
+
+<link rel="stylesheet" href="/showcase-sdk/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/showcase-sdk/css/theme-matterport.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/showcase-sdk/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/showcase-sdk/js/toc.js"></script>
+<script src="/showcase-sdk/js/customscripts.js"></script>
+<script src="/showcase-sdk/js/mermaid.min.js"></script>
+
+<link rel="shortcut icon" href="/showcase-sdk/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+
+    <script>
+      $(document).ready(function () {
+        // Initialize navgoco with default options
+        $("#mysidebar").navgoco({
+          caretHtml: '<i class="fa fa-chevron-down"></i>',
+          accordion: true,
+          openClass: "active", // open
+
+          save: false, // leave false or nav highlighting doesn't work right
+          cookie: {
+            name: "navgoco",
+            expires: false,
+            path: "/",
+          },
+          slide: {
+            duration: 400,
+            easing: "swing",
+          },
+        });
+
+        $("#collapseAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", false);
+        });
+
+        $("#expandAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", true);
+        });
+      });
+    </script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#tg-sb-link").change(function () {
+          $("#tg-sb-sidebar").toggle();
+          $("#tg-sb-content").toggleClass("col-md-9");
+          $("#tg-sb-content").toggleClass("col-md-12");
+        });
+      });
+    </script>
+     
+  </head>
+  <body>
+    <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div>
+    <div class="row">
+      <a class="navbrand col-md-3" href="index.html"
+        >&nbsp;<img
+          class="navbar-image"
+          src="/showcase-sdk/images/MP-logo_H_lock-RGB_white.svg"
+        /><span class="projectTitle"> </span></a
+      >
+      <div class="dev-nav-links col-md-6">
+        <div class="dropdown-items">
+          <div class="dropdown ">
+            <a class="dropbtn active" href="index.html">SDK Docs</a>
+            <div class="dropdown-content">
+              <a href="sdk_home.html" class="">SDK for Embeds</a>
+              <a href="sdkbundle_home.html" class="" href="#">SDK Bundle</a>
+              <a href="earlyaccess_home.html" class="" href="#">SDK Early Access</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://api.matterport.com/docs/reference">API Docs</a>
+            <div class="dropdown-content">
+              <a href="https://api.matterport.com/docs/reference">API Reference</a>
+              <a href="https://api.matterport.com/graphiql">Interactive Console</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms">Terms</a>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Model API Code Snippets page: ' + window.location.href;">Feedback</a>
+          </div>
+        </div>
+      </div>
+      <div class="right-content col-md-3">
+        <div class="dev-input-container">
+          <!-- Add roboto font to search bar -->
+          <img src="/showcase-sdk/images/search_button.png" />
+          <input id="search-input" type="text" placeholder="Search"/>
+          <div id="results-container"></div>        
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</nav>
+ 
+    <!-- Page Content -->
+    <div class="dev-page-wrapper">
+      <div id="main">
+        <!-- Content Row -->
+        <div class="row">
+          <!-- Sidebar Column -->
+          
+          <aside class="col-md-3" id="tg-sb-sidebar">
+            
+<div id="mysidebar" class="nav">
+  
+  
+  
+
+  <li>
+      <a title="Overview" href="#">Overview</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/index.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Change Log" href="/showcase-sdk/sdk_changelog.html">Change Log</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Vocabulary" href="/showcase-sdk/sdk_vocabulary.html">Vocabulary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Concepts" href="/showcase-sdk/sdk_concepts.html">Concepts</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Docs Summary" href="/showcase-sdk/sdk_reference_summary.html">Reference Docs Summary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Documentation" href="/showcase-sdk/docs\reference\current\index.html">Reference Documentation</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK for Embeds" href="#">SDK for Embeds</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdk_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdk_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Bundle" href="#">SDK Bundle</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdkbundle_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdkbundle_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setting up Embed.ly" href="/showcase-sdk/sdkbundle_tutorials_setting_up_embedly.html">Setting up Embed.ly</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setup a Local Environment" href="/showcase-sdk/sdkbundle_tutorials_setup.html">Setup a Local Environment</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Architecture" href="/showcase-sdk/sdkbundle_architecture.html">Architecture</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Components" href="#">Components</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Ambient Light" href="/showcase-sdk/sdkbundle_components_ambientlight.html">Ambient Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Directional Light" href="/showcase-sdk/sdkbundle_components_directionallight.html">Directional Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Point Light" href="/showcase-sdk/sdkbundle_components_pointlight.html">Point Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="GLTF Loader" href="/showcase-sdk/sdkbundle_components_gltfloader.html">GLTF Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="DAE Loader" href="/showcase-sdk/sdkbundle_components_daeloader.html">DAE Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="FBX Loader" href="/showcase-sdk/sdkbundle_components_fbxloader.html">FBX Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="OBJ Loader" href="/showcase-sdk/sdkbundle_components_objloader.html">OBJ Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transform Controls" href="/showcase-sdk/sdkbundle_components_transformcontrols.html">Transform Controls</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Input" href="/showcase-sdk/sdkbundle_components_input.html">Input</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Camera" href="/showcase-sdk/sdkbundle_components_camera.html">Camera</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="XR" href="/showcase-sdk/sdkbundle_components_xr.html">XR</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Early Access" href="#">SDK Early Access</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/earlyaccess_home.html">Home</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Tutorials" href="#">SDK Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Observables" href="/showcase-sdk/sdk_tutorials_observables.html">Using Observables</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Collections" href="/showcase-sdk/sdk_tutorials_collections.html">Using Collections</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Creating Mattertags" href="/showcase-sdk/sdk_creating_mattertags.html">Creating Mattertags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Editing Mattertags" href="/showcase-sdk/sdk_editing_mattertags.html">Editing Mattertags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags 2.0 Migration" href="/showcase-sdk/sdk_tutorials_mattertagtotag.html">Tags 2.0 Migration</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Code Sandboxes" href="/showcase-sdk/sdk_tutorials_htmlsandbox.html">Tags Code Sandboxes</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pathfinding" href="/showcase-sdk/sdk_tutorials_pathfinding.html">Pathfinding</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pointer Reticle" href="/showcase-sdk/sdk_tutorials_cursor.html">Pointer Reticle</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Working with Models" href="/showcase-sdk/sdkbundle_tutorials_models.html">Working with Models</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using xr" href="/showcase-sdk/sdkbundle_tutorials_using_xr.html">Using xr</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Scene Objects" href="/showcase-sdk/sdkbundle_tutorials_using_scene_objects.html">Using Scene Objects</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using OAuth" href="/showcase-sdk/sdkbundle_tutorials_using_oauth.html">Using OAuth</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Examples" href="#">SDK Examples</a>
+      <ul>
+          
+          
+          
+          <li><a title="Navigation Controls" href="/showcase-sdk/sdk_navigation_controls.html">Navigation Controls</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Intersection Inspector" href="/showcase-sdk/sdk_intersection_inspector.html">Intersection Inspector</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz" href="/showcase-sdk/sdk_tags_quiz.html">Tags Quiz</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz - Overlay" href="/showcase-sdk/sdk_tags_quiz_overlay.html">Tags Quiz - Overlay</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Kitchen Sink" href="/showcase-sdk/sdk_kitchen_sink.html">Kitchen Sink</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Remote Control" href="/showcase-sdk/sdk_remote_control.html">Remote Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Source Areas" href="/showcase-sdk/sdk_sensors_source_areas.html">Sensors - Source Areas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Tags Level of Detail" href="/showcase-sdk/sdk_sensors_tags_level_of_detail.html">Sensors - Tags Level of Detail</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Sweep Control" href="/showcase-sdk/sdk_sensors_sweep_control.html">Sensors - Sweep Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Virtual Staging" href="/showcase-sdk/sdkbundle_virtual_staging.html">Virtual Staging</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Local Webcam" href="/showcase-sdk/sdkbundle_local_webcam.html">Local Webcam</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Livestream" href="/showcase-sdk/sdkbundle_html_livestream.html">HTML Livestream</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="IoT Canvas" href="/showcase-sdk/sdkbundle_iot_canvas.html">IoT Canvas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Custom Experience" href="/showcase-sdk/sdkbundle_custom_experience.html">Custom Experience</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Security Camera FOV" href="/showcase-sdk/sdkbundle_security_camera.html">Security Camera FOV</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Content Attribution" href="/showcase-sdk/sdkbundle_content_attribution.html">Content Attribution</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Matterport APIs" href="#">Matterport APIs</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/api_home.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Model API Changelog" href="/showcase-sdk/modelapi_changelog.html">Model API Changelog</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="Model API Code Snippets" href="/showcase-sdk/modelapi_snippets.html">Model API Code Snippets</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Model API with Postman" href="/showcase-sdk/modelapi_postman.html">Using Model API with Postman</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags 2.0 Icons Reference" href="/showcase-sdk/tags_icons_reference.html">Tags 2.0 Icons Reference</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Account API Changelog" href="/showcase-sdk/accountapi_changelog.html">Account API Changelog</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="API Reference Docs" href="https://api.matterport.com/model/docs/reference" target="_blank" rel="noopener">API Reference Docs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="API Interactive Console" href="https://api.matterport.com/model/graphiql" target="_blank" rel="noopener">API Interactive Console</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Learn More" href="#">Learn More</a>
+      <ul>
+          
+          
+          
+          <li><a title="Developer Tools Overview" href="https://support.matterport.com/s/article/API-SDK-Developer-Tools-Overview" target="_blank" rel="noopener">Developer Tools Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pricing and Availability" href="https://support.matterport.com/s/article/Developer-Tools-Pricing-and-Availability" target="_blank" rel="noopener">Pricing and Availability</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Developer Program FAQ" href="https://support.matterport.com/s/article/Developer-Program-FAQ" target="_blank" rel="noopener">Developer Program FAQ</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</div>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+<script src="/showcase-sdk/js/jekyll-search.js" type="text/javascript"></script>
+<script type="text/javascript">
+        SimpleJekyllSearch.init({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            dataSource: '/showcase-sdk/search.json',
+            searchResultTemplate: '<li><a href="{url}" title="Model API Code Snippets">{title}</a></li>',
+noResultsText: '<li><div>No results found.<div></li>',
+        limit: 10,
+        fuzzy: true,
+})
+</script>
+
+          </aside>
+           
+          <!-- Content Column -->
+          <div
+            class=" col-md-9" 
+            id="tg-sb-content"
+          >
+            <div class="post-header">
+   <h1 class="post-title-main">Model API Code Snippets</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+
+
+    
+
+   <p>This is a library of ready-to-use sample GraphQL queries and mutations for Matterport’s Model API.</p>
+
+<p>Each query and mutation contains a link to try the query in our interactive console.  Be sure to edit the variables, when provided, and insert a valid Model ID and valid data for all variables.</p>
+
+<p>API Users in Sandbox mode can test these queries on a demo model in their account.  The model ID for the demo model can be found using the provided ‘Search for demo models in your account’ query found below.  Users with a Developer Tools license can use these queries on any of the models in their accounts.</p>
+
+<p>If you would like an application to build collections of API queries for testing and generating code to use in your applications, we recommend using <a href="https://www.postman.com/">Postman</a>.</p>
+
+<p>If you are needing assistance with building queries, refer to our schema <a href="https://api.matterport.com/model/docs/reference">here</a> or contact us at <a href="mailto:developer@matterport.com">developer@matterport.com</a></p>
+
+<h2 id="models-queries">Models Queries</h2>
+
+<p>models() queries get data from our models search engine.  Searchable data can be found here.</p>
+
+<details name="Search for your model">
+
+<summary>Search for your models</summary>
+
+<div class="language-graphql highlighter-rouge"><pre><code>query {
+  models(query: "*") {
+    totalResults
+     results {
+      id
+      name
+      description
+    }
+  }
+}
+</code></pre>
+
+<p>Sample Response:</p>
+
+<pre><code>{
+  "data": {
+    "models": {
+      "totalResults": 1,
+      "results": [
+        {
+          "id": "MODEL_ID",
+          "name": "352 E Java Dr",
+          "description": ""
+        }
+      ]
+    }
+  }
+}
+</code></pre></div>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=query%20%7B%0Amodels\(query%3A%20%22\*%22\)%20%7B%0A%20%20%20%20totalResults%0A%20%20%20%20%20results%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20description%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+<details name="Search for demo models">
+
+<summary>Search for demo models in your account</summary>
+
+All accounts come with a demo model.  This can be queried in sandbox mode for testing purposes.  If you wish to find the demo models with a models query, use "demo: true" as your query.  You can also include 'demo' in your results to verify that this is a demo model.
+
+<pre><code>query models {
+  models(
+    query: "demo:true",
+    include: demo
+  ) {
+     results {
+       name
+       demo
+       id
+     }
+     nextOffset
+     totalResults
+  }
+}
+</code></pre>
+
+<p>Sample Response:</p>
+
+<pre><code>{
+    "data": {
+        "models": {
+            "results": [
+                {
+                    "name": "Get Started",
+                    "demo": true,
+                    "id": "xiyHP9VkT1U"
+                },
+                {
+                    "name": "Get Started",
+                    "demo": true,
+                    "id": "YGYWqVqWDpm"
+                }
+            ],
+            "totalResults": 2
+        }
+    }
+}
+</code></pre>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=query%20models%20%7B%0A%20%20%20models(%0A%20%20%20%20query%3A%20%22demo%3Atrue%22%2C%0A%20%20%20%20include%3A%20demo%0A%20%20%20%20)%20%7B%0A%20%20%20%20%20results%20%7B%0A%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20demo%0A%20%20%20%20%20%20%20id%0A%20%20%20%20%20%7D%0A%20%20%20%20%20nextOffset%0A%20%20%20%20%20totalResults%0A%20%20%20%7D%0A%20%7D&amp;operationName=models)" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+<details name="Search for archived models">
+  
+<summary>Search for archived models</summary>
+  
+<pre><code>query models {
+   models(
+    query: "state:inactive",
+    include: inactive
+    ) {
+     results {
+       name
+       state
+       id
+     }
+     nextOffset
+     totalResults
+   }
+ }
+</code></pre>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=query%20models%20%7B%0A%20%20%20models(%0A%20%20%20%20query%3A%20%22state%3Ainactive%22%2C%0A%20%20%20%20include%3A%20inactive%0A%20%20%20%20)%20%7B%0A%20%20%20%20%20results%20%7B%0A%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20state%0A%20%20%20%20%20%20%20id%0A%20%20%20%20%20%7D%0A%20%20%20%20%20nextOffset%0A%20%20%20%20%20totalResults%0A%20%20%20%7D%0A%20%7D&amp;operationName=models)" target="_blank">Try this query in our interactive console</a></p>
+</details>
+
+<details name="Search for models with x # of floors">
+
+<summary>Search for Models with x # of Floors</summary>
+
+<pre><code>query models {
+   models(
+    query: "floors.count: 20"
+    ) {
+     results {
+       id
+       name
+     }
+     nextOffset
+     totalResults
+   }
+ }
+</code></pre>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=query%20models%20%7B%0A%20%20%20models(%0A%20%20%20%20query%3A%20%22floors.count%3A%2020%22%0A%20%20%20%20)%20%7B%0A%20%20%20%20%20results%20%7B%0A%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20demo%0A%20%20%20%20%20%20%20id%0A%20%20%20%20%20%7D%0A%20%20%20%20%20nextOffset%0A%20%20%20%20%20totalResults%0A%20%20%20%7D%0A%20%7D&amp;operationName=models)" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<h2 id="model-queries">Model Queries</h2>
+
+<p>model() queries get data from individual models.</p>
+
+<details name="Get all Sweep Locations and Panoramic Images">
+  
+<summary>Get all Sweep Locations and Panoramic Images</summary>
+Panoramic images are currently only available as <b>skyboxes.</b>
+
+A skybox is made out of six images - each image individually projected onto the shape of a cube - that is: top, bottom, left, right, front and back sides.  Skyboxes are available in 2K and come bundled with position and rotation data.
+
+<pre><code>fragment panoFragment on PanoramicImageLocation{
+  id
+  skybox {
+    id
+    status
+    format
+    children
+  }
+}
+
+query getSweeps($modelId: ID!){
+    model(id: $modelId) {
+      locations {
+        id
+        model { id }
+        position { x, y, z }
+        floor { id }
+        room { id }
+        panos { ...panoFragment }
+            
+    }
+  }
+}
+
+# variables
+{
+  "modelId" : "" 
+}
+</code></pre>
+
+<p>Sample Response:</p>
+
+<pre><code>{
+  "data": {
+    "model": {
+      "locations": [
+        {
+          "id": "a0723324-ab3e-4500-bdee-8fec13d3ae9d",
+          "model": {
+            "id": "MODEL_ID"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "panos": [
+            {
+              "id": "a0723324-ab3e-4500-bdee-8fec13d3ae9d",
+              "skybox": {
+                "id": "a0723324-ab3e-4500-bdee-8fec13d3ae9d",
+                "status": "available",
+                "format": "skybox",
+                "children": [
+                  "https://qa-cdn-1.matterport.com/models/1a56eedeff7d4a7481b961c009ae9236/assets/pan/~/high/a0723324ab3e4500bdee8fec13d3ae9d_skybox0.jpg?t=2-c81c9af53e390d7c5d9946f73a74665f0e06757c-1573701898-1",
+                  "https://qa-cdn-1.matterport.com/models/1a56eedeff7d4a7481b961c009ae9236/assets/pan/~/high/a0723324ab3e4500bdee8fec13d3ae9d_skybox1.jpg?t=2-c81c9af53e390d7c5d9946f73a74665f0e06757c-1573701898-1",
+                  "https://qa-cdn-1.matterport.com/models/1a56eedeff7d4a7481b961c009ae9236/assets/pan/~/high/a0723324ab3e4500bdee8fec13d3ae9d_skybox2.jpg?t=2-c81c9af53e390d7c5d9946f73a74665f0e06757c-1573701898-1",
+                  "https://qa-cdn-1.matterport.com/models/1a56eedeff7d4a7481b961c009ae9236/assets/pan/~/high/a0723324ab3e4500bdee8fec13d3ae9d_skybox3.jpg?t=2-c81c9af53e390d7c5d9946f73a74665f0e06757c-1573701898-1",
+                  "https://qa-cdn-1.matterport.com/models/1a56eedeff7d4a7481b961c009ae9236/assets/pan/~/high/a0723324ab3e4500bdee8fec13d3ae9d_skybox4.jpg?t=2-c81c9af53e390d7c5d9946f73a74665f0e06757c-1573701898-1",
+                  "https://qa-cdn-1.matterport.com/models/1a56eedeff7d4a7481b961c009ae9236/assets/pan/~/high/a0723324ab3e4500bdee8fec13d3ae9d_skybox5.jpg?t=2-c81c9af53e390d7c5d9946f73a74665f0e06757c-1573701898-1"
+                ]
+              }
+            }
+          ]
+        },
+        {
+…
+</code></pre>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=fragment%20panoFragment%20on%20PanoramicImageLocation%7B%0A%20%20id%0A%20%20skybox%20%7B%0A%20%20%20%20id%0A%20%20%20%20status%0A%20%20%20%20format%0A%20%20%20%20children%0A%20%20%7D%0A%7D%0A%0Aquery%20getSweeps\(%24modelId%3A%20ID!\)%7B%0A%20%20%20%20model\(id%3A%20%24modelId\)%20%7B%0A%20%20%20%20%20%20locations%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20model%20%7B%20id%20%7D%0A%20%20%20%20%20%20%20%20position%20%7B%20x%2C%20y%2C%20z%20%7D%0A%20%20%20%20%20%20%20%20floor%20%7B%20id%20%7D%0A%20%20%20%20%20%20%20%20room%20%7B%20id%20%7D%0A%20%20%20%20%20%20%20%20panos%20%7B%20...panoFragment%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A\&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D\&amp;operationName=getSweeps)" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<details name="Get all Tags and Tag Data">
+
+<summary>Get all Tags and Tag Data</summary>
+
+Users can get all Tags from a model.  Presently, attachments are not queriable.
+
+<pre><code>query getMattertags($modelId: ID!) {
+  model(id: $modelId) {
+    mattertags(includeDisabled: true) {
+      id
+      floor { id }
+      created
+      modified
+      enabled
+      color
+      label
+      description
+      media
+      mediaType
+      position { x, y, z }
+      anchorPosition { x, y, z }
+      discPosition { x, y, z }
+      stemNormal { x, y, z }
+      stemLength
+      stemEnabled
+      stemDirection { x, y, z } # Deprecated, use stemNormal and stemLength
+    }
+  }
+}
+
+# variables
+{
+  "modelId" : "" 
+}
+</code></pre>
+
+<p>Sample Response:</p>
+
+<pre><code>{
+    "data": {
+        "model": {
+            "name": "Southern California Luxury Home",
+            "mattertags": [
+                {
+                    "id": "ayi201wkujs",
+                    "floor": {
+                        "id": "pd0i1c4yq9w0y2zsb07ed23sb"
+                    },
+                    "created": "2017-09-29T19:45:57Z",
+                    "modified": "2019-11-18T22:26:42Z",
+                    "enabled": true,
+                    "color": "#03687d",
+                    "label": "Nest Thermostat",
+                    "description": "",
+                    "media": null,
+                    "mediaType": null,
+                    "position": {
+                        "x": 1.20415628,
+                        "y": -5.35434341,
+                        "z": 3.1942153
+                    },
+                    "anchorPosition": {
+                        "x": 1.20415628,
+                        "y": -5.35434341,
+                        "z": 3.1942153
+                    },
+                    "discPosition": {
+                        "x": 1.40415628,
+                        "y": -5.35434341,
+                        "z": 3.1942153
+                    },
+                    "stemNormal": {
+                        "x": 1.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "stemLength": 0.2,
+                    "stemEnabled": true,
+                    "stemDirection": {
+                        "x": 0.2,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                …     
+            ]
+        }
+    }
+}
+</code></pre>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=query%20getMattertags(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20mattertags(includeDisabled%3A%20true)%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20floor%20%7B%20id%20%7D%0A%20%20%20%20%20%20created%0A%20%20%20%20%20%20modified%0A%20%20%20%20%20%20enabled%0A%20%20%20%20%20%20color%0A%20%20%20%20%20%20label%0A%20%20%20%20%20%20description%0A%20%20%20%20%20%20media%0A%20%20%20%20%20%20mediaType%0A%20%20%20%20%20%20position%20%7B%20x%2C%20y%2C%20z%20%7D%0A%20%20%20%20%20%20anchorPosition%20%7B%20x%2C%20y%2C%20z%20%7D%0A%20%20%20%20%20%20discPosition%20%7B%20x%2C%20y%2C%20z%20%7D%0A%20%20%20%20%20%20stemNormal%20%7B%20x%2C%20y%2C%20z%20%7D%0A%20%20%20%20%20%20stemLength%0A%20%20%20%20%20%20stemEnabled%0A%20%20%20%20%20%20stemDirection%20%7B%20x%2C%20y%2C%20z%20%7D%20%23%20Deprecated%2C%20use%20stemNormal%20and%20stemLength%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getMattertags)" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<details name="Get all Rooms and Floors and Panoramas">
+
+<summary>Get all Rooms and Floors and Panoramas</summary>
+
+A Matterport Digital twin is segmented in rooms and floors.  These IDs and dimensions match the IDs in the Matterpak.  This data is useful for developers working with Unity or other 3rd party 3D platforms.  You can also query Tags and Labels to bring in more information from your digital twin
+
+<pre><code>query getRoomsFloors($modelId: ID!) {
+  model(id: $modelId) {
+    id
+    floors {
+      id
+      label
+      sequence
+    }
+    rooms {
+      id
+      label
+      tags
+      # measurementPaths
+      dimensions {
+        areaCeiling
+        areaFloor
+        areaFloorIndoor
+        areaWall
+        volume
+        depth
+        height
+        width
+      }
+      panoLocations {
+          id
+          skyboxes {
+              urlTemplate
+          }
+      }
+    }
+  }
+}
+
+
+# variables
+{
+  "modelId" : "" 
+}
+</code></pre>
+
+<p>Sample Response:</p>
+
+<pre><code>{
+    "data": {
+        "model": {
+            "id": "3ghAB2vSEdP",
+            "floors": [
+                {
+                    "id": "tsmq1wak12rhgn0mawksxcwcd",
+                    "label": "Floor 1",
+                    "sequence": 0
+                },
+                {
+                    "id": "pd0i1c4yq9w0y2zsb07ed23sb",
+                    "label": "Floor 2",
+                    "sequence": 1
+                }
+            ],
+            "rooms": [
+                {
+                    "id": "h26t7ky77ew74yb0pg8qqf5rd",
+                    "label": "6",
+                    "tags": [
+                        "laundry"
+                    ],
+                    "dimensions": {
+                        "areaCeiling": null,
+                        "areaFloor": 9.854100227355957,
+                        "areaFloorIndoor": 9.854100227355957,
+                        "areaWall": 26.154674530029297,
+                        "volume": null,
+                        "depth": null,
+                        "height": null,
+                        "width": 1.7122550010681152
+                    },
+                    "panoLocations": [
+                        {
+                            "id": "72m04t0skddkyxcxkry1pme5c",
+                            "skyboxes": [
+                                {
+                                    "urlTemplate": "https://cdn-2.matterport.com/models/4c4a1dfc45ae41ecb59e1c43fb23071b/assets/pan/2k/~/48c697da1ab24b1dad914cbd1c998a74_skybox[face].jpg?t=2-60a2efa602c3d1fbddc36451433539d693feb04f-1679976048-1&amp;k=models%2F4c4a1dfc45ae41ecb59e1c43fb23071b%2Fassets%2Fpan%2F2k"
+                                },
+                                {
+                                    "urlTemplate": "https://cdn-2.matterport.com/models/4c4a1dfc45ae41ecb59e1c43fb23071b/assets/pan/high/~/48c697da1ab24b1dad914cbd1c998a74_skybox[face].jpg?t=2-182f5f07db379e0f11fdaa3c8543fb2f682c37ea-1679976048-1&amp;k=models%2F4c4a1dfc45ae41ecb59e1c43fb23071b%2Fassets%2Fpan%2Fhigh"
+                                },
+                                {
+                                    "urlTemplate": "https://cdn-2.matterport.com/models/4c4a1dfc45ae41ecb59e1c43fb23071b/assets/pan/low/~/48c697da1ab24b1dad914cbd1c998a74_skybox[face].jpg?t=2-c9f7bcf27b8e3942cd317bb52facec3e36f50098-1679976048-1&amp;k=models%2F4c4a1dfc45ae41ecb59e1c43fb23071b%2Fassets%2Fpan%2Flow"
+                                }
+                            ]
+                        },
+                        ...
+                    ]
+                },
+                {
+                    "id": "tt6gm2a0463x9wmnx7rn6gugc",
+                    "label": "5",
+                    "tags": [
+                        "bedroom"
+                    ],
+                    "dimensions": {
+                        "areaCeiling": null,
+                        "areaFloor": 16.831600189208984,
+                        "areaFloorIndoor": 16.831600189208984,
+                        "areaWall": 82.46976470947266,
+                        "volume": null,
+                        "depth": 3.612520217895508,
+                        "height": null,
+                        "width": 3.977616548538208
+                    },
+                    "panoLocations": [
+                    ...
+                    ]
+                },
+                ...
+            ]
+        }
+    }
+}
+</code></pre>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=query%20getRoomsFloors(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20id%0A%20%20%20%20floors%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20label%0A%20%20%20%20%20%20sequence%0A%20%20%20%20%7D%0A%20%20%20%20rooms%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20label%0A%20%20%20%20%20%20tags%0A%20%20%20%20%20%20dimensions%20%7B%0A%20%20%20%20%20%20%20%20areaCeiling%0A%20%20%20%20%20%20%20%20areaFloor%0A%20%20%20%20%20%20%20%20areaFloorIndoor%0A%20%20%20%20%20%20%20%20areaWall%0A%20%20%20%20%20%20%20%20volume%0A%20%20%20%20%20%20%20%20depth%0A%20%20%20%20%20%20%20%20height%0A%20%20%20%20%20%20%20%20width%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20panoLocations%20%7B%0A%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20skyboxes%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20urlTemplate%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getRoomsFloors" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<details name="Get the Colored Rooms Floorplan URL">
+
+<summary>Get the Colored Rooms Floorplan URL</summary>
+
+<pre><code>query getColoredRooms($modelId: ID!){
+ model(id: $modelId) {
+    assets {
+      floorplans(provider: "matterport", flags: [colored_rooms]) {
+        provider
+        format
+        flags
+        id
+        url
+      }
+    }
+  }
+}
+
+# variables
+{
+  "modelId" : "" 
+}
+</code></pre>
+
+<p>Sample Response:</p>
+
+<pre><code>{
+  "data": {
+    "model": {
+      "assets": {
+        "floorplans": [
+          {
+            "provider": "matterport",
+            "format": "jpg",
+            "flags": [
+              "photogramy",
+              "colored_rooms"
+            ],
+            "id": null,
+            "url": "https://cdn-2.matterport.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/render/colorplan_room_000.jpg?t=2-45286ff9b37da4d31d06a13b828c497d00343f7c-1679975423-1&amp;download=colorplan_room_000.jpg&amp;k=models%2F58f2a24ec7fb43abaf68c39459cd29d3%2Fassets%2Frender%2Fcolorplan_room_000.jpg"
+          },
+          {
+            "provider": "matterport",
+            "format": "jpg",
+            "flags": [
+              "photogramy",
+              "colored_rooms"
+            ],
+            "id": null,
+            "url": "https://cdn-2.matterport.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/render/colorplan_room_001.jpg?t=2-3377428ace2fcebeb51b5a24d55aff51ad6b85db-1679975423-1&amp;download=colorplan_room_001.jpg&amp;k=models%2F58f2a24ec7fb43abaf68c39459cd29d3%2Fassets%2Frender%2Fcolorplan_room_001.jpg"
+          },
+          {
+            "provider": "matterport",
+            "format": "jpg",
+            "flags": [
+              "photogramy",
+              "colored_rooms"
+            ],
+            "id": null,
+            "url": "https://cdn-2.matterport.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/render/colorplan_room_002.jpg?t=2-878d69a6f66558f17271e17b4c4f5a03b606368f-1679975423-1&amp;download=colorplan_room_002.jpg&amp;k=models%2F58f2a24ec7fb43abaf68c39459cd29d3%2Fassets%2Frender%2Fcolorplan_room_002.jpg"
+          },
+          {
+            "provider": "matterport",
+            "format": "jpg",
+            "flags": [
+              "photogramy",
+              "colored_rooms"
+            ],
+            "id": null,
+            "url": "https://cdn-2.matterport.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/render/colorplan_room_003.jpg?t=2-0dd57e99aa752e228ef2d85b9aff89f8663b826b-1679975423-1&amp;download=colorplan_room_003.jpg&amp;k=models%2F58f2a24ec7fb43abaf68c39459cd29d3%2Fassets%2Frender%2Fcolorplan_room_003.jpg"
+          }
+        ]
+      }
+    }
+  }
+}
+</code></pre>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=query%20getColoredRooms\(%24modelId%3A%20ID!\)%7B%0A%20model\(id%3A%20%24modelId\)%20%7B%0A%20%20%20%20assets%20%7B%0A%20%20%20%20%20%20floorplans\(provider%3A%20%22matterport%22%2C%20flags%3A%20%5Bcolored\_rooms%5D\)%20%7B%0A%20%20%20%20%20%20%20%20provider%0A%20%20%20%20%20%20%20%20format%0A%20%20%20%20%20%20%20%20flags%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%7D%0A%20%20%09%7D%0A%09%7D%0A%7D%0A\&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D\&amp;operationName=getColoredRooms)" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<details name="Get Add-On Bundle Download Links">
+
+<summary>Get Add-On Bundle Download Links</summary>
+
+<pre><code>query getBundles($modelId: ID!){
+  model(id:$modelId) {
+    bundles(availability:unlocked) {
+            id
+            availability
+            assets {
+                url
+                format                
+            }
+
+        }
+    }
+}	
+
+# variables
+{
+  "modelId" : "" 
+}
+</code></pre>
+
+<p>Sample Response:</p>
+
+<pre><code>
+{
+    "data": {
+        "model": {
+            "bundles": [
+                {
+                    "id": "mp:matterpak",
+                    "availability": "unlocked",
+                    "assets": [
+                        {
+                            "url": "https://cdn-2.matterport.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/bundles/aec.zip?t=2-a03f0704b9b9da393501d4817d1826c193ee0280-1679975256-1&amp;download=matterpak_WeZ1dHwn3ac.zip&amp;k=models%2F58f2a24ec7fb43abaf68c39459cd29d3%2Fassets%2Fbundles%2Faec.zip",
+                            "format": "zip"
+                        }
+                    ]
+                },
+                {
+                    "id": "bim:cad",
+                    "availability": "unlocked",
+                    "assets": [
+                        {
+                            "url": "https://cdn-2.matterport.com/jobs/bim-asset/df598b5a-02d8-47a7-9dd9-a0ade8250d71.zip?t=2-1b59739c853d184dcae3888ca57754e38919b992-1679975256-1&amp;download=bim_WeZ1dHwn3ac.zip&amp;k=jobs%2Fbim-asset%2Fdf598b5a-02d8-47a7-9dd9-a0ade8250d71.zip",
+                            "format": "zip"
+                        }
+                    ]
+                },
+                {
+                    "id": "mp:e57",
+                    "availability": "unlocked",
+                    "assets": [
+                        {
+                            "url": "https://mp-app-prod.s3.amazonaws.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/bundles/cloude57.zip?response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27e57_WeZ1dHwn3ac.zip&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20230328T034236Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=86400&amp;X-Amz-Credential=AKIA2OYCIXZCYUE7ZVXS%2F20230328%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Signature=b799ce581a4d055b60e6bb72c7fe6416b50d7e58208a100ee5bdc9aea083bda4",
+                            "format": "zip"
+                        }
+                    ]
+                },
+                {
+                    "id": "floorplan:schematic",
+                    "availability": "unlocked",
+                    "assets": [
+                        {
+                            "url": "https://cdn-2.matterport.com/floorplans/WeZ1dHwn3ac/362550b1-d088-4932-b61f-6c3f1f02bc13.zip?t=2-204baf0ca5aa0dfcbe46e1417ddb991822d20553-1680493356-1&amp;download=362550b1-d088-4932-b61f-6c3f1f02bc13.zip&amp;k=floorplans%2FWeZ1dHwn3ac%2F362550b1-d088-4932-b61f-6c3f1f02bc13.zip",
+                            "format": "zip"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+</code></pre>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=query%20getBundles(%24modelId%3A%20ID!)%7B%0A%09model(id%3A%24modelId)%20%7B%0A%09%09bundles(availability%3Aunlocked)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20%20%20availability%0A%20%20%20%20%20%20%20%20%20%20%20%20assets%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20format%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%7D%09&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22WeZ1dHwn3ac%22%0A%7D&amp;operationName=getBundles)">Try this query in our interactive console</a></p>
+
+</details>
+
+<details name="Find the Different Purchase Options for Any Bundle">
+
+<summary>Find the Different Purchase Options for Any Bundle</summary>
+
+<pre><code>query getSupportedOptions($modelId: ID!) {
+   model(id: $modelId) {
+      bundles {
+        id
+        name
+        description
+        availability
+         supportedOptions { 
+         measurementUnits
+         deliverySpeeds 
+         }
+      }
+   }
+}
+
+# variables
+{
+  "modelId" : "" 
+}
+</code></pre>
+
+<p>Sample Response:</p>
+
+<pre><code>{
+  "data": {
+    "model": {
+      "bundles": [
+        {
+          "name": "Matterpak",
+          "description": "Order high resolution assets associated with the model.",
+          "availability": "unlocked",
+          "supportedOptions": {
+            "measurementUnits": null,
+            "deliverySpeeds": null
+          }
+        },
+        {
+          "name": "Model Geometry",
+          "description": "Order the model geometry files.",
+          "availability": "unavailable",
+          "supportedOptions": {
+            "measurementUnits": null,
+            "deliverySpeeds": null
+          }
+        },
+        {
+          "name": "Low Resolution Geometry",
+          "description": "Order the lower resolution model geometry files.",
+          "availability": "unavailable",
+          "supportedOptions": {
+            "measurementUnits": null,
+            "deliverySpeeds": null
+          }
+        },
+        {
+          "name": "Object Detection",
+          "description": "Order automated object detection model inferencing.",
+          "availability": "unavailable",
+          "supportedOptions": {
+            "measurementUnits": null,
+            "deliverySpeeds": null
+          }
+        },
+        {
+          "name": "Cubicasa Schematic Floorplan",
+          "description": "Order an enhanced schematic floorplan",
+          "availability": "unlocked",
+          "supportedOptions": {
+            "measurementUnits": [
+              "imperial",
+              "metric"
+            ],
+            "deliverySpeeds": []
+          }
+        },
+        {
+          "name": "TruePlan™ Schematic",
+          "description": "Order a TruePlan™ Schematic",
+          "availability": "locked",
+          "supportedOptions": {
+            "measurementUnits": null,
+            "deliverySpeeds": null
+          }
+        },
+        {
+          "name": "Google Street View",
+          "description": "Publish to Google Street View",
+          "availability": "locked",
+          "supportedOptions": {
+            "measurementUnits": null,
+            "deliverySpeeds": null
+          }
+        },
+        {
+          "name": "Vrbo - HomeAway",
+          "description": "Create a 360 Tour for Vrbo and HomeAway",
+          "availability": "locked",
+          "supportedOptions": {
+            "measurementUnits": null,
+            "deliverySpeeds": null
+          }
+        },
+        {
+          "name": "Advanced Imagery Pack",
+          "description": "Enables access to high resolution panoramic images",
+          "availability": "unavailable",
+          "supportedOptions": {
+            "measurementUnits": null,
+            "deliverySpeeds": null
+          }
+        },
+        {
+          "name": "BIM",
+          "description": "Order Building Information Modeling Files",
+          "availability": "unlocked",
+          "supportedOptions": {
+            "measurementUnits": null,
+            "deliverySpeeds": null
+          }
+        },
+        {
+          "name": "e57 Point Cloud",
+          "description": "3D Imaging Point Cloud Files",
+          "availability": "unlocked",
+          "supportedOptions": {
+            "measurementUnits": null,
+            "deliverySpeeds": null
+          }
+        },
+        {
+          "name": "Schematic Floorplan",
+          "description": "Order an enhanced schematic floorplan",
+          "availability": "unlocked",
+          "supportedOptions": {
+            "measurementUnits": [
+              "imperial",
+              "metric"
+            ],
+            "deliverySpeeds": [
+              "normal",
+              "fast",
+              "urgent"
+            ]
+          }
+        },
+        {
+          "name": "Standard CAD",
+          "description": "Order a Standard CAD",
+          "availability": "unavailable",
+          "supportedOptions": {
+            "measurementUnits": null,
+            "deliverySpeeds": null
+          }
+        },
+        {
+          "name": "Matterport Stitching",
+          "description": "Stitch up to 6 models together",
+          "availability": "unavailable",
+          "supportedOptions": {
+            "measurementUnits": null,
+            "deliverySpeeds": null
+          }
+        }
+      ]
+    }
+  }
+}
+</code></pre>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=query%20getSupportedOptions(%24modelId%3A%20ID!)%20%7B%0A%20%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20%20%20bundles%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20description%0A%20%20%20%20%20%20%20%20availability%0A%20%20%20%20%20%20%20%20%20supportedOptions%20%7B%20%0A%20%20%20%20%20%20%20%20%20measurementUnits%0A%20%20%20%20%20%20%20%20%20deliverySpeeds%20%0A%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22JGPnGQ6hosj%22%0A%7D&amp;operationName=getSupportedOptions" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<h2 id="mutations">Mutations</h2>
+
+<p>Mutations update data via Model API.  They can also contain queries that return data after the data has changed.  The query can return an ID if new content has been added, or updated information that may have changed due to the patch (update).</p>
+
+<details name="Toggle Mode Visibility and Get URL">
+
+<summary>Toggle Model Visibility and Get Embed URL</summary>
+
+<pre><code>mutation toggleModelVisibility($modelId: ID!, $visibility: ModelVisibility!){
+  updateModelVisibility(
+    id: $modelId,
+    visibility: $visibility  # public or private
+  ){
+    id
+    publication {
+      published
+      url
+      externalUrl
+      embed
+    }
+  }
+}
+
+# variables
+{
+  "modelId" : "",
+  "visibility" : "public"
+}
+
+</code></pre>
+
+<p>Sample Response:</p>
+
+<pre><code>{
+  "data": {
+    "updateModelVisibility": {
+      "id": "WeZ1dHwn3ac",
+      "publication": {
+        "published": true,
+        "url": "https://my.matterport.com/show/?m=WeZ1dHwn3ac",
+        "externalUrl": null,
+        "embed": "&lt;frame width='853' height='480' src='https://my.matterport.com/show/?m=WeZ1dHwn3ac' frameborder='0' allowfullscreen allow='xr-spatial-tracking'&gt;&lt;/iframe&gt;"
+      }
+    }
+  }
+}
+</code></pre>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20toggleModelVisibility(%24modelId%3A%20ID!%2C%20%24visibility%3A%20ModelVisibility!)%7B%0A%20%20updateModelVisibility(%0A%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20visibility%3A%20%24visibility%20%20%23%20public%20or%20private%0A%20%20)%7B%0A%20%20%20%20id%0A%20%20%20%20publication%20%7B%0A%20%20%20%20%20%20published%0A%20%20%20%20%20%20url%0A%20%20%20%20%20%20externalUrl%0A%20%20%20%20%20%20embed%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22WeZ1dHwn3ac%22%2C%0A%20%20%22visibility%22%20%3A%20%22public%22%0A%7D&amp;operationName=toggleModelVisibility)" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<details name="Toggle Model Activation (archive / activate)"><summary>Toggle Model Activation (archive / activate)</summary>
+
+<pre><code>mutation toggleModelActivation($modelId: ID!, $state: ModelStateChange!){
+  updateModelState(
+    id: $modelId,
+    state: $state
+  ){
+    id
+  }
+}
+</code></pre>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20toggleModelActivation\(%24modelId%3A%20ID!%2C%20%24state%3A%20ModelStateChange!\)%7B%0A%20%20updateModelState\(%0A%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20state%3A%20%24state%0A%20%20\)%7B%0A%20%20%20%20id%0A%20%20%7D%0A%0A%7D%0A\&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%2C%0A%20%20%22state%22%3A%20%22inactive%22%0A%7D\&amp;operationName=toggleModelActivation)" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<details name="Add a Mattertag">
+  
+<summary>Add a Mattertag</summary>
+
+Adding a Tag requires a valid floorId, which you can get by querying floors
+
+<pre><code>mutation addMattertag(
+  $modelId: ID!, 
+  $floorId: ID!,
+  $color: String,
+  $description: String,
+  $label: String,
+  $enabled: Boolean!,
+  $anchorPositionX: Float!,
+  $anchorPositionY: Float!,
+  $anchorPositionZ: Float!,
+  $stemEnabled: Boolean!,
+  $stemNormalX: Float!,
+  $stemNormalY: Float!,
+  $stemNormalZ: Float!,
+  $mediaType: MattertagMediaType,
+  $mediaUrl: String,
+  $stemLength: Float!  
+){
+  addMattertag(
+    modelId: $modelId,
+    field: id, 
+    mattertag: { 
+      floorId: $floorId, # Must be valid
+      enabled: $enabled, # required and can be true or false
+      color: $color,
+      label: $label,
+      description: $description,
+      anchorPosition: { x: $anchorPositionX, y: $anchorPositionY, z: $anchorPositionZ },
+      mediaType: $mediaType,
+      mediaUrl: $mediaUrl,
+      stemEnabled: $stemEnabled,
+      stemNormal: { x : $stemNormalX , y: $stemNormalY, z: $stemNormalZ }, 
+      stemLength: $stemLength
+    }
+  ) {
+    id
+  }
+}
+
+# variables
+{
+  "modelId" : "",
+  "floorId": "pd0i1c4yq9w0y2zsb07ed23sb",
+  "color": "#03687d",
+  "label": "Updated Tag",
+  "description": "This Tag was updated!",
+  "enabled" : true,
+  "anchorPositionX" : 1.20415628,
+  "anchorPositionY" : -5.3543434,
+  "anchorPositionZ" : 3.1942153, 
+  "stemNormalX" : 1.0,
+  "stemNormalY" : 0.0,
+  "stemNormalZ" : 0.0,  
+  "mediaType" : "video",
+  "mediaUrl" : "https://www.youtube.com/watch?v=dAdsl9x_Dyw",
+  "stemEnabled" :  true,
+  "stemLength" :  0.16459
+}  
+</code></pre>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20addMattertag(%0A%20%20%24modelId%3A%20ID!%2C%20%0A%20%20%24floorId%3A%20ID!%2C%0A%20%20%24color%3A%20String%2C%0A%20%20%24description%3A%20String%2C%0A%20%20%24label%3A%20String%2C%0A%20%20%24enabled%3A%20Boolean!%2C%0A%20%20%24anchorPositionX%3A%20Float!%2C%0A%20%20%24anchorPositionY%3A%20Float!%2C%0A%20%20%24anchorPositionZ%3A%20Float!%2C%0A%20%20%24stemEnabled%3A%20Boolean!%2C%0A%20%20%24stemNormalX%3A%20Float!%2C%0A%20%20%24stemNormalY%3A%20Float!%2C%0A%20%20%24stemNormalZ%3A%20Float!%2C%0A%20%20%24mediaType%3A%20MattertagMediaType%2C%0A%20%20%24mediaUrl%3A%20String%2C%0A%20%20%24stemLength%3A%20Float!%20%20%0A)%7B%0A%20%20addMattertag%20(%0A%20%20%20%20modelId%3A%20%24modelId%2C%0A%20%20%20%20field%3A%20id%2C%20%0A%20%20%20%20mattertag%3A%20%7B%20%0A%20%20%20%20%20%20floorId%3A%20%24floorId%2C%20%23%20Must%20be%20valid%0A%20%20%20%20%20%20enabled%3A%20%24enabled%2C%20%23%20required%20and%20can%20be%20true%20or%20false%0A%20%20%20%20%20%20color%3A%20%24color%2C%0A%20%20%20%20%20%20label%3A%20%24label%2C%0A%20%20%20%20%20%20description%3A%20%24description%2C%0A%20%20%20%20%20%20anchorPosition%3A%20%7B%20x%3A%20%24anchorPositionX%2C%20y%3A%20%24anchorPositionY%2C%20z%3A%20%24anchorPositionZ%20%7D%2C%0A%20%20%20%20%20%20mediaType%3A%20%24mediaType%2C%0A%20%20%20%20%20%20mediaUrl%3A%20%24mediaUrl%2C%0A%20%20%20%20%20%20stemEnabled%3A%20%24stemEnabled%2C%0A%20%20%20%20%20%20stemNormal%3A%20%7B%20x%20%3A%20%24stemNormalX%20%2C%20y%3A%20%24stemNormalY%2C%20z%3A%20%24stemNormalZ%20%7D%2C%20%0A%20%20%20%20%20%20stemLength%3A%20%24stemLength%0A%20%20%20%20%7D%0A%20%20)%20%7B%0A%20%20%20%20id%0A%20%20%7D%0A%7D&amp;operationName=addMattertag&amp;variables=%7B%0A%20%20%22modelId%22%20%3A%20%22%22%2C%0A%20%20%22floorId%22%3A%20%22pd0i1c4yq9w0y2zsb07ed23sb%22%2C%0A%20%20%22color%22%3A%20%22%2303687d%22%2C%0A%20%20%22label%22%3A%20%22Updated%20Tag%22%2C%0A%20%20%22description%22%3A%20%22This%20Tag%20was%20updated!%22%2C%0A%20%20%22enabled%22%20%3A%20true%2C%0A%20%20%22anchorPositionX%22%20%3A%201.20415628%2C%0A%20%20%22anchorPositionY%22%20%3A%20-5.3543434%2C%0A%20%20%22anchorPositionZ%22%20%3A%203.1942153%2C%20%0A%20%20%22stemNormalX%22%20%3A%201.0%2C%0A%20%20%22stemNormalY%22%20%3A%200.0%2C%0A%20%20%22stemNormalZ%22%20%3A%200.0%2C%20%20%0A%20%20%22mediaType%22%20%3A%20%22video%22%2C%0A%20%20%22mediaUrl%22%20%3A%20%22https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdAdsl9x_Dyw%22%2C%0A%20%20%22stemEnabled%22%20%3A%20%20true%2C%0A%20%20%22stemLength%22%20%3A%20%200.16459%0A%7D%20%20)" target="_blank">Try this mutation in our interactive console</a></p>
+
+</details>
+
+<details name="Patch a Mattertag">
+
+<summary>Patch a Mattertag</summary>
+
+Patching a Tag requires providing the tag Id.
+
+<pre><code>mutation patchMatterTag(
+  $modelId: ID!, 
+  $tagId: ID!
+  $floorId: ID!,
+  $color: String,
+  $description: String,
+  $label: String,
+  $enabled: Boolean!,
+  $anchorPositionX: Float!,
+  $anchorPositionY: Float!,
+  $anchorPositionZ: Float!,
+  $stemEnabled: Boolean!,
+  $stemNormalX: Float!,
+  $stemNormalY: Float!,
+  $stemNormalZ: Float!,
+  $mediaType: MattertagMediaType,
+  $mediaUrl: String,
+  $stemLength: Float!  
+){
+  patchMattertag(
+    modelId: $modelId,
+    field: id, 
+    mattertagId: $tagId,
+    patch: { 
+      floorId: $floorId, # Must be valid
+      enabled: $enabled, # required and can be true or false
+      color: $color,
+      label: $label,
+      description: $description,
+      anchorPosition: { x: $anchorPositionX, y: $anchorPositionY, z: $anchorPositionZ },
+      mediaType: $mediaType,
+      mediaUrl: $mediaUrl,
+      stemEnabled: $stemEnabled,
+      stemNormal: { x : $stemNormalX , y: $stemNormalY, z: $stemNormalZ }, 
+      stemLength: $stemLength
+    }
+  ){
+    id # Returns Tag ID
+  }
+}
+
+# variables
+{
+  "modelId" : "",
+  "tagId" : "ayi201wkujs",
+  "floorId": "pd0i1c4yq9w0y2zsb07ed23sb",
+  "color": "#03687d",
+  "label": "Updated Tag",
+  "description": "This Tag was updated!",
+  "enabled" : true,
+  "anchorPositionX" : 1.20415628,
+  "anchorPositionY" : -5.3543434,
+  "anchorPositionZ" : 3.1942153, 
+  "stemNormalX" : 1.0,
+  "stemNormalY" : 0.0,
+  "stemNormalZ" : 0.0,  
+  "mediaType" : "video",
+  "mediaUrl" : "https://www.youtube.com/watch?v=dAdsl9x_Dyw",
+  "stemEnabled" :  true,
+  "stemLength" :  0.16459
+}  
+
+</code></pre>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20patchMatterTag(%0A%20%20%24modelId%3A%20ID!%2C%20%0A%20%20%24tagId%3A%20ID!%0A%20%20%24floorId%3A%20ID!%2C%0A%20%20%24color%3A%20String%2C%0A%20%20%24description%3A%20String%2C%0A%20%20%24label%3A%20String%2C%0A%20%20%24enabled%3A%20Boolean!%2C%0A%20%20%24anchorPositionX%3A%20Float!%2C%0A%20%20%24anchorPositionY%3A%20Float!%2C%0A%20%20%24anchorPositionZ%3A%20Float!%2C%0A%20%20%24stemEnabled%3A%20Boolean!%2C%0A%20%20%24stemNormalX%3A%20Float!%2C%0A%20%20%24stemNormalY%3A%20Float!%2C%0A%20%20%24stemNormalZ%3A%20Float!%2C%0A%20%20%24mediaType%3A%20MattertagMediaType%2C%0A%20%20%24mediaUrl%3A%20String%2C%0A%20%20%24stemLength%3A%20Float!%20%20%0A)%7B%0A%20%20patchMattertag(%0A%20%20%20%20modelId%3A%20%24modelId%2C%0A%20%20%20%20field%3A%20id%2C%20%0A%20%20%20%20mattertagId%3A%20%24tagId%2C%0A%20%20%20%20patch%3A%20%7B%20%0A%20%20%20%20%20%20floorId%3A%20%24floorId%2C%20%23%20Must%20be%20valid%0A%20%20%20%20%20%20enabled%3A%20%24enabled%2C%20%23%20required%20and%20can%20be%20true%20or%20false%0A%20%20%20%20%20%20color%3A%20%24color%2C%0A%20%20%20%20%20%20label%3A%20%24label%2C%0A%20%20%20%20%20%20description%3A%20%24description%2C%0A%20%20%20%20%20%20anchorPosition%3A%20%7B%20x%3A%20%24anchorPositionX%2C%20y%3A%20%24anchorPositionY%2C%20z%3A%20%24anchorPositionZ%20%7D%2C%0A%20%20%20%20%20%20mediaType%3A%20%24mediaType%2C%0A%20%20%20%20%20%20mediaUrl%3A%20%24mediaUrl%2C%0A%20%20%20%20%20%20stemEnabled%3A%20%24stemEnabled%2C%0A%20%20%20%20%20%20stemNormal%3A%20%7B%20x%20%3A%20%24stemNormalX%20%2C%20y%3A%20%24stemNormalY%2C%20z%3A%20%24stemNormalZ%20%7D%2C%20%0A%20%20%20%20%20%20stemLength%3A%20%24stemLength%0A%20%20%20%20%7D%0A%20%20)%7B%0A%20%20%20%20id%20%23%20Returns%20Tag%20ID%0A%20%20%7D%0A%7D&amp;operationName=patchMatterTag&amp;variables=%7B%0A%20%20%22modelId%22%20%3A%20%22%22%2C%0A%20%20%22tagId%22%20%3A%20%22ayi201wkujs%22%2C%0A%20%20%22floorId%22%3A%20%22pd0i1c4yq9w0y2zsb07ed23sb%22%2C%0A%20%20%22color%22%3A%20%22%2303687d%22%2C%0A%20%20%22label%22%3A%20%22Updated%20Tag%22%2C%0A%20%20%22description%22%3A%20%22This%20Tag%20was%20updated!%22%2C%0A%20%20%22enabled%22%20%3A%20true%2C%0A%20%20%22anchorPositionX%22%20%3A%201.20415628%2C%0A%20%20%22anchorPositionY%22%20%3A%20-5.3543434%2C%0A%20%20%22anchorPositionZ%22%20%3A%203.1942153%2C%20%0A%20%20%22stemNormalX%22%20%3A%201.0%2C%0A%20%20%22stemNormalY%22%20%3A%200.0%2C%0A%20%20%22stemNormalZ%22%20%3A%200.0%2C%20%20%0A%20%20%22mediaType%22%20%3A%20%22video%22%2C%0A%20%20%22mediaUrl%22%20%3A%20%22https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdAdsl9x_Dyw%22%2C%0A%20%20%22stemEnabled%22%20%3A%20%20true%2C%0A%20%20%22stemLength%22%20%3A%20%200.16459%0A%7D%20%20)" target="_blank">Try this mutation in our interactive console</a></p>
+
+</details>
+
+<details name="Buy a Matterpak">
+
+<summary>Buy a Matterpak</summary>
+
+Use the timed URL from the response to download the MatterPak
+
+<pre><code>mutation buyMatterpak($modelId: ID!){
+  unlockModelBundle(
+    id: $modelId, 
+    bundleId: "mp:matterpak"
+  ) {
+    id
+  name
+  description
+  availability
+  assets { url }
+  }
+}
+
+# variables
+
+{
+  "modelId" : "" 
+}
+</code></pre>
+
+<p>Sample Response:</p>
+
+<pre><code>{
+  "data": {
+   "unlockModelBundle": {
+      "id": "mp:matterpak",
+      "name": "Matterpak",
+      "description": "Order high resolution assets associated with the model.",
+      "availability": "unlocked",
+      "assets": [
+         {
+"url": "https://qa-cdn-1.matterport.com/models/group_77/job_62927cc2-7552-4aad-8330-3904c5198354/wf_39d3f0f8baae4fc9aaeb6326edf55d8f/mesh/1.1.466.14860/2016-11-09_0240.05/62927cc275524aad83303904c5198354.zip?t=2-b3da2c89760c80f1671bc260d678d949f29bd8a8-1573485841-1"
+
+         }
+      ]
+    }
+  }
+}
+</code></pre>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20buyMatterpak\(%24modelId%3A%20ID!\)%7B%0A%20%20unlockModelBundle\(%0A%20%20%20%20id%3A%20%24modelId%2C%20%0A%20%20%20%20bundleId%3A%20%22mp%3Amatterpak%22%0A%20%20\)%20%7B%0A%20%20%20%20id%0A%09name%0A%09description%0A%09availability%0A%09assets%20%7B%20url%20%7D%0A%20%20%7D%0A%7D%0A\&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D\&amp;operationName=buyMatterpak" target="_blank">Try this query in our interactive console.</a></p>
+
+</details>
+
+<h2 id="ordering-add-on-bundles---workflow">Ordering Add-On Bundles - Workflow</h2>
+
+<details>
+  <summary>Query: Find the Asset Ids and Delivery Speeds by Looking through all Bundles</summary>
+  
+<p>The following query returns all asset bundles that can be purchased, including optional delivery speeds if applicable (schematic floorplans).</p>
+
+<pre><code>fragment asset on Asset{
+  id
+  url
+  validUntil
+  format
+  filename
+  status
+}
+
+query getBundleAssets($modelId: ID!){
+  model(id: $modelId) {
+    bundles {
+      id
+      availability
+      name
+      description
+      assets { ...asset }
+      supportedOptions {
+        deliverySpeeds
+      }
+    }
+  }
+}
+
+# variables
+{
+  "modelId" : "" 
+}
+</code></pre>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=fragment%20asset%20on%20Asset%7B%0A%20%20id%0A%20%20url%0A%20%20validUntil%0A%20%20format%0A%20%20filename%0A%20%20status%0A%7D%0A%0Aquery%20getBundleAssets\(%24modelId%3A%20ID!\)%7B%0A%20%20model\(id%3A%20%24modelId\)%20%7B%0A%20%20%20%20bundles%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20availability%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20description%0A%20%20%20%20%20%20assets%20%7B%20...asset%20%7D%0A%20%20%20%20%20%20supportedOptions%20%7B%0A%20%20%20%20%20%20%20%20deliverySpeeds%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A\&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D\&amp;operationName=getBundleAssets)" target="_blank">Try this query in our interactive console</a></p>
+</details>
+
+<details name="Ordering and Retrieving a Schematic Floor Plans">
+  
+<summary>Mutation: Ordering and Retrieving a Schematic Floor Plans</summary>
+
+<p>We are taking the bundleId from the previous query that we'd like to order and now performing a mutation to buy it.</p>
+
+<p>Note - Assets will not be immediately available.  Schematic Floorplans won't be available until our floor plan team returns it (normal speed is about 2 days).</p>
+
+<pre><code>mutation buyAddOn($modelId: ID!){
+  unlockModelBundle(
+    id: $modelId,
+    bundleId: "cubicasa:floorplan",
+    options: { deliverySpeed: normal }
+  ){
+    id
+    name
+    description
+    availability
+    assets { url }
+  }
+}
+
+# variables
+{
+  "modelId" : "" 
+}
+</code></pre>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20buyAddOn\(%24modelId%3A%20ID!\)%7B%0A%20%20unlockModelBundle\(%0A%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20bundleId%3A%20%22cubicasa%3Afloorplan%22%2C%0A%20%20%20%20options%3A%20%7B%20deliverySpeed%3A%20normal%20%7D%0A%20%20\)%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20availability%0A%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%7D%0A%7D%0A\&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D\&amp;operationName=buyFloorplan)" target="_blank">Try this mutation in our interactive console</a></p>
+</details>
+
+<details>
+  <summary>Query: Retrieve the Purchased Add-On</summary>
+
+<pre><code>query getAddOn($modelId: ID!) {
+  model(id: $modelId) {
+    bundle(id: "floorplan:schematic") {
+      assets { url }
+    }
+  }
+}
+# variables
+{
+  "modelId" : "" 
+}
+</code></pre>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=query%20getAddOn\(%24modelId%3A%20ID!\)%20%7B%0A%20%20model\(id%3A%20%24modelId\)%20%7B%0A%20%20%20%20bundle\(id%3A%20%22cubicasa%3Afloorplan%22\)%20%7B%0A%20%20%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A\&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D\&amp;operationName=getFloorplan)" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+
+    <div class="tags">
+        
+    </div>
+
+<!-- 
+ -->
+
+</div>
+
+<!-- <hr class="shaded"/> -->
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2023 Matterport, Inc. All rights reserved. <br />
+ Site last generated: Apr 4, 2023 <br />
+<p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /#main -->
+    </div>
+
+    
+  </body>
+   <!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-34880260-5','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+ 
+</html>
