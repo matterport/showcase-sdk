@@ -622,49 +622,68 @@
           
           
           
-          <li><a title="Model API Changelog" href="/showcase-sdk/modelapi_changelog.html">Model API Changelog</a></li>
+          <li><a title="Reference Docs" href="https://api.matterport.com/model/docs/reference" target="_blank" rel="noopener">Reference Docs</a></li>
           
           
           
           
           
           
-          <li><a title="Model API Code Snippets" href="/showcase-sdk/modelapi_snippets.html">Model API Code Snippets</a></li>
+          <li><a title="Interactive Console" href="https://api.matterport.com/model/graphiql" target="_blank" rel="noopener">Interactive Console</a></li>
           
           
           
+          <li class="subfolders">
+              <a title="Model API" href="#">Model API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Model API Changelog" href="/showcase-sdk/modelapi_changelog.html">Model API Changelog</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Model API Code Snippets" href="/showcase-sdk/modelapi_snippets.html">Model API Code Snippets</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Tags 2.0 Icons Reference" href="/showcase-sdk/tags_icons_reference.html">Tags 2.0 Icons Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Postman Collection" href="/showcase-sdk/modelapi_postman.html">Postman Collection</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
           
           
           
-          <li><a title="Using Model API with Postman" href="/showcase-sdk/modelapi_postman.html">Using Model API with Postman</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Tags 2.0 Icons Reference" href="/showcase-sdk/tags_icons_reference.html">Tags 2.0 Icons Reference</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Account API Changelog" href="/showcase-sdk/accountapi_changelog.html">Account API Changelog</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="API Reference Docs" href="https://api.matterport.com/model/docs/reference" target="_blank" rel="noopener">API Reference Docs</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="API Interactive Console" href="https://api.matterport.com/model/graphiql" target="_blank" rel="noopener">API Interactive Console</a></li>
+          <li class="subfolders">
+              <a title="Account API" href="#">Account API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Account API Changelog" href="/showcase-sdk/accountapi_changelog.html">Account API Changelog</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account API Snippets" href="/showcase-sdk/accountapi_snippets.html">Account API Snippets</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
           
           
           
@@ -784,15 +803,11 @@ $('#toc').on('click', 'a', function() {
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><strong>visible</strong>: boolean<br />default <code class="language-plaintext highlighter-rouge">true</code></td>
-      <td>If true the transform control is visible in the scene.</td>
-    </tr>
-    <tr>
       <td style="text-align: left"><strong>mode</strong>: string<br />default <code class="language-plaintext highlighter-rouge">'translate'</code></td>
       <td>The transformation mode. Valid values are ‘translate’, ‘rotate’ and ‘scale’.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><strong>selection</strong>: Object3D or null <br />default <code class="language-plaintext highlighter-rouge">null</code></td>
+      <td style="text-align: left"><strong>selection</strong>: ISceneNode or null <br />default <code class="language-plaintext highlighter-rouge">null</code></td>
       <td>The three.js object being controlled by this component.</td>
     </tr>
     <tr>
@@ -817,7 +832,8 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Usage</strong></p>
 
 <p>This component wraps the three.js <a href="https://threejs.org/docs/#examples/en/controls/TransformControls">transform controls component</a><br />
-It can be used to change the position, orientation, or scale of a scene node.</p>
+It can be used to change the position, orientation, or scale of a scene node.<br />
+The controls are only visible when they are attached to an object by setting its <code class="language-plaintext highlighter-rouge">input.selection</code>. A <code class="language-plaintext highlighter-rouge">null</code> value will hide the controls.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create a scene object and node with a model component.</span>
 <span class="c1">// This node's transform will be changed by the transform control.</span>
@@ -862,7 +878,7 @@ It can be used to change the position, orientation, or scale of a scene node.</p
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 4, 2023 <br />
+ Site last generated: Apr 7, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
