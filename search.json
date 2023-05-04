@@ -161,7 +161,7 @@
 "title": "Enumeration: Application",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumsapp.application.html",
+"url": "/showcase-sdk/docs/reference/current/enums/app.application.html",
 "summary": ""
 }
 ,
@@ -172,7 +172,7 @@
 "title": "Enumeration: Event",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumsapp.event.html",
+"url": "/showcase-sdk/docs/reference/current/enums/app.event.html",
 "summary": ""
 }
 ,
@@ -183,7 +183,7 @@
 "title": "Namespace: App",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulesapp.html",
+"url": "/showcase-sdk/docs/reference/current/modules/app.html",
 "summary": ""
 }
 ,
@@ -194,7 +194,7 @@
 "title": "Enumeration: Phase",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumsapp.phase.html",
+"url": "/showcase-sdk/docs/reference/current/enums/app.phase.html",
 "summary": ""
 }
 ,
@@ -205,7 +205,7 @@
 "title": "Namespace: Asset",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulesasset.html",
+"url": "/showcase-sdk/docs/reference/current/modules/asset.html",
 "summary": ""
 }
 ,
@@ -216,7 +216,7 @@
 "title": "Enumeration: Direction",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumscamera.direction.html",
+"url": "/showcase-sdk/docs/reference/current/enums/camera.direction.html",
 "summary": ""
 }
 ,
@@ -227,7 +227,7 @@
 "title": "Enumeration: Event",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumscamera.event.html",
+"url": "/showcase-sdk/docs/reference/current/enums/camera.event.html",
 "summary": ""
 }
 ,
@@ -238,7 +238,7 @@
 "title": "Namespace: Camera",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulescamera.html",
+"url": "/showcase-sdk/docs/reference/current/modules/camera.html",
 "summary": ""
 }
 ,
@@ -282,7 +282,7 @@
 "title": "Namespace: Conversion",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulesconversion.html",
+"url": "/showcase-sdk/docs/reference/current/modules/conversion.html",
 "summary": ""
 }
 ,
@@ -293,7 +293,7 @@
 "title": "Interface: Dictionary",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesdictionary.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/dictionary.html",
 "summary": ""
 }
 ,
@@ -315,7 +315,7 @@
 "title": "Interface: Emitter",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesemitter.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/emitter.html",
 "summary": ""
 }
 ,
@@ -328,7 +328,7 @@
 "title": "Enumeration: Event",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumsfloor.event.html",
+"url": "/showcase-sdk/docs/reference/current/enums/floor.event.html",
 "summary": ""
 }
 ,
@@ -339,7 +339,7 @@
 "title": "Namespace: Floor",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulesfloor.html",
+"url": "/showcase-sdk/docs/reference/current/modules/floor.html",
 "summary": ""
 }
 ,
@@ -350,7 +350,7 @@
 "title": "Enumeration: AStarStatus",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumsgraph.astarstatus.html",
+"url": "/showcase-sdk/docs/reference/current/enums/graph.astarstatus.html",
 "summary": ""
 }
 ,
@@ -361,7 +361,7 @@
 "title": "Namespace: Graph",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulesgraph.html",
+"url": "/showcase-sdk/docs/reference/current/modules/graph.html",
 "summary": ""
 }
 ,
@@ -372,7 +372,7 @@
 "title": "Interface: IAStarRunner",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesgraph.iastarrunner.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/graph.iastarrunner.html",
 "summary": ""
 }
 ,
@@ -383,7 +383,7 @@
 "title": "Interface: ICollectionAdaptor",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesgraph.icollectionadaptor.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/graph.icollectionadaptor.html",
 "summary": ""
 }
 ,
@@ -394,7 +394,7 @@
 "title": "Interface: IDirectedGraph",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesgraph.idirectedgraph.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/graph.idirectedgraph.html",
 "summary": ""
 }
 ,
@@ -405,7 +405,7 @@
 "title": "Interface: SearchOptions",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesgraph.searchoptions.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/graph.searchoptions.html",
 "summary": ""
 }
 ,
@@ -427,7 +427,7 @@
 "title": "Interface: ICondition",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesicondition.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/icondition.html",
 "summary": ""
 }
 ,
@@ -449,7 +449,7 @@
 "title": "Interface: IDisposable",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesidisposable.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/idisposable.html",
 "summary": ""
 }
 ,
@@ -460,7 +460,7 @@
 "title": "Interface: IMapObserver",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesimapobserver.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/imapobserver.html",
 "summary": ""
 }
 ,
@@ -471,7 +471,7 @@
 "title": "Reference Documentation",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentindex.html",
+"url": "/showcase-sdk/docs/reference/current/index.html",
 "summary": ""
 }
 ,
@@ -497,7 +497,7 @@
 "title": "Interface: IObservable",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesiobservable.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/iobservable.html",
 "summary": ""
 }
 ,
@@ -508,7 +508,7 @@
 "title": "Interface: IObservableMap",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesiobservablemap.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/iobservablemap.html",
 "summary": ""
 }
 ,
@@ -519,7 +519,7 @@
 "title": "Interface: IObserver",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesiobserver.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/iobserver.html",
 "summary": ""
 }
 ,
@@ -530,7 +530,7 @@
 "title": "Interface: ISubscription",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesisubscription.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/isubscription.html",
 "summary": ""
 }
 ,
@@ -541,7 +541,7 @@
 "title": "Enumeration: Event",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumslabel.event.html",
+"url": "/showcase-sdk/docs/reference/current/enums/label.event.html",
 "summary": ""
 }
 ,
@@ -552,7 +552,7 @@
 "title": "Namespace: Label",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmoduleslabel.html",
+"url": "/showcase-sdk/docs/reference/current/modules/label.html",
 "summary": ""
 }
 ,
@@ -563,7 +563,7 @@
 "title": "Enumeration: CreationPolicy",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumslink.creationpolicy.html",
+"url": "/showcase-sdk/docs/reference/current/enums/link.creationpolicy.html",
 "summary": ""
 }
 ,
@@ -574,7 +574,7 @@
 "title": "Namespace: Link",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmoduleslink.html",
+"url": "/showcase-sdk/docs/reference/current/modules/link.html",
 "summary": ""
 }
 ,
@@ -585,7 +585,7 @@
 "title": "Enumeration: OpenPolicy",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumslink.openpolicy.html",
+"url": "/showcase-sdk/docs/reference/current/enums/link.openpolicy.html",
 "summary": ""
 }
 ,
@@ -596,7 +596,7 @@
 "title": "Interface: DescriptionChunk",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesmattertag.descriptionchunk.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/mattertag.descriptionchunk.html",
 "summary": ""
 }
 ,
@@ -607,7 +607,7 @@
 "title": "Enumeration: DescriptionChunkType",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumsmattertag.descriptionchunktype.html",
+"url": "/showcase-sdk/docs/reference/current/enums/mattertag.descriptionchunktype.html",
 "summary": ""
 }
 ,
@@ -618,7 +618,7 @@
 "title": "Enumeration: Event",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumsmattertag.event.html",
+"url": "/showcase-sdk/docs/reference/current/enums/mattertag.event.html",
 "summary": ""
 }
 ,
@@ -629,7 +629,7 @@
 "title": "Namespace: Mattertag",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulesmattertag.html",
+"url": "/showcase-sdk/docs/reference/current/modules/mattertag.html",
 "summary": ""
 }
 ,
@@ -640,7 +640,7 @@
 "title": "Interface: IMessenger",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesmattertag.imessenger.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/mattertag.imessenger.html",
 "summary": ""
 }
 ,
@@ -651,7 +651,7 @@
 "title": "Interface: Link",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesmattertag.link.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/mattertag.link.html",
 "summary": ""
 }
 ,
@@ -662,7 +662,7 @@
 "title": "Enumeration: LinkType",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumsmattertag.linktype.html",
+"url": "/showcase-sdk/docs/reference/current/enums/mattertag.linktype.html",
 "summary": ""
 }
 ,
@@ -673,7 +673,7 @@
 "title": "Interface: MattertagDescriptor",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesmattertag.mattertagdescriptor.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/mattertag.mattertagdescriptor.html",
 "summary": ""
 }
 ,
@@ -684,7 +684,7 @@
 "title": "Enumeration: MediaType",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumsmattertag.mediatype.html",
+"url": "/showcase-sdk/docs/reference/current/enums/mattertag.mediatype.html",
 "summary": ""
 }
 ,
@@ -695,7 +695,7 @@
 "title": "Interface: PositionOptions",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesmattertag.positionoptions.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/mattertag.positionoptions.html",
 "summary": ""
 }
 ,
@@ -706,7 +706,7 @@
 "title": "Enumeration: Transition",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumsmattertag.transition.html",
+"url": "/showcase-sdk/docs/reference/current/enums/mattertag.transition.html",
 "summary": ""
 }
 ,
@@ -728,7 +728,7 @@
 "title": "Namespace: Measurements",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulesmeasurements.html",
+"url": "/showcase-sdk/docs/reference/current/modules/measurements.html",
 "summary": ""
 }
 ,
@@ -739,7 +739,7 @@
 "title": "Enumeration: Event",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumsmode.event.html",
+"url": "/showcase-sdk/docs/reference/current/enums/mode.event.html",
 "summary": ""
 }
 ,
@@ -750,7 +750,7 @@
 "title": "Namespace: Mode",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulesmode.html",
+"url": "/showcase-sdk/docs/reference/current/modules/mode.html",
 "summary": ""
 }
 ,
@@ -761,7 +761,7 @@
 "title": "Enumeration: Mode",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumsmode.mode-1.html",
+"url": "/showcase-sdk/docs/reference/current/enums/mode.mode-1.html",
 "summary": ""
 }
 ,
@@ -772,7 +772,7 @@
 "title": "Enumeration: TransitionType",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumsmode.transitiontype.html",
+"url": "/showcase-sdk/docs/reference/current/enums/mode.transitiontype.html",
 "summary": ""
 }
 ,
@@ -783,7 +783,7 @@
 "title": "Enumeration: Event",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumsmodel.event.html",
+"url": "/showcase-sdk/docs/reference/current/enums/model.event.html",
 "summary": ""
 }
 ,
@@ -794,7 +794,7 @@
 "title": "Namespace: Model",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulesmodel.html",
+"url": "/showcase-sdk/docs/reference/current/modules/model.html",
 "summary": ""
 }
 ,
@@ -838,7 +838,7 @@
 "title": "Interface: MP_SDK",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesmp_sdk.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/mp_sdk.html",
 "summary": ""
 }
 ,
@@ -849,7 +849,7 @@
 "title": "Namespace: OAuth",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulesoauth.html",
+"url": "/showcase-sdk/docs/reference/current/modules/oauth.html",
 "summary": ""
 }
 ,
@@ -860,7 +860,7 @@
 "title": "Interface: IRefreshObserver",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesoauth.irefreshobserver.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/oauth.irefreshobserver.html",
 "summary": ""
 }
 ,
@@ -871,7 +871,7 @@
 "title": "Interface: ITokenFetcher",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesoauth.itokenfetcher.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/oauth.itokenfetcher.html",
 "summary": ""
 }
 ,
@@ -882,7 +882,7 @@
 "title": "Interface: ITokenRefresher",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesoauth.itokenrefresher.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/oauth.itokenrefresher.html",
 "summary": ""
 }
 ,
@@ -893,7 +893,7 @@
 "title": "Interface: TokenInfo",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesoauth.tokeninfo.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/oauth.tokeninfo.html",
 "summary": ""
 }
 ,
@@ -926,7 +926,7 @@
 "title": "Enumeration: Colliders",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumspointer.colliders.html",
+"url": "/showcase-sdk/docs/reference/current/enums/pointer.colliders.html",
 "summary": ""
 }
 ,
@@ -937,7 +937,7 @@
 "title": "Namespace: Pointer",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulespointer.html",
+"url": "/showcase-sdk/docs/reference/current/modules/pointer.html",
 "summary": ""
 }
 ,
@@ -948,7 +948,7 @@
 "title": "Namespace: Renderer",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulesrenderer.html",
+"url": "/showcase-sdk/docs/reference/current/modules/renderer.html",
 "summary": ""
 }
 ,
@@ -970,7 +970,7 @@
 "title": "Namespace: Room",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulesroom.html",
+"url": "/showcase-sdk/docs/reference/current/modules/room.html",
 "summary": ""
 }
 ,
@@ -981,7 +981,7 @@
 "title": "Enumeration: Component",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumsscene.component.html",
+"url": "/showcase-sdk/docs/reference/current/enums/scene.component.html",
 "summary": ""
 }
 ,
@@ -992,7 +992,7 @@
 "title": "Interface: EmitPath",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.emitpath.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/scene.emitpath.html",
 "summary": ""
 }
 ,
@@ -1003,7 +1003,7 @@
 "title": "Interface: EventPath",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.eventpath.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/scene.eventpath.html",
 "summary": ""
 }
 ,
@@ -1014,7 +1014,7 @@
 "title": "Namespace: Scene",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulesscene.html",
+"url": "/showcase-sdk/docs/reference/current/modules/scene.html",
 "summary": ""
 }
 ,
@@ -1025,7 +1025,7 @@
 "title": "Interface: IComponent",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.icomponent.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/scene.icomponent.html",
 "summary": ""
 }
 ,
@@ -1036,7 +1036,7 @@
 "title": "Interface: IComponentContext",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.icomponentcontext.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/scene.icomponentcontext.html",
 "summary": ""
 }
 ,
@@ -1047,7 +1047,7 @@
 "title": "Interface: IComponentDesc",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.icomponentdesc.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/scene.icomponentdesc.html",
 "summary": ""
 }
 ,
@@ -1058,7 +1058,7 @@
 "title": "Interface: IComponentEventSpy",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.icomponenteventspy.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/scene.icomponenteventspy.html",
 "summary": ""
 }
 ,
@@ -1069,7 +1069,7 @@
 "title": "Interface: INode",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.inode.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/scene.inode.html",
 "summary": ""
 }
 ,
@@ -1080,7 +1080,7 @@
 "title": "Interface: InputPath",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.inputpath.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/scene.inputpath.html",
 "summary": ""
 }
 ,
@@ -1091,7 +1091,7 @@
 "title": "Enumeration: InteractionType",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumsscene.interactiontype.html",
+"url": "/showcase-sdk/docs/reference/current/enums/scene.interactiontype.html",
 "summary": ""
 }
 ,
@@ -1102,7 +1102,7 @@
 "title": "Interface: IObject",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.iobject.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/scene.iobject.html",
 "summary": ""
 }
 ,
@@ -1113,7 +1113,7 @@
 "title": "Interface: ISceneObjectSpy",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.isceneobjectspy.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/scene.isceneobjectspy.html",
 "summary": ""
 }
 ,
@@ -1124,7 +1124,7 @@
 "title": "Interface: OutputPath",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.outputpath.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/scene.outputpath.html",
 "summary": ""
 }
 ,
@@ -1135,7 +1135,7 @@
 "title": "Interface: PathBase",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.pathbase.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/scene.pathbase.html",
 "summary": ""
 }
 ,
@@ -1146,7 +1146,7 @@
 "title": "Interface: PathInfo",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.pathinfo.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/scene.pathinfo.html",
 "summary": ""
 }
 ,
@@ -1157,7 +1157,7 @@
 "title": "Enumeration: PathType",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumsscene.pathtype.html",
+"url": "/showcase-sdk/docs/reference/current/enums/scene.pathtype.html",
 "summary": ""
 }
 ,
@@ -1168,7 +1168,7 @@
 "title": "Interface: SceneComponentOptions",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacesscene.scenecomponentoptions.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/scene.scenecomponentoptions.html",
 "summary": ""
 }
 ,
@@ -1610,7 +1610,7 @@
 "title": "Namespace: Sensor",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulessensor.html",
+"url": "/showcase-sdk/docs/reference/current/modules/sensor.html",
 "summary": ""
 }
 ,
@@ -1621,7 +1621,7 @@
 "title": "Interface: ISensor",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacessensor.isensor.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/sensor.isensor.html",
 "summary": ""
 }
 ,
@@ -1632,7 +1632,7 @@
 "title": "Interface: ISensorObserver",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacessensor.isensorobserver.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/sensor.isensorobserver.html",
 "summary": ""
 }
 ,
@@ -1643,7 +1643,7 @@
 "title": "Interface: ISource",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacessensor.isource.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/sensor.isource.html",
 "summary": ""
 }
 ,
@@ -1654,7 +1654,7 @@
 "title": "Enumeration: SensorType",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumssensor.sensortype.html",
+"url": "/showcase-sdk/docs/reference/current/enums/sensor.sensortype.html",
 "summary": ""
 }
 ,
@@ -1665,7 +1665,7 @@
 "title": "Enumeration: SourceType",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumssensor.sourcetype.html",
+"url": "/showcase-sdk/docs/reference/current/enums/sensor.sourcetype.html",
 "summary": ""
 }
 ,
@@ -1676,7 +1676,7 @@
 "title": "Namespace: Settings",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulessettings.html",
+"url": "/showcase-sdk/docs/reference/current/modules/settings.html",
 "summary": ""
 }
 ,
@@ -1689,7 +1689,7 @@
 "title": "Enumeration: Alignment",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumssweep.alignment.html",
+"url": "/showcase-sdk/docs/reference/current/enums/sweep.alignment.html",
 "summary": ""
 }
 ,
@@ -1700,7 +1700,7 @@
 "title": "Enumeration: Event",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumssweep.event.html",
+"url": "/showcase-sdk/docs/reference/current/enums/sweep.event.html",
 "summary": ""
 }
 ,
@@ -1711,7 +1711,7 @@
 "title": "Namespace: Sweep",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulessweep.html",
+"url": "/showcase-sdk/docs/reference/current/modules/sweep.html",
 "summary": ""
 }
 ,
@@ -1722,7 +1722,7 @@
 "title": "Enumeration: Placement",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumssweep.placement.html",
+"url": "/showcase-sdk/docs/reference/current/enums/sweep.placement.html",
 "summary": ""
 }
 ,
@@ -1733,7 +1733,7 @@
 "title": "Enumeration: Transition",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumssweep.transition.html",
+"url": "/showcase-sdk/docs/reference/current/enums/sweep.transition.html",
 "summary": ""
 }
 ,
@@ -1744,7 +1744,7 @@
 "title": "Enumeration: AttachmentType",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumstag.attachmenttype.html",
+"url": "/showcase-sdk/docs/reference/current/enums/tag.attachmenttype.html",
 "summary": ""
 }
 ,
@@ -1755,7 +1755,7 @@
 "title": "Namespace: Tag",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulestag.html",
+"url": "/showcase-sdk/docs/reference/current/modules/tag.html",
 "summary": ""
 }
 ,
@@ -1766,7 +1766,7 @@
 "title": "Interface: IMessenger",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentinterfacestag.imessenger.html",
+"url": "/showcase-sdk/docs/reference/current/interfaces/tag.imessenger.html",
 "summary": ""
 }
 ,
@@ -1788,7 +1788,7 @@
 "title": "Enumeration: Event",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumstour.event.html",
+"url": "/showcase-sdk/docs/reference/current/enums/tour.event.html",
 "summary": ""
 }
 ,
@@ -1799,7 +1799,7 @@
 "title": "Namespace: Tour",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentmodulestour.html",
+"url": "/showcase-sdk/docs/reference/current/modules/tour.html",
 "summary": ""
 }
 ,
@@ -1810,7 +1810,7 @@
 "title": "Enumeration: PlayState",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/docsreferencecurrentenumstour.playstate.html",
+"url": "/showcase-sdk/docs/reference/current/enums/tour.playstate.html",
 "summary": ""
 }
 ,
@@ -1821,7 +1821,7 @@
 "title": "",
 "tags": "",
 "keywords": "",
-"url": "/showcase-sdk/assetscssstyle.css",
+"url": "/showcase-sdk/assets/css/style.css",
 "summary": ""
 }
 

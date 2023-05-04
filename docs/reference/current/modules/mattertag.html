@@ -824,7 +824,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/23.4.1_webgl-83-g65dce5ecd0/sdk.d.ts">23.4.1_webgl-83-g65dce5ecd0</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/23.4.2_webgl-51-gefa448b4a1/sdk.d.ts">23.4.2_webgl-51-gefa448b4a1</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1207,23 +1207,16 @@ $('#toc').on('click', 'a', function() {
 					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservablemap.html" class="tsd-signature-type">IObservableMap</a><span class="tsd-signature-symbol">&lt;</span><a href="mattertag.html#observablemattertagdata" class="tsd-signature-type">Mattertag.ObservableMattertagData</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 					</aside>
+					<dl class="tsd-comment-tags tsd-typography">
+						<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+						<dd>
+							<p>Use <a href="tag.html#data">Tag.data</a> instead</p>
+						</dd>
+					</dl>
 					<div class="tsd-comment tsd-typography">
 						<div class="tsd-lead">
 							<p>An observable collection of Mattertag data that can be subscribed to.</p>
 						</div>
-						<p>When first subscribing, the current set of Mattertag will call the observer&#39;s <code>onAdded</code> for each Mattertag as the data becomes available.</p>
-						<pre><code>mpSdk.Mattertag.data.subscribe({
-  onAdded: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Mattertag added to the collection&#x27;</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
-  },
-  onRemoved: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Mattertag removed from the collection&#x27;</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
-  },
-  onUpdated: function (<span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>) {
-    console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;Mattertag updated in place in the collection&#x27;</span>, <span class="hljs-keyword">index</span>, item, <span class="hljs-keyword">collection</span>);
-  }
-});
-</code></pre>
 					</div>
 				</section>
 			</section>
@@ -1237,6 +1230,12 @@ $('#toc').on('click', 'a', function() {
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="tag.html#add">Tag.add</a> instead</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1251,27 +1250,6 @@ $('#toc').on('click', 'a', function() {
 								</ul>
 								<p>See <a href="pointer.html#intersection-1">Pointer.intersection</a> for a way to retrive a new <code>anchorPosition</code> and <code>stemVector</code>.</p>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code>mpSdk.Mattertag.add([{
-<span class="hljs-symbol"> label:</span> <span class="hljs-string">&quot;New tag&quot;</span>,
-<span class="hljs-symbol"> description:</span> <span class="hljs-string">&quot;This tag was added through the Matterport SDK&quot;</span>,
-<span class="hljs-symbol"> anchorPosition:</span> {
-<span class="hljs-symbol">   x:</span> <span class="hljs-number">0</span>,
-<span class="hljs-symbol">   y:</span> <span class="hljs-number">0</span>,
-<span class="hljs-symbol">   z:</span> <span class="hljs-number">0</span>,
- },
-<span class="hljs-symbol"> stemVector:</span> { <span class="hljs-comment">// make the Mattertag stick straight up and make it 0.30 meters (~1 foot) tall</span>
-<span class="hljs-symbol">   x:</span> <span class="hljs-number">0</span>,
-<span class="hljs-symbol">   y:</span> <span class="hljs-number">0.30</span>,
-<span class="hljs-symbol">   z:</span> <span class="hljs-number">0</span>,
- },
-<span class="hljs-symbol"> color:</span> { <span class="hljs-comment">// blue disc</span>
-<span class="hljs-symbol">   r:</span> <span class="hljs-number">0.0</span>,
-<span class="hljs-symbol">   g:</span> <span class="hljs-number">0.0</span>,
-<span class="hljs-symbol">   b:</span> <span class="hljs-number">1.0</span>,
- },
-<span class="hljs-symbol"> floorIndex:</span> <span class="hljs-number">0</span>, <span class="hljs-comment">// optional, if not specified the sdk will provide an estimate of the floor index for the anchor position provided.</span>
-}])
-</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1295,6 +1273,12 @@ $('#toc').on('click', 'a', function() {
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="tag.html#editbillboard">Tag.editBillboard</a> or <a href="tag.html#registerattachment">Tag.registerAttachment</a> and/or <a href="tag.html#attach">Tag.attach</a> to manage media</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1302,15 +1286,6 @@ $('#toc').on('click', 'a', function() {
 									<p>Edit the data in a Mattertag billboard.</p>
 								</div>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code>mpSdk.Mattertag.editBillboard(sid, {
-  <span class="hljs-built_in">label</span>: &#x27;This <span class="hljs-built_in">is</span> a <span class="hljs-built_in">new</span> <span class="hljs-built_in">title</span>&#x27;,
-  description: &#x27;This <span class="hljs-built_in">image</span> was set dynamically by the Showcase sdk&#x27;
-  media: {
-    type: mpSdk.Mattertag.
-    src: &#x27;https://www.<span class="hljs-built_in">image</span>.site/<span class="hljs-built_in">image</span>.jpg&#x27;
-  }
-});
-</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1339,22 +1314,18 @@ $('#toc').on('click', 'a', function() {
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="tag.html#editcolor">Tag.editColor</a> instead</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="tsd-lead">
 									<p>Edit the color of a Mattertag</p>
 								</div>
-								<pre><code><span class="hljs-comment">// acquired through a previous call to mpSdk.Mattertag.getData();</span>
-var mattertagData;
-
-<span class="hljs-comment">// change the first Mattertag to yellow</span>
-mpSdk.Mattertag.editColor(mattertagData[<span class="hljs-number">0</span>].sid, {
-<span class="hljs-symbol">  r:</span> <span class="hljs-number">0.9</span>,
-<span class="hljs-symbol">  g:</span> <span class="hljs-number">0.9</span>,
-<span class="hljs-symbol">  b:</span> <span class="hljs-number">0</span>,
-});
-</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1383,6 +1354,12 @@ mpSdk.Mattertag.editColor(mattertagData[<span class="hljs-number">0</span>].sid,
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="tag.html#editicon">Tag.editIcon</a> instead</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1390,12 +1367,6 @@ mpSdk.Mattertag.editColor(mattertagData[<span class="hljs-number">0</span>].sid,
 									<p>Change the icon of the Mattertag disc</p>
 								</div>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code><span class="hljs-comment">// acquired through a previous call to mpSdk.Mattertag.getData();</span>
-var mattertagData;
-
-<span class="hljs-comment">// change the icon of the first Mattertag using the id used in a previously registeredIcon call</span>
-mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Mattertag</span>.</span></span>edit<span class="hljs-constructor">Icon(<span class="hljs-params">mattertagData</span>[0].<span class="hljs-params">sid</span>, &#x27;<span class="hljs-params">customIconId</span>&#x27;)</span>;
-</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1427,24 +1398,18 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="tag.html#editopacity">Tag.editOpacity</a> instead</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="tsd-lead">
 									<p>Edit the opacity of a Mattertag</p>
 								</div>
-								<pre><code><span class="hljs-comment">// acquired through a previous call to mpSdk.Mattertag.getData();</span>
-var mattertagData;
-
-<span class="hljs-comment">// make the first Mattertag invisible</span>
-mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Mattertag</span>.</span></span>edit<span class="hljs-constructor">Opacity(<span class="hljs-params">mattertagData</span>[0].<span class="hljs-params">sid</span>, 0)</span>;
-
-<span class="hljs-comment">// make another Mattertag transparent</span>
-mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Mattertag</span>.</span></span>edit<span class="hljs-constructor">Opacity(<span class="hljs-params">mattertagData</span>[1].<span class="hljs-params">sid</span>, 0.5)</span>;
-
-<span class="hljs-comment">// and another completely opaque</span>
-mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Mattertag</span>.</span></span>edit<span class="hljs-constructor">Opacity(<span class="hljs-params">mattertagData</span>[2].<span class="hljs-params">sid</span>, 1)</span>;
-</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1473,6 +1438,12 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="tag.html#editposition">Tag.editPosition</a> instead</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1481,22 +1452,6 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
 								</div>
 								<p>See <a href="pointer.html#intersection-1">Pointer.intersection</a> for a way to retrieve a new <code>anchorPosition</code> and <code>stemVector</code>.</p>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code>var mattertagData; <span class="hljs-comment">// ... acquired through a previous call to mpSdk.Mattertag.getData();</span>
-
-mpSdk.Mattertag.editPosition(mattertagData[<span class="hljs-number">0</span>].sid, {
-<span class="hljs-symbol"> anchorPosition:</span> {
-<span class="hljs-symbol">   x:</span> <span class="hljs-number">0</span>,
-<span class="hljs-symbol">   y:</span> <span class="hljs-number">0</span>,
-<span class="hljs-symbol">   z:</span> <span class="hljs-number">0</span>,
- },
-<span class="hljs-symbol"> stemVector:</span> { <span class="hljs-comment">// make the Mattertag stick straight up and make it 0.30 meters (~1 foot) tall</span>
-<span class="hljs-symbol">   x:</span> <span class="hljs-number">0</span>,
-<span class="hljs-symbol">   y:</span> <span class="hljs-number">0.30</span>,
-<span class="hljs-symbol">   z:</span> <span class="hljs-number">0</span>,
- },
-<span class="hljs-symbol"> floorIndex:</span> <span class="hljs-number">2</span>,
-});
-</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1525,31 +1480,30 @@ mpSdk.Mattertag.editPosition(mattertagData[<span class="hljs-number">0</span>].s
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="tag.html#editstem">Tag.editStem</a> instead</p>
+								</dd>
+							</dl>
+							<h4 class="tsd-introduced-title">Introduced
+								<span class="tsd-introduced-vers">3.1.70.10-0-ge9cb83b28c
+								</span>
+							</h4>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="tsd-lead">
 									<p>Edit the stem of a Mattertag</p>
 								</div>
-								<pre><code><span class="hljs-comment">// acquired through a previous call to mpSdk.Mattertag.getData();</span>
-<span class="hljs-selector-tag">var</span> <span class="hljs-selector-tag">mattertagData</span>;
-
-<span class="hljs-comment">// make the first Mattertag have an invsible stem</span>
-<span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.editStem</span>(mattertagData[<span class="hljs-number">0</span>].sid, {stemVisible: false});
-
-<span class="hljs-comment">// make another Mattertag have a long stem</span>
-<span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Mattertag</span><span class="hljs-selector-class">.editStem</span>(mattertagData[<span class="hljs-number">1</span>].sid, {stemHeight: 1});
-
-
-<span class="hljs-variable">@param</span> tagSid The sid of the Mattertag to edit
-<span class="hljs-variable">@param</span> stemOptions What to change about the Mattertag&#x27;s stem - can include stemHeight and stemVisible
-<span class="hljs-variable">@introduced</span> <span class="hljs-number">3.1</span>.<span class="hljs-number">70.10</span>-<span class="hljs-number">0</span>-ge9cb83b28c
-</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>tagSid: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The sid of the Mattertag to edit</p>
+									</div>
 								</li>
 								<li>
 									<h5>options: <span class="tsd-signature-type">object</span></h5>
@@ -1578,7 +1532,7 @@ mpSdk.Mattertag.editPosition(mattertagData[<span class="hljs-number">0</span>].s
 							<dl class="tsd-comment-tags tsd-typography">
 								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
 								<dd>
-									<p>Use the observable <a href="mattertag.html#data">data</a> collection instead</p>
+									<p>Use <a href="tag.html#data">Tag.data</a> instead</p>
 								</dd>
 							</dl>
 							<aside class="tsd-sources">
@@ -1587,18 +1541,6 @@ mpSdk.Mattertag.editPosition(mattertagData[<span class="hljs-number">0</span>].s
 								<div class="tsd-lead">
 									<p>This function returns metadata on the collection of Mattertags.</p>
 								</div>
-								<pre><code>mpSdk.Mattertag.getData()
-  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(mattertags)</span> {</span>
-    <span class="hljs-comment">// Mattertag data retreival complete.</span>
-    <span class="hljs-keyword">if</span>(mattertags.<span class="hljs-built_in">length</span> &gt; <span class="hljs-number">0</span>) {
-      console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;First mattertag label: &#x27;</span> + mattertags[<span class="hljs-number">0</span>].label);
-      console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;First mattertag description: &#x27;</span> + mattertags[<span class="hljs-number">0</span>].description);
-    }
-  })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
-    <span class="hljs-comment">// Mattertag data retrieval error.</span>
-  });
-</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="mattertag.html#mattertagdata" class="tsd-signature-type">Mattertag.MattertagData</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -1612,16 +1554,18 @@ mpSdk.Mattertag.editPosition(mattertagData[<span class="hljs-number">0</span>].s
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Disc position is automatially included in <a href="tag.html#data">Tag.data</a></p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="tsd-lead">
-									<p>Get the disc&#39;s (3d) position of a Mattertag.
-									The original data only represent the point that attaches the tag to the model.</p>
+									<p>Get the disc&#39;s (3d) position of a Mattertag.</p>
 								</div>
-								<pre><code>var mattertags; <span class="hljs-comment">// get mattertag collection from mpSdk.Mattertag.getData</span>
-var tagDiscPosition = mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Mattertag</span>.</span></span>get<span class="hljs-constructor">DiscPosition(<span class="hljs-params">mattertags</span>[0])</span>;
-</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1644,6 +1588,12 @@ var tagDiscPosition = mpSdk.<span class="hljs-module-access"><span class="hljs-m
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="tag.html#registersandbox">Tag.registerSandbox</a> and <a href="tag.html#attach">Tag.attach</a> instead</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1654,36 +1604,6 @@ var tagDiscPosition = mpSdk.<span class="hljs-module-access"><span class="hljs-m
 									Attempting to access properties of other windows will also be blocked by the browser.
 								(<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe">see the MDN pages about iframe sandbox</a>)</p>
 								<p>Currently, the HTML CAN ONLY BE SET ONCE by a call to <code>injectHTML</code>. This includes removing or clearing the HTML.</p>
-								<pre><code>var mattertagData; // ... acquired through a previous call to mpSdk.Mattertag.getData();
-
-// create a 100x50px button within the Mattertag and send out an ID when it is clicked
-var htmlToInject = &#x27; \
-  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"> \
-    <span class="hljs-selector-tag">button</span> { \
-      <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>; \
-      <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>; \
-    } \
-  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span> \
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;btn1&quot;</span>&gt;</span>CLICK ME<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span> \
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"> \
-    <span class="hljs-keyword">var</span> btn1 = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;btn1&quot;</span>); \
-    btn1.addEventListener(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ \
-      <span class="hljs-built_in">window</span>.send(<span class="hljs-string">&quot;buttonClick&quot;</span>, <span class="hljs-number">12345</span>); \
-    }); \
-  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>&#x27;;
-
-mpSdk.Mattertag.injectHTML(mattertagData[0], htmlToInject, {
-  size: {
-    w: 100,
-    h: 50,
-  }
-})
-  .then(function (messenger) {
-    messenger.on(&quot;buttonClick&quot;, function (buttonId) {
-      console.log(&#x27;clicked button with id:&#x27;, buttonId);
-    });
-  });
-</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1745,32 +1665,18 @@ mpSdk.Mattertag.injectHTML(mattertagData[0], htmlToInject, {
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="tag.html#allowaction">Tag.allowAction</a> instead</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="tsd-lead">
 									<p>Prevents the &quot;default&quot; Showcase action on a Mattertag from occurring: hover to open billboard, click to navigate to view.</p>
 								</div>
-								<pre><code><span class="hljs-keyword">var</span> mattertagData; <span class="hljs-comment">// ... acquired through a previous call to mpSdk.Mattertag.getData();</span>
-
-<span class="hljs-comment">// prevent navigating to the tag on click</span>
-<span class="hljs-keyword">var</span> noNavigationTag = mattertagData[<span class="hljs-number">0</span>];
-mpSdk.Mattertag.preventAction(noNavigationTag.sid, {
-  navigating: <span class="hljs-literal">true</span>,
-});
-
-<span class="hljs-comment">// prevent the billboard from showing</span>
-<span class="hljs-keyword">var</span> noBillboardTag = mattertagData[<span class="hljs-number">1</span>];
-mpSdk.Mattertag.preventAction(noBillboardTag.sid, {
-  opening: <span class="hljs-literal">true</span>,
-});
-
-<span class="hljs-keyword">var</span> noActionsTag = mattertagData[<span class="hljs-number">2</span>];
-mpSdk.Mattertag.preventAction(noActionsTag.sid, {
-  opening: <span class="hljs-literal">true</span>,
-  navigating: <span class="hljs-literal">true</span>,
-});
-</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1799,6 +1705,12 @@ mpSdk.Mattertag.preventAction(noActionsTag.sid, {
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="asset.html#registertexture">Asset.registerTexture</a> instead</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1806,8 +1718,6 @@ mpSdk.Mattertag.preventAction(noActionsTag.sid, {
 									<p>Register an icon to use with subsequent <a href="mattertag.html#editicon">Mattertag.editIcon</a> calls.</p>
 								</div>
 								<p><strong>Note</strong>: It is recommended to host your own images to mitigate cross origin limitations.</p>
-								<pre><code>mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Mattertag</span>.</span></span>register<span class="hljs-constructor">Icon(&#x27;<span class="hljs-params">customIconId</span>&#x27;, &#x27;<span class="hljs-params">https</span>:<span class="hljs-operator">/</span><span class="hljs-operator">/</span>[<span class="hljs-params">link</span>.<span class="hljs-params">to</span><span class="hljs-operator">/</span><span class="hljs-params">image</span>]&#x27;)</span>;
-</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1836,6 +1746,12 @@ mpSdk.Mattertag.preventAction(noActionsTag.sid, {
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="tag.html#remove">Tag.remove</a> instead</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1843,14 +1759,6 @@ mpSdk.Mattertag.preventAction(noActionsTag.sid, {
 									<p>Removes one or more Mattertags from Showcase.</p>
 								</div>
 								<p><strong>Note</strong>: these changes are not persisted between refreshes of Showcase. They are only valid for the current browser session.</p>
-								<pre><code><span class="hljs-built_in">var</span> mattertagData; // ... acquired through a previous call to mpSdk.Mattertag.getData();
-<span class="hljs-built_in">var</span> <span class="hljs-built_in">first</span> = mattertagData[<span class="hljs-number">0</span>];
-mpSdk.Mattertag.<span class="hljs-built_in">remove</span>(<span class="hljs-built_in">first</span>.sid);
-
-<span class="hljs-built_in">var</span> <span class="hljs-built_in">second</span> = mattertagData[<span class="hljs-number">1</span>];
-<span class="hljs-built_in">var</span> <span class="hljs-built_in">third</span> = mattertagData[<span class="hljs-number">2</span>];
-mpSdk.Mattertag.<span class="hljs-built_in">remove</span>([<span class="hljs-built_in">second</span>.sid, <span class="hljs-built_in">third</span>.sid]);
-</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1874,18 +1782,18 @@ mpSdk.Mattertag.<span class="hljs-built_in">remove</span>([<span class="hljs-bui
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="tag.html#reseticon">Tag.resetIcon</a> instead</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="tsd-lead">
 									<p>Resets the icon of the Mattertag disc back to its original icon.</p>
 								</div>
-								<pre><code><span class="hljs-comment">// acquired through a previous call to mpSdk.Mattertag.getData();</span>
-var mattertagData;
-
-<span class="hljs-comment">// reset the icon of the first Mattertag to its original</span>
-mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Mattertag</span>.</span></span>reset<span class="hljs-constructor">Icon(<span class="hljs-params">mattertagData</span>[0].<span class="hljs-params">sid</span>)</span>;
-</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -2100,7 +2008,7 @@ mpSdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hl
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 20, 2023 <br />
+ Site last generated: May 4, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
