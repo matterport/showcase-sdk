@@ -269,11 +269,11 @@
   
   
   
+  
+  
   <url>
     <loc>https://matterport.github.io/index.html</loc>
   </url>
-  
-  
   
   
   
@@ -452,6 +452,12 @@
   
   
   <url>
+    <loc>https://matterport.github.io/modelapi_models_ref.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/modelapi_postman.html</loc>
   </url>
   
@@ -495,6 +501,36 @@
   
   <url>
     <loc>https://matterport.github.io/docs/reference/current/interfaces/oauth.tokeninfo.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/oauth_home.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/oauth_implementation.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/oauth_model_api.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/oauth_model_selector.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/oauth_sdk_private_model.html</loc>
   </url>
   
   

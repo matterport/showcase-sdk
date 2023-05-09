@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>OAuth - Model API Access | Matterport Developers</title>
+<link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/showcase-sdk/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="/showcase-sdk/css/customstyles.css">
+<link rel="stylesheet" href="/showcase-sdk/css/custom.css">
+<link rel="stylesheet" href="/showcase-sdk/css/tags2.css">
+
+<link rel="stylesheet" href="/showcase-sdk/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/showcase-sdk/css/theme-matterport.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/showcase-sdk/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/showcase-sdk/js/toc.js"></script>
+<script src="/showcase-sdk/js/customscripts.js"></script>
+<script src="/showcase-sdk/js/mermaid.min.js"></script>
+
+<link rel="shortcut icon" href="/showcase-sdk/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+
+    <script>
+      $(document).ready(function () {
+        // Initialize navgoco with default options
+        $("#mysidebar").navgoco({
+          caretHtml: '<i class="fa fa-chevron-down"></i>',
+          accordion: true,
+          openClass: "active", // open
+
+          save: false, // leave false or nav highlighting doesn't work right
+          cookie: {
+            name: "navgoco",
+            expires: false,
+            path: "/",
+          },
+          slide: {
+            duration: 400,
+            easing: "swing",
+          },
+        });
+
+        $("#collapseAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", false);
+        });
+
+        $("#expandAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", true);
+        });
+      });
+    </script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#tg-sb-link").change(function () {
+          $("#tg-sb-sidebar").toggle();
+          $("#tg-sb-content").toggleClass("col-md-9");
+          $("#tg-sb-content").toggleClass("col-md-12");
+        });
+      });
+    </script>
+     
+  </head>
+  <body>
+    <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div>
+    <div class="row">
+      <a class="navbrand col-md-3" href="index.html"
+        >&nbsp;<img
+          class="navbar-image"
+          src="/showcase-sdk/images/MP-logo_H_lock-RGB_white.svg"
+        /><span class="projectTitle"> </span></a
+      >
+      <div class="dev-nav-links col-md-6">
+        <div class="dropdown-items">
+          <div class="dropdown ">
+            <a class="dropbtn active" href="index.html">SDK Docs</a>
+            <div class="dropdown-content">
+              <a href="sdk_home.html" class="">SDK for Embeds</a>
+              <a href="sdkbundle_home.html" class="" href="#">SDK Bundle</a>
+              <a href="earlyaccess_home.html" class="" href="#">SDK Early Access</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://api.matterport.com/docs/reference">API Docs</a>
+            <div class="dropdown-content">
+              <a href="https://api.matterport.com/docs/reference">API Reference</a>
+              <a href="https://api.matterport.com/graphiql">Interactive Console</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms">Terms</a>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the OAuth - Model API Access page: ' + window.location.href;">Feedback</a>
+          </div>
+        </div>
+      </div>
+      <div class="right-content col-md-3">
+        <div class="dev-input-container">
+          <!-- Add roboto font to search bar -->
+          <img src="/showcase-sdk/images/search_button.png" />
+          <input id="search-input" type="text" placeholder="Search"/>
+          <div id="results-container"></div>        
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</nav>
+ 
+    <!-- Page Content -->
+    <div class="dev-page-wrapper">
+      <div id="main">
+        <!-- Content Row -->
+        <div class="row">
+          <!-- Sidebar Column -->
+          
+          <aside class="col-md-3" id="tg-sb-sidebar">
+            
+<div id="mysidebar" class="nav">
+  
+  
+  
+
+  <li>
+      <a title="Overview" href="#">Overview</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/index.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Change Log" href="/showcase-sdk/sdk_changelog.html">Change Log</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Vocabulary" href="/showcase-sdk/sdk_vocabulary.html">Vocabulary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Concepts" href="/showcase-sdk/sdk_concepts.html">Concepts</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Docs Summary" href="/showcase-sdk/sdk_reference_summary.html">Reference Docs Summary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Documentation" href="/showcase-sdk/docs\reference\current\index.html">Reference Documentation</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK for Embeds" href="#">SDK for Embeds</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdk_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdk_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Bundle" href="#">SDK Bundle</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdkbundle_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdkbundle_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setting up Embed.ly" href="/showcase-sdk/sdkbundle_tutorials_setting_up_embedly.html">Setting up Embed.ly</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setup a Local Environment" href="/showcase-sdk/sdkbundle_tutorials_setup.html">Setup a Local Environment</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Architecture" href="/showcase-sdk/sdkbundle_architecture.html">Architecture</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Components" href="#">Components</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Ambient Light" href="/showcase-sdk/sdkbundle_components_ambientlight.html">Ambient Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Directional Light" href="/showcase-sdk/sdkbundle_components_directionallight.html">Directional Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Point Light" href="/showcase-sdk/sdkbundle_components_pointlight.html">Point Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="GLTF Loader" href="/showcase-sdk/sdkbundle_components_gltfloader.html">GLTF Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="DAE Loader" href="/showcase-sdk/sdkbundle_components_daeloader.html">DAE Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="FBX Loader" href="/showcase-sdk/sdkbundle_components_fbxloader.html">FBX Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="OBJ Loader" href="/showcase-sdk/sdkbundle_components_objloader.html">OBJ Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transform Controls" href="/showcase-sdk/sdkbundle_components_transformcontrols.html">Transform Controls</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Input" href="/showcase-sdk/sdkbundle_components_input.html">Input</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Camera" href="/showcase-sdk/sdkbundle_components_camera.html">Camera</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="XR" href="/showcase-sdk/sdkbundle_components_xr.html">XR</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Early Access" href="#">SDK Early Access</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/earlyaccess_home.html">Home</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Tutorials" href="#">SDK Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Observables" href="/showcase-sdk/sdk_tutorials_observables.html">Using Observables</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Collections" href="/showcase-sdk/sdk_tutorials_collections.html">Using Collections</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Creating Mattertags" href="/showcase-sdk/sdk_creating_mattertags.html">Creating Mattertags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Editing Mattertags" href="/showcase-sdk/sdk_editing_mattertags.html">Editing Mattertags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags 2.0 Migration" href="/showcase-sdk/sdk_tutorials_mattertagtotag.html">Tags 2.0 Migration</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Code Sandboxes" href="/showcase-sdk/sdk_tutorials_htmlsandbox.html">Tags Code Sandboxes</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pathfinding" href="/showcase-sdk/sdk_tutorials_pathfinding.html">Pathfinding</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pointer Reticle" href="/showcase-sdk/sdk_tutorials_cursor.html">Pointer Reticle</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Working with Models" href="/showcase-sdk/sdkbundle_tutorials_models.html">Working with Models</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using xr" href="/showcase-sdk/sdkbundle_tutorials_using_xr.html">Using xr</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Scene Objects" href="/showcase-sdk/sdkbundle_tutorials_using_scene_objects.html">Using Scene Objects</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Examples" href="#">SDK Examples</a>
+      <ul>
+          
+          
+          
+          <li><a title="Navigation Controls" href="/showcase-sdk/sdk_navigation_controls.html">Navigation Controls</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Intersection Inspector" href="/showcase-sdk/sdk_intersection_inspector.html">Intersection Inspector</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz" href="/showcase-sdk/sdk_tags_quiz.html">Tags Quiz</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz - Overlay" href="/showcase-sdk/sdk_tags_quiz_overlay.html">Tags Quiz - Overlay</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Kitchen Sink" href="/showcase-sdk/sdk_kitchen_sink.html">Kitchen Sink</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Remote Control" href="/showcase-sdk/sdk_remote_control.html">Remote Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Source Areas" href="/showcase-sdk/sdk_sensors_source_areas.html">Sensors - Source Areas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Tags Level of Detail" href="/showcase-sdk/sdk_sensors_tags_level_of_detail.html">Sensors - Tags Level of Detail</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Sweep Control" href="/showcase-sdk/sdk_sensors_sweep_control.html">Sensors - Sweep Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Virtual Staging" href="/showcase-sdk/sdkbundle_virtual_staging.html">Virtual Staging</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Local Webcam" href="/showcase-sdk/sdkbundle_local_webcam.html">Local Webcam</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Livestream" href="/showcase-sdk/sdkbundle_html_livestream.html">HTML Livestream</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="IoT Canvas" href="/showcase-sdk/sdkbundle_iot_canvas.html">IoT Canvas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Custom Experience" href="/showcase-sdk/sdkbundle_custom_experience.html">Custom Experience</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Security Camera FOV" href="/showcase-sdk/sdkbundle_security_camera.html">Security Camera FOV</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Content Attribution" href="/showcase-sdk/sdkbundle_content_attribution.html">Content Attribution</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Matterport APIs" href="#">Matterport APIs</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/api_home.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Docs" href="https://api.matterport.com/model/docs/reference" target="_blank" rel="noopener">Reference Docs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Interactive Console" href="https://api.matterport.com/model/graphiql" target="_blank" rel="noopener">Interactive Console</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Model API" href="#">Model API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Model API Changelog" href="/showcase-sdk/modelapi_changelog.html">Model API Changelog</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Model API Code Snippets" href="/showcase-sdk/modelapi_snippets.html">Model API Code Snippets</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Model API Models() Reference" href="/showcase-sdk/modelapi_models_ref.html">Model API Models() Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Tags 2.0 Icons Reference" href="/showcase-sdk/tags_icons_reference.html">Tags 2.0 Icons Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Postman Collection" href="/showcase-sdk/modelapi_postman.html">Postman Collection</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Account API" href="#">Account API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Account API Changelog" href="/showcase-sdk/accountapi_changelog.html">Account API Changelog</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account API Snippets" href="/showcase-sdk/accountapi_snippets.html">Account API Snippets</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="OAuth" href="#">OAuth</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/oauth_home.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Implementation" href="/showcase-sdk/oauth_implementation.html">Implementation</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Model Selector" href="/showcase-sdk/oauth_model_selector.html">Model Selector</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="Use Case - Model API" href="/showcase-sdk/oauth_model_api.html">Use Case - Model API</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Use Case - Private Models" href="/showcase-sdk/oauth_sdk_private_model.html">Use Case - Private Models</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OAuth Sample Application" href="/showcase-sdk/sdkbundle_tutorials_using_oauth.html">OAuth Sample Application</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Learn More" href="#">Learn More</a>
+      <ul>
+          
+          
+          
+          <li><a title="Developer Tools Overview" href="https://support.matterport.com/s/article/API-SDK-Developer-Tools-Overview" target="_blank" rel="noopener">Developer Tools Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pricing and Availability" href="https://support.matterport.com/s/article/Developer-Tools-Pricing-and-Availability" target="_blank" rel="noopener">Pricing and Availability</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Developer Program FAQ" href="https://support.matterport.com/s/article/Developer-Program-FAQ" target="_blank" rel="noopener">Developer Program FAQ</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</div>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+<script src="/showcase-sdk/js/jekyll-search.js" type="text/javascript"></script>
+<script type="text/javascript">
+        SimpleJekyllSearch.init({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            dataSource: '/showcase-sdk/search.json',
+            searchResultTemplate: '<li><a href="{url}" title="OAuth - Model API Access">{title}</a></li>',
+noResultsText: '<li><div>No results found.<div></li>',
+        limit: 10,
+        fuzzy: true,
+})
+</script>
+
+          </aside>
+           
+          <!-- Content Column -->
+          <div
+            class=" col-md-9" 
+            id="tg-sb-content"
+          >
+            <div class="post-header">
+   <h1 class="post-title-main">OAuth - Model API Access</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+
+
+    
+
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> OAuth is currently offered by invitation only for our Commercial Partners.  If you’re interested in using OAuth, please reach out to  developer@matterport.com with your account information.</div>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This scenario is useful for accessing <strong>Model API</strong> on a client’s account via an OAuth <strong>access_token</strong>. This may be useful for:</p>
+
+<ul>
+  <li>Editing metadata and annotations</li>
+  <li>Archiving / Unarchiving Models</li>
+  <li>Changing Model Visibility (Private, Link Sharing, Public)</li>
+  <li>Searching for a specific model or set of models</li>
+</ul>
+
+<p><em>Note there is a model selector component supplied to assist in the common case of selecting a model for further action.</em></p>
+
+<h2 id="actors">Actors</h2>
+
+<ul>
+  <li>Application Server (Resource Grantee)</li>
+  <li>Client Browser (Resource Owner)</li>
+  <li>Matterport Authorization Server (Authorization Server)</li>
+  <li>Matterport API Server (Resource Server)</li>
+</ul>
+
+<h2 id="workflow">Workflow</h2>
+
+<div class="mermaid">
+sequenceDiagram
+    Client Browser-&gt;&gt;+Application Server: 1. Client wants to use the application
+    Application Server-&gt;&gt;+Client Browser: 2. Redirect to the authorization server
+    Client Browser-&gt;&gt;+Authorization Server: 3. Client accepts the authorization request
+    Authorization Server-&gt;&gt;+Client Browser: 4. Redirect ot the redirect url with access code
+    Client Browser-&gt;&gt;+Application Server: 5. Client sends the access code
+    Application Server-&gt;&gt;+API Server: 6. Request the access tokens
+    Application Server-&gt;&gt;+API Server: 7. Use the access token to request model data
+    API Server-&gt;&gt;+Application Server: 8. Access token expires
+    Application Server-&gt;&gt;+API Server: 9. Refresh the access token
+    Application Server-&gt;&gt;+API Server: 10. Use the access token to request model data
+    API Server-&gt;&gt;+Application Server: 11. Access expires or is revoked
+</div>
+
+<h2 id="1-client-requests-the-application"><strong>1. Client requests the application</strong></h2>
+<p>The application has a page that is used to initiate the OAuth flow. The user clicks on a control on this page that indicates they give your application access to their Matterport spaces.</p>
+
+<h2 id="2-redirect-the-client-to-the-authorization-server"><strong>2. Redirect the client to the authorization server</strong></h2>
+<p>After the user gave your application the access to their spaces, it should redirect them to https://authn.matterport.com/oauth/authorize with the following query parameters:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>parameter</td>
+      <td>description</td>
+    </tr>
+    <tr>
+      <td>client_id</td>
+      <td>This is available from the OAuth settings page.</td>
+    </tr>
+    <tr>
+      <td>response_type</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>redirect_uri</td>
+      <td>This is optional. If specified, hostname and path (must match the configured value from the OAuth settings page). Additional query parameters are allowed.</td>
+    </tr>
+    <tr>
+      <td>scope</td>
+      <td>A space separated set of permissions to request. The application cannot request any scopes that have not been configured in the OAuth settings page. However, it can request fewer scopes than it is allowed to.<br /><br />For example, if the application is approved for ViewDetails and PurchaseAssets it can ask for access to just ViewDetails. Note that the client will be notified of all permission scopes requested, so applications should take care to request only the necessary scopes.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A URL for this sample would look like this: https://authn.matterport.com/oauth/authorize?client_id=uud3wfustchhap01yzia7nddb&amp;response_type=code&amp;scope=ViewDetails%20PurchaseAssets</p>
+
+<!-- 
+     This was supposed to be included with OAuth but was not.  Therefore, it was in our support articles and was incorrect information.  This may become canon in the future, therefore, I'd love to leave it here.
+     
+     All models a client grants access to will be capable of at least ViewPublic and ViewDetails, but there might be models where the client can’t authorize additional scopes such as PurchaseAssets. In those cases, requests that require those scopes will fail with a request.unauthorized error code. -->
+
+<p>A client’s access to a model is not static.  They might have their access rejected or a model might be deleted.  In these cases, attempts to access the model will fail with a <strong>“not.found”</strong> error code, as the system does not discern between a model that doesn’t exist and a model that the user doesn’t have access to.</p>
+
+<h2 id="3-client-accepts-the-authorization-request"><strong>3. Client accepts the authorization request</strong></h2>
+
+<p>The user will be asked to log in to their Matterport account and select the organization to grant access to the models in.  They will see the following prompt:</p>
+
+<p><img src="images/OAuth_Authorization_Prompt.jpg" /></p>
+
+<p>If the user authorizes the access, the system will generate the requested tokens.</p>
+
+<h2 id="4-client-is-redirected-to-the-configured-url"><strong>4. Client is redirected to the configured URL</strong></h2>
+
+<p>After authorization is granted, the authorization server will send a redirect to the client browser based on either the configured redirect URI or the one specified in the authorize URL. For a response_type of code, this will include a code query parameter, which can be used to generate the necessary access tokens.</p>
+
+<p>Assuming the OAuth application has a configured redirect URL of https://myoauthapp.test/matterport/oauth-granted/ the  resulting redirect would look like this: https://myoauthapp.test/matterport/oauth-granted/?code=wdi42eyt7pugyxze3i9ushz5d</p>
+
+<h2 id="5-client-follows-the-redirect"><strong>5. Client follows the redirect</strong></h2>
+
+<p>The client browser will follow the redirect, at which point the application server will have access to the code query parameter.</p>
+
+<h2 id="6-request-the-access-tokens"><strong>6. Request the access tokens</strong></h2>
+<p>To retrieve the access tokens, an HTTP POST must be sent to https://api.matterport.com/api/oauth/token with a form urlencoded body containing the following parameters:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Key</td>
+      <td>Value</td>
+    </tr>
+    <tr>
+      <td>grant_type</td>
+      <td>authorization_code</td>
+    </tr>
+    <tr>
+      <td>code</td>
+      <td>The authorization code received when the user authorized the application (the code from the previous step).<br /><br />Given the sample redirect URL from step 4, it would be: wdi42eyt7pugyxze3i9ushz5d</td>
+    </tr>
+    <tr>
+      <td>scope</td>
+      <td>A space-separated set of OAuth scopes being requested. Generally, this will be the same value from step 2. This should match with what the user authorized.</td>
+    </tr>
+    <tr>
+      <td>client_id</td>
+      <td>The client id from the OAuth settings. Given the sample URL for step 2, this would be: uud3wfustchhap01yzia7nddb</td>
+    </tr>
+    <tr>
+      <td>client_secret</td>
+      <td>The client secret generated when the OAuth application was first created.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Sample curl for generating this request:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST https://api.matterport.com/api/oauth/token
+     <span class="nt">-H</span> <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+     <span class="nt">-d</span> <span class="s2">"grant_type=authorization_code&amp;code=wdi42eyt7pugyxze3i9ushz5d&amp;scope=ViewPublic%20PurchaseAssets&amp;client_id=uud3wfustchhap01yzia7nddb&amp;client_secret=****************"</span>
+</code></pre></div></div>
+
+<p>This will return a response similar to the following:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+     </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3mwbyppm4u0gz1z14ktqtiteb"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">3599</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ichxdbm59z74m6tkcbqi092rc:
+}
+</span></code></pre></div></div>
+
+<p>The access_token can be used when making requests to the model API, in the Authorization header, using the standard OAuth format of: <strong>Authorization: Bearer &lt;token&gt;</strong>. Generally, it should not be stored and new access tokens should be generated using the refresh_token in the future.</p>
+
+<p>The <strong>refresh_token</strong> value can be used to request a new access token when the expiration time is near.  Be sure to store the returned refresh_token as it will change after 24 hours.  The first request for a new access_token after 24 hours will return a new refresh_token that will be required for subsequent access_token refreshes.</p>
+
+<p>The <strong>expires_in</strong> value indicates how long the access token is valid in seconds. By default, this is 1 day.</p>
+
+<p>The <strong>refresh_token</strong> must be stored and transmitted securely and should not be included in any remote applications, such as browsers or mobile apps.</p>
+
+<p>The <strong>access_token</strong> must be transmitted securely, but is safe to use in trusted remote applications, such as browsers or mobile apps.</p>
+
+<h2 id="7-use-the-access-token-to-access-model-data"><strong>7. Use the access token to access model data</strong></h2>
+
+<p>Once an access token has been generated it may be used to query the Model API. This is done by including an <strong>Authorization: Bearer [access_token]</strong> header, where <strong>[access_token]</strong> would be replaced by the value of the access token. Using the token from the previous step the header would look like:</p>
+
+<p>Authorization: Bearer 3mwbyppm4u0gz1z14ktqtiteb</p>
+
+<p>A sample curl graph query would look like:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST https://qa3-api.matterport.com/api/models/graph
+     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer 3mwbyppm4u0gz1z14ktqtiteb"</span>
+     <span class="nt">-H</span> <span class="s2">"Content-Type: application/graphql"</span>
+     <span class="nt">-d</span> <span class="s1">'{
+        models {
+          nextOffset
+          results {
+             id
+             name
+         }
+       }
+     }'</span>
+</code></pre></div></div>
+
+<p>This will work until the access token expires, covered in the next step.</p>
+
+<h2 id="8-access-token-expires"><strong>8. Access token expires</strong></h2>
+
+<p>Eventually, the access token will expire. The application server can choose to be proactive and discard the token before it expires, based on the <strong>expires_in</strong> attribute from step 6 or it can detect the condition when it happens.</p>
+
+<p>After a token expires, rather than returning a graph response, the API server will return an HTTP 400 with the Content-Type of application/json and the error body of { “error”: “invalid_grant” }. When this is received, the application should discard the current access token and generate a new one if needed.</p>
+
+<p>Note: The Model API will generally return a graphql compatible response. However, the OAuth 2.0 specification supersedes that behavior in this case.</p>
+
+<h2 id="9-refresh-the-access-token"><strong>9. Refresh the access token</strong></h2>
+
+<p>To generate a new access token from an existing refresh token, make an HTTP POST request to https://api.matterport.com/api/oauth/token with a form urlencoded body containing the following parameters:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Key</td>
+      <td>Value</td>
+    </tr>
+    <tr>
+      <td>grant_type</td>
+      <td>refresh_token</td>
+    </tr>
+    <tr>
+      <td>refresh_token</td>
+      <td>The refresh token generated in step 6. For this example:  ichxdbm59z74m6tkcbqi092rc</td>
+    </tr>
+    <tr>
+      <td>client_id</td>
+      <td>The client id from the OAuth settings. Given the sample URL for step 2, this would be uud3wfustchhap01yzia7nddb</td>
+    </tr>
+    <tr>
+      <td>client_secret</td>
+      <td>The client secret generated when the OAuth application was first created. Note that you can reset this value from the settings page, but it cannot be retrieved.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A sample curl request would look like:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST https://api.matterport.com/api/oauth/token
+   <span class="nt">-H</span> <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+   <span class="nt">-d</span> <span class="s2">"grant_type=refresh_token&amp;refresh_token=ichxdbm59z74m6tkcbqi092rc&amp;client_id=uud3wfustchhap01yzia7nddb&amp;client_secret=****************"</span>
+</code></pre></div></div>
+
+<p>A sample response would then look like:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+     </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r3gxncgp4xksmdtectyzw1s8c"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">3599</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ichxdbm59z74m6tkcbqi092rc"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> When requesting a new access_token, you may receive a new refresh_token.  Please be sure to pay attention to the returned <strong>refresh_token</strong>.  If a refresh_token is 24 hours or older, it will become ‘stale’ when it is next used.  A new refresh_token will be provided when a new access_token is requested.  Make sure to capture this new value for subsequent access_token refreshes.<br /><br />Refresh Token rotation is a standard part of OAuth.  For more information on refresh_token rotation, please see <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-10.4">RFC6749 from the OAuth Spec</a></div>
+
+<h2 id="10-use-the-access-token-to-access-model-data"><strong>10. Use the access token to access model data</strong></h2>
+
+<p>This step looks the same as step 7 only the new access token value <em>r3gxncgp4xksmdtectyzw1s8c</em> should be used in the authorization header.</p>
+
+<h2 id="11-access-expires-or-is-revoked"><strong>11. Access expires or is revoked</strong></h2>
+
+<p>Eventually, the refresh token will expire or the user will revoke the application’s access. This can be detected when attempting to generate a new access token via the refresh token.</p>
+
+<p>If access has expired or been revoked, then the call to generate the access token will return an HTTP 400 with an error code of <strong>invalid_grant</strong>. At this point, the refresh token should be discarded and the client will need to reauthorize the application.</p>
+
+
+    <div class="tags">
+        
+    </div>
+
+<!-- 
+ -->
+
+</div>
+
+<!-- <hr class="shaded"/> -->
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2023 Matterport, Inc. All rights reserved. <br />
+ Site last generated: May 9, 2023 <br />
+<p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /#main -->
+    </div>
+
+    
+  </body>
+   <!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-34880260-5','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+ 
+</html>

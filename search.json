@@ -136,7 +136,7 @@
 
 
 {
-"title": "Accounts API Code Snippets",
+"title": "Account API Code Snippets",
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/accountapi_snippets.html",
@@ -480,6 +480,8 @@
 
 
 
+
+
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -488,8 +490,6 @@
 "summary": ""
 }
 ,
-
-
 
 
 
@@ -813,6 +813,17 @@
 
 
 {
+"title": "Model API Models() Reference",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/modelapi_models_ref.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Model API Postman Collection",
 "tags": "",
 "keywords": "",
@@ -894,6 +905,61 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/docs/reference/current/interfaces/oauth.tokeninfo.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "OAuth Overview",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/oauth_home.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Implementing OAuth",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/oauth_implementation.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "OAuth - Model API Access",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/oauth_model_api.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "OAuth Model Selector",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/oauth_model_selector.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "OAuth - Private Models with SDK",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/oauth_sdk_private_model.html",
 "summary": ""
 }
 ,

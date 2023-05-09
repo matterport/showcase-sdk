@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Accounts API Code Snippets | Matterport Developers</title>
+<title>Account API Code Snippets | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -128,7 +128,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Accounts API Code Snippets page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Account API Code Snippets page: ' + window.location.href;">Feedback</a>
           </div>
         </div>
       </div>
@@ -474,13 +474,6 @@
           
           
           
-          
-          
-          <li><a title="Using OAuth" href="/showcase-sdk/sdkbundle_tutorials_using_oauth.html">Using OAuth</a></li>
-          
-          
-          
-          
       </ul>
    </li>
      
@@ -651,6 +644,12 @@
                   
                   
                   
+                  <li><a title="Model API Models() Reference" href="/showcase-sdk/modelapi_models_ref.html">Model API Models() Reference</a></li>
+                  
+                  
+                  
+                  
+                  
                   <li><a title="Tags 2.0 Icons Reference" href="/showcase-sdk/tags_icons_reference.html">Tags 2.0 Icons Reference</a></li>
                   
                   
@@ -684,6 +683,58 @@
                   
               </ul>
           </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="OAuth" href="#">OAuth</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/oauth_home.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Implementation" href="/showcase-sdk/oauth_implementation.html">Implementation</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Model Selector" href="/showcase-sdk/oauth_model_selector.html">Model Selector</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Use Case - Model API" href="/showcase-sdk/oauth_model_api.html">Use Case - Model API</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Use Case - Private Models" href="/showcase-sdk/oauth_sdk_private_model.html">Use Case - Private Models</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OAuth Sample Application" href="/showcase-sdk/sdkbundle_tutorials_using_oauth.html">OAuth Sample Application</a></li>
           
           
           
@@ -738,7 +789,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="Accounts API Code Snippets">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Account API Code Snippets">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -753,7 +804,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">Accounts API Code Snippets</h1>
+   <h1 class="post-title-main">Account API Code Snippets</h1>
 </div>
 
 
@@ -767,11 +818,11 @@ noResultsText: '<li><div>No results found.<div></li>',
 
     
 
-   <p>This is a library of ready-to-use sample GraphQL queries and mutations for Matterport’s Accounts API.</p>
+   <p>This is a library of ready-to-use sample GraphQL queries and mutations for Matterport’s Account API.</p>
 
 <p>Each query and mutation contains a link to try the query in our interactive console.  Be sure to edit the variables, when provided, and insert a valid Model ID and valid data for all variables.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Note - Accounts API is only available for Enterprise-level Matterport Subscriptions</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Account API is only available for Enterprise-level Matterport Subscriptions</div>
 
 <p>If you would like an application to build collections of API queries for testing and generating code to use in your applications, we recommend using <a href="https://www.postman.com/">Postman</a>.</p>
 
@@ -785,7 +836,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 Fragments can be mixed and matched depending on which data you want. The organization ID is based on which API tokens are used.
 
-<div class="language-graphql highlighter-rouge"><pre><code>query getOrganizationInfo {
+<div class="language-graphql highlighter-rouge"><pre class="highlight"><code class="highlight">query getOrganizationInfo {
   organization {
     name
     created
@@ -838,7 +889,7 @@ fragment bundleInfo on OrganizationBundle {
 
 <p>Sample Response:</p>
 
-<div class="language-json highlighter-rouge"><pre><code>{ 
+<div class="language-json highlighter-rouge"><pre class="highlight"><code class="highlight">{ 
    "data": { 
       "organization": { 
          "name": "Matterport Organization", 
@@ -909,7 +960,7 @@ fragment bundleInfo on OrganizationBundle {
 
 Results might need to be <a href="https://graphql.org/learn/pagination/#pagination-and-edges" target="_blank">paginated</a> (offset pagination).
 
-<pre><code>query getOrganizationInfo {
+<pre class="highlight"><code class="highlight">query getOrganizationInfo {
   organization {
     memberships(
       query: "*",
@@ -942,7 +993,7 @@ fragment user on User {
 
 <p>Sample Response:</p>
 
-<pre><code>{ 
+<pre class="highlight"><code class="highlight">{ 
      "data": {
         "organization": {
            "memberships": {
@@ -1016,7 +1067,7 @@ fragment user on User {
   
 <summary>Invite user to organization</summary>
   
-<pre><code>mutation inviteUser($userEmail: String!, $roleId: ID!, $inviteMessage: String){
+<pre class="highlight"><code class="highlight">mutation inviteUser($userEmail: String!, $roleId: ID!, $inviteMessage: String){
   inviteMember(
     email: $userEmail
     roleId: $roleId
@@ -1030,7 +1081,8 @@ fragment user on User {
 # Variables
 {
   "userEmail": "",
-  "roleId": ""
+  "roleId": "",
+  "inviteMessage": "Please accept the invitation to this organization."
 }
 
 # Role ID reference:
@@ -1042,7 +1094,7 @@ fragment user on User {
 
 <p>Sample Response:</p>
 
-<pre><code>{ 
+<pre class="highlight"><code class="highlight">{ 
    "data": { 
       "inviteMember": { 
          "user": { 
@@ -1060,7 +1112,7 @@ fragment user on User {
 
 <summary>Remove user from organization</summary>
 
-<pre><code>mutation removeMember($email: String!){
+<pre class="highlight"><code class="highlight">mutation removeMember($email: String!){
   removeMembership(email: $email){
     user{email}
     status
@@ -1075,7 +1127,7 @@ fragment user on User {
 
 <p>Sample Response:</p>
 
-<pre><code>{ 
+<pre class="highlight"><code class="highlight">{ 
    "data": { 
       "removeMembership": { 
          "user": { 
@@ -1093,7 +1145,7 @@ fragment user on User {
 <details name="Update a user's role">
 <summary>Update a user's role</summary>
 
-<pre><code>mutation updateUserRole($email: String!, $roleId: ID!){
+<pre class="highlight"><code class="highlight">mutation updateUserRole($email: String!, $roleId: ID!){
   patchMembership(email: $email, roleId: $roleId){
     user{email}
     roles{
@@ -1118,7 +1170,7 @@ fragment user on User {
 
 <p>Sample Response:</p>
 
-<pre><code>{ 
+<pre class="highlight"><code class="highlight">{ 
    "data": { 
       "patchMembership": { 
          "user": { 
@@ -1145,7 +1197,7 @@ fragment user on User {
 
 <summary>List SDK Keys</summary>
 
-<div class="language-graphql highlighter-rouge"><pre><code>query getSDKKeys{
+<div class="language-graphql highlighter-rouge"><pre class="highlight"><code class="highlight">query getSDKKeys{
   organization{
     sdkKeys{
       quota
@@ -1168,7 +1220,7 @@ fragment keyInfo on SdkKey{
 
 <p>Sample Response:</p>
 
-<div class="language-json highlighter-rouge"><pre><code>{
+<div class="language-json highlighter-rouge"><pre class="highlight"><code class="highlight">{
     "data": {
       "organization": {
         "sdkKeys": {
@@ -1210,7 +1262,7 @@ fragment keyInfo on SdkKey{
 <details name="Add SDK Key">
 <summary>Add SDK Key</summary>
 
-<pre><code>fragment sdkKey on SdkKey{
+<pre class="highlight"><code class="highlight">fragment sdkKey on SdkKey{
   key
   label
   domains{
@@ -1247,7 +1299,7 @@ mutation addSdkKey($label: String, $domains: [AddSdkDomain!]){
 <details name="Delete SDK Key">
 <summary>Delete SDK Key</summary>
 
-<pre><code>mutation removeSdkKey($key: ID!){
+<pre class="highlight"><code class="highlight">mutation removeSdkKey($key: ID!){
   removeSdkKey(key: $key)
 }
 
@@ -1264,7 +1316,7 @@ mutation addSdkKey($label: String, $domains: [AddSdkDomain!]){
 <details name="Add domain to SDK key">
 <summary>Add domain to SDK key</summary>
 
-<pre><code>mutation addDomain($key: ID!, $domainDetails: AddSdkDomain!){
+<pre class="highlight"><code class="highlight">mutation addDomain($key: ID!, $domainDetails: AddSdkDomain!){
   addSdkDomain(key: $key, details: $domainDetails){
     domain
     secureOnly
@@ -1289,7 +1341,7 @@ mutation addSdkKey($label: String, $domains: [AddSdkDomain!]){
 <details name="Remove domain from SDK key">
 <summary>Remove domain from SDK key</summary>
 
-<pre><code>mutation removeDomain($key: ID!, $domainId: ID!){
+<pre class="highlight"><code class="highlight">mutation removeDomain($key: ID!, $domainId: ID!){
   removeSdkDomain(key: $key, domainId: $domainId)
 }
 
@@ -1306,7 +1358,7 @@ mutation addSdkKey($label: String, $domains: [AddSdkDomain!]){
 <details name="Update domain on SDK key">
 <summary>Update domain on SDK key</summary>
 
-<pre><code>mutation updateDomain($key: ID!, $domainId: ID!, $newInfo: PatchSdkDomain!){
+<pre class="highlight"><code class="highlight">mutation updateDomain($key: ID!, $domainId: ID!, $newInfo: PatchSdkDomain!){
   patchSdkDomain(key: $key, domainId: $domainId, patch: $newInfo){
     id
     secureOnly
@@ -1347,7 +1399,7 @@ mutation addSdkKey($label: String, $domains: [AddSdkDomain!]){
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: May 5, 2023 <br />
+ Site last generated: May 9, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

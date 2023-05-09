@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>OAuth - Private Models with SDK | Matterport Developers</title>
+<link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/showcase-sdk/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="/showcase-sdk/css/customstyles.css">
+<link rel="stylesheet" href="/showcase-sdk/css/custom.css">
+<link rel="stylesheet" href="/showcase-sdk/css/tags2.css">
+
+<link rel="stylesheet" href="/showcase-sdk/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/showcase-sdk/css/theme-matterport.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/showcase-sdk/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/showcase-sdk/js/toc.js"></script>
+<script src="/showcase-sdk/js/customscripts.js"></script>
+<script src="/showcase-sdk/js/mermaid.min.js"></script>
+
+<link rel="shortcut icon" href="/showcase-sdk/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+
+    <script>
+      $(document).ready(function () {
+        // Initialize navgoco with default options
+        $("#mysidebar").navgoco({
+          caretHtml: '<i class="fa fa-chevron-down"></i>',
+          accordion: true,
+          openClass: "active", // open
+
+          save: false, // leave false or nav highlighting doesn't work right
+          cookie: {
+            name: "navgoco",
+            expires: false,
+            path: "/",
+          },
+          slide: {
+            duration: 400,
+            easing: "swing",
+          },
+        });
+
+        $("#collapseAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", false);
+        });
+
+        $("#expandAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", true);
+        });
+      });
+    </script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#tg-sb-link").change(function () {
+          $("#tg-sb-sidebar").toggle();
+          $("#tg-sb-content").toggleClass("col-md-9");
+          $("#tg-sb-content").toggleClass("col-md-12");
+        });
+      });
+    </script>
+     
+  </head>
+  <body>
+    <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div>
+    <div class="row">
+      <a class="navbrand col-md-3" href="index.html"
+        >&nbsp;<img
+          class="navbar-image"
+          src="/showcase-sdk/images/MP-logo_H_lock-RGB_white.svg"
+        /><span class="projectTitle"> </span></a
+      >
+      <div class="dev-nav-links col-md-6">
+        <div class="dropdown-items">
+          <div class="dropdown ">
+            <a class="dropbtn active" href="index.html">SDK Docs</a>
+            <div class="dropdown-content">
+              <a href="sdk_home.html" class="">SDK for Embeds</a>
+              <a href="sdkbundle_home.html" class="" href="#">SDK Bundle</a>
+              <a href="earlyaccess_home.html" class="" href="#">SDK Early Access</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://api.matterport.com/docs/reference">API Docs</a>
+            <div class="dropdown-content">
+              <a href="https://api.matterport.com/docs/reference">API Reference</a>
+              <a href="https://api.matterport.com/graphiql">Interactive Console</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms">Terms</a>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the OAuth - Private Models with SDK page: ' + window.location.href;">Feedback</a>
+          </div>
+        </div>
+      </div>
+      <div class="right-content col-md-3">
+        <div class="dev-input-container">
+          <!-- Add roboto font to search bar -->
+          <img src="/showcase-sdk/images/search_button.png" />
+          <input id="search-input" type="text" placeholder="Search"/>
+          <div id="results-container"></div>        
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</nav>
+ 
+    <!-- Page Content -->
+    <div class="dev-page-wrapper">
+      <div id="main">
+        <!-- Content Row -->
+        <div class="row">
+          <!-- Sidebar Column -->
+          
+          <aside class="col-md-3" id="tg-sb-sidebar">
+            
+<div id="mysidebar" class="nav">
+  
+  
+  
+
+  <li>
+      <a title="Overview" href="#">Overview</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/index.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Change Log" href="/showcase-sdk/sdk_changelog.html">Change Log</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Vocabulary" href="/showcase-sdk/sdk_vocabulary.html">Vocabulary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Concepts" href="/showcase-sdk/sdk_concepts.html">Concepts</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Docs Summary" href="/showcase-sdk/sdk_reference_summary.html">Reference Docs Summary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Documentation" href="/showcase-sdk/docs\reference\current\index.html">Reference Documentation</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK for Embeds" href="#">SDK for Embeds</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdk_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdk_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Bundle" href="#">SDK Bundle</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdkbundle_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdkbundle_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setting up Embed.ly" href="/showcase-sdk/sdkbundle_tutorials_setting_up_embedly.html">Setting up Embed.ly</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setup a Local Environment" href="/showcase-sdk/sdkbundle_tutorials_setup.html">Setup a Local Environment</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Architecture" href="/showcase-sdk/sdkbundle_architecture.html">Architecture</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Components" href="#">Components</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Ambient Light" href="/showcase-sdk/sdkbundle_components_ambientlight.html">Ambient Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Directional Light" href="/showcase-sdk/sdkbundle_components_directionallight.html">Directional Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Point Light" href="/showcase-sdk/sdkbundle_components_pointlight.html">Point Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="GLTF Loader" href="/showcase-sdk/sdkbundle_components_gltfloader.html">GLTF Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="DAE Loader" href="/showcase-sdk/sdkbundle_components_daeloader.html">DAE Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="FBX Loader" href="/showcase-sdk/sdkbundle_components_fbxloader.html">FBX Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="OBJ Loader" href="/showcase-sdk/sdkbundle_components_objloader.html">OBJ Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transform Controls" href="/showcase-sdk/sdkbundle_components_transformcontrols.html">Transform Controls</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Input" href="/showcase-sdk/sdkbundle_components_input.html">Input</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Camera" href="/showcase-sdk/sdkbundle_components_camera.html">Camera</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="XR" href="/showcase-sdk/sdkbundle_components_xr.html">XR</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Early Access" href="#">SDK Early Access</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/earlyaccess_home.html">Home</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Tutorials" href="#">SDK Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Observables" href="/showcase-sdk/sdk_tutorials_observables.html">Using Observables</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Collections" href="/showcase-sdk/sdk_tutorials_collections.html">Using Collections</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Creating Mattertags" href="/showcase-sdk/sdk_creating_mattertags.html">Creating Mattertags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Editing Mattertags" href="/showcase-sdk/sdk_editing_mattertags.html">Editing Mattertags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags 2.0 Migration" href="/showcase-sdk/sdk_tutorials_mattertagtotag.html">Tags 2.0 Migration</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Code Sandboxes" href="/showcase-sdk/sdk_tutorials_htmlsandbox.html">Tags Code Sandboxes</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pathfinding" href="/showcase-sdk/sdk_tutorials_pathfinding.html">Pathfinding</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pointer Reticle" href="/showcase-sdk/sdk_tutorials_cursor.html">Pointer Reticle</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Working with Models" href="/showcase-sdk/sdkbundle_tutorials_models.html">Working with Models</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using xr" href="/showcase-sdk/sdkbundle_tutorials_using_xr.html">Using xr</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Scene Objects" href="/showcase-sdk/sdkbundle_tutorials_using_scene_objects.html">Using Scene Objects</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Examples" href="#">SDK Examples</a>
+      <ul>
+          
+          
+          
+          <li><a title="Navigation Controls" href="/showcase-sdk/sdk_navigation_controls.html">Navigation Controls</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Intersection Inspector" href="/showcase-sdk/sdk_intersection_inspector.html">Intersection Inspector</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz" href="/showcase-sdk/sdk_tags_quiz.html">Tags Quiz</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz - Overlay" href="/showcase-sdk/sdk_tags_quiz_overlay.html">Tags Quiz - Overlay</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Kitchen Sink" href="/showcase-sdk/sdk_kitchen_sink.html">Kitchen Sink</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Remote Control" href="/showcase-sdk/sdk_remote_control.html">Remote Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Source Areas" href="/showcase-sdk/sdk_sensors_source_areas.html">Sensors - Source Areas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Tags Level of Detail" href="/showcase-sdk/sdk_sensors_tags_level_of_detail.html">Sensors - Tags Level of Detail</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Sweep Control" href="/showcase-sdk/sdk_sensors_sweep_control.html">Sensors - Sweep Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Virtual Staging" href="/showcase-sdk/sdkbundle_virtual_staging.html">Virtual Staging</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Local Webcam" href="/showcase-sdk/sdkbundle_local_webcam.html">Local Webcam</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Livestream" href="/showcase-sdk/sdkbundle_html_livestream.html">HTML Livestream</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="IoT Canvas" href="/showcase-sdk/sdkbundle_iot_canvas.html">IoT Canvas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Custom Experience" href="/showcase-sdk/sdkbundle_custom_experience.html">Custom Experience</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Security Camera FOV" href="/showcase-sdk/sdkbundle_security_camera.html">Security Camera FOV</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Content Attribution" href="/showcase-sdk/sdkbundle_content_attribution.html">Content Attribution</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Matterport APIs" href="#">Matterport APIs</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/api_home.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Docs" href="https://api.matterport.com/model/docs/reference" target="_blank" rel="noopener">Reference Docs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Interactive Console" href="https://api.matterport.com/model/graphiql" target="_blank" rel="noopener">Interactive Console</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Model API" href="#">Model API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Model API Changelog" href="/showcase-sdk/modelapi_changelog.html">Model API Changelog</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Model API Code Snippets" href="/showcase-sdk/modelapi_snippets.html">Model API Code Snippets</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Model API Models() Reference" href="/showcase-sdk/modelapi_models_ref.html">Model API Models() Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Tags 2.0 Icons Reference" href="/showcase-sdk/tags_icons_reference.html">Tags 2.0 Icons Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Postman Collection" href="/showcase-sdk/modelapi_postman.html">Postman Collection</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Account API" href="#">Account API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Account API Changelog" href="/showcase-sdk/accountapi_changelog.html">Account API Changelog</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account API Snippets" href="/showcase-sdk/accountapi_snippets.html">Account API Snippets</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="OAuth" href="#">OAuth</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/oauth_home.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Implementation" href="/showcase-sdk/oauth_implementation.html">Implementation</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Model Selector" href="/showcase-sdk/oauth_model_selector.html">Model Selector</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Use Case - Model API" href="/showcase-sdk/oauth_model_api.html">Use Case - Model API</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="Use Case - Private Models" href="/showcase-sdk/oauth_sdk_private_model.html">Use Case - Private Models</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OAuth Sample Application" href="/showcase-sdk/sdkbundle_tutorials_using_oauth.html">OAuth Sample Application</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Learn More" href="#">Learn More</a>
+      <ul>
+          
+          
+          
+          <li><a title="Developer Tools Overview" href="https://support.matterport.com/s/article/API-SDK-Developer-Tools-Overview" target="_blank" rel="noopener">Developer Tools Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pricing and Availability" href="https://support.matterport.com/s/article/Developer-Tools-Pricing-and-Availability" target="_blank" rel="noopener">Pricing and Availability</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Developer Program FAQ" href="https://support.matterport.com/s/article/Developer-Program-FAQ" target="_blank" rel="noopener">Developer Program FAQ</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</div>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+<script src="/showcase-sdk/js/jekyll-search.js" type="text/javascript"></script>
+<script type="text/javascript">
+        SimpleJekyllSearch.init({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            dataSource: '/showcase-sdk/search.json',
+            searchResultTemplate: '<li><a href="{url}" title="OAuth - Private Models with SDK">{title}</a></li>',
+noResultsText: '<li><div>No results found.<div></li>',
+        limit: 10,
+        fuzzy: true,
+})
+</script>
+
+          </aside>
+           
+          <!-- Content Column -->
+          <div
+            class=" col-md-9" 
+            id="tg-sb-content"
+          >
+            <div class="post-header">
+   <h1 class="post-title-main">OAuth - Private Models with SDK</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+
+
+    
+
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> OAuth is currently offered by invitation only for our Commercial Partners.  If you’re interested in using OAuth, please reach out to  developer@matterport.com with your account information.</div>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>If you have already generated an access token, the following sections will help you start using that token in Showcase to allow a private model to load with your SDK Application.</p>
+
+<h2 id="input-the-token-in-the-showcase-iframe-url">Input the Token in the Showcase iFrame URL</h2>
+
+<p>It’s possible to supply the token directly to Showcase using a URL search parameter:
+https://my.matterport.com/show/?m=<modelID>&amp;auth=Bearer,&lt;token&gt;</modelID></p>
+
+<p>Using this method does not require our SDK, but if the access_token expires during the Showcase session, it will cause Showcase to terminate.  By using our SDK, you can refresh the access_token while the tour is being experienced.</p>
+
+<h2 id="input-the-token-using-the-showcase-sdk">Input the Token Using the Showcase SDK</h2>
+
+<p>The token can also be supplied to Showcase using our SDK bundle. This cannot be done with the Embed SDK.</p>
+
+<p>First, download the latest bundle and add the bundle SDK to your page:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">id=</span><span class="s">"showcase-player"</span> <span class="na">width=</span><span class="s">"853"</span> <span class="na">height=</span><span class="s">"480"</span> <span class="na">src=</span><span class="s">"http://my.matterport.com/show/?m=&lt;modelId&gt;&amp;applicationKey=&lt;key&gt;"</span> <span class="na">frameborder=</span><span class="s">"0"</span> <span class="na">allowfullscreen</span> <span class="na">allow=</span><span class="s">'xr-spatial-tracking'</span> <span class="na">style=</span><span class="s">"width: 100%;"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+</code></pre></div></div>
+
+<p>Next, pass the authentication token to the SDK:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">).</span><span class="nx">contentWindow</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">bundleSdk</span> <span class="o">=</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">;</span> 
+<span class="nx">bundleSdk</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="p">{</span>
+   <span class="na">auth</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">token</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="refreshing-the-token">Refreshing the Token</h2>
+
+<p>Refreshing tokens can be done automatically using the SDK’s <a href="docs/reference/current/interfaces/oauth.itokenfetcher.html">ITokenRefresher</a> mechanism.</p>
+
+<p>First, create a helper to refresh tokens from your server. Something as simple as this could work.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">fetcher</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="k">async</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">oldToken</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;your server&gt;/refresh?</span><span class="dl">'</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Then attach that fetcher to an instance of an ITokenRefresher.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">refresher</span> <span class="o">=</span> <span class="nx">bundleSdk</span><span class="p">.</span><span class="nx">OAuth</span><span class="p">.</span><span class="nx">createTokenRefresher</span><span class="p">({</span> 
+   <span class="na">access_token</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">token</span><span class="o">&gt;</span><span class="p">,</span>
+   <span class="na">expires_in</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span>
+<span class="p">},</span> <span class="nx">fetcher</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p>The fetcher should return a response similar to the response from the API. It should contain both the access_token and the expires_in. The ITokenRefresher should be seeded with the original response so that it can set up its timer.</p>
+
+<h2 id="labs-example-breakdown">Labs Example Breakdown</h2>
+
+<p>This section will break down the example available at <a href="https://labs.matterport.com">https://labs.matterport.com</a>.</p>
+
+<h3 id="all-together">All Together</h3>
+
+<p>First, here is all of the code associated with the example:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcaseElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">oauthOverlay</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">oauth-overlay</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">oauthButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">oauth-diag-submit</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="c1">// Origins we possibly expect to receive messages over `postMessage` from</span>
+<span class="kd">const</span> <span class="nx">safeOrigins</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="dl">'</span><span class="s1">https://static.matterport.com</span><span class="dl">'</span><span class="p">,</span>
+   <span class="dl">'</span><span class="s1">https://static.matterportvr.cn</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">origin</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="c1">// when the user auths through the button provided, start everything and get it running</span>
+<span class="nx">oauthButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">async</span> <span class="kd">function</span> <span class="nx">onAuthMessage</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">authWindow</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+     <span class="c1">// validate that we received a message from a known source</span>
+     <span class="k">if</span> <span class="p">(</span>
+          <span class="nx">msg</span><span class="p">.</span><span class="nx">source</span> <span class="o">===</span> <span class="nx">authWindow</span> <span class="o">&amp;&amp;</span> 
+          <span class="nx">safeOrigins</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">origin</span><span class="p">)</span> <span class="o">&amp;&amp;</span> 
+          <span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">auth_model</span><span class="dl">'</span>
+     <span class="p">)</span> <span class="p">{</span>
+       <span class="c1">// cleanup a bit: remove the message listener, and close the auth window</span>
+       <span class="nb">window</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="nx">onAuthMessage</span><span class="p">);</span>
+       <span class="nx">authWindow</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+
+       <span class="c1">// set up some url params for Showcase</span>
+       <span class="kd">const</span> <span class="p">{</span> <span class="nx">token</span><span class="p">,</span> <span class="nx">modelId</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+       <span class="kd">const</span> <span class="nx">showcaseParams</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
+       <span class="nx">showcaseParams</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">m</span><span class="dl">'</span><span class="p">,</span> <span class="nx">modelId</span><span class="p">);</span>
+       <span class="nx">showcaseParams</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">applicationKey</span><span class="dl">'</span><span class="p">,</span> <span class="nx">config</span><span class="p">.</span><span class="nx">applicationKey</span><span class="p">);</span>
+       <span class="nx">showcaseParams</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">apiHost</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">https://my.matterport.com</span><span class="dl">'</span><span class="p">);</span>
+       <span class="c1">// start the Showcase player, hide the OAuth overlay, and connect the SDK</span>
+       <span class="k">await</span> <span class="nx">loadShowcase</span><span class="p">(</span><span class="nx">showcaseParams</span><span class="p">);</span>
+       <span class="nx">oauthOverlay</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">collapsed</span><span class="dl">'</span><span class="p">);</span>
+       <span class="k">await</span> <span class="nx">connectSdk</span><span class="p">({</span>
+         <span class="na">auth</span><span class="p">:</span> <span class="nx">token</span><span class="p">,</span>
+       <span class="p">});</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="nx">onAuthMessage</span><span class="p">);</span>
+     
+  <span class="c1">// open a window to start the user down the OAuth flow</span>
+  <span class="kd">const</span> <span class="nx">authWindow</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span>
+    <span class="dl">'</span><span class="s1">https://authn.matterport.com/oauth/authorize?client_id=&lt;client_id&gt;&amp;response_type=code&amp;scope=ViewDetails</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">sdk auth</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">width=800,height=800</span><span class="dl">'</span>
+  <span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// load the bundle in the IFrame and return a promise to await its load</span>
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">loadShowcase</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">showcaseElement</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="nx">res</span><span class="p">;</span>
+      <span class="kd">const</span> <span class="nx">src</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">./bundle/showcase.html</span><span class="dl">'</span><span class="p">;</span>
+      <span class="c1">// append the other url params -- make sure `apiHost` is defined so that the bundle properly connects</span>
+      <span class="nx">showcaseElement</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">src</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">?</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">params</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+   <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">// connect to the Bundle SDK</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">connectSdk</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nx">showcaseElement</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">;</span>
+   <span class="kd">const</span> <span class="nx">bundleConnector</span> <span class="o">=</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">;</span>
+   <span class="k">return</span> <span class="nx">bundleConnector</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+<span class="p">}</span>  
+</code></pre></div></div>
+
+<p>The redirect makes use of the Model Selector and an access_token available in the URL (available at https://authn.matterport.com/model-select).</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">id=</span><span class="s">'model-select'</span> <span class="na">style=</span><span class="s">'width: 100vw; height: 100vh;'</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="p">(</span><span class="k">async</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+       <span class="kd">const</span> <span class="nx">modelSelector</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">model-select</span><span class="dl">'</span><span class="p">);</span>
+       <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">opener</span><span class="p">)</span> <span class="p">{</span>
+         <span class="c1">// get the authorization_code out of the current URL</span>
+         <span class="kd">const</span> <span class="nx">urlParams</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
+         <span class="kd">const</span> <span class="nx">auth_code</span> <span class="o">=</span> <span class="nx">urlParams</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">code</span><span class="dl">'</span><span class="p">);</span>
+ 
+         <span class="c1">// Use the authorization_code with your server side script </span>
+         <span class="c1">// to fetch an access_token using your OAuth Client Credentials</span>
+         <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://path/to/server/token/?code=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">auth_code</span><span class="p">);</span>
+         <span class="kd">const</span> <span class="nx">responseJson</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+         <span class="kd">const</span> <span class="nx">oauthToken</span> <span class="o">=</span> <span class="nx">responseJson</span><span class="p">.</span><span class="nx">access_token</span><span class="p">;</span>
+ 
+         <span class="c1">// set the src of the IFrame (with the oauthToken) to start the model selector</span>
+         <span class="nx">modelSelector</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://authn.matterport.com/model-select?oauthToken=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">oauthToken</span><span class="p">;</span>
+         <span class="c1">// wait for the iframe to message us back</span>
+         <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
+           <span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">source</span> <span class="o">===</span> <span class="nx">modelSelector</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">)</span> <span class="p">{</span>
+             <span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">models</span><span class="p">)</span> <span class="p">{</span>
+               <span class="c1">// just take the first selected model</span>
+               <span class="kd">const</span> <span class="p">[</span><span class="nx">modelId</span><span class="p">]</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">models</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">,</span><span class="dl">'</span><span class="p">);</span>
+               <span class="k">if</span> <span class="p">(</span><span class="nx">modelId</span><span class="p">)</span> <span class="p">{</span>
+                 <span class="c1">// post back to the app that opened this window</span>
+                 <span class="nb">window</span><span class="p">.</span><span class="nx">opener</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span>
+                   <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">auth_model</span><span class="dl">'</span><span class="p">,</span>
+                   <span class="nx">modelId</span><span class="p">,</span>
+                   <span class="na">token</span><span class="p">:</span> <span class="nx">oauthToken</span><span class="p">,</span>
+                 <span class="p">},</span> <span class="dl">'</span><span class="s1">*</span><span class="dl">'</span><span class="p">);</span>
+               <span class="p">}</span>
+             <span class="p">}</span>
+           <span class="p">}</span>
+         <span class="p">});</span>
+      <span class="p">}</span>
+    <span class="p">})();</span>
+ <span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h2 id="breakdown">Breakdown</h2>
+
+<p>This section will dive a bit deeper into specific code needed for OAuth and the flow in which events propagate.</p>
+
+<h3 id="starting-the-oauth-flow">Starting the OAuth Flow</h3>
+
+<p>We kick off the auth flow by opening a new window pointed at https://authn.matterport.com/oauth/authorize. Opening a new window requires a user event so we use a button in an overlay over the Showcase player.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">oauthButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+   <span class="c1">// ...</span>
+   <span class="kd">const</span> <span class="nx">authWindow</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span>
+      <span class="dl">'</span><span class="s1">https://authn.matterport.com/oauth/authorize?client_id=&lt;client_id&gt;&amp;response_type=code&amp;scope=ViewDetails</span><span class="dl">'</span><span class="p">,</span>
+      <span class="dl">'</span><span class="s1">sdk auth</span><span class="dl">'</span><span class="p">,</span>
+      <span class="dl">'</span><span class="s1">width=800,height=800</span><span class="dl">'</span>
+   <span class="p">);</span>
+<span class="p">});</span>  
+</code></pre></div></div>
+
+<p>Here, we’re opening a window with the initial OAuth page and saving the window reference for validation later. The client_id will need to be provided.</p>
+
+<h3 id="receiving-the-a-redirect-page-with-a-model-selector">Receiving the a Redirect Page With a Model Selector</h3>
+
+<p>After the user has successfully logged in using the window we opened in the last step, they will be redirected to your redirect page. You will need to use the code provided in the redirect’s URL to retrieve an access token.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// redirect.html
+<span class="nt">&lt;iframe</span> <span class="na">id=</span><span class="s">'model-select'</span> <span class="na">style=</span><span class="s">'width: 100vw; height: 100vh;'</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">'./redirect.js'</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// redirect.js</span>
+<span class="kd">const</span> <span class="nx">urlParams</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">auth_code</span> <span class="o">=</span> <span class="nx">urlParams</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">code</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Here, we created a simple page that contains an iFrame that we will eventually populate with the Model Selector, but first we read the code from the URL in order to generate an access_token.</p>
+
+<h3 id="fetching-the-access-token-using-the-authorization-code">Fetching the Access Token Using the Authorization Code</h3>
+
+<p>With the access_token we can display the model selector tool in our redirect page. We pass the access_token in via URL hash.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://path/to/server/token/?code=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">auth_code</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">responseJson</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">oauthToken</span> <span class="o">=</span> <span class="nx">responseJson</span><span class="p">.</span><span class="nx">access_token</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Here, we request our server to provide us with an ‘access_token’ by hitting its /token endpoint and providing the token provided. On the server, we make the request back to https://api.matterport.com/api/oauth/token providing the all the fields necessary, including the client_secret.</p>
+
+<h3 id="a-quick-server-side-example">A Quick Server Side Example</h3>
+
+<p>On the server side, using something like ExpressJS:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="dl">'</span><span class="s1">/path/to/server/token</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">const</span> <span class="nx">requestBody</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URLSearchParams</span><span class="p">({</span>
+      <span class="na">grant_type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">authorization_code</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">code</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">code</span><span class="p">,</span>
+      <span class="na">scope</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ViewDetails</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">client_id</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">client_id</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="na">client_secret</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">client_secret</span><span class="o">&gt;</span><span class="p">,</span>
+   <span class="p">});</span>
+   <span class="kd">const</span> <span class="nx">tokenUrl</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://api.matterport.com/api/oauth/token</span><span class="dl">'</span><span class="p">;</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`requesting token from </span><span class="p">${</span><span class="nx">tokenUrl</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+   <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">tokenUrl</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+         <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/x-www-form-urlencoded</span><span class="dl">'</span>
+      <span class="p">},</span>
+      <span class="na">body</span><span class="p">:</span> <span class="nx">requestBody</span><span class="p">,</span>
+   <span class="p">});</span>
+   <span class="kd">const</span> <span class="nx">responseJson</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+   <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">responseJson</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Here, when we receive a request at our /token endpoint, we make a request to https://api.matterport.com/api/oauth/token with all the necessary fields, and send the JSON response to the requester.</p>
+
+<h3 id="picking-a-model">Picking a Model</h3>
+
+<p>Now that we have our oauth_token, we can set up the model selector and start receiving data from it. The model selector will postMessage back to a comma separated list of model IDs back to its .parent. To get the model selected, we will need to listen for the ‘message’ event from the Selector.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// validate the message is from our modelSelector IFrame</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">source</span> <span class="o">===</span> <span class="nx">modelSelector</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="p">[</span><span class="nx">modelId</span><span class="p">]</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">models</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">,</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// take just the first model id</span>
+      <span class="nb">window</span><span class="p">.</span><span class="nx">opener</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span>
+         <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">auth_model</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// help distinguish this event from others</span>
+         <span class="nx">modelId</span><span class="p">,</span>
+         <span class="na">token</span><span class="p">:</span> <span class="nx">oauthToken</span><span class="p">,</span> 
+      <span class="p">},</span> <span class="dl">'</span><span class="s1">*</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// TODO: specify the receiver's domain to reduce the exposure of the event</span>
+   <span class="p">}</span>
+<span class="p">});</span>
+
+</code></pre></div></div>
+
+<p>Here, we are receiving messages from the iFrame and forwarding the first model ID of the IDs returned along with the token back to our .opener (since we opened the OAuth flow in a new window).</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> It’s important to validate that the message we received is coming from within the iFrame and not an external source by checking the msg.source.<br /><br />Note that we are doing a postMessage to any domain (‘*’). You will likely want to set this to the domain of your page so that you are not sending the event to any random site.</div>
+
+<h3 id="retrieving-the-token-for-our-application">Retrieving the Token for our Application</h3>
+
+<p>So far we’ve been operating in a popup window, not in our application. We set up the redirect to postMessage back to its opener. In order to receive the token and model ID from the OAuth popup, we will need to listen for the ‘message’ event from the popup.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">onAuthMessage</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// validate that we received a message from a known source</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">source</span> <span class="o">===</span> <span class="nx">authWindow</span> <span class="o">&amp;&amp;</span>
+      <span class="nx">safeOrigins</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">origin</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
+      <span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">auth_model</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+     <span class="c1">// cleanup a bit: remove the message listener, and close the auth window</span>
+      <span class="nb">window</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="nx">onAuthMessage</span><span class="p">);</span>
+      <span class="nx">authWindow</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+
+      <span class="kd">const</span> <span class="p">{</span> <span class="nx">token</span><span class="p">,</span> <span class="nx">modelId</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+      <span class="c1">// ...</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="nx">onAuthMessage</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p>Here, we’re now listening for messages from our OAuth popup and when we receive the right message, we remove our message handler and close the popup since they are no longer needed.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Again, it’s important to validate that the message we received is coming from within where we expect and not an external source by checking the msg.source and msg.origin</div>
+
+<h3 id="starting-showcase-with-the-token">Starting Showcase with the Token</h3>
+
+<p>The last step is to use the token and Model ID in Showcase. Once you have the model ID, Showcase can be started. The token can be passed into Showcase as an option when connecting the SDK.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nx">showcaseElement</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">bundleConnector</span> <span class="o">=</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">;</span> 
+<span class="nx">bundleConnector</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="p">{</span>
+   <span class="na">auth</span><span class="p">:</span> <span class="nx">token</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Here, we’re simply following the standard SDK connection routine, but including the token.</p>
+
+
+
+    <div class="tags">
+        
+    </div>
+
+<!-- 
+ -->
+
+</div>
+
+<!-- <hr class="shaded"/> -->
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2023 Matterport, Inc. All rights reserved. <br />
+ Site last generated: May 9, 2023 <br />
+<p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /#main -->
+    </div>
+
+    
+  </body>
+   <!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-34880260-5','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+ 
+</html>
