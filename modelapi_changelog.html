@@ -120,8 +120,9 @@
           <div class="dropdown">
             <a class="dropbtn" href="https://api.matterport.com/docs/reference">API Docs</a>
             <div class="dropdown-content">
+              <a href="api_home.html">API Overview</a>
               <a href="https://api.matterport.com/docs/reference">API Reference</a>
-              <a href="https://api.matterport.com/graphiql">Interactive Console</a>
+              <a href="https://api.matterport.com/model/graphiql">Interactive Console</a>
             </div>
           </div>
           <div class="dropdown">
@@ -818,7 +819,25 @@ noResultsText: '<li><div>No results found.<div></li>',
 
     
 
-   <h3 id="april-6-2023">April 6, 2023</h3>
+   <h3 id="may-16-2023">May 16, 2023</h3>
+
+<p>API Changes</p>
+<ul>
+  <li>A new BillingDetails under model, containing exempt: Boolean and multiSpaceUse
+    <ul>
+      <li>multiSpaceUse is the number of spaces counted against your space quota</li>
+      <li>Models on Classic Accounts or that were uploaded to accounts before entering into our new billing plans will always have a multiSpaceUse value of 1</li>
+    </ul>
+  </li>
+  <li>The Mutation updateModelState now accepts an allowActivate boolean which defaults to false.
+    <ul>
+      <li>This must be set to true to unarchive models on accounts that would incur reactivation charges.</li>
+      <li>If this is unspecified or set to false on an account that would incur reactivation charges a request.unsupported error code will be returned.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="april-6-2023">April 6, 2023</h3>
 
 <p>API Changes</p>
 <ul>
@@ -1005,7 +1024,7 @@ removeModelEventFromCallback(
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: May 9, 2023 <br />
+ Site last generated: May 17, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

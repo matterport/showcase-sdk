@@ -120,8 +120,9 @@
           <div class="dropdown">
             <a class="dropbtn" href="https://api.matterport.com/docs/reference">API Docs</a>
             <div class="dropdown-content">
+              <a href="api_home.html">API Overview</a>
               <a href="https://api.matterport.com/docs/reference">API Reference</a>
-              <a href="https://api.matterport.com/graphiql">Interactive Console</a>
+              <a href="https://api.matterport.com/model/graphiql">Interactive Console</a>
             </div>
           </div>
           <div class="dropdown">
@@ -1432,13 +1433,13 @@ query getMeshes($modelId: ID!) {
         type # does not return data
         quality
         textures
-        urlTemplate # <texture> -&gt; 000, 001, 002, 003, etc.
+        urlTemplate # \&lt;texture\&gt; -&gt; 000, 001, 002, 003, etc.
       }          
     }
   }
 }
-    &lt;/code&gt;&lt;/pre&gt;
-  &lt;/div&gt;
+    </code></pre>
+  </div>
 
   <p>Sample Response:</p>
 
@@ -1487,7 +1488,7 @@ query getMeshes($modelId: ID!) {
   </div>
 
   <p><a href="https://api.matterport.com/api/graphiql/?operationName=getMeshes&amp;query=query%20getMeshes(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20assets%20%7B%0A%20%20%20%20%20%20meshes%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20%20filename%0A%20%20%20%20%20%20%20%20format%0A%20%20%20%20%20%20%20%20resolution%0A%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20validUntil%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20textures%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20%20filename%0A%20%20%20%20%20%20%20%20format%0A%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20validUntil%0A%20%20%20%20%20%20%20%20resolution%0A%20%20%20%20%20%20%20%20type%0A%20%20%20%20%20%20%20%20quality%0A%20%20%20%20%20%20%20%20textures%0A%20%20%20%20%20%20%20%20urlTemplate%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D" target="_blank">Try this query in our interactive console</a></p>
-&lt;/details&gt;
+</details>
 
 <details name="Get Add-On Bundle Download Links">
   <summary>Get Add-On Bundle Download Links</summary>
@@ -1753,9 +1754,9 @@ query getMeshes($modelId: ID!) {
 
 </details>
 
-## Mutations
+<h2 id="mutations">Mutations</h2>
 
-Mutations update data via Model API. They can also contain queries that return data after the data has changed. The query can return an ID if new content has been added, or updated information that may have changed due to the patch (update).
+<p>Mutations update data via Model API. They can also contain queries that return data after the data has changed. The query can return an ID if new content has been added, or updated information that may have changed due to the patch (update).</p>
 
 <details name="Toggle Mode Visibility and Get URL">
 
@@ -2184,7 +2185,7 @@ Mutations update data via Model API. They can also contain queries that return d
   <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20buyMatterpak(%24modelId%3A%20ID!)%7B%0A%20%20unlockModelBundle(%0A%20%20%20%20id%3A%20%24modelId%2C%20%0A%20%20%20%20bundleId%3A%20%22mp%3Amatterpak%22%0A%20%20)%20%7B%0A%20%20%20%20id%0A%09name%0A%09description%0A%09availability%0A%09assets%20%7B%20url%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=buyMatterpak" target="_blank">Try this query in our interactive console.</a></p>
 </details>
 
-## Ordering Add-On Bundles - Workflow
+<h2 id="ordering-add-on-bundles---workflow">Ordering Add-On Bundles - Workflow</h2>
 
 <details>
   <summary>Query: Find the Asset Ids and Delivery Speeds by Looking through all Bundles</summary>
@@ -2260,7 +2261,6 @@ query getBundleAssets($modelId: ID!){
 }</code></pre>
   <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getAddOn(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20bundle(id%3A%20%22cubicasa%3Afloorplan%22)%20%7B%0A%20%20%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getAddOn" target="_blank">Try this query in our interactive console</a></p>
 </details>
-</texture></code></pre></div></details>
 
 
     <div class="tags">
@@ -2278,7 +2278,7 @@ query getBundleAssets($modelId: ID!){
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: May 9, 2023 <br />
+ Site last generated: May 17, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
