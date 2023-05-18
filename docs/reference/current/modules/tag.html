@@ -876,7 +876,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/23.4.2_webgl-52-gfd3c5ff874/sdk.d.ts">23.4.2_webgl-52-gfd3c5ff874</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/23.5.1_webgl-85-ga5dcafc4f6/sdk.d.ts">23.5.1_webgl-85-ga5dcafc4f6</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1325,14 +1325,10 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<dl class="tsd-comment-tags tsd-typography">
-						<dt class="tsd-comment-tags-embed">embed</dt>
-						<dd>
-							&nbsp;
-						</dd>
-						<dt class="tsd-comment-tags-bundle">bundle</dt>
-						<dd>
-							&nbsp;
-						</dd>
+						<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+						<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+					</dl>
+					<dl class="tsd-comment-tags tsd-typography">
 					</dl>
 					<h4 class="tsd-introduced-title">Introduced
 						<span class="tsd-introduced-vers">3.1.68.12-7-g858688944a
@@ -1360,14 +1356,10 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<dl class="tsd-comment-tags tsd-typography">
-						<dt class="tsd-comment-tags-embed">embed</dt>
-						<dd>
-							&nbsp;
-						</dd>
-						<dt class="tsd-comment-tags-bundle">bundle</dt>
-						<dd>
-							&nbsp;
-						</dd>
+						<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+						<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+					</dl>
+					<dl class="tsd-comment-tags tsd-typography">
 					</dl>
 					<h4 class="tsd-introduced-title">Introduced
 						<span class="tsd-introduced-vers">3.1.68.12-7-g858688944a
@@ -1402,6 +1394,10 @@ $('#toc').on('click', 'a', function() {
 					<aside class="tsd-sources">
 					</aside>
 					<dl class="tsd-comment-tags tsd-typography">
+						<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+						<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+					</dl>
+					<dl class="tsd-comment-tags tsd-typography">
 					</dl>
 					<h4 class="tsd-introduced-title">Introduced
 						<span class="tsd-introduced-vers">23.2.1
@@ -1413,43 +1409,43 @@ $('#toc').on('click', 'a', function() {
 							A Tag can be in all three states at once. A docked tag is also always considered selected.</p>
 						</div>
 						<pre><code class="language-typescript">mpSdk.Tag.openTags.subscribe({
-<span class="hljs-attr">prevState</span>: {
-<span class="hljs-attr">hovered</span>: <span class="hljs-literal">null</span>,
-<span class="hljs-attr">docked</span>: <span class="hljs-literal">null</span>,
-<span class="hljs-attr">selected</span>: <span class="hljs-literal">null</span>,
-},
-<span class="hljs-function"><span class="hljs-title">onChanged</span>(<span class="hljs-params">newState</span>)</span> {
-<span class="hljs-keyword">if</span> (newState.hovered !== <span class="hljs-built_in">this</span>.prevState.hovered) {
-<span class="hljs-keyword">if</span> (newState.hovered) {
-<span class="hljs-built_in">console</span>.log(newState.hovered, <span class="hljs-string">&#x27;was hovered&#x27;</span>);
-} <span class="hljs-keyword">else</span> {
-<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.prevState.hovered, <span class="hljs-string">&#x27;is no longer hovered&#x27;</span>);
-}
-}
-<span class="hljs-keyword">if</span> (newState.docked !== <span class="hljs-built_in">this</span>.prevState.docked) {
-<span class="hljs-keyword">if</span> (newState.docked) {
-<span class="hljs-built_in">console</span>.log(newState.docked, <span class="hljs-string">&#x27;was docked&#x27;</span>);
-} <span class="hljs-keyword">else</span> {
-<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.prevState.docked, <span class="hljs-string">&#x27;was undocked&#x27;</span>);
-}
-}
+  <span class="hljs-attr">prevState</span>: {
+    <span class="hljs-attr">hovered</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">docked</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">selected</span>: <span class="hljs-literal">null</span>,
+  },
+  <span class="hljs-function"><span class="hljs-title">onChanged</span>(<span class="hljs-params">newState</span>)</span> {
+    <span class="hljs-keyword">if</span> (newState.hovered !== <span class="hljs-built_in">this</span>.prevState.hovered) {
+      <span class="hljs-keyword">if</span> (newState.hovered) {
+        <span class="hljs-built_in">console</span>.log(newState.hovered, <span class="hljs-string">&#x27;was hovered&#x27;</span>);
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.prevState.hovered, <span class="hljs-string">&#x27;is no longer hovered&#x27;</span>);
+      }
+    }
+    <span class="hljs-keyword">if</span> (newState.docked !== <span class="hljs-built_in">this</span>.prevState.docked) {
+      <span class="hljs-keyword">if</span> (newState.docked) {
+        <span class="hljs-built_in">console</span>.log(newState.docked, <span class="hljs-string">&#x27;was docked&#x27;</span>);
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.prevState.docked, <span class="hljs-string">&#x27;was undocked&#x27;</span>);
+      }
+    }
 
-<span class="hljs-comment">// only compare the first &#x27;selected&#x27; since only one tag is currently supported</span>
-<span class="hljs-keyword">const</span> [selected = <span class="hljs-literal">null</span>] = newState.selected; <span class="hljs-comment">// destructure and coerce the first Set element to null</span>
-<span class="hljs-keyword">if</span> (selected !== <span class="hljs-built_in">this</span>.prevState.selected) {
-<span class="hljs-keyword">if</span> (selected) {
-<span class="hljs-built_in">console</span>.log(selected, <span class="hljs-string">&#x27;was selected&#x27;</span>);
-} <span class="hljs-keyword">else</span> {
-<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.prevState.selected, <span class="hljs-string">&#x27;was deselected&#x27;</span>);
-}
-}
+    <span class="hljs-comment">// only compare the first &#x27;selected&#x27; since only one tag is currently supported</span>
+    <span class="hljs-keyword">const</span> [selected = <span class="hljs-literal">null</span>] = newState.selected; <span class="hljs-comment">// destructure and coerce the first Set element to null</span>
+    <span class="hljs-keyword">if</span> (selected !== <span class="hljs-built_in">this</span>.prevState.selected) {
+        <span class="hljs-keyword">if</span> (selected) {
+            <span class="hljs-built_in">console</span>.log(selected, <span class="hljs-string">&#x27;was selected&#x27;</span>);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.prevState.selected, <span class="hljs-string">&#x27;was deselected&#x27;</span>);
+        }
+    }
 
-<span class="hljs-comment">// clone and store the new state</span>
-<span class="hljs-built_in">this</span>.prevState = {
-...newState,
-selected,
-};
-},
+    <span class="hljs-comment">// clone and store the new state</span>
+    <span class="hljs-built_in">this</span>.prevState = {
+      ...newState,
+      selected,
+    };
+  },
 });
 </code></pre>
 					</div>
@@ -1466,14 +1462,10 @@ selected,
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<dl class="tsd-comment-tags tsd-typography">
-								<dt class="tsd-comment-tags-embed">embed</dt>
-								<dd>
-									&nbsp;
-								</dd>
-								<dt class="tsd-comment-tags-bundle">bundle</dt>
-								<dd>
-									&nbsp;
-								</dd>
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
 							</dl>
 							<h4 class="tsd-introduced-title">Introduced
 								<span class="tsd-introduced-vers">3.1.68.12-7-g858688944a
@@ -1550,14 +1542,10 @@ selected,
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<dl class="tsd-comment-tags tsd-typography">
-								<dt class="tsd-comment-tags-embed">embed</dt>
-								<dd>
-									&nbsp;
-								</dd>
-								<dt class="tsd-comment-tags-bundle">bundle</dt>
-								<dd>
-									&nbsp;
-								</dd>
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
 							</dl>
 							<h4 class="tsd-introduced-title">Introduced
 								<span class="tsd-introduced-vers">3.1.68.12-7-g858688944a
@@ -1620,14 +1608,10 @@ mpSdk.Tag.allowAction(noActionsTag, {
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<dl class="tsd-comment-tags tsd-typography">
-								<dt class="tsd-comment-tags-embed">embed</dt>
-								<dd>
-									&nbsp;
-								</dd>
-								<dt class="tsd-comment-tags-bundle">bundle</dt>
-								<dd>
-									&nbsp;
-								</dd>
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
 							</dl>
 							<h4 class="tsd-introduced-title">Introduced
 								<span class="tsd-introduced-vers">3.1.68.12-7-g858688944a
@@ -1670,6 +1654,10 @@ mpSdk.Tag.attach(tagId, attachmentId[<span class="hljs-number">0</span>], attach
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
 							</dl>
 							<h4 class="tsd-introduced-title">Introduced
 								<span class="tsd-introduced-vers">23.2.1
@@ -1705,6 +1693,10 @@ mpSdk.Tag.close(tagId);
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
 							</dl>
 							<h4 class="tsd-introduced-title">Introduced
 								<span class="tsd-introduced-vers">3.1.70.10-0-ge9cb83b28c
@@ -1731,6 +1723,8 @@ mpSdk.Tag.detach(tagId, attachmentId[<span class="hljs-number">0</span>], attach
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>attachmentIds: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1745,6 +1739,10 @@ mpSdk.Tag.detach(tagId, attachmentId[<span class="hljs-number">0</span>], attach
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
 							<dl class="tsd-comment-tags tsd-typography">
 							</dl>
 							<h4 class="tsd-introduced-title">Introduced
@@ -1768,6 +1766,8 @@ mpSdk.Tag.dock(tagId);
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="tag.html#openoptions" class="tsd-signature-type">Tag.OpenOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1783,14 +1783,10 @@ mpSdk.Tag.dock(tagId);
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<dl class="tsd-comment-tags tsd-typography">
-								<dt class="tsd-comment-tags-embed">embed</dt>
-								<dd>
-									&nbsp;
-								</dd>
-								<dt class="tsd-comment-tags-bundle">bundle</dt>
-								<dd>
-									&nbsp;
-								</dd>
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
 							</dl>
 							<h4 class="tsd-introduced-title">Introduced
 								<span class="tsd-introduced-vers">3.1.68.12-7-g858688944a
@@ -1837,14 +1833,10 @@ mpSdk.Tag.dock(tagId);
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<dl class="tsd-comment-tags tsd-typography">
-								<dt class="tsd-comment-tags-embed">embed</dt>
-								<dd>
-									&nbsp;
-								</dd>
-								<dt class="tsd-comment-tags-bundle">bundle</dt>
-								<dd>
-									&nbsp;
-								</dd>
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
 							</dl>
 							<h4 class="tsd-introduced-title">Introduced
 								<span class="tsd-introduced-vers">3.1.68.12-7-g858688944a
@@ -1894,14 +1886,10 @@ mpSdk.Tag.editColor(tagIds[<span class="hljs-number">0</span>], {
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<dl class="tsd-comment-tags tsd-typography">
-								<dt class="tsd-comment-tags-embed">embed</dt>
-								<dd>
-									&nbsp;
-								</dd>
-								<dt class="tsd-comment-tags-bundle">bundle</dt>
-								<dd>
-									&nbsp;
-								</dd>
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
 							</dl>
 							<h4 class="tsd-introduced-title">Introduced
 								<span class="tsd-introduced-vers">3.1.68.12-7-g858688944a
@@ -1946,14 +1934,10 @@ mpSdk.Tag.editIcon(id, <span class="hljs-string">&#x27;customIconId&#x27;</span>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<dl class="tsd-comment-tags tsd-typography">
-								<dt class="tsd-comment-tags-embed">embed</dt>
-								<dd>
-									&nbsp;
-								</dd>
-								<dt class="tsd-comment-tags-bundle">bundle</dt>
-								<dd>
-									&nbsp;
-								</dd>
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
 							</dl>
 							<h4 class="tsd-introduced-title">Introduced
 								<span class="tsd-introduced-vers">3.1.68.12-7-g858688944a
@@ -2005,14 +1989,10 @@ mpSdk.Tag.editOpacity(tagIds[<span class="hljs-number">2</span>], <span class="h
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<dl class="tsd-comment-tags tsd-typography">
-								<dt class="tsd-comment-tags-embed">embed</dt>
-								<dd>
-									&nbsp;
-								</dd>
-								<dt class="tsd-comment-tags-bundle">bundle</dt>
-								<dd>
-									&nbsp;
-								</dd>
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
 							</dl>
 							<h4 class="tsd-introduced-title">Introduced
 								<span class="tsd-introduced-vers">3.1.68.12-7-g858688944a
@@ -2069,30 +2049,38 @@ mpSdk.Tag.editPosition(tagId, {
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
+							</dl>
+							<h4 class="tsd-introduced-title">Introduced
+								<span class="tsd-introduced-vers">3.1.70.10-0-ge9cb83b28c
+								</span>
+							</h4>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="tsd-lead">
 									<p>Edit the stem of a Tag</p>
 								</div>
-								<pre><code class="language-typescript">const tagId: string = tagData[0].id; // ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> tagId: <span class="hljs-built_in">string</span> = tagData[<span class="hljs-number">0</span>].id; <span class="hljs-comment">// ... acquired through a previous call to `mpSdk.Tag.add` or through `mpSdk.Tag.data`</span>
 
-// make the first Tag have an invsible stem
-mpSdk.Tag.editStem(tagId, {stemVisible: false});
+<span class="hljs-comment">// make the first Tag have an invsible stem</span>
+mpSdk.Tag.editStem(tagId, {<span class="hljs-attr">stemVisible</span>: <span class="hljs-literal">false</span>});
 
-// make another Tag have a long stem
-mpSdk.Tag.editStem(tagId, {stemHeight: 1});
-
-
-@param tagSid The sid of the Tag to edit
-@param stemOptions What to change about the Tag&#x27;s stem - can include stemHeight and stemVisible
-@introduced 3.1.70.10-0-ge9cb83b28c
+<span class="hljs-comment">// make another Tag have a long stem</span>
+mpSdk.Tag.editStem(tagId, {<span class="hljs-attr">stemHeight</span>: <span class="hljs-number">1</span>});
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>tagSid: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The sid of the Tag to edit</p>
+									</div>
 								</li>
 								<li>
 									<h5>options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="tag.html#stemheighteditoptions" class="tsd-signature-type">Tag.StemHeightEditOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
@@ -2110,6 +2098,10 @@ mpSdk.Tag.editStem(tagId, {stemHeight: 1});
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
 							<dl class="tsd-comment-tags tsd-typography">
 							</dl>
 							<h4 class="tsd-introduced-title">Introduced
@@ -2141,6 +2133,8 @@ mpSdk.Tag.open(tagId,
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="tag.html#openoptions" class="tsd-signature-type">Tag.OpenOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -2156,14 +2150,10 @@ mpSdk.Tag.open(tagId,
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<dl class="tsd-comment-tags tsd-typography">
-								<dt class="tsd-comment-tags-embed">embed</dt>
-								<dd>
-									&nbsp;
-								</dd>
-								<dt class="tsd-comment-tags-bundle">bundle</dt>
-								<dd>
-									&nbsp;
-								</dd>
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
 							</dl>
 							<h4 class="tsd-introduced-title">Introduced
 								<span class="tsd-introduced-vers">3.1.68.12-7-g858688944a
@@ -2206,14 +2196,10 @@ mpSdk.Tag.open(tagId,
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<dl class="tsd-comment-tags tsd-typography">
-								<dt class="tsd-comment-tags-embed">embed</dt>
-								<dd>
-									&nbsp;
-								</dd>
-								<dt class="tsd-comment-tags-bundle">bundle</dt>
-								<dd>
-									&nbsp;
-								</dd>
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
 							</dl>
 							<h4 class="tsd-introduced-title">Introduced
 								<span class="tsd-introduced-vers">3.1.70.10-0-ge9cb83b28c
@@ -2283,14 +2269,10 @@ messenger.send(<span class="hljs-string">&#x27;I send messages&#x27;</span>, <sp
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<dl class="tsd-comment-tags tsd-typography">
-								<dt class="tsd-comment-tags-embed">embed</dt>
-								<dd>
-									&nbsp;
-								</dd>
-								<dt class="tsd-comment-tags-bundle">bundle</dt>
-								<dd>
-									&nbsp;
-								</dd>
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
 							</dl>
 							<h4 class="tsd-introduced-title">Introduced
 								<span class="tsd-introduced-vers">3.1.68.12-7-g858688944a
@@ -2334,14 +2316,10 @@ mpSdk.Tag.remove(...tagIds);
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<dl class="tsd-comment-tags tsd-typography">
-								<dt class="tsd-comment-tags-embed">embed</dt>
-								<dd>
-									&nbsp;
-								</dd>
-								<dt class="tsd-comment-tags-bundle">bundle</dt>
-								<dd>
-									&nbsp;
-								</dd>
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
 							</dl>
 							<h4 class="tsd-introduced-title">Introduced
 								<span class="tsd-introduced-vers">3.1.68.12-7-g858688944a
@@ -2380,6 +2358,16 @@ mpSdk.Tag.resetIcon(tagIds[<span class="hljs-number">0</span>].id);
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
+							</dl>
+							<h4 class="tsd-introduced-title">Introduced
+								<span class="tsd-introduced-vers">23.4.2
+								</span>
+							</h4>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2419,6 +2407,16 @@ mpSdk.Tag.toggleDocking();
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
+							</dl>
+							<h4 class="tsd-introduced-title">Introduced
+								<span class="tsd-introduced-vers">23.3.1
+								</span>
+							</h4>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2455,6 +2453,16 @@ mpSdk.Tag.toggleNavControls();
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+								<dt class="tsd-comment-tags-bundle tsd-tag-sdk-type">bundle</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
+							</dl>
+							<h4 class="tsd-introduced-title">Introduced
+								<span class="tsd-introduced-vers">23.4.2
+								</span>
+							</h4>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2698,7 +2706,7 @@ mpSdk.Tag.toggleSharing();
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: May 17, 2023 <br />
+ Site last generated: May 18, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
