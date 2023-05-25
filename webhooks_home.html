@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Matterport Webhooks Overview | Matterport Developers</title>
+<link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/showcase-sdk/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="/showcase-sdk/css/customstyles.css">
+<link rel="stylesheet" href="/showcase-sdk/css/custom.css">
+<link rel="stylesheet" href="/showcase-sdk/css/tags2.css">
+
+<link rel="stylesheet" href="/showcase-sdk/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/showcase-sdk/css/theme-matterport.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/showcase-sdk/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/showcase-sdk/js/toc.js"></script>
+<script src="/showcase-sdk/js/customscripts.js"></script>
+<script src="/showcase-sdk/js/mermaid.min.js"></script>
+
+<link rel="shortcut icon" href="/showcase-sdk/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+
+    <script>
+      $(document).ready(function () {
+        // Initialize navgoco with default options
+        $("#mysidebar").navgoco({
+          caretHtml: '<i class="fa fa-chevron-down"></i>',
+          accordion: true,
+          openClass: "active", // open
+
+          save: false, // leave false or nav highlighting doesn't work right
+          cookie: {
+            name: "navgoco",
+            expires: false,
+            path: "/",
+          },
+          slide: {
+            duration: 400,
+            easing: "swing",
+          },
+        });
+
+        $("#collapseAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", false);
+        });
+
+        $("#expandAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", true);
+        });
+      });
+    </script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#tg-sb-link").change(function () {
+          $("#tg-sb-sidebar").toggle();
+          $("#tg-sb-content").toggleClass("col-md-9");
+          $("#tg-sb-content").toggleClass("col-md-12");
+        });
+      });
+    </script>
+     
+  </head>
+  <body>
+    <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div>
+    <div class="row">
+      <a class="navbrand col-md-3" href="index.html"
+        >&nbsp;<img
+          class="navbar-image"
+          src="/showcase-sdk/images/MP-logo_H_lock-RGB_white.svg"
+        /><span class="projectTitle"> </span></a
+      >
+      <div class="dev-nav-links col-md-6">
+        <div class="dropdown-items">
+          <div class="dropdown ">
+            <a class="dropbtn active" href="index.html">SDK Docs</a>
+            <div class="dropdown-content">
+              <a href="sdk_home.html" class="">SDK for Embeds</a>
+              <a href="sdkbundle_home.html" class="" href="#">SDK Bundle</a>
+              <a href="earlyaccess_home.html" class="" href="#">SDK Early Access</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://api.matterport.com/docs/reference">API Docs</a>
+            <div class="dropdown-content">
+              <a href="api_home.html">API Overview</a>
+              <a href="https://api.matterport.com/docs/reference">API Reference</a>
+              <a href="https://api.matterport.com/model/graphiql">Interactive Console</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms">Terms</a>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Matterport Webhooks Overview page: ' + window.location.href;">Feedback</a>
+          </div>
+        </div>
+      </div>
+      <div class="right-content col-md-3">
+        <div class="dev-input-container">
+          <!-- Add roboto font to search bar -->
+          <img src="/showcase-sdk/images/search_button.png" />
+          <input id="search-input" type="text" placeholder="Search"/>
+          <div id="results-container"></div>        
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</nav>
+ 
+    <!-- Page Content -->
+    <div class="dev-page-wrapper">
+      <div id="main">
+        <!-- Content Row -->
+        <div class="row">
+          <!-- Sidebar Column -->
+          
+          <aside class="col-md-3" id="tg-sb-sidebar">
+            
+<div id="mysidebar" class="nav">
+  
+  
+  
+
+  <li>
+      <a title="Overview" href="#">Overview</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/index.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Change Log" href="/showcase-sdk/sdk_changelog.html">Change Log</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Vocabulary" href="/showcase-sdk/sdk_vocabulary.html">Vocabulary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Concepts" href="/showcase-sdk/sdk_concepts.html">Concepts</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Docs Summary" href="/showcase-sdk/sdk_reference_summary.html">Reference Docs Summary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Documentation" href="/showcase-sdk/docs\reference\current\index.html">Reference Documentation</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK for Embeds" href="#">SDK for Embeds</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdk_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdk_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Bundle" href="#">SDK Bundle</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdkbundle_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdkbundle_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setting up Embed.ly" href="/showcase-sdk/sdkbundle_tutorials_setting_up_embedly.html">Setting up Embed.ly</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setup a Local Environment" href="/showcase-sdk/sdkbundle_tutorials_setup.html">Setup a Local Environment</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Architecture" href="/showcase-sdk/sdkbundle_architecture.html">Architecture</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Components" href="#">Components</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Ambient Light" href="/showcase-sdk/sdkbundle_components_ambientlight.html">Ambient Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Directional Light" href="/showcase-sdk/sdkbundle_components_directionallight.html">Directional Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Point Light" href="/showcase-sdk/sdkbundle_components_pointlight.html">Point Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="GLTF Loader" href="/showcase-sdk/sdkbundle_components_gltfloader.html">GLTF Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="DAE Loader" href="/showcase-sdk/sdkbundle_components_daeloader.html">DAE Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="FBX Loader" href="/showcase-sdk/sdkbundle_components_fbxloader.html">FBX Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="OBJ Loader" href="/showcase-sdk/sdkbundle_components_objloader.html">OBJ Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transform Controls" href="/showcase-sdk/sdkbundle_components_transformcontrols.html">Transform Controls</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Input" href="/showcase-sdk/sdkbundle_components_input.html">Input</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Camera" href="/showcase-sdk/sdkbundle_components_camera.html">Camera</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="XR" href="/showcase-sdk/sdkbundle_components_xr.html">XR</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Early Access" href="#">SDK Early Access</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/earlyaccess_home.html">Home</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Tutorials" href="#">SDK Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Observables" href="/showcase-sdk/sdk_tutorials_observables.html">Using Observables</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Collections" href="/showcase-sdk/sdk_tutorials_collections.html">Using Collections</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Creating Mattertags" href="/showcase-sdk/sdk_creating_mattertags.html">Creating Mattertags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Editing Mattertags" href="/showcase-sdk/sdk_editing_mattertags.html">Editing Mattertags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags 2.0 Migration" href="/showcase-sdk/sdk_tutorials_mattertagtotag.html">Tags 2.0 Migration</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Code Sandboxes" href="/showcase-sdk/sdk_tutorials_htmlsandbox.html">Tags Code Sandboxes</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pathfinding" href="/showcase-sdk/sdk_tutorials_pathfinding.html">Pathfinding</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pointer Reticle" href="/showcase-sdk/sdk_tutorials_cursor.html">Pointer Reticle</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Working with Models" href="/showcase-sdk/sdkbundle_tutorials_models.html">Working with Models</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using xr" href="/showcase-sdk/sdkbundle_tutorials_using_xr.html">Using xr</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Scene Objects" href="/showcase-sdk/sdkbundle_tutorials_using_scene_objects.html">Using Scene Objects</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Examples" href="#">SDK Examples</a>
+      <ul>
+          
+          
+          
+          <li><a title="Navigation Controls" href="/showcase-sdk/sdk_navigation_controls.html">Navigation Controls</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Intersection Inspector" href="/showcase-sdk/sdk_intersection_inspector.html">Intersection Inspector</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz" href="/showcase-sdk/sdk_tags_quiz.html">Tags Quiz</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz - Overlay" href="/showcase-sdk/sdk_tags_quiz_overlay.html">Tags Quiz - Overlay</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Kitchen Sink" href="/showcase-sdk/sdk_kitchen_sink.html">Kitchen Sink</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Remote Control" href="/showcase-sdk/sdk_remote_control.html">Remote Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Source Areas" href="/showcase-sdk/sdk_sensors_source_areas.html">Sensors - Source Areas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Tags Level of Detail" href="/showcase-sdk/sdk_sensors_tags_level_of_detail.html">Sensors - Tags Level of Detail</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Sweep Control" href="/showcase-sdk/sdk_sensors_sweep_control.html">Sensors - Sweep Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Virtual Staging" href="/showcase-sdk/sdkbundle_virtual_staging.html">Virtual Staging</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Local Webcam" href="/showcase-sdk/sdkbundle_local_webcam.html">Local Webcam</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Livestream" href="/showcase-sdk/sdkbundle_html_livestream.html">HTML Livestream</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="IoT Canvas" href="/showcase-sdk/sdkbundle_iot_canvas.html">IoT Canvas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Custom Experience" href="/showcase-sdk/sdkbundle_custom_experience.html">Custom Experience</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Security Camera FOV" href="/showcase-sdk/sdkbundle_security_camera.html">Security Camera FOV</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Content Attribution" href="/showcase-sdk/sdkbundle_content_attribution.html">Content Attribution</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Matterport APIs" href="#">Matterport APIs</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/api_home.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Docs" href="https://api.matterport.com/model/docs/reference" target="_blank" rel="noopener">Reference Docs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Interactive Console" href="https://api.matterport.com/model/graphiql" target="_blank" rel="noopener">Interactive Console</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Model API" href="#">Model API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Model API Changelog" href="/showcase-sdk/modelapi_changelog.html">Model API Changelog</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Model API Code Snippets" href="/showcase-sdk/modelapi_snippets.html">Model API Code Snippets</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Model API Models() Reference" href="/showcase-sdk/modelapi_models_ref.html">Model API Models() Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Tags 2.0 Icons Reference" href="/showcase-sdk/tags_icons_reference.html">Tags 2.0 Icons Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Postman Collection" href="/showcase-sdk/modelapi_postman.html">Postman Collection</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Account API" href="#">Account API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Account API Changelog" href="/showcase-sdk/accountapi_changelog.html">Account API Changelog</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account API Snippets" href="/showcase-sdk/accountapi_snippets.html">Account API Snippets</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="OAuth" href="#">OAuth</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/oauth_home.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Implementation" href="/showcase-sdk/oauth_implementation.html">Implementation</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Model Selector" href="/showcase-sdk/oauth_model_selector.html">Model Selector</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Use Case - Model API" href="/showcase-sdk/oauth_model_api.html">Use Case - Model API</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Use Case - Private Models" href="/showcase-sdk/oauth_sdk_private_model.html">Use Case - Private Models</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OAuth Sample Application" href="/showcase-sdk/sdkbundle_tutorials_using_oauth.html">OAuth Sample Application</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Webhooks" href="#">Webhooks</a>
+      <ul>
+          
+          
+          
+          <li class="active"><a title="Webhooks Overview" href="/showcase-sdk/webhooks_home.html">Webhooks Overview</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Learn More" href="#">Learn More</a>
+      <ul>
+          
+          
+          
+          <li><a title="Developer Tools Overview" href="https://support.matterport.com/s/article/API-SDK-Developer-Tools-Overview" target="_blank" rel="noopener">Developer Tools Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pricing and Availability" href="https://support.matterport.com/s/article/Developer-Tools-Pricing-and-Availability" target="_blank" rel="noopener">Pricing and Availability</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Developer Program FAQ" href="https://support.matterport.com/s/article/Developer-Program-FAQ" target="_blank" rel="noopener">Developer Program FAQ</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</div>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+<script src="/showcase-sdk/js/jekyll-search.js" type="text/javascript"></script>
+<script type="text/javascript">
+        SimpleJekyllSearch.init({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            dataSource: '/showcase-sdk/search.json',
+            searchResultTemplate: '<li><a href="{url}" title="Matterport Webhooks Overview">{title}</a></li>',
+noResultsText: '<li><div>No results found.<div></li>',
+        limit: 10,
+        fuzzy: true,
+})
+</script>
+
+          </aside>
+           
+          <!-- Content Column -->
+          <div
+            class=" col-md-9" 
+            id="tg-sb-content"
+          >
+            <div class="post-header">
+   <h1 class="post-title-main">Matterport Webhooks Overview</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+
+
+    
+
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Webhooks are only available for Enterprise-level Matterport Subscriptions</div>
+
+<p>Webhooks, sometimes referred to as “reverse APIs,” function like an API that’s triggered by events rather than requests. Matterport’s webhook framework lets you subscribe to events so that you can get real-time notifications and updates. This way, instead of your system having to repeatedly ask Matterport’s system whether an event occurred, you can set up a webhook so that you’re notified when it happens.</p>
+
+<p>Currently, we offer the following events with webhook callback functionality:</p>
+
+<ul>
+  <li>Model processing complete</li>
+  <li>Add-on asset is available to download</li>
+  <li>Purchase activity has occurred. This event is triggered when someone in the account places an order.</li>
+  <li>Model upload event is completed. This event is triggered when a model has been successfully uploaded, whether or not it has been processed.</li>
+</ul>
+
+<p><a href="Learn more about Webhooks" target="_blank">https://en.wikipedia.org/wiki/Webhook</a></p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>The ability to register Webhook callbacks with the Matterport system requires:</p>
+<ul>
+  <li>Account Feature Unlock</li>
+  <li>Developer License Unlock and API Tokens</li>
+  <li>Enterprise Subscription Plan</li>
+</ul>
+
+<p>Once enabled, Webhook callbacks can be registered and managed through the our <a href="api_home.html">Model API</a>.</p>
+
+<h2 id="webhook-events">Webhook Events</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Event</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>uploaded</td>
+      <td>An event will be emitted when a model is uploaded for the organization</td>
+    </tr>
+    <tr>
+      <td>processed</td>
+      <td>An event will be emitted when a model has completed processing</td>
+    </tr>
+    <tr>
+      <td>inserted</td>
+      <td>An event will be emitted when a model is insert into the database, which typically coincides with an uploaded event.</td>
+    </tr>
+    <tr>
+      <td>updated</td>
+      <td>An event will be emitted when a model is updated</td>
+    </tr>
+    <tr>
+      <td>deleted</td>
+      <td>An event will be emitted when a model is deleted</td>
+    </tr>
+    <tr>
+      <td>bundle_requested</td>
+      <td>An event will be emitted when an Add-On (bundle) is requested for a model</td>
+    </tr>
+    <tr>
+      <td>bundle_completed</td>
+      <td>An event will be emitted when an Add-On (bundle) is completed</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="sample-events">Sample Events</h3>
+
+<details name="uploaded">
+  <summary>uploaded</summary>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"uploaded"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"modelId"</span><span class="p">:</span><span class="s2">"FR1wedSZUWQ"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="mi">1663595798725</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"internalId"</span><span class="p">:</span><span class="s2">"internal id"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"createdBy"</span><span class="p">:</span><span class="s2">"test@test.com"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"data"</span><span class="p">:{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+</details>
+<details name="processed">
+  <summary>processed</summary>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"processed"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"modelId"</span><span class="p">:</span><span class="s2">"MXepojQAL2p"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="mi">1663595796940</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"internalId"</span><span class="p">:</span><span class="s2">"internal id"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"createdBy"</span><span class="p">:</span><span class="s2">"test@test.com"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"success"</span><span class="p">:</span><span class="s2">"true"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+</details>
+<details name="inserted">
+  <summary>inserted</summary>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"inserted"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"modelId"</span><span class="p">:</span><span class="s2">"PFiuXnwfE4h"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="mi">1663596098947</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"internalId"</span><span class="p">:</span><span class="s2">"internal id"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"createdBy"</span><span class="p">:</span><span class="s2">"test@test.com"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"data"</span><span class="p">:{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+</details>
+<details name="deleted">
+  <summary>deleted</summary>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"deleted"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"modelId"</span><span class="p">:</span><span class="s2">"zs1BKwZKQrc"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="mi">1663596098948</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"internalId"</span><span class="p">:</span><span class="s2">"internal id"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"createdBy"</span><span class="p">:</span><span class="s2">"test@test.com"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"data"</span><span class="p">:{</span><span class="w"> 
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+</details>
+<details name="bundle_requested">
+  <summary>bundle_requested</summary>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="mi">1663596098949</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"modelId"</span><span class="p">:</span><span class="s2">"GvuipKBo1N1"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"internalId"</span><span class="p">:</span><span class="s2">"internal id"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"bundleId"</span><span class="p">:</span><span class="s2">"bim:cad"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"bundleOptions"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"style"</span><span class="p">:</span><span class="s2">"mep"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"orderedBy"</span><span class="p">:</span><span class="s2">"test@test.com"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"bundle_requested"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+</details>
+<details name="bundle_requested">
+  <summary>bundle_completed</summary>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="mi">1663596098961</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"modelId"</span><span class="p">:</span><span class="s2">"rbEVEory2uo"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"internalId"</span><span class="p">:</span><span class="s2">"internal id"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"bundleId"</span><span class="p">:</span><span class="s2">"bim:cad"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"bundleOptions"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"style"</span><span class="p">:</span><span class="s2">"mep"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"orderedBy"</span><span class="p">:</span><span class="s2">"test@test.com"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"success"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"bundle_completed"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+</details>
+
+<h2 id="model-events">Model Events</h2>
+
+<h3 id="model-event-call-payload">Model Event Call Payload</h3>
+
+<p>The Webhook payload will contain information on the event that occurred.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Field</td>
+      <td>Description</td>
+      <td>Example Value</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>The type of registered event that occurred.</td>
+      <td>updated</td>
+    </tr>
+    <tr>
+      <td>modelId</td>
+      <td>ID of the affected model</td>
+      <td>j4RZx7ZGM6T</td>
+    </tr>
+    <tr>
+      <td>timestamp</td>
+      <td>Unix timestamp of the event</td>
+      <td>1657580633950</td>
+    </tr>
+    <tr>
+      <td>event</td>
+      <td> </td>
+      <td>Webhook:Event.Callback</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="registering-a-model-event-callback">Registering a Model Event Callback</h2>
+
+<p>Webhook callback registration and management for model events is handled through various mutations to the <a href="https://api.matterport.com/model/docs/reference">Model API</a>.</p>
+
+<p>The <strong>addModelEventWebhookCallback</strong> mutation registers a callback URL through a WebhookCallbackInput object for specified eventTypes. Optional query parameters can be included, as well as basic or token credentials for authentication.</p>
+
+<p>For security reasons, it’s recommended to provide credentials for the Webhook callback registration.</p>
+
+<details name="addModelEventWebhookCallback">
+  <summary>addModelEventWebhookCallback</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">registerWebhookCallback</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">addModelEventWebhookCallback</span><span class="w"> </span><span class="p">(</span><span class="n">input</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">eventTypes</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">inserted</span><span class="p">,</span><span class="w"> </span><span class="n">deleted</span><span class="p">,</span><span class="w"> </span><span class="n">updated</span><span class="p">],</span><span class="w">
+    </span><span class="n">callback</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">scheme</span><span class="p">:</span><span class="w"> </span><span class="s2">"https"</span><span class="p">,</span><span class="w">
+      </span><span class="n">host</span><span class="p">:</span><span class="w"> </span><span class="s2">"myawesomeapi.com"</span><span class="p">,</span><span class="w">
+      </span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="s2">"my/api/path"</span><span class="w">
+      </span><span class="n">queryParams</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="s2">"key1"</span><span class="p">,</span><span class="w">
+          </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"value1"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="s2">"key2"</span><span class="p">,</span><span class="w">
+          </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"value2"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+      </span><span class="n">credType</span><span class="p">:</span><span class="w"> </span><span class="n">basic</span><span class="w">
+      </span><span class="n">credKey</span><span class="p">:</span><span class="w"> </span><span class="s2">"username"</span><span class="w">
+      </span><span class="n">credSecret</span><span class="p">:</span><span class="w"> </span><span class="s2">"password"</span><span class="w">
+    </span><span class="p">}</span><span class="w"> 
+  </span><span class="p">})</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">eventTypes</span><span class="w">
+    </span><span class="n">callback</span><span class="p">{</span><span class="w">
+      </span><span class="n">scheme</span><span class="w">
+      </span><span class="n">host</span><span class="w">
+      </span><span class="n">path</span><span class="w">
+      </span><span class="n">queryParams</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">key</span><span class="w">
+        </span><span class="n">value</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"addModelEventWebhookCallback"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"887n9rwrdxytnttms0t1h02mc"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"eventTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"inserted"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"callback"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myawesomeapi.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my/api/path"</span><span class="w">
+        </span><span class="nl">"queryParams"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value1"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value2"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w"> 
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20registerWebhookCallback%7B%0A%20%20addModelEventWebhookCallback%20(input%3A%20%7B%0A%20%20%20%20eventTypes%3A%20%5Binserted%2C%20deleted%2C%20updated%5D%2C%0A%20%20%20%20callback%3A%20%7B%0A%20%20%20%20%20%20scheme%3A%20%22https%22%2C%0A%20%20%20%20%20%20host%3A%20%22myawesomeapi.com%22%2C%0A%20%20%20%20%20%20path%3A%20%22my%2Fapi%2Fpath%22%0A%20%20%20%20%20%20queryParams%3A%20%5B%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20key%3A%20%22key1%22%2C%0A%20%20%20%20%20%20%20%20%20%20value%3A%20%22value1%22%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20key%3A%20%22key2%22%2C%0A%20%20%20%20%20%20%20%20%20%20value%3A%20%22value2%22%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20credType%3A%20basic%0A%20%20%20%20%20%20credKey%3A%20%22username%22%0A%20%20%20%20%20%20credSecret%3A%20%22password%22%0A%20%20%20%20%7D%20%0A%20%20%7D)%20%7B%0A%20%20%20%20id%0A%20%20%20%20eventTypes%0A%20%20%20%20callback%7B%0A%20%20%20%20%20%20scheme%0A%20%20%20%20%20%20host%0A%20%20%20%20%20%20path%0A%20%20%20%20%20%20queryParams%7B%0A%20%20%20%20%20%20%20%20key%0A%20%20%20%20%20%20%20%20value%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;operationName=registerWebhookCallback" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<h2 id="list-registered-model-event-callbacks">List Registered Model Event Callbacks</h2>
+
+<p>A list of registered Model Event callbacks can be acquired through the <strong>modelEventWebhookCallbacks</strong> query search. Like other search operations, results are paginated and can be iterated though by specifying the returned offset value for the next page.</p>
+
+<details name="modelEventWebhookCallbacks">
+  <summary>modelEventWebhookCallbacks</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getModelEventCallbacks</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">modelEventWebhookCallbacks</span><span class="p">{</span><span class="w">
+    </span><span class="n">nextOffset</span><span class="w">
+    </span><span class="n">totalResults</span><span class="w">
+    </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">eventTypes</span><span class="w">
+      </span><span class="n">callback</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">scheme</span><span class="w">
+        </span><span class="n">port</span><span class="w">
+        </span><span class="n">path</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <p>(Note the ids, as these will be used in the mutation to make any changes to the registered callback.)</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"modelEventWebhookCallbacks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"totalResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"887n9rwrdxytnttms0t1h02mc"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"eventTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"inserted"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"deleted"</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"callback"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myawesomeapi.com"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getModelEventCallbacks%20%7B%0A%20%20modelEventWebhookCallbacks%7B%0A%20%20%20%20nextOffset%0A%20%20%20%20totalResults%0A%20%20%20%20results%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20eventTypes%0A%20%20%20%20%20%20callback%20%7B%0A%20%20%20%20%20%20%20%20scheme%0A%20%20%20%20%20%20%20%20port%0A%20%20%20%20%20%20%20%20path%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;operationName=getModelEventCallbacks" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<h2 id="update-a-model-event-callback">Update a Model Event Callback</h2>
+
+<p>Once the callback id is received, the <strong>patchModelEventWebhookCallback</strong> mutation can be used to make updates to an already-registered callback.</p>
+
+<details name="modelEventWebhookCallbacks">
+  <summary>modelEventWebhookCallbacks</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">updateModelEventCallback</span><span class="p">(</span><span class="nv">$callbackId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  </span><span class="n">patchModelEventWebhookCallback</span><span class="w"> </span><span class="p">(</span><span class="w">
+    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$callbackId</span><span class="w">
+    </span><span class="n">input</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">callback</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">scheme</span><span class="p">:</span><span class="w"> </span><span class="s2">"https"</span><span class="p">,</span><span class="w">
+      </span><span class="n">host</span><span class="p">:</span><span class="w"> </span><span class="s2">"myawesomeapi.com"</span><span class="p">,</span><span class="w">
+      </span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="s2">"v2/my/api/path"</span><span class="w">
+      </span><span class="n">queryParams</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="s2">"key1"</span><span class="p">,</span><span class="w">
+          </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"value1"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="s2">"key2"</span><span class="p">,</span><span class="w">
+          </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"value2"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+      </span><span class="n">credType</span><span class="p">:</span><span class="w"> </span><span class="n">basic</span><span class="w">
+      </span><span class="n">credKey</span><span class="p">:</span><span class="w"> </span><span class="s2">"username"</span><span class="w">
+      </span><span class="n">credSecret</span><span class="p">:</span><span class="w"> </span><span class="s2">"password"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">})</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">eventTypes</span><span class="w">
+    </span><span class="n">callback</span><span class="p">{</span><span class="w">
+      </span><span class="n">scheme</span><span class="w">
+      </span><span class="n">host</span><span class="w">
+      </span><span class="n">path</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"patchModelEventWebhookCallback"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"887n9rwrdxytnttms0t1h02mc"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"eventTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"inserted"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"callback"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myawesomeapi.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"v2/my/api/path"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20updateModelEventCallback(%24callbackId%3A%20ID!)%7B%0A%20%20patchModelEventWebhookCallback%20(%0A%20%20%20%20id%3A%20%24callbackId%0A%20%20%20%20input%3A%20%7B%0A%20%20%20%20callback%3A%20%7B%0A%20%20%20%20%20%20scheme%3A%20%22https%22%2C%0A%20%20%20%20%20%20host%3A%20%22myawesomeapi.com%22%2C%0A%20%20%20%20%20%20path%3A%20%22v2%2Fmy%2Fapi%2Fpath%22%0A%20%20%20%20%20%20queryParams%3A%20%5B%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20key%3A%20%22key1%22%2C%0A%20%20%20%20%20%20%20%20%20%20value%3A%20%22value1%22%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20key%3A%20%22key2%22%2C%0A%20%20%20%20%20%20%20%20%20%20value%3A%20%22value2%22%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20credType%3A%20basic%0A%20%20%20%20%20%20credKey%3A%20%22username%22%0A%20%20%20%20%20%20credSecret%3A%20%22password%22%0A%20%20%20%20%7D%0A%20%20%7D)%20%7B%0A%20%20%20%20id%0A%20%20%20%20eventTypes%0A%20%20%20%20callback%7B%0A%20%20%20%20%20%20scheme%0A%20%20%20%20%20%20host%0A%20%20%20%20%20%20path%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22callbackId%22%3A%20%22%22%0A%7D&amp;operationName=updateModelEventCallback" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<h2 id="remove-a-model-event-callback">Remove a Model Event Callback</h2>
+
+<p>Model Event Callbacks can be removed using the <strong>removeModelEventWebhookCallback</strong> mutation.</p>
+
+<details name="modelEventWebhookCallbacks">
+  <summary>removeModelEventWebhookCallback</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">removeModelEventCallback</span><span class="p">(</span><span class="nv">$callbackId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  </span><span class="n">removeModelEventWebhookCallback</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$callbackId</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"removeModelEventWebhookCallback"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20testModelEvent(%24callbackId%3A%20ID!)%7B%0A%20%20pingModelEventWebhookCallback(id%3A%20%24callbackId)%0A%7D&amp;variables=%7B%0A%20%20%22callbackId%22%3A%20%22%22%0A%7D&amp;operationName=testModelEvent" target="_blank">Try this query in our interactive console</a></p>
+</details>
+
+<h2 id="testing-model-event-callbacks">Testing Model Event Callbacks</h2>
+
+<p>Tests for specific Model Events can be triggered using the <strong>pingModelEventWebhookCallback</strong> mutation. The mutation can be used to ping and event that would trigger the registered callback. A collection of mutations and queries used for testing a Webhook endpoint can be found at this interactive editor link.</p>
+
+<p>Ngrok is one useful tool for testing a Webhook integration locally.</p>
+
+<details name="pingModelEventWebhookCallback">
+  <summary>pingModelEventWebhookCallback</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">testModelEvent</span><span class="p">(</span><span class="nv">$callbackId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  </span><span class="n">pingModelEventWebhookCallback</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$callbackId</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20testModelEvent(%24callbackId%3A%20ID!)%7B%0A%20%20pingModelEventWebhookCallback(id%3A%20%24callbackId)%0A%7D&amp;variables=%7B%0A%20%20%22callbackId%22%3A%20%22%22%0A%7D&amp;operationName=testModelEvent" target="_blank">Try this query in our interactive console</a></p>
+</details>
+
+<h2 id="model-event-callback-faqs">Model Event Callback FAQs</h2>
+
+<details name="Can I make GET callbacks instead of POST?">
+  <summary>Can I make GET callbacks instead of POST?</summary>
+  <p>No, only POST request callbacks are supported.</p>
+</details>
+<details name="Can I make REST Callbacks instead of GraphQL?">
+  <summary>Can I make REST Callbacks instead of GraphQL?</summary>
+  <p>Only GraphQL-based API callback registrations are available.</p>
+</details>
+<details>
+  <summary>What is error message like if id is wrong for patchModelEventWebhookCallback</summary>
+  <p>Error fetching data</p>
+</details>
+
+
+    <div class="tags">
+        
+    </div>
+
+<!-- 
+ -->
+
+</div>
+
+<!-- <hr class="shaded"/> -->
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2023 Matterport, Inc. All rights reserved. <br />
+ Site last generated: May 25, 2023 <br />
+<p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /#main -->
+    </div>
+
+    
+  </body>
+   <!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-34880260-5','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+ 
+</html>
