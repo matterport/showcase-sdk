@@ -740,6 +740,13 @@
           
           
           
+          
+          
+          <li><a title="Private Model Embed" href="/showcase-sdk/oauth_private_model_embed.html">Private Model Embed</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -840,13 +847,13 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>API Changes</p>
 <ul>
-  <li>A new BillingDetails under model, containing exempt: Boolean and multiSpaceUse
+  <li>A new <code class="language-plaintext highlighter-rouge">BillingDetails</code> under model, containing exempt: Boolean and <code class="language-plaintext highlighter-rouge">multiSpaceUse</code>
     <ul>
-      <li>multiSpaceUse is the number of spaces counted against your space quota</li>
-      <li>Models on Classic Accounts or that were uploaded to accounts before entering into our new billing plans will always have a multiSpaceUse value of 1</li>
+      <li><code class="language-plaintext highlighter-rouge">multiSpaceUse</code> is the number of spaces counted against your space quota</li>
+      <li>Models on Classic Accounts or that were uploaded to accounts before entering into our new billing plans will always have a <code class="language-plaintext highlighter-rouge">multiSpaceUse</code> value of 1</li>
     </ul>
   </li>
-  <li>The Mutation updateModelState now accepts an allowActivate boolean which defaults to false.
+  <li>The Mutation <code class="language-plaintext highlighter-rouge">updateModelState</code> now accepts an <code class="language-plaintext highlighter-rouge">allowActivate</code> boolean which defaults to false.
     <ul>
       <li>This must be set to true to unarchive models on accounts that would incur reactivation charges.</li>
       <li>If this is unspecified or set to false on an account that would incur reactivation charges a request.unsupported error code will be returned.</li>
@@ -876,8 +883,8 @@ noResultsText: '<li><div>No results found.<div></li>',
 <p>API Changes</p>
 <ul>
   <li>The assets attribute on Model is marked as nullable and documented with @error model.inactive</li>
-  <li>The updateModelAddress mutation supports changing the addressVisibility property.</li>
-  <li>The model mutation updateAddress supports changing the addressVisibility property.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">updateModelAddress</code> mutation supports changing the <code class="language-plaintext highlighter-rouge">addressVisibility</code> property.</li>
+  <li>The model mutation <code class="language-plaintext highlighter-rouge">updateAddress</code> supports changing the <code class="language-plaintext highlighter-rouge">addressVisibility</code> property.</li>
 </ul>
 
 <p>Bug Fixes and Other Enhancements</p>
@@ -888,8 +895,8 @@ noResultsText: '<li><div>No results found.<div></li>',
 <h3 id="january-18-2023">January 18, 2023</h3>
 
 <ul>
-  <li>The <code class="language-plaintext highlighter-rouge">icon</code> attribute on <a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/mattertag.doc.html">Mattertags</a> may now be read and patched.  Please see <a href="tags_icons_reference.html">Tags 2.0 Icons Reference</a> for the full icon set.</li>
-  <li>The <code class="language-plaintext highlighter-rouge">floor</code> attribute on Labels may now be <a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/label.doc.html">queried</a> and mutated.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">icon</code> attribute on <a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/mattertag.doc.html" target="_blank">Mattertags</a> may now be read and patched.  Please see <a href="tags_icons_reference.html" target="_blank">Tags 2.0 Icons Reference</a> for the full icon set.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">floor</code> attribute on Labels may now be <a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/label.doc.html" target="_blank">queried</a> and mutated.</li>
   <li>Added ID for the resource (denoting SID of the resource) in <code class="language-plaintext highlighter-rouge">AccessInfo</code> type for access query</li>
 </ul>
 
@@ -941,13 +948,13 @@ Example model query:</p>
 <h3 id="november-16-2023">November 16, 2023</h3>
 
 <ul>
-  <li><a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/folder.doc.html">Folder API query</a> for <code class="language-plaintext highlighter-rouge">modelCountSummary</code> is now out of <code class="language-plaintext highlighter-rouge">@beta</code></li>
+  <li><a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/folder.doc.html" target="_blank">Folder API query</a> for <code class="language-plaintext highlighter-rouge">modelCountSummary</code> is now out of <code class="language-plaintext highlighter-rouge">@beta</code></li>
 </ul>
 
 <h3 id="october-26-2023">October 26, 2023</h3>
 
 <ul>
-  <li><a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/folder.doc.html">Folder</a> extensions now out of <code class="language-plaintext highlighter-rouge">@beta</code></li>
+  <li><a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/folder.doc.html" target="_blank">Folder</a> extensions now out of <code class="language-plaintext highlighter-rouge">@beta</code></li>
   <li>Webhook Mutations now available. (Enterprise only)</li>
 </ul>
 
@@ -1041,7 +1048,7 @@ removeModelEventFromCallback(
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: May 25, 2023 <br />
+ Site last generated: Jun 6, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

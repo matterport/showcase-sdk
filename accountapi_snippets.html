@@ -740,6 +740,13 @@
           
           
           
+          
+          
+          <li><a title="Private Model Embed" href="/showcase-sdk/oauth_private_model_embed.html">Private Model Embed</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -842,370 +849,358 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Account API is only available for Enterprise-level Matterport Subscriptions</div>
 
-<p>If you would like an application to build collections of API queries for testing and generating code to use in your applications, we recommend using <a href="https://www.postman.com/">Postman</a>.</p>
+<p>If you would like an application to build collections of API queries for testing and generating code to use in your applications, we recommend using <a href="https://www.postman.com/" target="_blank">Postman</a></p>
 
-<p>If you are needing assistance with building queries, refer to our schema <a href="https://api.matterport.com/model/docs/reference">here</a> or contact us at <a href="mailto:developer@matterport.com">developer@matterport.com</a></p>
+<p>If you are needing assistance with building queries, refer to our <a href="https://api.matterport.com/model/docs/reference&quot;" target="_blank">API schema</a> or contact us at <a href="mailto:developer@matterport.com">developer@matterport.com</a></p>
 
 <h2 id="organization-and-member-management">Organization and Member Management</h2>
 
-<details name="Get organization info">
+<details>
+  <summary>Get organization info</summary>
 
-<summary>Get organization info</summary>
+  <p>Fragments can be mixed and matched depending on which data you want. The organization ID is based on which API tokens are used.</p>
 
-Fragments can be mixed and matched depending on which data you want. The organization ID is based on which API tokens are used.
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getOrganizationInfo</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">organization</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">created</span><span class="w">
+    </span><span class="n">developer</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="p">...</span><span class="n">developerInfo</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="n">sdkKeys</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="p">...</span><span class="n">sdkKeyInfo</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="n">bundles</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="p">...</span><span class="n">bundleInfo</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-<div class="language-graphql highlighter-rouge"><pre class="highlight"><code class="highlight">query getOrganizationInfo {
-  organization {
-    name
-    created
-    developer {
-      ...developerInfo
-    }
-    sdkKeys {
-      ...sdkKeyInfo
-    }
-    bundles {
-      ...bundleInfo
-    }
-  }
-}
+</span><span class="k">fragment</span><span class="w"> </span><span class="n">developerInfo</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">DeveloperAccount</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">mode</span><span class="w">
+  </span><span class="n">license</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">availability</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-fragment developerInfo on DeveloperAccount {
-  mode
-  license {
-    availability
-  }
-}
+</span><span class="k">fragment</span><span class="w"> </span><span class="n">sdkKey</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">SdkKey</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">key</span><span class="w">
+  </span><span class="n">label</span><span class="w">
+  </span><span class="n">domains</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">created</span><span class="w">
+    </span><span class="n">secureOnly</span><span class="w">
+    </span><span class="n">domain</span><span class="w">
+    </span><span class="n">port</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-fragment sdkKey on SdkKey {
-  key
-  label
-  domains {
-    created
-    secureOnly
-    domain
-    port
-  }
-}
+</span><span class="k">fragment</span><span class="w"> </span><span class="n">sdkKeyInfo</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">SdkKeyDetails</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">used</span><span class="w">
+  </span><span class="n">remaining</span><span class="w">
+  </span><span class="n">quota</span><span class="w">
+  </span><span class="n">keys</span><span class="p">(</span><span class="n">active</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="p">...</span><span class="n">sdkKey</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-fragment sdkKeyInfo on SdkKeyDetails {
-  used
-  remaining
-  quota
-  keys(active: true) {
-    ...sdkKey
-  }
-}
+</span><span class="k">fragment</span><span class="w"> </span><span class="n">bundleInfo</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">OrganizationBundle</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">id</span><span class="w">
+  </span><span class="n">name</span><span class="w">
+  </span><span class="n">description</span><span class="w">
+  </span><span class="n">enabled</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
 
-fragment bundleInfo on OrganizationBundle {
-  id
-  name
-  description
-  enabled
-}
-</code></pre></div>
+  <p>Sample Response:</p>
 
-<p>Sample Response:</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matterport Organization"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-03T21:43:39Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"developer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"production"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"sdkKeys"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quota"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXXXXXXXXXXXXXXXX"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"domains"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+              </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1605138155932"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"secureOnly"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"localhost"</span><span class="w">
+            </span><span class="p">}]</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"bundles"</span><span class="err">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:matterpak"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matterpak"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order high resolution assets associated with the model."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cubicasa:floorplan"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cubicasa Schematic Floorplan"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order an enhanced schematic floorplan"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trueplan:schematic"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TruePlan™ Schematic"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order a TruePlan™ Schematic"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gsv:publish"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google Street View"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Publish to Google Street View"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"homeaway:publish"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vrbo - HomeAway"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create a 360 Tour for Vrbo and HomeAway"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="err">}</span><span class="w">
+      </span><span class="err">}</span><span class="w">
+    </span><span class="err">}</span><span class="w">
+</span></code></pre></div>  </div>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code class="highlight">{ 
-   "data": { 
-      "organization": { 
-         "name": "Matterport Organization", 
-         "created": "2020-11-03T21:43:39Z", 
-         "developer": { 
-            "mode": "production", 
-            "license": { 
-               "availability": "unlocked" 
-            } 
-         }, 
-         "sdkKeys": { 
-            "used": 1, 
-            "remaining": 4, 
-            "quota": 5, 
-            "keys": [ 
-               { 
-                  "key": "XXXXXXXXXXXXXXXXXX", 
-                  "domains": [ 
-                     { 
-                        "created": "1605138155932", 
-                        "secureOnly": false, 
-                        "domain": "localhost" 
-                     } 
-                  ] 
-               }, 
-            "bundles": [ 
-               { "id": "mp:matterpak", 
-               "name": "Matterpak", 
-               "description": "Order high resolution assets associated with the model.", 
-               "enabled": true 
-            }, 
-            { 
-               "id": "cubicasa:floorplan", 
-               "name": "Cubicasa Schematic Floorplan", 
-               "description": "Order an enhanced schematic floorplan", 
-               "enabled": true 
-            }, 
-            { 
-               "id": "trueplan:schematic", 
-               "name": "TruePlan™ Schematic", 
-               "description": "Order a TruePlan™ Schematic", 
-               "enabled": false 
-            }, 
-            { 
-               "id": "gsv:publish", 
-               "name": "Google Street View", 
-               "description": "Publish to Google Street View", 
-               "enabled": true 
-            }, 
-            { 
-               "id": "homeaway:publish", 
-               "name": "Vrbo - HomeAway", 
-               "description": "Create a 360 Tour for Vrbo and HomeAway",
-               "enabled": true 
-            } 
-         ] 
-      } 
-   } 
-  }
-</code></pre></div>
-
-<p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=getOrganizationInfo&amp;query=fragment%20developerInfo%20on%20DeveloperAccount%20%7B%0A%20%20mode%0A%20%20license%20%7B%0A%20%20%20%20availability%0A%20%20%7D%0A%7D%0A%0Afragment%20sdkKey%20on%20SdkKey%20%7B%0A%20%20key%0A%20%20label%0A%20%20domains%20%7B%0A%20%20%20%20created%0A%20%20%20%20secureOnly%0A%20%20%20%20domain%0A%20%20%20%20port%0A%20%20%7D%0A%7D%0A%0Afragment%20sdkKeyInfo%20on%20SdkKeyDetails%20%7B%0A%20%20used%0A%20%20remaining%0A%20%20quota%0A%20%20keys(active%3A%20true)%20%7B%0A%20%20%20%20...sdkKey%0A%20%20%7D%0A%7D%0A%0Afragment%20bundleInfo%20on%20OrganizationBundle%20%7B%0A%20%20id%0A%20%20name%0A%20%20description%0A%20%20enabled%0A%7D%0A%0Aquery%20getOrganizationInfo%20%7B%0A%20%20organization%20%7B%0A%20%20%20%20name%0A%20%20%20%20created%0A%20%20%20%20developer%20%7B%0A%20%20%20%20%20%20...developerInfo%0A%20%20%20%20%7D%0A%20%20%20%20sdkKeys%20%7B%0A%20%20%20%20%20%20...sdkKeyInfo%0A%20%20%20%20%7D%0A%20%20%20%20bundles%20%7B%0A%20%20%20%20%20%20...bundleInfo%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=getOrganizationInfo&amp;query=fragment%20developerInfo%20on%20DeveloperAccount%20%7B%0A%20%20mode%0A%20%20license%20%7B%0A%20%20%20%20availability%0A%20%20%7D%0A%7D%0A%0Afragment%20sdkKey%20on%20SdkKey%20%7B%0A%20%20key%0A%20%20label%0A%20%20domains%20%7B%0A%20%20%20%20created%0A%20%20%20%20secureOnly%0A%20%20%20%20domain%0A%20%20%20%20port%0A%20%20%7D%0A%7D%0A%0Afragment%20sdkKeyInfo%20on%20SdkKeyDetails%20%7B%0A%20%20used%0A%20%20remaining%0A%20%20quota%0A%20%20keys(active%3A%20true)%20%7B%0A%20%20%20%20...sdkKey%0A%20%20%7D%0A%7D%0A%0Afragment%20bundleInfo%20on%20OrganizationBundle%20%7B%0A%20%20id%0A%20%20name%0A%20%20description%0A%20%20enabled%0A%7D%0A%0Aquery%20getOrganizationInfo%20%7B%0A%20%20organization%20%7B%0A%20%20%20%20name%0A%20%20%20%20created%0A%20%20%20%20developer%20%7B%0A%20%20%20%20%20%20...developerInfo%0A%20%20%20%20%7D%0A%20%20%20%20sdkKeys%20%7B%0A%20%20%20%20%20%20...sdkKeyInfo%0A%20%20%20%20%7D%0A%20%20%20%20bundles%20%7B%0A%20%20%20%20%20%20...bundleInfo%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A" target="_blank">Try this in our interactive console</a></p>
 
 </details>
 <details name="Get organization members info">
 
-<summary>Get organization members info</summary>
+  <summary>Get organization members info</summary>
 
-Results might need to be <a href="https://graphql.org/learn/pagination/#pagination-and-edges" target="_blank">paginated</a> (offset pagination).
+  <p>Results might need to be <a href="https://graphql.org/learn/pagination/#pagination-and-edges" target="_blank">paginated</a> (offset pagination).</p>
 
-<pre class="highlight"><code class="highlight">query getOrganizationInfo {
-  organization {
-    memberships(
-      query: "*",
-      pageSize: 100,
-      offset: null
-    ){
-      nextOffset,
-      results{
-        user {
-          ...user
-        }
-        roles{
-          id
-          name
-        }
-        status
-      }
-    }
-  }
-}
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getOrganizationInfo</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">organization</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">memberships</span><span class="p">(</span><span class="w">
+      </span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+      </span><span class="n">pageSize</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+      </span><span class="n">offset</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">){</span><span class="w">
+      </span><span class="n">nextOffset</span><span class="p">,</span><span class="w">
+      </span><span class="n">results</span><span class="p">{</span><span class="w">
+        </span><span class="n">user</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="p">...</span><span class="n">user</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="n">roles</span><span class="p">{</span><span class="w">
+          </span><span class="n">id</span><span class="w">
+          </span><span class="n">name</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="n">status</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-fragment user on User {
-  id
-  firstName
-  lastName
-  email
-  created
-}  
-</code></pre>
+</span><span class="k">fragment</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">id</span><span class="w">
+  </span><span class="n">firstName</span><span class="w">
+  </span><span class="n">lastName</span><span class="w">
+  </span><span class="n">email</span><span class="w">
+  </span><span class="n">created</span><span class="w">
+</span><span class="p">}</span><span class="w">  
+</span></code></pre></div>  </div>
 
-<p>Sample Response:</p>
+  <p>Sample Response:</p>
 
-<pre class="highlight"><code class="highlight">{ 
-     "data": {
-        "organization": {
-           "memberships": {
-              "results": [
-                 {
-                    "user": {
-                       "id": "XXXXXXXXXXX",
-                       "firstName": "XXX",
-                       "lastName": "XXXXXXX",
-                       "email": "XXXXXX@XXXXXX.com",
-                       "created": "2020-11-03T21:43:39Z"
-                    },
-                    "roles": [
-                       {
-                          "id": "00000000200",
-                          "name": "owner"
-                       },
-                       {
-                          "id": "00000000080",
-                          "name": "billing-admin"
-                       },
-                       {
-                          "id": "00000000120",
-                          "name": "admin"
-                       }
-                    ],
-                    "status": "active"
-                 },
-                 {
-                    "user": {
-                       "id": "XXXXXXXXXXX",
-                       "firstName": "XXX",
-                       "lastName": "XXXXXXX",
-                       "email": "XXXXXXX@XXXXX.com",
-                       "created": "2022-05-03T22:05:00Z"
-                    },
-                    "roles": [
-                       {
-                          "id": "00000000120",
-                          "name": "admin"
-                       }
-                    ],
-                    "status": "active"
-                 },
-                 {
-                    "user": {
-                    "id": "XXXXXXXXXXX",
-                    "firstName": "XXX",
-                    "lastName": "XXXXXXX",
-                    "email": "XXXXXXX@XXXXX.com",
-                    "created": "2021-03-09T20:33:57Z"
-                 },
-                 "roles": [
-                    {
-                       "id": "00000000100",
-                       "name": "collaborator"
-                    }
-                 ],
-                 "status": "active"
-              },
-           ]
-        }
-     }
-  }
-</code></pre>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"memberships"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXXXXXXXXX"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXX"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXXXXX"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXXXX@XXXXXX.com"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-03T21:43:39Z"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000200"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"owner"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000080"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"billing-admin"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000120"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXXXXXXXXX"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXX"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXXXXX"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXXXXX@XXXXX.com"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-03T22:05:00Z"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000120"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="w">
+            </span><span class="p">}],</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXXXXXXXXX"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXX"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXXXXX"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXXXXX@XXXXX.com"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-09T20:33:57Z"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000100"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"collaborator"</span><span class="w">
+            </span><span class="p">}],</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
 
-<p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=getOrganizationInfo&amp;query=fragment%20user%20on%20User%7B%0A%20%20id%0A%20%20firstName%0A%20%20lastName%0A%20%20email%0A%20%20created%0A%7D%0A%0Aquery%20getOrganizationInfo%20%7B%0A%20%20organization%20%7B%0A%09%09memberships(%0A%20%20%20%20%20%20query%3A%20%22*%22%2C%0A%20%20%20%20%20%20pageSize%3A%20100%2C%0A%20%20%20%20%20%20offset%3A%20null%0A%20%20%20%20)%7B%0A%20%20%20%20%20%20nextOffset%2C%0A%20%20%20%20%20%20results%7B%0A%20%20%20%20%20%20%20%20user%20%7B%0A%20%20%20%20%20%20%20%20%20%20...user%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20roles%7B%0A%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=getOrganizationInfo&amp;query=fragment%20user%20on%20User%7B%0A%20%20id%0A%20%20firstName%0A%20%20lastName%0A%20%20email%0A%20%20created%0A%7D%0A%0Aquery%20getOrganizationInfo%20%7B%0A%20%20organization%20%7B%0A%09%09memberships(%0A%20%20%20%20%20%20query%3A%20%22*%22%2C%0A%20%20%20%20%20%20pageSize%3A%20100%2C%0A%20%20%20%20%20%20offset%3A%20null%0A%20%20%20%20)%7B%0A%20%20%20%20%20%20nextOffset%2C%0A%20%20%20%20%20%20results%7B%0A%20%20%20%20%20%20%20%20user%20%7B%0A%20%20%20%20%20%20%20%20%20%20...user%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20roles%7B%0A%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A" target="_blank">Try this in our interactive console</a></p>
 
 </details>
 <details name="Invite user to organization">
-  
-<summary>Invite user to organization</summary>
-  
-<pre class="highlight"><code class="highlight">mutation inviteUser($userEmail: String!, $roleId: ID!, $inviteMessage: String){
-  inviteMember(
-    email: $userEmail
-    roleId: $roleId
-    inviteMessage: $inviteMessage
-  ){
-    user{email}
-    status
-  }
-}
 
-# Variables
-{
-  "userEmail": "",
-  "roleId": "",
-  "inviteMessage": "Please accept the invitation to this organization."
-}
+  <summary>Invite user to organization</summary>
 
-# Role ID reference:
-# collaborator = 00000000100
-# admin = 00000000120
-# owner = 00000000200
-# billing-admin = 00000000080
-</code></pre>
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">inviteUser</span><span class="p">(</span><span class="nv">$userEmail</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!,</span><span class="w"> </span><span class="nv">$roleId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$inviteMessage</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">){</span><span class="w">
+  </span><span class="n">inviteMember</span><span class="p">(</span><span class="w">
+    </span><span class="n">email</span><span class="p">:</span><span class="w"> </span><span class="nv">$userEmail</span><span class="w">
+    </span><span class="n">roleId</span><span class="p">:</span><span class="w"> </span><span class="nv">$roleId</span><span class="w">
+    </span><span class="n">inviteMessage</span><span class="p">:</span><span class="w"> </span><span class="nv">$inviteMessage</span><span class="w">
+  </span><span class="p">){</span><span class="w">
+    </span><span class="n">user</span><span class="p">{</span><span class="n">email</span><span class="p">}</span><span class="w">
+    </span><span class="n">status</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-<p>Sample Response:</p>
+</span><span class="c"># Variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">userEmail</span><span class="err">":</span><span class="w"> </span><span class="err">""</span><span class="p">,</span><span class="w">
+  </span><span class="err">"</span><span class="n">roleId</span><span class="err">":</span><span class="w"> </span><span class="err">""</span><span class="p">,</span><span class="w">
+  </span><span class="err">"</span><span class="n">inviteMessage</span><span class="err">":</span><span class="w"> </span><span class="err">"</span><span class="n">Please</span><span class="w"> </span><span class="n">accept</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">invitation</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">organization</span><span class="err">."</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-<pre class="highlight"><code class="highlight">{ 
-   "data": { 
-      "inviteMember": { 
-         "user": { 
-            "email": "XXXXXXX@XXXXX.com" 
-         }, 
-         "status": "pending" 
-      } 
-   } 
-}
-</code></pre>
+</span><span class="c"># Role ID reference:</span><span class="w">
+</span><span class="c"># collaborator = 00000000100</span><span class="w">
+</span><span class="c"># admin = 00000000120</span><span class="w">
+</span><span class="c"># owner = 00000000200</span><span class="w">
+</span><span class="c"># billing-admin = 00000000080</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"inviteMember"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXXXXX@XXXXX.com"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="err">```</span><span class="w">
                  
-<p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=inviteUser&amp;query=%23%20Role%20ID%20reference%3A%0A%23%20collaborator%20%3D%2000000000100%0A%23%20admin%20%3D%2000000000120%0A%23%20owner%20%3D%2000000000200%0A%23%20billing-admin%20%3D%2000000000080%0A%0A%0Amutation%20inviteUser(%24userEmail%3A%20String!%2C%20%24roleId%3A%20ID!%2C%20%24inviteMessage%3A%20String)%7B%0A%20%20%0A%20%20inviteMember(%0A%20%20%20%20email%3A%20%24userEmail%0A%20%20%20%20roleId%3A%20%24roleId%0A%20%20%20%20inviteMessage%3A%20%24inviteMessage%0A%20%20)%7B%0A%20%20%20%20user%7Bemail%7D%0A%20%20%20%20status%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22userEmail%22%3A%20%22%22%2C%0A%20%20%22roleId%22%3A%20%22%22%0A%7D" target="_blank">Try this query in our interactive console</a></p>
-</details>
-<details name="Remove user from organization">
+</span><span class="p">[</span><span class="err">Try</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">our</span><span class="w"> </span><span class="err">interactive</span><span class="w"> </span><span class="err">console</span><span class="p">]</span><span class="err">(https://api.matterport.com/api/accounts/graphiql/?operationName=inviteUser&amp;query=%</span><span class="mi">23</span><span class="err">%</span><span class="mi">20</span><span class="err">Role%</span><span class="mi">20</span><span class="err">ID%</span><span class="mi">20</span><span class="err">reference%</span><span class="mi">3</span><span class="err">A%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">23</span><span class="err">%</span><span class="mi">20</span><span class="err">collaborator%</span><span class="mi">20</span><span class="err">%</span><span class="mi">3</span><span class="err">D%</span><span class="mi">2000000000100</span><span class="err">%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">23</span><span class="err">%</span><span class="mi">20</span><span class="err">admin%</span><span class="mi">20</span><span class="err">%</span><span class="mi">3</span><span class="err">D%</span><span class="mi">2000000000120</span><span class="err">%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">23</span><span class="err">%</span><span class="mi">20</span><span class="err">owner%</span><span class="mi">20</span><span class="err">%</span><span class="mi">3</span><span class="err">D%</span><span class="mi">2000000000200</span><span class="err">%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">23</span><span class="err">%</span><span class="mi">20</span><span class="err">billing-admin%</span><span class="mi">20</span><span class="err">%</span><span class="mi">3</span><span class="err">D%</span><span class="mi">2000000000080</span><span class="err">%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">0</span><span class="err">Amutation%</span><span class="mi">20</span><span class="err">inviteUser(%</span><span class="mi">24</span><span class="err">userEmail%</span><span class="mi">3</span><span class="err">A%</span><span class="mi">20</span><span class="err">String!%</span><span class="mi">2</span><span class="err">C%</span><span class="mi">20</span><span class="err">%</span><span class="mi">24</span><span class="err">roleId%</span><span class="mi">3</span><span class="err">A%</span><span class="mi">20</span><span class="err">ID!%</span><span class="mi">2</span><span class="err">C%</span><span class="mi">20</span><span class="err">%</span><span class="mi">24</span><span class="err">inviteMessage%</span><span class="mi">3</span><span class="err">A%</span><span class="mi">20</span><span class="err">String)%</span><span class="mi">7</span><span class="err">B%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">inviteMember(%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">email%</span><span class="mi">3</span><span class="err">A%</span><span class="mi">20</span><span class="err">%</span><span class="mi">24</span><span class="err">userEmail%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">roleId%</span><span class="mi">3</span><span class="err">A%</span><span class="mi">20</span><span class="err">%</span><span class="mi">24</span><span class="err">roleId%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">inviteMessage%</span><span class="mi">3</span><span class="err">A%</span><span class="mi">20</span><span class="err">%</span><span class="mi">24</span><span class="err">inviteMessage%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">)%</span><span class="mi">7</span><span class="err">B%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">user%</span><span class="mi">7</span><span class="err">Bemail%</span><span class="mi">7</span><span class="err">D%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">status%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">%</span><span class="mi">7</span><span class="err">D%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">7</span><span class="err">D%</span><span class="mi">0</span><span class="err">A&amp;variables=%</span><span class="mi">7</span><span class="err">B%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">%</span><span class="mi">22</span><span class="err">userEmail%</span><span class="mi">22</span><span class="err">%</span><span class="mi">3</span><span class="err">A%</span><span class="mi">20</span><span class="err">%</span><span class="mi">22</span><span class="err">%</span><span class="mi">22</span><span class="err">%</span><span class="mi">2</span><span class="err">C%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">20</span><span class="err">%</span><span class="mi">20</span><span class="err">%</span><span class="mi">22</span><span class="err">roleId%</span><span class="mi">22</span><span class="err">%</span><span class="mi">3</span><span class="err">A%</span><span class="mi">20</span><span class="err">%</span><span class="mi">22</span><span class="err">%</span><span class="mi">22</span><span class="err">%</span><span class="mi">0</span><span class="err">A%</span><span class="mi">7</span><span class="err">D)</span><span class="p">{</span><span class="err">:target=</span><span class="s2">"_blank"</span><span class="p">}</span><span class="w">
+</span><span class="err">&lt;/details&gt;</span><span class="w">
+</span><span class="err">&lt;details</span><span class="w"> </span><span class="err">markdown=</span><span class="s2">"1"</span><span class="w"> </span><span class="err">name=</span><span class="s2">"Remove user from organization"</span><span class="err">&gt;</span><span class="w">
 
-<summary>Remove user from organization</summary>
+</span><span class="err">&lt;summary&gt;Remove</span><span class="w"> </span><span class="err">user</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">organization&lt;/summary&gt;</span><span class="w">
 
-<pre class="highlight"><code class="highlight">mutation removeMember($email: String!){
-  removeMembership(email: $email){
-    user{email}
-    status
-  }
-}
+</span><span class="err">```graphql</span><span class="w">
+</span><span class="err">mutation</span><span class="w"> </span><span class="err">removeMember($email:</span><span class="w"> </span><span class="err">String!)</span><span class="p">{</span><span class="w">
+  </span><span class="err">removeMembership(email:</span><span class="w"> </span><span class="err">$email)</span><span class="p">{</span><span class="w">
+    </span><span class="err">user</span><span class="p">{</span><span class="err">email</span><span class="p">}</span><span class="w">
+    </span><span class="err">status</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-# variables
-{
-  "email": ""
-}
-</code></pre>
+</span><span class="err">#</span><span class="w"> </span><span class="err">variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
 
-<p>Sample Response:</p>
+  <p>Sample Response:</p>
 
-<pre class="highlight"><code class="highlight">{ 
-   "data": { 
-      "removeMembership": { 
-         "user": { 
-            "email": "XXXXXXX@XXXXX.com" 
-         }, 
-         "status": "deleted" 
-      } 
-   } 
-}
-</code></pre>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"removeMembership"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXXXXX@XXXXX.com"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deleted"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
 
-<p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=removeMember&amp;query=mutation%20removeMember(%24email%3A%20String!)%7B%0A%20%20removeMembership(email%3A%20%24email)%7B%0A%20%20%20%20user%7Bemail%7D%0A%20%20%20%20status%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22email%22%3A%20%22%22%0A%7D" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=removeMember&amp;query=mutation%20removeMember(%24email%3A%20String!)%7B%0A%20%20removeMembership(email%3A%20%24email)%7B%0A%20%20%20%20user%7Bemail%7D%0A%20%20%20%20status%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22email%22%3A%20%22%22%0A%7D" target="_blank">Try this in our interactive console</a></p>
 
 </details>
 <details name="Update a user's role">
-<summary>Update a user's role</summary>
+  <summary>Update a user's role</summary>
 
-<pre class="highlight"><code class="highlight">mutation updateUserRole($email: String!, $roleId: ID!){
-  patchMembership(email: $email, roleId: $roleId){
-    user{email}
-    roles{
-      id
-      name
-    }
-  }
-}
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">updateUserRole</span><span class="p">(</span><span class="nv">$email</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!,</span><span class="w"> </span><span class="nv">$roleId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  </span><span class="n">patchMembership</span><span class="p">(</span><span class="n">email</span><span class="p">:</span><span class="w"> </span><span class="nv">$email</span><span class="p">,</span><span class="w"> </span><span class="n">roleId</span><span class="p">:</span><span class="w"> </span><span class="nv">$roleId</span><span class="p">){</span><span class="w">
+    </span><span class="n">user</span><span class="p">{</span><span class="n">email</span><span class="p">}</span><span class="w">
+    </span><span class="n">roles</span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-# variables
-{
-  "email": "",
-  "roleId": ""
-}
+</span><span class="c"># variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">email</span><span class="err">":</span><span class="w"> </span><span class="err">""</span><span class="p">,</span><span class="w">
+  </span><span class="err">"</span><span class="n">roleId</span><span class="err">":</span><span class="w"> </span><span class="err">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-# Role ID reference:
-# collaborator = 00000000100
-# admin = 00000000120
-# owner = 00000000200
-# billing-admin = 00000000080
-</code></pre>
+</span><span class="c"># Role ID reference:</span><span class="w">
+</span><span class="c"># collaborator = 00000000100</span><span class="w">
+</span><span class="c"># admin = 00000000120</span><span class="w">
+</span><span class="c"># owner = 00000000200</span><span class="w">
+</span><span class="c"># billing-admin = 00000000080</span><span class="w">
+</span></code></pre></div>  </div>
 
-<p>Sample Response:</p>
+  <p>Sample Response:</p>
 
-<pre class="highlight"><code class="highlight">{ 
-   "data": { 
-      "patchMembership": { 
-         "user": { 
-            "email": "XXXXXXX@XXXXX.com" 
-         }, 
-         "roles": [ 
-            { 
-               "id": "00000000100", 
-               "name": "collaborator" 
-            } 
-         ] 
-      } 
-   } 
-}
-</code></pre>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"patchMembership"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXXXXX@XXXXX.com"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000100"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"collaborator"</span><span class="w">
+      </span><span class="p">}]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
 
-<p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=updateUserRole&amp;query=%23%20Role%20ID%20reference%3A%0A%23%20collaborator%20%3D%2000000000100%0A%23%20admin%20%3D%2000000000120%0A%23%20owner%20%3D%2000000000200%0A%23%20billing-admin%20%3D%2000000000080%0A%0Amutation%20updateUserRole(%24email%3A%20String!%2C%20%24roleId%3A%20ID!)%7B%0A%20%20patchMembership(email%3A%20%24email%2C%20roleId%3A%20%24roleId)%7B%0A%20%20%20%20user%7Bemail%7D%0A%20%20%20%20roles%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22email%22%3A%20%22%22%2C%0A%20%20%22roleId%22%3A%20%22%22%0A%7D" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=updateUserRole&amp;query=%23%20Role%20ID%20reference%3A%0A%23%20collaborator%20%3D%2000000000100%0A%23%20admin%20%3D%2000000000120%0A%23%20owner%20%3D%2000000000200%0A%23%20billing-admin%20%3D%2000000000080%0A%0Amutation%20updateUserRole(%24email%3A%20String!%2C%20%24roleId%3A%20ID!)%7B%0A%20%20patchMembership(email%3A%20%24email%2C%20roleId%3A%20%24roleId)%7B%0A%20%20%20%20user%7Bemail%7D%0A%20%20%20%20roles%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22email%22%3A%20%22%22%2C%0A%20%20%22roleId%22%3A%20%22%22%0A%7D" target="_blank">Try this in our interactive console</a></p>
 
 </details>
 
@@ -1213,191 +1208,189 @@ fragment user on User {
 
 <details name="List SDK Keys">
 
-<summary>List SDK Keys</summary>
+  <summary>List SDK Keys</summary>
 
-<div class="language-graphql highlighter-rouge"><pre class="highlight"><code class="highlight">query getSDKKeys{
-  organization{
-    sdkKeys{
-      quota
-      used
-      remaining
-      keys{ ...keyInfo }
-    }
-  }
-}
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getSDKKeys</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">organization</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">sdkKeys</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">quota</span><span class="w">
+      </span><span class="n">used</span><span class="w">
+      </span><span class="n">remaining</span><span class="w">
+      </span><span class="n">keys</span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="n">keyInfo</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-fragment keyInfo on SdkKey{
-  key
-  domains{
-    secureOnly
-    domain
-    port
-  }
-}
-</code></pre></div>
+</span><span class="k">fragment</span><span class="w"> </span><span class="n">keyInfo</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">SdkKey</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">key</span><span class="w">
+  </span><span class="n">domains</span><span class="p">{</span><span class="w">
+    </span><span class="n">secureOnly</span><span class="w">
+    </span><span class="n">domain</span><span class="w">
+    </span><span class="n">port</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
 
-<p>Sample Response:</p>
+  <p>Sample Response:</p>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code class="highlight">{
-    "data": {
-      "organization": {
-        "sdkKeys": {
-          "quota": 5,
-          "used": 5,
-          "remaining": 0,
-          "keys": [
-            {
-              "key": "08s53auxt9txz1w6hx2iww1qb",
-              "domains": [
-                {
-                  "secureOnly": false,
-                  "domain": "127.0.0.1",
-                  "port": 8000
-                },
-                {
-                  "secureOnly": true,
-                  "domain": "my.matterport.com",
-                  "port": null
-                },
-                {
-                  "secureOnly": false,
-                  "domain": "localhost",
-                  "port": 8000
-                },
-                ...
-              ]
-            }
-          ]
-        }
-      }
-    }
-  }
-</code></pre></div>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"sdkKeys"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"quota"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+          </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08s53auxt9txz1w6hx2iww1qb"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"domains"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+              </span><span class="nl">"secureOnly"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"secureOnly"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my.matterport.com"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"secureOnly"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"localhost"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
 
-<p>&lt;a href=https://api.matterport.com/api/accounts/graphiql/?operationName=getSDKKeys&amp;query=fragment%20keyInfo%20on%20SdkKey%7B%0A%20%20key%0A%20%20domains%7B%0A%20%20%20%20secureOnly%0A%20%20%20%20domain%0A%20%20%20%20port%0A%20%20%7D%0A%7D%0A%0Aquery%20getSDKKeys%7B%0A%20%20organization%7B%0A%20%20%20%20sdkKeys%7B%0A%20%20%20%20%20%20quota%0A%20%20%20%20%20%20used%0A%20%20%20%20%20%20remaining%0A%20%20%20%20%20%20keys%7B%20...keyInfo%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D" target="_blank"&gt;Try this query in our interactive console&lt;/a&gt;</p>
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=getSDKKeys&amp;query=fragment%20keyInfo%20on%20SdkKey%7B%0A%20%20key%0A%20%20domains%7B%0A%20%20%20%20secureOnly%0A%20%20%20%20domain%0A%20%20%20%20port%0A%20%20%7D%0A%7D%0A%0Aquery%20getSDKKeys%7B%0A%20%20organization%7B%0A%20%20%20%20sdkKeys%7B%0A%20%20%20%20%20%20quota%0A%20%20%20%20%20%20used%0A%20%20%20%20%20%20remaining%0A%20%20%20%20%20%20keys%7B%20...keyInfo%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D" target="_blank">Try this in our interactive console</a></p>
 
 </details>
+
 <details name="Add SDK Key">
-<summary>Add SDK Key</summary>
+  <summary>Add SDK Key</summary>
 
-<pre class="highlight"><code class="highlight">fragment sdkKey on SdkKey{
-  key
-  label
-  domains{
-    secureOnly
-    domain
-  }
-}
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fragment</span><span class="w"> </span><span class="n">sdkKey</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">SdkKey</span><span class="p">{</span><span class="w">
+  </span><span class="n">key</span><span class="w">
+  </span><span class="n">label</span><span class="w">
+  </span><span class="n">domains</span><span class="p">{</span><span class="w">
+    </span><span class="n">secureOnly</span><span class="w">
+    </span><span class="n">domain</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-mutation addSdkKey($label: String, $domains: [AddSdkDomain!]){
-  provisionSdkKey(
-    label: $label
-    domains: $domains
-  ){
-    ...sdkKey
-  }
-}
+</span><span class="k">mutation</span><span class="w"> </span><span class="n">addSdkKey</span><span class="p">(</span><span class="nv">$label</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="nv">$domains</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">AddSdkDomain</span><span class="p">!]){</span><span class="w">
+  </span><span class="n">provisionSdkKey</span><span class="p">(</span><span class="w">
+    </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="nv">$label</span><span class="w">
+    </span><span class="n">domains</span><span class="p">:</span><span class="w"> </span><span class="nv">$domains</span><span class="w">
+  </span><span class="p">){</span><span class="w">
+    </span><span class="p">...</span><span class="n">sdkKey</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-# variables
-{
-  "label": "My SDK Key",
-  "domains": [
-    {
-      "domain": "http://localhost",
-      "secureOnly": false,
-      "port": 8000
-    }
-  ]
-}
-</code></pre>
+</span><span class="c"># variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">label</span><span class="err">":</span><span class="w"> </span><span class="err">"</span><span class="n">My</span><span class="w"> </span><span class="n">SDK</span><span class="w"> </span><span class="n">Key</span><span class="err">"</span><span class="p">,</span><span class="w">
+  </span><span class="err">"</span><span class="n">domains</span><span class="err">":</span><span class="w"> </span><span class="err">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="err">"</span><span class="n">domain</span><span class="err">":</span><span class="w"> </span><span class="err">"</span><span class="n">http</span><span class="p">:</span><span class="err">//</span><span class="n">localhost</span><span class="err">"</span><span class="p">,</span><span class="w">
+      </span><span class="err">"</span><span class="n">secureOnly</span><span class="err">":</span><span class="w"> </span><span class="n">false</span><span class="p">,</span><span class="w">
+      </span><span class="err">"</span><span class="n">port</span><span class="err">":</span><span class="w"> </span><span class="err">8000</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="err">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
 
-<p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=addSdkKey&amp;query=fragment%20sdkKey%20on%20SdkKey%7B%0A%20%20key%0A%20%20label%0A%20%20domains%7B%0A%20%20%20%20secureOnly%0A%20%20%20%20domain%0A%20%20%7D%0A%7D%0A%0Amutation%20addSdkKey(%24label%3A%20String%2C%20%24domains%3A%20%5BAddSdkDomain!%5D)%7B%0A%20%20provisionSdkKey(%0A%20%20%20%20label%3A%20%24label%0A%20%20%20%20domains%3A%20%24domains%0A%20%20)%7B%0A%20%20%20%20...sdkKey%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22label%22%3A%20%22My%20SDK%20Key%22%2C%0A%20%20%22domains%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22domain%22%3A%20%22http%3A%2F%2Flocalhost%22%2C%0A%20%20%20%20%20%20%22secureOnly%22%3A%20false%2C%0A%20%20%20%20%20%20%22port%22%3A%208000%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=addSdkKey&amp;query=fragment%20sdkKey%20on%20SdkKey%7B%0A%20%20key%0A%20%20label%0A%20%20domains%7B%0A%20%20%20%20secureOnly%0A%20%20%20%20domain%0A%20%20%7D%0A%7D%0A%0Amutation%20addSdkKey(%24label%3A%20String%2C%20%24domains%3A%20%5BAddSdkDomain!%5D)%7B%0A%20%20provisionSdkKey(%0A%20%20%20%20label%3A%20%24label%0A%20%20%20%20domains%3A%20%24domains%0A%20%20)%7B%0A%20%20%20%20...sdkKey%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22label%22%3A%20%22My%20SDK%20Key%22%2C%0A%20%20%22domains%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22domain%22%3A%20%22http%3A%2F%2Flocalhost%22%2C%0A%20%20%20%20%20%20%22secureOnly%22%3A%20false%2C%0A%20%20%20%20%20%20%22port%22%3A%208000%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D" target="_blank">Try this in our interactive console</a></p>
 
 </details>
 <details name="Delete SDK Key">
-<summary>Delete SDK Key</summary>
+  <summary>Delete SDK Key</summary>
 
-<pre class="highlight"><code class="highlight">mutation removeSdkKey($key: ID!){
-  removeSdkKey(key: $key)
-}
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">removeSdkKey</span><span class="p">(</span><span class="nv">$key</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  </span><span class="n">removeSdkKey</span><span class="p">(</span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="nv">$key</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-# variables
+</span><span class="c"># variables</span><span class="w">
 
-{
-  "key": ""
-}
-</code></pre>
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">key</span><span class="err">":</span><span class="w"> </span><span class="err">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
 
-<p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=removeSdkKey&amp;query=mutation%20removeSdkKey(%24key%3A%20ID!)%7B%0A%20%20removeSdkKey(key%3A%20%24key)%0A%7D&amp;variables=%7B%0A%20%20%22key%22%3A%20%22%22%0A%7D" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=removeSdkKey&amp;query=mutation%20removeSdkKey(%24key%3A%20ID!)%7B%0A%20%20removeSdkKey(key%3A%20%24key)%0A%7D&amp;variables=%7B%0A%20%20%22key%22%3A%20%22%22%0A%7D" target="_blank">Try this in our interactive console</a></p>
 
 </details>
 <details name="Add domain to SDK key">
-<summary>Add domain to SDK key</summary>
+  <summary>Add domain to SDK key</summary>
 
-<pre class="highlight"><code class="highlight">mutation addDomain($key: ID!, $domainDetails: AddSdkDomain!){
-  addSdkDomain(key: $key, details: $domainDetails){
-    domain
-    secureOnly
-  }
-}
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">addDomain</span><span class="p">(</span><span class="nv">$key</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$domainDetails</span><span class="p">:</span><span class="w"> </span><span class="n">AddSdkDomain</span><span class="p">!){</span><span class="w">
+  </span><span class="n">addSdkDomain</span><span class="p">(</span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="nv">$key</span><span class="p">,</span><span class="w"> </span><span class="n">details</span><span class="p">:</span><span class="w"> </span><span class="nv">$domainDetails</span><span class="p">){</span><span class="w">
+    </span><span class="n">domain</span><span class="w">
+    </span><span class="n">secureOnly</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-# variables
+</span><span class="c"># variables</span><span class="w">
 
-{
-  "key": "",
-  "domainDetails": {
-    "domain": "http://localhost",
-    "secureOnly": false,
-    "port": 8000
-  }
-}
-</code></pre>
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">key</span><span class="err">":</span><span class="w"> </span><span class="err">""</span><span class="p">,</span><span class="w">
+  </span><span class="err">"</span><span class="n">domainDetails</span><span class="err">":</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">"</span><span class="n">domain</span><span class="err">":</span><span class="w"> </span><span class="err">"</span><span class="n">http</span><span class="p">:</span><span class="err">//</span><span class="n">localhost</span><span class="err">"</span><span class="p">,</span><span class="w">
+    </span><span class="err">"</span><span class="n">secureOnly</span><span class="err">":</span><span class="w"> </span><span class="n">false</span><span class="p">,</span><span class="w">
+    </span><span class="err">"</span><span class="n">port</span><span class="err">":</span><span class="w"> </span><span class="err">8000</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
 
-<p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=addDomain&amp;query=mutation%20addDomain(%24key%3A%20ID!%2C%20%24domainDetails%3A%20AddSdkDomain!)%7B%0A%20%20addSdkDomain(key%3A%20%24key%2C%20details%3A%20%24domainDetails)%7B%0A%20%20%20%20domain%0A%20%20%20%20secureOnly%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22key%22%3A%20%22%22%2C%0A%20%20%22domainDetails%22%3A%20%7B%0A%20%20%20%20%22domain%22%3A%20%22http%3A%2F%2Flocalhost%22%2C%0A%20%20%20%20%22secureOnly%22%3A%20false%2C%0A%20%20%20%20%22port%22%3A%208000%0A%20%20%7D%0A%7D" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=addDomain&amp;query=mutation%20addDomain(%24key%3A%20ID!%2C%20%24domainDetails%3A%20AddSdkDomain!)%7B%0A%20%20addSdkDomain(key%3A%20%24key%2C%20details%3A%20%24domainDetails)%7B%0A%20%20%20%20domain%0A%20%20%20%20secureOnly%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22key%22%3A%20%22%22%2C%0A%20%20%22domainDetails%22%3A%20%7B%0A%20%20%20%20%22domain%22%3A%20%22http%3A%2F%2Flocalhost%22%2C%0A%20%20%20%20%22secureOnly%22%3A%20false%2C%0A%20%20%20%20%22port%22%3A%208000%0A%20%20%7D%0A%7D" target="_blank">Try this in our interactive console</a></p>
 
 </details>
 <details name="Remove domain from SDK key">
-<summary>Remove domain from SDK key</summary>
+  <summary>Remove domain from SDK key</summary>
 
-<pre class="highlight"><code class="highlight">mutation removeDomain($key: ID!, $domainId: ID!){
-  removeSdkDomain(key: $key, domainId: $domainId)
-}
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">removeDomain</span><span class="p">(</span><span class="nv">$key</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$domainId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  </span><span class="n">removeSdkDomain</span><span class="p">(</span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="nv">$key</span><span class="p">,</span><span class="w"> </span><span class="n">domainId</span><span class="p">:</span><span class="w"> </span><span class="nv">$domainId</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-# variables
-{
-  "key": "",
-  "domainId": ""
-}
-</code></pre>
+</span><span class="c"># variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">key</span><span class="err">":</span><span class="w"> </span><span class="err">""</span><span class="p">,</span><span class="w">
+  </span><span class="err">"</span><span class="n">domainId</span><span class="err">":</span><span class="w"> </span><span class="err">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
 
-<p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=removeDomain&amp;query=mutation%20removeDomain(%24key%3A%20ID!%2C%20%24domainId%3A%20ID!)%7B%0A%20%20removeSdkDomain(key%3A%20%24key%2C%20domainId%3A%20%24domainId)%0A%7D&amp;variables=%7B%0A%20%20%22key%22%3A%20%22%22%2C%0A%20%20%22domainId%22%3A%20%22%22%0A%7D" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=removeDomain&amp;query=mutation%20removeDomain(%24key%3A%20ID!%2C%20%24domainId%3A%20ID!)%7B%0A%20%20removeSdkDomain(key%3A%20%24key%2C%20domainId%3A%20%24domainId)%0A%7D&amp;variables=%7B%0A%20%20%22key%22%3A%20%22%22%2C%0A%20%20%22domainId%22%3A%20%22%22%0A%7D" target="_blank">Try this in our interactive console</a></p>
 
 </details>
 <details name="Update domain on SDK key">
-<summary>Update domain on SDK key</summary>
+  <summary>Update domain on SDK key</summary>
 
-<pre class="highlight"><code class="highlight">mutation updateDomain($key: ID!, $domainId: ID!, $newInfo: PatchSdkDomain!){
-  patchSdkDomain(key: $key, domainId: $domainId, patch: $newInfo){
-    id
-    secureOnly
-    domain
-    port
-  }
-}
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">updateDomain</span><span class="p">(</span><span class="nv">$key</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$domainId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$newInfo</span><span class="p">:</span><span class="w"> </span><span class="n">PatchSdkDomain</span><span class="p">!){</span><span class="w">
+  </span><span class="n">patchSdkDomain</span><span class="p">(</span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="nv">$key</span><span class="p">,</span><span class="w"> </span><span class="n">domainId</span><span class="p">:</span><span class="w"> </span><span class="nv">$domainId</span><span class="p">,</span><span class="w"> </span><span class="n">patch</span><span class="p">:</span><span class="w"> </span><span class="nv">$newInfo</span><span class="p">){</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">secureOnly</span><span class="w">
+    </span><span class="n">domain</span><span class="w">
+    </span><span class="n">port</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-# variables
-{
-  "key": "",
-  "domainId": "",
-  "newInfo": {
-    "domain": "http://localhost",
-    "secureOnly": false,
-    "port": 6000
-  }
-}
-</code></pre>
+</span><span class="c"># variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">key</span><span class="err">":</span><span class="w"> </span><span class="err">""</span><span class="p">,</span><span class="w">
+  </span><span class="err">"</span><span class="n">domainId</span><span class="err">":</span><span class="w"> </span><span class="err">""</span><span class="p">,</span><span class="w">
+  </span><span class="err">"</span><span class="n">newInfo</span><span class="err">":</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">"</span><span class="n">domain</span><span class="err">":</span><span class="w"> </span><span class="err">"</span><span class="n">http</span><span class="p">:</span><span class="err">//</span><span class="n">localhost</span><span class="err">"</span><span class="p">,</span><span class="w">
+    </span><span class="err">"</span><span class="n">secureOnly</span><span class="err">":</span><span class="w"> </span><span class="n">false</span><span class="p">,</span><span class="w">
+    </span><span class="err">"</span><span class="n">port</span><span class="err">":</span><span class="w"> </span><span class="err">6000</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
 
-<p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=updateDomain&amp;query=mutation%20updateDomain(%24key%3A%20ID!%2C%20%24domainId%3A%20ID!%2C%20%24newInfo%3A%20PatchSdkDomain!)%7B%0A%20%20patchSdkDomain(key%3A%20%24key%2C%20domainId%3A%20%24domainId%2C%20patch%3A%20%24newInfo)%7B%0A%20%20%20%20id%0A%20%20%20%20secureOnly%0A%20%20%20%20domain%0A%20%20%20%20port%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22key%22%3A%20%22%22%2C%0A%20%20%22domainId%22%3A%20%22%22%2C%0A%20%20%22newInfo%22%3A%20%7B%0A%20%20%20%20%22domain%22%3A%20%22http%3A%2F%2Flocalhost%22%2C%0A%20%20%20%20%22secureOnly%22%3A%20false%2C%0A%20%20%20%20%22port%22%3A%206000%0A%20%20%7D%0A%7D" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=updateDomain&amp;query=mutation%20updateDomain(%24key%3A%20ID!%2C%20%24domainId%3A%20ID!%2C%20%24newInfo%3A%20PatchSdkDomain!)%7B%0A%20%20patchSdkDomain(key%3A%20%24key%2C%20domainId%3A%20%24domainId%2C%20patch%3A%20%24newInfo)%7B%0A%20%20%20%20id%0A%20%20%20%20secureOnly%0A%20%20%20%20domain%0A%20%20%20%20port%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22key%22%3A%20%22%22%2C%0A%20%20%22domainId%22%3A%20%22%22%2C%0A%20%20%22newInfo%22%3A%20%7B%0A%20%20%20%20%22domain%22%3A%20%22http%3A%2F%2Flocalhost%22%2C%0A%20%20%20%20%22secureOnly%22%3A%20false%2C%0A%20%20%20%20%22port%22%3A%206000%0A%20%20%7D%0A%7D" target="_blank">Try this in our interactive console</a></p>
 
 </details>
 
@@ -1417,7 +1410,7 @@ mutation addSdkKey($label: String, $domains: [AddSdkDomain!]){
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: May 25, 2023 <br />
+ Site last generated: Jun 6, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

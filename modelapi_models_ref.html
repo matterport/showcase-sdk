@@ -740,6 +740,13 @@
           
           
           
+          
+          
+          <li><a title="Private Model Embed" href="/showcase-sdk/oauth_private_model_embed.html">Private Model Embed</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -866,31 +873,31 @@ noResultsText: '<li><div>No results found.<div></li>',
       <td><strong>values</strong></td>
     </tr>
     <tr>
-      <td>include</td>
+      <td><code class="language-plaintext highlighter-rouge">include</code></td>
       <td>no</td>
       <td> </td>
       <td>demo, inactive</td>
     </tr>
     <tr>
-      <td>query</td>
+      <td><code class="language-plaintext highlighter-rouge">query</code></td>
       <td>no</td>
       <td>*</td>
-      <td>* for all, or <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.4/query-dsl-query-string-query.html#query-string-syntax">ES Syntax</a></td>
+      <td>* for all, or <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.4/query-dsl-query-string-query.html#query-string-syntax" target="_blank">ES Syntax</a></td>
     </tr>
     <tr>
-      <td>sortBy</td>
+      <td><code class="language-plaintext highlighter-rouge">sortBy</code></td>
       <td>no</td>
-      <td>[{“field”: created_time, order: desc}</td>
-      <td>{“field” : [any field], order: ASC or DESC}</td>
+      <td>[<code class="language-plaintext highlighter-rouge">{"field": created_time, order: desc}|{"field" : \[any field\], order: ASC or DESC}</code></td>
+      <td> </td>
     </tr>
     <tr>
-      <td>pageSize</td>
+      <td><code class="language-plaintext highlighter-rouge">pageSize</code></td>
       <td>no</td>
       <td>10</td>
       <td>1 - 1000</td>
     </tr>
     <tr>
-      <td>offset</td>
+      <td><code class="language-plaintext highlighter-rouge">offset</code></td>
       <td>no</td>
       <td>null</td>
       <td>Any value returned from the nextOffset from the previous result</td>
@@ -907,13 +914,13 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>For a complete list of fields returned in ‘results’, <a href="https://static.matterport.com/api-doc/2023.04.4-main-gdf30203/reference/graphdoc/model/modelsearchresult.doc.html">click here</a></p>
+<p>For a complete list of fields returned in ‘results’, <a href="https://static.matterport.com/api-doc/2023.04.4-main-gdf30203/reference/graphdoc/model/modelsearchresult.doc.html" target="_blank">click here</a></p>
 
 <h2 id="building-powerful-query-strings">Building Powerful <em>query</em> strings</h2>
 
-<p>Any field defined in <strong>ModelSearchResult</strong> may be included as a keyword in the models query.</p>
+<p>Any field defined in <strong><code class="language-plaintext highlighter-rouge">ModelSearchResult</code></strong> may be included as a keyword in the models query.</p>
 
-<p>For example “name: Demo” would search for models with the word Demo in the name. A search for “mattertags.labels: kitchen” would search for any models that have at least one mattertag with the word kitchen in the label.</p>
+<p>For example “<code class="language-plaintext highlighter-rouge">name: Demo</code>” would search for models with the word Demo in the name. A search for “<code class="language-plaintext highlighter-rouge">mattertags.labels: kitchen</code>” would search for any models that have at least one mattertag with the word kitchen in the label.</p>
 
 <h2 id="sample-queries">Sample Queries</h2>
 
@@ -964,304 +971,254 @@ noResultsText: '<li><div>No results found.<div></li>',
 <table>
   <tbody>
     <tr>
-      <td>Field</td>
-      <td>Default</td>
-      <td>Default Search FieldI</td>
-      <td>Values</td>
+      <td><strong>Field</strong></td>
+      <td><strong>Default</strong></td>
+      <td><strong>Type</strong></td>
     </tr>
     <tr>
       <td>id</td>
       <td>*</td>
-      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>internalId</td>
       <td>*</td>
       <td> </td>
-      <td> </td>
     </tr>
     <tr>
       <td>created</td>
       <td>*</td>
       <td>DateTime</td>
-      <td> </td>
     </tr>
     <tr>
       <td>modified</td>
       <td>*</td>
       <td>DateTime</td>
-      <td> </td>
     </tr>
     <tr>
       <td>name</td>
       <td>*</td>
       <td>Text</td>
-      <td> </td>
     </tr>
     <tr>
       <td>description</td>
       <td>*</td>
       <td>Text</td>
-      <td> </td>
     </tr>
     <tr>
       <td>visibility</td>
       <td>*</td>
       <td>public, private</td>
-      <td> </td>
     </tr>
     <tr>
       <td>demo</td>
       <td>false</td>
       <td>true, false</td>
-      <td> </td>
     </tr>
     <tr>
       <td>address</td>
       <td>*</td>
       <td>Text</td>
-      <td> </td>
     </tr>
     <tr>
       <td>address.streetAddressLines</td>
       <td>Y</td>
       <td>Text</td>
-      <td> </td>
     </tr>
     <tr>
       <td>address.administrativeArea</td>
       <td>Y</td>
       <td>Text</td>
-      <td> </td>
     </tr>
     <tr>
       <td>address.locality</td>
       <td>Y</td>
       <td>Text</td>
-      <td> </td>
     </tr>
     <tr>
       <td>address.dependentLocality</td>
       <td>Y</td>
       <td>Text</td>
-      <td> </td>
     </tr>
     <tr>
       <td>address.countryName</td>
       <td>Y</td>
       <td>Text</td>
-      <td>Not using country code</td>
     </tr>
     <tr>
       <td>address.postalCode</td>
       <td>N</td>
       <td>Keyword</td>
-      <td> </td>
     </tr>
     <tr>
       <td>address.countryCode</td>
       <td>**</td>
       <td>Keyword</td>
-      <td> </td>
     </tr>
     <tr>
       <td>geolocation</td>
       <td>N</td>
       <td>Geo-Point</td>
-      <td> </td>
     </tr>
     <tr>
       <td>floors.count</td>
       <td>N</td>
       <td>Integer</td>
-      <td> </td>
     </tr>
     <tr>
       <td>floors.tags</td>
       <td>Y</td>
       <td>Set Keyword</td>
-      <td> </td>
     </tr>
     <tr>
       <td>rooms.count</td>
       <td>N</td>
       <td>Integer</td>
-      <td> </td>
     </tr>
     <tr>
       <td>rooms.label</td>
       <td>Y</td>
       <td>Text</td>
-      <td> </td>
     </tr>
     <tr>
       <td>rooms.tags</td>
       <td>Y</td>
       <td>Set Keyword</td>
-      <td> </td>
     </tr>
     <tr>
       <td>mattertags.count</td>
       <td>N</td>
       <td>Integer</td>
-      <td> </td>
     </tr>
     <tr>
       <td>mattertags.label</td>
       <td>Y</td>
       <td>Set Text</td>
-      <td> </td>
     </tr>
     <tr>
       <td>mattertags.description</td>
       <td>Y</td>
       <td>Set Text</td>
-      <td> </td>
     </tr>
     <tr>
       <td>mattertags.mediaType</td>
       <td>Y</td>
       <td>Set Keyword</td>
-      <td> </td>
     </tr>
     <tr>
       <td>measurements.count</td>
       <td>N</td>
       <td>Integer</td>
-      <td> </td>
     </tr>
     <tr>
       <td>measurements.label</td>
       <td>Y</td>
       <td>Set Text</td>
-      <td> </td>
     </tr>
     <tr>
       <td>mls.id</td>
       <td>Y</td>
       <td>Text</td>
-      <td> </td>
     </tr>
     <tr>
       <td>mls.name</td>
       <td>Y</td>
       <td>Text</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.panos.count</td>
       <td>N</td>
       <td>Integer</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.panos.format</td>
       <td>N</td>
       <td>Set Keyword</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.panos.resolution</td>
       <td>N</td>
       <td>Set Keyword</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.clips.count</td>
       <td>N</td>
       <td>Integer</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.clips.format</td>
       <td>N</td>
       <td>Set Keyword</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.clips.label</td>
       <td>Y</td>
       <td>Set Text</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.photos.count</td>
       <td>N</td>
       <td>Integer</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.photos.format</td>
       <td>N</td>
       <td>Set Keyword</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.photos.label</td>
       <td>Y</td>
       <td>Set Text</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.photos.resolutions</td>
       <td>N</td>
       <td>Set Keyword</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.meshes.count</td>
       <td>N</td>
       <td>Integer</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.meshes.format</td>
       <td>N</td>
       <td>Set Keyword</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.textures.count</td>
       <td>N</td>
       <td>Integer</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.textures.format</td>
       <td>N</td>
       <td>Set Keyword</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.locations.count</td>
       <td>N</td>
       <td>Integer</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.locations.tags</td>
       <td>Y</td>
-      <td>Set Keyword	Might consider doing this one as text?</td>
-      <td> </td>
+      <td>Set Keyword</td>
     </tr>
     <tr>
       <td>assets.panoLocations.count</td>
       <td>N</td>
       <td>Integer</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.panoLocations.placement</td>
       <td>N</td>
       <td>Set Keyword</td>
-      <td> </td>
     </tr>
     <tr>
       <td>assets.panoLocations.variant</td>
       <td>N</td>
       <td>Set Keyword</td>
-      <td> </td>
     </tr>
   </tbody>
 </table>
@@ -1283,7 +1240,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: May 25, 2023 <br />
+ Site last generated: Jun 6, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

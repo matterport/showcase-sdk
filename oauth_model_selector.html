@@ -740,6 +740,13 @@
           
           
           
+          
+          
+          <li><a title="Private Model Embed" href="/showcase-sdk/oauth_private_model_embed.html">Private Model Embed</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -850,7 +857,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>Applications can launch this in an iframe or WebView using the following URL:</p>
 
-<p><strong>https://authn.matterport.com/model-select?oauthToken=&lt;access token&gt;</strong></p>
+<p><strong><code class="language-plaintext highlighter-rouge">https://authn.matterport.com/model-select?oauthToken=&lt;access token&gt;</code></strong></p>
 
 <table>
   <tbody>
@@ -859,15 +866,15 @@ noResultsText: '<li><div>No results found.<div></li>',
       <td><strong>Value</strong></td>
     </tr>
     <tr>
-      <td>oauthToken</td>
+      <td><code class="language-plaintext highlighter-rouge">oauthToken</code></td>
       <td>The access_token received from the authentication server</td>
     </tr>
     <tr>
-      <td>multiselect</td>
+      <td><code class="language-plaintext highlighter-rouge">multiselect</code></td>
       <td><strong>true</strong> or <strong>false</strong> to allow the end user to select multiple models.  Models are returned with a comma-delimited list of model ids</td>
     </tr>
     <tr>
-      <td>approveAll</td>
+      <td><code class="language-plaintext highlighter-rouge">approveAll</code></td>
       <td><strong>true</strong> or <strong>false</strong> value that allows the user to denote all models to be selected. Returned models value of *</td>
     </tr>
   </tbody>
@@ -881,14 +888,15 @@ noResultsText: '<li><div>No results found.<div></li>',
       <td><strong>Approve All</strong></td>
     </tr>
     <tr>
-      <td><img src="images/OAuth_Model-Selector.jpg" style="width: 200px" border="1" /></td>
-      <td><img src="images/OAuth_Multi-Select.jpg" style="width: 200px" border="1" /></td>
-      <td><img src="images/OAuth_Select_All.jpg" style="width: 200px" border="1" /></td>
+      <td><img src="https://matterport.github.io/showcase-sdk//images/OAuth_Model-Selector.jpg" alt="OAuth Model Selector" title="OAuth Model Selector" /></td>
+      <td><img src="https://matterport.github.io/showcase-sdk//images/OAuth_Multi-Select.jpg" alt="OAuth Multiple Model Selector" title="OAuth Multiple-Model Selector" /></td>
+      <td><img src="https://matterport.github.io/showcase-sdk//images/OAuth_Select_All.jpg" alt="OAuth Select All Models" title="OAuth Select All Models" /></td>
     </tr>
   </tbody>
 </table>
 
 <h2 id="sample-responses">Sample Responses</h2>
+
 <p>The model selector will trigger two events of importance using window.parent.postMessage:</p>
 
 <p><strong>Successful response:</strong></p>
@@ -925,7 +933,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: May 25, 2023 <br />
+ Site last generated: Jun 6, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

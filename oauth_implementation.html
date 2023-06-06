@@ -740,6 +740,13 @@
           
           
           
+          
+          
+          <li><a title="Private Model Embed" href="/showcase-sdk/oauth_private_model_embed.html">Private Model Embed</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -848,10 +855,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>On a high level, OAuth workflow for the application developer is the following:</p>
 
-<p align="center">
-  <img src="images/Oauth-Explicit-Flow.jpeg" border="1" /><br />
-  <em>Matterport OAuth Explicit Flow</em>
-</p>
+<p><img src="images/Oauth-Explicit-Flow.jpeg" alt="Matterport OAuth Explicit Flow" title="OAuth Explicit Flow" /></p>
 
 <ol>
   <li>The <strong>OAuth app developer</strong> registers their app with Matterport and configures a redirect URI and Scopes.</li>
@@ -861,7 +865,7 @@ noResultsText: '<li><div>No results found.<div></li>',
   <li>The <strong>end used</strong> authorizes the app to access their data by providing their Matterport username and password to the <strong>Matterport Authorization Server</strong>.</li>
   <li>The <strong>Matterport Authorization Server</strong> provides an authorization code and refresh token to the redirect URI and the modal window closes.</li>
   <li>The <strong>OAuth Application Redirect Page</strong> uses the authorization code to acquire an initial access token and a refresh token with a 30 day expiration.</li>
-  <li>The <strong>OAuth Application</strong> receives the access token and expiration time.  The refresh_token remains stored on the server side.  Subsequent access tokens can be acquired using the refresh token on the <em>OAuth Application Server</em>, without end user input.</li>
+  <li>The <strong>OAuth Application</strong> receives the access token and expiration time.  The <strong><code class="language-plaintext highlighter-rouge">refresh_token</code></strong> remains stored on the server side.  Subsequent access tokens can be acquired using the refresh token on the <em>OAuth Application Server</em>, without end user input.</li>
   <li>Potential Use: The <strong>OAuth Application</strong> uses the access token as a Bearer Token to display private models.</li>
   <li>Potential Use: The <strong>OAuth Application</strong> can then use the access token to authenticate API calls.</li>
 </ol>
@@ -891,7 +895,7 @@ noResultsText: '<li><div>No results found.<div></li>',
     <tr>
       <td>response_type</td>
       <td>Yes</td>
-      <td><strong>code</strong> - Return an Authorization Code.<br /><strong>token</strong> - Return an access_token (for implicit flow OAuth applications only)</td>
+      <td><strong>code</strong> - Return an Authorization Code.<br /><strong>token</strong> - Return an <strong><code class="language-plaintext highlighter-rouge">access_token</code></strong> (for implicit flow OAuth applications only)</td>
     </tr>
     <tr>
       <td>redirect_uri</td>
@@ -910,9 +914,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>The user will then be presented with the opportunity to view the scopes requested and decide whether they want to authorize the application.</p>
 
-<p align="center">
-  <img src="images/OAuth_Authorization_Prompt.jpg" border="1" />
-</p>
+<p><img src="images/OAuth_Authorization_Prompt.jpg" alt="OAuth Authorization Prompt" title="OAuth Authorization Prompt" /></p>
 
 <h2 id="authorization-code-grant">Authorization Code Grant</h2>
 
@@ -938,37 +940,37 @@ noResultsText: '<li><div>No results found.<div></li>',
       <td><strong>Value</strong></td>
     </tr>
     <tr>
-      <td>grant_type</td>
+      <td><code class="language-plaintext highlighter-rouge">grant_type</code></td>
       <td>Yes</td>
       <td>authorization_code</td>
     </tr>
     <tr>
-      <td>code</td>
+      <td><code class="language-plaintext highlighter-rouge">code</code></td>
       <td>Yes</td>
       <td>The authorization code received when the user authorized the application.</td>
     </tr>
     <tr>
-      <td>scope</td>
+      <td><code class="language-plaintext highlighter-rouge">scope</code></td>
       <td>Yes</td>
       <td>A space-delimited list of OAuth scopes being requested. This should match with what the user authorized.</td>
     </tr>
     <tr>
-      <td>client_id</td>
+      <td><code class="language-plaintext highlighter-rouge">client_id</code></td>
       <td>Yes</td>
       <td>The client ID.</td>
     </tr>
     <tr>
-      <td>client_secret</td>
+      <td><code class="language-plaintext highlighter-rouge">client_secret</code></td>
       <td>Yes</td>
       <td>The client secret.</td>
     </tr>
     <tr>
-      <td>redirect_uri</td>
+      <td><code class="language-plaintext highlighter-rouge">redirect_uri</code></td>
       <td>No</td>
       <td>Only necessary if the was not provided in the Authorize query string.</td>
     </tr>
     <tr>
-      <td>expires_in</td>
+      <td><code class="language-plaintext highlighter-rouge">expires_in</code></td>
       <td>No</td>
       <td>Duration expression 15m, 60s, etc. Optionally set the expiration of the returned token. Duration is maxed to the app’s configured token expiration time.</td>
     </tr>
@@ -985,21 +987,19 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>The <strong>access_token</strong> value should then be used to access the Matterport API directly, in the Authorization header, using the standard OAuth format of “Authorization: Bearer &lt;token&gt;”.</p>
+<p>The <strong><code class="language-plaintext highlighter-rouge">access_token</code></strong> value should then be used to access the Matterport API directly, in the Authorization header, using the standard OAuth format of “<code class="language-plaintext highlighter-rouge">Authorization: Bearer &lt;token&gt;</code>”.</p>
 
-<p>The <strong>refresh_token</strong> value can be used to request a new access token when the expiration time is near  By default, refresh tokens are valid for 30 days.</p>
+<p>The <strong><code class="language-plaintext highlighter-rouge">refresh_token</code></strong> value can be used to request a new access token when the expiration time is near  By default, refresh tokens are valid for 30 days.</p>
 
-<p>The <strong>expires_in</strong> value indicates how long the access token is valid in seconds. By default, this is 1 day.</p>
+<p>The <strong><code class="language-plaintext highlighter-rouge">expires_in</code></strong> value indicates how long the access token is valid in seconds. By default, this is 1 day.</p>
 
 <p>Your application should store these values along with the current time so that your application can know when the token will expire.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Be sure to not expose the refresh_token to the end user or store it in their browser as this presents security risks.  The refresh_token should be stored and transmitted securely on the server side.<br /><br />
-
-The access_token must be transmitted securely, but is safe to use in trusted remote applications, such as browsers or mobile apps.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Be sure to not expose the refresh_token to the end user or store it in their browser as this presents security risks.  The refresh_token should be stored and transmitted securely on the server side.<br /><br />The access_token must be transmitted securely, but is safe to use in trusted remote applications, such as browsers or mobile apps.</div>
 
 <h2 id="retrieve-a-new-access-token-using-a-refresh-token">Retrieve a New Access Token Using a Refresh Token</h2>
 
-<p>To request a new access token, make a server-side HTTP POST request with a Content-Type of application/x-www-form-urlencoded to: <strong>https://api.matterport.com/api/oauth/token</strong></p>
+<p>To request a new access token, make a server-side HTTP POST request with a Content-Type of application/x-www-form-urlencoded to: <strong><code class="language-plaintext highlighter-rouge">https://api.matterport.com/api/oauth/token</code></strong></p>
 
 <table>
   <tbody>
@@ -1008,19 +1008,19 @@ The access_token must be transmitted securely, but is safe to use in trusted rem
       <td><strong>Value</strong></td>
     </tr>
     <tr>
-      <td>grant_type</td>
+      <td><code class="language-plaintext highlighter-rouge">grant_type</code></td>
       <td>refresh_token</td>
     </tr>
     <tr>
-      <td>refresh_token</td>
+      <td><code class="language-plaintext highlighter-rouge">refresh_token</code></td>
       <td>The refresh token generated using the authorization code in the previous step.</td>
     </tr>
     <tr>
-      <td>client_id</td>
+      <td><code class="language-plaintext highlighter-rouge">client_id</code></td>
       <td>The client ID.</td>
     </tr>
     <tr>
-      <td>client_secret</td>
+      <td><code class="language-plaintext highlighter-rouge">client_secret</code></td>
       <td>The client secret.</td>
     </tr>
   </tbody>
@@ -1039,7 +1039,7 @@ The access_token must be transmitted securely, but is safe to use in trusted rem
 
 <p>The Matterport user who granted access or any administrators for the organization that access was granted to can revoke access at any time, in which case any active tokens will expire and the refresh token will no longer be allowed to generate new access tokens.</p>
 
-<p>In this case, the request to generate a new access token using the revoked refresh token will return an invalid_grant error. The server should discard this refresh token and can prompt the user with a new authorization code flow to attempt to regain access.</p>
+<p>In this case, the request to generate a new access token using the revoked refresh token will return an <code class="language-plaintext highlighter-rouge">invalid_grant</code> error. The server should discard this refresh token and can prompt the user with a new authorization code flow to attempt to regain access.</p>
 
 <p>Sample response (HTTP 400):</p>
 
@@ -1064,7 +1064,7 @@ The access_token must be transmitted securely, but is safe to use in trusted rem
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: May 25, 2023 <br />
+ Site last generated: Jun 6, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

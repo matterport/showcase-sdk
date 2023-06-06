@@ -478,10 +478,6 @@
 
 
 
-
-
-
-
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -490,6 +486,10 @@
 "summary": ""
 }
 ,
+
+
+
+
 
 
 
@@ -949,6 +949,17 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/oauth_model_selector.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Private Model Embed Integration Guide",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/oauth_private_model_embed.html",
 "summary": ""
 }
 ,

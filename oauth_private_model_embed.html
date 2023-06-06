@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Reference Documentation Summary | Matterport Developers</title>
+<title>Private Model Embed Integration Guide | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -129,7 +129,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Reference Documentation Summary page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Private Model Embed Integration Guide page: ' + window.location.href;">Feedback</a>
           </div>
         </div>
       </div>
@@ -194,7 +194,7 @@
           
           
           
-          <li class="active"><a title="Reference Docs Summary" href="/showcase-sdk/sdk_reference_summary.html">Reference Docs Summary</a></li>
+          <li><a title="Reference Docs Summary" href="/showcase-sdk/sdk_reference_summary.html">Reference Docs Summary</a></li>
           
           
           
@@ -742,7 +742,7 @@
           
           
           
-          <li><a title="Private Model Embed" href="/showcase-sdk/oauth_private_model_embed.html">Private Model Embed</a></li>
+          <li class="active"><a title="Private Model Embed" href="/showcase-sdk/oauth_private_model_embed.html">Private Model Embed</a></li>
           
           
           
@@ -814,7 +814,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="Reference Documentation Summary">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Private Model Embed Integration Guide">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -829,7 +829,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">Reference Documentation Summary</h1>
+   <h1 class="post-title-main">Private Model Embed Integration Guide</h1>
 </div>
 
 
@@ -839,92 +839,172 @@ noResultsText: '<li><div>No results found.<div></li>',
    
 
     
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-  
-});
-</script>
-
-<div id="toc"></div>
-
-    
 
 
     
 
-   <h2 id="explore-the-reference-docs">Explore the Reference Docs</h2>
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Private Model Embed (PME) is currently only available to Enterprise Customers.  If you’re interested in using Private Model Embed, please reach out to your Enterprise Account Manager.</div>
 
-<p>We’ve organized our <a href="docs/reference/current/index.html">SDK reference docs</a> around modules (features) within 3D Showcase. If you’re new to the SDK docs, here’s a short description of each module.</p>
+<h2 id="introduction">Introduction</h2>
 
-<p>The SDK Bundle provides an additional namespace, the <a href="docs/reference/current/modules/scene.html">Scene</a> namespace, to the standard SDK.</p>
+<p>Private Model Embed (PME) is a solution based on a client credentials OAuth flow to securely embed private models within your organization portals instead of viewing them in the Matterport Cloud. PME allows many trusted users on your intranet, for instance, to conveniently access a private space without logging into Matterport.</p>
+
+<p>Without PME, Showcase share URLs can be embedded within a webpage only if they are unlisted or public. Private Model Embed (PME) allows for the generation of a timed-access URL that can be embedded within an external webpage, all while keeping the model in a private state.</p>
+
+<h2 id="before-you-begin">Before You Begin</h2>
+
+<p>To use PME, your organization must be on an Enterprise subscription and enabled for PME use. To learn more about enablement, <a href="https://matterport.com/contact-us" target="_blank">contact our sales team</a>.</p>
+
+<h2 id="integration-with-showcase-sdk">Integration with Showcase SDK</h2>
+
+<p>Private Model Embed (PME) is currently only compatible with the SDK for Embeds, not with the SDK Bundle.  For inquiries about using Private Model Embed with the SDK Bundle or WebComponent, please contact <a href="mailto:developer@matterport.com">Developer Support</a>.</p>
+
+<h2 id="application-registration">Application Registration</h2>
+
+<p>After your organization has been enabled for PME, the first step is to regenerate the client secret for the OAuth application. You can do this by logging into Matterport Cloud (<a href="https://my.matterport.com" target="_blank">my.matterport.com</a>) and going to Settings &gt; Developer Tools &gt; click the Reset secret button.</p>
+
+<p align="center">
+  <img src="images/PME-Application-Registration.jpg" border="1" /><br />
+  <em>Note the client ID and the new secret, as these will be used by the application to generate tokens and links.</em>
+</p>
+
+<h2 id="application-integration">Application Integration</h2>
+
+<p>In this section, we’ll go over authorizing to the Matterport API, Generating a Private Link and Revoking a private access token.</p>
+
+<h2 id="authorizing-to-the-matterport-api">Authorizing to the Matterport API</h2>
+
+<p>The first step for an application using PME is to procure an OAuth bearer token for use in calling the Model GraphQL API. To acquire an access token, a POST request will need to be made to the following endpoint with the provided body fields and headers:</p>
+
+<p><code class="language-plaintext highlighter-rouge">https://api.matterport.com/api/oauth/token</code></p>
 
 <table>
-  <thead>
-    <tr>
-      <th style="text-align: center">Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><a href="docs/reference/current/index.html">Globals</a></td>
-      <td>Things related to the entire SDK, including subscribing (listening) and unsubscribing to events.</td>
+      <td><strong>Header Field</strong></td>
+      <td><strong>Value</strong></td>
     </tr>
     <tr>
-      <td style="text-align: center"><a href="docs/reference/current/modules/camera.html">Camera</a></td>
-      <td>The end-user’s view and what they currently see.</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="docs/reference/current/modules/floor.html">Floor</a></td>
-      <td>How many floors in space and moving between floors.</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="docs/reference/current/modules/mattertag.html">Mattertag</a></td>
-      <td>Get and read content from Mattertag™ Posts.</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="docs/reference/current/modules/mode.html">Mode</a></td>
-      <td>Related to the end-user’s current viewing mode (Dollhouse, Floorplan, Inside View, etc)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="docs/reference/current/modules/model.html">Model</a></td>
-      <td>Related to the metadata of the Matterport Space as a whole</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="docs/reference/current/modules/sweep.html">Sweep</a></td>
-      <td>Moving to a specific sweep/pano within the entire space</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="docs/reference/current/modules/tour.html">Tour</a></td>
-      <td>Related to the Highlight Reel and Guided Tour functionality</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="docs/reference/current/modules/scene.html">Scene</a></td>
-      <td>Get direct access to the 3d engine, renderer, scene graph and more</td>
+      <td>Content-Type</td>
+      <td><code class="language-plaintext highlighter-rouge">application/x-www-form-urlencoded</code></td>
     </tr>
   </tbody>
 </table>
 
-<p>Within each module, the reference docs are organized in this way:</p>
-<ul>
-  <li><strong>Enumerations</strong> - Typically these are events that you can listen to. Enums also include values of specific parameters for your actions.</li>
-  <li><strong>Types</strong> - Definitions of objects and the primitives that they contain. These objects are used in the actions below.</li>
-  <li><strong>Functions</strong> - Actions you can execute. Actions typically show the user something new or otherwise change the state of 3D Showcase.</li>
-</ul>
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Post Body Field</strong></td>
+      <td><strong>Value</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">grant_type</code></td>
+      <td>client_credentials</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">client_id</code></td>
+      <td>OAuth App ID.  You can find this in the Matterport Account Settings</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">client_secret</code></td>
+      <td>OAuth App secret ID.  This is shown once after regenerating the secret ID in the Matterport Account Settings</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Here is an example cURL request:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.matterport.com/api/oauth/token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/x-www-form-urlencoded'</span> <span class="se">\</span>
+<span class="nt">--data-urlencode</span> <span class="s1">'grant_type=client_credentials'</span> <span class="se">\</span>
+<span class="nt">--data-urlencode</span> <span class="s1">'client_id=pf332d0m3ce7mr1tb6hah2wdb'</span> <span class="se">\</span>
+<span class="nt">--data-urlencode</span> <span class="s1">'client_secret=d2e1be0f23441c5aa04efc76a7a93eedeb7af172036cf68ae835fd83e33df82c'</span>  
+</code></pre></div></div>
+
+<p>Sample response:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> 
+     </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ut4dp7u0yq1gd15kccp176r5d"</span><span class="p">,</span><span class="w"> 
+     </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span><span class="w"> 
+     </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">3599</span><span class="p">,</span><span class="w"> 
+     </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ViewPublic ViewDetails"</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The <strong><code class="language-plaintext highlighter-rouge">access_token</code></strong> is then used in the Authorization header for the GraphQL request.</p>
+
+<h2 id="generating-a-private-link">Generating a Private Link</h2>
+
+<p>Using the access token procured in the last step, the Authorization HTTP header should be set to <strong><code class="language-plaintext highlighter-rouge">Bearer ut4dp7u0yq1gd15kccp176r5d</code></strong> to authorize GraphQL calls. The access token can be used to list out the organization’s models or be used with the interactive Model Picker.</p>
+
+<p>Then a GraphQL mutation like the following can be issued:</p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">createLink</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+   </span><span class="n">createPrivateModelEmbedLink</span><span class="p">(</span><span class="w"> 
+      </span><span class="n">modelId</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyHDFKzPzvN"</span><span class="w"> </span><span class="c"># The ID of the model to generate the link for</span><span class="w">
+      </span><span class="n">clientId</span><span class="p">:</span><span class="w"> </span><span class="s2">"pf332d0m3ce7mr1tb6hah2wdb"</span><span class="w"> 
+      </span><span class="n">clientSecret</span><span class="p">:</span><span class="w"> </span><span class="s2">"d2e1be0f23441c5aa04efc76a7a93eedeb7af172036cf68ae835fd83e33df82c"</span><span class="w">
+      </span><span class="n">validFor</span><span class="p">:</span><span class="w"> </span><span class="s2">"10m"</span><span class="w"> 
+   </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+      </span><span class="n">accessToken</span><span class="w"> 
+      </span><span class="n">application</span><span class="w"> 
+      </span><span class="n">link</span><span class="w"> 
+      </span><span class="n">validUntil</span><span class="w"> 
+   </span><span class="p">}</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20createLink(%24modelId%3A%20ID!%2C%20%24clientId%3A%20ID!%2C%20%24clientSecret%3A%20String!%2C%20%24validFor%3A%20Duration)%7B%0A%20%20createPrivateModelEmbedLink(%0A%20%20%20%20modelId%3A%20%24modelId%20%23%20The%20ID%20of%20the%20model%20to%20generate%20the%20link%20for%0A%20%20%20%20clientId%3A%20%24clientId%0A%20%20%20%20clientSecret%3A%20%24clientSecret%0A%20%20%20%20validFor%3A%20%24validFor%0A%20%20)%20%7B%0A%20%20%20%20accessToken%0A%20%20%20%20application%0A%20%20%20%20link%0A%20%20%20%20validUntil%0A%20%20%7D%0A%7D&amp;operationName=createLink&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%2C%0A%20%20%22clientId%22%3A%20%22%22%2C%0A%20%20%22clientSecret%22%3A%20%22%22%2C%0A%20%20%22validFor%22%3A%20%22%22%0A%7D" target="_blank">Try this query in our interactive console</a></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">link</code> field in the response will be a fully formed URL that can be embedded in a page using an <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code>.</p>
+
+<p>Sample response:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> 
+   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+     </span><span class="nl">"createPrivateModelEmbedLink"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+       </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4bizw5azqzf40986fwm092bra"</span><span class="p">,</span><span class="w"> 
+       </span><span class="nl">"application"</span><span class="p">:</span><span class="w"> </span><span class="s2">"showcase"</span><span class="p">,</span><span class="w"> 
+       </span><span class="nl">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://my.matterport.com/show?m=yyHDFKzPzvN&amp;auth=Bearer+4bizw5azqzf40986fwm092bra"</span><span class="p">,</span><span class="w"> 
+       </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-06-03T00:33:13Z"</span><span class="w"> 
+      </span><span class="p">}</span><span class="w"> 
+   </span><span class="p">}</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="revoking-a-private-link-access-token">Revoking a Private Link Access Token</h2>
+
+<p>If for some reason an access token needs to be revoked before it’s expiration time, an additional GraphQL mutation is available for this purpose:</p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">deleteToken</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+   </span><span class="n">deletePrivateModelEmbedToken</span><span class="p">(</span><span class="w"> 
+      </span><span class="n">clientId</span><span class="p">:</span><span class="w"> </span><span class="s2">"pf332d0m3ce7mr1tb6hah2wdb"</span><span class="w"> 
+      </span><span class="n">clientSecret</span><span class="p">:</span><span class="w"> </span><span class="s2">"d2e1be0f23441c5aa04efc76a7a93eedeb7af172036cf68ae835fd83e33df82c"</span><span class="w"> 
+      </span><span class="n">accessToken</span><span class="p">:</span><span class="w"> </span><span class="s2">"4bizw5azqzf40986fwm092bra"</span><span class="w"> 
+   </span><span class="p">)</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20deleteToken(%24accessToken%3A%20ID!%2C%20%24clientId%3A%20ID!%2C%20%24clientSecret%3A%20String!)%7B%0A%20%20deletePrivateModelEmbedToken(%0A%20%20%20%20clientId%3A%20%24clientId%0A%20%20%20%20clientSecret%3A%20%24clientSecret%0A%20%20%20%20accessToken%3A%20%24accessToken%0A%20%20)%0A%7D&amp;operationName=deleteToken&amp;variables=%7B%0A%20%20%22accessToken%22%3A%20%22%22%2C%0A%20%20%22clientId%22%3A%20%22%22%2C%0A%20%20%22clientSecret%22%3A%20%22%22%0A%7D" target="_blank">Try this mutation in our interactive console</a></p>
+
+<p>Sample response:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> 
+   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+      </span><span class="nl">"deletePrivateModelEmbedToken"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> 
+   </span><span class="p">}</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+
+<h3 id="how-long-until-access-tokens-expire">How long until access tokens expire?</h3>
+
+<p>Access token expirations are configured by the <code class="language-plaintext highlighter-rouge">createPrivateModelAccessLink</code> API mutation. The max amount of time that can be configured is 24 hours.</p>
+
+<h3 id="what-format-of-times-can-i-provide-for-the-validfor-field-in-the-createprivatemodelaccesslink-mutation">What format of times can I provide for the validFor field in the <code class="language-plaintext highlighter-rouge">createPrivateModelAccessLink</code> mutation?</h3>
+
+<p>The format accepts ISO-8601 duration format. Shorthands are also available by providing the digits and first letter of the unit of time. For example: 24h, 5m, 30s, etc.</p>
 
 
     <div class="tags">

@@ -740,6 +740,13 @@
           
           
           
+          
+          
+          <li><a title="Private Model Embed" href="/showcase-sdk/oauth_private_model_embed.html">Private Model Embed</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -854,14 +861,11 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <h2 id="getting-access-to-oauth">Getting Access to OAuth</h2>
 
-<p>Developers who have a Developer Tools Production License and who have a Commercial Partnership agreement can contact developer@matterport.com to request access to OAuth in Development Mode.</p>
+<p>Developers who have a Developer Tools Production License and who have a Commercial Partnership agreement can contact <a href="mailto:developer@matterport.com">developer@matterport.com</a> to request access to OAuth in Development Mode.</p>
 
-<p>When enabled, you can create Your OAuth Application from the Application Integration Management section on your account’s <a href="https://my.matterport.com/settings/account/devtools">Developer Tools</a> page</p>
+<p>When enabled, you can create Your OAuth Application from the Application Integration Management section on your account’s <a href="https://my.matterport.com/settings/account/devtools" target="_blank">Developer Tools</a> page</p>
 
-<p align="center">
-  <img src="images/OAuth_EditApplication.jpeg" border="1" /><br />
-  <em>Create / Edit an OAuth Application</em>
-</p>
+<p><img src="images/OAuth_EditApplication.jpeg" alt="Create / Edit an OAuth Application" title="Create / Edit an OAuth Application" /></p>
 
 <p>When you add an application, you will need the following information:</p>
 
@@ -883,27 +887,27 @@ noResultsText: '<li><div>No results found.<div></li>',
 <table>
   <tbody>
     <tr>
-      <td>Scope Name</td>
-      <td>Description</td>
-      <td>Permissions</td>
+      <td><strong>Scope Name</strong></td>
+      <td><strong>Description</strong></td>
+      <td><strong>Permissions</strong></td>
     </tr>
     <tr>
-      <td>ViewDetails</td>
+      <td><code class="language-plaintext highlighter-rouge">ViewDetails</code></td>
       <td>View Space details</td>
       <td>Application can search for models within the resource owner’s organization and view the public and private details of a model.</td>
     </tr>
     <tr>
-      <td>EditDetails</td>
+      <td><code class="language-plaintext highlighter-rouge">EditDetails</code></td>
       <td>Edit Space details</td>
       <td>Application can edit basic details of a model.</td>
     </tr>
     <tr>
-      <td>DownloadAssets</td>
+      <td><code class="language-plaintext highlighter-rouge">DownloadAssets</code></td>
       <td>Download Assets</td>
       <td>Application can download assets such as purchased Add-Ons and colormap imagery associated with a model</td>
     </tr>
     <tr>
-      <td>PurchaseAssets</td>
+      <td><code class="language-plaintext highlighter-rouge">PurchaseAssets</code></td>
       <td>Purchase Space assets</td>
       <td>Application can purchase assets for a model on user’s behalf.</td>
     </tr>
@@ -912,9 +916,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>Upon creation of the application, you will receive a Client ID and Client Secret that can be used to integrate OAuth into your application.</p>
 
-<p align="center">
-  <img src="images/OAuth_ClientSecret.jpeg" style="width: 400px" border="1" />
-</p>
+<p><img src="images/OAuth_ClientSecret.jpeg" alt="OAuth Client Secret" title="OAuth Client Secret" /></p>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Matterport does not store the client secret. You can regenerate a new secret at a later point in time, but Matterport cannot retrieve your current secret if it’s lost.</div>
 
@@ -924,16 +926,14 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>When you have completed your application, you can “Request Approval for Production Access” from the Developer Tools page.  We will then contact you to arrange a review of your application.</p>
 
-<p align="center">
-  <img src="images/OAuth_Request_Production_Access.jpeg" border="1" />
-</p>
+<p><img src="images/OAuth_Request_Production_Access.jpeg" alt="OAuth Production Access Request" title="OAuth Production Access Request" /></p>
 
 <h2 id="oauth-application-guidelines">OAuth Application Guidelines</h2>
 
 <p>When building your OAuth Application be sure to:</p>
 
 <ul>
-  <li>Protect the <em>Client Secret</em> and <em>Refresh Token</em> by not exposing them in client side requests</li>
+  <li>Protect the <strong>Client Secret</strong> and <strong>Refresh Token</strong> by not exposing them in client side requests</li>
   <li>Properly identify that the user is granting the application access to their Matterport Account</li>
   <li>Provide clarity that purchases will be charged to the user’s account if using features with the ‘Download Assets’ scope.</li>
 </ul>
@@ -955,7 +955,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: May 25, 2023 <br />
+ Site last generated: Jun 6, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

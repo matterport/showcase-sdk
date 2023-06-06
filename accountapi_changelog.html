@@ -740,6 +740,13 @@
           
           
           
+          
+          
+          <li><a title="Private Model Embed" href="/showcase-sdk/oauth_private_model_embed.html">Private Model Embed</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -843,14 +850,14 @@ noResultsText: '<li><div>No results found.<div></li>',
 <p>Changes to access query in user.schema</p>
 
 <ul>
-  <li>Added ID for the resource (denoting SID of the resource) in AccessInfo type for access query</li>
+  <li>Added ID for the resource (denoting SID of the resource) in <code class="language-plaintext highlighter-rouge">AccessInfo</code> type for access query</li>
 </ul>
 
 <h2 id="v20221214">v2022.12.14</h2>
 
 <p>API Changes</p>
 <ul>
-  <li>Making access query in user.schema to be beta</li>
+  <li>Making access query in <code class="language-plaintext highlighter-rouge">user.schema</code> to be beta</li>
 </ul>
 
 <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
@@ -881,12 +888,8 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>API Changes</p>
 <ul>
-  <li>
-    <p>Account Membership search now filters out banned users</p>
-  </li>
-  <li>
-    <p>Account Membership search now allows us to query email, lastName, firstName</p>
-  </li>
+  <li>Account Membership search now filters out banned users</li>
+  <li>Account Membership search now allows us to query email, lastName, firstName</li>
 </ul>
 
 <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
@@ -939,10 +942,9 @@ noResultsText: '<li><div>No results found.<div></li>',
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-
 </span></code></pre></div></div>
 
-<p>Bug Fixes and Other Enhancements</p>
+<p><strong>Bug Fixes and Other Enhancements</strong></p>
 <ul>
   <li>fixed the query field for org/account memberships</li>
 </ul>
@@ -962,7 +964,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>This changes the default serialization of fields with errors or no data from being left out of the response to serializing null explicitly (this is more compliant with the GraphQL standard).  There is a graph query which may be used to opt an org out of this behavior to the previous behaviour:</p>
 
-<p><a href="https://api.matterport.com/api/mp/accounts/graphiql/?query=query%20getSerialization(%24orgId%3A%20ID)%20%7B%0A%20%20organization(id%3A%24orgId)%20%7B%0A%20%20%20%20id%0A%20%20%20%20developer%20%7B%0A%20%20%20%20%20%20options%20%7B%0A%20%20%20%20%20%20%20%20serializeGraphNulls%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0Amutation%20disableSerializeNulls(%24orgId%3A%20ID)%20%7B%0A%20%20patchDeveloperOptions(%0A%20%20%20%20organizationId%3A%24orgId%0A%20%20%20%20serializeGraphNulls%3A%20disabled%0A%20%20)%20%7B%0A%20%20%20%20serializeGraphNulls%0A%20%20%7D%0A%7D%0A%0Amutation%20enableSerializeNulls(%24orgId%3A%20ID)%20%7B%0A%20%20patchDeveloperOptions(%0A%20%20%20%20organizationId%3A%24orgId%0A%20%20%20%20serializeGraphNulls%3A%20enabled%0A%20%20)%20%7B%0A%20%20%20%20serializeGraphNulls%0A%20%20%7D%0A%7D&amp;operationName=getSerialization">Try it in our interactive console</a></p>
+<p><a href="https://api.matterport.com/api/mp/accounts/graphiql/?query=query%20getSerialization(%24orgId%3A%20ID)%20%7B%0A%20%20organization(id%3A%24orgId)%20%7B%0A%20%20%20%20id%0A%20%20%20%20developer%20%7B%0A%20%20%20%20%20%20options%20%7B%0A%20%20%20%20%20%20%20%20serializeGraphNulls%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0Amutation%20disableSerializeNulls(%24orgId%3A%20ID)%20%7B%0A%20%20patchDeveloperOptions(%0A%20%20%20%20organizationId%3A%24orgId%0A%20%20%20%20serializeGraphNulls%3A%20disabled%0A%20%20)%20%7B%0A%20%20%20%20serializeGraphNulls%0A%20%20%7D%0A%7D%0A%0Amutation%20enableSerializeNulls(%24orgId%3A%20ID)%20%7B%0A%20%20patchDeveloperOptions(%0A%20%20%20%20organizationId%3A%24orgId%0A%20%20%20%20serializeGraphNulls%3A%20enabled%0A%20%20)%20%7B%0A%20%20%20%20serializeGraphNulls%0A%20%20%7D%0A%7D&amp;operationName=getSerialization" target="_blank">Try it in our interactive console</a></p>
 
 <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getSerialization</span><span class="p">(</span><span class="nv">$orgId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">organization</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="nv">$orgId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1000,7 +1002,7 @@ noResultsText: '<li><div>No results found.<div></li>',
   <li>This release exposes full folder manipulation (within org) create, edit, share, move and delete folders. (private beta)</li>
 </ul>
 
-<p>Bug Fixes and Other Enhancements:</p>
+<p><strong>Bug Fixes and Other Enhancements:</strong></p>
 
 <ul>
   <li>Allow modelShare queries to filter based on multiple access levels instead of a single one.</li>
@@ -1292,7 +1294,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: May 25, 2023 <br />
+ Site last generated: Jun 6, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

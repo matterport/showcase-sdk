@@ -267,13 +267,13 @@
   
   
   
-  
-  
-  
-  
   <url>
     <loc>https://matterport.github.io/index.html</loc>
   </url>
+  
+  
+  
+  
   
   
   
@@ -525,6 +525,12 @@
   
   <url>
     <loc>https://matterport.github.io/oauth_model_selector.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/oauth_private_model_embed.html</loc>
   </url>
   
   

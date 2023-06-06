@@ -740,6 +740,13 @@
           
           
           
+          
+          
+          <li><a title="Private Model Embed" href="/showcase-sdk/oauth_private_model_embed.html">Private Model Embed</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -867,8 +874,8 @@ noResultsText: '<li><div>No results found.<div></li>',
 <table>
   <tbody>
     <tr>
-      <td>Event</td>
-      <td>Description</td>
+      <td><strong>Event</strong></td>
+      <td><strong>Description</strong></td>
     </tr>
     <tr>
       <td>uploaded</td>
@@ -1001,9 +1008,9 @@ noResultsText: '<li><div>No results found.<div></li>',
 <table>
   <tbody>
     <tr>
-      <td>Field</td>
-      <td>Description</td>
-      <td>Example Value</td>
+      <td><strong>Field</strong></td>
+      <td><strong>Description</strong></td>
+      <td><strong>Example Value</strong></td>
     </tr>
     <tr>
       <td>type</td>
@@ -1030,9 +1037,9 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <h2 id="registering-a-model-event-callback">Registering a Model Event Callback</h2>
 
-<p>Webhook callback registration and management for model events is handled through various mutations to the <a href="https://api.matterport.com/model/docs/reference">Model API</a>.</p>
+<p>Webhook callback registration and management for model events is handled through various mutations to the <a href="https://api.matterport.com/model/docs/reference" target="_blank">Model API</a>.</p>
 
-<p>The <strong>addModelEventWebhookCallback</strong> mutation registers a callback URL through a WebhookCallbackInput object for specified eventTypes. Optional query parameters can be included, as well as basic or token credentials for authentication.</p>
+<p>The <strong><code class="language-plaintext highlighter-rouge">addModelEventWebhookCallback</code></strong> mutation registers a callback URL through a WebhookCallbackInput object for specified eventTypes. Optional query parameters can be included, as well as basic or token credentials for authentication.</p>
 
 <p>For security reasons, it’s recommended to provide credentials for the Webhook callback registration.</p>
 
@@ -1113,7 +1120,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <h2 id="list-registered-model-event-callbacks">List Registered Model Event Callbacks</h2>
 
-<p>A list of registered Model Event callbacks can be acquired through the <strong>modelEventWebhookCallbacks</strong> query search. Like other search operations, results are paginated and can be iterated though by specifying the returned offset value for the next page.</p>
+<p>A list of registered Model Event callbacks can be acquired through the <strong><code class="language-plaintext highlighter-rouge">modelEventWebhookCallbacks</code></strong> query search. Like other search operations, results are paginated and can be iterated though by specifying the returned offset value for the next page.</p>
 
 <details name="modelEventWebhookCallbacks">
   <summary>modelEventWebhookCallbacks</summary>
@@ -1169,7 +1176,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <h2 id="update-a-model-event-callback">Update a Model Event Callback</h2>
 
-<p>Once the callback id is received, the <strong>patchModelEventWebhookCallback</strong> mutation can be used to make updates to an already-registered callback.</p>
+<p>Once the callback id is received, the <strong><code class="language-plaintext highlighter-rouge">patchModelEventWebhookCallback</code></strong> mutation can be used to make updates to an already-registered callback.</p>
 
 <details name="modelEventWebhookCallbacks">
   <summary>modelEventWebhookCallbacks</summary>
@@ -1235,7 +1242,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <h2 id="remove-a-model-event-callback">Remove a Model Event Callback</h2>
 
-<p>Model Event Callbacks can be removed using the <strong>removeModelEventWebhookCallback</strong> mutation.</p>
+<p>Model Event Callbacks can be removed using the <strong><code class="language-plaintext highlighter-rouge">removeModelEventWebhookCallback</code></strong> mutation.</p>
 
 <details name="modelEventWebhookCallbacks">
   <summary>removeModelEventWebhookCallback</summary>
@@ -1255,11 +1262,12 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span></code></pre></div>  </div>
 
   <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20testModelEvent(%24callbackId%3A%20ID!)%7B%0A%20%20pingModelEventWebhookCallback(id%3A%20%24callbackId)%0A%7D&amp;variables=%7B%0A%20%20%22callbackId%22%3A%20%22%22%0A%7D&amp;operationName=testModelEvent" target="_blank">Try this query in our interactive console</a></p>
+
 </details>
 
 <h2 id="testing-model-event-callbacks">Testing Model Event Callbacks</h2>
 
-<p>Tests for specific Model Events can be triggered using the <strong>pingModelEventWebhookCallback</strong> mutation. The mutation can be used to ping and event that would trigger the registered callback. A collection of mutations and queries used for testing a Webhook endpoint can be found at this interactive editor link.</p>
+<p>Tests for specific Model Events can be triggered using the <strong><code class="language-plaintext highlighter-rouge">pingModelEventWebhookCallback</code></strong> mutation. The mutation can be used to ping and event that would trigger the registered callback. A collection of mutations and queries used for testing a Webhook endpoint can be found at this interactive editor link.</p>
 
 <p>Ngrok is one useful tool for testing a Webhook integration locally.</p>
 
@@ -1275,16 +1283,16 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <h2 id="model-event-callback-faqs">Model Event Callback FAQs</h2>
 
-<details name="Can I make GET callbacks instead of POST?">
+<details>
   <summary>Can I make GET callbacks instead of POST?</summary>
   <p>No, only POST request callbacks are supported.</p>
 </details>
-<details name="Can I make REST Callbacks instead of GraphQL?">
+<details>
   <summary>Can I make REST Callbacks instead of GraphQL?</summary>
   <p>Only GraphQL-based API callback registrations are available.</p>
 </details>
 <details>
-  <summary>What is error message like if id is wrong for patchModelEventWebhookCallback</summary>
+  <summary>What is the error message like if id is wrong for patchModelEventWebhookCallback</summary>
   <p>Error fetching data</p>
 </details>
 
@@ -1304,7 +1312,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: May 25, 2023 <br />
+ Site last generated: Jun 6, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

@@ -740,6 +740,13 @@
           
           
           
+          
+          
+          <li><a title="Private Model Embed" href="/showcase-sdk/oauth_private_model_embed.html">Private Model Embed</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -836,11 +843,11 @@ noResultsText: '<li><div>No results found.<div></li>',
 
     
 
-   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> OAuth is currently offered by invitation only for our Commercial Partners.  If you’re interested in using OAuth, please reach out to  developer@matterport.com with your account information.</div>
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> OAuth is currently offered by invitation only for our Commercial Partners.  If you’re interested in using OAuth, please reach out to developer@matterport.com with your account information.</div>
 
 <h2 id="introduction">Introduction</h2>
 
-<p>This scenario is useful for accessing <strong>Model API</strong> on a client’s account via an OAuth <strong>access_token</strong>. This may be useful for:</p>
+<p>This scenario is useful for accessing <strong>Model API</strong> on a client’s account via an OAuth <strong><code class="language-plaintext highlighter-rouge">access_token</code></strong>. This may be useful for:</p>
 
 <ul>
   <li>Editing metadata and annotations</li>
@@ -881,34 +888,35 @@ sequenceDiagram
 <p>The application has a page that is used to initiate the OAuth flow. The user clicks on a control on this page that indicates they give your application access to their Matterport spaces.</p>
 
 <h2 id="2-redirect-the-client-to-the-authorization-server"><strong>2. Redirect the client to the authorization server</strong></h2>
-<p>After the user gave your application the access to their spaces, it should redirect them to https://authn.matterport.com/oauth/authorize with the following query parameters:</p>
+<p>After the user gave your application the access to their spaces, it should redirect them to <code class="language-plaintext highlighter-rouge">https://authn.matterport.com/oauth/authorize</code> with the following query parameters:</p>
 
 <table>
   <tbody>
     <tr>
-      <td>parameter</td>
-      <td>description</td>
+      <td><strong>parameter</strong></td>
+      <td><strong>description</strong></td>
     </tr>
     <tr>
-      <td>client_id</td>
+      <td><code class="language-plaintext highlighter-rouge">client_id</code></td>
       <td>This is available from the OAuth settings page.</td>
     </tr>
     <tr>
-      <td>response_type</td>
+      <td><code class="language-plaintext highlighter-rouge">response_type</code></td>
       <td>code</td>
     </tr>
     <tr>
-      <td>redirect_uri</td>
+      <td><code class="language-plaintext highlighter-rouge">redirect_uri</code></td>
       <td>This is optional. If specified, hostname and path (must match the configured value from the OAuth settings page). Additional query parameters are allowed.</td>
     </tr>
     <tr>
-      <td>scope</td>
-      <td>A space separated set of permissions to request. The application cannot request any scopes that have not been configured in the OAuth settings page. However, it can request fewer scopes than it is allowed to.<br /><br />For example, if the application is approved for ViewDetails and PurchaseAssets it can ask for access to just ViewDetails. Note that the client will be notified of all permission scopes requested, so applications should take care to request only the necessary scopes.</td>
+      <td><code class="language-plaintext highlighter-rouge">scope</code></td>
+      <td>A space separated set of permissions to request. The application cannot request any scopes that have not been configured in the OAuth settings page. However, it can request fewer scopes than it is allowed to.<br /><br />For example, if the application is approved for <code class="language-plaintext highlighter-rouge">ViewDetails</code> and <code class="language-plaintext highlighter-rouge">PurchaseAssets</code> it can ask for access to just ViewDetails. Note that the client will be notified of all permission scopes requested, so applications should take care to request only the necessary scopes.</td>
     </tr>
   </tbody>
 </table>
 
-<p>A URL for this sample would look like this: https://authn.matterport.com/oauth/authorize?client_id=uud3wfustchhap01yzia7nddb&amp;response_type=code&amp;scope=ViewDetails%20PurchaseAssets</p>
+<p>A URL for this sample would look like this: 
+<code class="language-plaintext highlighter-rouge">https://authn.matterport.com/oauth/authorize?client_id=uud3wfustchhap01yzia7nddb&amp;response_type=code&amp;scope=ViewDetails%20PurchaseAssets</code></p>
 
 <!-- 
      This was supposed to be included with OAuth but was not.  Therefore, it was in our support articles and was incorrect information.  This may become canon in the future, therefore, I'd love to leave it here.
@@ -921,7 +929,7 @@ sequenceDiagram
 
 <p>The user will be asked to log in to their Matterport account and select the organization to grant access to the models in.  They will see the following prompt:</p>
 
-<p><img src="images/OAuth_Authorization_Prompt.jpg" /></p>
+<p><img src="https://matterport.github.io/showcase-sdk//images/OAuth_Authorization_Prompt.jpg" alt="OAuth Authorization Prompt" /></p>
 
 <p>If the user authorizes the access, the system will generate the requested tokens.</p>
 
@@ -929,39 +937,39 @@ sequenceDiagram
 
 <p>After authorization is granted, the authorization server will send a redirect to the client browser based on either the configured redirect URI or the one specified in the authorize URL. For a response_type of code, this will include a code query parameter, which can be used to generate the necessary access tokens.</p>
 
-<p>Assuming the OAuth application has a configured redirect URL of https://myoauthapp.test/matterport/oauth-granted/ the  resulting redirect would look like this: https://myoauthapp.test/matterport/oauth-granted/?code=wdi42eyt7pugyxze3i9ushz5d</p>
+<p>Assuming the OAuth application has a configured redirect URL of <code class="language-plaintext highlighter-rouge">https://myoauthapp.test/matterport/oauth-granted/</code> the  resulting redirect would look like this: <code class="language-plaintext highlighter-rouge">https://myoauthapp.test/matterport/oauth-granted/?code=wdi42eyt7pugyxze3i9ushz5d</code></p>
 
 <h2 id="5-client-follows-the-redirect"><strong>5. Client follows the redirect</strong></h2>
 
 <p>The client browser will follow the redirect, at which point the application server will have access to the code query parameter.</p>
 
 <h2 id="6-request-the-access-tokens"><strong>6. Request the access tokens</strong></h2>
-<p>To retrieve the access tokens, an HTTP POST must be sent to https://api.matterport.com/api/oauth/token with a form urlencoded body containing the following parameters:</p>
+<p>To retrieve the access tokens, an HTTP POST must be sent to <code class="language-plaintext highlighter-rouge">https://api.matterport.com/api/oauth/token</code> with a form urlencoded body containing the following parameters:</p>
 
 <table>
   <tbody>
     <tr>
-      <td>Key</td>
-      <td>Value</td>
+      <td><strong>Key</strong></td>
+      <td><strong>Value</strong></td>
     </tr>
     <tr>
-      <td>grant_type</td>
+      <td><code class="language-plaintext highlighter-rouge">grant_type</code></td>
       <td>authorization_code</td>
     </tr>
     <tr>
-      <td>code</td>
+      <td><code class="language-plaintext highlighter-rouge">code</code></td>
       <td>The authorization code received when the user authorized the application (the code from the previous step).<br /><br />Given the sample redirect URL from step 4, it would be: wdi42eyt7pugyxze3i9ushz5d</td>
     </tr>
     <tr>
-      <td>scope</td>
+      <td><code class="language-plaintext highlighter-rouge">scope</code></td>
       <td>A space-separated set of OAuth scopes being requested. Generally, this will be the same value from step 2. This should match with what the user authorized.</td>
     </tr>
     <tr>
-      <td>client_id</td>
+      <td><code class="language-plaintext highlighter-rouge">client_id</code></td>
       <td>The client id from the OAuth settings. Given the sample URL for step 2, this would be: uud3wfustchhap01yzia7nddb</td>
     </tr>
     <tr>
-      <td>client_secret</td>
+      <td><code class="language-plaintext highlighter-rouge">client_secret</code></td>
       <td>The client secret generated when the OAuth application was first created.</td>
     </tr>
   </tbody>
@@ -983,7 +991,7 @@ sequenceDiagram
 }
 </span></code></pre></div></div>
 
-<p>The access_token can be used when making requests to the model API, in the Authorization header, using the standard OAuth format of: <strong>Authorization: Bearer &lt;token&gt;</strong>. Generally, it should not be stored and new access tokens should be generated using the refresh_token in the future.</p>
+<p>The <strong><code class="language-plaintext highlighter-rouge">access_token</code></strong> can be used when making requests to the model API, in the Authorization header, using the standard OAuth format of: <strong><code class="language-plaintext highlighter-rouge">Authorization: Bearer &lt;token&gt;</code></strong>. Generally, it should not be stored and new access tokens should be generated using the refresh_token in the future.</p>
 
 <p>The <strong>refresh_token</strong> value can be used to request a new access token when the expiration time is near.  Be sure to store the returned refresh_token as it will change after 24 hours.  The first request for a new access_token after 24 hours will return a new refresh_token that will be required for subsequent access_token refreshes.</p>
 
@@ -995,9 +1003,11 @@ sequenceDiagram
 
 <h2 id="7-use-the-access-token-to-access-model-data"><strong>7. Use the access token to access model data</strong></h2>
 
-<p>Once an access token has been generated it may be used to query the Model API. This is done by including an <strong>Authorization: Bearer [access_token]</strong> header, where <strong>[access_token]</strong> would be replaced by the value of the access token. Using the token from the previous step the header would look like:</p>
+<p>Once an access token has been generated it may be used to query the Model API. This is done by including an <strong><code class="language-plaintext highlighter-rouge">Authorization: Bearer access_token</code></strong> header, where <strong><code class="language-plaintext highlighter-rouge">access_token</code></strong> would be replaced by the value of the access token.</p>
 
-<p>Authorization: Bearer 3mwbyppm4u0gz1z14ktqtiteb</p>
+<p>Using the token from the previous step the header would look like:</p>
+
+<p><code class="language-plaintext highlighter-rouge">Authorization: Bearer 3mwbyppm4u0gz1z14ktqtiteb</code></p>
 
 <p>A sample curl graph query would look like:</p>
 
@@ -1021,7 +1031,7 @@ sequenceDiagram
 
 <p>Eventually, the access token will expire. The application server can choose to be proactive and discard the token before it expires, based on the <strong>expires_in</strong> attribute from step 6 or it can detect the condition when it happens.</p>
 
-<p>After a token expires, rather than returning a graph response, the API server will return an HTTP 400 with the Content-Type of application/json and the error body of { “error”: “invalid_grant” }. When this is received, the application should discard the current access token and generate a new one if needed.</p>
+<p>After a token expires, rather than returning a graph response, the API server will return an HTTP 400 with the Content-Type of <code class="language-plaintext highlighter-rouge">application/json</code> and the error body of <code class="language-plaintext highlighter-rouge">{ "error": "invalid_grant" }</code>. When this is received, the application should discard the current access token and generate a new one if needed.</p>
 
 <p>Note: The Model API will generally return a graphql compatible response. However, the OAuth 2.0 specification supersedes that behavior in this case.</p>
 
@@ -1032,23 +1042,23 @@ sequenceDiagram
 <table>
   <tbody>
     <tr>
-      <td>Key</td>
-      <td>Value</td>
+      <td><strong>Key</strong></td>
+      <td><strong>Value</strong></td>
     </tr>
     <tr>
-      <td>grant_type</td>
-      <td>refresh_token</td>
+      <td><code class="language-plaintext highlighter-rouge">grant_type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">refresh_token</code></td>
     </tr>
     <tr>
-      <td>refresh_token</td>
-      <td>The refresh token generated in step 6. For this example:  ichxdbm59z74m6tkcbqi092rc</td>
+      <td><code class="language-plaintext highlighter-rouge">refresh_token</code></td>
+      <td>The refresh token generated in step 6. For this example: <code class="language-plaintext highlighter-rouge">ichxdbm59z74m6tkcbqi092rc</code></td>
     </tr>
     <tr>
-      <td>client_id</td>
-      <td>The client id from the OAuth settings. Given the sample URL for step 2, this would be uud3wfustchhap01yzia7nddb</td>
+      <td><code class="language-plaintext highlighter-rouge">client_id</code></td>
+      <td>The client id from the OAuth settings. Given the sample URL for step 2, this would be <code class="language-plaintext highlighter-rouge">uud3wfustchhap01yzia7nddb</code></td>
     </tr>
     <tr>
-      <td>client_secret</td>
+      <td><code class="language-plaintext highlighter-rouge">client_secret</code></td>
       <td>The client secret generated when the OAuth application was first created. Note that you can reset this value from the settings page, but it cannot be retrieved.</td>
     </tr>
   </tbody>
@@ -1071,17 +1081,17 @@ sequenceDiagram
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> When requesting a new access_token, you may receive a new refresh_token.  Please be sure to pay attention to the returned <strong>refresh_token</strong>.  If a refresh_token is 24 hours or older, it will become ‘stale’ when it is next used.  A new refresh_token will be provided when a new access_token is requested.  Make sure to capture this new value for subsequent access_token refreshes.<br /><br />Refresh Token rotation is a standard part of OAuth.  For more information on refresh_token rotation, please see <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-10.4">RFC6749 from the OAuth Spec</a></div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> When requesting a new <strong><code class="language-plaintext highlighter-rouge">access_token</code></strong>, you may receive a new <strong><code class="language-plaintext highlighter-rouge">refresh_token</code></strong>.  Please be sure to pay attention to the returned <strong><code class="language-plaintext highlighter-rouge">refresh_token</code></strong>.  If a refresh_token is 24 hours or older, it will become ‘stale’ when it is next used.  A new <strong><code class="language-plaintext highlighter-rouge">refresh_token</code></strong> will be provided when a new access_token is requested.  Make sure to capture this new value for subsequent access_token refreshes.<br /><br />Refresh Token rotation is a standard part of OAuth.  For more information on refresh_token rotation, please see <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-10.4" target="_blank">RFC6749 from the OAuth Spec</a></div>
 
 <h2 id="10-use-the-access-token-to-access-model-data"><strong>10. Use the access token to access model data</strong></h2>
 
-<p>This step looks the same as step 7 only the new access token value <em>r3gxncgp4xksmdtectyzw1s8c</em> should be used in the authorization header.</p>
+<p>This step looks the same as step 7 only the new access token value <strong><code class="language-plaintext highlighter-rouge">r3gxncgp4xksmdtectyzw1s8c</code></strong> should be used in the authorization header.</p>
 
 <h2 id="11-access-expires-or-is-revoked"><strong>11. Access expires or is revoked</strong></h2>
 
 <p>Eventually, the refresh token will expire or the user will revoke the application’s access. This can be detected when attempting to generate a new access token via the refresh token.</p>
 
-<p>If access has expired or been revoked, then the call to generate the access token will return an HTTP 400 with an error code of <strong>invalid_grant</strong>. At this point, the refresh token should be discarded and the client will need to reauthorize the application.</p>
+<p>If access has expired or been revoked, then the call to generate the access token will return an HTTP 400 with an error code of <strong><code class="language-plaintext highlighter-rouge">invalid_grant</code></strong>. At this point, the refresh token should be discarded and the client will need to reauthorize the application.</p>
 
 
     <div class="tags">
@@ -1099,7 +1109,7 @@ sequenceDiagram
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: May 25, 2023 <br />
+ Site last generated: Jun 6, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
