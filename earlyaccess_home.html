@@ -876,12 +876,60 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <h2 id="what-are-early-access-builds">What are Early Access Builds?</h2>
-<p>Early access builds allow developers to prepare for the next SDK release by providing upcoming, sometimes experimental features and bug fixes prior to general availability.</p>
+   <h2 id="what-is-early-access">What is Early Access?</h2>
+<p>Early access allows us to share upcoming, sometimes experimental features, for developers to try prior to general availability.</p>
 
-<h3 id="there-are-currently-no-early-access-builds">There are currently no Early Access builds</h3>
+<h2 id="early-access-features">Early Access Features</h2>
+<p>Current SDK applications do not support <a href="https://support.matterport.com/s/article/Create-and-Share-Views?language=en_US" target="_blank">Views</a>.
+This early access period is focused on re-enabling Views.</p>
 
-<p>Get started with the <a href="sdk_home.html">Embed SDK</a> or <a href="sdkbundle_home.html">Bundle SDK</a> instead.</p>
+<p><a href="docs/reference/current/modules/view.html">See the reference pages for Views</a></p>
+
+<h2 id="how-to--migration-guides">How To / Migration Guides</h2>
+
+<h3 id="handling-view-changes">Handling View Changes</h3>
+<p>When changing Views, additional assets associated with a space (Tags, Labels, etc) will change.
+The data provided through any of the SDK’s <code class="language-plaintext highlighter-rouge">data</code> collections, or <code class="language-plaintext highlighter-rouge">getData</code> functions only report the runtime set of data, i.e. the set of objects currently visible in the space. Showcase does not load data nor keep data in memory for objects that are in other Views than the currently active one.
+For example, a Tag with an id of “foo” will not necessarily continue to exist in <code class="language-plaintext highlighter-rouge">Tag.data</code> if the View is changed.</p>
+
+<p>Make sure to be reactive to data changes. If not already using them, see <a href="sdk_tutorials_collections">Using Collections</a>.
+To know when the View has changed, subscribe to the <a href="docs/reference/current/modules/view.html#current">View.current</a> state.</p>
+
+<h3 id="hiding-the-view-selector">Hiding the View Selector</h3>
+<p>There is a new View Selector element associated with Views. If this causes conflicts in your app’s UI, using a <code class="language-plaintext highlighter-rouge">views=0</code> URL param or attribute will hide it.</p>
+
+<h3 id="opting-out">Opting Out</h3>
+<p>To opt-out of Views entirely, add a <code class="language-plaintext highlighter-rouge">sdkviews=0</code> URL parameter or attribute.</p>
+
+<p><strong>Embed</strong></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">src=</span><span class="s">"https://my.matterport.com/show/?sdkviews=0&amp;m=..."</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+</code></pre></div></div>
+<p><strong>Bundle</strong></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">src=</span><span class="s">"./showcase.html?sdkviews=0&amp;m=..."</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+</code></pre></div></div>
+
+<p><strong>WebComponent</strong></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;matterport-viewer</span>
+  <span class="na">m=</span><span class="s">"..."</span>
+  <span class="na">application-key=</span><span class="s">"..."</span>
+  <span class="na">sdkviews=</span><span class="s">"0"</span>
+<span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h2 id="known-issues-and-limitations">Known Issues and Limitations</h2>
+<ol>
+  <li>There are no operations to add new Views or Layers through the SDK</li>
+  <li>There is no way to change the current View or active Layers through the SDK</li>
+  <li>There is no way to add or edit objects only within a specific View and transient edits are global</li>
+</ol>
+
+<p>Until we build proper support for Views, all transient edits will be re-applied as a new View is selected.
+For example, after adding a Tag with an id “bar”, when the current View changes, the Tag will be removed as the View is unloaded but then recreated when the new View’s data is loaded. The id of the Tag will be preserved (“bar”) to make it easy to continue operating on it if needed.</p>
+
+<p>We opted to replay all of the SDK’s operations on top of the current View to mimic the current SDK experience. An SDK experience for a View-less Showcase modifies the “base data” of the space so that all operations are always visible, e.g adding a Tag. With Views, by replaying SDK operations we keep that same behavior albeit with different sets of base data.</p>
+
+<h3 id="future-updates">Future Updates</h3>
+<p>In the future, we plan to allow for operations to target specific Views and/or Layers at which point we won’t do a full replay as mentioned above. For example, a Tag that should be in all Views will need to be added to all Views.</p>
 
 
 
@@ -900,7 +948,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jun 6, 2023 <br />
+ Site last generated: Jun 15, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

@@ -244,12 +244,6 @@
   
   
   <url>
-    <loc>https://matterport.github.io/sdkbundle_earlyaccess_21.10.1_idchanges.html</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://matterport.github.io/docs/reference/current/interfaces/idisposable.html</loc>
   </url>
   
@@ -267,11 +261,11 @@
   
   
   
+  
+  
   <url>
     <loc>https://matterport.github.io/index.html</loc>
   </url>
-  
-  
   
   
   
@@ -692,12 +686,6 @@
   
   
   <url>
-    <loc>https://matterport.github.io/sdkbundle_earlyaccess_21.10.1_sceneobjects.html</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://matterport.github.io/sdk_client_release_notes.html</loc>
   </url>
   
@@ -1039,6 +1027,12 @@
   
   <url>
     <loc>https://matterport.github.io/docs/reference/current/enums/tour.playstate.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/view.html</loc>
   </url>
   
   

@@ -435,17 +435,6 @@
 
 
 {
-"title": "Sweep and floor id changes",
-"tags": "",
-"keywords": "",
-"url": "/showcase-sdk/sdkbundle_earlyaccess_21.10.1_idchanges.html",
-"summary": ""
-}
-,
-
-
-
-{
 "title": "Interface: IDisposable",
 "tags": "",
 "keywords": "",
@@ -478,6 +467,8 @@
 
 
 
+
+
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -486,8 +477,6 @@
 "summary": ""
 }
 ,
-
-
 
 
 
@@ -1253,17 +1242,6 @@
 
 
 {
-"title": "Scene Object Improvements",
-"tags": "",
-"keywords": "",
-"url": "/showcase-sdk/sdkbundle_earlyaccess_21.10.1_sceneobjects.html",
-"summary": ""
-}
-,
-
-
-
-{
 "title": "SDK Client Release Notes",
 "tags": "",
 "keywords": "",
@@ -1888,6 +1866,17 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/docs/reference/current/enums/tour.playstate.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: View",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docs/reference/current/modules/view.html",
 "summary": ""
 }
 ,
