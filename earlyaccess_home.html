@@ -892,8 +892,9 @@ This early access period is focused on re-enabling Views.</p>
 The data provided through any of the SDK’s <code class="language-plaintext highlighter-rouge">data</code> collections, or <code class="language-plaintext highlighter-rouge">getData</code> functions only report the runtime set of data, i.e. the set of objects currently visible in the space. Showcase does not load data nor keep data in memory for objects that are in other Views than the currently active one.
 For example, a Tag with an id of “foo” will not necessarily continue to exist in <code class="language-plaintext highlighter-rouge">Tag.data</code> if the View is changed.</p>
 
-<p>Make sure to be reactive to data changes. If not already using them, see <a href="sdk_tutorials_collections">Using Collections</a>.
-To know when the View has changed, subscribe to the <a href="docs/reference/current/modules/view.html#current">View.current</a> state.</p>
+<p>Make sure to be reactive to data changes. If not already using them, see <a href="sdk_tutorials_collections">Using Collections</a>.</p>
+
+<p>To know when the View has changed, subscribe to the <a href="docs/reference/current/modules/view.html#current">View.current</a> state.</p>
 
 <h3 id="hiding-the-view-selector">Hiding the View Selector</h3>
 <p>There is a new View Selector element associated with Views. If this causes conflicts in your app’s UI, using a <code class="language-plaintext highlighter-rouge">views=0</code> URL param or attribute will hide it.</p>
