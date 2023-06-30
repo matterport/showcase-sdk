@@ -118,7 +118,7 @@
             </div>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" href="https://api.matterport.com/docs/reference">API Docs</a>
+            <a class="dropbtn" href="api_home.html">API Docs</a>
             <div class="dropdown-content">
               <a href="api_home.html">API Overview</a>
               <a href="https://api.matterport.com/docs/reference" target="_blank">API Reference</a>
@@ -910,7 +910,7 @@ noResultsText: '<li><div>No results found.<div></li>',
     <tr>
       <td>redirect_uri</td>
       <td>No</td>
-      <td><strong>url</strong> - The URL to redirect to after authorization is complete. This is required if your application has been configured with multiple possible redirect_uris</td>
+      <td><strong>url</strong> - The Redirect URL configured for the OAuth application. If included in the authorization request it must also be included in the access token request.</td>
     </tr>
     <tr>
       <td>scope</td>
@@ -976,8 +976,8 @@ noResultsText: '<li><div>No results found.<div></li>',
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">redirect_uri</code></td>
-      <td>No</td>
-      <td>Only necessary if the was not provided in the Authorize query string.</td>
+      <td>No*</td>
+      <td>The Redirect URL configured in the OAuth app. *Required if it was included in the authorization request.</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">expires_in</code></td>
@@ -1074,7 +1074,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jun 16, 2023 <br />
+ Site last generated: Jun 30, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
