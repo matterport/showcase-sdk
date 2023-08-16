@@ -411,6 +411,27 @@
           
           
           
+          <li class="subfolders">
+              <a title="Using the Scene Namespace" href="#">Using the Scene Namespace</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Intro and Basic Components" href="/showcase-sdk/sdk_scene_intro.html">Intro and Basic Components</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Connecting Components" href="/showcase-sdk/sdk_connecting_components.html">Connecting Components</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
           
           
           
@@ -855,6 +876,19 @@ noResultsText: '<li><div>No results found.<div></li>',
 
    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Account API is only available for Enterprise-level Matterport Subscriptions</div>
 
+<h2 id="v20230720">v2023.07.20</h2>
+
+<ul>
+  <li>Add lastLogin field to Membership (UserMembership) type</li>
+</ul>
+
+<h2 id="v20230628">v2023.06.28</h2>
+
+<ul>
+  <li>Add UnitType enum with imperial and metric values.</li>
+  <li>Add unitType to Organization, OrganizationSettings and OrganizationSettingsInput types.</li>
+</ul>
+
 <h2 id="v20220118">V2022.01.18</h2>
 
 <p>Changes to access query in user.schema</p>
@@ -866,19 +900,21 @@ noResultsText: '<li><div>No results found.<div></li>',
 <h2 id="v20221214">v2022.12.14</h2>
 
 <p>API Changes</p>
+
 <ul>
   <li>Making access query in <code class="language-plaintext highlighter-rouge">user.schema</code> to be beta</li>
 </ul>
 
-<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
-</span><span class="k">query</span><span class="w"> </span><span class="p">{</span><span class="w">
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">organization</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">memberships</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="n">user</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="s2">"$userId"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="n">access</span><span class="p">(</span><span class="n">filters</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">FolderCreator</span><span class="p">,</span><span class="n">FolderShares</span><span class="p">],</span><span class="w">
-          </span><span class="n">orderBy</span><span class="p">:</span><span class="w"> </span><span class="n">ROLE</span><span class="p">,</span><span class="w"> 
-          </span><span class="n">sortOrder</span><span class="p">:</span><span class="w"> </span><span class="n">desc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="n">access</span><span class="p">(</span><span class="w">
+            </span><span class="n">filters</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">FolderCreator</span><span class="p">,</span><span class="w"> </span><span class="n">FolderShares</span><span class="p">]</span><span class="w">
+            </span><span class="n">orderBy</span><span class="p">:</span><span class="w"> </span><span class="n">ROLE</span><span class="w">
+            </span><span class="n">sortOrder</span><span class="p">:</span><span class="w"> </span><span class="n">desc</span><span class="w">
+          </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="n">email</span><span class="w">
               </span><span class="n">type</span><span class="w">
@@ -897,25 +933,24 @@ noResultsText: '<li><div>No results found.<div></li>',
 <h2 id="v20221116">v2022.11.16</h2>
 
 <p>API Changes</p>
+
 <ul>
   <li>Account Membership search now filters out banned users</li>
   <li>Account Membership search now allows us to query email, lastName, firstName</li>
 </ul>
 
-<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
-</span><span class="c"># Get memberships on an org with emails that contain matterport</span><span class="w">
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Get memberships on an org with emails that contain matterport</span><span class="w">
 </span><span class="k">query</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">organization</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">id</span><span class="w">
-    </span><span class="n">memberships</span><span class="p">(</span><span class="n">field</span><span class="p">:</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">:</span><span class="s2">"matterport"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">memberships</span><span class="p">(</span><span class="n">field</span><span class="p">:</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="s2">"matterport"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="n">user</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="n">id</span><span class="w">
-          </span><span class="n">email</span><span class="w"> 
+          </span><span class="n">email</span><span class="w">
         </span><span class="p">}</span><span class="w">
         </span><span class="n">status</span><span class="w">
       </span><span class="p">}</span><span class="w">
-      
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -925,18 +960,17 @@ noResultsText: '<li><div>No results found.<div></li>',
   <li>We added the ability to order membership search results</li>
 </ul>
 
-<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
-</span><span class="c"># Membership search with ordering </span><span class="w">
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Membership search with ordering</span><span class="w">
 </span><span class="k">query</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">organization</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">id</span><span class="w">
     </span><span class="n">memberships</span><span class="p">(</span><span class="w">
-      </span><span class="n">field</span><span class="p">:</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w">
-      </span><span class="n">query</span><span class="p">:</span><span class="s2">"matterport"</span><span class="p">,</span><span class="w">
+      </span><span class="n">field</span><span class="p">:</span><span class="w"> </span><span class="n">email</span><span class="w">
+      </span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="s2">"matterport"</span><span class="w">
       </span><span class="n">sortBy</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w"> </span><span class="n">field</span><span class="p">:</span><span class="n">last_name</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="p">:</span><span class="w"> </span><span class="n">desc</span><span class="w"> </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w"> </span><span class="n">field</span><span class="p">:</span><span class="w"> </span><span class="n">first_name</span><span class="w"> </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w"> </span><span class="n">field</span><span class="p">:</span><span class="w"> </span><span class="n">last_login</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="p">:</span><span class="w"> </span><span class="n">asc</span><span class="p">}</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="n">field</span><span class="p">:</span><span class="w"> </span><span class="n">last_name</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="p">:</span><span class="w"> </span><span class="n">desc</span><span class="w"> </span><span class="p">}</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="n">field</span><span class="p">:</span><span class="w"> </span><span class="n">first_name</span><span class="w"> </span><span class="p">}</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="n">field</span><span class="p">:</span><span class="w"> </span><span class="n">last_login</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="p">:</span><span class="w"> </span><span class="n">asc</span><span class="w"> </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -955,6 +989,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span></code></pre></div></div>
 
 <p><strong>Bug Fixes and Other Enhancements</strong></p>
+
 <ul>
   <li>fixed the query field for org/account memberships</li>
 </ul>
@@ -972,12 +1007,12 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <h2 id="v20220921">v2022.09.21</h2>
 
-<p>This changes the default serialization of fields with errors or no data from being left out of the response to serializing null explicitly (this is more compliant with the GraphQL standard).  There is a graph query which may be used to opt an org out of this behavior to the previous behaviour:</p>
+<p>This changes the default serialization of fields with errors or no data from being left out of the response to serializing null explicitly (this is more compliant with the GraphQL standard). There is a graph query which may be used to opt an org out of this behavior to the previous behaviour:</p>
 
-<p><a href="https://api.matterport.com/api/mp/accounts/graphiql/?query=query%20getSerialization(%24orgId%3A%20ID)%20%7B%0A%20%20organization(id%3A%24orgId)%20%7B%0A%20%20%20%20id%0A%20%20%20%20developer%20%7B%0A%20%20%20%20%20%20options%20%7B%0A%20%20%20%20%20%20%20%20serializeGraphNulls%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0Amutation%20disableSerializeNulls(%24orgId%3A%20ID)%20%7B%0A%20%20patchDeveloperOptions(%0A%20%20%20%20organizationId%3A%24orgId%0A%20%20%20%20serializeGraphNulls%3A%20disabled%0A%20%20)%20%7B%0A%20%20%20%20serializeGraphNulls%0A%20%20%7D%0A%7D%0A%0Amutation%20enableSerializeNulls(%24orgId%3A%20ID)%20%7B%0A%20%20patchDeveloperOptions(%0A%20%20%20%20organizationId%3A%24orgId%0A%20%20%20%20serializeGraphNulls%3A%20enabled%0A%20%20)%20%7B%0A%20%20%20%20serializeGraphNulls%0A%20%20%7D%0A%7D&amp;operationName=getSerialization" target="_blank">Try it in our interactive console</a></p>
+<p><a href="https://api.matterport.com/api/mp/accounts/graphiql/?query=query%20getSerialization(%24orgId%3A%20ID)%20%7B%0A%20%20organization(id%3A%24orgId)%20%7B%0A%20%20%20%20id%0A%20%20%20%20developer%20%7B%0A%20%20%20%20%20%20options%20%7B%0A%20%20%20%20%20%20%20%20serializeGraphNulls%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0Amutation%20disableSerializeNulls(%24orgId%3A%20ID)%20%7B%0A%20%20patchDeveloperOptions(%0A%20%20%20%20organizationId%3A%24orgId%0A%20%20%20%20serializeGraphNulls%3A%20disabled%0A%20%20)%20%7B%0A%20%20%20%20serializeGraphNulls%0A%20%20%7D%0A%7D%0A%0Amutation%20enableSerializeNulls(%24orgId%3A%20ID)%20%7B%0A%20%20patchDeveloperOptions(%0A%20%20%20%20organizationId%3A%24orgId%0A%20%20%20%20serializeGraphNulls%3A%20enabled%0A%20%20)%20%7B%0A%20%20%20%20serializeGraphNulls%0A%20%20%7D%0A%7D&amp;operationName=getSerialization" target="\_blank">Try it in our interactive console</a></p>
 
 <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getSerialization</span><span class="p">(</span><span class="nv">$orgId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="n">organization</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="nv">$orgId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">organization</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$orgId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">id</span><span class="w">
     </span><span class="n">developer</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="n">options</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -988,19 +1023,13 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 
 </span><span class="k">mutation</span><span class="w"> </span><span class="n">disableSerializeNulls</span><span class="p">(</span><span class="nv">$orgId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="n">patchDeveloperOptions</span><span class="p">(</span><span class="w">
-    </span><span class="n">organizationId</span><span class="p">:</span><span class="nv">$orgId</span><span class="w">
-    </span><span class="n">serializeGraphNulls</span><span class="p">:</span><span class="w"> </span><span class="n">disabled</span><span class="w">
-  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">patchDeveloperOptions</span><span class="p">(</span><span class="n">organizationId</span><span class="p">:</span><span class="w"> </span><span class="nv">$orgId</span><span class="p">,</span><span class="w"> </span><span class="n">serializeGraphNulls</span><span class="p">:</span><span class="w"> </span><span class="n">disabled</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">serializeGraphNulls</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span><span class="k">mutation</span><span class="w"> </span><span class="n">enableSerializeNulls</span><span class="p">(</span><span class="nv">$orgId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="n">patchDeveloperOptions</span><span class="p">(</span><span class="w">
-    </span><span class="n">organizationId</span><span class="p">:</span><span class="nv">$orgId</span><span class="w">
-    </span><span class="n">serializeGraphNulls</span><span class="p">:</span><span class="w"> </span><span class="n">enabled</span><span class="w">
-  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">patchDeveloperOptions</span><span class="p">(</span><span class="n">organizationId</span><span class="p">:</span><span class="w"> </span><span class="nv">$orgId</span><span class="p">,</span><span class="w"> </span><span class="n">serializeGraphNulls</span><span class="p">:</span><span class="w"> </span><span class="n">enabled</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">serializeGraphNulls</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1023,28 +1052,29 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="k">query</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">organization</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">modelShares</span><span class="p">(</span><span class="w">
-    
+
       </span><span class="c"># A query string to search for. If the query is not provided, all the results for given organization are returned.</span><span class="w">
       </span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w">
-      
+
       </span><span class="c"># If supplied, the query string only searches this field</span><span class="w">
       </span><span class="n">field</span><span class="p">:</span><span class="w"> </span><span class="n">ModelSharesSearchField</span><span class="p">,</span><span class="w">
 
       </span><span class="c"># Filter based on the access level granted to user. If more than one level is selected, shares with access given with either level is shown (an OR operation is performed)</span><span class="w">
 
       </span><span class="n">accessLevel</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">ModelShareAccess</span><span class="p">],</span><span class="w">
-      
+
       </span><span class="c"># Desired number of entries in a page of results. If not specified, default will be 10</span><span class="w">
 
       </span><span class="n">pageSize</span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="p">,</span><span class="w">
 
       </span><span class="c"># The offset value to apply, if omitted will start with the first matching result. The result list's 'nextOffset' property provides the offset value for the next page of results.</span><span class="w">
-      
+
       </span><span class="n">offset</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="w">
     </span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="n">UserModelShareAccessList</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
+
 <ul>
   <li>Query results are returned sorted by created date in descending order.</li>
 </ul>
@@ -1072,7 +1102,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
 </span><span class="c"># Clear the default upload folder a user</span><span class="w">
-</span><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+</span><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">clearDefaultUploadFolder</span><span class="p">(</span><span class="w">
     </span><span class="c"># ID of the user</span><span class="w">
     </span><span class="n">userId</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!</span><span class="w">
@@ -1167,23 +1197,23 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="k">query</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">organization</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">modelShares</span><span class="p">(</span><span class="w">
-    
+
       </span><span class="c"># A query string to search for. If the query is not provided, all the results for given organization are returned.</span><span class="w">
       </span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w">
-      
+
       </span><span class="c"># If supplied, the query string only searches this field</span><span class="w">
       </span><span class="n">field</span><span class="p">:</span><span class="w"> </span><span class="n">ModelSharesSearchField</span><span class="p">,</span><span class="w">
-      
+
       </span><span class="c"># Filter based on the access level granted to user</span><span class="w">
       </span><span class="n">accessLevel</span><span class="p">:</span><span class="w"> </span><span class="n">ModelShareAccess</span><span class="p">,</span><span class="w">
-      
+
       </span><span class="c"># Desired number of entries in a page of results. If not specified, default will be 10</span><span class="w">
       </span><span class="n">pageSize</span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="p">,</span><span class="w">
-      
+
       </span><span class="c"># The offset value to apply, if omitted will start with the first matching result. The result list's 'nextOffset' property provides the offset value for the next page of results.</span><span class="w">
-      
+
       </span><span class="n">offset</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="w">
-    
+
     </span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="n">UserModelShareAccessList</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1219,7 +1249,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="k">query</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">organization</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">removeModelShareAccess</span><span class="p">(</span><span class="w">
-      </span><span class="n">userId</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!,</span><span class="w"> 
+      </span><span class="n">userId</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!,</span><span class="w">
       </span><span class="n">modelId</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!</span><span class="w">
     </span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="n">Boolean</span><span class="p">!</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -1266,7 +1296,7 @@ noResultsText: '<li><div>No results found.<div></li>',
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-  
+
 </span><span class="c"># Add or update model share for a given user</span><span class="w">
 
 </span><span class="n">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1304,7 +1334,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jun 30, 2023 <br />
+ Site last generated: Aug 16, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

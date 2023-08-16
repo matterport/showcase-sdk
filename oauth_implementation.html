@@ -411,6 +411,27 @@
           
           
           
+          <li class="subfolders">
+              <a title="Using the Scene Namespace" href="#">Using the Scene Namespace</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Intro and Basic Components" href="/showcase-sdk/sdk_scene_intro.html">Intro and Basic Components</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Connecting Components" href="/showcase-sdk/sdk_connecting_components.html">Connecting Components</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
           
           
           
@@ -872,10 +893,10 @@ noResultsText: '<li><div>No results found.<div></li>',
   <li>The <strong>OAuth app developer</strong> uses a generated Client ID and Client Secret in the OAuth app.</li>
   <li>The <strong>user</strong> accesses a <strong>3rd Party Application</strong> and is presented with the option to ‘Connect to Matterport.’</li>
   <li>The <strong>end user</strong> clicks to open an authorization screen hosted on the <strong>Matterport Authorization Server</strong> in a modal window.</li>
-  <li>The <strong>end used</strong> authorizes the app to access their data by providing their Matterport username and password to the <strong>Matterport Authorization Server</strong>.</li>
+  <li>The <strong>end user</strong> authorizes the app to access their data by providing their Matterport username and password to the <strong>Matterport Authorization Server</strong>.</li>
   <li>The <strong>Matterport Authorization Server</strong> provides an authorization code and refresh token to the redirect URI and the modal window closes.</li>
   <li>The <strong>OAuth Application Redirect Page</strong> uses the authorization code to acquire an initial access token and a refresh token with a 30 day expiration.</li>
-  <li>The <strong>OAuth Application</strong> receives the access token and expiration time.  The <strong><code class="language-plaintext highlighter-rouge">refresh_token</code></strong> remains stored on the server side.  Subsequent access tokens can be acquired using the refresh token on the <em>OAuth Application Server</em>, without end user input.</li>
+  <li>The <strong>OAuth Application</strong> receives the access token and expiration time. The <strong><code class="language-plaintext highlighter-rouge">refresh_token</code></strong> remains stored on the server side. Subsequent access tokens can be acquired using the refresh token on the <em>OAuth Application Server</em>, without end user input.</li>
   <li>Potential Use: The <strong>OAuth Application</strong> uses the access token as a Bearer Token to display private models.</li>
   <li>Potential Use: The <strong>OAuth Application</strong> can then use the access token to authenticate API calls.</li>
 </ol>
@@ -990,16 +1011,16 @@ noResultsText: '<li><div>No results found.<div></li>',
 <p><strong>Sample Response:</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-     </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3mwbyppm4u0gz1z14ktqtiteb"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">3599</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ichxdbm59z74m6tkcbqi092rc"</span><span class="w">
+  </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3mwbyppm4u0gz1z14ktqtiteb"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">3599</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ichxdbm59z74m6tkcbqi092rc"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 <p>The <strong><code class="language-plaintext highlighter-rouge">access_token</code></strong> value should then be used to access the Matterport API directly, in the Authorization header, using the standard OAuth format of “<code class="language-plaintext highlighter-rouge">Authorization: Bearer &lt;token&gt;</code>”.</p>
 
-<p>The <strong><code class="language-plaintext highlighter-rouge">refresh_token</code></strong> value can be used to request a new access token when the expiration time is near  By default, refresh tokens are valid for 30 days.</p>
+<p>The <strong><code class="language-plaintext highlighter-rouge">refresh_token</code></strong> value can be used to request a new access token when the expiration time is near By default, refresh tokens are valid for 30 days.</p>
 
 <p>The <strong><code class="language-plaintext highlighter-rouge">expires_in</code></strong> value indicates how long the access token is valid in seconds. By default, this is 1 day.</p>
 
@@ -1039,11 +1060,19 @@ noResultsText: '<li><div>No results found.<div></li>',
 <p><strong>Sample Response:</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-     </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r3gxncgp4xksmdtectyzw1s8c"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">3599</span><span class="w">
+  </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r3gxncgp4xksmdtectyzw1s8c"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">3599</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
+
+<h2 id="refresh-token-rotation">Refresh Token Rotation</h2>
+
+<p>While your <strong><code class="language-plaintext highlighter-rouge">refresh_token</code></strong> is valid for 30 days, after 24 hours, it will become stale. After 24 hours, the next request for a new <strong><code class="language-plaintext highlighter-rouge">access_token</code></strong> will also return a new refresh_token.</p>
+
+<p>Please be sure to pay attention to the returned <strong>refresh_token</strong>. Make sure to capture this new value for subsequent access_token refreshes.</p>
+
+<p>Refresh Token rotation is a standard part of OAuth. For more information on refresh_token rotation, please see <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-10.4" target="\_blank">RFC6749 from the OAuth Spec</a></p>
 
 <h2 id="refresh-token-revocation">Refresh Token Revocation</h2>
 
@@ -1054,7 +1083,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 <p>Sample response (HTTP 400):</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_grant"</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_grant"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1074,7 +1103,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jun 30, 2023 <br />
+ Site last generated: Aug 16, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

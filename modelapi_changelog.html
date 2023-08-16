@@ -411,6 +411,27 @@
           
           
           
+          <li class="subfolders">
+              <a title="Using the Scene Namespace" href="#">Using the Scene Namespace</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Intro and Basic Components" href="/showcase-sdk/sdk_scene_intro.html">Intro and Basic Components</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Connecting Components" href="/showcase-sdk/sdk_connecting_components.html">Connecting Components</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
           
           
           
@@ -854,9 +875,14 @@ noResultsText: '<li><div>No results found.<div></li>',
     
 
    
-<h3 id="may-16-2023">May 16, 2023</h3>
+<h2 id="aug-8-2023">Aug 8, 2023</h2>
 
-<p>API Changes</p>
+<ul>
+  <li>Private Model Embed (PME) no longer requires also having the OAuth feature enabled on the organization. Nothing changes from a usage perspective.</li>
+</ul>
+
+<h2 id="may-16-2023">May 16, 2023</h2>
+
 <ul>
   <li>A new <code class="language-plaintext highlighter-rouge">BillingDetails</code> under model, containing exempt: Boolean and <code class="language-plaintext highlighter-rouge">multiSpaceUse</code>
     <ul>
@@ -872,9 +898,8 @@ noResultsText: '<li><div>No results found.<div></li>',
   </li>
 </ul>
 
-<h3 id="april-6-2023">April 6, 2023</h3>
+<h2 id="april-6-2023">April 6, 2023</h2>
 
-<p>API Changes</p>
 <ul>
   <li>Users with Folder API Access can now query folder paths within model queries.</li>
 </ul>
@@ -889,29 +914,31 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<h3 id="march-1-2023">March 1, 2023</h3>
+<h2 id="march-1-2023">March 1, 2023</h2>
 
-<p>API Changes</p>
+<h3 id="api-changes">API Changes</h3>
+
 <ul>
   <li>The assets attribute on Model is marked as nullable and documented with @error model.inactive</li>
   <li>The <code class="language-plaintext highlighter-rouge">updateModelAddress</code> mutation supports changing the <code class="language-plaintext highlighter-rouge">addressVisibility</code> property.</li>
   <li>The model mutation <code class="language-plaintext highlighter-rouge">updateAddress</code> supports changing the <code class="language-plaintext highlighter-rouge">addressVisibility</code> property.</li>
 </ul>
 
-<p>Bug Fixes and Other Enhancements</p>
+<h3 id="bug-fixes-and-other-enhancements">Bug Fixes and Other Enhancements</h3>
+
 <ul>
   <li>Model Webhooks bugs have been fixed and users should receive notifications for all models in their organization.</li>
 </ul>
 
-<h3 id="january-18-2023">January 18, 2023</h3>
+<h2 id="january-18-2023">January 18, 2023</h2>
 
 <ul>
-  <li>The <code class="language-plaintext highlighter-rouge">icon</code> attribute on <a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/mattertag.doc.html" target="_blank">Mattertags</a> may now be read and patched.  Please see <a href="tags_icons_reference.html" target="_blank">Tags 2.0 Icons Reference</a> for the full icon set.</li>
-  <li>The <code class="language-plaintext highlighter-rouge">floor</code> attribute on Labels may now be <a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/label.doc.html" target="_blank">queried</a> and mutated.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">icon</code> attribute on <a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/mattertag.doc.html" target="\_blank">Mattertags</a> may now be read and patched. Please see <a href="tags_icons_reference.html" target="\_blank">Tags 2.0 Icons Reference</a> for the full icon set.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">floor</code> attribute on Labels may now be <a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/label.doc.html" target="\_blank">queried</a> and mutated.</li>
   <li>Added ID for the resource (denoting SID of the resource) in <code class="language-plaintext highlighter-rouge">AccessInfo</code> type for access query</li>
 </ul>
 
-<h3 id="december-14-2023">December 14, 2023</h3>
+<h2 id="december-14-2022">December 14, 2022</h2>
 
 <ul>
   <li>Folder and model api query for <code class="language-plaintext highlighter-rouge">access</code> now in <code class="language-plaintext highlighter-rouge">@beta</code></li>
@@ -919,13 +946,12 @@ noResultsText: '<li><div>No results found.<div></li>',
   <li>The error structure will also now include an additional httpStatus attribute which indicates what the equivalent HTTP status for each sub-error would have been</li>
 </ul>
 
-<p>API Changes
-Example model query:</p>
+<p>Example model query:</p>
 
 <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="s2">"$modelId"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="n">access</span><span class="p">(</span><span class="n">pageSize</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="n">orderBy</span><span class="p">:</span><span class="n">ROLE</span><span class="p">,</span><span class="w"> </span><span class="n">filters</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">Admin</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">access</span><span class="p">(</span><span class="n">pageSize</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="n">orderBy</span><span class="p">:</span><span class="w"> </span><span class="n">ROLE</span><span class="p">,</span><span class="w"> </span><span class="n">filters</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">Admin</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="n">email</span><span class="w">
         </span><span class="n">type</span><span class="w">
         </span><span class="n">role</span><span class="w">
@@ -943,8 +969,8 @@ Example model query:</p>
   </span><span class="n">folder</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="s2">"$folderId"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">id</span><span class="w">
     </span><span class="n">name</span><span class="w">
-    </span><span class="n">access</span><span class="p">(</span><span class="n">filters</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">FolderCreator</span><span class="p">],</span><span class="w"> </span><span class="n">pageSize</span><span class="p">:</span><span class="mi">500</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">access</span><span class="p">(</span><span class="n">filters</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">FolderCreator</span><span class="p">],</span><span class="w"> </span><span class="n">pageSize</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="n">email</span><span class="w">
         </span><span class="n">name</span><span class="w">
         </span><span class="n">role</span><span class="w">
@@ -956,92 +982,484 @@ Example model query:</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<h3 id="november-16-2023">November 16, 2023</h3>
+<h2 id="november-16-2022">November 16, 2022</h2>
 
 <ul>
-  <li><a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/folder.doc.html" target="_blank">Folder API query</a> for <code class="language-plaintext highlighter-rouge">modelCountSummary</code> is now out of <code class="language-plaintext highlighter-rouge">@beta</code></li>
+  <li><a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/folder.doc.html" target="\_blank">Folder API query</a> for <code class="language-plaintext highlighter-rouge">modelCountSummary</code> is now out of <code class="language-plaintext highlighter-rouge">@beta</code></li>
 </ul>
 
-<h3 id="october-26-2023">October 26, 2023</h3>
+<h2 id="october-26-2022">October 26, 2022</h2>
 
 <ul>
-  <li><a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/folder.doc.html" target="_blank">Folder</a> extensions now out of <code class="language-plaintext highlighter-rouge">@beta</code></li>
+  <li><a href="https://static.matterport.com/api-doc/2022.12.76-main-g91695f2/reference/graphdoc/model/folder.doc.html" target="\_blank">Folder</a> extensions now out of <code class="language-plaintext highlighter-rouge">@beta</code></li>
   <li>Webhook Mutations now available. (Enterprise only)</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># @beta Model Event Webhooks
-#
-# Add a new Model event callback for the org that the user belongs to
-#
-# Arguments
-# input: undefined
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">addModelEventWebhookCallback</span><span class="p">(</span><span class="n">ModelEventCallbackInput</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-  addModelEventWebhookCallback(
-    input: ModelEventCallbackInput
-  ): ModelEventWebhookCallback
+</span><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">patchModelEventWebhookCallback</span><span class="p">(</span><span class="w">
+    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!,</span><span class="w">
+    </span><span class="n">input</span><span class="p">:</span><span class="w"> </span><span class="n">ModelEventCallbackInput</span><span class="w">
+  </span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="n">ModelEventWebhookCallback</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-# @beta Model Event Webhooks
-#
-# Update a Model event callback for an existing subscription
-#
-# Arguments
-# id: undefined
-# input: undefined
-  patchModelEventWebhookCallback(
-    id: ID!,
-    input: ModelEventCallbackInput
-  ): ModelEventWebhookCallback
+</span><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">removeModelEventWebhookCallback</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!)</span><span class="err">:</span><span class="w"> </span><span class="n">Boolean</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-# @beta Model Event Webhooks
-#
-# Remove Model event webhook callback for the org that the user belongs to
-#
-# Arguments
-# id: Remove the model event webhook callback for the callback id
-# that is provided.
-# If not provided the delete all the callbacks for the organization.
+</span><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">pingModelEventWebhookCallback</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!)</span><span class="err">:</span><span class="w"> </span><span class="n">Boolean</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-  removeModelEventWebhookCallback(id: ID!): Boolean
+</span><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">addModelEventToCallback</span><span class="p">(</span><span class="w">
+    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!,</span><span class="w">
+	</span><span class="n">eventTypes</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">ModelEventType</span><span class="p">!]</span><span class="w">
+  </span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="n">ModelEventWebhookCallback</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-# @beta Model Event Webhooks
-#
-# Ping Model event webhook callback for the org that the user belongs to.
-# This will result in a callback to the registered webhook.
-#
-# Arguments
-# id: Ping the model event webhook callback for the callback id
-# that is provided.
+</span><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">removeModelEventFromCallback</span><span class="p">(</span><span class="w">
+    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!,</span><span class="w">
+	</span><span class="n">eventTypes</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">ModelEventType</span><span class="p">!]</span><span class="w">
+  </span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="n">ModelEventWebhookCallback</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
-  pingModelEventWebhookCallback(id: ID!): Boolean
+<h2 id="october-12-2022">October 12, 2022</h2>
 
-# @beta Model Event Webhooks
-#
-# Add a model Event to webhook callback
-#
-# Arguments
-# id: Add the model event to the webhook subscription for the
-# callback id that is provided.
-# eventTypes: undefined
+<p>This changes the default serialization of fields with errors or no data from being left out of the response to serializing null explicitly (this is more compliant with the GraphQL standard). There is a graph query which may be used to opt an org out of this behavior to the previous behaviour:</p>
 
-  addModelEventToCallback(
-    id: ID!,
-    eventTypes: [ModelEventType!]
-  ): ModelEventWebhookCallback
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getSerialization</span><span class="p">(</span><span class="nv">$orgId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">organization</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$orgId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">developer</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">options</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">serializeGraphNulls</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-# @beta Model Event Webhooks
-#
-# Remove a model event from webhook subscription
-#
-# Arguments
-# id: Remove the model event from the webhook subscription for
-# the callback id that is provided.
-# eventTypes: undefined
+</span><span class="k">mutation</span><span class="w"> </span><span class="n">disableSerializeNulls</span><span class="p">(</span><span class="nv">$orgId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">patchDeveloperOptions</span><span class="p">(</span><span class="n">organizationId</span><span class="p">:</span><span class="w"> </span><span class="nv">$orgId</span><span class="p">,</span><span class="w"> </span><span class="n">serializeGraphNulls</span><span class="p">:</span><span class="w"> </span><span class="n">disabled</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">serializeGraphNulls</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-removeModelEventFromCallback(
-  id: ID!,
-  eventTypes: [ModelEventType!]
-): ModelEventWebhookCallback
+</span><span class="k">mutation</span><span class="w"> </span><span class="n">enableSerializeNulls</span><span class="p">(</span><span class="nv">$orgId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">patchDeveloperOptions</span><span class="p">(</span><span class="n">organizationId</span><span class="p">:</span><span class="w"> </span><span class="nv">$orgId</span><span class="p">,</span><span class="w"> </span><span class="n">serializeGraphNulls</span><span class="p">:</span><span class="w"> </span><span class="n">enabled</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">serializeGraphNulls</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Bug Fixes and Other Enhancements</p>
+
+<ul>
+  <li>Fixed a bug where the query to get the organization’s root folder was not returning results.</li>
+</ul>
+
+<h2 id="september-21-2022">September 21, 2022</h2>
+
+<ul>
+  <li>Mattertag description max length increased from 1,000 characters to 2,000 characters</li>
+</ul>
+
+<h2 id="september-9-2022">September 9, 2022</h2>
+
+<p>This release exposes full folder manipulation (within org) create, edit, share, move and delete folders.</p>
+
+<p>This is currently a closed beta that can be enabled via the api.graph.ext.folders policy.</p>
+
+<p>API Changes</p>
+
+<ul>
+  <li>Add query to get folder and root folder for an organization.</li>
+</ul>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="n">folder</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!)</span><span class="err">:</span><span class="w"> </span><span class="n">Folder</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">query</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="n">rootFolder</span><span class="p">(</span><span class="n">organizationId</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="n">Folder</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>Add mutation to create, edit, delete and move folders within organization</li>
+</ul>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="n">addFolder</span><span class="p">(</span><span class="n">folderDetails</span><span class="p">:</span><span class="w"> </span><span class="n">FolderDetails</span><span class="p">!)</span><span class="err">:</span><span class="w"> </span><span class="n">Folder</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="n">patchFolder</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!,</span><span class="w"> </span><span class="n">patchInput</span><span class="p">:</span><span class="w"> </span><span class="n">FolderPatch</span><span class="p">!)</span><span class="err">:</span><span class="w"> </span><span class="n">Folder</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="n">moveToFolder</span><span class="p">(</span><span class="n">modelIds</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">ID</span><span class="p">!],</span><span class="w"> </span><span class="n">folderIds</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">ID</span><span class="p">!],</span><span class="w"> </span><span class="n">destinationFolderId</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!)</span><span class="err">:</span><span class="w"> </span><span class="n">Folder</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="n">deleteFolder</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!)</span><span class="err">:</span><span class="w"> </span><span class="n">Boolean</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>Add mutation to add, update and remove shares for model and folders</li>
+</ul>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="n">removeModelShareAccess</span><span class="p">(</span><span class="n">userId</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!,</span><span class="w"> </span><span class="n">modelId</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!)</span><span class="err">:</span><span class="w"> </span><span class="n">Boolean</span><span class="p">!</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="n">removeFolderShareAccess</span><span class="p">(</span><span class="n">userId</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!,</span><span class="w"> </span><span class="n">folderId</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!)</span><span class="err">:</span><span class="w"> </span><span class="n">Boolean</span><span class="p">!</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="n">addOrUpdateModelShareAccess</span><span class="p">(</span><span class="n">userId</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!,</span><span class="w"> </span><span class="n">roleId</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!,</span><span class="w"> </span><span class="n">modelId</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!)</span><span class="err">:</span><span class="w"> </span><span class="n">UserModelShareAccess</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="n">addOrUpdateFolderShareAccess</span><span class="p">(</span><span class="w">
+		</span><span class="n">email</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w">
+		</span><span class="n">userId</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">,</span><span class="w">
+		</span><span class="n">invitationMessage</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w">
+		</span><span class="n">roleId</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!,</span><span class="w">
+		</span><span class="n">folderId</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!</span><span class="w">
+	</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="n">UserFolderShareAccess</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="august-24-2022">August 24, 2022</h2>
+
+<p>This is a minor revision related to the object detection beta.</p>
+
+<p>API Changes</p>
+
+<ul>
+  <li>Add a parameter to Model.objectAnnotations() to explicitly include user created ObjectAnnotations</li>
+</ul>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="n">objectAnnotations</span><span class="p">(</span><span class="w">
+		</span><span class="n">includeUserCreated</span><span class="p">:</span><span class="w"> </span><span class="n">Boolean</span><span class="w">
+	</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="err">[</span><span class="n">ObjectAnnotation</span><span class="p">!</span><span class="err">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="june-15-2022">June 15, 2022</h2>
+
+<p>This release exposes the initial schema for object annotations (object detection/insights), data will only be available for folks included in the invite only evaluation.</p>
+
+<p>Also included in this release is the initial implementation of Private Model Embed (PME), the next-gen replacement for Private Model Access (PMA).</p>
+
+<p>API Changes</p>
+
+<ul>
+  <li>[CLOSED BETA] As part of the internal beta of Object Detection the following schema will be made public but data will only be populated for members of the closed beta.</li>
+</ul>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span><span class="w"> </span><span class="n">Model</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">inferenceEvents</span><span class="p">(</span><span class="n">ids</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="nb">ID</span><span class="p">!]):</span><span class="w"> </span><span class="p">[</span><span class="n">InferenceEvent</span><span class="p">!]</span><span class="w">
+  </span><span class="n">objectClassifications</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">ObjectClassification</span><span class="p">!]</span><span class="w">
+  </span><span class="n">objectAnnotations</span><span class="p">(</span><span class="w">
+    </span><span class="n">inferenceEvents</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="nb">ID</span><span class="p">!]</span><span class="w">
+    </span><span class="n">ids</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="nb">ID</span><span class="p">!]</span><span class="w">
+    </span><span class="n">includeDisabled</span><span class="p">:</span><span class="w"> </span><span class="nb">Boolean</span><span class="w">
+    </span><span class="n">minimumConfidenceOverride</span><span class="p">:</span><span class="w"> </span><span class="nb">Float</span><span class="w">
+  </span><span class="p">):</span><span class="w"> </span><span class="p">[</span><span class="n">ObjectAnnotation</span><span class="p">!]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">type</span><span class="w"> </span><span class="n">InferenceEvent</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!</span><span class="w">
+  </span><span class="n">created</span><span class="p">:</span><span class="w"> </span><span class="n">DateTime</span><span class="p">!</span><span class="w">
+  </span><span class="n">detectionModelName</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!</span><span class="w">
+  </span><span class="n">detectionModelVersion</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">type</span><span class="w"> </span><span class="n">ObjectClassification</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!</span><span class="w">
+  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!</span><span class="w">
+  </span><span class="n">defaultKeywords</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="nb">String</span><span class="p">!]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">type</span><span class="w"> </span><span class="n">ObjectAnnotation</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="n">Annotation</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!</span><span class="w">
+  </span><span class="n">created</span><span class="p">:</span><span class="w"> </span><span class="n">DateTime</span><span class="p">!</span><span class="w">
+  </span><span class="n">modified</span><span class="p">:</span><span class="w"> </span><span class="n">DateTime</span><span class="p">!</span><span class="w">
+  </span><span class="n">model</span><span class="p">:</span><span class="w"> </span><span class="n">Model</span><span class="w">
+  </span><span class="n">source</span><span class="p">:</span><span class="w"> </span><span class="n">ObjectAnnotationSource</span><span class="p">!</span><span class="w">
+  </span><span class="n">floor</span><span class="p">:</span><span class="w"> </span><span class="n">ModelFloor</span><span class="w">
+  </span><span class="n">room</span><span class="p">:</span><span class="w"> </span><span class="n">ModelRoom</span><span class="w">
+  </span><span class="n">enabled</span><span class="p">:</span><span class="w"> </span><span class="nb">Boolean</span><span class="p">!</span><span class="w">
+  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="w">
+  </span><span class="n">confidence</span><span class="p">:</span><span class="w"> </span><span class="nb">Float</span><span class="w">
+  </span><span class="n">panos</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">PanoramicImageLocation</span><span class="p">!]</span><span class="w">
+  </span><span class="n">region</span><span class="p">:</span><span class="w"> </span><span class="n">Region</span><span class="w">
+  </span><span class="n">tag</span><span class="p">:</span><span class="w"> </span><span class="n">Mattertag</span><span class="w">
+  </span><span class="n">keywords</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="nb">String</span><span class="p">!]</span><span class="w">
+  </span><span class="n">classification</span><span class="p">:</span><span class="w"> </span><span class="n">ObjectClassification</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">type</span><span class="w"> </span><span class="n">Mattertag</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">objectAnnotation</span><span class="p">:</span><span class="w"> </span><span class="n">ObjectAnnotation</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="may-26-2022">May 26, 2022</h2>
+
+<p>This release adds ability to get information about user(s) who have uploaded the model.</p>
+
+<ul>
+  <li>For all models created to date this will always be a single user, however this will expand out to allow multiple uploaders as the capture app evolves</li>
+</ul>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">uploaders</span><span class="p">:</span><span class="w"> </span><span class="err">[</span><span class="n">UserMetadata</span><span class="err">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="may-4-2022">May 4, 2022</h2>
+
+<p>This is a minor feature release to expose more information about bundle status.</p>
+
+<ul>
+  <li>Additional information about the status of bundles that are being processed.</li>
+  <li>The processing field on bundles is made public, the following attributes will now be available under that for any bundles that have been unlocked:</li>
+</ul>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">bundle</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:matterpak"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">processing</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">bundleId</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">!</span><span class="w">
+        </span><span class="n">organizationId</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!</span><span class="w">
+        </span><span class="n">status</span><span class="p">:</span><span class="w"> </span><span class="n">BundleProcessingStatus</span><span class="p">!</span><span class="w">
+        </span><span class="n">lastModified</span><span class="p">:</span><span class="w"> </span><span class="n">DateTime</span><span class="p">!</span><span class="w">
+        </span><span class="n">failureCode</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="w">
+        </span><span class="n">failureReason</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Note that failureCode and failureReason are specific to each bundle type</p>
+
+<h2 id="april-14-2022">April 14, 2022</h2>
+
+<p>This is a major feature release to expose notes functionality over the public apis as well as clean up doc a bit and refresh the experience.</p>
+
+<ul>
+  <li>Exposed Note Query and Mutations</li>
+  <li>Deprecated updateMattertagMedia and enabled updating the external URL via patchMattertag</li>
+  <li>API doc experience refreshed and more closely integrated with SDK doc</li>
+</ul>
+
+<h2 id="march-22-2022">March 22, 2022</h2>
+
+<ul>
+  <li>Exposed a generate assets request which will allow assets for bundles to be generated on demand.</li>
+</ul>
+
+<h2 id="december-16-2021">December 16, 2021</h2>
+
+<ul>
+  <li>Fixed a type in measurmentPath to be measurementPath under rooms.</li>
+</ul>
+
+<h2 id="july-29-2021">July 29, 2021</h2>
+
+<ul>
+  <li>Added a 1,000 page limit to the models query, this also fixed an issue where asking for a page size of 10,000 or more results would cause nextOffset to not be populated even when there were additional hits.</li>
+</ul>
+
+<h2 id="may-13-2021">May 13, 2021</h2>
+
+<ul>
+  <li>Fixed an issue that allowed an API token to access models that the token creator had access to outside of the token’s organization. Note that this includes restricting access to public models outside of the organization the token belongs to.</li>
+</ul>
+
+<h2 id="april-22-2021">April 22, 2021</h2>
+
+<p>This release adds official support for controlling more options related to the Matterport Showcase and additional information associated with public models.</p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span><span class="k">query</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="n">options</span><span class="w"> </span><span class="p">{</span><span class="w">
+			</span><span class="n">addressVisibility</span><span class="w">
+			</span><span class="n">tourButtonsEnabled</span><span class="w">
+			</span><span class="n">tourButtonsOverride</span><span class="w">
+			</span><span class="n">dollhouseEnabled</span><span class="w">
+			</span><span class="n">dollhouseOverride</span><span class="w">
+			</span><span class="n">floorplanEnabled</span><span class="w">
+			</span><span class="n">floorplanOverride</span><span class="w">
+			</span><span class="n">labelsEnabled</span><span class="w">
+			</span><span class="n">labelsOverride</span><span class="w">
+			</span><span class="n">dollhouseLabelsEnabled</span><span class="w">
+			</span><span class="n">dollhouseLabelsOverride</span><span class="w">
+			</span><span class="n">highlightReelEnabled</span><span class="w">
+			</span><span class="n">highlightReelOverride</span><span class="w">
+			</span><span class="n">tourAutoplayEnabled</span><span class="w">
+			</span><span class="n">tourAutoplayOverride</span><span class="w">
+			</span><span class="n">backgroundColor</span><span class="w">
+			</span><span class="n">unitType</span><span class="w">
+			</span><span class="n">measurements</span><span class="w">
+			</span><span class="n">address</span><span class="w">
+		</span><span class="p">}</span><span class="w">
+	</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="n">patchModel</span><span class="p">(</span><span class="w">
+		</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">ID</span><span class="p">!,</span><span class="w">
+		</span><span class="n">patch</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			</span><span class="n">options</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+				</span><span class="n">backgroundColor</span><span class="p">:</span><span class="w"> </span><span class="n">BackgroundColorSettingOverride</span><span class="w">
+				</span><span class="n">tourButtonsOverride</span><span class="p">:</span><span class="w"> </span><span class="n">SettingOverride</span><span class="w">
+				</span><span class="n">dollhouseOverride</span><span class="p">:</span><span class="w"> </span><span class="n">SettingOverride</span><span class="w">
+				</span><span class="n">floorplanOverride</span><span class="p">:</span><span class="w"> </span><span class="n">SettingOverride</span><span class="w">
+				</span><span class="n">labelsOverride</span><span class="p">:</span><span class="w"> </span><span class="n">SettingOverride</span><span class="w">
+				</span><span class="n">dollhouseLabelsOverride</span><span class="p">:</span><span class="w"> </span><span class="n">SettingOverride</span><span class="w">
+				</span><span class="n">highlightReelOverride</span><span class="p">:</span><span class="w"> </span><span class="n">SettingOverride</span><span class="w">
+				</span><span class="n">tourAutoplayOverride</span><span class="p">:</span><span class="w"> </span><span class="n">SettingOverride</span><span class="w">
+				</span><span class="n">unitType</span><span class="p">:</span><span class="w"> </span><span class="n">UnitSettingOverride</span><span class="w">
+				</span><span class="n">measurements</span><span class="p">:</span><span class="w"> </span><span class="n">MeasurementsModeOverride</span><span class="w">
+			</span><span class="p">}</span><span class="w">
+		</span><span class="p">}</span><span class="w">
+	</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="march-29-2021">March 29, 2021</h2>
+
+<ul>
+  <li>Removed some leaked references to internal API structures</li>
+</ul>
+
+<h2 id="february-11-2021">February 11, 2021</h2>
+
+<p>This is a maintenance release with updates focused on addressing integration concerns and preparing for expanded add ons in the future.</p>
+
+<ul>
+  <li>Added an estimate of the total dimensions of the space under Model.dimensions</li>
+  <li>GSV and homeaway bundles will now show up as locked if they are associated with a compatible model but it is still not possible to unlock them via the API.</li>
+</ul>
+
+<h2 id="december-17-2020">December 17, 2020</h2>
+
+<p>The focus of this release is continued bug fixing / enhancements to enable workshop / showcase to operate over the new graph API.</p>
+
+<ul>
+  <li>Made all fields which may return an error (such as unauthorized or not found) to be nullable (removed the exclamation mark). This will allow partial data to be returned in a wider variety of cases but may result in changes to generated clients.</li>
+  <li>Added a patch photo mutation to allow the label associated with a photo to be updated.</li>
+</ul>
+
+<h2 id="november-5-2020">November 5, 2020</h2>
+
+<h3 id="data-model-changes">Data Model Changes</h3>
+
+<ul>
+  <li>Some objects had legacy identifiers which were integer values, switched all objects to use a consistent unique id format.</li>
+  <li>The identifiers for the following objects were updated:
+    <ul>
+      <li>AnchorLocation</li>
+      <li>Label</li>
+      <li>Mattertag</li>
+      <li>Measurement</li>
+      <li>PanoramicImageLocation</li>
+    </ul>
+  </li>
+  <li>
+    <p>All coordinates that are exposed were updated to use the same coordinate system that is used for the mesh (seen on location objects). This resulted in changing the coordinate system for Measurements and Mattertags. Measurements were in the wrong coordinate system and there was a bug in translating Mattertag coordinates.</p>
+  </li>
+  <li>Convert SDK coordinates to Mesh (API)</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">api</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">x</span>
+<span class="kd">let</span> <span class="nx">api</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">invert</span><span class="p">(</span><span class="nx">sdk</span><span class="p">.</span><span class="nx">z</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nx">api</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">y</span>
 </code></pre></div></div>
+
+<ul>
+  <li>Convert Mesh (API) coordinates to SDK</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">x</span>
+<span class="kd">let</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">z</span>
+<span class="kd">let</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="nx">invert</span><span class="p">(</span><span class="nx">api</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Mutation patchFloor updated to return ModelFloor instead of Model</li>
+  <li>The Measurement object has been deprecated in favor of MeasurementPath, while old Measurement queries will still be syntactically valid they will return no data.</li>
+  <li>Skybox tile related information has been removed</li>
+  <li>Texture type was changed to quality and type is now a string representing the file format</li>
+</ul>
+
+<h3 id="api-changes">API Changes</h3>
+
+<ul>
+  <li>Added MeasurementPath queries and mutations</li>
+  <li>Added HighlightReel queries and mutations</li>
+  <li>Additional information about placement of photos within a model</li>
+  <li>Exposed information about demo models</li>
+  <li>Added filtering options to several queries</li>
+  <li>Addition of the mp:imagery bundle for purchasing high resolution panoramic images</li>
+</ul>
+
+<h3 id="bug-fixes-and-other-enhancements">Bug Fixes and Other Enhancements</h3>
+
+<ul>
+  <li>Addition of the mp:imagery bundle for high resolution panoramic images</li>
+  <li>Performance improvements</li>
+  <li>Addition of a sandbox mode for demonstrating the API</li>
+  <li>Dedicated developer settings section</li>
+</ul>
+
+<h2 id="may-28-2020">May 28, 2020</h2>
+
+<h3 id="breaking-changes">Breaking Changes</h3>
+
+<ul>
+  <li>ModelFloor zIndex has been removed</li>
+  <li>Removed attributes from ModelMutator addMattertag and MattertagMutator patch mutations
+    <ul>
+      <li>position - Use anchorPosition instead</li>
+      <li>stemDirection - Use stemNormal and stemLength instead</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="api-changes">API Changes</h3>
+
+<ul>
+  <li>Added attributes to ModelFloor (Query)
+    <ul>
+      <li>meshId: int (read-only) - The vision generated ID for the floor.</li>
+      <li>classification: string (read-only) - The capture generated label for the floor. This is initially used to populate the label field, but the label field may be modified by public clients, whereas this will maintain the initial value.</li>
+    </ul>
+  </li>
+  <li>Added attributes to Mattertag (query &amp; mutation)
+    <ul>
+      <li>roomId: ID - The room that the Mattertag is in. This is not spatially validated by the API, just checks that the requested room exists.</li>
+    </ul>
+  </li>
+  <li>Removed attributes from ModelMutator Mattertag mutations</li>
+</ul>
+
 
 
     <div class="tags">
@@ -1059,7 +1477,7 @@ removeModelEventFromCallback(
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jun 30, 2023 <br />
+ Site last generated: Aug 16, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

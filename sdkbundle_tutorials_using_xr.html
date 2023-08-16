@@ -411,6 +411,27 @@
           
           
           
+          <li class="subfolders">
+              <a title="Using the Scene Namespace" href="#">Using the Scene Namespace</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Intro and Basic Components" href="/showcase-sdk/sdk_scene_intro.html">Intro and Basic Components</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Connecting Components" href="/showcase-sdk/sdk_connecting_components.html">Connecting Components</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
           
           
           
@@ -878,25 +899,60 @@ $('#toc').on('click', 'a', function() {
 
    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> xr mode + sdk is experimental at this time and not guaranteed to work with all sdk functionality.</div>
 
-<p>You will need to do the following to try xr immersive mode with your application.</p>
+<h2 id="developing-sdk-applications-with-xr">Developing SDK Applications with XR</h2>
 
 <ol>
-  <li>Use https. The examples use webpack dev-server which supports serving https.
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
- <span class="c1">//...</span>
- <span class="na">devServer</span><span class="p">:</span> <span class="p">{</span>
-   <span class="na">https</span><span class="p">:</span> <span class="kc">true</span>
- <span class="p">}</span>
-  <span class="p">};</span>
-</code></pre></div>    </div>
-    <p>See <a href="https://webpack.js.org/configuration/dev-server/">Webpack dev-server</a> for more details.</p>
+  <li>
+    <p>For embed SDK applications (or bundle applications hosted on another origin), make sure the iframe that loads the showcase.html file has the attribute <code class="language-plaintext highlighter-rouge">allow='xr-spatial-tracking'</code>. This is already set for our SDK embed examples.</p>
   </li>
   <li>
-    <p>Due to CORS restrictions, you can only connect via localhost or 127.0.0.1. You will need to connect your webxr device to your dev machine and enable port forwarding in the DevTools devices section of chrome.
-  See <a href="https://developers.google.com/web/tools/chrome-devtools/remote-debugging/">Chrome Remote Debugging</a></p>
+    <p>There are two ways to connect to a local development server from a headset:</p>
+    <ul>
+      <li>Port forward over USB so the headset will transparently connect to the computer’s localhost</li>
+      <li>Enable HTTPS and connect to the IP of the development machine on the local network</li>
+    </ul>
   </li>
-  <li>Add <code class="language-plaintext highlighter-rouge">allow='xr-spatial-tracking'</code> to the iframe that loads the showcase.html file of the bundle.</li>
 </ol>
+
+<p>In either case, you can also develop in the computer’s browser using a WebXR emulator extension at the same time, though we recommend exercising caution, as many WebXR APIs available to a computer browser will not work on the headset.</p>
+
+<h3 id="port-forwarding">Port Forwarding</h3>
+
+<p>The most direct way to do XR development is to port forward between the headset and your development machine, so that going to <code class="language-plaintext highlighter-rouge">localhost:8000</code> on the headset will connect to another computer’s local development environment. For android-based headsets that are connected over USB, the commands to do this are as follows:</p>
+
+<p><code class="language-plaintext highlighter-rouge">adb devices</code></p>
+
+<p>will retrieve the device ID, which can be inserted into this command</p>
+
+<p><code class="language-plaintext highlighter-rouge">adb -s &lt;INSERT-DEVICE-ID&gt; reverse tcp:8000 tcp:8000</code></p>
+
+<p>to create the port forward. If you are using the Meta Quest Developer Hub, you can create a <code class="language-plaintext highlighter-rouge">Custom Command</code> to do this second command for various ports, as USB device IDs tend not to change.</p>
+
+<p>Once the port forward is connected, going to <code class="language-plaintext highlighter-rouge">http://localhost:8000</code> on the headset will open anything served from that port on your local machine.</p>
+
+<p>For many headsets, this will allow activating XR mode even without HTTPs, as browsers often have an exception to allow enabling XR on non-SSL connections for localhost.</p>
+
+<h3 id="connecting-on-a-local-network-connection">Connecting on a Local Network Connection</h3>
+
+<p>For a headset to access a development server without port forwarding generally requires enabling https on your development server. In webpack-dev-server, which is what the SDK examples use, that looks something like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+    <span class="na">devServer</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">https</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+</code></pre></div></div>
+
+<p>See <a href="https://webpack.js.org/configuration/dev-server/">Webpack dev-server</a> for more details.</p>
+
+<p>In some cases, you may need to add exceptions to your computer’s firewall system to enable accessing the ports you are serving from.</p>
+
+<p>Note that you will also have to add the development IP address to your SDK key’s allowed hosts in <a href="https://my.matterport.com/settings/account/devtools">Account Settings -&gt; Developer Tools</a>. Local network IPs can change, so you also may want to set up a reserved DHCP IP in this case.</p>
+
+<h2 id="remote-debugging-android-devices-over-usb">Remote debugging Android devices over USB</h2>
+
+<p>With either of the above techniques, in order to step through and see console messages from the code running on the headset, you will need to use some form of remote debugging. If the headset SDK tools don’t provide this directly, and the headset is based on Android (like the Meta Quest), you can use <a href="https://developer.chrome.com/docs/devtools/remote-debugging/#debug">Chrome Remote Debugging</a> to interact with the software running on the headset.</p>
 
 
     <div class="tags">
@@ -914,7 +970,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jun 30, 2023 <br />
+ Site last generated: Aug 16, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

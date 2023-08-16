@@ -411,6 +411,27 @@
           
           
           
+          <li class="subfolders">
+              <a title="Using the Scene Namespace" href="#">Using the Scene Namespace</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Intro and Basic Components" href="/showcase-sdk/sdk_scene_intro.html">Intro and Basic Components</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Connecting Components" href="/showcase-sdk/sdk_connecting_components.html">Connecting Components</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
           
           
           
@@ -910,7 +931,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/23.6.1_webgl-68-g76035eeadf/sdk.d.ts">23.6.1_webgl-68-g76035eeadf</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/23.8.1_webgl-109-ge2aeca4d94/sdk.d.ts">23.8.1_webgl-109-ge2aeca4d94</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -990,11 +1011,13 @@ $('#toc').on('click', 'a', function() {
 										<p>An optional template for the link to use when the policy is not set to <code>SAME_FRAME</code>,
 										that will have any <code>${[param]}</code> substrings interpolated using the current set of URL parameters.</p>
 									</div>
-									<p>If ${[param]} is included in the path of the URL, it will be replaced by the current URL parameter&#39;s value or undefined (<code>${m}/show</code>: <code>abc123/show</code>).
-										If ${[param]} is included in the search parameters of the URL, it and it&#39;s value wil be appended ot the URL (<code>${m}</code>: <code>&amp;m=abc123</code>).
-									URL parameters that are unset will be appended without a value. (<code>${unset}</code>: <code>&amp;unset</code>)</p>
-									<p>As an example, the string <code>&quot;https://my.domain.com/${m}/show.html?${play}${unset}&quot;</code> interpolated at the URL <code>https://my.domain.com/show/?m=abc123&amp;play=1</code>
-									will result in <code>&quot;https://my.domain.com/abc123/show.html?play=1&amp;unset&quot;</code>.</p>
+									<p>If <code>${[param]}</code> is included in the path of the URL, it will be replaced by the current URL parameter&#39;s value or undefined (<code>${m}/show</code>: <code>abc123/show</code>).</p>
+									<p>If <code>${[param]}</code> is included in the search parameters of the URL, it and it&#39;s value wil be appended ot the URL (<code>${m}</code>: <code>m=abc123</code>).</p>
+									<p>URL parameters that are unset will be appended without a value. (<code>${unset}</code>: <code>unset</code>)</p>
+									<p>Note: <code>${m}</code> or `${model} are special cases in model links.
+									Instead of the current window&#39;s &quot;model&quot; param, the model ID from the link will be used instead.</p>
+									<p>As an example, the string <code>&quot;https://my.domain.com/${m}/show.html?${play}&amp;${unset}&quot;</code> interpolated at the URL <code>https://my.domain.com/show/?m=abc123&amp;play=1</code>
+									will result in a URL like <code>&quot;https://my.domain.com/abc123/show.html?play=1&amp;unset&amp;m=abc123&quot;</code>.</p>
 								</div>
 							</li>
 						</ul>
@@ -1061,7 +1084,7 @@ $('#toc').on('click', 'a', function() {
 					<a name="setexternallinkpolicy" class="tsd-anchor"></a>
 					<h3>set<wbr>External<wbr>Link<wbr>Policy</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>External<wbr>Link<wbr>Policy<span class="tsd-signature-symbol">(</span>openInNewWindow<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>External<wbr>Link<wbr>Policy<span class="tsd-signature-symbol">(</span>openInNewWindow<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1091,7 +1114,7 @@ $('#toc').on('click', 'a', function() {
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1099,7 +1122,7 @@ $('#toc').on('click', 'a', function() {
 					<a name="setmodellinkpolicy" class="tsd-anchor"></a>
 					<h3>set<wbr>Model<wbr>Link<wbr>Policy</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Model<wbr>Link<wbr>Policy<span class="tsd-signature-symbol">(</span>policy<span class="tsd-signature-symbol">: </span><a href="../enums/link.openpolicy.html" class="tsd-signature-type">Link.OpenPolicy</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="link.html#openpolicyoptions" class="tsd-signature-type">Link.OpenPolicyOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Model<wbr>Link<wbr>Policy<span class="tsd-signature-symbol">(</span>policy<span class="tsd-signature-symbol">: </span><a href="../enums/link.openpolicy.html" class="tsd-signature-type">Link.OpenPolicy</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="link.html#openpolicyoptions" class="tsd-signature-type">Link.OpenPolicyOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1130,7 +1153,7 @@ $('#toc').on('click', 'a', function() {
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1138,7 +1161,7 @@ $('#toc').on('click', 'a', function() {
 					<a name="setnavigationlinkpolicy" class="tsd-anchor"></a>
 					<h3>set<wbr>Navigation<wbr>Link<wbr>Policy</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Navigation<wbr>Link<wbr>Policy<span class="tsd-signature-symbol">(</span>policy<span class="tsd-signature-symbol">: </span><a href="../enums/link.openpolicy.html" class="tsd-signature-type">Link.OpenPolicy</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="link.html#openpolicyoptions" class="tsd-signature-type">Link.OpenPolicyOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Navigation<wbr>Link<wbr>Policy<span class="tsd-signature-symbol">(</span>policy<span class="tsd-signature-symbol">: </span><a href="../enums/link.openpolicy.html" class="tsd-signature-type">Link.OpenPolicy</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="link.html#openpolicyoptions" class="tsd-signature-type">Link.OpenPolicyOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1157,7 +1180,7 @@ $('#toc').on('click', 'a', function() {
 								<pre><code class="language-typescript"><span class="hljs-comment">// when clicking a link with a location within the current model, open a new window with the model at the location</span>
 <span class="hljs-comment">// instead of navigating the current model to the new location</span>
 sdk.Link.setNavigationLinkPolicy(sdk.Link.OpenPolicy.NEW_WINDOW, {
-  <span class="hljs-attr">templateHref</span>: <span class="hljs-string">&#x27;https://example.com/${m}/show.html?&#x27;</span>),
+  <span class="hljs-attr">templateHref</span>: <span class="hljs-string">&#x27;https://example.com/${m}/show.html?&#x27;</span>,
 });
 
 <span class="hljs-comment">// revert the navigation link behavior to the default</span>
@@ -1173,7 +1196,7 @@ sdk.Link.setNavigationLinkPolicy(sdk.Link.OpenPolicy.DEFAULT);
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="link.html#openpolicyoptions" class="tsd-signature-type">Link.OpenPolicyOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1181,7 +1204,7 @@ sdk.Link.setNavigationLinkPolicy(sdk.Link.OpenPolicy.DEFAULT);
 					<a name="setsameoriginlinkpolicy" class="tsd-anchor"></a>
 					<h3>set<wbr>Same<wbr>Origin<wbr>Link<wbr>Policy</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Same<wbr>Origin<wbr>Link<wbr>Policy<span class="tsd-signature-symbol">(</span>policy<span class="tsd-signature-symbol">: </span><a href="../enums/link.openpolicy.html" class="tsd-signature-type">Link.OpenPolicy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Same<wbr>Origin<wbr>Link<wbr>Policy<span class="tsd-signature-symbol">(</span>policy<span class="tsd-signature-symbol">: </span><a href="../enums/link.openpolicy.html" class="tsd-signature-type">Link.OpenPolicy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1212,7 +1235,7 @@ sdk.Link.setSameOriginLinkPolicy(sdk.Link.OpenPolicy.SAME_FRAME);
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1396,7 +1419,7 @@ sdk.Link.setSameOriginLinkPolicy(sdk.Link.OpenPolicy.SAME_FRAME);
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jun 30, 2023 <br />
+ Site last generated: Aug 16, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

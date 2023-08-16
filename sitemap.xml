@@ -152,7 +152,19 @@
   
   
   <url>
+    <loc>https://matterport.github.io/sdk_component_3d.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/sdkbundle_connect.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdk_connecting_components.html</loc>
   </url>
   
   
@@ -681,6 +693,12 @@
   
   <url>
     <loc>https://matterport.github.io/docs/reference/current/interfaces/scene.scenecomponentoptions.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdk_scene_intro.html</loc>
   </url>
   
   

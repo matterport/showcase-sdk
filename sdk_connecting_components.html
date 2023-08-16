@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Connecting Components | Matterport Developers</title>
+<link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/showcase-sdk/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="/showcase-sdk/css/customstyles.css">
+<link rel="stylesheet" href="/showcase-sdk/css/custom.css">
+<link rel="stylesheet" href="/showcase-sdk/css/tags2.css">
+
+<link rel="stylesheet" href="/showcase-sdk/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/showcase-sdk/css/theme-matterport.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/showcase-sdk/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/showcase-sdk/js/toc.js"></script>
+<script src="/showcase-sdk/js/customscripts.js"></script>
+<script src="/showcase-sdk/js/mermaid.min.js"></script>
+
+<link rel="shortcut icon" href="/showcase-sdk/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+
+    <script>
+      $(document).ready(function () {
+        // Initialize navgoco with default options
+        $("#mysidebar").navgoco({
+          caretHtml: '<i class="fa fa-chevron-down"></i>',
+          accordion: true,
+          openClass: "active", // open
+
+          save: false, // leave false or nav highlighting doesn't work right
+          cookie: {
+            name: "navgoco",
+            expires: false,
+            path: "/",
+          },
+          slide: {
+            duration: 400,
+            easing: "swing",
+          },
+        });
+
+        $("#collapseAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", false);
+        });
+
+        $("#expandAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", true);
+        });
+      });
+    </script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#tg-sb-link").change(function () {
+          $("#tg-sb-sidebar").toggle();
+          $("#tg-sb-content").toggleClass("col-md-9");
+          $("#tg-sb-content").toggleClass("col-md-12");
+        });
+      });
+    </script>
+     
+  </head>
+  <body>
+    <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div>
+    <div class="row">
+      <a class="navbrand col-md-3" href="index.html"
+        >&nbsp;<img
+          class="navbar-image"
+          src="/showcase-sdk/images/MP-logo_H_lock-RGB_white.svg"
+        /><span class="projectTitle"> </span></a
+      >
+      <div class="dev-nav-links col-md-6">
+        <div class="dropdown-items">
+          <div class="dropdown ">
+            <a class="dropbtn active" href="index.html">SDK Docs</a>
+            <div class="dropdown-content">
+              <a href="sdk_home.html" class="">SDK for Embeds</a>
+              <a href="sdkbundle_home.html" class="" href="#">SDK Bundle</a>
+              <a href="earlyaccess_home.html" class="" href="#">SDK Early Access</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="api_home.html">API Docs</a>
+            <div class="dropdown-content">
+              <a href="api_home.html">API Overview</a>
+              <a href="https://api.matterport.com/docs/reference" target="_blank">API Reference</a>
+              <a href="https://api.matterport.com/model/graphiql" target="_blank">Interactive Console</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Connecting Components page: ' + window.location.href;">Feedback</a>
+          </div>
+        </div>
+      </div>
+      <div class="right-content col-md-3">
+        <div class="dev-input-container">
+          <!-- Add roboto font to search bar -->
+          <img src="/showcase-sdk/images/search_button.png" />
+          <input id="search-input" type="text" placeholder="Search"/>
+          <div id="results-container"></div>        
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</nav>
+ 
+    <!-- Page Content -->
+    <div class="dev-page-wrapper">
+      <div id="main">
+        <!-- Content Row -->
+        <div class="row">
+          <!-- Sidebar Column -->
+          
+          <aside class="col-md-3" id="tg-sb-sidebar">
+            
+<div id="mysidebar" class="nav">
+  
+  
+  
+
+  <li>
+      <a title="Overview" href="#">Overview</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/index.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Change Log" href="/showcase-sdk/sdk_changelog.html">Change Log</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Vocabulary" href="/showcase-sdk/sdk_vocabulary.html">Vocabulary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Concepts" href="/showcase-sdk/sdk_concepts.html">Concepts</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Docs Summary" href="/showcase-sdk/sdk_reference_summary.html">Reference Docs Summary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Documentation" href="/showcase-sdk/docs\reference\current\index.html">Reference Documentation</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK for Embeds" href="#">SDK for Embeds</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdk_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdk_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Bundle" href="#">SDK Bundle</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdkbundle_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdkbundle_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setting up Embed.ly" href="/showcase-sdk/sdkbundle_tutorials_setting_up_embedly.html">Setting up Embed.ly</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setup a Local Environment" href="/showcase-sdk/sdkbundle_tutorials_setup.html">Setup a Local Environment</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Architecture" href="/showcase-sdk/sdkbundle_architecture.html">Architecture</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Components" href="#">Components</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Ambient Light" href="/showcase-sdk/sdkbundle_components_ambientlight.html">Ambient Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Directional Light" href="/showcase-sdk/sdkbundle_components_directionallight.html">Directional Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Point Light" href="/showcase-sdk/sdkbundle_components_pointlight.html">Point Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="GLTF Loader" href="/showcase-sdk/sdkbundle_components_gltfloader.html">GLTF Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="DAE Loader" href="/showcase-sdk/sdkbundle_components_daeloader.html">DAE Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="FBX Loader" href="/showcase-sdk/sdkbundle_components_fbxloader.html">FBX Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="OBJ Loader" href="/showcase-sdk/sdkbundle_components_objloader.html">OBJ Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transform Controls" href="/showcase-sdk/sdkbundle_components_transformcontrols.html">Transform Controls</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Input" href="/showcase-sdk/sdkbundle_components_input.html">Input</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Camera" href="/showcase-sdk/sdkbundle_components_camera.html">Camera</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="XR" href="/showcase-sdk/sdkbundle_components_xr.html">XR</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Early Access" href="#">SDK Early Access</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/earlyaccess_home.html">Home</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Tutorials" href="#">SDK Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Observables" href="/showcase-sdk/sdk_tutorials_observables.html">Using Observables</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Collections" href="/showcase-sdk/sdk_tutorials_collections.html">Using Collections</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Using the Scene Namespace" href="#">Using the Scene Namespace</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Intro and Basic Components" href="/showcase-sdk/sdk_scene_intro.html">Intro and Basic Components</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="active"><a title="Connecting Components" href="/showcase-sdk/sdk_connecting_components.html">Connecting Components</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Creating Mattertags" href="/showcase-sdk/sdk_creating_mattertags.html">Creating Mattertags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Editing Mattertags" href="/showcase-sdk/sdk_editing_mattertags.html">Editing Mattertags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags 2.0 Migration" href="/showcase-sdk/sdk_tutorials_mattertagtotag.html">Tags 2.0 Migration</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Code Sandboxes" href="/showcase-sdk/sdk_tutorials_htmlsandbox.html">Tags Code Sandboxes</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pathfinding" href="/showcase-sdk/sdk_tutorials_pathfinding.html">Pathfinding</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pointer Reticle" href="/showcase-sdk/sdk_tutorials_cursor.html">Pointer Reticle</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Working with Models" href="/showcase-sdk/sdkbundle_tutorials_models.html">Working with Models</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using xr" href="/showcase-sdk/sdkbundle_tutorials_using_xr.html">Using xr</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Scene Objects" href="/showcase-sdk/sdkbundle_tutorials_using_scene_objects.html">Using Scene Objects</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Examples" href="#">SDK Examples</a>
+      <ul>
+          
+          
+          
+          <li><a title="Navigation Controls" href="/showcase-sdk/sdk_navigation_controls.html">Navigation Controls</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Intersection Inspector" href="/showcase-sdk/sdk_intersection_inspector.html">Intersection Inspector</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz" href="/showcase-sdk/sdk_tags_quiz.html">Tags Quiz</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz - Overlay" href="/showcase-sdk/sdk_tags_quiz_overlay.html">Tags Quiz - Overlay</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Kitchen Sink" href="/showcase-sdk/sdk_kitchen_sink.html">Kitchen Sink</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Remote Control" href="/showcase-sdk/sdk_remote_control.html">Remote Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Source Areas" href="/showcase-sdk/sdk_sensors_source_areas.html">Sensors - Source Areas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Tags Level of Detail" href="/showcase-sdk/sdk_sensors_tags_level_of_detail.html">Sensors - Tags Level of Detail</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Sweep Control" href="/showcase-sdk/sdk_sensors_sweep_control.html">Sensors - Sweep Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Virtual Staging" href="/showcase-sdk/sdkbundle_virtual_staging.html">Virtual Staging</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Local Webcam" href="/showcase-sdk/sdkbundle_local_webcam.html">Local Webcam</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Livestream" href="/showcase-sdk/sdkbundle_html_livestream.html">HTML Livestream</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="IoT Canvas" href="/showcase-sdk/sdkbundle_iot_canvas.html">IoT Canvas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Custom Experience" href="/showcase-sdk/sdkbundle_custom_experience.html">Custom Experience</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Security Camera FOV" href="/showcase-sdk/sdkbundle_security_camera.html">Security Camera FOV</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Content Attribution" href="/showcase-sdk/sdkbundle_content_attribution.html">Content Attribution</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Matterport APIs" href="#">Matterport APIs</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/api_home.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Docs" href="https://api.matterport.com/model/docs/reference" target="_blank" rel="noopener">Reference Docs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Interactive Console" href="https://api.matterport.com/model/graphiql" target="_blank" rel="noopener">Interactive Console</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Model API" href="#">Model API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Model API Changelog" href="/showcase-sdk/modelapi_changelog.html">Model API Changelog</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Model API Code Snippets" href="/showcase-sdk/modelapi_snippets.html">Model API Code Snippets</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Model API Models() Reference" href="/showcase-sdk/modelapi_models_ref.html">Model API Models() Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Tags 2.0 Icons Reference" href="/showcase-sdk/tags_icons_reference.html">Tags 2.0 Icons Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Postman Collection" href="/showcase-sdk/modelapi_postman.html">Postman Collection</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Account API" href="#">Account API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Account API Changelog" href="/showcase-sdk/accountapi_changelog.html">Account API Changelog</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account API Snippets" href="/showcase-sdk/accountapi_snippets.html">Account API Snippets</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="OAuth" href="#">OAuth</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/oauth_home.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Implementation" href="/showcase-sdk/oauth_implementation.html">Implementation</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Model Selector" href="/showcase-sdk/oauth_model_selector.html">Model Selector</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Use Case - Model API" href="/showcase-sdk/oauth_model_api.html">Use Case - Model API</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Use Case - Private Models" href="/showcase-sdk/oauth_sdk_private_model.html">Use Case - Private Models</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OAuth Sample Application" href="/showcase-sdk/sdkbundle_tutorials_using_oauth.html">OAuth Sample Application</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Private Model Embed" href="#">Private Model Embed</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/oauth_private_model_embed.html">Overview</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Webhooks" href="#">Webhooks</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/webhooks_home.html">Overview</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Learn More" href="#">Learn More</a>
+      <ul>
+          
+          
+          
+          <li><a title="Developer Tools Overview" href="https://support.matterport.com/s/article/API-SDK-Developer-Tools-Overview" target="_blank" rel="noopener">Developer Tools Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pricing and Availability" href="https://support.matterport.com/s/article/Developer-Tools-Pricing-and-Availability" target="_blank" rel="noopener">Pricing and Availability</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Developer Program FAQ" href="https://support.matterport.com/s/article/Developer-Program-FAQ" target="_blank" rel="noopener">Developer Program FAQ</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</div>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+<script src="/showcase-sdk/js/jekyll-search.js" type="text/javascript"></script>
+<script type="text/javascript">
+        SimpleJekyllSearch.init({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            dataSource: '/showcase-sdk/search.json',
+            searchResultTemplate: '<li><a href="{url}" title="Connecting Components">{title}</a></li>',
+noResultsText: '<li><div>No results found.<div></li>',
+        limit: 10,
+        fuzzy: true,
+})
+</script>
+
+          </aside>
+           
+          <!-- Content Column -->
+          <div
+            class=" col-md-9" 
+            id="tg-sb-content"
+          >
+            <div class="post-header">
+   <h1 class="post-title-main">Connecting Components</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+   <ul id="markdown-toc">
+  <li><a href="#inputs-outputs" id="markdown-toc-inputs-outputs">Inputs, Outputs</a>    <ul>
+      <li><a href="#running-the-adder" id="markdown-toc-running-the-adder">Running the Adder</a></li>
+    </ul>
+  </li>
+  <li><a href="#paths" id="markdown-toc-paths">Paths</a>    <ul>
+      <li><a href="#running-the-timer-and-the-new-rng" id="markdown-toc-running-the-timer-and-the-new-rng">Running the Timer and the new RNG</a></li>
+    </ul>
+  </li>
+  <li><a href="#events-emits" id="markdown-toc-events-emits">Events, Emits</a>    <ul>
+      <li><a href="#disabling-emits-or-events" id="markdown-toc-disabling-emits-or-events">Disabling Emits or Events</a></li>
+      <li><a href="#aside-additional-path-functionality" id="markdown-toc-aside-additional-path-functionality">Aside: Additional Path Functionality</a></li>
+    </ul>
+  </li>
+  <li><a href="#spies" id="markdown-toc-spies">Spies</a></li>
+  <li><a href="#source" id="markdown-toc-source">Source</a></li>
+  <li><a href="#continue-reading" id="markdown-toc-continue-reading">Continue Reading</a></li>
+</ul>
+
+<hr />
+<p>Having singular, isolated Components isn’t the most exciting. Luckily, we have ways to control and connect Components together. Along the way, we’ll be introducing the last two lifecycle methods and the following concepts:</p>
+<ul>
+  <li>inputs</li>
+  <li>outputs</li>
+  <li>events</li>
+  <li>emits</li>
+  <li>Paths</li>
+  <li>Spies</li>
+</ul>
+
+<h2 id="inputs-outputs">Inputs, Outputs</h2>
+<p>Components have two properties representing a way to accept data and to output data called “inputs” and “outputs” respectively.</p>
+
+<p>To demonstrate their use, we’ll create a new Component: <code class="language-plaintext highlighter-rouge">Adder</code>. The <code class="language-plaintext highlighter-rouge">Adder</code> will have 2 inputs, that will be summed together to create a new value for its output. In order to do so, it will need to respond to changes in the inputs by implementing the lifecycle: <code class="language-plaintext highlighter-rouge">onInputsUpdated</code>.</p>
+<ul>
+  <li>For efficiency, <a href="docs/reference/current/interfaces/scene.icomponent.html#oninputsupdated"><code class="language-plaintext highlighter-rouge">onInputsUpdated</code></a> is called <strong>at most</strong> once per frame if the Component’s inputs have changed. It is called with the previous values of the inputs which can be used to compare the changes to the current <code class="language-plaintext highlighter-rouge">this.inputs</code> object. If inputs have changed multiple times within a single tick or frame, <code class="language-plaintext highlighter-rouge">onInputsUpdated</code> will still only be called once per frame.</li>
+</ul>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Adder</span> <span class="p">{</span>
+  <span class="c1">// define 2 inputs: "arg1" and "arg2"</span>
+  <span class="nx">inputs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">arg1</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="na">arg2</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="p">};</span>
+
+  <span class="c1">// define a single output: "sum"</span>
+  <span class="nx">outputs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">sum</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="p">}</span>
+
+  <span class="nx">onInit</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// calculate the initial sum</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">sum</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">arg2</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">initial sum</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">sum</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">onInputsUpdated</span><span class="p">(</span><span class="nx">prevInputs</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// log the previous sum by using the previous inputs values in `prevInputs`</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">previous sum</span><span class="dl">'</span><span class="p">,</span> <span class="nx">prevInputs</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">+</span> <span class="nx">prevInputs</span><span class="p">.</span><span class="nx">arg2</span><span class="p">);</span>
+
+    <span class="c1">// recalculate the sum</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">sum</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">arg2</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">updated sum</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">sum</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">Adder</code> Component</p>
+<ul>
+  <li>has two inputs under its <code class="language-plaintext highlighter-rouge">inputs</code> object: <code class="language-plaintext highlighter-rouge">arg1</code> and <code class="language-plaintext highlighter-rouge">arg2</code>.</li>
+  <li>has a single output under its <code class="language-plaintext highlighter-rouge">outputs</code> object: <code class="language-plaintext highlighter-rouge">sum</code>.
+    <ul>
+      <li>upon initialization, the component’s <code class="language-plaintext highlighter-rouge">onInit</code> function calculates the initial <code class="language-plaintext highlighter-rouge">outputs.sum</code></li>
+      <li>we also provide a default directly in the <code class="language-plaintext highlighter-rouge">outputs</code> object</li>
+    </ul>
+  </li>
+  <li>implements an <code class="language-plaintext highlighter-rouge">onInputsUpdated</code> function to recalculate and log the new <code class="language-plaintext highlighter-rouge">outputs.sum</code>.</li>
+  <li>logs the previous sum using the <code class="language-plaintext highlighter-rouge">prevInputs</code> provided to <code class="language-plaintext highlighter-rouge">onInputsUpdated</code>.</li>
+</ul>
+
+<h3 id="running-the-adder">Running the Adder</h3>
+
+<p>To see this new component in action we will</p>
+<ol>
+  <li>register it</li>
+  <li>add it to a node with some intial input data</li>
+  <li>set its inputs</li>
+  <li>check its logs</li>
+</ol>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">Adder</span><span class="p">());</span>
+<span class="kd">const</span> <span class="nx">adder</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="c1">// this object is optional but sets the initial values of the Adder</span>
+  <span class="na">arg1</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="na">arg2</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="nx">object</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+
+<span class="c1">// set the inputs of `adder`</span>
+<span class="nx">adder</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+<span class="nx">adder</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">arg2</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="c1">// ...some time later; this needs to be deferred until the next frame to get the updated sum</span>
+<span class="c1">// we'll see how Spies can make this easier to manage later</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">outputs.sum</span><span class="dl">'</span><span class="p">,</span> <span class="nx">adder</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">sum</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Note: If no values are passed into the <code class="language-plaintext highlighter-rouge">addComponent</code> for the initial inputs, the default values set in the class will be used (in the case of the <code class="language-plaintext highlighter-rouge">Adder</code> arg1: 0, arg2: 0).</p>
+
+<p>Things should now be a little more interesting. With the <code class="language-plaintext highlighter-rouge">Adder</code> we should see a bit more interactivity through its logs.</p>
+<ol>
+  <li>Our <code class="language-plaintext highlighter-rouge">Adder</code> computes and logs an initial sum from the initial inputs we provided in <code class="language-plaintext highlighter-rouge">addComponent</code> (3).</li>
+  <li>We updated the inputs and the component recalculated and logged the previous and the new sums (3 and 42), and updated its output automatically. Notice there was only one call to the <code class="language-plaintext highlighter-rouge">onInputsUpdated</code> even though we update two values at two different times.</li>
+  <li>Finally, we logged the output of the <code class="language-plaintext highlighter-rouge">Adder</code> from outside of the component.</li>
+</ol>
+
+<h2 id="paths">Paths</h2>
+<p>Before introducing Events, we need to understand how to “bind” things together. In the previous example, we were setting input values manually, but binding values lets us update them automatically. Binding can be done between an input and an output and an emit and event. Binding is done through a concept called a “Path”. Paths exist within an Object and represent a path to a property in one of its Components, something like “node/adder/input/arg1”.</p>
+
+<p>To demonstrate how to bind inputs and outputs we’ll first introduce a new Component, <code class="language-plaintext highlighter-rouge">RNG</code>, that we will use to generate random numbers every second. Then we’ll use two RNG Components’ outputs to change the input of our <code class="language-plaintext highlighter-rouge">Adder</code>. Finally, we will set up the <code class="language-plaintext highlighter-rouge">onTick</code> lifecycle method to automatically compute the sum each frame.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">RNG</span> <span class="p">{</span>
+  <span class="nx">timeSinceUpdate</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nx">inputs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">interval</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+  <span class="p">};</span>
+
+  <span class="nx">outputs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">value</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="p">};</span>
+
+  <span class="nx">onTick</span><span class="p">(</span><span class="nx">delta</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">+=</span> <span class="nx">delta</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">&gt;=</span> <span class="k">this</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">interval</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">%</span> <span class="k">this</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">interval</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The Random Number Generator (<code class="language-plaintext highlighter-rouge">RNG</code>) Component</p>
+<ul>
+  <li>has an <code class="language-plaintext highlighter-rouge">inputs.interval</code> that defaults to 1 second (1000 milliseconds)</li>
+  <li>has an <code class="language-plaintext highlighter-rouge">outputs.value</code> for the values it will generate</li>
+  <li>uses an <code class="language-plaintext highlighter-rouge">onTick</code> to check if it needs to update its random value and does so if enough time has passed</li>
+</ul>
+
+<h3 id="running-the-timer-and-the-new-rng">Running the Timer and the new RNG</h3>
+
+<p>With the RNG Component, we can hook its output values directly into our <code class="language-plaintext highlighter-rouge">Adder</code> inputs. To do this we will:</p>
+<ol>
+  <li>Create and add two <code class="language-plaintext highlighter-rouge">RNG</code> Components and one <code class="language-plaintext highlighter-rouge">Adder</code> Component.</li>
+  <li>Create paths for the ouputs of each <code class="language-plaintext highlighter-rouge">RNG</code> (value) and the two inputs of the <code class="language-plaintext highlighter-rouge">Adder</code> (arg1, arg2).</li>
+  <li>Bind the paths that we created together, to bind the Components’ inputs and ouputs.</li>
+</ol>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">Adder</span><span class="p">());</span>
+<span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">RNG</span><span class="p">());</span>
+
+<span class="kd">const</span> <span class="nx">adder</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">rng1</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">rng2</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="c1">// create paths to each of the RNGs' values</span>
+<span class="kd">const</span> <span class="nx">randomOutput1</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">addOutputPath</span><span class="p">(</span><span class="nx">rng1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">randomOutput2</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">addOutputPath</span><span class="p">(</span><span class="nx">rng2</span><span class="p">,</span> <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span><span class="p">);</span>
+<span class="c1">// create paths to the each of the inputs of the Adder</span>
+<span class="kd">const</span> <span class="nx">adderInput1</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">addInputPath</span><span class="p">(</span><span class="nx">adder</span><span class="p">,</span> <span class="dl">'</span><span class="s1">arg1</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">adderInput2</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">addInputPath</span><span class="p">(</span><span class="nx">adder</span><span class="p">,</span> <span class="dl">'</span><span class="s1">arg2</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="c1">// bind the paths (inputs/outputs)</span>
+<span class="nx">randomOutput1</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">adderInput1</span><span class="p">);</span> <span class="c1">// we can bind an output to input ...</span>
+<span class="nx">adderInput2</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">randomOutput2</span><span class="p">);</span> <span class="c1">// ... or an input to an output (the result is the same)</span>
+
+<span class="nx">object</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Things should look a lot more interesting now.</p>
+<ol>
+  <li>Our <code class="language-plaintext highlighter-rouge">Adder</code> will now be outputting new sums every second.</li>
+  <li>We have two <code class="language-plaintext highlighter-rouge">RNG</code> Components generating and outputting values every second.</li>
+  <li>Most importantly, the <code class="language-plaintext highlighter-rouge">Adder</code> is automatically <strong>responding</strong> to any changes in its inputs which are bound to the outputs of the <code class="language-plaintext highlighter-rouge">RNG</code> Components.</li>
+</ol>
+
+<h2 id="events-emits">Events, Emits</h2>
+<p>Components can also emit and receive events. This is done through the use of <code class="language-plaintext highlighter-rouge">events</code> and <code class="language-plaintext highlighter-rouge">emits</code>. Events can carry a payload with them much like standard Javascript events.</p>
+
+<p>To demonstrate how to send events between components, we’ll introduce a new Component <code class="language-plaintext highlighter-rouge">Timer</code> that will “emit” every second through the use its <a href="docs/reference/current/interfaces/scene.icomponent.html#oninputsupdated"><code class="language-plaintext highlighter-rouge">notify</code></a> function. We’ll also refactor our <code class="language-plaintext highlighter-rouge">RNG</code> Component so that it doesn’t track time, but is instead bound to and handles the emit from the <code class="language-plaintext highlighter-rouge">Timer</code> through the final lifecycle we need to introduce: <code class="language-plaintext highlighter-rouge">onEvent</code>.</p>
+<ul>
+  <li><a href="docs/reference/current/interfaces/scene.icomponent.html#onevent"><code class="language-plaintext highlighter-rouge">onEvent</code></a> is called once for each event emitted (that this component handles). <code class="language-plaintext highlighter-rouge">onEvent</code> is not called immediately but on the next tick/frame. This means that multiple <code class="language-plaintext highlighter-rouge">onEvent</code> calls can happen within the same frame.</li>
+</ul>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Timer</span> <span class="p">{</span>
+  <span class="nx">timeSinceUpdate</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="c1">// define an event that can be emitted: "tick"</span>
+  <span class="nx">emits</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">tick</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">}</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">interval</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">interval</span> <span class="o">=</span> <span class="nx">interval</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">onTick</span><span class="p">(</span><span class="nx">delta</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">+=</span> <span class="nx">delta</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">&gt;=</span> <span class="k">this</span><span class="p">.</span><span class="nx">interval</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">%</span> <span class="k">this</span><span class="p">.</span><span class="nx">interval</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">notify</span><span class="p">(</span><span class="dl">'</span><span class="s1">tick</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="cm">/* This event has no payload but could be any arbitrary object */</span> <span class="p">});</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">RNG</span> <span class="p">{</span>
+  <span class="nx">outputs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">value</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="p">};</span>
+
+  <span class="c1">// define an event that can be received: "regenerate"</span>
+  <span class="nx">events</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">regenerate</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">};</span>
+
+  <span class="nx">onEvent</span><span class="p">(</span><span class="nx">eventType</span><span class="p">,</span> <span class="nx">eventData</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">eventType</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">regenerate</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">();</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eventData</span><span class="p">);</span> <span class="c1">// events receive data with them, though the 'regenerate' event doesn't use or expect one</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>With this refactor, we split out the timing functionality of the <code class="language-plaintext highlighter-rouge">RNG</code> Component and created a separate <code class="language-plaintext highlighter-rouge">Timer</code> Component.
+The <code class="language-plaintext highlighter-rouge">Timer</code> Component</p>
+<ul>
+  <li>has a configurable interval that’s set at construction time (not as an input)</li>
+  <li>emits a “tick” event through use of its <code class="language-plaintext highlighter-rouge">notify</code></li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">RNG</code> Component now</p>
+<ul>
+  <li>uses <code class="language-plaintext highlighter-rouge">event.regenerate</code> and <code class="language-plaintext highlighter-rouge">onEvent</code> to generate a new random number and set it as its output</li>
+</ul>
+
+<p>With the new <code class="language-plaintext highlighter-rouge">RNG</code> and the <code class="language-plaintext highlighter-rouge">Timer</code> Components, it is possible to bind these Components’ emits and events. We’ll follow a similar pattern to what we used for inputs and outputs.</p>
+<ol>
+  <li>setup all the boilerplate (register and add components)</li>
+  <li>create the paths to the <code class="language-plaintext highlighter-rouge">RNG</code>’s event and the <code class="language-plaintext highlighter-rouge">Timer</code>’s emit</li>
+  <li>bind the new paths</li>
+</ol>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// --- code from the previous input/output example ---</span>
+<span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">Adder</span><span class="p">());</span>
+<span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">RNG</span><span class="p">());</span>
+
+<span class="kd">const</span> <span class="nx">adder</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">rng1</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">rng2</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">randomOutput1</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">addOutputPath</span><span class="p">(</span><span class="nx">rng1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">randomOutput2</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">addOutputPath</span><span class="p">(</span><span class="nx">rng2</span><span class="p">,</span> <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">adderInput1</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">addInputPath</span><span class="p">(</span><span class="nx">adder</span><span class="p">,</span> <span class="dl">'</span><span class="s1">arg1</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">adderInput2</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">addInputPath</span><span class="p">(</span><span class="nx">adder</span><span class="p">,</span> <span class="dl">'</span><span class="s1">arg2</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">randomOutput1</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">adderInput1</span><span class="p">);</span>
+<span class="nx">randomOutput2</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">adderInput2</span><span class="p">);</span>
+
+<span class="c1">// --- new code starts here ---</span>
+<span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">timer</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">Timer</span><span class="p">(</span><span class="mi">1000</span><span class="p">));</span>
+<span class="kd">const</span> <span class="nx">timer</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">timer</span><span class="dl">'</span><span class="p">);</span>
+<span class="c1">// create new paths to the emit and the event</span>
+<span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">addEmitPath</span><span class="p">(</span><span class="nx">timer</span><span class="p">,</span> <span class="dl">'</span><span class="s1">tick</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">regenRNG1</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">addEventPath</span><span class="p">(</span><span class="nx">rng1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">regenerate</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">regenRNG2</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">addEventPath</span><span class="p">(</span><span class="nx">rng2</span><span class="p">,</span> <span class="dl">'</span><span class="s1">regenerate</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">tick</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">regenRNG1</span><span class="p">);</span>  <span class="c1">// we can bind an emit to an event</span>
+<span class="nx">regenRNG2</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">tick</span><span class="p">);</span> <span class="c1">// ... or an event to emit (the result is the same)</span>
+
+<span class="nx">object</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>To the end-user there hasn’t been any change in behavior from the previous example but our code is now in much more manageable, reusable Components.</p>
+
+<p>While a bit superficial, the example shows a few interesting concepts.</p>
+<ol>
+  <li>Components can communicate between each other.</li>
+  <li>The Timer we created can emit events to any number of other Components. A downside to this is that we have more Components to manage which involves more boilerplate: registering, adding, creating paths for, and binding them together.</li>
+  <li><strong>Events and Emits don’t need use the same property name</strong> in order to be bound together (“tick” and “regenerate” were used in our example)</li>
+</ol>
+
+<h3 id="disabling-emits-or-events">Disabling Emits or Events</h3>
+<p>So far our examples have set their emits or events properties to <code class="language-plaintext highlighter-rouge">true</code>. If at any time, a Component should no longer be able to emit events through <code class="language-plaintext highlighter-rouge">notify</code> or receive events through its <code class="language-plaintext highlighter-rouge">onEvent</code>, setting those properties to <code class="language-plaintext highlighter-rouge">false</code> will disable those events.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// from here `timer` will no longer emit 'tick'</span>
+<span class="nx">timer</span><span class="p">.</span><span class="nx">emits</span><span class="p">.</span><span class="nx">tick</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="c1">// from here `rng1` will no longer receive any 'regenerate' events</span>
+<span class="nx">rng1</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">regenerate</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="c1">// we can also disable the emits through a path to it...</span>
+<span class="nx">tick</span><span class="p">.</span><span class="nx">disable</span><span class="p">();</span>
+<span class="c1">// ... and re-enable it</span>
+<span class="nx">tick</span><span class="p">.</span><span class="nx">enable</span><span class="p">()</span>
+
+<span class="c1">// and disable events though its path...</span>
+<span class="nx">regenRNG1</span><span class="p">.</span><span class="nx">disable</span><span class="p">();</span>
+<span class="c1">// ... and re-enable it</span>
+<span class="nx">regenRNG1</span><span class="p">.</span><span class="nx">enable</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h3 id="aside-additional-path-functionality">Aside: Additional Path Functionality</h3>
+<p>While we showed how to bind paths in a 1:1 relationship, paths have a few extra capabilities like reading inputs and outputs, manually updating inputs, disabling and enabling events and emits, and manually triggering <code class="language-plaintext highlighter-rouge">onEvent</code> calls to components.</p>
+
+<p>We can bind a single Output Path to multiple Input Paths.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">randomOutput1</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">adderInput1</span><span class="p">);</span>
+<span class="nx">randomOutput1</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">adderInput2</span><span class="p">);</span>
+</code></pre></div></div>
+<p>However, binding multiple outputs to a single input is not allowed.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// this is invalid -- `adderInput1` is already bound</span>
+<span class="nx">randomOutput1</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">adderInput1</span><span class="p">);</span>
+<span class="nx">randomOutput2</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">adderInput1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Input and Output Paths can be used to read their values. Input Paths also allow for setting their value.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">RNG1 has an output of</span><span class="dl">'</span><span class="p">,</span> <span class="nx">randomOutput1</span><span class="p">.</span><span class="kd">get</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Adder's first input is`</span><span class="p">,</span> <span class="nx">adderInput1</span><span class="p">.</span><span class="kd">get</span><span class="p">());</span>
+<span class="c1">// manually settng Adder's second input</span>
+<span class="nx">adderInput2</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">1234</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Similarly, with Event and Emit paths, multiple events (like outputs) can be bound to multiple emits (like inputs); however, unlike inputs and outputs, multiple emits can be bound to multiple events.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// bind multiple events (`regenRNG1`, `regenRNG2`) to a single emit (`tick`)</span>
+<span class="nx">tick</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">regenRNG1</span><span class="p">);</span>
+<span class="nx">tick</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">regenRNG2</span><span class="p">);</span>
+<span class="c1">// bind a single event (`regenRNG1`) to multiple emits (`tick`, `tick2`) -- notice that `tick2` is a hypothetical path we haven't created thus far</span>
+<span class="nx">regenRNG1</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">tick</span><span class="p">);</span>
+<span class="nx">regenRNG1</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">tick2</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Event and Emit Paths can be used to trigger the <code class="language-plaintext highlighter-rouge">onEvent</code> of any and all Components it’s associated with.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// event payloads are optional</span>
+<span class="nx">tick</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="cm">/* ... */</span><span class="p">);</span>
+<span class="nx">rng1</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="cm">/* ... */</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="spies">Spies</h2>
+<p>If at any time there’s a need to work outside of the Scene framework, like bridging into another framework, Spies can be used. Spies allow for code that’s not part of a Component to receive all the same events a Component normally would: changes to inputs or outputs, or when a Component emits or receives an event.</p>
+
+<p>To demonstrate Spies, we’ll create several different Spies, one for each Path type, using several of the Components we’ve created up until now.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// spy on input changes to our Adder</span>
+<span class="c1">// using class syntax</span>
+<span class="kd">class</span> <span class="nx">AdderArg1Spy</span> <span class="p">{</span>
+  <span class="nx">path</span> <span class="o">=</span> <span class="nx">adderInput1</span><span class="p">;</span>
+  <span class="nx">onEvent</span><span class="p">(</span><span class="nx">newValue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`spied change to "</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">path</span><span class="p">.</span><span class="nx">property</span><span class="p">}</span><span class="s2">" its new value is </span><span class="p">${</span><span class="nx">newValue</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">object</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">AdderArg1Spy</span><span class="p">());</span>
+
+<span class="c1">// spy on an output from our Adder</span>
+<span class="kd">const</span> <span class="nx">adderOutput</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">addOutputPath</span><span class="p">(</span><span class="nx">adder</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sum</span><span class="dl">'</span><span class="p">);</span>
+<span class="c1">// using inline syntax</span>
+<span class="nx">object</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">({</span>
+  <span class="na">path</span><span class="p">:</span> <span class="nx">adderOutput</span><span class="p">,</span>
+  <span class="nx">onEvent</span><span class="p">(</span><span class="nx">newSum</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`spied change to "</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">path</span><span class="p">.</span><span class="nx">property</span><span class="p">}</span><span class="s2">" its new value is </span><span class="p">${</span><span class="nx">newSum</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+
+<span class="c1">// spy on an emit from our Timer</span>
+<span class="nx">object</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">({</span>
+  <span class="na">path</span><span class="p">:</span> <span class="nx">tick</span><span class="p">,</span>
+  <span class="nx">onEvent</span><span class="p">(</span><span class="nx">eventData</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`spied that an event "</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">path</span><span class="p">.</span><span class="nx">emitName</span><span class="p">}</span><span class="s2">" was emitted`</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+
+<span class="c1">// spy on an event</span>
+<span class="nx">object</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">({</span>
+  <span class="na">path</span><span class="p">:</span> <span class="nx">regenRNG1</span><span class="p">,</span>
+  <span class="nx">onEvent</span><span class="p">(</span><span class="nx">eventData</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`spied "</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">path</span><span class="p">.</span><span class="nx">eventName</span><span class="p">}</span><span class="s2">" received with data </span><span class="p">${</span><span class="nx">eventData</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>So, Spies are a small wrapper around Paths with a single extra <code class="language-plaintext highlighter-rouge">onEvent</code>. As the properties of each of the Paths changes, the associated Spy’s <code class="language-plaintext highlighter-rouge">onEvent</code> will be called with the new input/output value or data associated with the event/emit.</p>
+
+<h2 id="source">Source</h2>
+<p><a href="/assets/code/boundComponents.js">View or download the source here</a></p>
+
+<p>To run this example, import the <code class="language-plaintext highlighter-rouge">startBoundComponents</code> function and pass the mpSdk instance to it.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">startBoundComponents</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./basicComponent</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">mpSdk</span><span class="p">;</span> <span class="c1">// initialized from a successful `connect` call</span>
+<span class="nx">startBoundComponents</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="continue-reading">Continue Reading</h2>
+<p>Look forward to upcoming documentation on how to:</p>
+<ul>
+  <li>Render 3D components</li>
+  <li>Add interactivity</li>
+</ul>
+
+
+    <div class="tags">
+        
+    </div>
+
+<!-- 
+ -->
+
+</div>
+
+<!-- <hr class="shaded"/> -->
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2023 Matterport, Inc. All rights reserved. <br />
+ Site last generated: Aug 16, 2023 <br />
+<p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /#main -->
+    </div>
+
+    
+  </body>
+   <!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-34880260-5','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+ 
+</html>

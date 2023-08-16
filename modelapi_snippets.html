@@ -411,6 +411,27 @@
           
           
           
+          <li class="subfolders">
+              <a title="Using the Scene Namespace" href="#">Using the Scene Namespace</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Intro and Basic Components" href="/showcase-sdk/sdk_scene_intro.html">Intro and Basic Components</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Connecting Components" href="/showcase-sdk/sdk_connecting_components.html">Connecting Components</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
           
           
           
@@ -861,11 +882,11 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>If you would like an application to build collections of API queries for testing and generating code to use in your applications, we recommend using Postman and have these snippets available in <a href="modelapi_postman.html">a sample collection</a>.</p>
 
-<p>If you are needing assistance with building queries, refer to our <a href="https://api.matterport.com/model/docs/reference" target="_blank">API schema</a> or contact us at <a href="mailto:developer@matterport.com">developer@matterport.com</a></p>
+<p>If you are needing assistance with building queries, refer to our <a href="https://api.matterport.com/model/docs/reference" target="\_blank">API schema</a> or contact us at <a href="mailto:developer@matterport.com">developer@matterport.com</a></p>
 
 <h3 id="testing-in-sandbox-mode">Testing in Sandbox Mode</h3>
 
-<p>API Users in Sandbox mode can test these queries on a demo model in their account. The models() query will only return your demo model.  Purchasing a developer license will change this behavior to show the models in your account.  You can still find the SID of the demo model in production mode using the provided ‘Search for demo models in your account’ query found below.</p>
+<p>API Users in Sandbox mode can test these queries on a demo model in their account. The models() query will only return your demo model. Purchasing a developer license will change this behavior to show the models in your account. You can still find the SID of the demo model in production mode using the provided ‘Search for demo models in your account’ query found below.</p>
 
 <h2 id="models-queries">Models Queries</h2>
 
@@ -877,7 +898,7 @@ noResultsText: '<li><div>No results found.<div></li>',
   <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">models</span><span class="p">(</span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">totalResults</span><span class="w">
-     </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="n">id</span><span class="w">
       </span><span class="n">name</span><span class="w">
       </span><span class="n">description</span><span class="w">
@@ -904,7 +925,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20%7B%0Amodels(query%3A%20%22*%22)%20%7B%0A%20%20%20%20totalResults%0A%20%20%20%20%20results%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20description%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20%7B%0Amodels(query%3A%20%22*%22)%20%7B%0A%20%20%20%20totalResults%0A%20%20%20%20%20results%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20description%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -914,17 +935,14 @@ noResultsText: '<li><div>No results found.<div></li>',
   <p>All accounts come with a demo model. This can be queried in sandbox mode for testing purposes. If you wish to find the demo models with a models query, use “demo: true” as your query. You can also include ‘demo’ in your results to verify that this is a demo model.</p>
 
   <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="n">models</span><span class="p">(</span><span class="w">
-    </span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo:true"</span><span class="p">,</span><span class="w">
-    </span><span class="n">include</span><span class="p">:</span><span class="w"> </span><span class="n">demo</span><span class="w">
-  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-     </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
-       </span><span class="n">name</span><span class="w">
-       </span><span class="n">demo</span><span class="w">
-       </span><span class="n">id</span><span class="w">
-     </span><span class="p">}</span><span class="w">
-     </span><span class="n">nextOffset</span><span class="w">
-     </span><span class="n">totalResults</span><span class="w">
+  </span><span class="n">models</span><span class="p">(</span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo:true"</span><span class="p">,</span><span class="w"> </span><span class="n">include</span><span class="p">:</span><span class="w"> </span><span class="n">demo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+      </span><span class="n">demo</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="n">nextOffset</span><span class="w">
+    </span><span class="n">totalResults</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
@@ -932,27 +950,27 @@ noResultsText: '<li><div>No results found.<div></li>',
   <p>Sample Response:</p>
 
   <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"models"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Get Started"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"demo"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xiyHP9VkT1U"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Get Started"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"demo"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YGYWqVqWDpm"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="nl">"totalResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"models"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Get Started"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"demo"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xiyHP9VkT1U"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Get Started"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"demo"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YGYWqVqWDpm"</span><span class="w">
         </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"totalResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
     </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20%7B%0A%20%20%20models(%0A%20%20%20%20query%3A%20%22demo%3Atrue%22%2C%0A%20%20%20%20include%3A%20demo%0A%20%20%20%20)%20%7B%0A%20%20%20%20%20results%20%7B%0A%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20demo%0A%20%20%20%20%20%20%20id%0A%20%20%20%20%20%7D%0A%20%20%20%20%20nextOffset%0A%20%20%20%20%20totalResults%0A%20%20%20%7D%0A%20%7D" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20%7B%0A%20%20%20models(%0A%20%20%20%20query%3A%20%22demo%3Atrue%22%2C%0A%20%20%20%20include%3A%20demo%0A%20%20%20%20)%20%7B%0A%20%20%20%20%20results%20%7B%0A%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20demo%0A%20%20%20%20%20%20%20id%0A%20%20%20%20%20%7D%0A%20%20%20%20%20nextOffset%0A%20%20%20%20%20totalResults%0A%20%20%20%7D%0A%20%7D" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -960,42 +978,39 @@ noResultsText: '<li><div>No results found.<div></li>',
   <summary>Search for archived models</summary>
 
   <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">archivedModels</span><span class="w"> </span><span class="p">{</span><span class="w">
-   </span><span class="n">models</span><span class="p">(</span><span class="w">
-    </span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="s2">"state:inactive"</span><span class="p">,</span><span class="w">
-    </span><span class="n">include</span><span class="p">:</span><span class="w"> </span><span class="n">inactive</span><span class="w">
-    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-     </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
-       </span><span class="n">name</span><span class="w">
-       </span><span class="n">state</span><span class="w">
-       </span><span class="n">id</span><span class="w">
-     </span><span class="p">}</span><span class="w">
-     </span><span class="n">nextOffset</span><span class="w">
-     </span><span class="n">totalResults</span><span class="w">
-   </span><span class="p">}</span><span class="w">
- </span><span class="p">}</span><span class="w">
+  </span><span class="n">models</span><span class="p">(</span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="s2">"state:inactive"</span><span class="p">,</span><span class="w"> </span><span class="n">include</span><span class="p">:</span><span class="w"> </span><span class="n">inactive</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+      </span><span class="n">state</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="n">nextOffset</span><span class="w">
+    </span><span class="n">totalResults</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20archivedModels%20%7B%0A%20%20%20models(%0A%20%20%20%20query%3A%20%22state%3Ainactive%22%2C%0A%20%20%20%20include%3A%20inactive%0A%20%20%20%20)%20%7B%0A%20%20%20%20%20results%20%7B%0A%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20state%0A%20%20%20%20%20%20%20id%0A%20%20%20%20%20%7D%0A%20%20%20%20%20nextOffset%0A%20%20%20%20%20totalResults%0A%20%20%20%7D%0A%20%7D&amp;operationName=archivedModels" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20archivedModels%20%7B%0A%20%20%20models(%0A%20%20%20%20query%3A%20%22state%3Ainactive%22%2C%0A%20%20%20%20include%3A%20inactive%0A%20%20%20%20)%20%7B%0A%20%20%20%20%20results%20%7B%0A%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20state%0A%20%20%20%20%20%20%20id%0A%20%20%20%20%20%7D%0A%20%20%20%20%20nextOffset%0A%20%20%20%20%20totalResults%0A%20%20%20%7D%0A%20%7D&amp;operationName=archivedModels" target="\_blank">Try this query in our interactive console</a></p>
+
 </details>
 
 <details>
   <summary>Search for Models with x # of Floors</summary>
 
   <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="p">{</span><span class="w">
-   </span><span class="n">models</span><span class="p">(</span><span class="w">
-    </span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="s2">"floors.count: 20"</span><span class="w">
-    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-     </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
-       </span><span class="n">id</span><span class="w">
-       </span><span class="n">name</span><span class="w">
-     </span><span class="p">}</span><span class="w">
-     </span><span class="n">nextOffset</span><span class="w">
-     </span><span class="n">totalResults</span><span class="w">
-   </span><span class="p">}</span><span class="w">
- </span><span class="p">}</span><span class="w">
+  </span><span class="n">models</span><span class="p">(</span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="s2">"floors.count: 20"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="n">nextOffset</span><span class="w">
+    </span><span class="n">totalResults</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20modelSearch%20%7B%0A%20%20%20models(%0A%20%20%20%20query%3A%20%22floors.count%3A%2020%22%0A%20%20%20%20)%20%7B%0A%20%20%20%20%20results%20%7B%0A%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20demo%0A%20%20%20%20%20%20%20id%0A%20%20%20%20%20%7D%0A%20%20%20%20%20nextOffset%0A%20%20%20%20%20totalResults%0A%20%20%20%7D%0A%20%7D&amp;operationName=modelSearch" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20modelSearch%20%7B%0A%20%20%20models(%0A%20%20%20%20query%3A%20%22floors.count%3A%2020%22%0A%20%20%20%20)%20%7B%0A%20%20%20%20%20results%20%7B%0A%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20demo%0A%20%20%20%20%20%20%20id%0A%20%20%20%20%20%7D%0A%20%20%20%20%20nextOffset%0A%20%20%20%20%20totalResults%0A%20%20%20%7D%0A%20%7D&amp;operationName=modelSearch" target="\_blank">Try this query in our interactive console</a></p>
+
 </details>
 
 <h2 id="model-queries">Model Queries</h2>
@@ -1076,7 +1091,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=fragment%20panoFragment%20on%20PanoramicImageLocation%7B%0A%20%20id%0A%20%20skybox%20%7B%0A%20%20%20%20id%0A%20%20%20%20status%0A%20%20%20%20format%0A%20%20%20%20children%0A%20%20%7D%0A%7D%0A%0Aquery%20getSweeps(%24modelId%3A%20ID!)%7B%0A%20%20%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20%20%20locations%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20label%0A%20%20%20%20%20%20%20%20model%20%7B%20id%20%7D%0A%20%20%20%20%20%20%20%20position%20%7B%20x%2C%20y%2C%20z%20%7D%0A%20%20%20%20%20%20%20%20floor%20%7B%20id%20%7D%0A%20%20%20%20%20%20%20%20room%20%7B%20id%20%7D%0A%20%20%20%20%20%20%20%20panos%20%7B%20...panoFragment%20%7D%20%20%20%20%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getSweeps" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=fragment%20panoFragment%20on%20PanoramicImageLocation%7B%0A%20%20id%0A%20%20skybox%20%7B%0A%20%20%20%20id%0A%20%20%20%20status%0A%20%20%20%20format%0A%20%20%20%20children%0A%20%20%7D%0A%7D%0A%0Aquery%20getSweeps(%24modelId%3A%20ID!)%7B%0A%20%20%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20%20%20locations%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20label%0A%20%20%20%20%20%20%20%20model%20%7B%20id%20%7D%0A%20%20%20%20%20%20%20%20position%20%7B%20x%2C%20y%2C%20z%20%7D%0A%20%20%20%20%20%20%20%20floor%20%7B%20id%20%7D%0A%20%20%20%20%20%20%20%20room%20%7B%20id%20%7D%0A%20%20%20%20%20%20%20%20panos%20%7B%20...panoFragment%20%7D%20%20%20%20%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getSweeps" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -1170,161 +1185,321 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getMattertags(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20mattertags(includeDisabled%3A%20true)%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20floor%20%7B%20id%20%7D%0A%20%20%20%20%20%20created%0A%20%20%20%20%20%20modified%0A%20%20%20%20%20%20enabled%0A%20%20%20%20%20%20color%0A%20%20%20%20%20%20label%0A%20%20%20%20%20%20description%0A%20%20%20%20%20%20icon%0A%20%20%20%20%20%20keywords%0A%20%20%20%20%20%20media%0A%20%20%20%20%20%20mediaType%0A%20%20%20%20%20%20position%20%7B%20x%2C%20y%2C%20z%20%7D%0A%20%20%20%20%20%20anchorPosition%20%7B%20x%2C%20y%2C%20z%20%7D%0A%20%20%20%20%20%20discPosition%20%7B%20x%2C%20y%2C%20z%20%7D%0A%20%20%20%20%20%20stemNormal%20%7B%20x%2C%20y%2C%20z%20%7D%0A%20%20%20%20%20%20stemLength%0A%20%20%20%20%20%20stemEnabled%0A%20%20%20%20%20%20stemDirection%20%7B%20x%2C%20y%2C%20z%20%7D%20%23%20Deprecated%2C%20use%20stemNormal%20and%20stemLength%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getMattertags" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getMattertags(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20mattertags(includeDisabled%3A%20true)%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20floor%20%7B%20id%20%7D%0A%20%20%20%20%20%20created%0A%20%20%20%20%20%20modified%0A%20%20%20%20%20%20enabled%0A%20%20%20%20%20%20color%0A%20%20%20%20%20%20label%0A%20%20%20%20%20%20description%0A%20%20%20%20%20%20icon%0A%20%20%20%20%20%20keywords%0A%20%20%20%20%20%20media%0A%20%20%20%20%20%20mediaType%0A%20%20%20%20%20%20position%20%7B%20x%2C%20y%2C%20z%20%7D%0A%20%20%20%20%20%20anchorPosition%20%7B%20x%2C%20y%2C%20z%20%7D%0A%20%20%20%20%20%20discPosition%20%7B%20x%2C%20y%2C%20z%20%7D%0A%20%20%20%20%20%20stemNormal%20%7B%20x%2C%20y%2C%20z%20%7D%0A%20%20%20%20%20%20stemLength%0A%20%20%20%20%20%20stemEnabled%0A%20%20%20%20%20%20stemDirection%20%7B%20x%2C%20y%2C%20z%20%7D%20%23%20Deprecated%2C%20use%20stemNormal%20and%20stemLength%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getMattertags" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
 <details>
-  <summary>Get all Rooms and Floors and Panoramas</summary>
+  <summary>Get all Dimensional Data from the Model, Floors and Rooms</summary>
 
-  <p>A Matterport Digital twin is segmented in rooms and floors. These IDs and dimensions match the IDs in the Matterpak. This data is useful for developers working with Unity or other 3rd party 3D platforms. You can also query Tags and Labels to bring in more information from your digital twin</p>
-
-  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getRoomsFloors</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="n">id</span><span class="w">
-        </span><span class="n">name</span><span class="w">
-        </span><span class="n">floors</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="n">id</span><span class="w">
-            </span><span class="n">label</span><span class="w">
-            </span><span class="n">dimensions</span><span class="p">(</span><span class="n">units</span><span class="p">:</span><span class="w"> </span><span class="n">imperial</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="p">...</span><span class="n">dimensionsFragment</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-        </span><span class="n">rooms</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="n">id</span><span class="w">
-            </span><span class="n">label</span><span class="w">
-            </span><span class="n">floor</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="n">id</span><span class="w">
-                </span><span class="n">label</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-            </span><span class="n">dimensions</span><span class="p">(</span><span class="n">units</span><span class="p">:</span><span class="w"> </span><span class="n">imperial</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="p">...</span><span class="n">dimensionsFragment</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getDimensions</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+      </span><span class="n">description</span><span class="w">
+      </span><span class="n">dimensions</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="p">...</span><span class="n">dimensions</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="n">floors</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">label</span><span class="w">
+      </span><span class="n">dimensions</span><span class="p">(</span><span class="n">units</span><span class="p">:</span><span class="w"> </span><span class="n">imperial</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="p">...</span><span class="n">dimensions</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
+     </span><span class="n">rooms</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">label</span><span class="w">
+      </span><span class="n">tags</span><span class="w">
+      </span><span class="n">dimensions</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="p">...</span><span class="n">dimensions</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span><span class="k">fragment</span><span class="w"> </span><span class="n">dimensionsFragment</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">Dimension</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="n">areaCeiling</span><span class="w">
-    </span><span class="n">areaFloor</span><span class="w">
-    </span><span class="n">areaFloorIndoor</span><span class="w">
-    </span><span class="n">areaWall</span><span class="w">
-    </span><span class="n">volume</span><span class="w">
-    </span><span class="n">depth</span><span class="w">
-    </span><span class="n">height</span><span class="w">
-    </span><span class="n">width</span><span class="w">
-    </span><span class="n">units</span><span class="w">
+</span><span class="k">fragment</span><span class="w"> </span><span class="n">dimensions</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">Dimension</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="n">areaCeiling</span><span class="w">
+</span><span class="n">areaFloor</span><span class="w">
+</span><span class="n">areaFloorIndoor</span><span class="w">
+</span><span class="n">areaWall</span><span class="w">
+</span><span class="n">volume</span><span class="w">
+</span><span class="n">depth</span><span class="w">
+</span><span class="n">height</span><span class="w">
+</span><span class="n">width</span><span class="w">
+</span><span class="n">units</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span><span class="c"># variables</span><span class="w">
+
 </span><span class="p">{</span><span class="w">
-  </span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">""</span><span class="w">
+</span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre></div>  </div>
 
   <p>Sample Response:</p>
 
   <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FE1FLGnch5h"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Get Started"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"floors"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tsmq1wak12rhgn0mawksxcwcd"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floor 1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"areaCeiling"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">1811.2674341550348</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">1763.751272911024</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">4200.7835074106215</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">30221.99651317749</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"depth"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imperial"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pd0i1c4yq9w0y2zsb07ed23sb"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floor 2"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"areaCeiling"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">1097.5486255027295</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">874.7057536345482</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">2896.4391288173674</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">11654.396359551525</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"depth"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imperial"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Model Name"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Model Description"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">270.23811626434326</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">245.12091588974</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">1185.8062753677368</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"floors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floor 1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">1811.2674341550348</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">1763.751272911024</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">4200.7835074106215</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">30221.99651317749</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imperial"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floor 2"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">1097.5486255027295</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">874.7057536345482</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">2896.4391288173674</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">11654.396359551525</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imperial"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"rooms"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"h26t7ky77ew74yb0pg8qqf5rd"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"bedroom"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">12.459799766540527</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">12.459799766540527</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">41.87590026855469</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">37.56352996826172</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.0147781372070312</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tt6gm2a0463x9wmnx7rn6gugc"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"laundry"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.239500045776367</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.239500045776367</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">25.518861770629883</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.819963455200195</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.019364833831787</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kuc0fpmsgqxff63egrxrycfud"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"bedroom"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.056400299072266</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">54.98054504394531</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.81614303588867</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.0339488983154297</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wbpb7dkfuwnikd1kq2a9hz70a"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"bathroom"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.646399974822998</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.429454803466797</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.219707489013672</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.562990665435791</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b4qtykzcazp4iumkamm7y7h2b"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"bathroom"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">12.713900566101074</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">12.713900566101074</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">38.93343734741211</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">32.931732177734375</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.590214729309082</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3m54yff1z7crxaywd8if9rb0d"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"bathroom"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.156899929046631</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.156899929046631</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">24.900320053100586</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">12.581944465637207</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.026761531829834</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a5f9age4zzxewres6iqux2emc"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"bathroom"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.8993000984191895</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.8993000984191895</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">12.761096954345703</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.604677438735962</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cdz3fkt38kae7tapstpt0eaeb"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"kitchen"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"living"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"bathroom"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">102.59071350097656</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">102.59071350097656</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">184.97195434570312</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">657.700927734375</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ediidma5zg15dufx3n0qyq21a"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"bedroom"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">24.611000061035156</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">24.611000061035156</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">49.6417236328125</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">81.93767547607422</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xy2x8mpaaqknp7q2c3nnbw1ma"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"dining"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"living"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.3887996673584</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.3887996673584</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">46.00373458862305</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">52.49049758911133</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.0186383724212646</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2qdmc5i9byxi79ry1pxdkqzea"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"bedroom"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.340200424194336</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.340200424194336</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">41.409175872802734</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">57.230098724365234</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m8npxsuk79xy21dd09x9wtped"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"bathroom"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.3730998039245605</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.3730998039245605</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.520317077636719</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">11.225411415100098</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.566923141479492</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"n81qfe51azs8iexnbqwspye6c"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"office"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.414400100708008</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">18.9549503326416</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">13.287762641906738</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.0100948810577393</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19ab05tns5h6y4qm42esqqpea"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"bedroom"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"bathroom"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.325401306152344</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.325401306152344</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.1736068725586</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">71.8935775756836</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"613htqkzf66zz7hf7n8kzszed"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"living"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">22.022300720214844</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">22.022300720214844</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">48.04021453857422</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">66.34620666503906</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.0126829147338867</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"rooms"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"h26t7ky77ew74yb0pg8qqf5rd"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"floor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tsmq1wak12rhgn0mawksxcwcd"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floor 1"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"areaCeiling"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">134.11603870706557</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">134.11603870706557</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">450.7480029006958</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">1326.5447917701722</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"depth"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.891004703674316</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imperial"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tt6gm2a0463x9wmnx7rn6gugc"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"floor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tsmq1wak12rhgn0mawksxcwcd"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floor 1"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"areaCeiling"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">56.397454542732234</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">56.397454542732234</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">274.682476212883</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">558.6772634313584</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"depth"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.90605292142868</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imperial"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kuc0fpmsgqxff63egrxrycfud"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"floor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pd0i1c4yq9w0y2zsb07ed23sb"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floor 2"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"areaCeiling"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"areaFloor"</span><span class="p">:</span><span class="w"> </span><span class="mf">205.12118717918395</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"areaFloorIndoor"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"areaWall"</span><span class="p">:</span><span class="w"> </span><span class="mf">591.8050887985229</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">2041.7597464694977</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"depth"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.953900903549194</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imperial"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="err">...</span><span class="w">
-      </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getRoomsFloorsDimensions(%24modelId%3A%20ID!)%20%7B%0A%20%20%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20floors%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20%20%20label%0A%20%20%20%20%20%20%20%20%20%20%20%20dimensions(units%3A%20imperial)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20...dimensionsFragment%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20rooms%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20%20%20label%0A%20%20%20%20%20%20%20%20%20%20%20%20floor%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20dimensions(units%3A%20imperial)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20...dimensionsFragment%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%7D%0A%0Afragment%20dimensionsFragment%20on%20Dimension%20%7B%0A%20%20%20%20areaCeiling%0A%20%20%20%20areaFloor%0A%20%20%20%20areaFloorIndoor%0A%20%20%20%20areaWall%0A%20%20%20%20volume%0A%20%20%20%20depth%0A%20%20%20%20height%0A%20%20%20%20width%0A%20%20%20%20units%0A%7D%0A&amp;operationName=getRoomsFloorsDimensions&amp;variables=%7B%0A%20%20%20%20%22modelId%22%3A%20%22FE1FLGnch5h%22%0A%7D" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getDimensions(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20dimensions%20%7B%0A%20%20%20%20%20%20...dimensions%0A%20%20%20%20%7D%0A%20%20%20%20floors%20%7B%0A%20%20%20%20%20%20label%0A%20%20%20%20%20%20dimensions(units%3A%20imperial)%20%7B%0A%20%20%20%20%20%20%20%20...dimensions%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20rooms%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20label%0A%20%20%20%20%20%20tags%0A%20%20%20%20%20%20dimensions%20%7B%0A%20%20%20%20%20%20%20%20...dimensions%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0Afragment%20dimensions%20on%20Dimension%20%7B%0A%20%20areaCeiling%0A%20%20areaFloor%0A%20%20areaFloorIndoor%0A%20%20areaWall%0A%20%20volume%0A%20%20depth%0A%20%20height%0A%20%20width%0A%20%20units%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22FE1FLGnch5h%22%0A%7D&amp;operationName=getDimensions" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -1357,43 +1532,32 @@ noResultsText: '<li><div>No results found.<div></li>',
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"floorplans"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"floorplans"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
             </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matterport"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-              </span><span class="s2">"photogramy"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"colored_rooms"</span><span class="w">
-            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"photogramy"</span><span class="p">,</span><span class="w"> </span><span class="s2">"colored_rooms"</span><span class="p">],</span><span class="w">
             </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/render/colorplan_room_000.jpg?t=2-45286ff9b37da4d31d06a13b828c497d00343f7c-1679975423-1&amp;download=colorplan_room_000.jpg&amp;k=models%2F58f2a24ec7fb43abaf68c39459cd29d3%2Fassets%2Frender%2Fcolorplan_room_000.jpg"</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matterport"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-              </span><span class="s2">"photogramy"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"colored_rooms"</span><span class="w">
-            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"photogramy"</span><span class="p">,</span><span class="w"> </span><span class="s2">"colored_rooms"</span><span class="p">],</span><span class="w">
             </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/render/colorplan_room_001.jpg?t=2-3377428ace2fcebeb51b5a24d55aff51ad6b85db-1679975423-1&amp;download=colorplan_room_001.jpg&amp;k=models%2F58f2a24ec7fb43abaf68c39459cd29d3%2Fassets%2Frender%2Fcolorplan_room_001.jpg"</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matterport"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-              </span><span class="s2">"photogramy"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"colored_rooms"</span><span class="w">
-            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"photogramy"</span><span class="p">,</span><span class="w"> </span><span class="s2">"colored_rooms"</span><span class="p">],</span><span class="w">
             </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/render/colorplan_room_002.jpg?t=2-878d69a6f66558f17271e17b4c4f5a03b606368f-1679975423-1&amp;download=colorplan_room_002.jpg&amp;k=models%2F58f2a24ec7fb43abaf68c39459cd29d3%2Fassets%2Frender%2Fcolorplan_room_002.jpg"</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matterport"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-              </span><span class="s2">"photogramy"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"colored_rooms"</span><span class="w">
-            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"photogramy"</span><span class="p">,</span><span class="w"> </span><span class="s2">"colored_rooms"</span><span class="p">],</span><span class="w">
             </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/render/colorplan_room_003.jpg?t=2-0dd57e99aa752e228ef2d85b9aff89f8663b826b-1679975423-1&amp;download=colorplan_room_003.jpg&amp;k=models%2F58f2a24ec7fb43abaf68c39459cd29d3%2Fassets%2Frender%2Fcolorplan_room_003.jpg"</span><span class="w">
           </span><span class="p">}</span><span class="w">
@@ -1404,7 +1568,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getColoredRooms(%24modelId%3A%20ID!)%7B%0A%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20assets%20%7B%0A%20%20%20%20%20%20floorplans(provider%3A%20%22matterport%22%2C%20flags%3A%20%5Bcolored_rooms%5D)%20%7B%0A%20%20%20%20%20%20%20%20provider%0A%20%20%20%20%20%20%20%20format%0A%20%20%20%20%20%20%20%20flags%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%7D%0A%20%20%09%7D%0A%09%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getColoredRooms" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getColoredRooms(%24modelId%3A%20ID!)%7B%0A%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20assets%20%7B%0A%20%20%20%20%20%20floorplans(provider%3A%20%22matterport%22%2C%20flags%3A%20%5Bcolored_rooms%5D)%20%7B%0A%20%20%20%20%20%20%20%20provider%0A%20%20%20%20%20%20%20%20format%0A%20%20%20%20%20%20%20%20flags%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%7D%0A%20%20%09%7D%0A%09%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getColoredRooms" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -1414,12 +1578,11 @@ noResultsText: '<li><div>No results found.<div></li>',
 
   <p>Our Developers can use Model API to access a decimated, “50k” quality, model mesh of their space.</p>
 
-  <p>This is the version of the model mesh used for mobile users viewing a space with Showcase. Unlike the <a href="https://support.matterport.com/s/article/Download-the-MatterPak-Bundle" target="_blank">Matterpak</a>, which is an extremely high quality export, this low quality model mesh can be used to experiment with as a way to evaluate this data before purchasing a Matterpak.</p>
+  <p>This is the version of the model mesh used for mobile users viewing a space with Showcase. Unlike the <a href="https://support.matterport.com/s/article/Download-the-MatterPak-Bundle" target="\_blank">Matterpak</a>, which is an extremely high quality export, this low quality model mesh can be used to experiment with as a way to evaluate this data before purchasing a Matterpak.</p>
 
   <p>Please note that at this time, we do not provide access to the .mtl file that will map textures to this export.</p>
 
-  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
-</span><span class="k">query</span><span class="w"> </span><span class="n">getMeshes</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getMeshes</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="n">meshes</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1443,7 +1606,7 @@ noResultsText: '<li><div>No results found.<div></li>',
         </span><span class="n">quality</span><span class="w">
         </span><span class="n">textures</span><span class="w">
         </span><span class="n">urlTemplate</span><span class="w"> </span><span class="c"># \&lt;texture\&gt; -&gt; 000, 001, 002, 003, etc.</span><span class="w">
-      </span><span class="p">}</span><span class="w">          
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1490,7 +1653,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?operationName=getMeshes&amp;query=query%20getMeshes(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20assets%20%7B%0A%20%20%20%20%20%20meshes%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20%20filename%0A%20%20%20%20%20%20%20%20format%0A%20%20%20%20%20%20%20%20resolution%0A%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20validUntil%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20textures%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20%20filename%0A%20%20%20%20%20%20%20%20format%0A%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20validUntil%0A%20%20%20%20%20%20%20%20resolution%0A%20%20%20%20%20%20%20%20type%0A%20%20%20%20%20%20%20%20quality%0A%20%20%20%20%20%20%20%20textures%0A%20%20%20%20%20%20%20%20urlTemplate%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?operationName=getMeshes&amp;query=query%20getMeshes(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20assets%20%7B%0A%20%20%20%20%20%20meshes%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20%20filename%0A%20%20%20%20%20%20%20%20format%0A%20%20%20%20%20%20%20%20resolution%0A%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20validUntil%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20textures%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20%20filename%0A%20%20%20%20%20%20%20%20format%0A%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20validUntil%0A%20%20%20%20%20%20%20%20resolution%0A%20%20%20%20%20%20%20%20type%0A%20%20%20%20%20%20%20%20quality%0A%20%20%20%20%20%20%20%20textures%0A%20%20%20%20%20%20%20%20urlTemplate%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -1522,37 +1685,46 @@ noResultsText: '<li><div>No results found.<div></li>',
   <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"bundles"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="nl">"bundles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
           </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:matterpak"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/bundles/aec.zip?t=2-a03f0704b9b9da393501d4817d1826c193ee0280-1679975256-1&amp;download=matterpak_WeZ1dHwn3ac.zip&amp;k=models%2F58f2a24ec7fb43abaf68c39459cd29d3%2Fassets%2Fbundles%2Faec.zip"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zip"</span><span class="w">
-          </span><span class="p">}]</span><span class="w">
+          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/bundles/aec.zip?t=2-a03f0704b9b9da393501d4817d1826c193ee0280-1679975256-1&amp;download=matterpak_WeZ1dHwn3ac.zip&amp;k=models%2F58f2a24ec7fb43abaf68c39459cd29d3%2Fassets%2Fbundles%2Faec.zip"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zip"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bim:cad"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/jobs/bim-asset/df598b5a-02d8-47a7-9dd9-a0ade8250d71.zip?t=2-1b59739c853d184dcae3888ca57754e38919b992-1679975256-1&amp;download=bim_WeZ1dHwn3ac.zip&amp;k=jobs%2Fbim-asset%2Fdf598b5a-02d8-47a7-9dd9-a0ade8250d71.zip"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zip"</span><span class="w">
-          </span><span class="p">}]</span><span class="w">
+          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/jobs/bim-asset/df598b5a-02d8-47a7-9dd9-a0ade8250d71.zip?t=2-1b59739c853d184dcae3888ca57754e38919b992-1679975256-1&amp;download=bim_WeZ1dHwn3ac.zip&amp;k=jobs%2Fbim-asset%2Fdf598b5a-02d8-47a7-9dd9-a0ade8250d71.zip"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zip"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:e57"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mp-app-prod.s3.amazonaws.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/bundles/cloude57.zip?response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27e57_WeZ1dHwn3ac.zip&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20230328T034236Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=86400&amp;X-Amz-Credential=AKIA2OYCIXZCYUE7ZVXS%2F20230328%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Signature=b799ce581a4d055b60e6bb72c7fe6416b50d7e58208a100ee5bdc9aea083bda4"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zip"</span><span class="w">
-          </span><span class="p">}]</span><span class="w">
+          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mp-app-prod.s3.amazonaws.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/bundles/cloude57.zip?response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27e57_WeZ1dHwn3ac.zip&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20230328T034236Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=86400&amp;X-Amz-Credential=AKIA2OYCIXZCYUE7ZVXS%2F20230328%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Signature=b799ce581a4d055b60e6bb72c7fe6416b50d7e58208a100ee5bdc9aea083bda4"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zip"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"floorplan:schematic"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/floorplans/WeZ1dHwn3ac/362550b1-d088-4932-b61f-6c3f1f02bc13.zip?t=2-204baf0ca5aa0dfcbe46e1417ddb991822d20553-1680493356-1&amp;download=362550b1-d088-4932-b61f-6c3f1f02bc13.zip&amp;k=floorplans%2FWeZ1dHwn3ac%2F362550b1-d088-4932-b61f-6c3f1f02bc13.zip"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zip"</span><span class="w">
-          </span><span class="p">}]</span><span class="w">
+          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/floorplans/WeZ1dHwn3ac/362550b1-d088-4932-b61f-6c3f1f02bc13.zip?t=2-204baf0ca5aa0dfcbe46e1417ddb991822d20553-1680493356-1&amp;download=362550b1-d088-4932-b61f-6c3f1f02bc13.zip&amp;k=floorplans%2FWeZ1dHwn3ac%2F362550b1-d088-4932-b61f-6c3f1f02bc13.zip"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zip"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -1560,7 +1732,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getBundles(%24modelId%3A%20ID!)%7B%0A%09model(id%3A%24modelId)%20%7B%0A%09%09bundles(availability%3Aunlocked)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20%20%20availability%0A%20%20%20%20%20%20%20%20%20%20%20%20assets%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20format%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%7D%09&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22WeZ1dHwn3ac%22%0A%7D&amp;operationName=getBundles" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getBundles(%24modelId%3A%20ID!)%7B%0A%09model(id%3A%24modelId)%20%7B%0A%09%09bundles(availability%3Aunlocked)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20%20%20availability%0A%20%20%20%20%20%20%20%20%20%20%20%20assets%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20format%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%7D%09&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22WeZ1dHwn3ac%22%0A%7D&amp;operationName=getBundles" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -1593,7 +1765,8 @@ noResultsText: '<li><div>No results found.<div></li>',
   <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"bundles"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="nl">"bundles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matterpak"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order high resolution assets associated with the model."</span><span class="p">,</span><span class="w">
           </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
@@ -1634,10 +1807,7 @@ noResultsText: '<li><div>No results found.<div></li>',
           </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order an enhanced schematic floorplan"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-              </span><span class="s2">"imperial"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"metric"</span><span class="w">
-            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"imperial"</span><span class="p">,</span><span class="w"> </span><span class="s2">"metric"</span><span class="p">],</span><span class="w">
             </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">},</span><span class="w">
@@ -1700,15 +1870,8 @@ noResultsText: '<li><div>No results found.<div></li>',
           </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order an enhanced schematic floorplan"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-              </span><span class="s2">"imperial"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"metric"</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-              </span><span class="s2">"normal"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"fast"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"urgent"</span><span class="w">
-            </span><span class="p">]</span><span class="w">
+            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"imperial"</span><span class="p">,</span><span class="w"> </span><span class="s2">"metric"</span><span class="p">],</span><span class="w">
+            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"normal"</span><span class="p">,</span><span class="w"> </span><span class="s2">"fast"</span><span class="p">,</span><span class="w"> </span><span class="s2">"urgent"</span><span class="p">]</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -1735,7 +1898,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getSupportedOptions(%24modelId%3A%20ID!)%20%7B%0A%20%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20%20%20bundles%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20description%0A%20%20%20%20%20%20%20%20availability%0A%20%20%20%20%20%20%20%20%20supportedOptions%20%7B%20%0A%20%20%20%20%20%20%20%20%20measurementUnits%0A%20%20%20%20%20%20%20%20%20deliverySpeeds%20%0A%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22JGPnGQ6hosj%22%0A%7D&amp;operationName=getSupportedOptions" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getSupportedOptions(%24modelId%3A%20ID!)%20%7B%0A%20%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20%20%20bundles%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20description%0A%20%20%20%20%20%20%20%20availability%0A%20%20%20%20%20%20%20%20%20supportedOptions%20%7B%20%0A%20%20%20%20%20%20%20%20%20measurementUnits%0A%20%20%20%20%20%20%20%20%20deliverySpeeds%20%0A%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22JGPnGQ6hosj%22%0A%7D&amp;operationName=getSupportedOptions" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -1785,24 +1948,21 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20toggleModelVisibility(%24modelId%3A%20ID!%2C%20%24visibility%3A%20ModelVisibility!)%7B%0A%20%20updateModelVisibility(%0A%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20visibility%3A%20%24visibility%20%20%23%20public%20or%20private%0A%20%20)%7B%0A%20%20%20%20id%0A%20%20%20%20publication%20%7B%0A%20%20%20%20%20%20published%0A%20%20%20%20%20%20url%0A%20%20%20%20%20%20externalUrl%0A%20%20%20%20%20%20embed%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22WeZ1dHwn3ac%22%2C%0A%20%20%22visibility%22%20%3A%20%22public%22%0A%7D&amp;operationName=toggleModelVisibility" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20toggleModelVisibility(%24modelId%3A%20ID!%2C%20%24visibility%3A%20ModelVisibility!)%7B%0A%20%20updateModelVisibility(%0A%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20visibility%3A%20%24visibility%20%20%23%20public%20or%20private%0A%20%20)%7B%0A%20%20%20%20id%0A%20%20%20%20publication%20%7B%0A%20%20%20%20%20%20published%0A%20%20%20%20%20%20url%0A%20%20%20%20%20%20externalUrl%0A%20%20%20%20%20%20embed%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22WeZ1dHwn3ac%22%2C%0A%20%20%22visibility%22%20%3A%20%22public%22%0A%7D&amp;operationName=toggleModelVisibility" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
 <details>
   <summary>Toggle Model Activation (archive / activate)</summary>
 
-  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">toggleModelActivation</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$state</span><span class="p">:</span><span class="w"> </span><span class="n">ModelStateChange</span><span class="p">!){</span><span class="w">
-  </span><span class="n">updateModelState</span><span class="p">(</span><span class="w">
-    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w">
-    </span><span class="n">state</span><span class="p">:</span><span class="w"> </span><span class="nv">$state</span><span class="w">
-  </span><span class="p">){</span><span class="w">
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">toggleModelActivation</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$state</span><span class="p">:</span><span class="w"> </span><span class="n">ModelStateChange</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">updateModelState</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p">:</span><span class="w"> </span><span class="nv">$state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">id</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20toggleModelActivation(%24modelId%3A%20ID!%2C%20%24state%3A%20ModelStateChange!)%7B%0A%20%20updateModelState(%0A%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20state%3A%20%24state%0A%20%20)%7B%0A%20%20%20%20id%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%2C%0A%20%20%22state%22%3A%20%22inactive%22%0A%7D&amp;operationName=toggleModelActivation" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20toggleModelActivation(%24modelId%3A%20ID!%2C%20%24state%3A%20ModelStateChange!)%7B%0A%20%20updateModelState(%0A%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20state%3A%20%24state%0A%20%20)%7B%0A%20%20%20%20id%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%2C%0A%20%20%22state%22%3A%20%22inactive%22%0A%7D&amp;operationName=toggleModelActivation" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -1939,7 +2099,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20patchModelInfo(%24id%3A%20ID!)%7B%0A%20%20patchModel(id%3A%20%24id%2C%20patch%3A%20%7B%20%0A%20%20%20%20%20%20name%3A%20%22Model%20Name%22%2C%0A%20%20%20%20%20%20description%3A%20%22Model%20Description%22%2C%0A%20%20%20%20%20%20options%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%23%20For%20all%20following%20options%3A%0A%20%20%20%20%20%20%20%20%20%20%23%20default%2C%20enabled%2C%20disabled%0A%20%20%20%20%20%20%20%20%20%20socialSharingOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20vrOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20tourButtonsOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20tourAutoplayOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20dollhouseOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20dollhouseLabelsOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20floorplanOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20labelsOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20highlightReelOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20unitType%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20set%3A%20metric%2C%20%23%20or%20imperial%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20resetToDefault%3A%20false%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%23%20Special%20options%3A%0A%20%20%20%20%20%20%20%20%20%20measurements%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%23%20disabled%2C%20measure%2C%20measureAndView%0A%20%20%20%20%20%20%20%20%20%20%20%20set%3A%20measureAndView%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20resetToDefault%3A%20false%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20backgroundColor%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20black%2C%20grey%2C%20white%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20set%3A%20white%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20resetToDefault%3A%20false%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20mls%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20id%3A%20%22MLS%20ID%22%2C%0A%20%20%20%20%20%20%20%20%20%20name%3A%20%22Listing%20Name%22%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20publication%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20contact%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%3A%20%22Contact%20Person%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20email%3A%20%22person%40domain.com%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20phoneNumber%3A%20%22888-888-8888%22%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20externalUrl%3A%20%22https%3A%2F%2Flinktomoreinfo.com%22%2C%0A%20%20%20%20%20%20%20%20%20%20presentedBy%3A%22Your%20Company%20Name%22%2C%0A%20%20%20%20%20%20%20%20%20%20summary%3A%20%22Summary%20information%20about%20this%20model.%22%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%0A%20%20%7D)%20%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20options%20%7B%0A%20%20%20%20%20%20%20%20%20%20socialSharingOverride%2C%0A%20%20%20%20%20%20%20%20%20%20vrOverride%2C%0A%20%20%20%20%20%20%20%20%20%20tourButtonsOverride%2C%0A%20%20%20%20%20%20%20%20%20%20tourAutoplayOverride%2C%0A%20%20%20%20%20%20%20%20%20%20dollhouseOverride%2C%0A%20%20%20%20%20%20%20%20%20%20dollhouseLabelsOverride%2C%0A%20%20%20%20%20%20%20%20%20%20floorplanOverride%2C%0A%20%20%20%20%20%20%20%20%20%20labelsOverride%3A%2C%0A%20%20%20%20%20%20%20%20%20%20highlightReelOverride%2C%0A%20%20%20%20%20%20%20%20%20%20unitType%2C%0A%20%20%20%20%20%20%20%20%20%20measurements%2C%0A%20%20%20%20%20%20%20%20%20%20backgroundColor%0A%20%20%20%20%7D%0A%20%20%20%20mls%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%20%20publication%20%7B%0A%20%20%20%20%20%20%20%20%20%20contact%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20email%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20phoneNumber%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20presentedBy%0A%20%20%20%20%20%20%20%20%20%20externalUrl%0A%20%20%20%20%20%20%20%20%20%20summary%0A%20%20%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%20%20%22id%22%20%3A%20%22FE1FLGnch5h%22%0A%7D&amp;operationName=patchModelInfo" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20patchModelInfo(%24id%3A%20ID!)%7B%0A%20%20patchModel(id%3A%20%24id%2C%20patch%3A%20%7B%20%0A%20%20%20%20%20%20name%3A%20%22Model%20Name%22%2C%0A%20%20%20%20%20%20description%3A%20%22Model%20Description%22%2C%0A%20%20%20%20%20%20options%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%23%20For%20all%20following%20options%3A%0A%20%20%20%20%20%20%20%20%20%20%23%20default%2C%20enabled%2C%20disabled%0A%20%20%20%20%20%20%20%20%20%20socialSharingOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20vrOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20tourButtonsOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20tourAutoplayOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20dollhouseOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20dollhouseLabelsOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20floorplanOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20labelsOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20highlightReelOverride%3A%20default%2C%0A%20%20%20%20%20%20%20%20%20%20unitType%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20set%3A%20metric%2C%20%23%20or%20imperial%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20resetToDefault%3A%20false%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%23%20Special%20options%3A%0A%20%20%20%20%20%20%20%20%20%20measurements%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%23%20disabled%2C%20measure%2C%20measureAndView%0A%20%20%20%20%20%20%20%20%20%20%20%20set%3A%20measureAndView%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20resetToDefault%3A%20false%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20backgroundColor%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20black%2C%20grey%2C%20white%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20set%3A%20white%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20resetToDefault%3A%20false%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20mls%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20id%3A%20%22MLS%20ID%22%2C%0A%20%20%20%20%20%20%20%20%20%20name%3A%20%22Listing%20Name%22%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20publication%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20contact%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%3A%20%22Contact%20Person%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20email%3A%20%22person%40domain.com%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20phoneNumber%3A%20%22888-888-8888%22%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20externalUrl%3A%20%22https%3A%2F%2Flinktomoreinfo.com%22%2C%0A%20%20%20%20%20%20%20%20%20%20presentedBy%3A%22Your%20Company%20Name%22%2C%0A%20%20%20%20%20%20%20%20%20%20summary%3A%20%22Summary%20information%20about%20this%20model.%22%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%0A%20%20%7D)%20%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20options%20%7B%0A%20%20%20%20%20%20%20%20%20%20socialSharingOverride%2C%0A%20%20%20%20%20%20%20%20%20%20vrOverride%2C%0A%20%20%20%20%20%20%20%20%20%20tourButtonsOverride%2C%0A%20%20%20%20%20%20%20%20%20%20tourAutoplayOverride%2C%0A%20%20%20%20%20%20%20%20%20%20dollhouseOverride%2C%0A%20%20%20%20%20%20%20%20%20%20dollhouseLabelsOverride%2C%0A%20%20%20%20%20%20%20%20%20%20floorplanOverride%2C%0A%20%20%20%20%20%20%20%20%20%20labelsOverride%3A%2C%0A%20%20%20%20%20%20%20%20%20%20highlightReelOverride%2C%0A%20%20%20%20%20%20%20%20%20%20unitType%2C%0A%20%20%20%20%20%20%20%20%20%20measurements%2C%0A%20%20%20%20%20%20%20%20%20%20backgroundColor%0A%20%20%20%20%7D%0A%20%20%20%20mls%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%20%20publication%20%7B%0A%20%20%20%20%20%20%20%20%20%20contact%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20email%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20phoneNumber%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20presentedBy%0A%20%20%20%20%20%20%20%20%20%20externalUrl%0A%20%20%20%20%20%20%20%20%20%20summary%0A%20%20%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%20%20%22id%22%20%3A%20%22FE1FLGnch5h%22%0A%7D&amp;operationName=patchModelInfo" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -1980,7 +2140,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?operationName=changeAddressVisibility&amp;query=mutation%20changeAddressVisibility(%24id%3A%20ID!)%7B%0A%20%20updateModelAddress(id%3A%20%24id%2C%20addressVisibility%3A%20none)%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20options%20%7B%0A%20%20%20%20%20%20%20%20%20%20addressVisibility%0A%20%20%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%20%20%22id%22%20%3A%20%22FE1FLGnch5h%22%0A%7D" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?operationName=changeAddressVisibility&amp;query=mutation%20changeAddressVisibility(%24id%3A%20ID!)%7B%0A%20%20updateModelAddress(id%3A%20%24id%2C%20addressVisibility%3A%20none)%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20options%20%7B%0A%20%20%20%20%20%20%20%20%20%20addressVisibility%0A%20%20%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%20%20%22id%22%20%3A%20%22FE1FLGnch5h%22%0A%7D" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -2055,7 +2215,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20addMattertag(%0A%20%20%24modelId%3A%20ID!%2C%20%0A%20%20%24floorId%3A%20ID!%2C%0A%20%20%24color%3A%20String%2C%0A%20%20%24description%3A%20String%2C%0A%20%20%24label%3A%20String%2C%0A%20%20%24icon%3A%20String%2C%0A%20%20%24keywords%3A%20%5BString!%5D%2C%0A%20%20%24enabled%3A%20Boolean!%2C%0A%20%20%24anchorPositionX%3A%20Float!%2C%0A%20%20%24anchorPositionY%3A%20Float!%2C%0A%20%20%24anchorPositionZ%3A%20Float!%2C%0A%20%20%24stemEnabled%3A%20Boolean!%2C%0A%20%20%24stemNormalX%3A%20Float!%2C%0A%20%20%24stemNormalY%3A%20Float!%2C%0A%20%20%24stemNormalZ%3A%20Float!%2C%0A%20%20%24mediaType%3A%20MattertagMediaType%2C%0A%20%20%24mediaUrl%3A%20String%2C%0A%20%20%24stemLength%3A%20Float!%20%20%0A)%7B%0A%20%20addMattertag(%0A%20%20%20%20modelId%3A%20%24modelId%2C%0A%20%20%20%20field%3A%20id%2C%20%0A%20%20%20%20mattertag%3A%20%7B%20%0A%20%20%20%20%20%20floorId%3A%20%24floorId%2C%20%23%20Must%20be%20valid%0A%20%20%20%20%20%20enabled%3A%20%24enabled%2C%20%23%20required%20and%20can%20be%20true%20or%20false%0A%20%20%20%20%20%20color%3A%20%24color%2C%0A%20%20%20%20%20%20label%3A%20%24label%2C%0A%20%20%20%20%20%20icon%3A%20%24icon%2C%0A%20%20%20%20%20%20keywords%3A%20%24keywords%2C%0A%20%20%20%20%20%20description%3A%20%24description%2C%0A%20%20%20%20%20%20anchorPosition%3A%20%7B%20x%3A%20%24anchorPositionX%2C%20y%3A%20%24anchorPositionY%2C%20z%3A%20%24anchorPositionZ%20%7D%2C%0A%20%20%20%20%20%20mediaType%3A%20%24mediaType%2C%0A%20%20%20%20%20%20mediaUrl%3A%20%24mediaUrl%2C%0A%20%20%20%20%20%20stemEnabled%3A%20%24stemEnabled%2C%0A%20%20%20%20%20%20stemNormal%3A%20%7B%20x%20%3A%20%24stemNormalX%20%2C%20y%3A%20%24stemNormalY%2C%20z%3A%20%24stemNormalZ%20%7D%2C%20%0A%20%20%20%20%20%20stemLength%3A%20%24stemLength%0A%20%20%20%20%7D%0A%20%20)%20%7B%0A%20%20%20%20id%0A%20%20%7D%0A%7D&amp;operationName=addMattertag&amp;variables=%7B%0A%20%20%22modelId%22%20%3A%20%22%22%2C%0A%20%20%22floorId%22%3A%20%22pd0i1c4yq9w0y2zsb07ed23sb%22%2C%0A%20%20%22color%22%3A%20%22%2303687d%22%2C%0A%20%20%22label%22%3A%20%22Updated%20Tag%22%2C%0A%20%20%22icon%22%3A%20%22public_symbols_video%22%2C%0A%20%20%22keywords%22%20%3A%20%5B%22API%20Tag%22%2C%20%22Test%20Tag%22%5D%2C%0A%20%20%22description%22%3A%20%22This%20Tag%20was%20updated!%22%2C%0A%20%20%22enabled%22%20%3A%20true%2C%0A%20%20%22anchorPositionX%22%20%3A%201.20415628%2C%0A%20%20%22anchorPositionY%22%20%3A%20-5.3543434%2C%0A%20%20%22anchorPositionZ%22%20%3A%203.1942153%2C%20%0A%20%20%22stemNormalX%22%20%3A%201.0%2C%0A%20%20%22stemNormalY%22%20%3A%200.0%2C%0A%20%20%22stemNormalZ%22%20%3A%200.0%2C%20%20%0A%20%20%22mediaType%22%20%3A%20%22video%22%2C%0A%20%20%22mediaUrl%22%20%3A%20%22https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdAdsl9x_Dyw%22%2C%0A%20%20%22stemEnabled%22%20%3A%20%20true%2C%0A%20%20%22stemLength%22%20%3A%20%200.16459%0A%7D%20%20" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20addMattertag(%0A%20%20%24modelId%3A%20ID!%2C%20%0A%20%20%24floorId%3A%20ID!%2C%0A%20%20%24color%3A%20String%2C%0A%20%20%24description%3A%20String%2C%0A%20%20%24label%3A%20String%2C%0A%20%20%24icon%3A%20String%2C%0A%20%20%24keywords%3A%20%5BString!%5D%2C%0A%20%20%24enabled%3A%20Boolean!%2C%0A%20%20%24anchorPositionX%3A%20Float!%2C%0A%20%20%24anchorPositionY%3A%20Float!%2C%0A%20%20%24anchorPositionZ%3A%20Float!%2C%0A%20%20%24stemEnabled%3A%20Boolean!%2C%0A%20%20%24stemNormalX%3A%20Float!%2C%0A%20%20%24stemNormalY%3A%20Float!%2C%0A%20%20%24stemNormalZ%3A%20Float!%2C%0A%20%20%24mediaType%3A%20MattertagMediaType%2C%0A%20%20%24mediaUrl%3A%20String%2C%0A%20%20%24stemLength%3A%20Float!%20%20%0A)%7B%0A%20%20addMattertag(%0A%20%20%20%20modelId%3A%20%24modelId%2C%0A%20%20%20%20field%3A%20id%2C%20%0A%20%20%20%20mattertag%3A%20%7B%20%0A%20%20%20%20%20%20floorId%3A%20%24floorId%2C%20%23%20Must%20be%20valid%0A%20%20%20%20%20%20enabled%3A%20%24enabled%2C%20%23%20required%20and%20can%20be%20true%20or%20false%0A%20%20%20%20%20%20color%3A%20%24color%2C%0A%20%20%20%20%20%20label%3A%20%24label%2C%0A%20%20%20%20%20%20icon%3A%20%24icon%2C%0A%20%20%20%20%20%20keywords%3A%20%24keywords%2C%0A%20%20%20%20%20%20description%3A%20%24description%2C%0A%20%20%20%20%20%20anchorPosition%3A%20%7B%20x%3A%20%24anchorPositionX%2C%20y%3A%20%24anchorPositionY%2C%20z%3A%20%24anchorPositionZ%20%7D%2C%0A%20%20%20%20%20%20mediaType%3A%20%24mediaType%2C%0A%20%20%20%20%20%20mediaUrl%3A%20%24mediaUrl%2C%0A%20%20%20%20%20%20stemEnabled%3A%20%24stemEnabled%2C%0A%20%20%20%20%20%20stemNormal%3A%20%7B%20x%20%3A%20%24stemNormalX%20%2C%20y%3A%20%24stemNormalY%2C%20z%3A%20%24stemNormalZ%20%7D%2C%20%0A%20%20%20%20%20%20stemLength%3A%20%24stemLength%0A%20%20%20%20%7D%0A%20%20)%20%7B%0A%20%20%20%20id%0A%20%20%7D%0A%7D&amp;operationName=addMattertag&amp;variables=%7B%0A%20%20%22modelId%22%20%3A%20%22%22%2C%0A%20%20%22floorId%22%3A%20%22pd0i1c4yq9w0y2zsb07ed23sb%22%2C%0A%20%20%22color%22%3A%20%22%2303687d%22%2C%0A%20%20%22label%22%3A%20%22Updated%20Tag%22%2C%0A%20%20%22icon%22%3A%20%22public_symbols_video%22%2C%0A%20%20%22keywords%22%20%3A%20%5B%22API%20Tag%22%2C%20%22Test%20Tag%22%5D%2C%0A%20%20%22description%22%3A%20%22This%20Tag%20was%20updated!%22%2C%0A%20%20%22enabled%22%20%3A%20true%2C%0A%20%20%22anchorPositionX%22%20%3A%201.20415628%2C%0A%20%20%22anchorPositionY%22%20%3A%20-5.3543434%2C%0A%20%20%22anchorPositionZ%22%20%3A%203.1942153%2C%20%0A%20%20%22stemNormalX%22%20%3A%201.0%2C%0A%20%20%22stemNormalY%22%20%3A%200.0%2C%0A%20%20%22stemNormalZ%22%20%3A%200.0%2C%20%20%0A%20%20%22mediaType%22%20%3A%20%22video%22%2C%0A%20%20%22mediaUrl%22%20%3A%20%22https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdAdsl9x_Dyw%22%2C%0A%20%20%22stemEnabled%22%20%3A%20%20true%2C%0A%20%20%22stemLength%22%20%3A%20%200.16459%0A%7D%20%20" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -2133,7 +2293,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20patchMatterTag(%0A%20%20%24modelId%3A%20ID!%2C%20%0A%20%20%24tagId%3A%20ID!%0A%20%20%24floorId%3A%20ID!%2C%0A%20%20%24color%3A%20String%2C%0A%20%20%24description%3A%20String%2C%0A%20%20%24label%3A%20String%2C%0A%20%20%24icon%3A%20String%2C%0A%20%20%24enabled%3A%20Boolean!%2C%0A%20%20%24anchorPositionX%3A%20Float!%2C%0A%20%20%24anchorPositionY%3A%20Float!%2C%0A%20%20%24anchorPositionZ%3A%20Float!%2C%0A%20%20%24stemEnabled%3A%20Boolean!%2C%0A%20%20%24stemNormalX%3A%20Float!%2C%0A%20%20%24stemNormalY%3A%20Float!%2C%0A%20%20%24stemNormalZ%3A%20Float!%2C%0A%20%20%24mediaType%3A%20MattertagMediaType%2C%0A%20%20%24mediaUrl%3A%20String%2C%0A%20%20%24stemLength%3A%20Float!%20%20%0A)%7B%0A%20%20patchMattertag(%0A%20%20%20%20modelId%3A%20%24modelId%2C%0A%20%20%20%20field%3A%20id%2C%20%0A%20%20%20%20mattertagId%3A%20%24tagId%2C%0A%20%20%20%20patch%3A%20%7B%20%0A%20%20%20%20%20%20floorId%3A%20%24floorId%2C%20%23%20Must%20be%20valid%0A%20%20%20%20%20%20enabled%3A%20%24enabled%2C%20%23%20required%20and%20can%20be%20true%20or%20false%0A%20%20%20%20%20%20color%3A%20%24color%2C%0A%20%20%20%20%20%20label%3A%20%24label%2C%0A%20%20%20%20%20%20icon%3A%20%24icon%2C%20%20%23%20New!%0A%20%20%20%20%20%20description%3A%20%24description%2C%0A%20%20%20%20%20%20anchorPosition%3A%20%7B%20x%3A%20%24anchorPositionX%2C%20y%3A%20%24anchorPositionY%2C%20z%3A%20%24anchorPositionZ%20%7D%2C%0A%20%20%20%20%20%20mediaType%3A%20%24mediaType%2C%0A%20%20%20%20%20%20mediaUrl%3A%20%24mediaUrl%2C%0A%20%20%20%20%20%20stemEnabled%3A%20%24stemEnabled%2C%0A%20%20%20%20%20%20stemNormal%3A%20%7B%20x%20%3A%20%24stemNormalX%20%2C%20y%3A%20%24stemNormalY%2C%20z%3A%20%24stemNormalZ%20%7D%2C%20%0A%20%20%20%20%20%20stemLength%3A%20%24stemLength%0A%20%20%20%20%7D%0A%20%20)%7B%0A%20%20%20%20id%20%23%20Returns%20Tag%20ID%0A%20%20%7D%0A%7D&amp;operationName=patchMatterTag&amp;variables=%7B%0A%20%20%22modelId%22%20%3A%20%22%22%2C%0A%20%20%22tagId%22%20%3A%20%22ayi201wkujs%22%2C%0A%20%20%22floorId%22%3A%20%22pd0i1c4yq9w0y2zsb07ed23sb%22%2C%0A%20%20%22color%22%3A%20%22%2303687d%22%2C%0A%20%20%22label%22%3A%20%22Updated%20Tag%22%2C%0A%20%20%22icon%22%20%3A%20%22public_symbols_video%22%2C%0A%20%20%22description%22%3A%20%22This%20Tag%20was%20updated!%22%2C%0A%20%20%22enabled%22%20%3A%20true%2C%0A%20%20%22anchorPositionX%22%20%3A%201.20415628%2C%0A%20%20%22anchorPositionY%22%20%3A%20-5.3543434%2C%0A%20%20%22anchorPositionZ%22%20%3A%203.1942153%2C%20%0A%20%20%22stemNormalX%22%20%3A%201.0%2C%0A%20%20%22stemNormalY%22%20%3A%200.0%2C%0A%20%20%22stemNormalZ%22%20%3A%200.0%2C%20%20%0A%20%20%22mediaType%22%20%3A%20%22video%22%2C%0A%20%20%22mediaUrl%22%20%3A%20%22https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdAdsl9x_Dyw%22%2C%0A%20%20%22stemEnabled%22%20%3A%20%20true%2C%0A%20%20%22stemLength%22%20%3A%20%200.16459%0A%7D%20%20" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20patchMatterTag(%0A%20%20%24modelId%3A%20ID!%2C%20%0A%20%20%24tagId%3A%20ID!%0A%20%20%24floorId%3A%20ID!%2C%0A%20%20%24color%3A%20String%2C%0A%20%20%24description%3A%20String%2C%0A%20%20%24label%3A%20String%2C%0A%20%20%24icon%3A%20String%2C%0A%20%20%24enabled%3A%20Boolean!%2C%0A%20%20%24anchorPositionX%3A%20Float!%2C%0A%20%20%24anchorPositionY%3A%20Float!%2C%0A%20%20%24anchorPositionZ%3A%20Float!%2C%0A%20%20%24stemEnabled%3A%20Boolean!%2C%0A%20%20%24stemNormalX%3A%20Float!%2C%0A%20%20%24stemNormalY%3A%20Float!%2C%0A%20%20%24stemNormalZ%3A%20Float!%2C%0A%20%20%24mediaType%3A%20MattertagMediaType%2C%0A%20%20%24mediaUrl%3A%20String%2C%0A%20%20%24stemLength%3A%20Float!%20%20%0A)%7B%0A%20%20patchMattertag(%0A%20%20%20%20modelId%3A%20%24modelId%2C%0A%20%20%20%20field%3A%20id%2C%20%0A%20%20%20%20mattertagId%3A%20%24tagId%2C%0A%20%20%20%20patch%3A%20%7B%20%0A%20%20%20%20%20%20floorId%3A%20%24floorId%2C%20%23%20Must%20be%20valid%0A%20%20%20%20%20%20enabled%3A%20%24enabled%2C%20%23%20required%20and%20can%20be%20true%20or%20false%0A%20%20%20%20%20%20color%3A%20%24color%2C%0A%20%20%20%20%20%20label%3A%20%24label%2C%0A%20%20%20%20%20%20icon%3A%20%24icon%2C%20%20%23%20New!%0A%20%20%20%20%20%20description%3A%20%24description%2C%0A%20%20%20%20%20%20anchorPosition%3A%20%7B%20x%3A%20%24anchorPositionX%2C%20y%3A%20%24anchorPositionY%2C%20z%3A%20%24anchorPositionZ%20%7D%2C%0A%20%20%20%20%20%20mediaType%3A%20%24mediaType%2C%0A%20%20%20%20%20%20mediaUrl%3A%20%24mediaUrl%2C%0A%20%20%20%20%20%20stemEnabled%3A%20%24stemEnabled%2C%0A%20%20%20%20%20%20stemNormal%3A%20%7B%20x%20%3A%20%24stemNormalX%20%2C%20y%3A%20%24stemNormalY%2C%20z%3A%20%24stemNormalZ%20%7D%2C%20%0A%20%20%20%20%20%20stemLength%3A%20%24stemLength%0A%20%20%20%20%7D%0A%20%20)%7B%0A%20%20%20%20id%20%23%20Returns%20Tag%20ID%0A%20%20%7D%0A%7D&amp;operationName=patchMatterTag&amp;variables=%7B%0A%20%20%22modelId%22%20%3A%20%22%22%2C%0A%20%20%22tagId%22%20%3A%20%22ayi201wkujs%22%2C%0A%20%20%22floorId%22%3A%20%22pd0i1c4yq9w0y2zsb07ed23sb%22%2C%0A%20%20%22color%22%3A%20%22%2303687d%22%2C%0A%20%20%22label%22%3A%20%22Updated%20Tag%22%2C%0A%20%20%22icon%22%20%3A%20%22public_symbols_video%22%2C%0A%20%20%22description%22%3A%20%22This%20Tag%20was%20updated!%22%2C%0A%20%20%22enabled%22%20%3A%20true%2C%0A%20%20%22anchorPositionX%22%20%3A%201.20415628%2C%0A%20%20%22anchorPositionY%22%20%3A%20-5.3543434%2C%0A%20%20%22anchorPositionZ%22%20%3A%203.1942153%2C%20%0A%20%20%22stemNormalX%22%20%3A%201.0%2C%0A%20%20%22stemNormalY%22%20%3A%200.0%2C%0A%20%20%22stemNormalZ%22%20%3A%200.0%2C%20%20%0A%20%20%22mediaType%22%20%3A%20%22video%22%2C%0A%20%20%22mediaUrl%22%20%3A%20%22https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdAdsl9x_Dyw%22%2C%0A%20%20%22stemEnabled%22%20%3A%20%20true%2C%0A%20%20%22stemLength%22%20%3A%20%200.16459%0A%7D%20%20" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -2171,15 +2331,17 @@ noResultsText: '<li><div>No results found.<div></li>',
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matterpak"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order high resolution assets associated with the model."</span><span class="p">,</span><span class="w">
       </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://qa-cdn-1.matterport.com/models/group_77/job_62927cc2-7552-4aad-8330-3904c5198354/wf_39d3f0f8baae4fc9aaeb6326edf55d8f/mesh/1.1.466.14860/2016-11-09_0240.05/62927cc275524aad83303904c5198354.zip?t=2-b3da2c89760c80f1671bc260d678d949f29bd8a8-1573485841-1"</span><span class="w">
-      </span><span class="p">}]</span><span class="w">
+      </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://qa-cdn-1.matterport.com/models/group_77/job_62927cc2-7552-4aad-8330-3904c5198354/wf_39d3f0f8baae4fc9aaeb6326edf55d8f/mesh/1.1.466.14860/2016-11-09_0240.05/62927cc275524aad83303904c5198354.zip?t=2-b3da2c89760c80f1671bc260d678d949f29bd8a8-1573485841-1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20buyMatterpak(%24modelId%3A%20ID!)%7B%0A%20%20unlockModelBundle(%0A%20%20%20%20id%3A%20%24modelId%2C%20%0A%20%20%20%20bundleId%3A%20%22mp%3Amatterpak%22%0A%20%20)%20%7B%0A%20%20%20%20id%0A%09name%0A%09description%0A%09availability%0A%09assets%20%7B%20url%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=buyMatterpak&quot;" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20buyMatterpak(%24modelId%3A%20ID!)%7B%0A%20%20unlockModelBundle(%0A%20%20%20%20id%3A%20%24modelId%2C%20%0A%20%20%20%20bundleId%3A%20%22mp%3Amatterpak%22%0A%20%20)%20%7B%0A%20%20%20%20id%0A%09name%0A%09description%0A%09availability%0A%09assets%20%7B%20url%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=buyMatterpak&quot;" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -2219,7 +2381,8 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=fragment%20asset%20on%20Asset%7B%0A%20%20id%0A%20%20url%0A%20%20validUntil%0A%20%20format%0A%20%20filename%0A%20%20status%0A%7D%0A%0Aquery%20getBundleAssets(%24modelId%3A%20ID!)%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20bundles%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20availability%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20description%0A%20%20%20%20%20%20assets%20%7B%20...asset%20%7D%0A%20%20%20%20%20%20supportedOptions%20%7B%0A%20%20%20%20%20%20%20%20deliverySpeeds%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getBundleAssets" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=fragment%20asset%20on%20Asset%7B%0A%20%20id%0A%20%20url%0A%20%20validUntil%0A%20%20format%0A%20%20filename%0A%20%20status%0A%7D%0A%0Aquery%20getBundleAssets(%24modelId%3A%20ID!)%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20bundles%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20availability%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20description%0A%20%20%20%20%20%20assets%20%7B%20...asset%20%7D%0A%20%20%20%20%20%20supportedOptions%20%7B%0A%20%20%20%20%20%20%20%20deliverySpeeds%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getBundleAssets" target="\_blank">Try this query in our interactive console</a></p>
+
 </details>
 
 <details name="Ordering and Retrieving a Schematic Floor Plans">
@@ -2230,8 +2393,7 @@ noResultsText: '<li><div>No results found.<div></li>',
   <p>Note - Assets will not be immediately available. Schematic Floorplans won’t be available until our floor plan team returns it (normal speed is about 2 days).</p>
 
   <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">buyAddOn</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
-  </span><span class="n">unlockModelBundle</span><span class="p">(</span><span class="w">
-    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w">
+  </span><span class="n">unlockModelBundle</span><span class="p">(</span><span class="w">    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w">
     </span><span class="n">bundleId</span><span class="p">:</span><span class="w"> </span><span class="s2">"cubicasa:floorplan"</span><span class="p">,</span><span class="w">
     </span><span class="n">options</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">deliverySpeed</span><span class="p">:</span><span class="w"> </span><span class="n">normal</span><span class="w"> </span><span class="p">}</span><span class="w">
   </span><span class="p">){</span><span class="w">
@@ -2249,7 +2411,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20buyAddOn(%24modelId%3A%20ID!)%7B%0A%20%20unlockModelBundle(%0A%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20bundleId%3A%20%22cubicasa%3Afloorplan%22%2C%0A%20%20%20%20options%3A%20%7B%20deliverySpeed%3A%20normal%20%7D%0A%20%20)%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20availability%0A%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=buyAddOn" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20buyAddOn(%24modelId%3A%20ID!)%7B%0A%20%20unlockModelBundle(%0A%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20bundleId%3A%20%22cubicasa%3Afloorplan%22%2C%0A%20%20%20%20options%3A%20%7B%20deliverySpeed%3A%20normal%20%7D%0A%20%20)%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20availability%0A%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=buyAddOn" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -2269,7 +2431,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getAddOn(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20bundle(id%3A%20%22cubicasa%3Afloorplan%22)%20%7B%0A%20%20%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getAddOn" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getAddOn(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20bundle(id%3A%20%22cubicasa%3Afloorplan%22)%20%7B%0A%20%20%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getAddOn" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -2289,7 +2451,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jun 30, 2023 <br />
+ Site last generated: Aug 16, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

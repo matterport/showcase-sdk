@@ -268,10 +268,32 @@
 
 
 {
+"title": "Creating 3D Components",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/sdk_component_3d.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "SDK Connect",
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/sdkbundle_connect.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Connecting Components",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/sdk_connecting_components.html",
 "summary": ""
 }
 ,
@@ -1235,6 +1257,17 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/docs/reference/current/interfaces/scene.scenecomponentoptions.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Scene",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/sdk_scene_intro.html",
 "summary": ""
 }
 ,

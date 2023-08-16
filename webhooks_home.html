@@ -411,6 +411,27 @@
           
           
           
+          <li class="subfolders">
+              <a title="Using the Scene Namespace" href="#">Using the Scene Namespace</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Intro and Basic Components" href="/showcase-sdk/sdk_scene_intro.html">Intro and Basic Components</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Connecting Components" href="/showcase-sdk/sdk_connecting_components.html">Connecting Components</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
           
           
           
@@ -866,11 +887,12 @@ noResultsText: '<li><div>No results found.<div></li>',
   <li>Model upload event is completed. This event is triggered when a model has been successfully uploaded, whether or not it has been processed.</li>
 </ul>
 
-<p><a href="Learn more about Webhooks" target="_blank">https://en.wikipedia.org/wiki/Webhook</a></p>
+<p><a href="Learn more about Webhooks" target="\_blank">https://en.wikipedia.org/wiki/Webhook</a></p>
 
 <h2 id="getting-started">Getting Started</h2>
 
 <p>The ability to register Webhook callbacks with the Matterport system requires:</p>
+
 <ul>
   <li>Account Feature Unlock</li>
   <li>Developer License Unlock and API Tokens</li>
@@ -924,42 +946,45 @@ noResultsText: '<li><div>No results found.<div></li>',
   <summary>uploaded</summary>
 
   <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-   </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"uploaded"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"modelId"</span><span class="p">:</span><span class="s2">"FR1wedSZUWQ"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="mi">1663595798725</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"internalId"</span><span class="p">:</span><span class="s2">"internal id"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"createdBy"</span><span class="p">:</span><span class="s2">"test@test.com"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"data"</span><span class="p">:{}</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uploaded"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"modelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FR1wedSZUWQ"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1663595798725</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"internalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"internal id"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@test.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
+
 </details>
 <details name="processed">
   <summary>processed</summary>
 
   <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-   </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"processed"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"modelId"</span><span class="p">:</span><span class="s2">"MXepojQAL2p"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="mi">1663595796940</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"internalId"</span><span class="p">:</span><span class="s2">"internal id"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"createdBy"</span><span class="p">:</span><span class="s2">"test@test.com"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
-      </span><span class="nl">"success"</span><span class="p">:</span><span class="s2">"true"</span><span class="w">
-   </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"processed"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"modelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXepojQAL2p"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1663595796940</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"internalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"internal id"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@test.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
+
 </details>
 <details name="inserted">
   <summary>inserted</summary>
 
   <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-   </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"inserted"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"modelId"</span><span class="p">:</span><span class="s2">"PFiuXnwfE4h"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="mi">1663596098947</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"internalId"</span><span class="p">:</span><span class="s2">"internal id"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"createdBy"</span><span class="p">:</span><span class="s2">"test@test.com"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"data"</span><span class="p">:{}</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"inserted"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"modelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PFiuXnwfE4h"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1663596098947</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"internalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"internal id"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@test.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
+
 </details>
 <details name="deleted">
   <summary>deleted</summary>
@@ -1047,7 +1072,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <h2 id="registering-a-model-event-callback">Registering a Model Event Callback</h2>
 
-<p>Webhook callback registration and management for model events is handled through various mutations to the <a href="https://api.matterport.com/model/docs/reference" target="_blank">Model API</a>.</p>
+<p>Webhook callback registration and management for model events is handled through various mutations to the <a href="https://api.matterport.com/model/docs/reference" target="\_blank">Model API</a>.</p>
 
 <p>The <strong><code class="language-plaintext highlighter-rouge">addModelEventWebhookCallback</code></strong> mutation registers a callback URL through a WebhookCallbackInput object for specified eventTypes. Optional query parameters can be included, as well as basic or token credentials for authentication.</p>
 
@@ -1117,14 +1142,14 @@ noResultsText: '<li><div>No results found.<div></li>',
             </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key2"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value2"</span><span class="w">
           </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w"> 
+        </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20registerWebhookCallback%7B%0A%20%20addModelEventWebhookCallback%20(input%3A%20%7B%0A%20%20%20%20eventTypes%3A%20%5Binserted%2C%20deleted%2C%20updated%5D%2C%0A%20%20%20%20callback%3A%20%7B%0A%20%20%20%20%20%20scheme%3A%20%22https%22%2C%0A%20%20%20%20%20%20host%3A%20%22myawesomeapi.com%22%2C%0A%20%20%20%20%20%20path%3A%20%22my%2Fapi%2Fpath%22%0A%20%20%20%20%20%20queryParams%3A%20%5B%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20key%3A%20%22key1%22%2C%0A%20%20%20%20%20%20%20%20%20%20value%3A%20%22value1%22%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20key%3A%20%22key2%22%2C%0A%20%20%20%20%20%20%20%20%20%20value%3A%20%22value2%22%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20credType%3A%20basic%0A%20%20%20%20%20%20credKey%3A%20%22username%22%0A%20%20%20%20%20%20credSecret%3A%20%22password%22%0A%20%20%20%20%7D%20%0A%20%20%7D)%20%7B%0A%20%20%20%20id%0A%20%20%20%20eventTypes%0A%20%20%20%20callback%7B%0A%20%20%20%20%20%20scheme%0A%20%20%20%20%20%20host%0A%20%20%20%20%20%20path%0A%20%20%20%20%20%20queryParams%7B%0A%20%20%20%20%20%20%20%20key%0A%20%20%20%20%20%20%20%20value%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;operationName=registerWebhookCallback" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20registerWebhookCallback%7B%0A%20%20addModelEventWebhookCallback%20(input%3A%20%7B%0A%20%20%20%20eventTypes%3A%20%5Binserted%2C%20deleted%2C%20updated%5D%2C%0A%20%20%20%20callback%3A%20%7B%0A%20%20%20%20%20%20scheme%3A%20%22https%22%2C%0A%20%20%20%20%20%20host%3A%20%22myawesomeapi.com%22%2C%0A%20%20%20%20%20%20path%3A%20%22my%2Fapi%2Fpath%22%0A%20%20%20%20%20%20queryParams%3A%20%5B%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20key%3A%20%22key1%22%2C%0A%20%20%20%20%20%20%20%20%20%20value%3A%20%22value1%22%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20key%3A%20%22key2%22%2C%0A%20%20%20%20%20%20%20%20%20%20value%3A%20%22value2%22%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20credType%3A%20basic%0A%20%20%20%20%20%20credKey%3A%20%22username%22%0A%20%20%20%20%20%20credSecret%3A%20%22password%22%0A%20%20%20%20%7D%20%0A%20%20%7D)%20%7B%0A%20%20%20%20id%0A%20%20%20%20eventTypes%0A%20%20%20%20callback%7B%0A%20%20%20%20%20%20scheme%0A%20%20%20%20%20%20host%0A%20%20%20%20%20%20path%0A%20%20%20%20%20%20queryParams%7B%0A%20%20%20%20%20%20%20%20key%0A%20%20%20%20%20%20%20%20value%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;operationName=registerWebhookCallback" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -1136,7 +1161,7 @@ noResultsText: '<li><div>No results found.<div></li>',
   <summary>modelEventWebhookCallbacks</summary>
 
   <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getModelEventCallbacks</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="n">modelEventWebhookCallbacks</span><span class="p">{</span><span class="w">
+  </span><span class="n">modelEventWebhookCallbacks</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">nextOffset</span><span class="w">
     </span><span class="n">totalResults</span><span class="w">
     </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1163,11 +1188,7 @@ noResultsText: '<li><div>No results found.<div></li>',
       </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"887n9rwrdxytnttms0t1h02mc"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"eventTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="s2">"inserted"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"updated"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"deleted"</span><span class="w">
-          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"eventTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"inserted"</span><span class="p">,</span><span class="w"> </span><span class="s2">"updated"</span><span class="p">,</span><span class="w"> </span><span class="s2">"deleted"</span><span class="p">],</span><span class="w">
           </span><span class="nl">"callback"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
@@ -1180,7 +1201,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getModelEventCallbacks%20%7B%0A%20%20modelEventWebhookCallbacks%7B%0A%20%20%20%20nextOffset%0A%20%20%20%20totalResults%0A%20%20%20%20results%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20eventTypes%0A%20%20%20%20%20%20callback%20%7B%0A%20%20%20%20%20%20%20%20scheme%0A%20%20%20%20%20%20%20%20port%0A%20%20%20%20%20%20%20%20path%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;operationName=getModelEventCallbacks" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getModelEventCallbacks%20%7B%0A%20%20modelEventWebhookCallbacks%7B%0A%20%20%20%20nextOffset%0A%20%20%20%20totalResults%0A%20%20%20%20results%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20eventTypes%0A%20%20%20%20%20%20callback%20%7B%0A%20%20%20%20%20%20%20%20scheme%0A%20%20%20%20%20%20%20%20port%0A%20%20%20%20%20%20%20%20path%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;operationName=getModelEventCallbacks" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -1189,34 +1210,29 @@ noResultsText: '<li><div>No results found.<div></li>',
 <p>Once the callback id is received, the <strong><code class="language-plaintext highlighter-rouge">patchModelEventWebhookCallback</code></strong> mutation can be used to make updates to an already-registered callback.</p>
 
 <details name="modelEventWebhookCallbacks">
-  <summary>modelEventWebhookCallbacks</summary>
+  <summary>patchModelEventWebhookCallback</summary>
 
-  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">updateModelEventCallback</span><span class="p">(</span><span class="nv">$callbackId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
-  </span><span class="n">patchModelEventWebhookCallback</span><span class="w"> </span><span class="p">(</span><span class="w">
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">updateModelEventCallback</span><span class="p">(</span><span class="nv">$callbackId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">patchModelEventWebhookCallback</span><span class="p">(</span><span class="w">
     </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$callbackId</span><span class="w">
     </span><span class="n">input</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="n">callback</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="n">scheme</span><span class="p">:</span><span class="w"> </span><span class="s2">"https"</span><span class="p">,</span><span class="w">
-      </span><span class="n">host</span><span class="p">:</span><span class="w"> </span><span class="s2">"myawesomeapi.com"</span><span class="p">,</span><span class="w">
-      </span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="s2">"v2/my/api/path"</span><span class="w">
-      </span><span class="n">queryParams</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="s2">"key1"</span><span class="p">,</span><span class="w">
-          </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"value1"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="s2">"key2"</span><span class="p">,</span><span class="w">
-          </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"value2"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-      </span><span class="n">credType</span><span class="p">:</span><span class="w"> </span><span class="n">basic</span><span class="w">
-      </span><span class="n">credKey</span><span class="p">:</span><span class="w"> </span><span class="s2">"username"</span><span class="w">
-      </span><span class="n">credSecret</span><span class="p">:</span><span class="w"> </span><span class="s2">"password"</span><span class="w">
+      </span><span class="n">callback</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">scheme</span><span class="p">:</span><span class="w"> </span><span class="s2">"https"</span><span class="w">
+        </span><span class="n">host</span><span class="p">:</span><span class="w"> </span><span class="s2">"myawesomeapi.com"</span><span class="w">
+        </span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="s2">"v2/my/api/path"</span><span class="w">
+        </span><span class="n">queryParams</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w"> </span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="s2">"key1"</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"value1"</span><span class="w"> </span><span class="p">}</span><span class="w">
+          </span><span class="p">{</span><span class="w"> </span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="s2">"key2"</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="s2">"value2"</span><span class="w"> </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+        </span><span class="n">credType</span><span class="p">:</span><span class="w"> </span><span class="n">basic</span><span class="w">
+        </span><span class="n">credKey</span><span class="p">:</span><span class="w"> </span><span class="s2">"username"</span><span class="w">
+        </span><span class="n">credSecret</span><span class="p">:</span><span class="w"> </span><span class="s2">"password"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">})</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">id</span><span class="w">
     </span><span class="n">eventTypes</span><span class="w">
-    </span><span class="n">callback</span><span class="p">{</span><span class="w">
+    </span><span class="n">callback</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="n">scheme</span><span class="w">
       </span><span class="n">host</span><span class="w">
       </span><span class="n">path</span><span class="w">
@@ -1231,11 +1247,7 @@ noResultsText: '<li><div>No results found.<div></li>',
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"patchModelEventWebhookCallback"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"887n9rwrdxytnttms0t1h02mc"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"eventTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"inserted"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"deleted"</span><span class="w">
-      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"eventTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"inserted"</span><span class="p">,</span><span class="w"> </span><span class="s2">"updated"</span><span class="p">,</span><span class="w"> </span><span class="s2">"deleted"</span><span class="p">],</span><span class="w">
       </span><span class="nl">"callback"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myawesomeapi.com"</span><span class="p">,</span><span class="w">
@@ -1246,7 +1258,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20updateModelEventCallback(%24callbackId%3A%20ID!)%7B%0A%20%20patchModelEventWebhookCallback%20(%0A%20%20%20%20id%3A%20%24callbackId%0A%20%20%20%20input%3A%20%7B%0A%20%20%20%20callback%3A%20%7B%0A%20%20%20%20%20%20scheme%3A%20%22https%22%2C%0A%20%20%20%20%20%20host%3A%20%22myawesomeapi.com%22%2C%0A%20%20%20%20%20%20path%3A%20%22v2%2Fmy%2Fapi%2Fpath%22%0A%20%20%20%20%20%20queryParams%3A%20%5B%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20key%3A%20%22key1%22%2C%0A%20%20%20%20%20%20%20%20%20%20value%3A%20%22value1%22%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20key%3A%20%22key2%22%2C%0A%20%20%20%20%20%20%20%20%20%20value%3A%20%22value2%22%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20credType%3A%20basic%0A%20%20%20%20%20%20credKey%3A%20%22username%22%0A%20%20%20%20%20%20credSecret%3A%20%22password%22%0A%20%20%20%20%7D%0A%20%20%7D)%20%7B%0A%20%20%20%20id%0A%20%20%20%20eventTypes%0A%20%20%20%20callback%7B%0A%20%20%20%20%20%20scheme%0A%20%20%20%20%20%20host%0A%20%20%20%20%20%20path%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22callbackId%22%3A%20%22%22%0A%7D&amp;operationName=updateModelEventCallback" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20updateModelEventCallback(%24callbackId%3A%20ID!)%7B%0A%20%20patchModelEventWebhookCallback%20(%0A%20%20%20%20id%3A%20%24callbackId%0A%20%20%20%20input%3A%20%7B%0A%20%20%20%20callback%3A%20%7B%0A%20%20%20%20%20%20scheme%3A%20%22https%22%2C%0A%20%20%20%20%20%20host%3A%20%22myawesomeapi.com%22%2C%0A%20%20%20%20%20%20path%3A%20%22v2%2Fmy%2Fapi%2Fpath%22%0A%20%20%20%20%20%20queryParams%3A%20%5B%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20key%3A%20%22key1%22%2C%0A%20%20%20%20%20%20%20%20%20%20value%3A%20%22value1%22%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20key%3A%20%22key2%22%2C%0A%20%20%20%20%20%20%20%20%20%20value%3A%20%22value2%22%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20credType%3A%20basic%0A%20%20%20%20%20%20credKey%3A%20%22username%22%0A%20%20%20%20%20%20credSecret%3A%20%22password%22%0A%20%20%20%20%7D%0A%20%20%7D)%20%7B%0A%20%20%20%20id%0A%20%20%20%20eventTypes%0A%20%20%20%20callback%7B%0A%20%20%20%20%20%20scheme%0A%20%20%20%20%20%20host%0A%20%20%20%20%20%20path%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22callbackId%22%3A%20%22%22%0A%7D&amp;operationName=updateModelEventCallback" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -1257,8 +1269,8 @@ noResultsText: '<li><div>No results found.<div></li>',
 <details name="modelEventWebhookCallbacks">
   <summary>removeModelEventWebhookCallback</summary>
 
-  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">removeModelEventCallback</span><span class="p">(</span><span class="nv">$callbackId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
-  </span><span class="n">removeModelEventWebhookCallback</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$callbackId</span><span class="p">)</span><span class="w">
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">removeModelEventCallback</span><span class="p">(</span><span class="nv">$callbackId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">removeModelEventWebhookCallback</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$callbackId</span><span class="p">)</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
@@ -1271,7 +1283,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20testModelEvent(%24callbackId%3A%20ID!)%7B%0A%20%20pingModelEventWebhookCallback(id%3A%20%24callbackId)%0A%7D&amp;variables=%7B%0A%20%20%22callbackId%22%3A%20%22%22%0A%7D&amp;operationName=testModelEvent" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20testModelEvent(%24callbackId%3A%20ID!)%7B%0A%20%20pingModelEventWebhookCallback(id%3A%20%24callbackId)%0A%7D&amp;variables=%7B%0A%20%20%22callbackId%22%3A%20%22%22%0A%7D&amp;operationName=testModelEvent" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -1284,11 +1296,13 @@ noResultsText: '<li><div>No results found.<div></li>',
 <details name="pingModelEventWebhookCallback">
   <summary>pingModelEventWebhookCallback</summary>
 
-  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">testModelEvent</span><span class="p">(</span><span class="nv">$callbackId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">testModelEvent</span><span class="p">(</span><span class="nv">$callbackId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">pingModelEventWebhookCallback</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$callbackId</span><span class="p">)</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
-  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20testModelEvent(%24callbackId%3A%20ID!)%7B%0A%20%20pingModelEventWebhookCallback(id%3A%20%24callbackId)%0A%7D&amp;variables=%7B%0A%20%20%22callbackId%22%3A%20%22%22%0A%7D&amp;operationName=testModelEvent" target="_blank">Try this query in our interactive console</a></p>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20testModelEvent(%24callbackId%3A%20ID!)%7B%0A%20%20pingModelEventWebhookCallback(id%3A%20%24callbackId)%0A%7D&amp;variables=%7B%0A%20%20%22callbackId%22%3A%20%22%22%0A%7D&amp;operationName=testModelEvent" target="\_blank">Try this query in our interactive console</a></p>
+
 </details>
 
 <h2 id="model-event-callback-faqs">Model Event Callback FAQs</h2>
@@ -1322,7 +1336,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jun 30, 2023 <br />
+ Site last generated: Aug 16, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
