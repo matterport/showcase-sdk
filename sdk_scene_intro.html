@@ -928,14 +928,14 @@ graph TD
 <h2 id="creating-your-own-scene">Creating Your Own Scene</h2>
 <p>To get started, we’ll need to get some initial boilerplate out of the way by creating an Object and Node. Multiple Objects or Nodes can be created if necessary.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">object</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">sceneObject</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="c1">// if we only want one node:</span>
-<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">addNode</span><span class="p">(</span><span class="cm">/* optionally, we can set the node's id here */</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">(</span><span class="cm">/* optionally, we can set the node's id here */</span><span class="p">);</span>
 
 <span class="c1">// ... we will be registering and adding components to nodes here in the following sections</span>
 
 <span class="c1">// and finally start running the components in our scene</span>
-<span class="nx">object</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<span class="nx">sceneObject</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 </code></pre></div></div>
 
 <h3 id="adding-basic-components">Adding Basic Components</h3>
@@ -982,12 +982,12 @@ graph TD
 </code></pre></div></div>
 
 <p>After we’ve added as many BasicComponents as we want to our nodes, we’ll start our scene using our previously created <code class="language-plaintext highlighter-rouge">Object</code>.</p>
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">object</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sceneObject</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p>At any time, we can stop our scene.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// stop our Object after 1 second</span>
-<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">object</span><span class="p">.</span><span class="nx">stop</span><span class="p">(),</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">stop</span><span class="p">(),</span> <span class="mi">1000</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Now that we’ve started, ran, and stopped our object, a few things should have happened.</p>
@@ -1009,7 +1009,7 @@ graph TD
 </code></pre></div></div>
 
 <h2 id="source">Source</h2>
-<p><a href="/assets/code/basicComponent.js">View or download the source here</a></p>
+<p><a href="/showcase-sdk/assets/code/basicComponent.js">View or download the source here</a></p>
 
 <p>To run this example, import the <code class="language-plaintext highlighter-rouge">startBasicComponents</code> function and pass the mpSdk instance to it.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">startBasicComponents</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./basicComponent</span><span class="dl">'</span><span class="p">;</span>
@@ -1044,7 +1044,7 @@ graph TD
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Aug 23, 2023 <br />
+ Site last generated: Aug 31, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
