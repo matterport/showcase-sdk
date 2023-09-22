@@ -196,6 +196,12 @@
   
   
   <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/floor.conversion.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/docs/reference/current/enums/floor.event.html</loc>
   </url>
   
@@ -321,6 +327,12 @@
   
   <url>
     <loc>https://matterport.github.io/docs/reference/current/enums/link.creationpolicy.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/link.destinationpolicy.html</loc>
   </url>
   
   
@@ -579,6 +591,12 @@
   
   <url>
     <loc>https://matterport.github.io/sdk_tutorials_cursor.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/room.conversion.html</loc>
   </url>
   
   
@@ -979,6 +997,12 @@
   
   <url>
     <loc>https://matterport.github.io/docs/reference/current/enums/sweep.alignment.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/sweep.conversion.html</loc>
   </url>
   
   

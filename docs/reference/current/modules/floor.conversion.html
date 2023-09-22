@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Namespace: View | Matterport Developers</title>
+<title>Namespace: Floor.Conversion | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -129,7 +129,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Namespace: View page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Namespace: Floor.Conversion page: ' + window.location.href;">Feedback</a>
           </div>
         </div>
       </div>
@@ -845,7 +845,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="Namespace: View">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Namespace: Floor.Conversion">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -860,7 +860,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">Namespace: View</h1>
+   <h1 class="post-title-main">Namespace: Floor.Conversion</h1>
 </div>
 
 
@@ -902,7 +902,7 @@ $('#toc').on('click', 'a', function() {
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>View | Matterport SDK</title>
+	<title>Conversion | Matterport SDK</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -916,7 +916,10 @@ $('#toc').on('click', 'a', function() {
 					<a href="../index.html">@mpSdk</a>
 				</li>
 				<li>
-					<a href="view.html">View</a>
+					<a href="floor.html">Floor</a>
+				</li>
+				<li>
+					<a href="floor.conversion.html">Conversion</a>
 				</li>
 			</ul>
 		</div>
@@ -945,104 +948,43 @@ $('#toc').on('click', 'a', function() {
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Types</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="view.html#view-1" class="tsd-kind-icon">View</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-namespace"><a href="view.html#current" class="tsd-kind-icon">current</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-namespace"><a href="view.html#views" class="tsd-kind-icon">views</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="floor.conversion.html#createidmap" class="tsd-kind-icon">create<wbr>IdMap</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Types</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
-					<a name="view-1" class="tsd-anchor"></a>
-					<h3>View</h3>
-					<div class="tsd-signature tsd-kind-icon">View<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="tsd-lead">
-										<p>the unique id of the view</p>
-									</div>
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="createidmap" class="tsd-anchor"></a>
+					<h3>create<wbr>IdMap</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>IdMap<span class="tsd-signature-symbol">(</span>invert<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/dictionary.html" class="tsd-signature-type">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="tsd-lead">
+									<p>Generate a map between v2 IDs and v1 IDs</p>
 								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="tsd-lead">
-										<p>the human-readable name of the view</p>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-namespace">
-					<a name="current" class="tsd-anchor"></a>
-					<h3>current</h3>
-					<div class="tsd-signature tsd-kind-icon">current<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservable.html" class="tsd-signature-type">IObservable</a><span class="tsd-signature-symbol">&lt;</span><a href="view.html#view-1" class="tsd-signature-type">View.View</a><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<dl class="tsd-comment-tags tsd-typography">
-					</dl>
-					<dl class="tsd-comment-tags tsd-typography">
-						<dt class="tsd-comment-tags-earlyaccess">earlyaccess</dt>
-						<dd>
-						</dd>
-					</dl>
-					<div class="tsd-comment tsd-typography">
-						<div class="tsd-lead">
-							<p>The currently active view</p>
-						</div>
-						<pre><code class="language-typescript">mpSdk.View.current.subscribe(<span class="hljs-function">(<span class="hljs-params">currentView</span>) =&gt;</span> {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;the currently active view is&#x27;</span>, currentView.name);
-});
+								<p>This method will help with migration between IDs used for floors.</p>
+								<pre><code>const <span class="hljs-keyword">mapping</span> = await mpSdk.Floor.<span class="hljs-keyword">Conversion</span>.createIdMap();
 </code></pre>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-namespace">
-					<a name="views" class="tsd-anchor"></a>
-					<h3>views</h3>
-					<div class="tsd-signature tsd-kind-icon">views<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservablemap.html" class="tsd-signature-type">IObservableMap</a><span class="tsd-signature-symbol">&lt;</span><a href="view.html#view-1" class="tsd-signature-type">View.View</a><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<dl class="tsd-comment-tags tsd-typography">
-					</dl>
-					<dl class="tsd-comment-tags tsd-typography">
-						<dt class="tsd-comment-tags-earlyaccess">earlyaccess</dt>
-						<dd>
-						</dd>
-					</dl>
-					<div class="tsd-comment tsd-typography">
-						<div class="tsd-lead">
-							<p>All views associated with the current space.</p>
-						</div>
-						<pre><code class="language-typescript">mpSdk.View.views.subscribe({
-  <span class="hljs-function"><span class="hljs-title">onAdded</span>(<span class="hljs-params">index, view, collection</span>)</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;a view with id&#x27;</span>, view.id, <span class="hljs-string">&#x27;named&#x27;</span>, view.name);
-  },
-  <span class="hljs-function"><span class="hljs-title">onCollectionUpdated</span>(<span class="hljs-params">collection</span>)</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;all views&#x27;</span>, collection);
-  },
-});
-</code></pre>
-					</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> invert: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/dictionary.html" class="tsd-signature-type">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -1064,8 +1006,13 @@ $('#toc').on('click', 'a', function() {
 					<li class=" tsd-kind-namespace">
 						<a href="conversion.html">Conversion</a>
 					</li>
-					<li class=" tsd-kind-namespace">
+					<li class="current tsd-kind-namespace">
 						<a href="floor.html">Floor</a>
+						<ul>
+							<li class="current tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="floor.conversion.html">Conversion</a>
+							</li>
+						</ul>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="graph.html">Graph</a>
@@ -1118,21 +1065,15 @@ $('#toc').on('click', 'a', function() {
 					<li class=" tsd-kind-namespace">
 						<a href="tour.html">Tour</a>
 					</li>
-					<li class="current tsd-kind-namespace">
+					<li class=" tsd-kind-namespace">
 						<a href="view.html">View</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="view.html#view-1" class="tsd-kind-icon">View</a>
-					</li>
-					<li class=" tsd-kind-property tsd-parent-kind-namespace">
-						<a href="view.html#current" class="tsd-kind-icon">current</a>
-					</li>
-					<li class=" tsd-kind-property tsd-parent-kind-namespace">
-						<a href="view.html#views" class="tsd-kind-icon">views</a>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="floor.conversion.html#createidmap" class="tsd-kind-icon">create<wbr>IdMap</a>
 					</li>
 				</ul>
 			</nav>
