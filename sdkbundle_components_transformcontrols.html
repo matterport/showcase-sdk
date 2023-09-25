@@ -897,9 +897,9 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <p><strong>Type</strong>: mp.transformControls</p>
+   <h2 id="type-mptransformcontrols">Type: mp.transformControls</h2>
 
-<p><strong>Inputs</strong></p>
+<h3 id="inputs">Inputs</h3>
 
 <table>
   <thead>
@@ -936,11 +936,15 @@ $('#toc').on('click', 'a', function() {
   </tbody>
 </table>
 
-<p><strong>Usage</strong></p>
+<h3 id="usage">Usage</h3>
 
-<p>This component wraps the three.js <a href="https://threejs.org/docs/#examples/en/controls/TransformControls">transform controls component</a><br />
-It can be used to change the position, orientation, or scale of a scene node.<br />
-The controls are only visible when they are attached to an object by setting its <code class="language-plaintext highlighter-rouge">input.selection</code>. A <code class="language-plaintext highlighter-rouge">null</code> value will hide the controls.</p>
+<p>This component wraps the three.js <a href="https://threejs.org/docs/#examples/en/controls/TransformControls">transform controls component</a></p>
+
+<p>It can be used to change the position, orientation, or scale of a <strong>scene node</strong>.</p>
+
+<p>The controls are only visible when they are attached to an object by setting its <code class="language-plaintext highlighter-rouge">input.selection</code>. A <code class="language-plaintext highlighter-rouge">null</code> value will hide the controls.</p>
+
+<p>Please take note that transform controls will appear at the center of a node and if a 3D Object has a local transformation, the transform controls will not be aligned with your 3D Object.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create a scene object and node with a model component.</span>
 <span class="c1">// This node's transform will be changed by the transform control.</span>
@@ -985,7 +989,7 @@ The controls are only visible when they are attached to an object by setting its
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Sep 22, 2023 <br />
+ Site last generated: Sep 25, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
