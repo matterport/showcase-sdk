@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Tags 2.0 Icons Reference | Matterport Developers</title>
+<title>Tags Icons Reference | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -129,7 +129,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Tags 2.0 Icons Reference page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Tags Icons Reference page: ' + window.location.href;">Feedback</a>
           </div>
         </div>
       </div>
@@ -654,25 +654,31 @@
                   
                   
                   
-                  <li><a title="Model API Changelog" href="/showcase-sdk/modelapi_changelog.html">Model API Changelog</a></li>
+                  <li><a title="Changelog" href="/showcase-sdk/modelapi_changelog.html">Changelog</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Model API Code Snippets" href="/showcase-sdk/modelapi_snippets.html">Model API Code Snippets</a></li>
+                  <li><a title="Models Queries" href="/showcase-sdk/modelapi_models_ref.html">Models Queries</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Model API Models() Reference" href="/showcase-sdk/modelapi_models_ref.html">Model API Models() Reference</a></li>
+                  <li><a title="Sample Queries" href="/showcase-sdk/modelapi_snippets.html">Sample Queries</a></li>
                   
                   
                   
                   
                   
-                  <li class="active"><a title="Tags 2.0 Icons Reference" href="/showcase-sdk/tags_icons_reference.html">Tags 2.0 Icons Reference</a></li>
+                  <li><a title="Ordering Add-Ons" href="/showcase-sdk/modelapi_ordering_addons.html">Ordering Add-Ons</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="active"><a title="Tags Icon Reference" href="/showcase-sdk/tags_icons_reference.html">Tags Icon Reference</a></li>
                   
                   
                   
@@ -699,7 +705,7 @@
                   
                   
                   
-                  <li><a title="Account API Snippets" href="/showcase-sdk/accountapi_snippets.html">Account API Snippets</a></li>
+                  <li><a title="Sample Queries" href="/showcase-sdk/accountapi_snippets.html">Sample Queries</a></li>
                   
                   
                   
@@ -845,7 +851,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="Tags 2.0 Icons Reference">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Tags Icons Reference">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -860,7 +866,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">Tags 2.0 Icons Reference</h1>
+   <h1 class="post-title-main">Tags Icons Reference</h1>
 </div>
 
 
@@ -897,13 +903,12 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <p>Tags 2.0 introduces new features, previously not available to Mattertags.  These features include the ability to select an icon from Matterport’s font library.</p>
-
-<p>We have provided this reference to be used to visualize the icons that are returned from Model API.</p>
+   <p>Matterport provides a library of icons that can be used on Tags that can be used when editing Tags via Model API.
+We have provided this reference to be used to visualize the icons that are returned from Model API.</p>
 
 <!--  and available to use with Showcase SDK in a forthcoming SDK Method [`Tag.editGlyph`](https://matterport.github.io/showcase-sdk/docs/reference/current/modules/tag.html#editglyph). -->
 
-<p>Icons can now be queried from Model API (<a href="https://api.matterport.com/api/graphiql/?query=query%20getTags(%24modelId%3AID!)%20%7B%0A%09model(id%3A%20%24modelId)%20%7B%0A%09%09mattertags%20%7B%0A%09%09%09id%0A%09%09%09label%0A%09%09%09description%0A%09%09%09icon%0A%09%09%09color%0A%09%09%09position%20%7B%20x%20y%20z%20%7D%0A%09%09%09stemNormal%20%7B%20x%20y%20z%20%7D%0A%09%09%7D%0A%20%20%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22JGPnGQ6hosj%22%0A%7D&amp;operationName=getTags">Try It!</a>):</p>
+<p>Icons can be queried from Model API (<a href="https://api.matterport.com/api/graphiql/?query=query%20getTags(%24modelId%3AID!)%20%7B%0A%09model(id%3A%20%24modelId)%20%7B%0A%09%09mattertags%20%7B%0A%09%09%09id%0A%09%09%09label%0A%09%09%09description%0A%09%09%09icon%0A%09%09%09color%0A%09%09%09position%20%7B%20x%20y%20z%20%7D%0A%09%09%09stemNormal%20%7B%20x%20y%20z%20%7D%0A%09%09%7D%0A%20%20%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22JGPnGQ6hosj%22%0A%7D&amp;operationName=getTags">Try It!</a>):</p>
 <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getTags</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
 	</span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 		</span><span class="n">mattertags</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1495,8 +1500,8 @@ $('#toc').on('click', 'a', function() {
 	<li class="icon-grid-item"><span class="nova-icon icon-public_symbols_yen-sign nova-icon-small"></span><span class="icon-grid-label">public_symbols_yen-sign</span></li>
 </ol>
 
-<!-- 
-### SDK Demo ### 
+<!--
+### SDK Demo ###
 
 The following demo will demonstrate assigning different Glyphs to all Tags within a space as they are added.  At this time, there is no method for change the Glyph, thus this serves as a placeholder.
 

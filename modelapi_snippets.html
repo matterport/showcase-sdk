@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Model API Code Snippets | Matterport Developers</title>
+<title>Model API Sample Queries | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -129,7 +129,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Model API Code Snippets page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Model API Sample Queries page: ' + window.location.href;">Feedback</a>
           </div>
         </div>
       </div>
@@ -654,25 +654,31 @@
                   
                   
                   
-                  <li><a title="Model API Changelog" href="/showcase-sdk/modelapi_changelog.html">Model API Changelog</a></li>
+                  <li><a title="Changelog" href="/showcase-sdk/modelapi_changelog.html">Changelog</a></li>
                   
                   
                   
                   
                   
-                  <li class="active"><a title="Model API Code Snippets" href="/showcase-sdk/modelapi_snippets.html">Model API Code Snippets</a></li>
+                  <li><a title="Models Queries" href="/showcase-sdk/modelapi_models_ref.html">Models Queries</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Model API Models() Reference" href="/showcase-sdk/modelapi_models_ref.html">Model API Models() Reference</a></li>
+                  <li class="active"><a title="Sample Queries" href="/showcase-sdk/modelapi_snippets.html">Sample Queries</a></li>
                   
                   
                   
                   
                   
-                  <li><a title="Tags 2.0 Icons Reference" href="/showcase-sdk/tags_icons_reference.html">Tags 2.0 Icons Reference</a></li>
+                  <li><a title="Ordering Add-Ons" href="/showcase-sdk/modelapi_ordering_addons.html">Ordering Add-Ons</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Tags Icon Reference" href="/showcase-sdk/tags_icons_reference.html">Tags Icon Reference</a></li>
                   
                   
                   
@@ -699,7 +705,7 @@
                   
                   
                   
-                  <li><a title="Account API Snippets" href="/showcase-sdk/accountapi_snippets.html">Account API Snippets</a></li>
+                  <li><a title="Sample Queries" href="/showcase-sdk/accountapi_snippets.html">Sample Queries</a></li>
                   
                   
                   
@@ -845,7 +851,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="Model API Code Snippets">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Model API Sample Queries">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -860,7 +866,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">Model API Code Snippets</h1>
+   <h1 class="post-title-main">Model API Sample Queries</h1>
 </div>
 
 
@@ -1043,7 +1049,6 @@ noResultsText: '<li><div>No results found.<div></li>',
         </span><span class="n">floor</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">}</span><span class="w">
         </span><span class="n">room</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">}</span><span class="w">
         </span><span class="n">panos</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="n">panoFragment</span><span class="w"> </span><span class="p">}</span><span class="w">
-
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1572,336 +1577,6 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 </details>
 
-<details>
-
-  <summary>Export Model Meshes at 50k Quality</summary>
-
-  <p>Our Developers can use Model API to access a decimated, “50k” quality, model mesh of their space.</p>
-
-  <p>This is the version of the model mesh used for mobile users viewing a space with Showcase. Unlike the <a href="https://support.matterport.com/s/article/Download-the-MatterPak-Bundle" target="\_blank">Matterpak</a>, which is an extremely high quality export, this low quality model mesh can be used to experiment with as a way to evaluate this data before purchasing a Matterpak.</p>
-
-  <p>Please note that at this time, we do not provide access to the .mtl file that will map textures to this export.</p>
-
-  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getMeshes</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="n">meshes</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="n">id</span><span class="w">
-        </span><span class="n">status</span><span class="w">
-        </span><span class="n">filename</span><span class="w">
-        </span><span class="n">format</span><span class="w">
-        </span><span class="n">resolution</span><span class="w">
-        </span><span class="n">url</span><span class="w">
-        </span><span class="n">validUntil</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-      </span><span class="n">textures</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="n">id</span><span class="w">
-        </span><span class="n">status</span><span class="w">
-        </span><span class="n">filename</span><span class="w"> </span><span class="c"># does not return data</span><span class="w">
-        </span><span class="n">format</span><span class="w">
-        </span><span class="n">url</span><span class="w"> </span><span class="c"># does not return data</span><span class="w">
-        </span><span class="n">validUntil</span><span class="w">
-        </span><span class="n">resolution</span><span class="w">
-        </span><span class="n">type</span><span class="w"> </span><span class="c"># does not return data</span><span class="w">
-        </span><span class="n">quality</span><span class="w">
-        </span><span class="n">textures</span><span class="w">
-        </span><span class="n">urlTemplate</span><span class="w"> </span><span class="c"># \&lt;texture\&gt; -&gt; 000, 001, 002, 003, etc.</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>  </div>
-
-  <p>Sample Response:</p>
-
-  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"meshes"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"meshes/k0cbt2rhkzhnm4ekr4p4cqhia"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"out_res_50k.obj"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"obj"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"resolution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50k"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/1a56eedeff7d4a7481b961c009ae9236/assets/out_res_50k.obj?t=2-9be6e9c8980e1541613d687ed316ea30b6356c2a-1681839634-1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-18T17:40:34Z"</span><span class="w">
-        </span><span class="p">}],</span><span class="w">
-        </span><span class="nl">"textures"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50k-high"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-18T17:40:34Z"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"resolution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50k"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"quality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"high"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"urlTemplate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/1a56eedeff7d4a7481b961c009ae9236/assets/~/9fa4913fb6064e79adf33ce70afd7d2a_50k_texture_jpg_high/9fa4913fb6064e79adf33ce70afd7d2a_50k_ &amp;
-              lt;texture &amp; gt;.jpg ? t = 2 - d85c089d213be29e8a6bf7d64a63dbb6c8d5e00e - 1681839634 - 0 &amp; k = models % 2 F1a56eedeff7d4a7481b961c009ae9236 % 2 Fassets "</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50k-low"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-18T17:40:34Z"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"resolution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50k"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"quality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"low"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"urlTemplate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/1a56eedeff7d4a7481b961c009ae9236/assets/~/9fa4913fb6064e79adf33ce70afd7d2a_50k_texture_jpg_low/9fa4913fb6064e79adf33ce70afd7d2a_50k_&amp;lt;texture&amp;gt;.jpg?t=2-d85c089d213be29e8a6bf7d64a63dbb6c8d5e00e-1681839634-0&amp;k=models%2F1a56eedeff7d4a7481b961c009ae9236%2Fassets"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>  </div>
-
-  <p><a href="https://api.matterport.com/api/graphiql/?operationName=getMeshes&amp;query=query%20getMeshes(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20assets%20%7B%0A%20%20%20%20%20%20meshes%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20%20filename%0A%20%20%20%20%20%20%20%20format%0A%20%20%20%20%20%20%20%20resolution%0A%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20validUntil%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20textures%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20%20filename%0A%20%20%20%20%20%20%20%20format%0A%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20validUntil%0A%20%20%20%20%20%20%20%20resolution%0A%20%20%20%20%20%20%20%20type%0A%20%20%20%20%20%20%20%20quality%0A%20%20%20%20%20%20%20%20textures%0A%20%20%20%20%20%20%20%20urlTemplate%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D" target="\_blank">Try this query in our interactive console</a></p>
-
-</details>
-
-<details>
-  <summary>Get Add-On Bundle Download Links</summary>
-
-  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getBundles</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
-  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="n">bundles</span><span class="p">(</span><span class="n">availability</span><span class="p">:</span><span class="n">unlocked</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="n">id</span><span class="w">
-            </span><span class="n">availability</span><span class="w">
-            </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="n">url</span><span class="w">
-                </span><span class="n">format</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span><span class="c"># variables</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">""</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>  </div>
-
-  <p>Sample Response:</p>
-
-  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"bundles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:matterpak"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/bundles/aec.zip?t=2-a03f0704b9b9da393501d4817d1826c193ee0280-1679975256-1&amp;download=matterpak_WeZ1dHwn3ac.zip&amp;k=models%2F58f2a24ec7fb43abaf68c39459cd29d3%2Fassets%2Fbundles%2Faec.zip"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zip"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bim:cad"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/jobs/bim-asset/df598b5a-02d8-47a7-9dd9-a0ade8250d71.zip?t=2-1b59739c853d184dcae3888ca57754e38919b992-1679975256-1&amp;download=bim_WeZ1dHwn3ac.zip&amp;k=jobs%2Fbim-asset%2Fdf598b5a-02d8-47a7-9dd9-a0ade8250d71.zip"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zip"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:e57"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mp-app-prod.s3.amazonaws.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/bundles/cloude57.zip?response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27e57_WeZ1dHwn3ac.zip&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20230328T034236Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=86400&amp;X-Amz-Credential=AKIA2OYCIXZCYUE7ZVXS%2F20230328%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Signature=b799ce581a4d055b60e6bb72c7fe6416b50d7e58208a100ee5bdc9aea083bda4"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zip"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"floorplan:schematic"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/floorplans/WeZ1dHwn3ac/362550b1-d088-4932-b61f-6c3f1f02bc13.zip?t=2-204baf0ca5aa0dfcbe46e1417ddb991822d20553-1680493356-1&amp;download=362550b1-d088-4932-b61f-6c3f1f02bc13.zip&amp;k=floorplans%2FWeZ1dHwn3ac%2F362550b1-d088-4932-b61f-6c3f1f02bc13.zip"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zip"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>  </div>
-
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getBundles(%24modelId%3A%20ID!)%7B%0A%09model(id%3A%24modelId)%20%7B%0A%09%09bundles(availability%3Aunlocked)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20%20%20availability%0A%20%20%20%20%20%20%20%20%20%20%20%20assets%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20format%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%7D%09&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22WeZ1dHwn3ac%22%0A%7D&amp;operationName=getBundles" target="\_blank">Try this query in our interactive console</a></p>
-
-</details>
-
-<details>
-  <summary>Find the Different Purchase Options for Any Bundle</summary>
-
-  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getSupportedOptions</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
-   </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="n">bundles</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="n">id</span><span class="w">
-        </span><span class="n">name</span><span class="w">
-        </span><span class="n">description</span><span class="w">
-        </span><span class="n">availability</span><span class="w">
-         </span><span class="n">supportedOptions</span><span class="w"> </span><span class="p">{</span><span class="w">
-         </span><span class="n">measurementUnits</span><span class="w">
-         </span><span class="n">deliverySpeeds</span><span class="w">
-         </span><span class="p">}</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span><span class="c"># variables</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">""</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>  </div>
-
-  <p>Sample Response:</p>
-
-  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"bundles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matterpak"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order high resolution assets associated with the model."</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Model Geometry"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order the model geometry files."</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Low Resolution Geometry"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order the lower resolution model geometry files."</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Object Detection"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order automated object detection model inferencing."</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cubicasa Schematic Floorplan"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order an enhanced schematic floorplan"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"imperial"</span><span class="p">,</span><span class="w"> </span><span class="s2">"metric"</span><span class="p">],</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TruePlan™ Schematic"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order a TruePlan™ Schematic"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google Street View"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Publish to Google Street View"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vrbo - HomeAway"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create a 360 Tour for Vrbo and HomeAway"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Advanced Imagery Pack"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enables access to high resolution panoramic images"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BIM"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Building Information Modeling Files"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e57 Point Cloud"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3D Imaging Point Cloud Files"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Schematic Floorplan"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order an enhanced schematic floorplan"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"imperial"</span><span class="p">,</span><span class="w"> </span><span class="s2">"metric"</span><span class="p">],</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"normal"</span><span class="p">,</span><span class="w"> </span><span class="s2">"fast"</span><span class="p">,</span><span class="w"> </span><span class="s2">"urgent"</span><span class="p">]</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Standard CAD"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order a Standard CAD"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matterport Stitching"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stitch up to 6 models together"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>  </div>
-
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getSupportedOptions(%24modelId%3A%20ID!)%20%7B%0A%20%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20%20%20bundles%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20description%0A%20%20%20%20%20%20%20%20availability%0A%20%20%20%20%20%20%20%20%20supportedOptions%20%7B%20%0A%20%20%20%20%20%20%20%20%20measurementUnits%0A%20%20%20%20%20%20%20%20%20deliverySpeeds%20%0A%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22JGPnGQ6hosj%22%0A%7D&amp;operationName=getSupportedOptions" target="\_blank">Try this query in our interactive console</a></p>
-
-</details>
-
 <h2 id="mutations">Mutations</h2>
 
 <p>Mutations update data via Model API. They can also contain queries that return data after the data has changed. The query can return an ID if new content has been added, or updated information that may have changed due to the patch (update).</p>
@@ -2297,143 +1972,9 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 </details>
 
-<details name="Buy a Matterpak">
-  <summary>Buy a Matterpak</summary>
+<h2 id="ordering-add-ons">Ordering Add-Ons</h2>
 
-  <p>Use the timed URL from the response to download the MatterPak</p>
-
-  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">buyMatterpak</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
-  </span><span class="n">unlockModelBundle</span><span class="p">(</span><span class="w">
-    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w">
-    </span><span class="n">bundleId</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:matterpak"</span><span class="w">
-  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="n">id</span><span class="w">
-  </span><span class="n">name</span><span class="w">
-  </span><span class="n">description</span><span class="w">
-  </span><span class="n">availability</span><span class="w">
-  </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span><span class="c"># variables</span><span class="w">
-
-</span><span class="p">{</span><span class="w">
-  </span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">""</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>  </div>
-
-  <p>Sample Response:</p>
-
-  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"unlockModelBundle"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:matterpak"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matterpak"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order high resolution assets associated with the model."</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://qa-cdn-1.matterport.com/models/group_77/job_62927cc2-7552-4aad-8330-3904c5198354/wf_39d3f0f8baae4fc9aaeb6326edf55d8f/mesh/1.1.466.14860/2016-11-09_0240.05/62927cc275524aad83303904c5198354.zip?t=2-b3da2c89760c80f1671bc260d678d949f29bd8a8-1573485841-1"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>  </div>
-
-  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20buyMatterpak(%24modelId%3A%20ID!)%7B%0A%20%20unlockModelBundle(%0A%20%20%20%20id%3A%20%24modelId%2C%20%0A%20%20%20%20bundleId%3A%20%22mp%3Amatterpak%22%0A%20%20)%20%7B%0A%20%20%20%20id%0A%09name%0A%09description%0A%09availability%0A%09assets%20%7B%20url%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=buyMatterpak&quot;" target="\_blank">Try this query in our interactive console</a></p>
-
-</details>
-
-<h2 id="ordering-add-on-bundles---workflow">Ordering Add-On Bundles - Workflow</h2>
-
-<details>
-  <summary>Query: Find the Asset Ids and Delivery Speeds by Looking through all Bundles</summary>
-  <p>The following query returns all asset bundles that can be purchased, including optional delivery speeds if applicable (schematic floorplans).</p>
-
-  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fragment</span><span class="w"> </span><span class="n">asset</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">Asset</span><span class="p">{</span><span class="w">
-  </span><span class="n">id</span><span class="w">
-  </span><span class="n">url</span><span class="w">
-  </span><span class="n">validUntil</span><span class="w">
-  </span><span class="n">format</span><span class="w">
-  </span><span class="n">filename</span><span class="w">
-  </span><span class="n">status</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span><span class="k">query</span><span class="w"> </span><span class="n">getBundleAssets</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
-  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="n">bundles</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="n">id</span><span class="w">
-      </span><span class="n">availability</span><span class="w">
-      </span><span class="n">name</span><span class="w">
-      </span><span class="n">description</span><span class="w">
-      </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="n">asset</span><span class="w"> </span><span class="p">}</span><span class="w">
-      </span><span class="n">supportedOptions</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="n">deliverySpeeds</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span><span class="c"># variables</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">""</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>  </div>
-
-  <p><a href="https://api.matterport.com/api/graphiql/?query=fragment%20asset%20on%20Asset%7B%0A%20%20id%0A%20%20url%0A%20%20validUntil%0A%20%20format%0A%20%20filename%0A%20%20status%0A%7D%0A%0Aquery%20getBundleAssets(%24modelId%3A%20ID!)%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20bundles%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20availability%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20description%0A%20%20%20%20%20%20assets%20%7B%20...asset%20%7D%0A%20%20%20%20%20%20supportedOptions%20%7B%0A%20%20%20%20%20%20%20%20deliverySpeeds%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getBundleAssets" target="\_blank">Try this query in our interactive console</a></p>
-
-</details>
-
-<details name="Ordering and Retrieving a Schematic Floor Plans">
-  <summary>Mutation: Ordering and Retrieving a Schematic Floor Plans</summary>
-
-  <p>We are taking the bundleId from the previous query that we’d like to order and now performing a mutation to buy it.</p>
-
-  <p>Note - Assets will not be immediately available. Schematic Floorplans won’t be available until our floor plan team returns it (normal speed is about 2 days).</p>
-
-  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">buyAddOn</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
-  </span><span class="n">unlockModelBundle</span><span class="p">(</span><span class="w">    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w">
-    </span><span class="n">bundleId</span><span class="p">:</span><span class="w"> </span><span class="s2">"cubicasa:floorplan"</span><span class="p">,</span><span class="w">
-    </span><span class="n">options</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">deliverySpeed</span><span class="p">:</span><span class="w"> </span><span class="n">normal</span><span class="w"> </span><span class="p">}</span><span class="w">
-  </span><span class="p">){</span><span class="w">
-    </span><span class="n">id</span><span class="w">
-    </span><span class="n">name</span><span class="w">
-    </span><span class="n">description</span><span class="w">
-    </span><span class="n">availability</span><span class="w">
-    </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span><span class="c"># variables</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">""</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>  </div>
-
-  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20buyAddOn(%24modelId%3A%20ID!)%7B%0A%20%20unlockModelBundle(%0A%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20bundleId%3A%20%22cubicasa%3Afloorplan%22%2C%0A%20%20%20%20options%3A%20%7B%20deliverySpeed%3A%20normal%20%7D%0A%20%20)%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20availability%0A%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=buyAddOn" target="\_blank">Try this query in our interactive console</a></p>
-
-</details>
-
-<details>
-  <summary>Query: Retrieve the Purchased Add-On</summary>
-
-  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getAddOn</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="n">bundle</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="s2">"floorplan:schematic"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span><span class="c"># variables</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">""</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>  </div>
-
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getAddOn(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20bundle(id%3A%20%22cubicasa%3Afloorplan%22)%20%7B%0A%20%20%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getAddOn" target="\_blank">Try this query in our interactive console</a></p>
-
-</details>
+<p>For code snippets related to purchasing add-ons, please visit the <a href="modelapi_ordering_addons.html">Ordering Assets Page</a>.</p>
 
 
     <div class="tags">

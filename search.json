@@ -500,8 +500,6 @@
 
 
 
-
-
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -510,6 +508,8 @@
 "summary": ""
 }
 ,
+
+
 
 
 
@@ -857,6 +857,17 @@
 
 
 {
+"title": "Model API - Add-Ons",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/modelapi_ordering_addons.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Model API Postman Collection",
 "tags": "",
 "keywords": "",
@@ -868,7 +879,7 @@
 
 
 {
-"title": "Model API Code Snippets",
+"title": "Model API Sample Queries",
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/modelapi_snippets.html",
@@ -1906,7 +1917,7 @@
 
 
 {
-"title": "Tags 2.0 Icons Reference",
+"title": "Tags Icons Reference",
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/tags_icons_reference.html",

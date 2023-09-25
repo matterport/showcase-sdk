@@ -279,11 +279,11 @@
   
   
   
-  
-  
   <url>
     <loc>https://matterport.github.io/index.html</loc>
   </url>
+  
+  
   
   
   
@@ -471,6 +471,12 @@
   
   <url>
     <loc>https://matterport.github.io/modelapi_models_ref.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/modelapi_ordering_addons.html</loc>
   </url>
   
   

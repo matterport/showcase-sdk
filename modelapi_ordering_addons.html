@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Model API - Add-Ons | Matterport Developers</title>
+<link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/showcase-sdk/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="/showcase-sdk/css/customstyles.css">
+<link rel="stylesheet" href="/showcase-sdk/css/custom.css">
+<link rel="stylesheet" href="/showcase-sdk/css/tags2.css">
+
+<link rel="stylesheet" href="/showcase-sdk/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/showcase-sdk/css/theme-matterport.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/showcase-sdk/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/showcase-sdk/js/toc.js"></script>
+<script src="/showcase-sdk/js/customscripts.js"></script>
+<script src="/showcase-sdk/js/mermaid.min.js"></script>
+
+<link rel="shortcut icon" href="/showcase-sdk/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+
+    <script>
+      $(document).ready(function () {
+        // Initialize navgoco with default options
+        $("#mysidebar").navgoco({
+          caretHtml: '<i class="fa fa-chevron-down"></i>',
+          accordion: true,
+          openClass: "active", // open
+
+          save: false, // leave false or nav highlighting doesn't work right
+          cookie: {
+            name: "navgoco",
+            expires: false,
+            path: "/",
+          },
+          slide: {
+            duration: 400,
+            easing: "swing",
+          },
+        });
+
+        $("#collapseAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", false);
+        });
+
+        $("#expandAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", true);
+        });
+      });
+    </script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#tg-sb-link").change(function () {
+          $("#tg-sb-sidebar").toggle();
+          $("#tg-sb-content").toggleClass("col-md-9");
+          $("#tg-sb-content").toggleClass("col-md-12");
+        });
+      });
+    </script>
+     
+  </head>
+  <body>
+    <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div>
+    <div class="row">
+      <a class="navbrand col-md-3" href="index.html"
+        >&nbsp;<img
+          class="navbar-image"
+          src="/showcase-sdk/images/MP-logo_H_lock-RGB_white.svg"
+        /><span class="projectTitle"> </span></a
+      >
+      <div class="dev-nav-links col-md-6">
+        <div class="dropdown-items">
+          <div class="dropdown ">
+            <a class="dropbtn active" href="index.html">SDK Docs</a>
+            <div class="dropdown-content">
+              <a href="sdk_home.html" class="">SDK for Embeds</a>
+              <a href="sdkbundle_home.html" class="" href="#">SDK Bundle</a>
+              <a href="earlyaccess_home.html" class="" href="#">SDK Early Access</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="api_home.html">API Docs</a>
+            <div class="dropdown-content">
+              <a href="api_home.html">API Overview</a>
+              <a href="https://api.matterport.com/docs/reference" target="_blank">API Reference</a>
+              <a href="https://api.matterport.com/model/graphiql" target="_blank">Interactive Console</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Model API - Add-Ons page: ' + window.location.href;">Feedback</a>
+          </div>
+        </div>
+      </div>
+      <div class="right-content col-md-3">
+        <div class="dev-input-container">
+          <!-- Add roboto font to search bar -->
+          <img src="/showcase-sdk/images/search_button.png" />
+          <input id="search-input" type="text" placeholder="Search"/>
+          <div id="results-container"></div>        
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</nav>
+ 
+    <!-- Page Content -->
+    <div class="dev-page-wrapper">
+      <div id="main">
+        <!-- Content Row -->
+        <div class="row">
+          <!-- Sidebar Column -->
+          
+          <aside class="col-md-3" id="tg-sb-sidebar">
+            
+<div id="mysidebar" class="nav">
+  
+  
+  
+
+  <li>
+      <a title="Overview" href="#">Overview</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/index.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Change Log" href="/showcase-sdk/sdk_changelog.html">Change Log</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Vocabulary" href="/showcase-sdk/sdk_vocabulary.html">Vocabulary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Concepts" href="/showcase-sdk/sdk_concepts.html">Concepts</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Docs Summary" href="/showcase-sdk/sdk_reference_summary.html">Reference Docs Summary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Documentation" href="/showcase-sdk/docs\reference\current\index.html">Reference Documentation</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK for Embeds" href="#">SDK for Embeds</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdk_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdk_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Bundle" href="#">SDK Bundle</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdkbundle_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdkbundle_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setting up Embed.ly" href="/showcase-sdk/sdkbundle_tutorials_setting_up_embedly.html">Setting up Embed.ly</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setup a Local Environment" href="/showcase-sdk/sdkbundle_tutorials_setup.html">Setup a Local Environment</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Architecture" href="/showcase-sdk/sdkbundle_architecture.html">Architecture</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Components" href="#">Components</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Ambient Light" href="/showcase-sdk/sdkbundle_components_ambientlight.html">Ambient Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Directional Light" href="/showcase-sdk/sdkbundle_components_directionallight.html">Directional Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Point Light" href="/showcase-sdk/sdkbundle_components_pointlight.html">Point Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="GLTF Loader" href="/showcase-sdk/sdkbundle_components_gltfloader.html">GLTF Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="DAE Loader" href="/showcase-sdk/sdkbundle_components_daeloader.html">DAE Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="FBX Loader" href="/showcase-sdk/sdkbundle_components_fbxloader.html">FBX Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="OBJ Loader" href="/showcase-sdk/sdkbundle_components_objloader.html">OBJ Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transform Controls" href="/showcase-sdk/sdkbundle_components_transformcontrols.html">Transform Controls</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Input" href="/showcase-sdk/sdkbundle_components_input.html">Input</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Camera" href="/showcase-sdk/sdkbundle_components_camera.html">Camera</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="XR" href="/showcase-sdk/sdkbundle_components_xr.html">XR</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Early Access" href="#">SDK Early Access</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/earlyaccess_home.html">Home</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Tutorials" href="#">SDK Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Observables" href="/showcase-sdk/sdk_tutorials_observables.html">Using Observables</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Collections" href="/showcase-sdk/sdk_tutorials_collections.html">Using Collections</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Using the Scene Namespace" href="#">Using the Scene Namespace</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Intro and Basic Components" href="/showcase-sdk/sdk_scene_intro.html">Intro and Basic Components</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Connecting Components" href="/showcase-sdk/sdk_connecting_components.html">Connecting Components</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Creating Mattertags" href="/showcase-sdk/sdk_creating_mattertags.html">Creating Mattertags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Editing Mattertags" href="/showcase-sdk/sdk_editing_mattertags.html">Editing Mattertags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags 2.0 Migration" href="/showcase-sdk/sdk_tutorials_mattertagtotag.html">Tags 2.0 Migration</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Code Sandboxes" href="/showcase-sdk/sdk_tutorials_htmlsandbox.html">Tags Code Sandboxes</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pathfinding" href="/showcase-sdk/sdk_tutorials_pathfinding.html">Pathfinding</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pointer Reticle" href="/showcase-sdk/sdk_tutorials_cursor.html">Pointer Reticle</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Working with Models" href="/showcase-sdk/sdkbundle_tutorials_models.html">Working with Models</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using xr" href="/showcase-sdk/sdkbundle_tutorials_using_xr.html">Using xr</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Scene Objects" href="/showcase-sdk/sdkbundle_tutorials_using_scene_objects.html">Using Scene Objects</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Examples" href="#">SDK Examples</a>
+      <ul>
+          
+          
+          
+          <li><a title="Navigation Controls" href="/showcase-sdk/sdk_navigation_controls.html">Navigation Controls</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Intersection Inspector" href="/showcase-sdk/sdk_intersection_inspector.html">Intersection Inspector</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz" href="/showcase-sdk/sdk_tags_quiz.html">Tags Quiz</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz - Overlay" href="/showcase-sdk/sdk_tags_quiz_overlay.html">Tags Quiz - Overlay</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Kitchen Sink" href="/showcase-sdk/sdk_kitchen_sink.html">Kitchen Sink</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Remote Control" href="/showcase-sdk/sdk_remote_control.html">Remote Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Source Areas" href="/showcase-sdk/sdk_sensors_source_areas.html">Sensors - Source Areas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Tags Level of Detail" href="/showcase-sdk/sdk_sensors_tags_level_of_detail.html">Sensors - Tags Level of Detail</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Sweep Control" href="/showcase-sdk/sdk_sensors_sweep_control.html">Sensors - Sweep Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Virtual Staging" href="/showcase-sdk/sdkbundle_virtual_staging.html">Virtual Staging</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Local Webcam" href="/showcase-sdk/sdkbundle_local_webcam.html">Local Webcam</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Livestream" href="/showcase-sdk/sdkbundle_html_livestream.html">HTML Livestream</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="IoT Canvas" href="/showcase-sdk/sdkbundle_iot_canvas.html">IoT Canvas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Custom Experience" href="/showcase-sdk/sdkbundle_custom_experience.html">Custom Experience</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Security Camera FOV" href="/showcase-sdk/sdkbundle_security_camera.html">Security Camera FOV</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Content Attribution" href="/showcase-sdk/sdkbundle_content_attribution.html">Content Attribution</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Matterport APIs" href="#">Matterport APIs</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/api_home.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Docs" href="https://api.matterport.com/model/docs/reference" target="_blank" rel="noopener">Reference Docs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Interactive Console" href="https://api.matterport.com/model/graphiql" target="_blank" rel="noopener">Interactive Console</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Model API" href="#">Model API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Changelog" href="/showcase-sdk/modelapi_changelog.html">Changelog</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Models Queries" href="/showcase-sdk/modelapi_models_ref.html">Models Queries</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Sample Queries" href="/showcase-sdk/modelapi_snippets.html">Sample Queries</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="active"><a title="Ordering Add-Ons" href="/showcase-sdk/modelapi_ordering_addons.html">Ordering Add-Ons</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Tags Icon Reference" href="/showcase-sdk/tags_icons_reference.html">Tags Icon Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Postman Collection" href="/showcase-sdk/modelapi_postman.html">Postman Collection</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Account API" href="#">Account API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Account API Changelog" href="/showcase-sdk/accountapi_changelog.html">Account API Changelog</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Sample Queries" href="/showcase-sdk/accountapi_snippets.html">Sample Queries</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="OAuth" href="#">OAuth</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/oauth_home.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Implementation" href="/showcase-sdk/oauth_implementation.html">Implementation</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Model Selector" href="/showcase-sdk/oauth_model_selector.html">Model Selector</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Use Case - Model API" href="/showcase-sdk/oauth_model_api.html">Use Case - Model API</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Use Case - Private Models" href="/showcase-sdk/oauth_sdk_private_model.html">Use Case - Private Models</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OAuth Sample Application" href="/showcase-sdk/sdkbundle_tutorials_using_oauth.html">OAuth Sample Application</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Private Model Embed" href="#">Private Model Embed</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/oauth_private_model_embed.html">Overview</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Webhooks" href="#">Webhooks</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/webhooks_home.html">Overview</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Learn More" href="#">Learn More</a>
+      <ul>
+          
+          
+          
+          <li><a title="Developer Tools Overview" href="https://support.matterport.com/s/article/API-SDK-Developer-Tools-Overview" target="_blank" rel="noopener">Developer Tools Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pricing and Availability" href="https://support.matterport.com/s/article/Developer-Tools-Pricing-and-Availability" target="_blank" rel="noopener">Pricing and Availability</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Developer Program FAQ" href="https://support.matterport.com/s/article/Developer-Program-FAQ" target="_blank" rel="noopener">Developer Program FAQ</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</div>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+<script src="/showcase-sdk/js/jekyll-search.js" type="text/javascript"></script>
+<script type="text/javascript">
+        SimpleJekyllSearch.init({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            dataSource: '/showcase-sdk/search.json',
+            searchResultTemplate: '<li><a href="{url}" title="Model API - Add-Ons">{title}</a></li>',
+noResultsText: '<li><div>No results found.<div></li>',
+        limit: 10,
+        fuzzy: true,
+})
+</script>
+
+          </aside>
+           
+          <!-- Content Column -->
+          <div
+            class=" col-md-9" 
+            id="tg-sb-content"
+          >
+            <div class="post-header">
+   <h1 class="post-title-main">Model API - Add-Ons</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+
+
+    
+
+   <p>Model API can be used to purchase, check the order status of, and retrieve a signed download link to any of our Add-Ons, or “bundles”, programatically.</p>
+
+<p>Add-Ons include Floorplans, Matterpaks, E57 Files and the High Resolution Imagery Pack (Business and Enterprise Only).  BIM Plan assets can be queried, but not ordered via Model API.</p>
+
+<p><img src="images/Model-API-Add-Ons.png" alt="Screenshot of Matterport Add-Ons in Matterport Cloud" title="Screenshot of Matterport Add-Ons in Matterport Cloud" /></p>
+
+<h2 id="available-add-ons">Available Add-Ons</h2>
+
+<p>Depending on your account type, options may vary.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Add On Name</th>
+      <th>id</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Matterpak</td>
+      <td>mp:matterpak</td>
+      <td>High Resolution OBJ/MTL, Colorized Point Cloud, Reflected Ceiling Plan Image, High Resolution Photogrammetry Floorplan</td>
+    </tr>
+    <tr>
+      <td>Schematic Floorplan</td>
+      <td>floorplan:schematic</td>
+      <td>Schematic Floorplan (JPG, PNG, SVG)</td>
+    </tr>
+    <tr>
+      <td>e57 Point Cloud</td>
+      <td>mp:e57</td>
+      <td>3D Imaging Point Cloud Files</td>
+    </tr>
+    <tr>
+      <td>BIM File</td>
+      <td>bim:cad</td>
+      <td>Building Information Modeling Files</td>
+    </tr>
+    <tr>
+      <td>Trueplan</td>
+      <td>trueplan:schematic</td>
+      <td>TruePlan™ Schematic for Xactimate</td>
+    </tr>
+    <tr>
+      <td>Advanced Imagery Page</td>
+      <td>mp:imagery</td>
+      <td>High Resolution Panorama Images</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Pricing for Add-Ons may vary based on account type.  Please refer to our <a href="https://support.matterport.com/s/article/Matterport-Price-List?language=en_US&amp;categfilter=&amp;parentCategoryLabel=#additional-product---services" target="_blank">Price List</a>.</p>
+
+<p>The Advanced Imagery Pack is $99 and is only available for Business and Enterprise accounts.</p>
+
+<h2 id="schematic-floorplan-ordering-options">Schematic Floorplan Ordering Options</h2>
+
+<p>Schematic Floorplans have additional options available when ordering.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Options</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>deliverySpeed</td>
+      <td>normal</td>
+      <td>Delivered within 2 business days</td>
+    </tr>
+    <tr>
+      <td>deliverySpeed</td>
+      <td>fast</td>
+      <td>Delivered within 1 business day</td>
+    </tr>
+    <tr>
+      <td>deliverySpeed</td>
+      <td>urgent</td>
+      <td>Express delivery within 6 hours</td>
+    </tr>
+    <tr>
+      <td>measurementUnits</td>
+      <td>metric</td>
+      <td>Show dimensions in meters</td>
+    </tr>
+    <tr>
+      <td>measurementUnits</td>
+      <td>imperial</td>
+      <td>Show dimensions in feet</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Pricing for delivery speeds may vary based on account type.  Please refer to our <a href="https://support.matterport.com/s/article/Matterport-Price-List?language=en_US&amp;categfilter=&amp;parentCategoryLabel=#additional-product---services" target="_blank">Price List</a>.</p>
+
+<h2 id="query-available-add-ons">Query Available Add-Ons</h2>
+
+<p>To retrieve all possible add-ons that can be purchased, all existing purchases and all add-ons that are processing, you can use the following query:</p>
+
+<details>
+  <summary>List all available Add-Ons, Purchase Options and Existing Assets and Order Statuses</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getAddOns</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">bundles</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">id</span><span class="w">
+        </span><span class="n">name</span><span class="w">
+        </span><span class="n">description</span><span class="w">
+        </span><span class="n">availability</span><span class="w">
+        </span><span class="n">supportedOptions</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="n">measurementUnits</span><span class="w">
+          </span><span class="n">deliverySpeeds</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="n">status</span><span class="w">
+          </span><span class="n">filename</span><span class="w">
+          </span><span class="n">format</span><span class="w">
+          </span><span class="n">url</span><span class="w">
+          </span><span class="n">validUntil</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="n">processing</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="n">bundleId</span><span class="w">
+          </span><span class="n">organizationId</span><span class="w">
+          </span><span class="n">status</span><span class="w">
+          </span><span class="n">lastModified</span><span class="w">
+          </span><span class="n">failureCode</span><span class="w">
+          </span><span class="n">failureReason</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c"># variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"bundles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:matterpak"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matterpak"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order high resolution assets associated with the model."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"trueplan:schematic"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TruePlan™ Schematic"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order a TruePlan™ Schematic"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:imagery"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Advanced Imagery Pack"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enables access to high resolution panoramic images"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"bim:cad"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BIM"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Building Information Modeling Files"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:e57"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e57 Point Cloud"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3D Imaging Point Cloud Files"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"floorplan:schematic"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Schematic Floorplan"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order an enhanced schematic floorplan"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"imperial"</span><span class="p">,</span><span class="w"> </span><span class="s2">"metric"</span><span class="p">],</span><span class="w">
+            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"normal"</span><span class="p">,</span><span class="w"> </span><span class="s2">"fast"</span><span class="p">,</span><span class="w"> </span><span class="s2">"urgent"</span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getAddOns(%24modelId%3A%20ID!)%20%7B%0A%20%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20%20%20bundles%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20description%0A%20%20%20%20%20%20%20%20availability%0A%20%20%20%20%20%20%20%20supportedOptions%20%7B%0A%20%20%20%20%20%20%20%20%20%20measurementUnits%0A%20%20%20%20%20%20%20%20%20%20deliverySpeeds%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20assets%20%7B%0A%20%20%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20%20%20%20filename%0A%20%20%20%20%20%20%20%20%20%20format%0A%20%20%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20%20%20validUntil%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20processing%20%7B%0A%20%20%20%20%20%20%20%20%20%20bundleId%0A%20%20%20%20%20%20%20%20%20%20organizationId%0A%20%20%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20%20%20%20lastModified%0A%20%20%20%20%20%20%20%20%20%20failureCode%0A%20%20%20%20%20%20%20%20%20%20failureReason%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22JGPnGQ6hosj%22%0A%7D&amp;operationName=getAddOns" target="\_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<details name="Buy a Matterpak">
+  <summary>Buy a Matterpak</summary>
+
+  <p>Purchase a Matterpak and return a signed url to download it if the asset has been created.</p>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">buyMatterpak</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  </span><span class="n">unlockModelBundle</span><span class="p">(</span><span class="w">
+    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w">
+    </span><span class="n">bundleId</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:matterpak"</span><span class="w">
+  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+  </span><span class="n">name</span><span class="w">
+  </span><span class="n">description</span><span class="w">
+  </span><span class="n">availability</span><span class="w">
+  </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c"># variables</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"unlockModelBundle"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:matterpak"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matterpak"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order high resolution assets associated with the model."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://qa-cdn-1.matterport.com/models/group_77/job_62927cc2-7552-4aad-8330-3904c5198354/wf_39d3f0f8baae4fc9aaeb6326edf55d8f/mesh/1.1.466.14860/2016-11-09_0240.05/62927cc275524aad83303904c5198354.zip?t=2-b3da2c89760c80f1671bc260d678d949f29bd8a8-1573485841-1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20buyMatterpak(%24modelId%3A%20ID!)%7B%0A%20%20unlockModelBundle(%0A%20%20%20%20id%3A%20%24modelId%2C%20%0A%20%20%20%20bundleId%3A%20%22mp%3Amatterpak%22%0A%20%20)%20%7B%0A%20%20%20%20id%0A%09name%0A%09description%0A%09availability%0A%09assets%20%7B%20url%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=buyMatterpak&quot;" target="\_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<h2 id="ordering-add-on-bundles---workflow">Ordering Add-On Bundles - Workflow</h2>
+
+<details>
+  <summary>Query: Find the Asset Ids and Delivery Speeds by Looking through all Bundles</summary>
+  <p>The following query returns all asset bundles that can be purchased, including optional delivery speeds if applicable (schematic floorplans).</p>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fragment</span><span class="w"> </span><span class="n">asset</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">Asset</span><span class="p">{</span><span class="w">
+  </span><span class="n">id</span><span class="w">
+  </span><span class="n">url</span><span class="w">
+  </span><span class="n">validUntil</span><span class="w">
+  </span><span class="n">format</span><span class="w">
+  </span><span class="n">filename</span><span class="w">
+  </span><span class="n">status</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">query</span><span class="w"> </span><span class="n">getBundleAssets</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">bundles</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">availability</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+      </span><span class="n">description</span><span class="w">
+      </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="n">asset</span><span class="w"> </span><span class="p">}</span><span class="w">
+      </span><span class="n">supportedOptions</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">deliverySpeeds</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c"># variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=fragment%20asset%20on%20Asset%7B%0A%20%20id%0A%20%20url%0A%20%20validUntil%0A%20%20format%0A%20%20filename%0A%20%20status%0A%7D%0A%0Aquery%20getBundleAssets(%24modelId%3A%20ID!)%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20bundles%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20availability%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20description%0A%20%20%20%20%20%20assets%20%7B%20...asset%20%7D%0A%20%20%20%20%20%20supportedOptions%20%7B%0A%20%20%20%20%20%20%20%20deliverySpeeds%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getBundleAssets" target="\_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<details name="Ordering and Retrieving a Schematic Floor Plans">
+  <summary>Mutation: Ordering and Retrieving a Schematic Floor Plans</summary>
+
+  <p>We are taking the bundleId from the previous query that we’d like to order and now performing a mutation to buy it.</p>
+
+  <p>Note - Assets will not be immediately available. Schematic Floorplans won’t be available until our floor plan team returns it (normal speed is about 2 days).</p>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">buyAddOn</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  </span><span class="n">unlockModelBundle</span><span class="p">(</span><span class="w">    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w">
+    </span><span class="n">bundleId</span><span class="p">:</span><span class="w"> </span><span class="s2">"cubicasa:floorplan"</span><span class="p">,</span><span class="w">
+    </span><span class="n">options</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">deliverySpeed</span><span class="p">:</span><span class="w"> </span><span class="n">normal</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">){</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">description</span><span class="w">
+    </span><span class="n">availability</span><span class="w">
+    </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c"># variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20buyAddOn(%24modelId%3A%20ID!)%7B%0A%20%20unlockModelBundle(%0A%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20bundleId%3A%20%22cubicasa%3Afloorplan%22%2C%0A%20%20%20%20options%3A%20%7B%20deliverySpeed%3A%20normal%20%7D%0A%20%20)%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20availability%0A%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=buyAddOn" target="\_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<details>
+  <summary>Query: Retrieve the Purchased Add-On</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getAddOn</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">bundle</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="s2">"floorplan:schematic"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="c"># variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getAddOn(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20bundle(id%3A%20%22cubicasa%3Afloorplan%22)%20%7B%0A%20%20%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getAddOn" target="\_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<h2 id="accessing-the-advanced-imagery-pack">Accessing the Advanced Imagery Pack</h2>
+
+<p>Customers on a Business or Enterprise Account can unlock the “mp:imagery” bundle, which provides access to 4K (4096 x 4096) cube faces that can be used to project a 16,384 x 8,192 panoramic image in an external application.</p>
+
+<p>Customers on Starter and Professional accounts can also access cube face imagery, however, it is liked to 2K (2048 x 2048) cube face imagery that can be used to project an 8,192 x 4096 panoramic image in an external application.</p>
+
+<p>Exported images can be reimported into the Matterport Application and used as additional 360 Views, or can be edited and uploaded to replace existing imagery.</p>
+
+<p>The Advanced Imagery Bundle has a $99 USD fee associated with it and your account will automatically be charged when the bundle is unlocked on a model.</p>
+
+<details name="Buy a Matterpak">
+  <summary>Purchase the Advanced Imagery Bundle</summary>
+
+  <p>Purchase a Matterpak and return a signed url to download it if the asset has been created.</p>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="k">mutation</span><span class="w"> </span><span class="n">buyAdvancedImagePack</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  </span><span class="n">unlockModelBundle</span><span class="p">(</span><span class="w">
+    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w">
+    </span><span class="n">bundleId</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:imagery"</span><span class="w">
+  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">description</span><span class="w">
+    </span><span class="n">availability</span><span class="w">
+    </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">format</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">status</span><span class="w">
+      </span><span class="n">validUntil</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+ </span><span class="c"># variables</span><span class="w">
+
+ </span><span class="p">{</span><span class="w">
+   </span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">""</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"unlockModelBundle"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:imagery"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Advanced Imagery Pack"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enables access to high resolution panoramic images"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+             </span><span class="p">{</span><span class="w">
+                 </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"skybox"</span><span class="p">,</span><span class="w">
+                 </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ba62e8gh2ctuact6fcr220xxd"</span><span class="p">,</span><span class="w">
+                 </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+                 </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-09-20T20:19:46Z"</span><span class="w">
+             </span><span class="p">},</span><span class="w">
+             </span><span class="err">...</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20buyAdvancedImagePack(%24modelId%3A%20ID!)%7B%0A%20%20unlockModelBundle(%0A%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20bundleId%3A%20%22mp%3Aimagery%22%0A%20%20)%20%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20availability%0A%20%20%20%20assets%20%7B%0A%20%20%20%20%20%20format%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20status%0A%20%20%20%20%20%20validUntil%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%20%7B%0A%20%20%20%22modelId%22%20%3A%20%22%22%0A%20%7D&amp;operationName=buyAdvancedImagePack" target="\_blank">Try this query in our interactive console</a></p>
+
+</details>
+<details>
+  <summary>Get all Sweep Locations and Panoramic Images</summary>
+
+  <p>The following query will get all of the 4K imagery along with useful information such as the position of the panorama within the 3D Space, the rotation of the imagery relative to the skybox that it is projected in within the space and the room and floor that it appears in.</p>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fragment</span><span class="w"> </span><span class="n">panoFragment</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">PanoramicImageLocation</span><span class="p">{</span><span class="w">
+  </span><span class="n">id</span><span class="w">
+  </span><span class="n">rotation</span><span class="w"> </span><span class="p">{</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">}</span><span class="w">
+  </span><span class="n">position</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="n">skybox</span><span class="p">(</span><span class="n">resolution</span><span class="p">:</span><span class="w"> </span><span class="s2">"4k"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">status</span><span class="w">
+    </span><span class="n">format</span><span class="w">
+    </span><span class="n">children</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">query</span><span class="w"> </span><span class="n">getSweeps</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+    </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">locations</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">id</span><span class="w">
+        </span><span class="n">label</span><span class="w">
+        </span><span class="n">floor</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="p">}</span><span class="w">
+        </span><span class="n">room</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">tags</span><span class="w"> </span><span class="p">}</span><span class="w">
+        </span><span class="n">panos</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="n">panoFragment</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+ </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ba62e8gh2ctuact6fcr220xxd"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"floor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+           </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tsmq1wak12rhgn0mawksxcwcd"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floor 1"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="nl">"room"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+           </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xy2x8mpaaqknp7q2c3nnbw1ma"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+             </span><span class="s2">"unfurnished"</span><span class="w">
+           </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="nl">"panos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+           </span><span class="p">{</span><span class="w">
+             </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ba62e8gh2ctuact6fcr220xxd"</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"rotation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+               </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01237825769931078</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0015723664546385407</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2761080265045166</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"w"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9610456228256226</span><span class="w">
+             </span><span class="p">},</span><span class="w">
+             </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+               </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.884009838104248</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">-1.3140931129455566</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-1.3943004608154297</span><span class="w">
+             </span><span class="p">},</span><span class="w">
+             </span><span class="nl">"skybox"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+               </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"skybox"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                 </span><span class="s2">"https://cdn-2.matterport.com/models/4c5c370ad06b40c294684c2d15035103/assets/pan/4k/~/8c05839bc4c74001b9ced8c3845e4040_skybox0.jpg?t=2-4dfe4dc3d2f5c7b67d1f4fd676d3b13e66afd439-1695241738-1&amp;k=models%2F4c5c370ad06b40c294684c2d15035103%2Fassets%2Fpan%2F4k"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"https://cdn-2.matterport.com/models/4c5c370ad06b40c294684c2d15035103/assets/pan/4k/~/8c05839bc4c74001b9ced8c3845e4040_skybox1.jpg?t=2-4dfe4dc3d2f5c7b67d1f4fd676d3b13e66afd439-1695241738-1&amp;k=models%2F4c5c370ad06b40c294684c2d15035103%2Fassets%2Fpan%2F4k"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"https://cdn-2.matterport.com/models/4c5c370ad06b40c294684c2d15035103/assets/pan/4k/~/8c05839bc4c74001b9ced8c3845e4040_skybox2.jpg?t=2-4dfe4dc3d2f5c7b67d1f4fd676d3b13e66afd439-1695241738-1&amp;k=models%2F4c5c370ad06b40c294684c2d15035103%2Fassets%2Fpan%2F4k"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"https://cdn-2.matterport.com/models/4c5c370ad06b40c294684c2d15035103/assets/pan/4k/~/8c05839bc4c74001b9ced8c3845e4040_skybox3.jpg?t=2-4dfe4dc3d2f5c7b67d1f4fd676d3b13e66afd439-1695241738-1&amp;k=models%2F4c5c370ad06b40c294684c2d15035103%2Fassets%2Fpan%2F4k"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"https://cdn-2.matterport.com/models/4c5c370ad06b40c294684c2d15035103/assets/pan/4k/~/8c05839bc4c74001b9ced8c3845e4040_skybox4.jpg?t=2-4dfe4dc3d2f5c7b67d1f4fd676d3b13e66afd439-1695241738-1&amp;k=models%2F4c5c370ad06b40c294684c2d15035103%2Fassets%2Fpan%2F4k"</span><span class="p">,</span><span class="w">
+                 </span><span class="s2">"https://cdn-2.matterport.com/models/4c5c370ad06b40c294684c2d15035103/assets/pan/4k/~/8c05839bc4c74001b9ced8c3845e4040_skybox5.jpg?t=2-4dfe4dc3d2f5c7b67d1f4fd676d3b13e66afd439-1695241738-1&amp;k=models%2F4c5c370ad06b40c294684c2d15035103%2Fassets%2Fpan%2F4k"</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+             </span><span class="p">}</span><span class="w">
+           </span><span class="p">}</span><span class="w">
+         </span><span class="p">]</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+       </span><span class="err">...</span><span class="w">
+      </span><span class="err">}</span><span class="w">
+    </span><span class="err">}</span><span class="w">
+  </span><span class="err">}</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=fragment%20panoFragment%20on%20PanoramicImageLocation%7B%0A%20%20%20id%0A%20%20%20rotation%20%7Bx%2C%20y%2C%20z%2C%20w%7D%0A%20%20%20position%20%7B%20x%2C%20y%2C%20z%20%7D%0A%20%20%20skybox(resolution%3A%20%224k%22)%20%7B%0A%20%20%20%20%20status%0A%20%20%20%20%20format%0A%20%20%20%20%20children%0A%20%20%20%7D%0A%20%7D%0A%20%0A%20query%20getSweeps(%24modelId%3A%20ID!)%7B%0A%20%20%20%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20%20%20%20locations%20%7B%0A%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20label%0A%20%20%20%20%20%20%20%20%20floor%20%7B%20id%2C%20label%20%7D%0A%20%20%20%20%20%20%20%20%20room%20%7B%20id%2C%20tags%20%7D%0A%20%20%20%20%20%20%20%20%20panos%20%7B%20...panoFragment%20%7D%0A%20%20%20%20%20%7D%0A%20%20%20%7D%0A%20%7D%0A%20&amp;variables=%20%7B%0A%20%20%20%22modelId%22%20%3A%20%22VPY6kp3iHNL%22%0A%20%7D&amp;operationName=getSweeps" target="\_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+
+    <div class="tags">
+        
+    </div>
+
+<!-- 
+ -->
+
+</div>
+
+<!-- <hr class="shaded"/> -->
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2023 Matterport, Inc. All rights reserved. <br />
+ Site last generated: Sep 25, 2023 <br />
+<p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /#main -->
+    </div>
+
+    
+  </body>
+   <!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-34880260-5','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+ 
+</html>
