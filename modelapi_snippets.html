@@ -1027,11 +1027,11 @@ noResultsText: '<li><div>No results found.<div></li>',
 
   <p>Panoramic images are currently only available as <strong>skyboxes</strong>.</p>
 
-  <p>A skybox is made out of six images - each image individually projected onto the shape of a cube - that is: top, bottom, left, right, front and back sides. Skyboxes are available in 2K and come bundled with position and rotation data.</p>
+  <p>A skybox is made out of six images - each image individually projected onto the shape of a cube - that is: top, bottom, left, right, front and back sides. Skyboxes are available in 512x512 (resolution: low), 1024x1024 (resolution: high) and 2048 x 2048 (resolution: 2k) resolutions and come bundled with position and rotation data.  4096 x 4096 skyboxes are available for business and Enterprise customers who have purchased the ‘Advanced Imagery Bundle’ add-on.</p>
 
   <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fragment</span><span class="w"> </span><span class="n">panoFragment</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">PanoramicImageLocation</span><span class="p">{</span><span class="w">
   </span><span class="n">id</span><span class="w">
-  </span><span class="n">skybox</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">skybox</span><span class="p">(</span><span class="n">resolution</span><span class="p">:</span><span class="w"> </span><span class="s2">"2k"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">id</span><span class="w">
     </span><span class="n">status</span><span class="w">
     </span><span class="n">format</span><span class="w">
@@ -1991,7 +1991,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Oct 3, 2023 <br />
+ Site last generated: Oct 11, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
