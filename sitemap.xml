@@ -279,11 +279,11 @@
   
   
   
-  
-  
   <url>
     <loc>https://matterport.github.io/index.html</loc>
   </url>
+  
+  
   
   
   
@@ -1087,6 +1087,18 @@
   
   <url>
     <loc>https://matterport.github.io/docs/reference/current/modules/view.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/view.layer.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/view.view-1.html</loc>
   </url>
   
   

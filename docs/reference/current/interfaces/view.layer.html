@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>XR (Limited Functionality) | Matterport Developers</title>
+<title>Interface: View.Layer | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -129,7 +129,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the XR (Limited Functionality) page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Interface: View.Layer page: ' + window.location.href;">Feedback</a>
           </div>
           <div class="dropdown">
             <a class="dropbtn" href="subscribe.html" >
@@ -360,7 +360,7 @@
                   
                   
                   
-                  <li class="active"><a title="XR" href="/showcase-sdk/sdkbundle_components_xr.html">XR</a></li>
+                  <li><a title="XR" href="/showcase-sdk/sdkbundle_components_xr.html">XR</a></li>
                   
                   
                   
@@ -850,7 +850,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="XR (Limited Functionality)">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Interface: View.Layer">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -865,7 +865,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">XR (Limited Functionality)</h1>
+   <h1 class="post-title-main">Interface: View.Layer</h1>
 </div>
 
 
@@ -902,60 +902,218 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <p><strong>Type</strong>: “mp.xr”</p>
-
-<p><strong>Inputs</strong></p>
-
-<p>None</p>
-
-<p><strong>Outputs</strong></p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Property</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><strong>session</strong>: XRSession <br /><em>default</em> <code class="language-plaintext highlighter-rouge">null</code></td>
-      <td>Set to a valid session when the user has entered webxr immersive mode.<br />When not in immersive mode, this session is null.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Usage</strong></p>
-
-<p>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/XRSession">XRSession</a> for the current specification.</p>
-
-<p>Binding to the mp.xr component from another component.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Assumes MyComponent has a session input and handled</span>
-<span class="c1">// onInputsChanged()</span>
-
-<span class="kd">var</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">xr</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.xr</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">my</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">myComponent</span><span class="dl">'</span><span class="p">);</span>
-<span class="nx">my</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="dl">'</span><span class="s1">session</span><span class="dl">'</span><span class="p">,</span> <span class="nx">xr</span><span class="p">,</span> <span class="dl">'</span><span class="s1">session</span><span class="dl">'</span><span class="p">);</span>
-<span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
-</code></pre></div></div>
-
-<p>Observing the mp.xr session from outside the component system.</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">xr</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.xr</span><span class="dl">'</span><span class="p">);</span>
-<span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
-
-<span class="c1">// The outputs object is an ObservableProxy which supports observing property changes.</span>
-<span class="c1">// See @mp/core/src/observable/ObservableProxy.ts in the sdk examples repo.</span>
-<span class="nx">xr</span><span class="p">.</span><span class="nx">onPropertyChanged</span><span class="p">(</span><span class="dl">'</span><span class="s1">session</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">session</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`session changed:`</span><span class="p">,</span> <span class="nx">session</span><span class="p">);</span>
-<span class="p">});</span>
-
-</code></pre></div></div>
-
+   <!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Layer | Matterport SDK</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">@mpSdk</a>
+				</li>
+				<li>
+					<a href="../modules/view.html">View</a>
+				</li>
+				<li>
+					<a href="view.layer.html">Layer</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Layer</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<div class="tsd-panel-group" id="typescript-declarations" style="display: none;">
+					<h2>Typescript Declarations File</h2>
+					<section class="tsd-panel">
+						<div class="tsd-index-content">
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/23.10.1_webgl-54-g8b76b76638/sdk.d.ts">23.10.1_webgl-54-g8b76b76638</a><br>
+							Declarations are already include in the Bundle SDK distribution.
+						</div>
+					</section>
+				</div>
+				<script>
+  if (window.location.href.endsWith('index.html')) {
+    document.getElementById('typescript-declarations').style = 'display: block;';
+  }
+</script>
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="view.layer.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="view.layer.html#name" class="tsd-kind-icon">name</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="tsd-lead">
+							<p>the unique id of the Layer</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="tsd-lead">
+							<p>the human-readable name of the Layer</p>
+						</div>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../index.html"><em>@mpSdk</em></a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/app.html">App</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/asset.html">Asset</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/camera.html">Camera</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/conversion.html">Conversion</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/floor.html">Floor</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/graph.html">Graph</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/label.html">Label</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/link.html">Link</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/mattertag.html">Mattertag</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/measurements.html">Measurements</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/mode.html">Mode</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/model.html">Model</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/oauth.html">OAuth</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/pointer.html">Pointer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/room.html">Room</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/scene.html">Scene</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/sensor.html">Sensor</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/settings.html">Settings</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/sweep.html">Sweep</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/tag.html">Tag</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/tour.html">Tour</a>
+					</li>
+					<li class="current tsd-kind-namespace">
+						<a href="../modules/view.html">View</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="view.layer.html" class="tsd-kind-icon">Layer</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="view.layer.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="view.layer.html#name" class="tsd-kind-icon">name</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="view.view-1.html" class="tsd-kind-icon">View</a>
+					</li>
+					<li class=" tsd-kind-property tsd-parent-kind-namespace">
+						<a href="../modules/view.html#current" class="tsd-kind-icon">current</a>
+					</li>
+					<li class=" tsd-kind-property tsd-parent-kind-namespace">
+						<a href="../modules/view.html#layers" class="tsd-kind-icon">layers</a>
+					</li>
+					<li class=" tsd-kind-property tsd-parent-kind-namespace">
+						<a href="../modules/view.html#views" class="tsd-kind-icon">views</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
 
     <div class="tags">
         

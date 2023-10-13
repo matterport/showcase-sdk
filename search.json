@@ -500,8 +500,6 @@
 
 
 
-
-
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -510,6 +508,8 @@
 "summary": ""
 }
 ,
+
+
 
 
 
@@ -1976,6 +1976,28 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/docs/reference/current/modules/view.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: View.Layer",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docs/reference/current/interfaces/view.layer.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: View.View",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docs/reference/current/interfaces/view.view-1.html",
 "summary": ""
 }
 ,

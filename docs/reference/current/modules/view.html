@@ -936,7 +936,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/23.9.1_webgl-76-gaefdef41a3/sdk.d.ts">23.9.1_webgl-76-gaefdef41a3</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/23.10.1_webgl-54-g8b76b76638/sdk.d.ts">23.10.1_webgl-54-g8b76b76638</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -950,49 +950,20 @@ $('#toc').on('click', 'a', function() {
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Types</h3>
+							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="view.html#view-1" class="tsd-kind-icon">View</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/view.layer.html" class="tsd-kind-icon">Layer</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/view.view-1.html" class="tsd-kind-icon">View</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-namespace"><a href="view.html#current" class="tsd-kind-icon">current</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-namespace"><a href="view.html#layers" class="tsd-kind-icon">layers</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-namespace"><a href="view.html#views" class="tsd-kind-icon">views</a></li>
 							</ul>
 						</section>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Types</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
-					<a name="view-1" class="tsd-anchor"></a>
-					<h3>View</h3>
-					<div class="tsd-signature tsd-kind-icon">View<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="tsd-lead">
-										<p>the unique id of the view</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="tsd-lead">
-										<p>the human-readable name of the view</p>
-									</div>
-								</div>
-							</li>
-						</ul>
 					</div>
 				</section>
 			</section>
@@ -1001,7 +972,7 @@ $('#toc').on('click', 'a', function() {
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-namespace">
 					<a name="current" class="tsd-anchor"></a>
 					<h3>current</h3>
-					<div class="tsd-signature tsd-kind-icon">current<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservable.html" class="tsd-signature-type">IObservable</a><span class="tsd-signature-symbol">&lt;</span><a href="view.html#view-1" class="tsd-signature-type">View.View</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">current<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservable.html" class="tsd-signature-type">IObservable</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/view.view-1.html" class="tsd-signature-type">View.View</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 					</aside>
 					<dl class="tsd-comment-tags tsd-typography">
@@ -1022,9 +993,31 @@ $('#toc').on('click', 'a', function() {
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-namespace">
+					<a name="layers" class="tsd-anchor"></a>
+					<h3>layers</h3>
+					<div class="tsd-signature tsd-kind-icon">layers<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservablemap.html" class="tsd-signature-type">IObservableMap</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/view.layer.html" class="tsd-signature-type">View.Layer</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="tsd-lead">
+							<p>All layers associated with the current space.</p>
+						</div>
+						<p>Layers in inactive Views may not populate right away. Activating a View will trigger the Layers to populate.</p>
+						<pre><code class="language-typescript">mpSdk.View.layers.subscribe({
+  <span class="hljs-function"><span class="hljs-title">onAdded</span>(<span class="hljs-params">index, layer, collection</span>)</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;a layer with id&#x27;</span>, layer.id, <span class="hljs-string">&#x27;named&#x27;</span>, layer.name);
+  },
+  <span class="hljs-function"><span class="hljs-title">onCollectionUpdated</span>(<span class="hljs-params">collection</span>)</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;all layers&#x27;</span>, collection);
+  },
+});
+</code></pre>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-namespace">
 					<a name="views" class="tsd-anchor"></a>
 					<h3>views</h3>
-					<div class="tsd-signature tsd-kind-icon">views<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservablemap.html" class="tsd-signature-type">IObservableMap</a><span class="tsd-signature-symbol">&lt;</span><a href="view.html#view-1" class="tsd-signature-type">View.View</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">views<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservablemap.html" class="tsd-signature-type">IObservableMap</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/view.view-1.html" class="tsd-signature-type">View.View</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 					</aside>
 					<dl class="tsd-comment-tags tsd-typography">
@@ -1130,11 +1123,17 @@ $('#toc').on('click', 'a', function() {
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="view.html#view-1" class="tsd-kind-icon">View</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="../interfaces/view.layer.html" class="tsd-kind-icon">Layer</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="../interfaces/view.view-1.html" class="tsd-kind-icon">View</a>
 					</li>
 					<li class=" tsd-kind-property tsd-parent-kind-namespace">
 						<a href="view.html#current" class="tsd-kind-icon">current</a>
+					</li>
+					<li class=" tsd-kind-property tsd-parent-kind-namespace">
+						<a href="view.html#layers" class="tsd-kind-icon">layers</a>
 					</li>
 					<li class=" tsd-kind-property tsd-parent-kind-namespace">
 						<a href="view.html#views" class="tsd-kind-icon">views</a>
@@ -1165,7 +1164,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Oct 11, 2023 <br />
+ Site last generated: Oct 13, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
