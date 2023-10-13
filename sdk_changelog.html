@@ -907,6 +907,17 @@ We are deprecating the existing id scheme in favor of one that matches our platf
 If you have stored data including ids, we have added several functions to map between ids for <a href="docs/reference/current/modules/sweep.conversion.html">Sweeps</a>, <a href="docs/reference/current/modules/floor.conversion.html">Floors</a>, and <a href="docs/reference/current/modules/room.conversion.html">Rooms</a>. Adding the <code class="language-plaintext highlighter-rouge">&amp;useLegacyIds=0</code> URL parameter will change the id scheme in the aforementioned objects to the new id scheme.
 </div>
 
+<h2 id="23101">23.10.1</h2>
+
+<h5 id="oct-12-2023">Oct 12, 2023</h5>
+
+<p><strong>General</strong></p>
+<ul>
+  <li><a href="docs/reference/current/modules/view.html#view-1">Views</a> are now available as View objects rather than the previous {id, name} format</li>
+  <li>Layers are now available in the <a href="docs/reference/current/modules/view.html#layers"><code class="language-plaintext highlighter-rouge">layers</code> collection</a>.</li>
+  <li>Tag sandboxes now have the <code class="language-plaintext highlighter-rouge">sandbox</code> attribute, creating a more isolated sandbox environment</li>
+</ul>
+
 <h2 id="2391">23.9.1</h2>
 
 <h5 id="sep-20-2023">Sep 20, 2023</h5>
@@ -1043,17 +1054,6 @@ If you have stored data including ids, we have added several functions to map be
   <li>Added the ability to toggle the overhead navigation controls using <a href="docs/reference/current/modules/tag.html#togglenavcontrols"><code class="language-plaintext highlighter-rouge">Tag.toggleNavControls</code></a> that are shown when selecting tags.</li>
   <li>Removed the “button bar” in a Tag’s billboard when it doesn’t have share and dock buttons.</li>
   <li>Fixed a race condition in <a href="docs/reference/current/modules/tag.html#editicon"><code class="language-plaintext highlighter-rouge">Tag.editIcon</code></a> when called too early.</li>
-</ul>
-
-<h2 id="23101">23.10.1</h2>
-
-<h5 id="october-12-2023">October 12, 2023</h5>
-
-<p><strong>General</strong></p>
-<ul>
-  <li><a href="docs/reference/current/modules/view.html#view-1">Views</a> are now available as View objects rather than the previous {id, name} format</li>
-  <li>Layers are now available in the <a href="docs/reference/current/modules/view.html#layers"><code class="language-plaintext highlighter-rouge">layers</code> collection</a>.</li>
-  <li>Tag sandboxes now have the <code class="language-plaintext highlighter-rouge">sandbox</code> attribute, creating a more isolated sandbox environment</li>
 </ul>
 
 <h2 id="2322">23.2.2</h2>
