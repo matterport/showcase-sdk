@@ -132,7 +132,7 @@
             <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Change Log page: ' + window.location.href;">Feedback</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" href="subscribe.html" >
+            <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
               Subscribe
               <sup class="subscribe-sup" style="font-size: 10px; color: #ff3158">New</sup>
             </a>
@@ -906,6 +906,17 @@ $('#toc').on('click', 'a', function() {
 We are deprecating the existing id scheme in favor of one that matches our platform and APIs.<br />
 If you have stored data including ids, we have added several functions to map between ids for <a href="docs/reference/current/modules/sweep.conversion.html">Sweeps</a>, <a href="docs/reference/current/modules/floor.conversion.html">Floors</a>, and <a href="docs/reference/current/modules/room.conversion.html">Rooms</a>. Adding the <code class="language-plaintext highlighter-rouge">&amp;useLegacyIds=0</code> URL parameter will change the id scheme in the aforementioned objects to the new id scheme.
 </div>
+
+<h2 id="23102">23.10.2</h2>
+
+<h5 id="oct-26-2023">Oct 26, 2023</h5>
+
+<p><strong>General</strong></p>
+<ul>
+  <li>Added the ability to set the active view using <a href="docs/reference/current/interfaces/view.view-1.html#setactive">View.setActive</a></li>
+  <li>Added the ability to toggle individual layers using <a href="docs/reference/current/interfaces/view.layer.html#toggle">Layer.toggle</a></li>
+  <li>Added <a href="docs/reference/current/modules/sweep.html#addneighbors">Sweep.addNeighbors</a> and <a href="docs/reference/current/modules/sweep.html#removeneighbors">Sweep.removeNeighbors</a> for editing connectivity</li>
+</ul>
 
 <h2 id="23101">23.10.1</h2>
 
@@ -1778,7 +1789,7 @@ We are adding support for synchronous functions. These functions compute and ret
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Oct 20, 2023 <br />
+ Site last generated: Oct 26, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

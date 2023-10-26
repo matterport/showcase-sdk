@@ -132,7 +132,7 @@
             <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Interface: View.View page: ' + window.location.href;">Feedback</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" href="subscribe.html" >
+            <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
               Subscribe
               <sup class="subscribe-sup" style="font-size: 10px; color: #ff3158">New</sup>
             </a>
@@ -947,7 +947,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/23.10.1_webgl-54-g8b76b76638/sdk.d.ts">23.10.1_webgl-54-g8b76b76638</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/23.10.2_webgl-39-gb6dd3db4b4/sdk.d.ts">23.10.2_webgl-39-gb6dd3db4b4</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -974,6 +974,7 @@ $('#toc').on('click', 'a', function() {
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="view.view-1.html#addlayer" class="tsd-kind-icon">add<wbr>Layer</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="view.view-1.html#haslayer" class="tsd-kind-icon">has<wbr>Layer</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="view.view-1.html#removelayer" class="tsd-kind-icon">remove<wbr>Layer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="view.view-1.html#setactive" class="tsd-kind-icon">set<wbr>Active</a></li>
 							</ul>
 						</section>
 					</div>
@@ -1113,6 +1114,29 @@ $('#toc').on('click', 'a', function() {
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="setactive" class="tsd-anchor"></a>
+					<h3>set<wbr>Active</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Active<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="tsd-lead">
+									<p>Set this View as the currently active one.</p>
+								</div>
+								<p>Only one View can be active at a time.</p>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> view: View; <span class="hljs-comment">// ... acquired through previous usage of `mpSdk.View.views`</span>
+<span class="hljs-keyword">await</span> view.setActive();
+</code></pre>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -1220,6 +1244,9 @@ $('#toc').on('click', 'a', function() {
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="view.view-1.html#removelayer" class="tsd-kind-icon">remove<wbr>Layer</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="view.view-1.html#setactive" class="tsd-kind-icon">set<wbr>Active</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
@@ -1232,6 +1259,9 @@ $('#toc').on('click', 'a', function() {
 					</li>
 					<li class=" tsd-kind-property tsd-parent-kind-namespace">
 						<a href="../modules/view.html#views" class="tsd-kind-icon">views</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="../modules/view.html#createlayer" class="tsd-kind-icon">create<wbr>Layer</a>
 					</li>
 				</ul>
 			</nav>
@@ -1259,7 +1289,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2023 Matterport, Inc. All rights reserved. <br />
- Site last generated: Oct 20, 2023 <br />
+ Site last generated: Oct 26, 2023 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
