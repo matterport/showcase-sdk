@@ -502,6 +502,8 @@
 
 
 
+
+
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -510,8 +512,6 @@
 "summary": ""
 }
 ,
-
-
 
 
 
@@ -883,6 +883,17 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/modelapi_snippets.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Model API - Views and Layers",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/modelapi_views_and_layers.html",
 "summary": ""
 }
 ,

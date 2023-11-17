@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>SDK for Embeds Quick Start | Matterport Developers</title>
+<title>Model API - Views and Layers | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -129,7 +129,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the SDK for Embeds Quick Start page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Model API - Views and Layers page: ' + window.location.href;">Feedback</a>
           </div>
           <div class="dropdown">
             <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
@@ -231,7 +231,7 @@
           
           
           
-          <li class="active"><a title="HTML Quick Start" href="/showcase-sdk/sdk_quickstart.html">HTML Quick Start</a></li>
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdk_quickstart.html">HTML Quick Start</a></li>
           
           
           
@@ -684,7 +684,7 @@
                   
                   
                   
-                  <li><a title="Views and Layers" href="/showcase-sdk/modelapi_views_and_layers.html">Views and Layers</a></li>
+                  <li class="active"><a title="Views and Layers" href="/showcase-sdk/modelapi_views_and_layers.html">Views and Layers</a></li>
                   
                   
                   
@@ -856,7 +856,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="SDK for Embeds Quick Start">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Model API - Views and Layers">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -871,7 +871,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">SDK for Embeds Quick Start</h1>
+   <h1 class="post-title-main">Model API - Views and Layers</h1>
 </div>
 
 
@@ -881,88 +881,214 @@ noResultsText: '<li><div>No results found.<div></li>',
    
 
     
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-  
-});
-</script>
-
-<div id="toc"></div>
-
-    
 
 
     
 
-   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developer@matterport.com">developer@matterport.com</a> with any questions.</div>
+   <h2 id="overview-of-views">Overview of Views</h2>
 
-<h2 id="a-complete-example-to-get-started">A Complete Example to Get Started</h2>
+<p>With the Matterport Model API, you can query existing View IDs, add new Views, or delete existing Views for a space.</p>
 
-<p>This sample HTML creates an iframe containing a Matterport model. It then connects the Embed SDK, retrieves data about the model, and finally logs the model’s id.</p>
+<p>Up to 10 unique Views can be created in your digital twin for different groups or teams. Each View is shareable with its own tags, tours, and more. You can use this, for example, to promote various features to different clients or create multiple views of the same space for different training modules or teams.</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> You can use View IDs, where you usually use a model ID to query the data for the specific View ( see ‘Query a View’ example below). You can also use the View ID in a Showcase URL: https://my.matterport.com/show/?m=w3mc532z2qgs2i20z0wz1y0wc</div>
 
-<p>You only need to replace the <strong>two</strong> <code class="language-plaintext highlighter-rouge">[YOUR_SDK_KEY_HERE]</code> strings with your own key (without the square brackets “[”, “]”).</p>
+<p><a href="https://support.matterport.com/s/article/Create-and-Share-Views" target="\_blank">More Information on Views</a></p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">'https://static.matterport.com/showcase-sdk/latest.js'</span><span class="nt">&gt;&lt;/script&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;iframe</span>
-      <span class="na">width=</span><span class="s">"853"</span>
-      <span class="na">height=</span><span class="s">"480"</span>
-      <span class="na">src=</span><span class="s">"https://my.matterport.com/show?m=SxQL3iGyoDo&amp;play=1&amp;applicationKey=[YOUR_SDK_KEY_HERE]"</span>
-      <span class="na">frameborder=</span><span class="s">"0"</span>
-      <span class="na">allowfullscreen</span>
-      <span class="na">allow=</span><span class="s">"xr-spatial-tracking"</span>
-      <span class="na">id=</span><span class="s">"showcase-iframe"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;/iframe&gt;</span>
-    <span class="nt">&lt;script&gt;</span>
-      <span class="p">(</span><span class="k">async</span> <span class="kd">function</span> <span class="nx">connectSdk</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">sdkKey</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">[YOUR_SDK_KEY_HERE]</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// TODO: replace with your sdk key</span>
-        <span class="kd">const</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase-iframe</span><span class="dl">'</span><span class="p">);</span>
+<p><a href="https://support.matterport.com/s/article/FAQ-Views" target="\_blank">Views FAQ</a></p>
 
-        <span class="c1">// connect the sdk; log an error and stop if there were any connection issues</span>
-        <span class="k">try</span> <span class="p">{</span>
-          <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span>
-            <span class="nx">iframe</span><span class="p">,</span> <span class="c1">// Obtained earlier</span>
-            <span class="nx">sdkKey</span><span class="p">,</span> <span class="c1">// Your SDK key</span>
-            <span class="dl">''</span> <span class="c1">// Unused but needs to be a valid string</span>
-          <span class="p">);</span>
-          <span class="nx">onShowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
-        <span class="p">}</span>
-      <span class="p">})();</span>
+<h2 id="overview-of-layers">Overview of Layers</h2>
 
-      <span class="k">async</span> <span class="kd">function</span> <span class="nx">onShowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// insert your sdk code here. See the ref https://matterport.github.io/showcase-sdk//docs/reference/current/index.html</span>
+<p>Layers are coming soon to the Model API.</p>
 
-        <span class="c1">// try retrieving the model data and log the model's sid</span>
-        <span class="k">try</span> <span class="p">{</span>
-          <span class="kd">const</span> <span class="nx">modelData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">getData</span><span class="p">();</span>
-          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Model sid:</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">modelData</span><span class="p">.</span><span class="nx">sid</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="nt">&lt;/script&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>
+<p>Layers let visitors to your model show or hide groupings of Tags, Labels, Notes, and Measurements. Layers are conceptually similar to Views in that they’re collections of edits that you group together. Layers provide a different level of organization. If you use Views, Layers are nestled under Views. Visitors can select checkboxes to see all, some, or none of the Layers in your View.</p>
+
+<p><a href="https://support.matterport.com/s/article/Working-with-Layers" target="\_blank">Working with Layers</a></p>
+
+<h2 id="query-views">Query Views</h2>
+
+<p>Retrieve View IDs for a model.</p>
+
+<details>
+  <summary>Query View IDs</summary>
+  <p>The following query returns the ID and a few other details for Views in a space.</p>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getViewIDs</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">){</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">views</span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+      </span><span class="n">type</span><span class="w">
+      </span><span class="n">modified</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c"># variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">modelId</span><span class="err">":</span><span class="w"> </span><span class="err">"</span><span class="n">Dyc2vZg54be</span><span class="err">"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dyc2vZg54be"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo Space"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"views"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dyc2vZg54be"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Main View"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matterport.model.layered"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-11-16T18:13:14Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0ehmdabhd31ra7pyai5igb9sb"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Training View"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matterport.user.view"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-11-16T17:38:05Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"w3mc532z2qgs2i20z0wz1y0wc"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data View"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matterport.user.view"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-11-16T18:12:45Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getViewIDs(%24modelId%3A%20ID!)%7B%0A%20%20model(id%3A%20%24modelId)%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20views%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20type%0A%20%20%20%20%20%20modified%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;operationName=getViewIDs&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22Dyc2vZg54be%22%0A%7D" target="\_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<details>
+  <summary>Query a View</summary>
+  <p>You can use a View ID where you would use a Model ID to query data about the View.</p>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getModelData</span><span class="p">(</span><span class="nv">$modelID</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelID</span><span class="p">){</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">created</span><span class="w">
+    </span><span class="n">modified</span><span class="w">
+    </span><span class="n">mattertags</span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">label</span><span class="w">
+      </span><span class="n">description</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c"># variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">modelID</span><span class="err">":</span><span class="w"> </span><span class="err">"</span><span class="n">w3mc532z2qgs2i20z0wz1y0wc</span><span class="err">"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"w3mc532z2qgs2i20z0wz1y0wc"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-11-16T17:38:16Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-11-16T18:55:35Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"mattertags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"p3fUvV5RLEY"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data Tag"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Data here"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getModelData(%24modelID%3A%20ID!)%7B%0A%20%20model(id%3A%20%24modelID)%7B%0A%20%20%20%20id%0A%20%20%20%20created%0A%20%20%20%20modified%0A%20%20%20%20mattertags%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20label%0A%20%20%20%20%20%20description%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;operationName=getModelData&amp;variables=%7B%0A%20%20%22modelID%22%3A%20%22w3mc532z2qgs2i20z0wz1y0wc%22%0A%7D" target="\_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<h2 id="add-or-delete-views">Add or Delete Views</h2>
+
+<details>
+  <summary>Add a View to a model</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">addView</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$name</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,){</span><span class="w">
+  </span><span class="n">addView</span><span class="p">(</span><span class="w">
+    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w">
+    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="nv">$name</span><span class="p">,</span><span class="w">
+    </span><span class="n">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="n">generateIds</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">){</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">type</span><span class="w">
+    </span><span class="n">model</span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="n">modified</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="c"># variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">modelId</span><span class="err">":</span><span class="w"> </span><span class="err">"</span><span class="n">Dyc2vZg54be</span><span class="err">"</span><span class="p">,</span><span class="w">
+  </span><span class="err">"</span><span class="n">name</span><span class="err">":</span><span class="w"> </span><span class="err">"</span><span class="n">my</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">view</span><span class="err">"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"addView"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dwexd66y2xsfxuxqbrzkb73fc"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my new view"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matterport.user.view"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dwexd66y2xsfxuxqbrzkb73fc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo Space"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-11-16T22:14:59Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20addView(%24modelId%3A%20ID!%2C%20%24name%3A%20String%2C)%7B%0A%20%20addView(%0A%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20name%3A%20%24name%2C%0A%20%20%20%20enabled%3A%20true%2C%0A%20%20%20%20generateIds%3A%20false%0A%20%20)%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20type%0A%20%20%20%20model%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%20%20modified%0A%20%20%7D%0A%7D&amp;operationName=addView&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22Dyc2vZg54be%22%2C%0A%20%20%22name%22%3A%20%22my%20new%20view%22%0A%7D" target="\_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<details>
+  <summary>Delete a View in a model</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">deleteView</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$viewId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  </span><span class="n">deleteView</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w"> </span><span class="n">viewId</span><span class="p">:</span><span class="w"> </span><span class="nv">$viewId</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="c"># variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">"</span><span class="n">Dyc2vZg54be</span><span class="err">"</span><span class="p">,</span><span class="w">
+  </span><span class="err">"</span><span class="n">viewId</span><span class="err">":</span><span class="w"> </span><span class="err">"</span><span class="n">dwexd66y2xsfxuxqbrzkb73fc</span><span class="err">"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"deleteView"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20deleteView(%24modelId%3A%20ID!%2C%20%24viewId%3A%20ID!)%7B%0A%20%20deleteView(id%3A%20%24modelId%2C%20viewId%3A%20%24viewId)%0A%7D&amp;operationName=deleteView&amp;variables=%7B%0A%20%20%22modelId%22%20%3A%20%22Dyc2vZg54be%22%2C%0A%20%20%22viewId%22%3A%20%22dwexd66y2xsfxuxqbrzkb73fc%22%0A%7D" target="\_blank">Try this query in our interactive console</a></p>
+
+</details>
 
 
     <div class="tags">

@@ -281,11 +281,11 @@
   
   
   
+  
+  
   <url>
     <loc>https://matterport.github.io/index.html</loc>
   </url>
-  
-  
   
   
   
@@ -489,6 +489,12 @@
   
   <url>
     <loc>https://matterport.github.io/modelapi_snippets.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/modelapi_views_and_layers.html</loc>
   </url>
   
   
