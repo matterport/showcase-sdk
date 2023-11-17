@@ -944,7 +944,12 @@ $('#toc').on('click', 'a', function() {
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Layer</span>
+						<a href="iobservable.html" class="tsd-signature-type">IObservable</a><span class="tsd-signature-symbol">&lt;</span><a href="view.layer.html" class="tsd-signature-type">View.Layer</a><span class="tsd-signature-symbol">&gt;</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">Layer</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -953,7 +958,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/23.10.2_webgl-39-gb6dd3db4b4/sdk.d.ts">23.10.2_webgl-39-gb6dd3db4b4</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/23.11.1_webgl-67-g4b83f23077gi/sdk.d.ts">23.11.1_webgl-67-g4b83f23077gi</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -976,7 +981,9 @@ $('#toc').on('click', 'a', function() {
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="view.layer.html#subscribe" class="tsd-kind-icon">subscribe</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="view.layer.html#toggle" class="tsd-kind-icon">toggle</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="view.layer.html#waituntil" class="tsd-kind-icon">wait<wbr>Until</a></li>
 							</ul>
 						</section>
 					</div>
@@ -1011,6 +1018,34 @@ $('#toc').on('click', 'a', function() {
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="subscribe" class="tsd-anchor"></a>
+					<h3>subscribe</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">subscribe<span class="tsd-signature-symbol">(</span>observer<span class="tsd-signature-symbol">: </span><a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><a href="view.layer.html" class="tsd-signature-type">View.Layer</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../index.html#observercallback" class="tsd-signature-type">ObserverCallback</a><span class="tsd-signature-symbol">&lt;</span><a href="view.layer.html" class="tsd-signature-type">View.Layer</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="isubscription.html" class="tsd-signature-type">ISubscription</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="iobservable.html">IObservable</a>.<a href="iobservable.html#subscribe">subscribe</a></p>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="tsd-lead">
+									<p>Subscribe to changes on this object.
+									When this observable detects a change, the <code>observer</code> provided will be called with the data associated with this observable.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>observer: <a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><a href="view.layer.html" class="tsd-signature-type">View.Layer</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../index.html#observercallback" class="tsd-signature-type">ObserverCallback</a><span class="tsd-signature-symbol">&lt;</span><a href="view.layer.html" class="tsd-signature-type">View.Layer</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="isubscription.html" class="tsd-signature-type">ISubscription</a></h4>
+							<p>A subscription that can be used to remove the subscribed observer.</p>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="toggle" class="tsd-anchor"></a>
 					<h3>toggle</h3>
@@ -1036,6 +1071,34 @@ $('#toc').on('click', 'a', function() {
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<a name="waituntil" class="tsd-anchor"></a>
+					<h3>wait<wbr>Until</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">wait<wbr>Until<span class="tsd-signature-symbol">(</span>condition<span class="tsd-signature-symbol">: </span><a href="icondition.html" class="tsd-signature-type">ICondition</a><span class="tsd-signature-symbol">&lt;</span><a href="view.layer.html" class="tsd-signature-type">View.Layer</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../index.html#conditioncallback" class="tsd-signature-type">ConditionCallback</a><span class="tsd-signature-symbol">&lt;</span><a href="view.layer.html" class="tsd-signature-type">View.Layer</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="iobservable.html">IObservable</a>.<a href="iobservable.html#waituntil">waitUntil</a></p>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="tsd-lead">
+									<p>Wait for a specific condition on this object to be met.
+									When this observable detects a change, the <code>condition</code> provided will be called. When the <code>condition</code> returns true, the returned Promise will be resolved.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>condition: <a href="icondition.html" class="tsd-signature-type">ICondition</a><span class="tsd-signature-symbol">&lt;</span><a href="view.layer.html" class="tsd-signature-type">View.Layer</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../index.html#conditioncallback" class="tsd-signature-type">ConditionCallback</a><span class="tsd-signature-symbol">&lt;</span><a href="view.layer.html" class="tsd-signature-type">View.Layer</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A promise that is resolved when <code>condition</code> returns true.</p>
 						</li>
 					</ul>
 				</section>
@@ -1131,8 +1194,14 @@ $('#toc').on('click', 'a', function() {
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="view.layer.html#name" class="tsd-kind-icon">name</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="view.layer.html#subscribe" class="tsd-kind-icon">subscribe</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="view.layer.html#toggle" class="tsd-kind-icon">toggle</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="view.layer.html#waituntil" class="tsd-kind-icon">wait<wbr>Until</a>
 							</li>
 						</ul>
 					</li>
