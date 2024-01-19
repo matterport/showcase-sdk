@@ -913,6 +913,18 @@ We are deprecating the existing id scheme in favor of one that matches our platf
 If you have stored data including ids, we have added several functions to map between ids for <a href="docs/reference/current/modules/sweep.conversion.html">Sweeps</a>, <a href="docs/reference/current/modules/floor.conversion.html">Floors</a>, and <a href="docs/reference/current/modules/room.conversion.html">Rooms</a>. Adding the <code class="language-plaintext highlighter-rouge">&amp;useLegacyIds=0</code> URL parameter will change the id scheme in the aforementioned objects to the new id scheme.
 </div>
 
+<h2 id="2411">24.1.1</h2>
+
+<h5 id="jan-18-2024">Jan 18, 2024</h5>
+
+<p><strong>General</strong></p>
+<ul>
+  <li>Added the ability to set a Tag’s icon to one from <a href="tags_icons_reference.html">Matterport’s Tag icon pack</a> using the existing <a href="docs/reference/current/modules/tag.html#editicon"><code class="language-plaintext highlighter-rouge">Tag.editIcon</code></a>.</li>
+  <li>Added a <a href="docs/reference/current/interfaces/view.layer.html#toggle"><code class="language-plaintext highlighter-rouge">.toggled</code></a> state on each Layer</li>
+  <li>Added an option to return to the start location when switching Views using <a href="docs/reference/current/interfaces/view.view-1.html#setactive"><code class="language-plaintext highlighter-rouge">View.setActive</code></a>.</li>
+  <li>Fixed various cases where transient Tags created through the SDK could be added to the wrong Layer.</li>
+</ul>
+
 <h2 id="23121">23.12.1</h2>
 
 <h5 id="dec-13-2023">Dec 13, 2023</h5>
@@ -1826,7 +1838,7 @@ We are adding support for synchronous functions. These functions compute and ret
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jan 3, 2024 <br />
+ Site last generated: Jan 19, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
