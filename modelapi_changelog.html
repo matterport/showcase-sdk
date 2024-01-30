@@ -886,6 +886,29 @@ noResultsText: '<li><div>No results found.<div></li>',
     
 
    
+<h2 id="january-18-2024">January 18, 2024</h2>
+
+<p><strong>All Users</strong></p>
+
+<p>Models can now be deleted via Model API</p>
+
+<p><code class="language-plaintext highlighter-rouge">deleteModel(id: ID!, field: ModelIdField): Boolean mutation is now Public</code></p>
+
+<p><strong>Property Insights Beta Users</strong></p>
+
+<p>This is a major revision exposing data from Property Insights.  At this time, only users who have been enrolled in our
+beta can access the data.</p>
+
+<p>The queries and mutations are available to all public API users, however <em>dimensionEstimates</em> and the room boundary data
+used to generate the area estimates will only be populated for models processed after the start of November 2023.</p>
+
+<ul>
+  <li><strong>New Mutations:</strong> addBoundaryVertex, addBoundaryEdge, addRoom, bulkPatchRoomData, patchBoundaryVertex, patchBoundaryEdge, addEdgeOpenings, removeEdgeOpenings, patchEdgeOpening, patchRoom, deleteRoomsAndBoundaryData</li>
+  <li><strong>New Queries:</strong> Model { roomClassifications, dimensionEstimates}, ModelRoom { dimensionEstimates, boundary, holes, classifications, keywords }, ModelFloor { dimensionEstimates, vertices, edges }</li>
+  <li><strong>New Types / Inputs:</strong> RoomClassification, Dimensions, DimensionData, DimensionPatch, DimensionDataPatch, BoundedRegion, Vertex, Edge, Opening, BoundedRegionDetails, VertexDetails, EdgeDetails, OpeningDetails, RoomDetails, RoomAssociations, RoomDataSelection</li>
+  <li><strong>New Enums:</strong> RoomDataType, OpeningType, EdgeType</li>
+</ul>
+
 <h2 id="november-15-2023">November 15, 2023</h2>
 
 <p><strong>Views</strong> are now a part of Model API!  <a href="https://matterport.github.io/showcase-sdk/modelapi_views_and_layers.html">Documentation</a></p>
@@ -1496,7 +1519,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jan 19, 2024 <br />
+ Site last generated: Jan 30, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
