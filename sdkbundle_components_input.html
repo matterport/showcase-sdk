@@ -908,9 +908,9 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <p><strong>Type</strong>: mp.input</p>
+   <h2 id="type-mpinput">Type: mp.input</h2>
 
-<p><strong>Inputs</strong></p>
+<h3 id="inputs">Inputs</h3>
 
 <table>
   <thead>
@@ -922,7 +922,7 @@ $('#toc').on('click', 'a', function() {
   <tbody>
     <tr>
       <td style="text-align: left"><strong>eventsEnabled</strong>: boolean<br />default <code class="language-plaintext highlighter-rouge">true</code></td>
-      <td>If true, events will be available for binding or spying. If false, no events will fire.</td>
+      <td>If true, emitted events will be available for binding or spying. If false, no events will be emitted.</td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>userNavigationEnabled</strong>: boolean<br />default <code class="language-plaintext highlighter-rouge">true</code></td>
@@ -935,88 +935,69 @@ $('#toc').on('click', 'a', function() {
   </tbody>
 </table>
 
-<p><strong>Events</strong></p>
+<h3 id="emmited-events">Emmited Events</h3>
 
 <table>
   <thead>
     <tr>
       <th style="text-align: left">Property</th>
-      <th> </th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align: left">INTERACTION.CLICK</td>
-      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left">INTERACTION.DRAG_BEGIN</td>
-      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left">INTERACTION.DRAG</td>
-      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left">INTERACTION.DRAG_END</td>
-      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left">INTERACTION.POINTER_MOVE</td>
-      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left">INTERACTION.POINTER_BUTTON</td>
-      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left">INTERACTION.SCROLL</td>
-      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left">INTERACTION.KEY</td>
-      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left">INTERACTION.LONG_PRESS_START</td>
-      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left">INTERACTION.LONG_PRESS_END</td>
-      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left">INTERACTION.MULTI_SWIPE</td>
-      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left">INTERACTION.MULTI_SWIPE_END</td>
-      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left">INTERACTION.PINCH</td>
-      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left">INTERACTION.PINCH_END</td>
-      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left">INTERACTION.ROTATE</td>
-      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left">INTERACTION.ROTATE_END</td>
-      <td> </td>
     </tr>
   </tbody>
 </table>
 
-<p><strong>Usage</strong></p>
+<h3 id="usage">Usage</h3>
 
-<p>This component dispatches input and gesture events. These events can be used by bindings and spies.
-In addition, this component can disable default user navigation to facilitate integration with a
-custom navigation scheme.</p>
+<p>This component dispatches <em>input</em> and <em>gesture</em> events via <strong>emits</strong>. These events can be used by bindings and spies.  In addition, this component can disable default user navigation to facilitate integration with a custom navigation scheme.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create a scene object and node with an input component.</span>
 <span class="c1">// Note you will probably only need one instance of an input component</span>
@@ -1027,24 +1008,51 @@ custom navigation scheme.</p>
   <span class="na">eventsEnabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="na">userNavigationEnabled</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
 <span class="p">});</span>
-<span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<span class="nx">sceneObject</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+
+<span class="c1">// Define an emit path to listen for mouse click emits</span>
+<span class="kd">const</span> <span class="nx">clickEmitPath</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addEmitPath</span><span class="p">(</span>
+  <span class="nx">inputComponent</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">INTERACTION.CLICK</span><span class="dl">"</span>
+<span class="p">);</span>
 
 <span class="c1">// Define a click event spy</span>
-<span class="kd">class</span> <span class="nx">ClickSpy</span> <span class="p">{</span>
-  <span class="k">public</span> <span class="nx">eventType</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">INTERACTION.CLICK</span><span class="dl">'</span><span class="p">;</span>
-  <span class="k">public</span> <span class="nx">onEvent</span><span class="p">(</span><span class="nx">payload</span><span class="p">:</span> <span class="nx">unknown</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">received</span><span class="dl">'</span><span class="p">,</span> <span class="nx">payload</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">clickSpy</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">({</span>
+  <span class="na">path</span><span class="p">:</span> <span class="nx">clickEmitPath</span><span class="p">,</span>
+  <span class="nx">onEvent</span><span class="p">(</span><span class="na">payload</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">received</span><span class="dl">'</span><span class="p">,</span> <span class="nx">payload</span><span class="p">);</span>
   <span class="p">}</span>
-<span class="p">}</span>
+<span class="p">});</span>
 
-<span class="c1">// Spy on the click event</span>
-<span class="nx">inputComponent</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">ClickSpy</span><span class="p">());</span>
+<span class="c1">// Define an emit path to listen for keyboard interaction</span>
+<span class="kd">const</span> <span class="nx">keyEmitPath</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addEmitPath</span><span class="p">(</span>
+  <span class="nx">inputComponent</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">INTERACTION.KEY</span><span class="dl">"</span>
+<span class="p">);</span>
+
+<span class="c1">// Define a keypress event spy</span>
+<span class="kd">const</span> <span class="nx">keySpy</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">({</span>
+  <span class="na">path</span><span class="p">:</span> <span class="nx">keyEmitPath</span><span class="p">,</span>
+  <span class="nx">onEvent</span><span class="p">(</span><span class="na">payload</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Log the key to the browser console.</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">key</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="mi">90</span> <span class="o">&amp;&amp;</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">state</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Bind to keydown state for 'z'</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">z</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="mi">88</span> <span class="o">&amp;&amp;</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">state</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Bind to keydown state for 'x'</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">x</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+<span class="p">});</span>
 
 <span class="c1">// You can enable navigation after starting the node.</span>
 <span class="nx">inputComponent</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">userNavigationEnabled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 
 <span class="c1">// You can turn off all events and the spy wont receive any callbacks.</span>
 <span class="nx">inputComponent</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">eventsEnabled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
 </code></pre></div></div>
 
 
