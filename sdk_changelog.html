@@ -913,6 +913,16 @@ We are deprecating the existing id scheme in favor of one that matches our platf
 If you have stored data including ids, we have added several functions to map between ids for <a href="docs/reference/current/modules/sweep.conversion.html">Sweeps</a>, <a href="docs/reference/current/modules/floor.conversion.html">Floors</a>, and <a href="docs/reference/current/modules/room.conversion.html">Rooms</a>. Adding the <code class="language-plaintext highlighter-rouge">&amp;useLegacyIds=0</code> URL parameter will change the id scheme in the aforementioned objects to the new id scheme.
 </div>
 
+<h2 id="2421">24.2.1</h2>
+
+<h5 id="feb-14-2024">Feb 14, 2024</h5>
+
+<p><strong>General</strong></p>
+<ul>
+  <li>Fixed an issue where <a href="docs/reference/current/modules/conversion.html#worldtoscreen">Conversion.worldToScreen</a> would return negative values whenever the input’s z coordinate was also negative.</li>
+  <li>Fixed an issue where <a href="docs/reference/current/modules/room.html#current">Room.current</a> could throw errors when encountering invalid room data.</li>
+</ul>
+
 <h2 id="2412">24.1.2</h2>
 
 <h5 id="jan-31-2024">Jan 31, 2024</h5>
@@ -1847,7 +1857,7 @@ We are adding support for synchronous functions. These functions compute and ret
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Feb 1, 2024 <br />
+ Site last generated: Feb 14, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
