@@ -502,8 +502,6 @@
 
 
 
-
-
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -512,6 +510,8 @@
 "summary": ""
 }
 ,
+
+
 
 
 
@@ -861,6 +861,61 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/modelapi_ordering_addons.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Model API - Property Intelligence",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/modelapi_property_intelligence.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Model API - Dimension Estimates",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/modelapi_pi_dimension_estimates.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Model API - Room Names",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/modelapi_pi_room_names.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Model API - Vector Data",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/modelapi_pi_vector_data.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Model API - Property Insights Mutations",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/modelapi_pi_mutations.html",
 "summary": ""
 }
 ,

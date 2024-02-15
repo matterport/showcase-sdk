@@ -281,11 +281,11 @@
   
   
   
-  
-  
   <url>
     <loc>https://matterport.github.io/index.html</loc>
   </url>
+  
+  
   
   
   
@@ -477,6 +477,36 @@
   
   <url>
     <loc>https://matterport.github.io/modelapi_ordering_addons.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/modelapi_property_intelligence.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/modelapi_pi_dimension_estimates.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/modelapi_pi_room_names.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/modelapi_pi_vector_data.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/modelapi_pi_mutations.html</loc>
   </url>
   
   

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Namespace: View | Matterport Developers</title>
+<title>Model API - Dimension Estimates | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -129,7 +129,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Namespace: View page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Model API - Dimension Estimates page: ' + window.location.href;">Feedback</a>
           </div>
           <div class="dropdown">
             <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
@@ -717,7 +717,7 @@
                   
                   
                   
-                  <li><a title="Dimension Estimates" href="/showcase-sdk/modelapi_pi_dimension_estimates.html">Dimension Estimates</a></li>
+                  <li class="active"><a title="Dimension Estimates" href="/showcase-sdk/modelapi_pi_dimension_estimates.html">Dimension Estimates</a></li>
                   
                   
                   
@@ -895,7 +895,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="Namespace: View">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Model API - Dimension Estimates">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -910,7 +910,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">Namespace: View</h1>
+   <h1 class="post-title-main">Model API - Dimension Estimates</h1>
 </div>
 
 
@@ -920,320 +920,306 @@ noResultsText: '<li><div>No results found.<div></li>',
    
 
     
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-  
-});
-</script>
-
-<div id="toc"></div>
-
-    
 
 
     
 
-   <!doctype html>
-<html class="default no-js">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>View | Matterport SDK</title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../assets/css/main.css">
-</head>
-<body>
-<header>
-	<div class="tsd-page-title">
-		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="../index.html">@mpSdk</a>
-				</li>
-				<li>
-					<a href="view.html">View</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-</header>
-<div class="container container-main">
-	<div class="row">
-		<div class="col-8 col-content">
-			<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
-			<section class="tsd-panel-group tsd-index-group">
-				<div class="tsd-panel-group" id="typescript-declarations" style="display: none;">
-					<h2>Typescript Declarations File</h2>
-					<section class="tsd-panel">
-						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/24.2.1_webgl-99-g397d2e031f/sdk.d.ts">24.2.1_webgl-99-g397d2e031f</a><br>
-							Declarations are already include in the Bundle SDK distribution.
-						</div>
-					</section>
-				</div>
-				<script>
-  if (window.location.href.endsWith('index.html')) {
-    document.getElementById('typescript-declarations').style = 'display: block;';
-  }
-</script>
-				<h2>Index</h2>
-				<section class="tsd-panel tsd-index-panel">
-					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Interfaces</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/view.layer.html" class="tsd-kind-icon">Layer</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-namespace"><a href="../interfaces/view.view-1.html" class="tsd-kind-icon">View</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-namespace"><a href="view.html#current" class="tsd-kind-icon">current</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-namespace"><a href="view.html#layers" class="tsd-kind-icon">layers</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-namespace"><a href="view.html#views" class="tsd-kind-icon">views</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Methods</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="view.html#createlayer" class="tsd-kind-icon">create<wbr>Layer</a></li>
-							</ul>
-						</section>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-namespace">
-					<a name="current" class="tsd-anchor"></a>
-					<h3>current</h3>
-					<div class="tsd-signature tsd-kind-icon">current<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservable.html" class="tsd-signature-type">IObservable</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/view.view-1.html" class="tsd-signature-type">View.View</a><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<dl class="tsd-comment-tags tsd-typography">
-					</dl>
-					<dl class="tsd-comment-tags tsd-typography">
-						<dt class="tsd-comment-tags-earlyaccess">earlyaccess</dt>
-						<dd>
-						</dd>
-					</dl>
-					<div class="tsd-comment tsd-typography">
-						<div class="tsd-lead">
-							<p>The currently active view</p>
-						</div>
-						<pre><code class="language-typescript">mpSdk.View.current.subscribe(<span class="hljs-function">(<span class="hljs-params">currentView</span>) =&gt;</span> {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;the currently active view is&#x27;</span>, currentView.name);
-});
-</code></pre>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-namespace">
-					<a name="layers" class="tsd-anchor"></a>
-					<h3>layers</h3>
-					<div class="tsd-signature tsd-kind-icon">layers<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservablemap.html" class="tsd-signature-type">IObservableMap</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/view.layer.html" class="tsd-signature-type">View.Layer</a><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="tsd-lead">
-							<p>All layers associated with the current space.</p>
-						</div>
-						<p>Layers in inactive Views may not populate right away. Activating a View will trigger the Layers to populate.</p>
-						<pre><code class="language-typescript">mpSdk.View.layers.subscribe({
-  <span class="hljs-function"><span class="hljs-title">onAdded</span>(<span class="hljs-params">index, layer, collection</span>)</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;a layer with id&#x27;</span>, layer.id, <span class="hljs-string">&#x27;named&#x27;</span>, layer.name);
-  },
-  <span class="hljs-function"><span class="hljs-title">onCollectionUpdated</span>(<span class="hljs-params">collection</span>)</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;all layers&#x27;</span>, collection);
-  },
-});
-</code></pre>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-namespace">
-					<a name="views" class="tsd-anchor"></a>
-					<h3>views</h3>
-					<div class="tsd-signature tsd-kind-icon">views<span class="tsd-signature-symbol">:</span> <a href="../interfaces/iobservablemap.html" class="tsd-signature-type">IObservableMap</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/view.view-1.html" class="tsd-signature-type">View.View</a><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<dl class="tsd-comment-tags tsd-typography">
-					</dl>
-					<dl class="tsd-comment-tags tsd-typography">
-						<dt class="tsd-comment-tags-earlyaccess">earlyaccess</dt>
-						<dd>
-						</dd>
-					</dl>
-					<div class="tsd-comment tsd-typography">
-						<div class="tsd-lead">
-							<p>All views associated with the current space.</p>
-						</div>
-						<pre><code class="language-typescript">mpSdk.View.views.subscribe({
-  <span class="hljs-function"><span class="hljs-title">onAdded</span>(<span class="hljs-params">index, view, collection</span>)</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;a view with id&#x27;</span>, view.id, <span class="hljs-string">&#x27;named&#x27;</span>, view.name);
-  },
-  <span class="hljs-function"><span class="hljs-title">onCollectionUpdated</span>(<span class="hljs-params">collection</span>)</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;all views&#x27;</span>, collection);
-  },
-});
-</code></pre>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
-					<a name="createlayer" class="tsd-anchor"></a>
-					<h3>create<wbr>Layer</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Layer<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/view.layer.html" class="tsd-signature-type">View.Layer</a><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="tsd-lead">
-									<p>Create a layer that can be later added to a View or Views</p>
-								</div>
-								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> layer = <span class="hljs-keyword">await</span> mpSdk.View.createLayer(<span class="hljs-string">&#x27;my layer&#x27;</span>);
-</code></pre>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/view.layer.html" class="tsd-signature-type">View.Layer</a><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-		</div>
-		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-			<nav class="tsd-navigation primary">
-				<ul>
-					<li class="globals  ">
-						<a href="../index.html"><em>@mpSdk</em></a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="app.html">App</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="asset.html">Asset</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="camera.html">Camera</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="conversion.html">Conversion</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="floor.html">Floor</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="graph.html">Graph</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="label.html">Label</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="link.html">Link</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="mattertag.html">Mattertag</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="measurements.html">Measurements</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="mode.html">Mode</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="model.html">Model</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="oauth.html">OAuth</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="pointer.html">Pointer</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="renderer.html">Renderer</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="room.html">Room</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="scene.html">Scene</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="sensor.html">Sensor</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="settings.html">Settings</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="sweep.html">Sweep</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="tag.html">Tag</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="tour.html">Tour</a>
-					</li>
-					<li class="current tsd-kind-namespace">
-						<a href="view.html">View</a>
-					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation secondary menu-sticky">
-				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="../interfaces/view.layer.html" class="tsd-kind-icon">Layer</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="../interfaces/view.view-1.html" class="tsd-kind-icon">View</a>
-					</li>
-					<li class=" tsd-kind-property tsd-parent-kind-namespace">
-						<a href="view.html#current" class="tsd-kind-icon">current</a>
-					</li>
-					<li class=" tsd-kind-property tsd-parent-kind-namespace">
-						<a href="view.html#layers" class="tsd-kind-icon">layers</a>
-					</li>
-					<li class=" tsd-kind-property tsd-parent-kind-namespace">
-						<a href="view.html#views" class="tsd-kind-icon">views</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="view.html#createlayer" class="tsd-kind-icon">create<wbr>Layer</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-</div>
-<div class="overlay"></div>
-<script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
-</body>
-</html>
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Property Intelligence Data in Model API is only available for Enterprise-level Matterport Subscriptions</div>
+
+<h2 id="dimension-estimates">Dimension Estimates</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Field</strong></th>
+      <th><strong>description</strong></th>
+      <th><strong>model</strong></th>
+      <th><strong>floor</strong></th>
+      <th><strong>room</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">area</code></td>
+      <td>Estimated area based on measured room(s) BoundedRegion data</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">areaIndoor</code></td>
+      <td>Estimated area not counting outdoor space or portions covered by walls</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">depth</code></td>
+      <td>Estimated depth of room</td>
+      <td> </td>
+      <td> </td>
+      <td>x</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">depthData</code></td>
+      <td>Metadata pertaining to the depth measurement</td>
+      <td> </td>
+      <td> </td>
+      <td>x</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">height</code></td>
+      <td>Estimated height of the room</td>
+      <td> </td>
+      <td> </td>
+      <td>x</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">width</code></td>
+      <td>Estimated width of the room</td>
+      <td> </td>
+      <td> </td>
+      <td>x</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">widthData</code></td>
+      <td>Metadata pertaining to the width measurement</td>
+      <td> </td>
+      <td> </td>
+      <td>x</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">units</code></td>
+      <td>metric or imperial</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">lowerElevation</code></td>
+      <td>A room’s BoundedRegion’s distance from the ground plane (z = 0)</td>
+      <td> </td>
+      <td> </td>
+      <td>x</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="measurements">Measurements</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Name</strong></th>
+      <th><strong>description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Length</code></td>
+      <td>The longest measurement reported for a given room</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Depth</code></td>
+      <td>The shortest measurement reported for a given room</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Area</code></td>
+      <td>The total area of a room, floor, or model. For floors and models, this is a sum of the contained room areas.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">IndoorArea</code></td>
+      <td>The total indoor <strong>scanned</strong> area.  This will be set to zero if the room is identified as outdoor.  For most models this will be the same value as Area at this time.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="query-the-area-and-indoor-area-for-a-model">Query the Area and Indoor Area for a Model</h3>
+
+<p>A user wanting to know dimensional data about their entire space can query this from the <strong>model</strong>’s’ <strong>dimensionEstimates</strong> object.</p>
+
+<p>Units returned can be either <em>metric</em> or <em>imperial</em> based on the model or account’s default settings.  By providing an optional <strong>units</strong> parameter, a developer can receive results in either measurement standard.</p>
+
+<p>Sample Query:</p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getArea</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$units</span><span class="p">:</span><span class="w"> </span><span class="n">Units</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">dimensionEstimates</span><span class="p">(</span><span class="n">units</span><span class="p">:</span><span class="w"> </span><span class="nv">$units</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">area</span><span class="w">
+      </span><span class="n">areaIndoor</span><span class="w">
+      </span><span class="n">units</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Variable Arguments:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"modelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your-model-id"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Sample Response:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"dimensionEstimates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="mf">2545.456973221831</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"areaIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">2129.756609921589</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imperial"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="query-the-dimension-estimates-for-rooms-and-floors">Query the Dimension Estimates for Rooms and Floors</h3>
+
+<p>The <strong>dimensionEstimates</strong> object also exists on the <strong>rooms</strong> and <strong>floors</strong> objects and includes additional fields for <strong>rooms</strong>.</p>
+
+<p>Sample Query:</p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span><span class="k">query</span><span class="w"> </span><span class="n">getRoomFloorDimensions</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$units</span><span class="p">:</span><span class="w"> </span><span class="n">Units</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">rooms</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">label</span><span class="w">
+      </span><span class="n">floor</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">id</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="n">dimensionEstimates</span><span class="p">(</span><span class="n">units</span><span class="p">:</span><span class="w"> </span><span class="nv">$units</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">area</span><span class="w">
+        </span><span class="n">areaIndoor</span><span class="w">
+        </span><span class="n">depth</span><span class="w">
+        </span><span class="n">depthData</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="c"># The points that this depthData was measured from</span><span class="w">
+          </span><span class="n">points</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">x</span><span class="w">
+            </span><span class="n">y</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="n">height</span><span class="w">
+        </span><span class="n">width</span><span class="w">
+        </span><span class="n">widthData</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="c"># The points that this widthData was measured from</span><span class="w">
+            </span><span class="n">points</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="n">x</span><span class="w">
+              </span><span class="n">y</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="n">units</span><span class="w">
+        </span><span class="n">lowerElevation</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="n">floors</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">label</span><span class="w">
+      </span><span class="n">sequence</span><span class="w">
+      </span><span class="n">dimensionEstimates</span><span class="p">(</span><span class="n">units</span><span class="p">:</span><span class="w"> </span><span class="nv">$units</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">area</span><span class="w">
+        </span><span class="n">areaIndoor</span><span class="w">
+        </span><span class="n">units</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Sample Response</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"rooms"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gqxp3yld2eh"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"floor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pd0i1c4yq9w0y2zsb07ed23sb"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"dimensionEstimates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="mf">228.36937521825212</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">228.36937521825212</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"depth"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"depthData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"points"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.055118400000001</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"widthData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"points"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imperial"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"lowerElevation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"x8zqpa4lyuh"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"floor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tsmq1wak12rhgn0mawksxcwcd"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"dimensionEstimates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="mf">72.83019428676131</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">72.83019428676131</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"depth"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.088261308636113</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"depthData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"points"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0393704</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mf">8.076408171135771</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"widthData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"points"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imperial"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"lowerElevation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="err">...</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"floors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tsmq1wak12rhgn0mawksxcwcd"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floor 1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"dimensionEstimates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="mf">1343.2818079401443</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">1343.2818079401443</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imperial"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pd0i1c4yq9w0y2zsb07ed23sb"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floor 2"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"dimensionEstimates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="mf">1584.1840743270077</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"areaIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">1584.1840743270077</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imperial"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>In the above response, you will note that there are two floors - one for interior space, one for exterior space.  The exterior space does not return a full set of dimensional data.</p>
+
+<p>Floors contain a label as well as a numeric sequence from the spatially lowest floor beginning at 0 and an id.</p>
+
+<p>Floor IDs generally tend to be consistent between models the first floor is usually <em>tsmq1wak12rhgn0mawksxcwcd</em>, and the second floor is usually <em>pd0i1c4yq9w0y2zsb07ed23sb</em>.  This may not be true as gaps can exist between detected floors.  Therefore, it is important to validate the floor IDs for each model.</p>
+
+<p>All rooms are associated with floors and the areas provided for floors represent a summation of the areas of their respective rooms.</p>
+
+<h3 id="why-do-i-see-null-or-zero-values-in-the-dimensions-tables">Why do I see null or zero values in the dimensions tables?</h3>
+
+<p>Rooms with irregular shapes or non-flat ceilings may not produce automatic dimensions.  These rooms, when refined in the editor may then produce usable values.</p>
+
 
     <div class="tags">
         
