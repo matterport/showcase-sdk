@@ -1329,6 +1329,8 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
+<p><a href="https://api.matterport.com/api/graphiql/?query=fragment%20BoundedRegionData%20on%20BoundedRegion%20%7B%0A%20%20edges%20%7B%0A%20%20%20%20id%0A%20%20%20%20type%0A%20%20%20%20centerLineBias%0A%20%20%20%20thickness%0A%20%20%20%20openings%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20height%0A%20%20%20%20%20%20width%0A%20%20%20%20%20%20lowerElevation%0A%20%20%20%20%20%20relativeCenter%0A%20%20%20%20%20%20type%0A%20%20%20%20%7D%0A%20%20%20%20vertices%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20position%20%7B%0A%20%20%20%20%20%20%20%20x%0A%20%20%20%20%20%20%20%20y%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0Aquery%20getVectorData(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20floors%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20sequence%0A%20%20%20%20%20%20label%0A%20%20%20%20%7D%0A%20%20%20%20rooms%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20%23%20User%20Defined%20Room%20Name%0A%20%20%20%20%20%20label%0A%20%20%20%20%20%20%23%20Detected%20Room%20Name%0A%20%20%20%20%20%20classifications%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20label%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%23%20Edges%2C%20vertices%2C%20and%20openings%20of%20the%20room%27s%20boundary.%0A%20%20%20%20%20%20boundary%20%7B%0A%20%20%20%20%20%20%20%20...BoundedRegionData%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%23%20Boundary%20information%20for%20any%20holes%2Fsub-rooms%20within%20the%20room.%0A%20%20%20%20%20%20holes%20%7B%0A%20%20%20%20%20%20%20%20...BoundedRegionData%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getVectorData" target="_blank">Try this query in our interactive console</a></p>
+
 
     <div class="tags">
         
@@ -1345,7 +1347,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Feb 15, 2024 <br />
+ Site last generated: Feb 20, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
