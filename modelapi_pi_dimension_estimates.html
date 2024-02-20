@@ -1076,6 +1076,8 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
+<p><a href="https://api.matterport.com/api/graphiql/?query=query%20getArea(%24modelId%3A%20ID!%2C%20%24units%3A%20Units)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20dimensionEstimates(units%3A%20%24units)%20%7B%0A%20%20%20%20%20%20area%0A%20%20%20%20%20%20areaIndoor%0A%20%20%20%20%20%20units%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%2C%0A%20%20%22units%22%3A%20%22imperial%22%0A%7D&amp;operationName=getArea" target="_blank">Try this query in our interactive console</a></p>
+
 <h3 id="query-the-dimension-estimates-for-rooms-and-floors">Query the Dimension Estimates for Rooms and Floors</h3>
 
 <p>The <strong>dimensionEstimates</strong> object also exists on the <strong>rooms</strong> and <strong>floors</strong> objects and includes additional fields for <strong>rooms</strong>.</p>
