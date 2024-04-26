@@ -101,7 +101,7 @@
 <nav class="navbar navbar-inverse navbar-static-top">
   <div>
     <div class="row">
-      <a class="navbrand col-md-3" href="index.html"
+      <a class="navbrand col-md-3" href="/"
         >&nbsp;<img
           class="navbar-image"
           src="/showcase-sdk/images/MP-logo_H_lock-RGB_white.svg"
@@ -112,15 +112,15 @@
           <div class="dropdown ">
             <a class="dropbtn active" href="index.html">SDK Docs</a>
             <div class="dropdown-content">
-              <a href="sdk_home.html" class="">SDK for Embeds</a>
-              <a href="sdkbundle_home.html" class="" href="#">SDK Bundle</a>
-              <a href="earlyaccess_home.html" class="" href="#">SDK Early Access</a>
+              <a href="https://matterport.github.io/showcase-sdk/sdk_home.html" class="">SDK for Embeds</a>
+              <a href="https://matterport.github.io/showcase-sdk/sdkbundle_home.html" class="" href="#">SDK Bundle</a>
+              <a href="https://matterport.github.io/showcase-sdk/earlyaccess_home.html" class="" href="#">SDK Early Access</a>
             </div>
           </div>
           <div class="dropdown">
             <a class="dropbtn" href="api_home.html">API Docs</a>
             <div class="dropdown-content">
-              <a href="api_home.html">API Overview</a>
+              <a href="https://matterport.github.io/showcase-sdk/api_home.html">API Overview</a>
               <a href="https://api.matterport.com/docs/reference" target="_blank">API Reference</a>
               <a href="https://api.matterport.com/model/graphiql" target="_blank">Interactive Console</a>
             </div>
@@ -144,7 +144,7 @@
           <!-- Add roboto font to search bar -->
           <img src="/showcase-sdk/images/search_button.png" />
           <input id="search-input" type="text" placeholder="Search"/>
-          <div id="results-container"></div>        
+          <div id="results-container"></div>
         </div>
       </div>
     </div>
@@ -925,6 +925,91 @@ noResultsText: '<li><div>No results found.<div></li>',
     
 
    
+<h2 id="april-25-2024">April 25, 2024</h2>
+
+<p><strong>Layers</strong> are now partially exposed by Model API.  Users can now query layers on any object and obtain a list of layers for any view.  <a href="https://ghe.matterport.com/pages/matterport/showcase-sdk-site-preview/modelapi_views_and_layers.html#overview-of-layers">Learn More</a>.</p>
+
+<p><strong>Password Protected</strong> and <strong>Public</strong> (available on <a href="https://matterport.com/discover" target="_blank">Discover</a>) visibilities can now be seen and set. Previously only private and unlisted were possible.</p>
+
+<ul>
+  <li>The new <strong>accessVisibility</strong> attribute returns <em>private</em>, <em>unlisted</em>, <em>public</em> or <em>password</em></li>
+  <li>The new <strong>accessVisibilityLastChanged</strong> attribute returns the date/time when visibility was last changed.</li>
+  <li>The new <strong>updateModelAccessVisibility</strong> mutation will allow a user to set the visibility of a space to all four visibility options as well as set passwords on password protected spaces.</li>
+</ul>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">UpdateModelAccessVisibility</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">updateModelAccessVisibility</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="s2">"RHcNJBGQyzo"</span><span class="p">,</span><span class="w"> </span><span class="n">visibility</span><span class="p">:</span><span class="w"> </span><span class="n">password</span><span class="p">,</span><span class="w"> </span><span class="n">password</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">id</span><span class="w">
+        </span><span class="n">accessVisibility</span><span class="w">
+        </span><span class="n">accessVisibilityLastChanged</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>A user may also now get the total number of scans with the <strong>model.assets.sizeEstimates</strong> attribute.  This count is often used when assessing the availability or price of an add-on.</p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="s2">"qrsvVuvhfb6"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">sizeEstimates</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="n">scanCount</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Response:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"sizeEstimates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"scanCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="enterprise-only">Enterprise Only</h3>
+
+<p><strong>folder.models</strong> query now allows <strong>activationStates</strong> parameter which can be <em>active</em>, <em>archived</em>, <em>pending</em> or <em>flagged</em>.  Flagged models are models that are pending approval due to being captured in <a href="https://support.matterport.com/s/article/Matterport-IP-restrictions">unauthorized geo-blocked locations</a>.</p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">Folder</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">folder</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="s2">"BP1w3rrfjp8"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">subfolders</span><span class="p">(</span><span class="n">pageSize</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="n">name</span><span class="w">
+                </span><span class="n">id</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="n">models</span><span class="p">(</span><span class="n">pageSize</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="n">activationStates</span><span class="p">:</span><span class="w"> </span><span class="n">archived</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">nextOffset</span><span class="w">
+            </span><span class="n">totalResults</span><span class="w">
+            </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="n">state</span><span class="w">
+                </span><span class="n">name</span><span class="w">
+                </span><span class="n">id</span><span class="w">
+                </span><span class="n">created</span><span class="w">
+                </span><span class="n">description</span><span class="w">
+                </span><span class="n">address</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="n">address</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+                </span><span class="n">image</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="n">resizeUrl</span><span class="p">(</span><span class="n">resolution</span><span class="p">:</span><span class="w"> </span><span class="n">preview</span><span class="p">)</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+                </span><span class="n">publication</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="n">summary</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <h2 id="january-18-2024">January 18, 2024</h2>
 
 <p><strong>All Users</strong></p>
@@ -1557,7 +1642,7 @@ used to generate the area estimates will only be populated for models processed 
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 18, 2024 <br />
+ Site last generated: Apr 26, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
