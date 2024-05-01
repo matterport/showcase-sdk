@@ -981,7 +981,7 @@ noResultsText: '<li><div>No results found.<div></li>',
     <tr>
       <td>redirect_uri</td>
       <td>No</td>
-      <td><strong>url</strong> - The Redirect URL configured for the OAuth application. If included in the authorization request it must also be included in the access token request.</td>
+      <td><strong>url</strong> - The Redirect URL configured for the OAuth application.  Not required if the application only has a single redirect URI</td>
     </tr>
     <tr>
       <td>scope</td>
@@ -991,9 +991,40 @@ noResultsText: '<li><div>No results found.<div></li>',
   </tbody>
 </table>
 
-<p><strong>Example:</strong> https://authn.matterport.com/oauth/authorize?client_id=uud3wfustchhap01yzia7nddb&amp;response_type=code&amp;scope=ViewDetails%20ViewPrivate&amp;redirect_uri=https://myoauthapp.test</p>
+<p><strong>Example:</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">https://authn.matterport.com/oauth/authorize?client_id=uud3wfustchhap01yzia7nddb&amp;response_type=code&amp;scope=ViewDetails%20ViewPublic&amp;redirect_uri=https://myoauthapp.test</code></p>
 
 <p>The user will then be presented with the opportunity to view the scopes requested and decide whether they want to authorize the application.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Scopes</strong></td>
+      <td><strong>Description</strong></td>
+    </tr>
+    <tr>
+      <td>ViewPublic</td>
+      <td>Search for public models within the resource owner’s organization and view public details of a model.</td>
+    </tr>
+    <tr>
+      <td>ViewDetails</td>
+      <td>Search for models within the resource owner’s organization and view public/private details of a model</td>
+    </tr>
+    <tr>
+      <td>EditDetails</td>
+      <td>Edit details of a model</td>
+    </tr>
+    <tr>
+      <td>DownloadAssets</td>
+      <td>Download assets associated with a model</td>
+    </tr>
+    <tr>
+      <td>PurchaseAssets</td>
+      <td>Purchase assets for a model</td>
+    </tr>
+  </tbody>
+</table>
 
 <p><img src="images/OAuth_Authorization_Prompt.jpg" alt="OAuth Authorization Prompt" title="OAuth Authorization Prompt" /></p>
 
@@ -1153,7 +1184,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 26, 2024 <br />
+ Site last generated: May 1, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
