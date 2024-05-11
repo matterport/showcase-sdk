@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Typescript Declarations | Matterport Developers</title>
+<title>SDK Web Component Advanced Usage | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -129,7 +129,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Typescript Declarations page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the SDK Web Component Advanced Usage page: ' + window.location.href;">Feedback</a>
           </div>
           <div class="dropdown">
             <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
@@ -245,7 +245,7 @@
           
           
           
-          <li class="active"><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
+          <li><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
           
           
           
@@ -396,7 +396,7 @@
           
           
           
-          <li><a title="Advanced" href="/showcase-sdk/sdkbundle_webcomponent_advanced.html">Advanced</a></li>
+          <li class="active"><a title="Advanced" href="/showcase-sdk/sdkbundle_webcomponent_advanced.html">Advanced</a></li>
           
           
           
@@ -933,7 +933,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="Typescript Declarations">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="SDK Web Component Advanced Usage">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -948,7 +948,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">Typescript Declarations</h1>
+   <h1 class="post-title-main">SDK Web Component Advanced Usage</h1>
 </div>
 
 
@@ -985,58 +985,136 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <h2 id="acquiring-the-type-declarations">Acquiring the Type Declarations</h2>
-<p>Our current types are located <a href="https://static.matterport.com/showcase-sdk/types/24.4.3_webgl-60-g22e9112908/sdk.d.ts">here</a></p>
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The Matterport Web Component is currently in public beta - interface and syntax are subject to change. Please email <a href="mailto:developer@matterport.com">developer@matterport.com</a> with any suggestions or questions.</div>
 
-<h2 id="why-use-types">Why Use Types?</h2>
-<h3 id="code-completion-or-intellisense">Code completion or Intellisense</h3>
-<p>Make fewer mistakes by using your IDE to suggest the available properties on the sdk.<br />
-<img src="images/types-autocomplete.png" /><br />
-(Auto-completing with <code class="language-plaintext highlighter-rouge">subscribe</code> when typing <code class="language-plaintext highlighter-rouge">mpSdk.Mattertag.data.</code>)</p>
+<p>See below for more information and advanced techniques with the web component.</p>
 
-<h3 id="code-comments-and-reference-documentation-in-your-ide">Code comments and reference documentation in your IDE</h3>
-<p>Hover over any property of our sdk (namespace, function, observable, etc) to get access to the same documentation that is available here.<br />
-<img src="images/type-codecomments.png" /><br />
-(Hovering <code class="language-plaintext highlighter-rouge">mpSdk.Mattertag.data</code>)</p>
+<h3 id="non-root-static-assets">Non-root static assets</h3>
 
-<h2 id="getting-started-with-type-declarations">Getting Started with Type Declarations</h2>
-<p>To get started, cast your window to the <code class="language-plaintext highlighter-rouge">ShowcaseEmbedWindow</code> and start using the MP_SDK object on it.</p>
+<p>You don’t have to put the static assets in the root of your static assets directory. For example, if you want to keep your Matterport assets in a folder called foo inside your static assets directory called public:</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ShowcaseEmbedWindow</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./mp/sdk</span><span class="dl">'</span><span class="p">;</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn matterport-assets public/foo
 
-<span class="kd">const</span> <span class="nx">showcaseIframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase-iframe</span><span class="dl">'</span><span class="p">)</span> <span class="k">as</span> <span class="nx">HTMLIFrameElement</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">embeddingWindow</span> <span class="o">=</span> <span class="nb">window</span> <span class="k">as</span> <span class="nx">ShowcaseEmbedWindow</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">embeddingWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseIframe</span><span class="p">,</span> <span class="dl">'</span><span class="s1">{YOUR SDK KEY}</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="c1">// start using mpSdk</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="dl">'</span><span class="s1">sweep1234</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">transition</span><span class="p">:</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">TransitionType</span><span class="p">.</span><span class="nx">FADEOUT</span> <span class="p">});</span>
+<span class="c"># npm</span>
+npx matterport-assets public/foo
 </code></pre></div></div>
 
-<h2 id="using-individual-namespaces">Using Individual Namespaces</h2>
-<p>Once you have your <code class="language-plaintext highlighter-rouge">mpSdk</code> object, you’ll likely want to pass it around and/or use other types provided by the sdk.<br />
-All namespaces and their types are also available through the root <code class="language-plaintext highlighter-rouge">MpSdk</code> type.</p>
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// tourControls.ts</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Tour</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./mp/sdk</span><span class="dl">'</span>
+<p>Then, in your <code class="language-plaintext highlighter-rouge">matterport-viewer</code> component, add the <code class="language-plaintext highlighter-rouge">asset-base</code> attribute:</p>
 
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">startTour</span><span class="p">(</span><span class="nx">tour</span><span class="p">:</span> <span class="nx">Tour</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">tour</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="c1">// use the Snapshot type through the Tour type</span>
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">getTourSnapshots</span><span class="p">(</span><span class="nx">tour</span><span class="p">:</span> <span class="nx">Tour</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Tour</span><span class="p">.</span><span class="nx">Snapshot</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">tour</span><span class="p">.</span><span class="nx">getData</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="c1">// index.ts</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">MpSdk</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./mp/sdk</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">startTour</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./tourControls.ts</span><span class="dl">'</span>
-
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">useTourControls</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">startTour</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">);</span>
-  <span class="c1">// use the Snapshot type through the MpSdk type</span>
-  <span class="kd">const</span> <span class="nx">tourSnapshots</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">.</span><span class="nx">Snapshot</span><span class="p">[]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getTourSnapshots</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;matterport-viewer</span> <span class="na">asset-base=</span><span class="s">"foo"</span><span class="nt">&gt;&lt;/matterport-viewer&gt;</span>
 </code></pre></div></div>
+
+<p>This indicates that static assets for the viewer that would normally be served at <code class="language-plaintext highlighter-rouge">/</code> are instead served at <code class="language-plaintext highlighter-rouge">/foo/</code>.</p>
+
+<h3 id="gitignore-ing-static-assets-and-copying-at-build-time">.gitignore-ing static assets and copying at build time</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">matterport-assets</code> command copies &gt;20mb of files to your static asset directory; this can be cumbersome to check into source control, especially since those static assets are downloaded each time you install <code class="language-plaintext highlighter-rouge">@matterport/webcomponent</code>.</p>
+
+<p>You can make the process easier if you’re using a build process to generate your site. For this example, let’s assume you’re serving viewer assets from a subdirectory <code class="language-plaintext highlighter-rouge">foo</code> of your static assets directory <code class="language-plaintext highlighter-rouge">public</code>, like in the “Non-root static assets” section above.</p>
+
+<ol>
+  <li>When installing the viewer, run <code class="language-plaintext highlighter-rouge">yarn matterport-assets public/foo</code> (or <code class="language-plaintext highlighter-rouge">npx matterport-assets public/foo</code>) like you normally would.</li>
+  <li>Add <code class="language-plaintext highlighter-rouge">public/foo</code> to your <code class="language-plaintext highlighter-rouge">.gitignore</code> file.</li>
+  <li>Add the same command you used in step 1 (<code class="language-plaintext highlighter-rouge">yarn matterport-assets public/foo</code> or <code class="language-plaintext highlighter-rouge">npx matterport-assets public/foo</code>) to your <code class="language-plaintext highlighter-rouge">postinstall</code> script in package.json:
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+ </span><span class="err">...</span><span class="w">
+ </span><span class="nl">"postinstall"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yarn matterport-assets public/foo"</span><span class="p">,</span><span class="w">
+ </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+    <p>This will automatically copy static assets to the correct location any time you <code class="language-plaintext highlighter-rouge">yarn/npm install</code> this project in the future.</p>
+  </li>
+  <li>Develop locally like you normally would.</li>
+  <li>When pushing to CI: this should normally take care of asset installation, since CI should install dependencies (and therefore run <code class="language-plaintext highlighter-rouge">postinstall</code> afterward) automatically. If needed, you can add the same command from step 1 to the CI’s build command (for example, <code class="language-plaintext highlighter-rouge">yarn matterport-assets public/foo &amp;&amp; yarn build</code>).</li>
+</ol>
+
+<h3 id="reactvuesvelteetc-interoperability">React/Vue/Svelte/etc interoperability</h3>
+
+<p>Custom Web Components like this one are part of <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">browsers’ built-in capability</a> and all usable within popular frameworks like React, Vue, Svelte, Next, Nuxt, etc. If you’re using the web component in one of those frameworks, search <code class="language-plaintext highlighter-rouge">use custom web component [framework name]</code> to find steps for your specific environment.</p>
+
+<h3 id="upgradingversion-pinning">Upgrading/Version pinning</h3>
+<p>To upgrade your project’s version of the package, run:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn upgrade @matterport/webcomponent
+
+<span class="c"># npm</span>
+npm upgrade @matterport/webcomponent
+</code></pre></div></div>
+
+<p>Then run the <code class="language-plaintext highlighter-rouge">matterport-assets</code> command to copy the latest version of the viewer assets:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn matterport-assets YOUR_STATIC_ASSETS_DIR
+
+<span class="c"># npm</span>
+npx matterport-assets YOUR_STATIC_ASSETS_DIR
+</code></pre></div></div>
+
+<p>If you’re committing static assets to source control, you’ll probably see some changes to those assets marked at this point. That’s expected - the assets you’re copying are specific to the version of the <code class="language-plaintext highlighter-rouge">@matterport/webcomponent</code> package you’ve installed.</p>
+
+<p>(Note that this also means you can pin which version of the Matterport viewer you want on your page by leaving the package’s version as-is; you can also upgrade to a specific version of the viewer by installing a desired version of the package.)</p>
+
+<h3 id="oauthother-connect-options">OAuth/other connect options</h3>
+
+<p>You may be familiar with passing options to the SDK in the connect function:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span>
+  <span class="nx">myShowcaseWindow</span><span class="p">,</span>
+  <span class="p">{</span> <span class="na">auth</span><span class="p">:</span> <span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span> <span class="p">}</span> <span class="c1">// &lt;-- these options</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>You can provide options to <code class="language-plaintext highlighter-rouge">connect</code> by adding attributes starting with <code class="language-plaintext highlighter-rouge">connect-</code> to your component. For example:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;matterport-viewer</span> <span class="na">connect-auth=</span><span class="s">"abc"</span><span class="nt">&gt;&lt;/matterport-viewer&gt;</span>
+</code></pre></div></div>
+
+<p>This will match the JS above, and any future connect options will follow this same pattern automatically.</p>
+
+<h3 id="config-options">Config options</h3>
+
+<p>You may be familiar with application-level configuration options in the iframe bundle (such as <code class="language-plaintext highlighter-rouge">{ useEffectComposer: 1 }</code> to use Three.js’s built-in EffectComposer for postprocessing effects).</p>
+
+<p>These are usually changed in <code class="language-plaintext highlighter-rouge">showcase.html</code>, but since this file is not accessible from the web component, you can prefix any attribute with <code class="language-plaintext highlighter-rouge">config-</code> to pass it to application-level config parameters.</p>
+
+<p>For example, to set <code class="language-plaintext highlighter-rouge">useEffectComposer</code> to <code class="language-plaintext highlighter-rouge">1</code>, your web component would look like this:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;matterport-viewer</span> <span class="na">config-use-effect-composer=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>This works with any attribute name - for example, to set hypothetical properties <code class="language-plaintext highlighter-rouge">exampleOne</code> and <code class="language-plaintext highlighter-rouge">exampleTwo</code> to <code class="language-plaintext highlighter-rouge">true</code> and <code class="language-plaintext highlighter-rouge">100</code>, respectively, you would write:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;matterport-viewer</span> <span class="na">config-example-one=</span><span class="s">"true"</span> <span class="na">config-example-two=</span><span class="s">"100"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="global-scope-usage">Global scope usage</h3>
+
+<p>The web component will load some assets and code (including fonts, scripts, images, polyfills, etc) into the global scope of your page. The Matterport team is currently working on reducing global content as much as possible; until then, note that some issues (like <a href="https://dev.to/akdevcraft/use-font-in-web-component-51a4">loading custom fonts</a>, using a compatibility checker to detect outdated browsers, and using the <a href="https://github.com/greggman/webgl-memory">webgl-memory</a> WebGL extension) necessitate working in the global scope.</p>
+
+<h3 id="workspaces">Workspaces</h3>
+
+<p>In projects with Yarn workspaces, it may be helpful to mark the SDK package as <code class="language-plaintext highlighter-rouge">nohoist</code> if you run into issues with <code class="language-plaintext highlighter-rouge">yarn matterport-assets</code> copying the assets correctly. For example:</p>
+
+<p>In my project, I have two workspaces, <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code>. Both use the <code class="language-plaintext highlighter-rouge">@mp/webcomponent</code> package.</p>
+
+<p><strong>Problem:</strong> Installing in both locations would hoist <code class="language-plaintext highlighter-rouge">@mp/webcomponent</code> to the root directory, and <code class="language-plaintext highlighter-rouge">yarn workspace a matterport-assets</code> may run into issues.</p>
+
+<p><strong>Solution:</strong> In my root directory’s <code class="language-plaintext highlighter-rouge">package.json</code>, I add the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+  "workspaces": [
+    ...,
+    "nohoist": [
+      "**/@mp/webcomponent"
+      ...
+    ]
+  ]
+...
+</code></pre></div></div>
+
+<p>I then delete all <code class="language-plaintext highlighter-rouge">node_modules</code> folders in my project and reinstall with <code class="language-plaintext highlighter-rouge">yarn install</code>. From there, I can run <code class="language-plaintext highlighter-rouge">yarn workspace a matterport-assets public</code> and see the assets copied to <code class="language-plaintext highlighter-rouge">packages/a/public</code>.</p>
 
 
     <div class="tags">

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Typescript Declarations | Matterport Developers</title>
+<title>SDK Bundle to Web Component Migration | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -129,7 +129,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Typescript Declarations page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the SDK Bundle to Web Component Migration page: ' + window.location.href;">Feedback</a>
           </div>
           <div class="dropdown">
             <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
@@ -245,7 +245,7 @@
           
           
           
-          <li class="active"><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
+          <li><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
           
           
           
@@ -403,7 +403,7 @@
           
           
           
-          <li><a title="Migration from Bundle" href="/showcase-sdk/sdkbundle_webcomponent_migration.html">Migration from Bundle</a></li>
+          <li class="active"><a title="Migration from Bundle" href="/showcase-sdk/sdkbundle_webcomponent_migration.html">Migration from Bundle</a></li>
           
           
           
@@ -933,7 +933,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="Typescript Declarations">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="SDK Bundle to Web Component Migration">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -948,7 +948,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">Typescript Declarations</h1>
+   <h1 class="post-title-main">SDK Bundle to Web Component Migration</h1>
 </div>
 
 
@@ -985,57 +985,44 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <h2 id="acquiring-the-type-declarations">Acquiring the Type Declarations</h2>
-<p>Our current types are located <a href="https://static.matterport.com/showcase-sdk/types/24.4.3_webgl-60-g22e9112908/sdk.d.ts">here</a></p>
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The Matterport Web Component is currently in public beta - interface and syntax are subject to change. Please email <a href="mailto:developer@matterport.com">developer@matterport.com</a> with any suggestions or questions.</div>
 
-<h2 id="why-use-types">Why Use Types?</h2>
-<h3 id="code-completion-or-intellisense">Code completion or Intellisense</h3>
-<p>Make fewer mistakes by using your IDE to suggest the available properties on the sdk.<br />
-<img src="images/types-autocomplete.png" /><br />
-(Auto-completing with <code class="language-plaintext highlighter-rouge">subscribe</code> when typing <code class="language-plaintext highlighter-rouge">mpSdk.Mattertag.data.</code>)</p>
+<p>You can follow the <a href="/sdkbundle_home.html#iframe-method">existing bundle steps</a> exactly as written using the new webcomponent package, <strong>with one exception</strong>: you’ll download the zipped file by following these instructions:</p>
 
-<h3 id="code-comments-and-reference-documentation-in-your-ide">Code comments and reference documentation in your IDE</h3>
-<p>Hover over any property of our sdk (namespace, function, observable, etc) to get access to the same documentation that is available here.<br />
-<img src="images/type-codecomments.png" /><br />
-(Hovering <code class="language-plaintext highlighter-rouge">mpSdk.Mattertag.data</code>)</p>
+<ol>
+  <li>Install <a href="#prerequisites">npm</a> on your machine if it isn’t already. (Run <code class="language-plaintext highlighter-rouge">npm -v</code> in your terminal to check if it is - if you see a number, you’re all set.)</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">npm view @matterport/webcomponent</code>.</li>
+  <li>Download the linked .tarball file (for example, <a href="https://registry.npmjs.org/@matterport/webcomponent/-/webcomponent-0.1.39.tgz">this link for version 0.1.39</a>).</li>
+  <li>Move the <code class="language-plaintext highlighter-rouge">built-bundle</code> directory to your project, not <code class="language-plaintext highlighter-rouge">bundle</code>.</li>
+</ol>
 
-<h2 id="getting-started-with-type-declarations">Getting Started with Type Declarations</h2>
-<p>To get started, cast your window to the <code class="language-plaintext highlighter-rouge">ShowcaseEmbedWindow</code> and start using the MP_SDK object on it.</p>
+<p>From there, follow these steps:</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ShowcaseEmbedWindow</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./mp/sdk</span><span class="dl">'</span><span class="p">;</span>
+<ol>
+  <li>Add the <code class="language-plaintext highlighter-rouge">dist</code> directory from the .tgz you downloaded in the previous step to your project.</li>
+  <li>Add Three to your project: <code class="language-plaintext highlighter-rouge">&lt;script src="built-bundle/vendors/three/0.146.0/three.min.js"&gt;&lt;/script&gt;</code> (assuming you moved built-bundle to your project).</li>
+  <li>Add the webcomponent to your project: <code class="language-plaintext highlighter-rouge">&lt;script src="dist/matterport-viewer.umd.js"&gt;&lt;/script&gt;</code></li>
+  <li>Change the <code class="language-plaintext highlighter-rouge">iframe</code> tag to a <code class="language-plaintext highlighter-rouge">matterport-viewer</code> tag. (You can leave the <code class="language-plaintext highlighter-rouge">src</code> attribute as-is on <code class="language-plaintext highlighter-rouge">matterport-viewer</code>).</li>
+</ol>
 
-<span class="kd">const</span> <span class="nx">showcaseIframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase-iframe</span><span class="dl">'</span><span class="p">)</span> <span class="k">as</span> <span class="nx">HTMLIFrameElement</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">embeddingWindow</span> <span class="o">=</span> <span class="nb">window</span> <span class="k">as</span> <span class="nx">ShowcaseEmbedWindow</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">embeddingWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseIframe</span><span class="p">,</span> <span class="dl">'</span><span class="s1">{YOUR SDK KEY}</span><span class="dl">'</span><span class="p">);</span>
+<p>That’s it! The webcomponent should now be running instead of the iframe.</p>
 
-<span class="c1">// start using mpSdk</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="dl">'</span><span class="s1">sweep1234</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">transition</span><span class="p">:</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">TransitionType</span><span class="p">.</span><span class="nx">FADEOUT</span> <span class="p">});</span>
+<h3 id="url-parametersiframe-migration">URL parameters/iframe migration</h3>
+
+<p>Any <a href="https://support.matterport.com/s/article/URL-Parameters?language=en_US&amp;ardId=kA05d000001DWztCAG">URL parameter</a> can be added as an attribute to the <code class="language-plaintext highlighter-rouge">&lt;matterport-viewer&gt;</code> component. For example, to turn on quickstart (<code class="language-plaintext highlighter-rouge">qs</code>) and set MLS (<code class="language-plaintext highlighter-rouge">mls</code>) to option 2:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;matterport-viewer</span> <span class="na">m=</span><span class="s">"SxQL3iGyoDo"</span> <span class="na">qs=</span><span class="s">"1"</span> <span class="na">mls=</span><span class="s">"2"</span><span class="nt">&gt;&lt;/matterport-viewer&gt;</span>
 </code></pre></div></div>
 
-<h2 id="using-individual-namespaces">Using Individual Namespaces</h2>
-<p>Once you have your <code class="language-plaintext highlighter-rouge">mpSdk</code> object, you’ll likely want to pass it around and/or use other types provided by the sdk.<br />
-All namespaces and their types are also available through the root <code class="language-plaintext highlighter-rouge">MpSdk</code> type.</p>
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// tourControls.ts</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Tour</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./mp/sdk</span><span class="dl">'</span>
+<p>If you’re migrating from the old iframe-based workflow, you can also reuse your <code class="language-plaintext highlighter-rouge">src</code> attribute in the new viewer and preserve the same options:</p>
 
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">startTour</span><span class="p">(</span><span class="nx">tour</span><span class="p">:</span> <span class="nx">Tour</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">tour</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
-<span class="p">}</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- You can turn this: --&gt;</span>
+<span class="nt">&lt;iframe</span>
+  <span class="na">src=</span><span class="s">"/bundle/showcase.html?m=22Ub5eknCVx&amp;play=1&amp;qs=1&amp;log=0&amp;applicationKey=PUT_APPLICATION_KEY_HERE"</span><span class="nt">&gt;</span>
 
-<span class="c1">// use the Snapshot type through the Tour type</span>
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">getTourSnapshots</span><span class="p">(</span><span class="nx">tour</span><span class="p">:</span> <span class="nx">Tour</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Tour</span><span class="p">.</span><span class="nx">Snapshot</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">tour</span><span class="p">.</span><span class="nx">getData</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="c1">// index.ts</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">MpSdk</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./mp/sdk</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">startTour</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./tourControls.ts</span><span class="dl">'</span>
-
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">useTourControls</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">startTour</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">);</span>
-  <span class="c1">// use the Snapshot type through the MpSdk type</span>
-  <span class="kd">const</span> <span class="nx">tourSnapshots</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">.</span><span class="nx">Snapshot</span><span class="p">[]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getTourSnapshots</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="c">&lt;!-- into this, and keep the same functionality: --&gt;</span>
+<span class="nt">&lt;matterport-viewer</span>
+  <span class="na">src=</span><span class="s">"/bundle/showcase.html?m=22Ub5eknCVx&amp;play=1&amp;qs=1&amp;log=0&amp;applicationKey=PUT_APPLICATION_KEY_HERE"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
 

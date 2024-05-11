@@ -502,6 +502,8 @@
 
 
 
+
+
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -510,8 +512,6 @@
 "summary": ""
 }
 ,
-
-
 
 
 
@@ -1796,6 +1796,50 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/sdkbundle_virtual_staging.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "SDK Web Component",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/sdkbundle_webcomponent.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "SDK Web Component Advanced Usage",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/sdkbundle_webcomponent_advanced.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "SDK Bundle to Web Component Migration",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/sdkbundle_webcomponent_migration.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "SDK Web Component Tutorial",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/sdkbundle_webcomponent_tutorial.html",
 "summary": ""
 }
 ,

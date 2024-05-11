@@ -281,11 +281,11 @@
   
   
   
+  
+  
   <url>
     <loc>https://matterport.github.io/index.html</loc>
   </url>
-  
-  
   
   
   
@@ -987,6 +987,30 @@
   
   <url>
     <loc>https://matterport.github.io/sdkbundle_virtual_staging.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdkbundle_webcomponent.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdkbundle_webcomponent_advanced.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdkbundle_webcomponent_migration.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/sdkbundle_webcomponent_tutorial.html</loc>
   </url>
   
   

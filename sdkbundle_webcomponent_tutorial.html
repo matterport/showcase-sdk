@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Typescript Declarations | Matterport Developers</title>
+<title>SDK Web Component Tutorial | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -129,7 +129,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Typescript Declarations page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the SDK Web Component Tutorial page: ' + window.location.href;">Feedback</a>
           </div>
           <div class="dropdown">
             <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
@@ -245,7 +245,7 @@
           
           
           
-          <li class="active"><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
+          <li><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
           
           
           
@@ -389,7 +389,7 @@
           
           
           
-          <li><a title="Tutorial" href="/showcase-sdk/sdkbundle_webcomponent_tutorial.html">Tutorial</a></li>
+          <li class="active"><a title="Tutorial" href="/showcase-sdk/sdkbundle_webcomponent_tutorial.html">Tutorial</a></li>
           
           
           
@@ -933,7 +933,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="Typescript Declarations">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="SDK Web Component Tutorial">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -948,7 +948,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">Typescript Declarations</h1>
+   <h1 class="post-title-main">SDK Web Component Tutorial</h1>
 </div>
 
 
@@ -985,58 +985,197 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <h2 id="acquiring-the-type-declarations">Acquiring the Type Declarations</h2>
-<p>Our current types are located <a href="https://static.matterport.com/showcase-sdk/types/24.4.3_webgl-60-g22e9112908/sdk.d.ts">here</a></p>
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The Matterport Web Component is currently in public beta - interface and syntax are subject to change. Please email <a href="mailto:developer@matterport.com">developer@matterport.com</a> with any suggestions or questions.</div>
 
-<h2 id="why-use-types">Why Use Types?</h2>
-<h3 id="code-completion-or-intellisense">Code completion or Intellisense</h3>
-<p>Make fewer mistakes by using your IDE to suggest the available properties on the sdk.<br />
-<img src="images/types-autocomplete.png" /><br />
-(Auto-completing with <code class="language-plaintext highlighter-rouge">subscribe</code> when typing <code class="language-plaintext highlighter-rouge">mpSdk.Mattertag.data.</code>)</p>
+<h3 id="prerequisites">Prerequisites</h3>
 
-<h3 id="code-comments-and-reference-documentation-in-your-ide">Code comments and reference documentation in your IDE</h3>
-<p>Hover over any property of our sdk (namespace, function, observable, etc) to get access to the same documentation that is available here.<br />
-<img src="images/type-codecomments.png" /><br />
-(Hovering <code class="language-plaintext highlighter-rouge">mpSdk.Mattertag.data</code>)</p>
+<ul>
+  <li>You should be familiar with the <a href="https://www.davidbaumgold.com/tutorials/command-line/">command line</a>.</li>
+  <li>You should have <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">NPM</a> or <a href="https://yarnpkg.com/getting-started/install">Yarn</a> installed.</li>
+  <li>Finally, you should <a href="https://matterport.github.io/showcase-sdk/sdk_home.html#installation">obtain an SDK key</a>.</li>
+</ul>
 
-<h2 id="getting-started-with-type-declarations">Getting Started with Type Declarations</h2>
-<p>To get started, cast your window to the <code class="language-plaintext highlighter-rouge">ShowcaseEmbedWindow</code> and start using the MP_SDK object on it.</p>
+<h3 id="starting-your-project">Starting Your Project</h3>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ShowcaseEmbedWindow</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./mp/sdk</span><span class="dl">'</span><span class="p">;</span>
+<p>The Web Component package will work with any framework (React, Vue, Svelte, etc) or vanilla JavaScript or TypeScript.</p>
 
-<span class="kd">const</span> <span class="nx">showcaseIframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase-iframe</span><span class="dl">'</span><span class="p">)</span> <span class="k">as</span> <span class="nx">HTMLIFrameElement</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">embeddingWindow</span> <span class="o">=</span> <span class="nb">window</span> <span class="k">as</span> <span class="nx">ShowcaseEmbedWindow</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">embeddingWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseIframe</span><span class="p">,</span> <span class="dl">'</span><span class="s1">{YOUR SDK KEY}</span><span class="dl">'</span><span class="p">);</span>
+<p>Let’s start a project using vanilla JS and Webpack. Tools like <a href="https://vitejs.dev/">Vite</a> can be useful if you’d like to skip some of the setup work, but for now we’ll stick with creating the project manually. (If you know how to create a project where you can <code>npm install</code> or <code>yarn add</code> dependencies, you can do so and <a href="#adding-the-web-component">skip ahead</a>.)</p>
 
-<span class="c1">// start using mpSdk</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="dl">'</span><span class="s1">sweep1234</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">transition</span><span class="p">:</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">TransitionType</span><span class="p">.</span><span class="nx">FADEOUT</span> <span class="p">});</span>
+<p>Open the command line and navigate to the folder where you want your project. Then create a project folder and navigate into it. We’ll call our project and its folder mp-webcomponent:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>mp-webcomponent
+<span class="nb">cd </span>mp-webcomponent
 </code></pre></div></div>
 
-<h2 id="using-individual-namespaces">Using Individual Namespaces</h2>
-<p>Once you have your <code class="language-plaintext highlighter-rouge">mpSdk</code> object, you’ll likely want to pass it around and/or use other types provided by the sdk.<br />
-All namespaces and their types are also available through the root <code class="language-plaintext highlighter-rouge">MpSdk</code> type.</p>
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// tourControls.ts</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Tour</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./mp/sdk</span><span class="dl">'</span>
+<p>Initialize a new NPM or Yarn project. (Choose one or the other, whichever you prefer - we will provide instructions for both in this tutorial.) You can accept the default values in all of the prompts.</p>
 
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">startTour</span><span class="p">(</span><span class="nx">tour</span><span class="p">:</span> <span class="nx">Tour</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">tour</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
-<span class="p">}</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn init
 
-<span class="c1">// use the Snapshot type through the Tour type</span>
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">getTourSnapshots</span><span class="p">(</span><span class="nx">tour</span><span class="p">:</span> <span class="nx">Tour</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Tour</span><span class="p">.</span><span class="nx">Snapshot</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">tour</span><span class="p">.</span><span class="nx">getData</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="c1">// index.ts</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">MpSdk</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./mp/sdk</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">startTour</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./tourControls.ts</span><span class="dl">'</span>
-
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">useTourControls</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">startTour</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">);</span>
-  <span class="c1">// use the Snapshot type through the MpSdk type</span>
-  <span class="kd">const</span> <span class="nx">tourSnapshots</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">.</span><span class="nx">Snapshot</span><span class="p">[]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getTourSnapshots</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="c"># npm</span>
+npm init
 </code></pre></div></div>
+
+<p>Next, install Webpack and a few plugins:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn add <span class="nt">--dev</span> webpack webpack-cli webpack-dev-server html-webpack-plugin
+
+<span class="c"># npm</span>
+npm <span class="nb">install</span> <span class="nt">--save-dev</span> webpack webpack-cli webpack-dev-server html-webpack-plugin
+</code></pre></div></div>
+
+<p>And install <a href="https://threejs.org/">Three</a>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn add three@0.151
+
+<span class="c"># npm</span>
+npm <span class="nb">install </span>three@0.151
+</code></pre></div></div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The Web Component is only tested with the version of Three listed in <code class="language-plaintext highlighter-rouge">package.json</code>’s <code class="language-plaintext highlighter-rouge">peerDependencies</code> field. You may try using a different version if you prefer, but only the listed version is supported.</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If you’re going to use TypeScript, install the Three types: <code>yarn add --dev @types/three</code> or <code>npm install --save-dev @types/three</code></div>
+
+<p>Create a file called <code class="language-plaintext highlighter-rouge">webpack.config.js</code> at your project root and set it up by pasting the following content:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">HtmlWebpackPlugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">html-webpack-plugin</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">entry</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./src/index.js</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">./dist</span><span class="dl">"</span><span class="p">),</span>
+    <span class="na">filename</span><span class="p">:</span> <span class="dl">"</span><span class="s2">index_bundle.js</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span>
+    <span class="k">new</span> <span class="nx">HtmlWebpackPlugin</span><span class="p">({</span>
+      <span class="na">template</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">./src/index.html</span><span class="dl">"</span><span class="p">),</span>
+    <span class="p">}),</span>
+  <span class="p">],</span>
+  <span class="na">devServer</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">static</span><span class="p">:</span> <span class="p">[</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">static</span><span class="dl">"</span><span class="p">)],</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Add the following <code class="language-plaintext highlighter-rouge">scripts</code> property (or replace the existing one) at the top level of your package.json file:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webpack serve --mode=development"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webpack"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Finally, add a folder called <code class="language-plaintext highlighter-rouge">src</code> to the project root, and add a file called <code class="language-plaintext highlighter-rouge">index.js</code> and one called <code class="language-plaintext highlighter-rouge">index.html</code> inside <code class="language-plaintext highlighter-rouge">src</code>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>src
+<span class="nb">touch </span>src/index.html
+<span class="nb">touch </span>src/index.js
+Your project folder should now look like this:
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| node_modules
+| package.json
+| src/
+|-- index.html
+|-- index.js
+| webpack.config.json
+</code></pre></div></div>
+
+<p>Your terminal should be in the <code class="language-plaintext highlighter-rouge">mp-webcomponent</code> directory</p>
+
+<p>(Don’t worry if you see extra <code class="language-plaintext highlighter-rouge">package-lock.json</code> or <code class="language-plaintext highlighter-rouge">yarn.lock</code> files - those are generated for internal use by NPM and Yarn, respectively.)</p>
+
+<h3 id="adding-the-web-component">Adding the Web Component</h3>
+
+<p>Next, we’ll add the Web Component:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn add @matterport/webcomponent
+
+<span class="c"># npm</span>
+npm <span class="nb">install</span> @matterport/webcomponent
+</code></pre></div></div>
+
+<p>And we’ll add the static assets:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn matterport-assets static
+
+<span class="c"># npm</span>
+npx matterport-assets static
+</code></pre></div></div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The Web Component requires several static assets, like font files, textures, WASM files, compiled JS files, and more; this script is meant to be a single-step solution for copying those assets to your site.<br /><br />You may, but do not need to, check these files into source control - instead, you can include the yarn/npx matterport-assets your/static/folder command in your build script if you’re using a static site generator like Netlify. More on this workflow later.</div>
+
+<p>Open <code class="language-plaintext highlighter-rouge">index.js</code> and import the Web Component by adding this line:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">'</span><span class="s1">@matterport/webcomponent</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Then open index.html and add this line:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;matterport-viewer</span> <span class="na">m=</span><span class="s">"SxQL3iGyoDo"</span><span class="nt">&gt;&lt;/matterport-viewer&gt;</span>
+</code></pre></div></div>
+
+<p>The Web Component wraps a custom web component that contains the 3D Matterport viewer; the m attribute sets the ID of the model you’d like to load. The value of m here is a sample space you can use for testing and dev.</p>
+
+<p>Start your server:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
+yarn dev
+
+<span class="c"># npm</span>
+npm run dev
+</code></pre></div></div>
+
+<p>and navigate to <code class="language-plaintext highlighter-rouge">localhost:8080</code>. You should see a Matterport viewer and a sample space on your page.</p>
+
+<h3 id="interacting-with-the-space">Interacting with the Space</h3>
+<p>You can interact with the space by providing your SDK key to the <code class="language-plaintext highlighter-rouge">application-key</code> attribute (see <a href="https://matterport.github.io/showcase-sdk/sdk_home.html#installation">here</a> if you don’t have an SDK key yet):</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;matterport-viewer</span> <span class="na">m=</span><span class="s">"SxQL3iGyoDo"</span> <span class="na">application-key=</span><span class="s">"YOUR_SDK_KEY"</span><span class="nt">&gt;&lt;/matterport-viewer&gt;</span>
+</code></pre></div></div>
+
+<p>Once you’ve done that, the viewer will emit two events you can listen for:</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">mpSdkConnected</code> - the SDK is connected and ready to use.</li>
+  <li><code class="language-plaintext highlighter-rouge">mpSdkPlaying</code> - the SDK is connected and ready to use, and the camera is ready to start accepting commands (ie, any intro fly-in has completed and the camera has stopped moving).</li>
+</ol>
+
+<p>Both events have the same call signature, so you can swap out <code class="language-plaintext highlighter-rouge">mpSdkPlaying</code> for <code class="language-plaintext highlighter-rouge">mpSdkConnected</code> if needed. In <code class="language-plaintext highlighter-rouge">index.js</code>:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">viewer</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mpSdkPlaying</span><span class="dl">'</span><span class="p">,</span> <span class="nx">evt</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">mpSdk</span><span class="p">;</span>
+  <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">rotate</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>An even easier route is using the <code class="language-plaintext highlighter-rouge">sdkPromise</code>/<code class="language-plaintext highlighter-rouge">playingPromise</code> properties provided by the component, which correspond with the mpSdkConnected event and the mpSdkPlaying event, respectively.</p>
+
+<p>To use those properties, add the following to your index.js file:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">main</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">).</span><span class="nx">playingPromise</span><span class="p">;</span>
+  <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">rotate</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">main</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Note that if you’re using TypeScript you can set up querySelector to preserve strong typing:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="o">&lt;</span><span class="nx">MatterportViewer</span><span class="o">&gt;</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">)</span><span class="o">!</span><span class="p">.</span><span class="nx">playingPromise</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>If you’ve added a working SDK key, you should see the model load, fly in, and turn to the right.</p>
+
+<h3 id="next-steps">Next Steps</h3>
+
+<p>At this point, you can work with anything from any of the mpSdk namespaces, including Tags, Measurements, Scene objects, and more. Enjoy, and please reach out to developer@matterport.com with any questions or issues!</p>
 
 
     <div class="tags">

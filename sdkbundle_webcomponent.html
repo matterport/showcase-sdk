@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Typescript Declarations | Matterport Developers</title>
+<title>SDK Web Component | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -129,7 +129,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Typescript Declarations page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the SDK Web Component page: ' + window.location.href;">Feedback</a>
           </div>
           <div class="dropdown">
             <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
@@ -245,7 +245,7 @@
           
           
           
-          <li class="active"><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
+          <li><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
           
           
           
@@ -382,7 +382,7 @@
           
           
           
-          <li><a title="Home" href="/showcase-sdk/sdkbundle_webcomponent.html">Home</a></li>
+          <li class="active"><a title="Home" href="/showcase-sdk/sdkbundle_webcomponent.html">Home</a></li>
           
           
           
@@ -933,7 +933,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="Typescript Declarations">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="SDK Web Component">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -948,7 +948,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">Typescript Declarations</h1>
+   <h1 class="post-title-main">SDK Web Component</h1>
 </div>
 
 
@@ -985,57 +985,75 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <h2 id="acquiring-the-type-declarations">Acquiring the Type Declarations</h2>
-<p>Our current types are located <a href="https://static.matterport.com/showcase-sdk/types/24.4.3_webgl-60-g22e9112908/sdk.d.ts">here</a></p>
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The Matterport Web Component is currently in public beta - interface and syntax are subject to change. Please email <a href="mailto:developer@matterport.com">developer@matterport.com</a> with any suggestions or questions.</div>
 
-<h2 id="why-use-types">Why Use Types?</h2>
-<h3 id="code-completion-or-intellisense">Code completion or Intellisense</h3>
-<p>Make fewer mistakes by using your IDE to suggest the available properties on the sdk.<br />
-<img src="images/types-autocomplete.png" /><br />
-(Auto-completing with <code class="language-plaintext highlighter-rouge">subscribe</code> when typing <code class="language-plaintext highlighter-rouge">mpSdk.Mattertag.data.</code>)</p>
+<p>The Matterport Web Component (NPM package name: <code>@matterport/webcomponent</code>) is a <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">Web Component (custom HTML element)</a> that encapsulates the Matterport experience in a single DOM element:</p>
 
-<h3 id="code-comments-and-reference-documentation-in-your-ide">Code comments and reference documentation in your IDE</h3>
-<p>Hover over any property of our sdk (namespace, function, observable, etc) to get access to the same documentation that is available here.<br />
-<img src="images/type-codecomments.png" /><br />
-(Hovering <code class="language-plaintext highlighter-rouge">mpSdk.Mattertag.data</code>)</p>
-
-<h2 id="getting-started-with-type-declarations">Getting Started with Type Declarations</h2>
-<p>To get started, cast your window to the <code class="language-plaintext highlighter-rouge">ShowcaseEmbedWindow</code> and start using the MP_SDK object on it.</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ShowcaseEmbedWindow</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./mp/sdk</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">showcaseIframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase-iframe</span><span class="dl">'</span><span class="p">)</span> <span class="k">as</span> <span class="nx">HTMLIFrameElement</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">embeddingWindow</span> <span class="o">=</span> <span class="nb">window</span> <span class="k">as</span> <span class="nx">ShowcaseEmbedWindow</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">embeddingWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseIframe</span><span class="p">,</span> <span class="dl">'</span><span class="s1">{YOUR SDK KEY}</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="c1">// start using mpSdk</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="dl">'</span><span class="s1">sweep1234</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">transition</span><span class="p">:</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Sweep</span><span class="p">.</span><span class="nx">TransitionType</span><span class="p">.</span><span class="nx">FADEOUT</span> <span class="p">});</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Create a full 3D viewer on your site --&gt;</span>
+<span class="nt">&lt;matterport-viewer</span> <span class="na">m=</span><span class="s">"SxQL3iGyoDo"</span><span class="nt">&gt;&lt;/matterport-viewer&gt;</span>
 </code></pre></div></div>
 
-<h2 id="using-individual-namespaces">Using Individual Namespaces</h2>
-<p>Once you have your <code class="language-plaintext highlighter-rouge">mpSdk</code> object, you’ll likely want to pass it around and/or use other types provided by the sdk.<br />
-All namespaces and their types are also available through the root <code class="language-plaintext highlighter-rouge">MpSdk</code> type.</p>
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// tourControls.ts</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Tour</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./mp/sdk</span><span class="dl">'</span>
+<p>You can use the web component as a full replacement for the <a href="/showcase-sdk/sdkbundle_home.html">iframe-based SDK bundle</a>. Read the <a href="#quick-installation">quick installation instructions</a>, check out <a href="#advanced-workflow">advanced usage tips</a>, or continue to the tutorial to learn more.</p>
 
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">startTour</span><span class="p">(</span><span class="nx">tour</span><span class="p">:</span> <span class="nx">Tour</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">tour</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
-<span class="p">}</span>
+<h2 id="quick-installation">Quick Installation</h2>
+<ol>
+  <li>Install package:
+    <ol>
+      <li><strong>Yarn</strong>: <code class="language-plaintext highlighter-rouge">yarn add @matterport/webcomponent three</code></li>
+      <li><strong>NPM</strong>: <code class="language-plaintext highlighter-rouge">npm install @matterport/webcomponent three</code></li>
+    </ol>
+  </li>
+  <li>Install static assets (replace <code class="language-plaintext highlighter-rouge">YOUR_STATIC_ASSETS_DIR</code> with your static assets dir):
+    <ol>
+      <li><strong>Yarn</strong>: <code class="language-plaintext highlighter-rouge">yarn matterport-assets YOUR_STATIC_ASSETS_DIR</code></li>
+      <li><strong>NPM</strong>: <code class="language-plaintext highlighter-rouge">npx matterport-assets YOUR_STATIC_ASSETS_DIR</code></li>
+    </ol>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">import @matterport/webcomponent</code> in your JS/TS</li>
+  <li>Add a <code class="language-plaintext highlighter-rouge">&lt;matterport-viewer&gt;</code> to your HTML. Add the <code class="language-plaintext highlighter-rouge">m</code> attribute with the SID of the model you want to use.</li>
+  <li>To use the SDK:
+    <ol>
+      <li>Add the application-key attribute with the value set to your SDK key</li>
+      <li>Either:
+        <ol>
+          <li>Wait for the <code class="language-plaintext highlighter-rouge">playingPromise</code>:
+            <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="kd">const</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">);</span>
+   <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">viewer</span><span class="p">.</span><span class="nx">playingPromise</span><span class="p">;</span>
+</code></pre></div>            </div>
+          </li>
+          <li><strong>OR</strong> listen for the <code class="language-plaintext highlighter-rouge">mpSdkPlaying</code> event:
+            <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="kd">const</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">);</span>
+   <span class="nx">viewer</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mpSdkPlaying</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+ <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">mpSdk</span><span class="p">;</span>
+ <span class="cm">/* do something with mpSdk... */</span>
+   <span class="p">});</span>
+</code></pre></div>            </div>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
 
-<span class="c1">// use the Snapshot type through the Tour type</span>
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">getTourSnapshots</span><span class="p">(</span><span class="nx">tour</span><span class="p">:</span> <span class="nx">Tour</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Tour</span><span class="p">.</span><span class="nx">Snapshot</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">tour</span><span class="p">.</span><span class="nx">getData</span><span class="p">();</span>
-<span class="p">}</span>
+<h3 id="full-example">Full example</h3>
 
-<span class="c1">// index.ts</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">MpSdk</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./mp/sdk</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">startTour</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./tourControls.ts</span><span class="dl">'</span>
+<p>(Make sure you complete steps 1 and 2 above first!)</p>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">useTourControls</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">startTour</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">);</span>
-  <span class="c1">// use the Snapshot type through the MpSdk type</span>
-  <span class="kd">const</span> <span class="nx">tourSnapshots</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">.</span><span class="nx">Snapshot</span><span class="p">[]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getTourSnapshots</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tour</span><span class="p">);</span>
-<span class="p">}</span>
+<p>HTML:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;matterport-viewer</span>
+  <span class="na">m=</span><span class="s">"YOUR_MODEL_SID"</span>
+  <span class="na">application-key=</span><span class="s">"YOUR_APPLICATION_KEY"</span>
+<span class="nt">&gt;&lt;/matterport-viewer&gt;</span>
+</code></pre></div></div>
+
+<p>JS/TS:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">'</span><span class="s1">@matterport/webcomponent</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">viewer</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mpSdkPlaying</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">mpSdk</span><span class="p">;</span>
+  <span class="cm">/* do something with mpSdk... */</span>
+<span class="p">});</span>
 </code></pre></div></div>
 
 
