@@ -479,14 +479,14 @@
           
           
           
-          <li><a title="Creating Mattertags" href="/showcase-sdk/sdk_creating_mattertags.html">Creating Mattertags</a></li>
+          <li><a title="Creating Tags" href="/showcase-sdk/sdk_creating_mattertags.html">Creating Tags</a></li>
           
           
           
           
           
           
-          <li><a title="Editing Mattertags" href="/showcase-sdk/sdk_editing_mattertags.html">Editing Mattertags</a></li>
+          <li><a title="Editing Tags" href="/showcase-sdk/sdk_editing_mattertags.html">Editing Tags</a></li>
           
           
           
@@ -1004,7 +1004,7 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="coordinate-conventions">Coordinate Conventions</h2>
 
-<p>X, Y, and Z coordinates are from the <strong>viewpoint of the Matterport camera</strong> when it scanned the environment.</p>
+<p>In our Showcase Application, X, Y, and Z coordinates are from the <strong>viewpoint of the Matterport camera</strong> when it scanned the environment.</p>
 
 <p>To make it easier to visualize, pretend the Matterport camera is a “human” and the Matterport camera lenses are his or her “eyes.” The buttons on the back of the Matterport Camera back are like the back of a person’s head.</p>
 
@@ -1031,10 +1031,49 @@ $('#toc').on('click', 'a', function() {
 <p>To find the first scan, find the space in <a href="https://my.matterport.com">my.matterport.com</a> and then launch Workshop.</p>
 
 <p align="center">
-  <img src="images/first-scan-in-matterport-workshop.png" /><br />
+  <img src="images/first-scan-in-matterport-workshop.jpg" /><br />
 </p>
 
 <p>Open the <strong>3D Scans &amp; 360º Views</strong> menu. <strong>Double click on Scan 1</strong> and you will be transported to that scan position.</p>
+
+<h2 id="api-to-sdk-conversions">API to SDK Conversions</h2>
+
+<p>Spatial data at Matterport is often expressed in various 3D coordinate systems, usually dependent on where the data loaded from or how it originated.</p>
+
+<p>Developers may be surprised that the coordinate system in our Model API and Showcase SDK are different.  This is due to the 3D data that is created, and orientation of this data when it is presented in our Showcase player.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Coordinate system</th>
+      <th>Description</th>
+      <th>Handedness</th>
+      <th>East*</th>
+      <th>North*</th>
+      <th>Up</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Model API</td>
+      <td>All model assets are in this coordinate system</td>
+      <td>Right</td>
+      <td>+X</td>
+      <td>+Y</td>
+      <td>+Z</td>
+    </tr>
+    <tr>
+      <td>Showcase</td>
+      <td>When models are rendered for view via the web</td>
+      <td>Right</td>
+      <td>+X</td>
+      <td>-Z</td>
+      <td>+Y</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In a nutshell, the Y and Z values are swapped and the ‘Z’ value is reversed.</p>
 
 
     <div class="tags">
@@ -1052,7 +1091,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: May 10, 2024 <br />
+ Site last generated: May 15, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
