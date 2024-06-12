@@ -1019,7 +1019,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/24.4.3_webgl-60-g22e9112908/sdk.d.ts">24.4.3_webgl-60-g22e9112908</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/24.6.2_webgl-215-g64616548cb/sdk.d.ts">24.6.2_webgl-215-g64616548cb</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1314,6 +1314,7 @@ mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keywor
 						<div class="tsd-lead">
 							<p>An observable collection of sweep data that can be subscribed to.</p>
 						</div>
+						<p>When first subscribing, the current set of Sweeps will call the observer&#39;s <code>onAdded</code> for each Sweep as the data becomes available.</p>
 						<pre><code>mpSdk.Sweep.data.subscribe({
   onAdded: <span class="hljs-keyword">function</span> (index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>) {
     console.log(<span class="hljs-string">&#x27;sweep added to the collection&#x27;</span>, index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>);
