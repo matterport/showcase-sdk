@@ -986,9 +986,30 @@ $('#toc').on('click', 'a', function() {
     
 
    <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> <br />
-We are deprecating the existing id scheme in favor of one that matches our platform and APIs.<br />
+We have deprecated the existing id scheme in favor of one that matches our platform and APIs.<br />
 If you have stored data including ids, we have added several functions to map between ids for <a href="docs/reference/current/modules/sweep.conversion.html">Sweeps</a>, <a href="docs/reference/current/modules/floor.conversion.html">Floors</a>, and <a href="docs/reference/current/modules/room.conversion.html">Rooms</a>. Adding the <code class="language-plaintext highlighter-rouge">&amp;useLegacyIds=0</code> URL parameter will change the id scheme in the aforementioned objects to the new id scheme.
 </div>
+
+<h2 id="2464">24.6.4</h2>
+
+<h5 id="june-26-2024">June 26, 2024</h5>
+
+<p><strong>General</strong></p>
+<ul>
+  <li>Unified dollhouse and floorplan are enabled by default:
+    <ul>
+      <li>Mouse interactions will be consistent between what was formerly “dollhouse” and “floorplan” mode, matching the “floorplan” mode behavior</li>
+      <li>For now, you can disable unified mode via the url param <code class="language-plaintext highlighter-rouge">disableUnifedMode=1</code>, though we recommend updating your applications as soon as possible</li>
+      <li>Note: the Mode.current observable will now fire on mouse interaction during the transition between modes to help preserve compatibility with existing applications</li>
+    </ul>
+  </li>
+  <li>Legacy IDs have been disabled by default. The following functions are available to convert old IDs to new IDs:
+    <ul>
+      <li>Conversion namespace is available for <a href="docs/reference/current/modules/sweep.conversion.html">Sweeps</a>, <a href="docs/reference/current/modules/floor.conversion.html">Floors</a>, and <a href="docs/reference/current/modules/room.conversion.html">Rooms</a>.</li>
+      <li>The url param <code class="language-plaintext highlighter-rouge">useLegacyIds=1</code> allows applications to continue using the old IDs, but we strongly recommend migrating ASAP</li>
+    </ul>
+  </li>
+</ul>
 
 <h2 id="2462">24.6.2</h2>
 
@@ -1995,7 +2016,7 @@ We are adding support for synchronous functions. These functions compute and ret
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jun 24, 2024 <br />
+ Site last generated: Jun 26, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
