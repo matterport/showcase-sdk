@@ -1277,7 +1277,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
   <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">buyAddOn</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
   </span><span class="n">unlockModelBundle</span><span class="p">(</span><span class="w">    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w">
-    </span><span class="n">bundleId</span><span class="p">:</span><span class="w"> </span><span class="s2">"cubicasa:floorplan"</span><span class="p">,</span><span class="w">
+    </span><span class="n">bundleId</span><span class="p">:</span><span class="w"> </span><span class="s2">"floorplan:schematic"</span><span class="p">,</span><span class="w">
     </span><span class="n">options</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">deliverySpeed</span><span class="p">:</span><span class="w"> </span><span class="n">normal</span><span class="w"> </span><span class="p">}</span><span class="w">
   </span><span class="p">){</span><span class="w">
     </span><span class="n">id</span><span class="w">
@@ -1294,7 +1294,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20buyAddOn(%24modelId%3A%20ID!)%7B%0A%20%20unlockModelBundle(%0A%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20bundleId%3A%20%22cubicasa%3Afloorplan%22%2C%0A%20%20%20%20options%3A%20%7B%20deliverySpeed%3A%20normal%20%7D%0A%20%20)%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20availability%0A%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=buyAddOn" target="\_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20buyAddOn(%24modelId%3A%20ID!)%7B%0A%20%20unlockModelBundle(%0A%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20bundleId%3A%20%22floorplan%3Aschematic%22%2C%0A%20%20%20%20options%3A%20%7B%20deliverySpeed%3A%20normal%20%7D%0A%20%20)%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20availability%0A%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=buyAddOn" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -1314,7 +1314,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getAddOn(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20bundle(id%3A%20%22cubicasa%3Afloorplan%22)%20%7B%0A%20%20%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getAddOn" target="\_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getAddOn(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20bundle(id%3A%20%22floorplan%3Aschematic%22)%20%7B%0A%20%20%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getAddOn" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -1488,7 +1488,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jul 1, 2024 <br />
+ Site last generated: Jul 4, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

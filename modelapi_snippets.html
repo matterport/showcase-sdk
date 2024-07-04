@@ -970,7 +970,13 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>If you would like an application to build collections of API queries for testing and generating code to use in your applications, we recommend using Postman and have these snippets available in <a href="modelapi_postman.html">a sample collection</a>.</p>
 
-<p>If you are needing assistance with building queries, refer to our <a href="https://api.matterport.com/model/docs/reference" target="_blank">API schema</a> or contact us at <a href="mailto:developer@matterport.com">developer@matterport.com</a></p>
+<h3 id="helpful-resources">Helpful Resources</h3>
+
+<ul>
+  <li><a href="https://api.matterport.com/model/docs/reference" target="_blank">Matterport Model API Schema</a></li>
+  <li><a href="https://graphql.org/learn/queries/" target="_blank">GraphQL Queries &amp; Mutations Guide</a></li>
+  <li><a href="mailto:developer@matterport.com">Matterport Developer Support</a></li>
+</ul>
 
 <h3 id="testing-in-sandbox-mode">Testing in Sandbox Mode</h3>
 
@@ -1736,11 +1742,10 @@ noResultsText: '<li><div>No results found.<div></li>',
   <summary>Toggle Model Visibility and Get Embed URL</summary>
 
   <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">toggleModelVisibility</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$visibility</span><span class="p">:</span><span class="w"> </span><span class="n">ModelVisibility</span><span class="p">!){</span><span class="w">
-  </span><span class="n">updateModelVisibility</span><span class="p">(</span><span class="w">
-    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w">
-    </span><span class="n">visibility</span><span class="p">:</span><span class="w"> </span><span class="nv">$visibility</span><span class="w">  </span><span class="c"># public or private</span><span class="w">
-  </span><span class="p">){</span><span class="w">
+  </span><span class="n">updateModelAccessVisibility</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w"> </span><span class="n">visibility</span><span class="p">:</span><span class="w"> </span><span class="nv">$visibility</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">id</span><span class="w">
+    </span><span class="n">accessVisibility</span><span class="w">
+    </span><span class="n">accessVisibilityLastChanged</span><span class="w">
     </span><span class="n">publication</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="n">published</span><span class="w">
       </span><span class="n">url</span><span class="w">
@@ -2123,6 +2128,49 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 </details>
 
+<h2 id="multiple-mutations-as-a-single-request">Multiple Mutations as a Single Request</h2>
+
+<p>GraphQL mutations send requests to our platform wherein a specific task is performed.  Some tasks include simple changes to database fields, while other requests such as unarchiving a model may involve multiple tasks on our platform.</p>
+
+<p>If an application needs to send multiple mutations, it may be critical that these mutations execute in a specific order to prevent race conditions.  For instance, if an automation is written whereby a model is set to unlisted and then a floorplan is purchased, if two mutations are sent, the floorplan purchase request may trigger first.  If the model state has not changed to ‘unlisted’, the request to purchase the floorplan will fail as models must be set to public or unlisted.</p>
+
+<p>[Learn more about using Multihttps://graphql.org/learn/queries/#multiple-fields-in-mutations</p>
+
+<details>
+  <summary>Activate a Model, Set it to Unlisted, Purchase a Floorplan</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">activateAndPurchase</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">updateModelState</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p">:</span><span class="w"> </span><span class="n">active</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">state</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="n">updateModelAccessVisibility</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w"> </span><span class="n">visibility</span><span class="p">:</span><span class="w"> </span><span class="n">public</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">accessVisibility</span><span class="w">
+    </span><span class="n">accessVisibilityLastChanged</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="n">unlockModelBundle</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w"> </span><span class="n">bundleId</span><span class="p">:</span><span class="w"> </span><span class="s2">"floorplan:schematic"</span><span class="p">,</span><span class="w">
+    </span><span class="n">options</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">deliverySpeed</span><span class="p">:</span><span class="w"> </span><span class="n">normal</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">){</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">description</span><span class="w">
+    </span><span class="n">availability</span><span class="w">
+    </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c"># variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20activateAndPurchase(%24modelId%3A%20ID!)%20%7B%0A%20%20updateModelState(id%3A%20%24modelId%2C%20state%3A%20active)%20%7B%0A%20%20%20%20id%0A%20%20%20%20state%0A%20%20%7D%0A%20%20updateModelAccessVisibility(id%3A%20%24modelId%2C%20visibility%3A%20public)%20%7B%0A%20%20%20%20id%0A%20%20%20%20accessVisibility%0A%20%20%20%20accessVisibilityLastChanged%0A%20%20%7D%0A%20%20unlockModelBundle(id%3A%20%24modelId%2C%20bundleId%3A%20%22floorplan%3Aschematic%22%2C%0A%20%20%20%20options%3A%20%7B%20deliverySpeed%3A%20normal%20%7D%0A%20%20)%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20availability%0A%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=activateAndPurchase" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
 <h2 id="ordering-add-ons">Ordering Add-Ons</h2>
 
 <p>For code snippets related to purchasing add-ons, please visit the <a href="modelapi_ordering_addons.html">Ordering Assets Page</a>.</p>
@@ -2143,7 +2191,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jul 1, 2024 <br />
+ Site last generated: Jul 4, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
