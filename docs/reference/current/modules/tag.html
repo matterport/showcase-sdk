@@ -1019,7 +1019,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/24.6.4_webgl-245-g7e4b22fe23/sdk.d.ts">24.6.4_webgl-245-g7e4b22fe23</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/24.7.4_webgl-333-ga0f4080144/sdk.d.ts">24.7.4_webgl-333-ga0f4080144</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1050,6 +1050,7 @@ $('#toc').on('click', 'a', function() {
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="tag.html#allowableactions" class="tsd-kind-icon">Allowable<wbr>Actions</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="tag.html#attachment" class="tsd-kind-icon">Attachment</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="tag.html#descriptor" class="tsd-kind-icon">Descriptor</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="tag.html#editpositiondescriptor" class="tsd-kind-icon">Edit<wbr>Position<wbr>Descriptor</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="tag.html#editableproperties" class="tsd-kind-icon">Editable<wbr>Properties</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="tag.html#globalvariablemap" class="tsd-kind-icon">Global<wbr>Variable<wbr>Map</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="tag.html#openoptions" class="tsd-kind-icon">Open<wbr>Options</a></li>
@@ -1082,6 +1083,7 @@ $('#toc').on('click', 'a', function() {
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#editicon" class="tsd-kind-icon">edit<wbr>Icon</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#editopacity" class="tsd-kind-icon">edit<wbr>Opacity</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#editposition" class="tsd-kind-icon">edit<wbr>Position</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#editpositions" class="tsd-kind-icon">edit<wbr>Positions</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#editstem" class="tsd-kind-icon">edit<wbr>Stem</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#open" class="tsd-kind-icon">open</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="tag.html#registerattachment" class="tsd-kind-icon">register<wbr>Attachment</a></li>
@@ -1218,6 +1220,24 @@ $('#toc').on('click', 'a', function() {
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> stem<wbr>Visible<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="editpositiondescriptor" class="tsd-anchor"></a>
+					<h3>Edit<wbr>Position<wbr>Descriptor</h3>
+					<div class="tsd-signature tsd-kind-icon">Edit<wbr>Position<wbr>Descriptor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="tag.html#positionoptions" class="tsd-signature-type">Tag.PositionOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -2198,6 +2218,73 @@ mpSdk.Tag.editPosition(tagId, {
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="editpositions" class="tsd-anchor"></a>
+					<h3>edit<wbr>Positions</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">edit<wbr>Positions<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>tags<span class="tsd-signature-symbol">: </span><a href="tag.html#editpositiondescriptor" class="tsd-signature-type">Tag.EditPositionDescriptor</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="tsd-lead">
+									<p>Move and reorient a list of Tags. Prefer to call this method once over calling <a href="tag.html#editposition">Tag.editPosition</a> multiple times.</p>
+								</div>
+								<pre><code>const newRoomId; <span class="hljs-comment">// precomputed room id</span>
+const tagId1, tagId2, tagId3; <span class="hljs-comment">// predetermined tag ids.</span>
+const tagIds: MpSdk.Tag.EditPositionDescriptor[] = []; <span class="hljs-comment">// an array of tag edit position descriptors</span>
+
+<span class="hljs-comment">// updates anchorPosition for tag1</span>
+tagIds.push({
+<span class="hljs-symbol">  id:</span> tag1,
+<span class="hljs-symbol">  options:</span> {
+<span class="hljs-symbol">    anchorPosition:</span> {
+<span class="hljs-symbol">      x:</span> <span class="hljs-number">0</span>,
+<span class="hljs-symbol">      y:</span> <span class="hljs-number">0</span>,
+<span class="hljs-symbol">      z:</span> <span class="hljs-number">0</span>,
+    },
+  },
+});
+
+<span class="hljs-comment">// updates roomId for tag2</span>
+tagIds.push({
+<span class="hljs-symbol">  id:</span> tag2,
+<span class="hljs-symbol">  options:</span> {
+<span class="hljs-symbol">    roomId:</span> newRoomId,
+  },
+});
+
+<span class="hljs-comment">// updates stemVector for tag3</span>
+tagIds.push({
+<span class="hljs-symbol">  id:</span> tag3,
+<span class="hljs-symbol">  options:</span> {
+<span class="hljs-symbol">    stemVector:</span> { <span class="hljs-comment">// make the Tag stick straight up and make it 0.30 meters (~1 foot) tall</span>
+<span class="hljs-symbol">      x:</span> <span class="hljs-number">0</span>,
+<span class="hljs-symbol">      y:</span> <span class="hljs-number">0.30</span>,
+<span class="hljs-symbol">      z:</span> <span class="hljs-number">0</span>,
+    },
+  },
+});
+
+<span class="hljs-comment">// apply bulk updates</span>
+await mpSdk.Tag.editPositions(...tagIds);
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>tags: <a href="tag.html#editpositiondescriptor" class="tsd-signature-type">Tag.EditPositionDescriptor</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The edit position descriptors for all Tags to be modified.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
 					<a name="editstem" class="tsd-anchor"></a>
 					<h3>edit<wbr>Stem</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
@@ -2747,6 +2834,9 @@ mpSdk.Tag.toggleSharing();
 						<a href="tag.html#descriptor" class="tsd-kind-icon">Descriptor</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="tag.html#editpositiondescriptor" class="tsd-kind-icon">Edit<wbr>Position<wbr>Descriptor</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="tag.html#editableproperties" class="tsd-kind-icon">Editable<wbr>Properties</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
@@ -2811,6 +2901,9 @@ mpSdk.Tag.toggleSharing();
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="tag.html#editposition" class="tsd-kind-icon">edit<wbr>Position</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="tag.html#editpositions" class="tsd-kind-icon">edit<wbr>Positions</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="tag.html#editstem" class="tsd-kind-icon">edit<wbr>Stem</a>
