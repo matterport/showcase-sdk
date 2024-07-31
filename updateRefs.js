@@ -2,14 +2,21 @@ const path = require('path');
 const fs = require('fs');
 const fetch = require('node-fetch');
 const decompress = require('decompress');
-const zlib = require('zlib');
 
 (async function updateRefence() {
-  const version = process.argv[2];
+  let version = process.argv[2];
 
   if (!version) {
     console.error('Error: version not specified');
     process.exit(1)
+  }
+
+  if (version === 'qa') {
+    version = await getVersionFromEnv('https://qa3-app.matterport.com')
+  }
+
+  if (version === 'prod') {
+    version = await getVersionFromEnv('https://my.matterport.com');
   }
 
   const tempDir = path.resolve('./temp');
@@ -44,3 +51,12 @@ const zlib = require('zlib');
   });
   fs.renameSync(tempDocsDir, referenceDir);
 })();
+
+async function getVersionFromEnv(env) {
+  const res = await fetch(env + '/api/v2/config/showcase_sdk_version');
+  const version = JSON.parse(await res.text());
+  if (typeof version !== 'string') {
+    throw Error('Couldn\'t parse version received ' + JSON.stringify(version));
+  }
+  return version;
+}
