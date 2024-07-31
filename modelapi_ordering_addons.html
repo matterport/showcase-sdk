@@ -992,14 +992,19 @@ noResultsText: '<li><div>No results found.<div></li>',
       <td>Schematic Floorplan (JPG, PNG, SVG)</td>
     </tr>
     <tr>
-      <td>e57 Point Cloud</td>
+      <td>e57 File</td>
       <td>mp:e57</td>
       <td>3D Imaging Point Cloud Files</td>
     </tr>
     <tr>
-      <td>BIM File</td>
+      <td>BIM File ¹</td>
       <td>bim:cad</td>
       <td>Building Information Modeling Files</td>
+    </tr>
+    <tr>
+      <td>CAD File</td>
+      <td>standard:cad</td>
+      <td>2D .DWG File for AutoDesk</td>
     </tr>
     <tr>
       <td>Trueplan</td>
@@ -1007,7 +1012,7 @@ noResultsText: '<li><div>No results found.<div></li>',
       <td>TruePlan™ Schematic for Xactimate</td>
     </tr>
     <tr>
-      <td>Advanced Imagery Page</td>
+      <td>Advanced Imagery Pack ²</td>
       <td>mp:imagery</td>
       <td>High Resolution Panorama Images</td>
     </tr>
@@ -1016,57 +1021,463 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>Pricing for Add-Ons may vary based on account type.  Please refer to our <a href="https://support.matterport.com/s/article/Matterport-Price-List?language=en_US&amp;categfilter=&amp;parentCategoryLabel=#additional-product---services" target="_blank">Price List</a>.</p>
 
-<p>The Advanced Imagery Pack is $99 and is only available for Business and Enterprise accounts.</p>
+<p>¹ BIM Files cannot be purchased via Model API at this time.</p>
 
-<h2 id="schematic-floorplan-ordering-options">Schematic Floorplan Ordering Options</h2>
+<p>² The Advanced Imagery Pack is $99 and is only available for Business and Enterprise accounts.</p>
 
-<p>Schematic Floorplans have additional options available when ordering.</p>
+<h2 id="ordering-options-updated-20240731">Ordering Options (Updated 2024.07.31)</h2>
+
+<p>In July 2024, we have introduced <em>availableOptions</em> to provide customers access to a complete list of options and deprecated <strong>supportedOptions</strong> which previously provided access to only <em>deliverySpeed</em> and <em>measurementUnits</em>.</p>
+
+<h3 id="schematic-floorplans-v20-options-updated-20240731">Schematic Floorplans v2.0 Options (Updated 2024.07.31)</h3>
 
 <table>
   <thead>
     <tr>
-      <th>Options</th>
+      <th>Option</th>
       <th>Value</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>deliverySpeed</td>
-      <td>normal</td>
-      <td>Delivered within 2 business days</td>
+      <td>color ¹</td>
+      <td><em>false</em> / true</td>
+      <td>True to include color in the floorplan</td>
     </tr>
     <tr>
-      <td>deliverySpeed</td>
+      <td>delivery_time</td>
+      <td><em>normal</em></td>
+      <td>Default: Delivered within 2 business days</td>
+    </tr>
+    <tr>
+      <td>delivery_time ¹</td>
       <td>fast</td>
       <td>Delivered within 1 business day</td>
     </tr>
     <tr>
-      <td>deliverySpeed</td>
+      <td>delivery_time ¹</td>
       <td>urgent</td>
       <td>Express delivery within 6 hours</td>
     </tr>
     <tr>
-      <td>measurementUnits</td>
-      <td>metric</td>
-      <td>Show dimensions in meters</td>
+      <td>furniture ¹</td>
+      <td><em>false</em> / true</td>
+      <td>True to include furniture in the floorplan</td>
     </tr>
     <tr>
-      <td>measurementUnits</td>
-      <td>imperial</td>
-      <td>Show dimensions in feet</td>
+      <td>hide_dimensions</td>
+      <td><em>false</em> / true</td>
+      <td>True to remove dimensions from all rooms on the floor plan.</td>
+    </tr>
+    <tr>
+      <td>hide_internal_area</td>
+      <td><em>false</em> / true</td>
+      <td>True to remove the total area from the bottom of the floor plan.</td>
+    </tr>
+    <tr>
+      <td>language</td>
+      <td>en / de / fr / es / it</td>
+      <td>The language of the floorplan</td>
+    </tr>
+    <tr>
+      <td>unit_type</td>
+      <td>imperial / metric / both</td>
+      <td>The displayed units of measure</td>
+    </tr>
+    <tr>
+      <td>use_custom_showcase_labels</td>
+      <td><em>false</em> / true</td>
+      <td>True to use the room labels created in Edit Mode</td>
+    </tr>
+    <tr>
+      <td>use_showcase_orientation</td>
+      <td><em>false</em> / true</td>
+      <td>True to use the orientation you see in Showcase (floor plan view) rather than a standardized orientation.</td>
+    </tr>
+    <tr>
+      <td>use_six_inch_wall_thickness</td>
+      <td><em>false</em> / true</td>
+      <td>True to use size inch wall thickness.</td>
+    </tr>
+    <tr>
+      <td>logo_attachment_id ²</td>
+      <td>[string]</td>
+      <td>The attachment ID to use as a logo</td>
     </tr>
   </tbody>
 </table>
 
-<p>Pricing for delivery speeds may vary based on account type.  Please refer to our <a href="https://support.matterport.com/s/article/Matterport-Price-List?language=en_US&amp;categfilter=&amp;parentCategoryLabel=#additional-product---services" target="_blank">Price List</a>.</p>
+<p>¹ Color, furniture and faster delivery times will increase the price of the schematic floorplan.</p>
+
+<p>² The logo attachment id is a unique key that can be derived from any attachment in your account including a logo that has been previously uploaded when ordering a floorplan.  You can right click and inspect the attachment in Matterport Cloud and find the attachment id within its filename ex:</p>
+
+<p>https://cdn-2.matterport.com/attachments/<strong>zpz97cykg9t9qnta2725e5n8b</strong>/BIM.png?t=2-2b61e1e732e4f7b65635ae905f1cf2ff122a1222-1722375200-1</p>
+
+<p>The ability to query and uploads attachments will be available via API soon.</p>
+
+<p><em>Example:</em></p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">purchaseFloorplan</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  </span><span class="n">unlockModelBundle</span><span class="p">(</span><span class="w">
+    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w">
+    </span><span class="n">bundleId</span><span class="p">:</span><span class="w"> </span><span class="s2">"floorplan:schematic"</span><span class="p">,</span><span class="w">
+    </span><span class="n">bundleOptions</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="n">key</span><span class="p">:</span><span class="s2">"delivery_time"</span><span class="w">
+         </span><span class="n">value</span><span class="p">:</span><span class="s2">"normal"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="n">key</span><span class="p">:</span><span class="s2">"furniture"</span><span class="w">
+        </span><span class="n">value</span><span class="p">:</span><span class="s2">"true"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">description</span><span class="w">
+    </span><span class="n">availability</span><span class="w">
+    </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="cad-file-options-updated-20240731">CAD File Options (Updated 2024.07.31)</h3>
+
+<p>As of the July 31, 2024 update, users can now use Model API to set options when ordering Standard CAD Files.  At this time, BIM files cannot be ordered via Model API.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>style</td>
+      <td>architecture</td>
+      <td>Standard</td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>mep</td>
+      <td>Include mechanical and electrical notations</td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>furnished</td>
+      <td>Furniture should be added where possible</td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>mep_furnished</td>
+      <td>Include both options</td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>industrial</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>unit_type</td>
+      <td>imperial / metric</td>
+      <td>Specify dimension units</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="query-available-add-ons">Query Available Add-Ons</h2>
 
 <p>To retrieve all possible add-ons that can be purchased, all existing purchases and all add-ons that are processing, you can use the following query:</p>
 
 <details>
-  <summary>List all available Add-Ons, Purchase Options and Existing Assets and Order Statuses</summary>
+  <summary>List all available Add-Ons on Ordering Options</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getAvailableBundleOptions</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">bundles</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">availability</span><span class="w">
+      </span><span class="n">availableOptions</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">description</span><span class="w">
+        </span><span class="n">key</span><span class="w">
+        </span><span class="n">values</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c"># variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"bundles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:matterpak"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availableOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:obj"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availableOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:obj-low-res"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availableOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:object-detection"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availableOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cubicasa:floorplan"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availableOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The color the floor plan should use represented as hex."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"color"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Target delivery time of the floor plan."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivery_time"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"True to remove dimensions from all rooms on the floor plan."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hide_dimensions"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"false"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"True to remove the total area from the bottom of the floor plan."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hide_internal_area"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"false"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The displayed units of measure."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unit_type"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"imperial"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"metric"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"both"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"True to use the room labels created in Workshop."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"use_custom_showcase_labels"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"false"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"True to use the orientation you see in Showcase (floor plan view) rather than a standardized orientation."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"use_showcase_orientation"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"false"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"True to use size inch wall thickness."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"use_six_inch_wall_thickness"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"false"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trueplan:schematic"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availableOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:imagery"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availableOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bim:cad"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availableOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The style of the BIM to be ordered. Standard is architecture, mep indicates mechanical and electrical notations should be added, furnished indicates that furniture should be added where possible."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"style"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"architecture"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"mep"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"furnished"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"mep_furnished"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"industrial"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The displayed units of measure."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unit_type"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"imperial"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"metric"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:e57"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availableOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"floorplan:schematic"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availableOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"True to include color in the floorplan"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"color"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"false"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Target delivery time of the floor plan."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delivery_time"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"normal"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"fast"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"urgent"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"True to include furniture in the floorplan"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"furniture"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"false"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"True to remove dimensions from all rooms on the floor plan."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hide_dimensions"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"false"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"True to remove the total area from the bottom of the floor plan."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hide_internal_area"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"false"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The language for the floorplan"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"language"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"de"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"fr"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"es"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"it"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The displayed units of measure."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unit_type"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"imperial"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"metric"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"both"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"True to use the room labels created in Workshop."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"use_custom_showcase_labels"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"false"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"True to use the orientation you see in Showcase (floor plan view) rather than a standardized orientation."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"use_showcase_orientation"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"false"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"True to use size inch wall thickness."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"use_six_inch_wall_thickness"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"false"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The attachment ID to use as a logo."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"logo_attachment_id"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard:cad"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availableOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The style of the CAD to be ordered. Standard is architecture, electrical indicates electrical notations should be added, furniture indicates that furniture should be added where possible."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"style"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"architecture"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"electrical"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"furniture"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"electrical-furniture"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The displayed units of measure."</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unit_type"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"imperial"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"metric"</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20GetAvailableOptions(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20bundles%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20availability%0A%20%20%20%20%20%20availableOptions%20%7B%0A%20%20%20%20%20%20%20%20description%0A%20%20%20%20%20%20%20%20key%0A%20%20%20%20%20%20%20%20values%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22JGPnGQ6hosj%22%0A%7D&amp;operationName=GetAvailableOptions" target="\_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<details>
+  <summary>List all available Add-Ons, Existing Assets, and Order Statuses</summary>
 
   <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getAddOns</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
    </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1075,10 +1486,6 @@ noResultsText: '<li><div>No results found.<div></li>',
         </span><span class="n">name</span><span class="w">
         </span><span class="n">description</span><span class="w">
         </span><span class="n">availability</span><span class="w">
-        </span><span class="n">supportedOptions</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="n">measurementUnits</span><span class="w">
-          </span><span class="n">deliverySpeeds</span><span class="w">
-        </span><span class="p">}</span><span class="w">
         </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="n">status</span><span class="w">
           </span><span class="n">filename</span><span class="w">
@@ -1111,72 +1518,205 @@ noResultsText: '<li><div>No results found.<div></li>',
     </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"bundles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:matterpak"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:matterpak"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matterpak"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order high resolution assets associated with the model."</span><span class="p">,</span><span class="w">
           </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp_matterpak_Southern-California-Luxury-Home_JGPnGQ6hosj.zip"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zip"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/1a56eedeff7d4a7481b961c009ae9236/assets/9fa4913fb6064e79adf33ce70afd7d2a.zip?t=2-314fd1c4eb4f15df8324d907d3f64e9ba666a142-1722370226-1&amp;download=mp_matterpak_Southern-California-Luxury-Home_JGPnGQ6hosj.zip&amp;k=models%2F1a56eedeff7d4a7481b961c009ae9236%2Fassets%2F9fa4913fb6064e79adf33ce70afd7d2a.zip"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-30T20:10:26Z"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"processing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"trueplan:schematic"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:obj"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Model Geometry"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order the model geometry files."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp_obj_Southern-California-Luxury-Home_JGPnGQ6hosj.zip"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"obj"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"processing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:obj-low-res"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Low Resolution Geometry"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order the lower resolution model geometry files."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp_obj-low-res_Southern-California-Luxury-Home_JGPnGQ6hosj.zip"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"obj"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"processing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:object-detection"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Object Detection"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order automated object detection model inferencing."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="nl">"processing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cubicasa:floorplan"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cubicasa Schematic Floorplan"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order an enhanced schematic floorplan"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp_floorplan_Southern-California-Luxury-Home_JGPnGQ6hosj.png"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"png"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/floorplans/JGPnGQ6hosj/floorplan_1_JGPnGQ6hosj.png?t=2-65d8c2b3c3c122a194ba45d1cbd97399837f1127-1722888326-1&amp;download=mp_floorplan_Southern-California-Luxury-Home_JGPnGQ6hosj.png&amp;k=floorplans%2FJGPnGQ6hosj%2Ffloorplan_1_JGPnGQ6hosj.png"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-30T20:10:26Z"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp_floorplan_Southern-California-Luxury-Home_JGPnGQ6hosj.zip"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zip"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/floorplans/JGPnGQ6hosj/floorplan_JGPnGQ6hosj.zip?t=2-61dbbbad003c40e21bd0f0afdc1ee1ae585b9f5c-1722888326-1&amp;download=mp_floorplan_Southern-California-Luxury-Home_JGPnGQ6hosj.zip&amp;k=floorplans%2FJGPnGQ6hosj%2Ffloorplan_JGPnGQ6hosj.zip"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-30T20:10:26Z"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp_floorplan_Southern-California-Luxury-Home_JGPnGQ6hosj.pdf"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pdf"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/floorplans/JGPnGQ6hosj/floorplan_JGPnGQ6hosj.pdf?t=2-40dab0b95ae819c9e6651d61b6f6e4c04d1bcce1-1722888326-1&amp;download=mp_floorplan_Southern-California-Luxury-Home_JGPnGQ6hosj.pdf&amp;k=floorplans%2FJGPnGQ6hosj%2Ffloorplan_JGPnGQ6hosj.pdf"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-30T20:10:26Z"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp_floorplan_Southern-California-Luxury-Home_JGPnGQ6hosj.png"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"png"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/floorplans/JGPnGQ6hosj/floorplan_2_JGPnGQ6hosj.png?t=2-ddaaea55b350a15f9a29fa7e3ac8ec75a82ef3bb-1722888326-1&amp;download=mp_floorplan_Southern-California-Luxury-Home_JGPnGQ6hosj.png&amp;k=floorplans%2FJGPnGQ6hosj%2Ffloorplan_2_JGPnGQ6hosj.png"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-30T20:10:26Z"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"processing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trueplan:schematic"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TruePlan™ Schematic"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order a TruePlan™ Schematic"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="nl">"processing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:imagery"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gsv:publish"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google Street View"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Publish to Google Street View"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="nl">"processing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"homeaway:publish"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vrbo - HomeAway"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create a 360 Tour for Vrbo and HomeAway"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="nl">"processing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:imagery"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Advanced Imagery Pack"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enables access to high resolution panoramic images"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="nl">"processing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"bim:cad"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bim:cad"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BIM"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Building Information Modeling Files"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="nl">"processing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:e57"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:e57"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e57 Point Cloud"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3D Imaging Point Cloud Files"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locked"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="nl">"processing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"floorplan:schematic"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"floorplan:schematic"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Schematic Floorplan"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order an enhanced schematic floorplan"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unlocked"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"supportedOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"measurementUnits"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"imperial"</span><span class="p">,</span><span class="w"> </span><span class="s2">"metric"</span><span class="p">],</span><span class="w">
-            </span><span class="nl">"deliverySpeeds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"normal"</span><span class="p">,</span><span class="w"> </span><span class="s2">"fast"</span><span class="p">,</span><span class="w"> </span><span class="s2">"urgent"</span><span class="p">]</span><span class="w">
+          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp_floorplan_Southern-California-Luxury-Home_JGPnGQ6hosj.png"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"png"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/floorplans/JGPnGQ6hosj/floorplan_1_JGPnGQ6hosj.png?t=2-65d8c2b3c3c122a194ba45d1cbd97399837f1127-1722888326-1&amp;download=mp_floorplan_Southern-California-Luxury-Home_JGPnGQ6hosj.png&amp;k=floorplans%2FJGPnGQ6hosj%2Ffloorplan_1_JGPnGQ6hosj.png"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-30T20:10:26Z"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp_floorplan_Southern-California-Luxury-Home_JGPnGQ6hosj.zip"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zip"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/floorplans/JGPnGQ6hosj/floorplan_JGPnGQ6hosj.zip?t=2-61dbbbad003c40e21bd0f0afdc1ee1ae585b9f5c-1722888326-1&amp;download=mp_floorplan_Southern-California-Luxury-Home_JGPnGQ6hosj.zip&amp;k=floorplans%2FJGPnGQ6hosj%2Ffloorplan_JGPnGQ6hosj.zip"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-30T20:10:26Z"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp_floorplan_Southern-California-Luxury-Home_JGPnGQ6hosj.pdf"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pdf"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/floorplans/JGPnGQ6hosj/floorplan_JGPnGQ6hosj.pdf?t=2-40dab0b95ae819c9e6651d61b6f6e4c04d1bcce1-1722888326-1&amp;download=mp_floorplan_Southern-California-Luxury-Home_JGPnGQ6hosj.pdf&amp;k=floorplans%2FJGPnGQ6hosj%2Ffloorplan_JGPnGQ6hosj.pdf"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-30T20:10:26Z"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp_floorplan_Southern-California-Luxury-Home_JGPnGQ6hosj.png"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"png"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/floorplans/JGPnGQ6hosj/floorplan_2_JGPnGQ6hosj.png?t=2-ddaaea55b350a15f9a29fa7e3ac8ec75a82ef3bb-1722888326-1&amp;download=mp_floorplan_Southern-California-Luxury-Home_JGPnGQ6hosj.png&amp;k=floorplans%2FJGPnGQ6hosj%2Ffloorplan_2_JGPnGQ6hosj.png"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-30T20:10:26Z"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"processing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"bundleId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"floorplan:schematic"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"organizationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2iCSnonRVVz"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-02T04:26:49Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"failureCode"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"failureReason"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
           </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standard:cad"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Standard CAD"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order a Standard CAD"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="nl">"processing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
+     </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getAddOns(%24modelId%3A%20ID!)%20%7B%0A%20%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20%20%20bundles%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20description%0A%20%20%20%20%20%20%20%20availability%0A%20%20%20%20%20%20%20%20supportedOptions%20%7B%0A%20%20%20%20%20%20%20%20%20%20measurementUnits%0A%20%20%20%20%20%20%20%20%20%20deliverySpeeds%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20assets%20%7B%0A%20%20%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20%20%20%20filename%0A%20%20%20%20%20%20%20%20%20%20format%0A%20%20%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20%20%20validUntil%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20processing%20%7B%0A%20%20%20%20%20%20%20%20%20%20bundleId%0A%20%20%20%20%20%20%20%20%20%20organizationId%0A%20%20%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20%20%20%20lastModified%0A%20%20%20%20%20%20%20%20%20%20failureCode%0A%20%20%20%20%20%20%20%20%20%20failureReason%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22JGPnGQ6hosj%22%0A%7D&amp;operationName=getAddOns" target="\_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getAddOns(%24modelId%3A%20ID!)%20%7B%0A%20%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20%20%20bundles%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20description%0A%20%20%20%20%20%20%20%20availability%0A%20%20%20%20%20%20%20%20assets%20%7B%0A%20%20%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20%20%20%20filename%0A%20%20%20%20%20%20%20%20%20%20format%0A%20%20%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20%20%20validUntil%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20processing%20%7B%0A%20%20%20%20%20%20%20%20%20%20bundleId%0A%20%20%20%20%20%20%20%20%20%20organizationId%0A%20%20%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%20%20%20%20lastModified%0A%20%20%20%20%20%20%20%20%20%20failureCode%0A%20%20%20%20%20%20%20%20%20%20failureReason%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22JGPnGQ6hosj%22%0A%7D" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -1191,10 +1731,10 @@ noResultsText: '<li><div>No results found.<div></li>',
     </span><span class="n">bundleId</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp:matterpak"</span><span class="w">
   </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">id</span><span class="w">
-  </span><span class="n">name</span><span class="w">
-  </span><span class="n">description</span><span class="w">
-  </span><span class="n">availability</span><span class="w">
-  </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">description</span><span class="w">
+    </span><span class="n">availability</span><span class="w">
+    </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
@@ -1251,8 +1791,10 @@ noResultsText: '<li><div>No results found.<div></li>',
       </span><span class="n">name</span><span class="w">
       </span><span class="n">description</span><span class="w">
       </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="n">asset</span><span class="w"> </span><span class="p">}</span><span class="w">
-      </span><span class="n">supportedOptions</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="n">deliverySpeeds</span><span class="w">
+      </span><span class="n">availableOptions</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">description</span><span class="w">
+        </span><span class="n">key</span><span class="w">
+        </span><span class="n">values</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -1264,7 +1806,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=fragment%20asset%20on%20Asset%7B%0A%20%20id%0A%20%20url%0A%20%20validUntil%0A%20%20format%0A%20%20filename%0A%20%20status%0A%7D%0A%0Aquery%20getBundleAssets(%24modelId%3A%20ID!)%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20bundles%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20availability%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20description%0A%20%20%20%20%20%20assets%20%7B%20...asset%20%7D%0A%20%20%20%20%20%20supportedOptions%20%7B%0A%20%20%20%20%20%20%20%20deliverySpeeds%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getBundleAssets" target="\_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=fragment%20asset%20on%20Asset%7B%0A%20%20id%0A%20%20url%0A%20%20validUntil%0A%20%20format%0A%20%20filename%0A%20%20status%0A%7D%0A%0Aquery%20getBundleAssets(%24modelId%3A%20ID!)%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20bundles%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20availability%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20description%0A%20%20%20%20%20%20assets%20%7B%20...asset%20%7D%0A%20%20%20%20%20%20availableOptions%20%7B%0A%20%20%20%20%20%20%20%20description%0A%20%20%20%20%20%20%20%20key%0A%20%20%20%20%20%20%20%20values%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getBundleAssets" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
@@ -1278,7 +1820,12 @@ noResultsText: '<li><div>No results found.<div></li>',
   <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">buyAddOn</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
   </span><span class="n">unlockModelBundle</span><span class="p">(</span><span class="w">    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w">
     </span><span class="n">bundleId</span><span class="p">:</span><span class="w"> </span><span class="s2">"floorplan:schematic"</span><span class="p">,</span><span class="w">
-    </span><span class="n">options</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">deliverySpeed</span><span class="p">:</span><span class="w"> </span><span class="n">normal</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="n">bundleOptions</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="n">key</span><span class="p">:</span><span class="s2">"delivery_time"</span><span class="w">
+         </span><span class="n">value</span><span class="p">:</span><span class="s2">"normal"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">){</span><span class="w">
     </span><span class="n">id</span><span class="w">
     </span><span class="n">name</span><span class="w">
@@ -1294,7 +1841,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20buyAddOn(%24modelId%3A%20ID!)%7B%0A%20%20unlockModelBundle(%0A%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20bundleId%3A%20%22floorplan%3Aschematic%22%2C%0A%20%20%20%20options%3A%20%7B%20deliverySpeed%3A%20normal%20%7D%0A%20%20)%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20availability%0A%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=buyAddOn" target="\_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20buyAddOn(%24modelId%3A%20ID!)%7B%0A%20%20unlockModelBundle(%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20bundleId%3A%20%22floorplan%3Aschematic%22%2C%0A%20%20%20%20bundleOptions%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20key%3A%22delivery_time%22%0A%20%20%20%20%20%20%20%20%20value%3A%22normal%22%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%5D%0A%20%20)%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20description%0A%20%20%20%20availability%0A%20%20%20%20assets%20%7B%20url%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D" target="\_blank">Try this query in our interactive console</a></p>
 
 </details>
 
