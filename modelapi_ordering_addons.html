@@ -1027,7 +1027,9 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <h2 id="ordering-options-updated-20240731">Ordering Options (Updated 2024.07.31)</h2>
 
-<p>In July 2024, we have introduced <em>availableOptions</em> to provide customers access to a complete list of options and deprecated <strong>supportedOptions</strong> which previously provided access to only <em>deliverySpeed</em> and <em>measurementUnits</em>.</p>
+<p>We have introduced the <em>availableOptions</em> field to bundles queries and the <em>bundleOptions</em> parameter in the <em>unlockModelBundle</em> mutation – replacing <em>supportedOptions</em> and <em>options</em> respectively.</p>
+
+<p>Customers now have access to a complete list of ordering options on add-on bundles, whereas previously only  <em>deliverySpeed</em> and <em>measurementUnits</em> were available.</p>
 
 <h3 id="schematic-floorplans-v20-options-updated-20240731">Schematic Floorplans v2.0 Options (Updated 2024.07.31)</h3>
 
@@ -1143,6 +1145,42 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span></code></pre></div></div>
 
 <h3 id="cad-file-options-updated-20240731">CAD File Options (Updated 2024.07.31)</h3>
+
+<p>=======</p>
+
+<p>² The logo attachment id is a unique key that can be derived from any attachment in your account including a logo that has been previously uploaded when ordering a floorplan.  You can right click and inspect the attachment in Matterport Cloud and find the attachment id within its filename ex:</p>
+
+<p>https://cdn-2.matterport.com/attachments/<strong>zpz97cykg9t9qnta2725e5n8b</strong>/BIM.png?t=2-2b61e1e732e4f7b65635ae905f1cf2ff122a1222-1722375200-1</p>
+
+<p>The ability to query and uploads attachments will be available via API soon.</p>
+
+<p><em>Example:</em></p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">purchaseFloorplan</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  </span><span class="n">unlockModelBundle</span><span class="p">(</span><span class="w">
+    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w">
+    </span><span class="n">bundleId</span><span class="p">:</span><span class="w"> </span><span class="s2">"floorplan:schematic"</span><span class="p">,</span><span class="w">
+    </span><span class="n">bundleOptions</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="n">key</span><span class="p">:</span><span class="s2">"delivery_time"</span><span class="w">
+         </span><span class="n">value</span><span class="p">:</span><span class="s2">"normal"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="n">key</span><span class="p">:</span><span class="s2">"furniture"</span><span class="w">
+        </span><span class="n">value</span><span class="p">:</span><span class="s2">"true"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">description</span><span class="w">
+    </span><span class="n">availability</span><span class="w">
+    </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="cad-file-options-updated-20240731-1">CAD File Options (Updated 2024.07.31)</h3>
 
 <p>As of the July 31, 2024 update, users can now use Model API to set options when ordering Standard CAD Files.  At this time, BIM files cannot be ordered via Model API.</p>
 
@@ -2035,7 +2073,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jul 31, 2024 <br />
+ Site last generated: Aug 5, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
