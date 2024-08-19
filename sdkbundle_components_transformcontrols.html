@@ -1003,7 +1003,7 @@ $('#toc').on('click', 'a', function() {
     </tr>
     <tr>
       <td style="text-align: left"><strong>selection</strong>: ISceneNode or null <br />default <code class="language-plaintext highlighter-rouge">null</code></td>
-      <td>The three.js object being controlled by this component.</td>
+      <td>The node being controlled by this component.</td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>showX</strong>: boolean<br />default <code class="language-plaintext highlighter-rouge">true</code></td>
@@ -1044,14 +1044,14 @@ $('#toc').on('click', 'a', function() {
 
 <span class="c1">// Create a scene node with a transform control component.</span>
 <span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">myControl</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.transformControls</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">myControl</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.transformControls</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">translate</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">});</span>
 <span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 
 <span class="c1">// Attach the model to the transform control</span>
 <span class="nx">myControl</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">selection</span> <span class="o">=</span> <span class="nx">modelNode</span><span class="p">;</span>
 
-<span class="c1">// set 'translate' mode to position the selection.</span>
-<span class="nx">myControl</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">mode</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">translate</span><span class="dl">'</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p align="center">
@@ -1074,7 +1074,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Aug 5, 2024 <br />
+ Site last generated: Aug 19, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
