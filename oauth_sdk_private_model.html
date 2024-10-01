@@ -977,9 +977,9 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 
 <h2 id="input-the-token-using-the-showcase-sdk">Input the Token Using the Showcase SDK</h2>
 
-<p>The token can also be supplied to Showcase using our SDK bundle. This cannot be done with the Embed SDK.</p>
+<p>The token can also be supplied to Showcase via our SDK. The method used is identical for the Embed SDK with the exception of initial SDK setup (see <a href="sdk_quickstart">Embed SDK Quickstart</a>). For this example, we will be using the Showcase Bundle SDK.</p>
 
-<p>First, download the latest bundle and add the bundle SDK to your page:</p>
+<p>First, download the latest Showcase Bundle and add it to your page:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">id=</span><span class="s">"showcase-player"</span> <span class="na">width=</span><span class="s">"853"</span> <span class="na">height=</span><span class="s">"480"</span> <span class="na">src=</span><span class="s">"http://my.matterport.com/show/?m=&lt;modelId&gt;&amp;applicationKey=&lt;key&gt;"</span> <span class="na">frameborder=</span><span class="s">"0"</span> <span class="na">allowfullscreen</span> <span class="na">allow=</span><span class="s">'xr-spatial-tracking'</span> <span class="na">style=</span><span class="s">"width: 100%;"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
 </code></pre></div></div>
@@ -987,7 +987,7 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 <p>Next, pass the authentication token to the SDK:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">).</span><span class="nx">contentWindow</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">bundleSdk</span> <span class="o">=</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">;</span> 
+<span class="kd">const</span> <span class="nx">bundleSdk</span> <span class="o">=</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">;</span>
 <span class="nx">bundleSdk</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="p">{</span>
    <span class="na">auth</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">token</span><span class="o">&gt;</span><span class="p">,</span>
 <span class="p">});</span>
@@ -1010,7 +1010,7 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 <p>Then attach that fetcher to an instance of an ITokenRefresher.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="kd">const</span> <span class="nx">refresher</span> <span class="o">=</span> <span class="nx">bundleSdk</span><span class="p">.</span><span class="nx">OAuth</span><span class="p">.</span><span class="nx">createTokenRefresher</span><span class="p">({</span> 
+<span class="kd">const</span> <span class="nx">refresher</span> <span class="o">=</span> <span class="nx">bundleSdk</span><span class="p">.</span><span class="nx">OAuth</span><span class="p">.</span><span class="nx">createTokenRefresher</span><span class="p">({</span>
    <span class="na">access_token</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">token</span><span class="o">&gt;</span><span class="p">,</span>
    <span class="na">expires_in</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span>
 <span class="p">},</span> <span class="nx">fetcher</span><span class="p">);</span>
@@ -1044,8 +1044,8 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">authWindow</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
      <span class="c1">// validate that we received a message from a known source</span>
      <span class="k">if</span> <span class="p">(</span>
-          <span class="nx">msg</span><span class="p">.</span><span class="nx">source</span> <span class="o">===</span> <span class="nx">authWindow</span> <span class="o">&amp;&amp;</span> 
-          <span class="nx">safeOrigins</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">origin</span><span class="p">)</span> <span class="o">&amp;&amp;</span> 
+          <span class="nx">msg</span><span class="p">.</span><span class="nx">source</span> <span class="o">===</span> <span class="nx">authWindow</span> <span class="o">&amp;&amp;</span>
+          <span class="nx">safeOrigins</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">origin</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
           <span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">auth_model</span><span class="dl">'</span>
      <span class="p">)</span> <span class="p">{</span>
        <span class="c1">// cleanup a bit: remove the message listener, and close the auth window</span>
@@ -1067,7 +1067,7 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
     <span class="p">}</span>
   <span class="p">}</span>
   <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="nx">onAuthMessage</span><span class="p">);</span>
-     
+
   <span class="c1">// open a window to start the user down the OAuth flow</span>
   <span class="kd">const</span> <span class="nx">authWindow</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span>
     <span class="dl">'</span><span class="s1">https://authn.matterport.com/oauth/authorize?client_id=&lt;client_id&gt;&amp;response_type=code&amp;scope=ViewDetails</span><span class="dl">'</span><span class="p">,</span>
@@ -1091,7 +1091,7 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
    <span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nx">showcaseElement</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">;</span>
    <span class="kd">const</span> <span class="nx">bundleConnector</span> <span class="o">=</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">;</span>
    <span class="k">return</span> <span class="nx">bundleConnector</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
-<span class="p">}</span>  
+<span class="p">}</span>
 </code></pre></div></div>
 
 <p>The redirect makes use of the Model Selector and an access_token available in the URL (available at https://authn.matterport.com/model-select).</p>
@@ -1104,13 +1104,13 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
          <span class="c1">// get the authorization_code out of the current URL</span>
          <span class="kd">const</span> <span class="nx">urlParams</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
          <span class="kd">const</span> <span class="nx">auth_code</span> <span class="o">=</span> <span class="nx">urlParams</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">code</span><span class="dl">'</span><span class="p">);</span>
- 
-         <span class="c1">// Use the authorization_code with your server side script </span>
+
+         <span class="c1">// Use the authorization_code with your server side script</span>
          <span class="c1">// to fetch an access_token using your OAuth Client Credentials</span>
          <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://path/to/server/token/?code=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">auth_code</span><span class="p">);</span>
          <span class="kd">const</span> <span class="nx">responseJson</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
          <span class="kd">const</span> <span class="nx">oauthToken</span> <span class="o">=</span> <span class="nx">responseJson</span><span class="p">.</span><span class="nx">access_token</span><span class="p">;</span>
- 
+
          <span class="c1">// set the src of the IFrame (with the oauthToken) to start the model selector</span>
          <span class="nx">modelSelector</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://authn.matterport.com/model-select?oauthToken=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">oauthToken</span><span class="p">;</span>
          <span class="c1">// wait for the iframe to message us back</span>
@@ -1135,6 +1135,34 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
  <span class="nt">&lt;/script&gt;</span>
 </code></pre></div></div>
 
+<h3 id="differneces-with-the-embed-sdk">Differneces with the Embed SDK</h3>
+
+<p>While using OAuth in Embed SDK applications is identical to the Showcase Bundle SDK, initial setup of the SDK has very slight differences.</p>
+
+<p>SDK bootstrap v3.0.0 (es6 version) must be included.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="kd">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">importmap</span><span class="dl">"</span><span class="o">&gt;</span>
+<span class="p">{</span>
+   <span class="dl">"</span><span class="s2">imports</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">MP_SDK</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://static.matterport.com/showcase-sdk/bootstrap/3.0.0-0-g0517b8d76c/sdk.es6.js</span><span class="dl">"</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>The connect function takes an Iframe element, not a window.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="kd">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">module</span><span class="dl">"</span><span class="o">&gt;</span>
+   <span class="k">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">MP_SDK</span><span class="dl">"</span><span class="p">;</span>
+
+   <span class="kd">const</span> <span class="nx">showcaseElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
+   <span class="c1">// connect the SDK</span>
+   <span class="k">async</span> <span class="kd">function</span> <span class="nx">connectSdk</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>Otherwise, the Embed SDK takes the same <code class="language-plaintext highlighter-rouge">options</code> argument as the Showcase Bundle and supports the same OAuth APIs.</p>
+
 <h2 id="breakdown">Breakdown</h2>
 
 <p>This section will dive a bit deeper into specific code needed for OAuth and the flow in which events propagate.</p>
@@ -1152,7 +1180,7 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
       <span class="dl">'</span><span class="s1">sdk auth</span><span class="dl">'</span><span class="p">,</span>
       <span class="dl">'</span><span class="s1">width=800,height=800</span><span class="dl">'</span>
    <span class="p">);</span>
-<span class="p">});</span>  
+<span class="p">});</span>
 </code></pre></div></div>
 
 <p>Here, we’re opening a window with the initial OAuth page and saving the window reference for validation later. The <strong><code class="language-plaintext highlighter-rouge">client_id</code></strong> will need to be provided.</p>
@@ -1224,7 +1252,7 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
       <span class="nb">window</span><span class="p">.</span><span class="nx">opener</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span>
          <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">auth_model</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// help distinguish this event from others</span>
          <span class="nx">modelId</span><span class="p">,</span>
-         <span class="na">token</span><span class="p">:</span> <span class="nx">oauthToken</span><span class="p">,</span> 
+         <span class="na">token</span><span class="p">:</span> <span class="nx">oauthToken</span><span class="p">,</span>
       <span class="p">},</span> <span class="dl">'</span><span class="s1">*</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// TODO: specify the receiver's domain to reduce the exposure of the event</span>
    <span class="p">}</span>
 <span class="p">});</span>
@@ -1266,7 +1294,7 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 <p>The last step is to use the token and Model ID in Showcase. Once you have the model ID, Showcase can be started. The token can be passed into Showcase as an option when connecting the SDK.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nx">showcaseElement</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">bundleConnector</span> <span class="o">=</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">;</span> 
+<span class="kd">const</span> <span class="nx">bundleConnector</span> <span class="o">=</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">;</span>
 <span class="nx">bundleConnector</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="p">{</span>
    <span class="na">auth</span><span class="p">:</span> <span class="nx">token</span>
 <span class="p">});</span>
@@ -1291,7 +1319,7 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Aug 22, 2024 <br />
+ Site last generated: Oct 1, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

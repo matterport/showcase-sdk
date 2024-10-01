@@ -1034,7 +1034,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/24.8.3_webgl-367-g82db35fc8e/sdk.d.ts">24.8.3_webgl-367-g82db35fc8e</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=24.9.4_webgl-491-gcf7d90b893">24.9.4_webgl-491-gcf7d90b893</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1062,7 +1062,8 @@ $('#toc').on('click', 'a', function() {
 					<a name="connect" class="tsd-anchor"></a>
 					<h3>connect</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">connect<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">: </span><a href="../index.html#showcasebundlewindow" class="tsd-signature-type">ShowcaseBundleWindow</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ConnectOptions</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../index.html#mpsdk" class="tsd-signature-type">MpSdk</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">connect<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">: </span><a href="../index.html#showcasebundlewindow" class="tsd-signature-type">ShowcaseBundleWindow</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../index.html#connectoptions" class="tsd-signature-type">ConnectOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../index.html#mpsdk" class="tsd-signature-type">MpSdk</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">connect<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLIFrameElement</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../index.html#connectoptions" class="tsd-signature-type">ConnectOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../index.html#mpsdk" class="tsd-signature-type">MpSdk</a><span class="tsd-signature-symbol">&gt;</span></li>
 						<li class="tsd-signature tsd-kind-icon">connect<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLIFrameElement</span>, applicationKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, unused<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;&quot;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../index.html#mpsdk" class="tsd-signature-type">MpSdk</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -1076,7 +1077,7 @@ $('#toc').on('click', 'a', function() {
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="tsd-lead">
-									<p>Connect to the Bundle SDK and and create an <a href="../index.html#mpsdk">MpSdk</a> interface.</p>
+									<p>Connect to the Bundle SDK and create an <a href="../index.html#mpsdk">MpSdk</a> interface.</p>
 								</div>
 								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> bundleIframe = <span class="hljs-built_in">document</span>.getElementById&lt;HTMLIFrameElement&gt;(<span class="hljs-string">&#x27;showcase&#x27;</span>);
 <span class="hljs-keyword">const</span> showcaseWindow = bundleIframe.contentWindow <span class="hljs-keyword">as</span> ShowcaseBundleWindow;
@@ -1088,10 +1089,14 @@ showcaseWindow.MP_SDK.connect(showcaseWindow);
 								<li>
 									<h5>target: <a href="../index.html#showcasebundlewindow" class="tsd-signature-type">ShowcaseBundleWindow</a></h5>
 									<div class="tsd-comment tsd-typography">
+										<p>The window that Showcase was opened within. Can be the <code>contentWindow</code> of an <code>iframe</code></p>
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ConnectOptions</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../index.html#connectoptions" class="tsd-signature-type">ConnectOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Additional, optional options to include while connect like auth tokens</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../index.html#mpsdk" class="tsd-signature-type">MpSdk</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1106,11 +1111,45 @@ showcaseWindow.MP_SDK.connect(showcaseWindow);
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="tsd-lead">
-									<p>Connect to the Embed SDK and and create an <a href="../index.html#mpsdk">MpSdk</a> interface.</p>
+									<p>Connect to the Embed SDK and create an <a href="../index.html#mpsdk">MpSdk</a> interface.</p>
 								</div>
 								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> showcaseIframe = <span class="hljs-built_in">document</span>.getElementById&lt;HTMLIFrameElement&gt;(<span class="hljs-string">&#x27;showcase&#x27;</span>);
-<span class="hljs-keyword">const</span> showcaseWindow = <span class="hljs-built_in">window</span> <span class="hljs-keyword">as</span> ShowcaseEmbedWindow;
-showcaseWindow.MP_SDK.connect(showcaseIframe, <span class="hljs-string">`<span class="hljs-subst">${APPLICATION_KEY}</span>, &#x27;&#x27;);</span>
+<span class="hljs-keyword">const</span> embeddingWindow = <span class="hljs-built_in">window</span> <span class="hljs-keyword">as</span> ShowcaseEmbedWindow;
+embeddingWindow.MP_SDK.connect(showcaseIframe);
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>target: <span class="tsd-signature-type">HTMLIFrameElement</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The iframe of the embedded Showcase</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../index.html#connectoptions" class="tsd-signature-type">ConnectOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Additional, optional options to include while connect like auth tokens</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../index.html#mpsdk" class="tsd-signature-type">MpSdk</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-embed tsd-tag-sdk-type">embed</dt>
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
+							</dl>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="tsd-lead">
+									<p>Connect to the Embed SDK and create an <a href="../index.html#mpsdk">MpSdk</a> interface.</p>
+								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> showcaseIframe = <span class="hljs-built_in">document</span>.getElementById&lt;HTMLIFrameElement&gt;(<span class="hljs-string">&#x27;showcase&#x27;</span>);
+<span class="hljs-keyword">const</span> embeddingWindow = <span class="hljs-built_in">window</span> <span class="hljs-keyword">as</span> ShowcaseEmbedWindow;
+embeddingWindow.MP_SDK.connect(showcaseIframe, <span class="hljs-string">`<span class="hljs-subst">${APPLICATION_KEY}</span>, &#x27;&#x27;);</span>
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1181,7 +1220,7 @@ showcaseWindow.MP_SDK.connect(showcaseIframe, <span class="hljs-string">`<span c
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Aug 22, 2024 <br />
+ Site last generated: Oct 1, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

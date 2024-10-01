@@ -180,6 +180,17 @@
 
 
 {
+"title": "Enumeration: App.Feature",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docs/reference/current/enums/app.feature.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Namespace: App",
 "tags": "",
 "keywords": "",
@@ -502,8 +513,6 @@
 
 
 
-
-
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -512,6 +521,8 @@
 "summary": ""
 }
 ,
+
+
 
 
 

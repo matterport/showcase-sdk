@@ -991,11 +991,17 @@ $('#toc').on('click', 'a', function() {
 
 <p>This sample HTML creates an iframe containing a Matterport model. It then connects the Embed SDK, retrieves data about the model, and finally logs the model’s id.</p>
 
-<p>You only need to replace the <strong>two</strong> <code class="language-plaintext highlighter-rouge">[YOUR_SDK_KEY_HERE]</code> strings with your own key (without the square brackets “[”, “]”).</p>
+<p>You only need to replace the <code class="language-plaintext highlighter-rouge">[YOUR_SDK_KEY_HERE]</code> string in the iframe’s “src” with your own key.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">'https://static.matterport.com/showcase-sdk/latest.js'</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"importmap"</span><span class="nt">&gt;</span>
+    <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">imports</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">MP_SDK</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://static.matterport.com/showcase-sdk/bootstrap/3.0.0-0-g0517b8d76c/sdk.es6.js</span><span class="dl">"</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="nt">&lt;/script&gt;</span>
   <span class="nt">&lt;/head&gt;</span>
   <span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;iframe</span>
@@ -1003,22 +1009,17 @@ $('#toc').on('click', 'a', function() {
       <span class="na">height=</span><span class="s">"480"</span>
       <span class="na">src=</span><span class="s">"https://my.matterport.com/show?m=SxQL3iGyoDo&amp;play=1&amp;applicationKey=[YOUR_SDK_KEY_HERE]"</span>
       <span class="na">frameborder=</span><span class="s">"0"</span>
-      <span class="na">allowfullscreen</span>
-      <span class="na">allow=</span><span class="s">"xr-spatial-tracking"</span>
+      <span class="na">allow=</span><span class="s">"fullscreen *"</span>
       <span class="na">id=</span><span class="s">"showcase-iframe"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;/iframe&gt;</span>
-    <span class="nt">&lt;script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
+      <span class="k">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">MP_SDK</span><span class="dl">'</span><span class="p">;</span>
       <span class="p">(</span><span class="k">async</span> <span class="kd">function</span> <span class="nx">connectSdk</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">sdkKey</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">[YOUR_SDK_KEY_HERE]</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// TODO: replace with your sdk key</span>
         <span class="kd">const</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase-iframe</span><span class="dl">'</span><span class="p">);</span>
 
         <span class="c1">// connect the sdk; log an error and stop if there were any connection issues</span>
         <span class="k">try</span> <span class="p">{</span>
-          <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span>
-            <span class="nx">iframe</span><span class="p">,</span> <span class="c1">// Obtained earlier</span>
-            <span class="nx">sdkKey</span><span class="p">,</span> <span class="c1">// Your SDK key</span>
-            <span class="dl">''</span> <span class="c1">// Unused but needs to be a valid string</span>
-          <span class="p">);</span>
+          <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">iframe</span><span class="p">);</span>
           <span class="nx">onShowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">);</span>
         <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
           <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
@@ -1057,7 +1058,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Aug 22, 2024 <br />
+ Site last generated: Oct 1, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

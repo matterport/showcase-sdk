@@ -1004,7 +1004,7 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="updates">Updates</h2>
 
-<p>Latest Embed SDK update: Aug 21, 2024<br />
+<p>Latest Embed SDK update: Sept 30, 2024<br />
 See the <a href="sdk_changelog.html">change log</a></p>
 
 <h2 id="script-support"><code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> support</h2>
@@ -1015,12 +1015,16 @@ See the <a href="sdk_changelog.html">change log</a></p>
 
 <p>First, add the 3D Showcase SDK to your web application by including the Javascript library. This line goes in the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> tag with your other includes.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">'</span><span class="s1">https://static.matterport.com/showcase-sdk/latest.js</span><span class="dl">'</span><span class="o">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+<span class="p">{</span>
+  <span class="dl">"</span><span class="s2">imports</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">MP_SDK</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://static.matterport.com/showcase-sdk/bootstrap/3.0.0-0-g0517b8d76c/sdk.es6.js</span><span class="dl">"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
 </code></pre></div></div>
 
 <p>Next, embed a Matterport Space on your web page with an <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> tag. <a href="https://support.matterport.com/hc/en-us/articles/115004549347-Embed-a-Space-with-an-iframe-">Learn more about embedding</a>.</p>
-
-<p>Add the <strong>&amp;play=1</strong> URL parameter to automatically load the <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> when the page loads for a better user experience.</p>
 
 <p>Add the <strong>applicationKey=[YOUR SDK_KEY]</strong> URL parameter to provide your sdk key as part of the url.</p>
 
@@ -1044,15 +1048,13 @@ See the <a href="sdk_changelog.html">change log</a></p>
 
 <p>Replace the <strong>[YOUR_SDK_KEY_HERE]</strong> string with your sdk key.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase-iframe</span><span class="dl">'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">MP_SDK</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase-iframe</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="c1">// connect the sdk; log an error and stop if there were any connection issues</span>
 <span class="k">try</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span>
-    <span class="nx">iframe</span><span class="p">,</span> <span class="c1">// Obtained earlier</span>
-    <span class="dl">'</span><span class="s1">[YOUR_SDK_KEY_HERE]</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// Your SDK key</span>
-    <span class="dl">''</span> <span class="c1">// Unused but needs to be a valid string</span>
-  <span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">iframe</span><span class="p">);</span>
   <span class="nx">onShowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
@@ -1085,6 +1087,17 @@ See the <a href="sdk_changelog.html">change log</a></p>
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Visit <a href="https://support.matterport.com/hc/en-us/articles/360057506813-Developer-Tools-Pricing-and-Availability#sandbox-vs-production-access-0-0">Sandbox vs. Production Access</a> to learn more about developer tools access restrictions.</div>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> For local development, you’ll need to run your app off a local web server. We recommend using a NodeJS server.</div>
+
+<h3 id="legacy-windowmp_sdk-support">Legacy window.MP_SDK Support</h3>
+
+<p>Previous versions of the SDK set up a <code class="language-plaintext highlighter-rouge">window.MP_SDK</code> object with a <code class="language-plaintext highlighter-rouge">connect</code> function. To continue using this same connect method, use the non-ES6 version.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://static.matterport.com/showcase-sdk/bootstrap/3.0.0-0-g0517b8d76c/sdk.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">iframe</span><span class="p">,</span> <span class="dl">'</span><span class="s1">applicationkey</span><span class="dl">'</span><span class="p">)</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>However, connecting to a space with OAuth through the SDK is not supported by this version of the bootstrap. If support for OAuth is necessary, you will need to use the aforementioned <code class="language-plaintext highlighter-rouge">sdk.es6.js</code> instead.</p>
 
 <h3 id="control-3d-showcase-with-actions">Control 3D Showcase with Actions</h3>
 
@@ -1190,7 +1203,7 @@ See the <a href="sdk_changelog.html">change log</a></p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Aug 22, 2024 <br />
+ Site last generated: Oct 1, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

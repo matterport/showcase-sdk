@@ -1016,7 +1016,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://static.matterport.com/showcase-sdk/types/24.8.3_webgl-367-g82db35fc8e/sdk.d.ts">24.8.3_webgl-367-g82db35fc8e</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=24.9.4_webgl-491-gcf7d90b893">24.9.4_webgl-491-gcf7d90b893</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1077,6 +1077,7 @@ $('#toc').on('click', 'a', function() {
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias"><a href="index.html#color" class="tsd-kind-icon">Color</a></li>
 								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="index.html#conditioncallback" class="tsd-kind-icon">Condition<wbr>Callback</a></li>
+								<li class="tsd-kind-type-alias"><a href="index.html#connectoptions" class="tsd-kind-icon">Connect<wbr>Options</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#mpsdk" class="tsd-kind-icon">Mp<wbr>Sdk</a></li>
 								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="index.html#observercallback" class="tsd-kind-icon">Observer<wbr>Callback</a></li>
 								<li class="tsd-kind-type-alias"><a href="index.html#orientation" class="tsd-kind-icon">Orientation</a></li>
@@ -1159,6 +1160,31 @@ $('#toc').on('click', 'a', function() {
 										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 									</li>
 								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="connectoptions" class="tsd-anchor"></a>
+					<h3>Connect<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">Connect<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="tsd-lead">
+							<p>Options to provide when connecting the sdk</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>auth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="tsd-lead">
+										<p>A token to provide access to a model</p>
+									</div>
+								</div>
 							</li>
 						</ul>
 					</div>
@@ -1555,7 +1581,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<dl class="tsd-comment-tags tsd-typography">
 								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
 								<dd>
-									<p>Use <a href="modules/app.html#state-1">App.state</a> observable to get phase change notifications.</p>
+									<p>Use the <a href="modules/app.html#state-1">App.state</a> observable to get phase change notifications.</p>
 								</dd>
 							</dl>
 							<aside class="tsd-sources">
@@ -1592,24 +1618,17 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 							<h4 class="tsd-returns-title">Returns <a href="interfaces/emitter.html" class="tsd-signature-type">Emitter</a></h4>
 						</li>
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use the <a href="modules/camera.html#pose-1">Camera.pose</a> observable to get camera pose change notifications.</p>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="tsd-lead">
-									<p>This event fires when the camera&#39;s pose has changed via a position or orientation change.</p>
-								</div>
-								<p>The callback is called with the new pose of the camera.</p>
-								<pre><code>mpSdk.on(mpSdk.Camera.Event.MOVE,
-  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">pose</span>) </span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Camera moved to position: <span class="hljs-subst">${pose.position}</span>`</span>);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`with orientation: <span class="hljs-subst">${pose.rotation}</span>`</span>);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`in mode: <span class="hljs-subst">${pose.mode}</span>`</span>);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`currently at sweep: <span class="hljs-subst">${pose.sweep}</span>`</span>);
-  }
-);
-
-<span class="hljs-meta">@deprecated</span> Use []
-</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -2437,6 +2456,9 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
 						<a href="index.html#conditioncallback" class="tsd-kind-icon">Condition<wbr>Callback</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="index.html#connectoptions" class="tsd-kind-icon">Connect<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="index.html#mpsdk" class="tsd-kind-icon">Mp<wbr>Sdk</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
@@ -2498,7 +2520,7 @@ mpSdk.off(mpSdk.Event.MODEL_LOADED, callback);
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Aug 22, 2024 <br />
+ Site last generated: Oct 1, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
