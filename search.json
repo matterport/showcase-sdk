@@ -323,6 +323,17 @@
 
 
 {
+"title": "Custom Roles",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/custom_roles_overview.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Interface: Dictionary",
 "tags": "",
 "keywords": "",
@@ -511,8 +522,6 @@
 
 
 
-
-
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -521,6 +530,8 @@
 "summary": ""
 }
 ,
+
+
 
 
 

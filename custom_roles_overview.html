@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Custom Roles | Matterport Developers</title>
+<link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/showcase-sdk/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="/showcase-sdk/css/customstyles.css">
+<link rel="stylesheet" href="/showcase-sdk/css/custom.css">
+<link rel="stylesheet" href="/showcase-sdk/css/tags2.css">
+
+<link rel="stylesheet" href="/showcase-sdk/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/showcase-sdk/css/theme-matterport.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/showcase-sdk/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/showcase-sdk/js/toc.js"></script>
+<script src="/showcase-sdk/js/customscripts.js"></script>
+<script src="/showcase-sdk/js/mermaid.min.js"></script>
+
+<link rel="shortcut icon" href="/showcase-sdk/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+
+    <script>
+      $(document).ready(function () {
+        // Initialize navgoco with default options
+        $("#mysidebar").navgoco({
+          caretHtml: '<i class="fa fa-chevron-down"></i>',
+          accordion: true,
+          openClass: "active", // open
+
+          save: false, // leave false or nav highlighting doesn't work right
+          cookie: {
+            name: "navgoco",
+            expires: false,
+            path: "/",
+          },
+          slide: {
+            duration: 400,
+            easing: "swing",
+          },
+        });
+
+        $("#collapseAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", false);
+        });
+
+        $("#expandAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", true);
+        });
+      });
+    </script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#tg-sb-link").change(function () {
+          $("#tg-sb-sidebar").toggle();
+          $("#tg-sb-content").toggleClass("col-md-9");
+          $("#tg-sb-content").toggleClass("col-md-12");
+        });
+      });
+    </script>
+     
+  </head>
+  <body>
+    <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div>
+    <div class="row">
+      <a class="navbrand col-md-3" href="/"
+        >&nbsp;<img
+          class="navbar-image"
+          src="/showcase-sdk/images/MP-logo_H_lock-RGB_white.svg"
+        /><span class="projectTitle"> </span></a
+      >
+      <div class="dev-nav-links col-md-6">
+        <div class="dropdown-items">
+          <div class="dropdown ">
+            <a class="dropbtn active" href="index.html">SDK Docs</a>
+            <div class="dropdown-content">
+              <a href="https://matterport.github.io/showcase-sdk/sdk_home.html" class="">SDK for Embeds</a>
+              <a href="https://matterport.github.io/showcase-sdk/sdkbundle_home.html" class="" href="#">SDK Bundle</a>
+              <a href="https://matterport.github.io/showcase-sdk/earlyaccess_home.html" class="" href="#">SDK Early Access</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="api_home.html">API Docs</a>
+            <div class="dropdown-content">
+              <a href="https://matterport.github.io/showcase-sdk/api_home.html">API Overview</a>
+              <a href="https://api.matterport.com/docs/reference" target="_blank">API Reference</a>
+              <a href="https://api.matterport.com/model/graphiql" target="_blank">Interactive Console</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Custom Roles page: ' + window.location.href;">Feedback</a>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
+              Subscribe
+              <sup class="subscribe-sup" style="font-size: 10px; color: #ff3158">New</sup>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="right-content col-md-3">
+        <div class="dev-input-container">
+          <!-- Add roboto font to search bar -->
+          <img src="/showcase-sdk/images/search_button.png" />
+          <input id="search-input" type="text" placeholder="Search"/>
+          <div id="results-container"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</nav>
+ 
+    <!-- Page Content -->
+    <div class="dev-page-wrapper">
+      <div id="main">
+        <!-- Content Row -->
+        <div class="row">
+          <!-- Sidebar Column -->
+          
+          <aside class="col-md-3" id="tg-sb-sidebar">
+            
+<div id="mysidebar" class="nav">
+  
+  
+  
+
+  <li>
+      <a title="Overview" href="#">Overview</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/index.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Change Log" href="/showcase-sdk/sdk_changelog.html">Change Log</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Vocabulary" href="/showcase-sdk/sdk_vocabulary.html">Vocabulary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Concepts" href="/showcase-sdk/sdk_concepts.html">Concepts</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Docs Summary" href="/showcase-sdk/sdk_reference_summary.html">Reference Docs Summary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Documentation" href="/showcase-sdk/docs\reference\current\index.html">Reference Documentation</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK for Embeds" href="#">SDK for Embeds</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdk_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdk_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Bundle" href="#">SDK Bundle</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdkbundle_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdkbundle_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setting up Embed.ly" href="/showcase-sdk/sdkbundle_tutorials_setting_up_embedly.html">Setting up Embed.ly</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setup a Local Environment" href="/showcase-sdk/sdkbundle_tutorials_setup.html">Setup a Local Environment</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Architecture" href="/showcase-sdk/sdkbundle_architecture.html">Architecture</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Components" href="#">Components</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Ambient Light" href="/showcase-sdk/sdkbundle_components_ambientlight.html">Ambient Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Directional Light" href="/showcase-sdk/sdkbundle_components_directionallight.html">Directional Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Point Light" href="/showcase-sdk/sdkbundle_components_pointlight.html">Point Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="GLTF Loader" href="/showcase-sdk/sdkbundle_components_gltfloader.html">GLTF Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="DAE Loader" href="/showcase-sdk/sdkbundle_components_daeloader.html">DAE Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="FBX Loader" href="/showcase-sdk/sdkbundle_components_fbxloader.html">FBX Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="OBJ Loader" href="/showcase-sdk/sdkbundle_components_objloader.html">OBJ Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transform Controls" href="/showcase-sdk/sdkbundle_components_transformcontrols.html">Transform Controls</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Input" href="/showcase-sdk/sdkbundle_components_input.html">Input</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Camera" href="/showcase-sdk/sdkbundle_components_camera.html">Camera</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="XR" href="/showcase-sdk/sdkbundle_components_xr.html">XR</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Web Component (Beta)" href="#">Web Component (Beta)</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdkbundle_webcomponent.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tutorial" href="/showcase-sdk/sdkbundle_webcomponent_tutorial.html">Tutorial</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Advanced" href="/showcase-sdk/sdkbundle_webcomponent_advanced.html">Advanced</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Migration from Bundle" href="/showcase-sdk/sdkbundle_webcomponent_migration.html">Migration from Bundle</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Early Access" href="#">SDK Early Access</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/earlyaccess_home.html">Home</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Tutorials" href="#">SDK Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Observables" href="/showcase-sdk/sdk_tutorials_observables.html">Using Observables</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Collections" href="/showcase-sdk/sdk_tutorials_collections.html">Using Collections</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Using the Scene Namespace" href="#">Using the Scene Namespace</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Intro and Basic Components" href="/showcase-sdk/sdk_scene_intro.html">Intro and Basic Components</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Connecting Components" href="/showcase-sdk/sdk_connecting_components.html">Connecting Components</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Creating Tags" href="/showcase-sdk/sdk_creating_mattertags.html">Creating Tags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Editing Tags" href="/showcase-sdk/sdk_editing_mattertags.html">Editing Tags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags 2.0 Migration" href="/showcase-sdk/sdk_tutorials_mattertagtotag.html">Tags 2.0 Migration</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Code Sandboxes" href="/showcase-sdk/sdk_tutorials_htmlsandbox.html">Tags Code Sandboxes</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pathfinding" href="/showcase-sdk/sdk_tutorials_pathfinding.html">Pathfinding</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pointer Reticle" href="/showcase-sdk/sdk_tutorials_cursor.html">Pointer Reticle</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Working with Models" href="/showcase-sdk/sdkbundle_tutorials_models.html">Working with Models</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using xr" href="/showcase-sdk/sdkbundle_tutorials_using_xr.html">Using xr</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Scene Objects" href="/showcase-sdk/sdkbundle_tutorials_using_scene_objects.html">Using Scene Objects</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Examples" href="#">SDK Examples</a>
+      <ul>
+          
+          
+          
+          <li><a title="Navigation Controls" href="/showcase-sdk/sdk_navigation_controls.html">Navigation Controls</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Intersection Inspector" href="/showcase-sdk/sdk_intersection_inspector.html">Intersection Inspector</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz" href="/showcase-sdk/sdk_tags_quiz.html">Tags Quiz</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz - Overlay" href="/showcase-sdk/sdk_tags_quiz_overlay.html">Tags Quiz - Overlay</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Kitchen Sink" href="/showcase-sdk/sdk_kitchen_sink.html">Kitchen Sink</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Remote Control" href="/showcase-sdk/sdk_remote_control.html">Remote Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Source Areas" href="/showcase-sdk/sdk_sensors_source_areas.html">Sensors - Source Areas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Tags Level of Detail" href="/showcase-sdk/sdk_sensors_tags_level_of_detail.html">Sensors - Tags Level of Detail</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Sweep Control" href="/showcase-sdk/sdk_sensors_sweep_control.html">Sensors - Sweep Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Virtual Staging" href="/showcase-sdk/sdkbundle_virtual_staging.html">Virtual Staging</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Local Webcam" href="/showcase-sdk/sdkbundle_local_webcam.html">Local Webcam</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Livestream" href="/showcase-sdk/sdkbundle_html_livestream.html">HTML Livestream</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="IoT Canvas" href="/showcase-sdk/sdkbundle_iot_canvas.html">IoT Canvas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Custom Experience" href="/showcase-sdk/sdkbundle_custom_experience.html">Custom Experience</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Security Camera FOV" href="/showcase-sdk/sdkbundle_security_camera.html">Security Camera FOV</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Content Attribution" href="/showcase-sdk/sdkbundle_content_attribution.html">Content Attribution</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Matterport APIs" href="#">Matterport APIs</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/api_home.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Docs" href="https://api.matterport.com/model/docs/reference" target="_blank" rel="noopener">Reference Docs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Interactive Console" href="https://api.matterport.com/model/graphiql" target="_blank" rel="noopener">Interactive Console</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Model API" href="#">Model API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Changelog" href="/showcase-sdk/modelapi_changelog.html">Changelog</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Models Queries" href="/showcase-sdk/modelapi_models_ref.html">Models Queries</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Sample Queries" href="/showcase-sdk/modelapi_snippets.html">Sample Queries</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Ordering Add-Ons" href="/showcase-sdk/modelapi_ordering_addons.html">Ordering Add-Ons</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Views and Layers" href="/showcase-sdk/modelapi_views_and_layers.html">Views and Layers</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Tags Icon Reference" href="/showcase-sdk/tags_icons_reference.html">Tags Icon Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Postman Collection" href="/showcase-sdk/modelapi_postman.html">Postman Collection</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Account API" href="#">Account API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Account API Changelog" href="/showcase-sdk/accountapi_changelog.html">Account API Changelog</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Sample Queries" href="/showcase-sdk/accountapi_snippets.html">Sample Queries</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Property Intelligence" href="#">Property Intelligence</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Overview" href="/showcase-sdk/modelapi_property_intelligence.html">Overview</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Dimension Estimates" href="/showcase-sdk/modelapi_pi_dimension_estimates.html">Dimension Estimates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Room Names" href="/showcase-sdk/modelapi_pi_room_names.html">Room Names</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Vector Data" href="/showcase-sdk/modelapi_pi_vector_data.html">Vector Data</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Mutations" href="/showcase-sdk/modelapi_pi_mutations.html">Mutations</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Custom Roles" href="#">Custom Roles</a>
+              <ul>
+                  
+                  
+                  
+                  <li class="active"><a title="Overview and Examples" href="/showcase-sdk/custom_roles_overview.html">Overview and Examples</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="OAuth" href="#">OAuth</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/oauth_home.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Implementation" href="/showcase-sdk/oauth_implementation.html">Implementation</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Model Selector" href="/showcase-sdk/oauth_model_selector.html">Model Selector</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Use Case - Model API" href="/showcase-sdk/oauth_model_api.html">Use Case - Model API</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Use Case - Private Models" href="/showcase-sdk/oauth_sdk_private_model.html">Use Case - Private Models</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OAuth Sample Application" href="/showcase-sdk/sdkbundle_tutorials_using_oauth.html">OAuth Sample Application</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Private Model Embed" href="#">Private Model Embed</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/oauth_private_model_embed.html">Overview</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Webhooks" href="#">Webhooks</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/webhooks_home.html">Overview</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Learn More" href="#">Learn More</a>
+      <ul>
+          
+          
+          
+          <li><a title="Developer Tools Overview" href="https://support.matterport.com/s/article/API-SDK-Developer-Tools-Overview" target="_blank" rel="noopener">Developer Tools Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pricing and Availability" href="https://support.matterport.com/s/article/Developer-Tools-Pricing-and-Availability" target="_blank" rel="noopener">Pricing and Availability</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</div>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+<script src="/showcase-sdk/js/jekyll-search.js" type="text/javascript"></script>
+<script type="text/javascript">
+        SimpleJekyllSearch.init({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            dataSource: '/showcase-sdk/search.json',
+            searchResultTemplate: '<li><a href="{url}" title="Custom Roles">{title}</a></li>',
+noResultsText: '<li><div>No results found.<div></li>',
+        limit: 10,
+        fuzzy: true,
+})
+</script>
+
+          </aside>
+           
+          <!-- Content Column -->
+          <div
+            class=" col-md-9" 
+            id="tg-sb-content"
+          >
+            <div class="post-header">
+   <h1 class="post-title-main">Custom Roles</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+
+
+    
+
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Custom Roles API is only available for Enterprise-level Matterport Subscriptions</div>
+
+<h2 id="introduction">Introduction</h2>
+
+<p><strong>Custom Roles</strong> allow an account to create and assign custom user roles beyond the default stock roles of collaborators, administrators, billing contact, and account owner. Custom roles can be configured to allow and deny specific permissions to better control access and features for members of the account.</p>
+
+<p>Detailed documentation regarding custom roles can be found at the following links in our support portal.</p>
+
+<p><a href="https://support.matterport.com/s/article/Configure-Custom-User-Roles" target="_blank">Configure Custom User Roles</a><br />
+<a href="https://support.matterport.com/s/article/Configure-User-Groups" target="_blank">Configure User Groups</a><br />
+<a href="https://support.matterport.com/s/article/Examples-of-Custom-Roles" target="_blank">Examples of Custom Roles</a><br />
+<a href="https://support.matterport.com/s/article/Review-Roles-and-Permissions" target="_blank">Review Roles and Permissions</a></p>
+
+<h2 id="overview">Overview</h2>
+<p>This document will detail the features of <strong>Custom Roles</strong> availble through the Matterport Account API.</p>
+
+<p>Please review the <a href="api_home.html" target="_blank">Matterport APIs Overview</a> documentation to understand the Matterport Model API and Account API.</p>
+
+<p>While creating and setting permissions for custom roles and user groups is best done through the <a href="https://my.matterport.com/users" target="_blank">users setting page</a>, the following API queries and mutations can be used to automate user management.</p>
+
+<h2 id="what-are-use-cases-for-custom-roles-with-the-api">What are use-cases for Custom Roles with the API?</h2>
+<ul>
+  <li>Retrieve custom role IDs</li>
+  <li>Retrieve user group IDs</li>
+  <li>Retrieve list of permissions sets for custom roles</li>
+  <li>Invite users with an existing custom role</li>
+  <li>Assign users and groups to custom roles</li>
+  <li>Assign users to user group</li>
+</ul>
+
+<h2 id="sample-queries-account-api">Sample Queries (Account API)</h2>
+
+<details>
+  <summary>Query All Custom Role IDs and Names</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getAllRoleIds</span><span class="p">{</span><span class="w">
+  </span><span class="n">roles</span><span class="p">(</span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="n">include</span><span class="p">:</span><span class="w"> </span><span class="n">CUSTOM</span><span class="p">,</span><span class="w"> </span><span class="n">offset</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">}){</span><span class="w">
+    </span><span class="n">nextOffset</span><span class="w">
+    </span><span class="n">totalResults</span><span class="w">
+    </span><span class="n">results</span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"nextOffset"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99a5c0m5qakpn16yhe9wbz25c"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Role 1"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cdwxak49ihd8qbf1rku45z16d"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Role 2"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09ucf41tzhm5tysk5issbu46a"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Site 1 Viewer"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dys7trhyn5t8rdu8ntzbap0bb"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Role 1"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zrc4c7hdk9xceptw86007e6zb"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Role 2"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?query=query%20getAllRoleIds%7B%0A%20%20roles(query%3A%20%7Binclude%3A%20CUSTOM%2C%20offset%3A%20null%7D)%7B%0A%20%20%20%20nextOffset%0A%20%20%20%20totalResults%0A%20%20%20%20results%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;operationName=getAllRoleIds" target="_blank">Try this in our interactive console</a></p>
+
+</details>
+
+<details>
+  <summary>Query Role ID From Name</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getRoleIdFromName</span><span class="p">(</span><span class="nv">$roleName</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!){</span><span class="w">
+  </span><span class="n">roles</span><span class="p">(</span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="n">include</span><span class="p">:</span><span class="w"> </span><span class="n">CUSTOM</span><span class="p">,</span><span class="w"> </span><span class="n">searchText</span><span class="p">:</span><span class="w"> </span><span class="nv">$roleName</span><span class="p">}){</span><span class="w">
+    </span><span class="n">results</span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c"># Variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">roleName</span><span class="err">":</span><span class="w"> </span><span class="err">"</span><span class="n">Custom</span><span class="w"> </span><span class="n">Role</span><span class="w"> </span><span class="err">1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99a5c0m5qakpn16yhe9wbz25c"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Role 1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?query=query%20getRoleIdFromName(%24roleName%3A%20String!)%7B%0A%20%20roles(query%3A%20%7Binclude%3A%20CUSTOM%2C%20searchText%3A%20%24roleName%7D)%7B%0A%20%20%20%20results%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;operationName=getRoleIdFromName&amp;variables=%7B%0A%20%20%22roleName%22%3A%20%22Custom%20Role%201%22%0A%7D" target="_blank">Try this in our interactive console</a></p>
+
+</details>
+
+<details>
+  <summary>Query All User Group Details</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getAllUserGroups</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">userGroups</span><span class="p">(</span><span class="n">offset</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">nextOffset</span><span class="w">
+    </span><span class="n">totalResults</span><span class="w">
+    </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+      </span><span class="n">roles</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">id</span><span class="w">
+        </span><span class="n">name</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="n">members</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="n">user</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">email</span><span class="w">
+            </span><span class="n">id</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="n">modelShares</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="n">sharedObject</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">id</span><span class="w">
+            </span><span class="n">name</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+          </span><span class="n">roles</span><span class="p">{</span><span class="w">
+            </span><span class="n">id</span><span class="w">
+            </span><span class="n">name</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="n">folderShares</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="n">sharedObject</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">id</span><span class="w">
+            </span><span class="n">name</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+          </span><span class="n">roles</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">id</span><span class="w">
+            </span><span class="n">name</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"userGroups"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"nextOffset"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"i0aiuf25nrgdfh4yz7df5s3kc"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Group 1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99a5c0m5qakpn16yhe9wbz25c"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Role 1"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"members"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@example.com"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tbenTcYfzTj"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"modelShares"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"folderShares"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"sharedObject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7ZQHTdNQziL"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Spaces"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000001001"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"viewer"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"sharedObject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AAd2PmNoFQT"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"top level folder 1"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000001002"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?query=query%20getAllUserGroups%20%7B%0A%20%20userGroups(offset%3A%20null)%20%7B%0A%20%20%20%20nextOffset%0A%20%20%20%20totalResults%0A%20%20%20%20results%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20roles%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20members%20%7B%0A%20%20%20%20%20%20%20%20results%20%7B%0A%20%20%20%20%20%20%20%20%20%20user%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20email%0A%20%20%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20modelShares%20%7B%0A%20%20%20%20%20%20%20%20results%20%7B%0A%20%20%20%20%20%20%20%20%20%20sharedObject%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20roles%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20folderShares%20%7B%0A%20%20%20%20%20%20%20%20results%20%7B%0A%20%20%20%20%20%20%20%20%20%20sharedObject%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20roles%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;operationName=getAllUserGroups" target="_blank">Try this in our interactive console</a></p>
+
+</details>
+
+<details>
+  <summary>Query User Group ID From Name</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getUserGroupIdFromName</span><span class="p">(</span><span class="nv">$userGroupName</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!){</span><span class="w">
+  </span><span class="n">userGroups</span><span class="p">(</span><span class="n">query</span><span class="p">:</span><span class="nv">$userGroupName</span><span class="p">){</span><span class="w">
+    </span><span class="n">results</span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c"># Variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">userGroupName</span><span class="err">":</span><span class="w"> </span><span class="err">"</span><span class="n">User</span><span class="w"> </span><span class="n">Group</span><span class="w"> </span><span class="err">1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"userGroups"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"i0aiuf25nrgdfh4yz7df5s3kc"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Group 1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?query=query%20getUserGroupIdFromName(%24userGroupName%3A%20String!)%7B%0A%20%20userGroups(query%3A%24userGroupName)%7B%0A%20%20%20%20results%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;operationName=getUserGroupIdFromName&amp;variables=%7B%0A%20%20%22userGroupName%22%3A%20%22User%20Group%201%22%0A%7D" target="_blank">Try this in our interactive console</a></p>
+
+</details>
+
+<details>
+  <summary>Query User Membership Details with User Group And Custom Roles Access</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getMemberDetails</span><span class="p">(</span><span class="nv">$email</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!){</span><span class="w">
+  </span><span class="n">organization</span><span class="p">{</span><span class="w">
+    </span><span class="n">membershipByEmail</span><span class="p">(</span><span class="n">email</span><span class="p">:</span><span class="nv">$email</span><span class="p">){</span><span class="w">
+      </span><span class="n">user</span><span class="p">{</span><span class="w">
+        </span><span class="n">id</span><span class="w">
+        </span><span class="n">email</span><span class="w">
+        </span><span class="n">objectAccess</span><span class="p">{</span><span class="w">
+          </span><span class="n">results</span><span class="p">{</span><span class="w">
+            </span><span class="n">sharedObject</span><span class="p">{</span><span class="w">
+              </span><span class="n">__typename</span><span class="w">
+              </span><span class="n">id</span><span class="w">
+              </span><span class="n">name</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+            </span><span class="n">isInherited</span><span class="w">
+            </span><span class="n">roles</span><span class="p">{</span><span class="w">
+              </span><span class="n">id</span><span class="w">
+              </span><span class="n">name</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+            </span><span class="n">sharedWith</span><span class="p">{</span><span class="w">
+              </span><span class="n">id</span><span class="w">
+              </span><span class="n">name</span><span class="w">
+              </span><span class="n">source</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="n">roles</span><span class="p">{</span><span class="w">
+        </span><span class="n">id</span><span class="w">
+        </span><span class="n">name</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+
+</span><span class="c"># Variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">email</span><span class="err">":</span><span class="w"> </span><span class="err">"</span><span class="n">user</span><span class="k">@example</span><span class="err">.</span><span class="n">com</span><span class="err">"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"membershipByEmail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gTMHAe2hwFm"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@example.com"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"objectAccess"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"sharedObject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"__typename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ShareableFolderSummary"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7GxUGVPejAa"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Folder A"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"isInherited"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000001002"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"sharedWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"i0aiuf25nrgdfh4yz7df5s3kc"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Group 1"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USER_GROUP"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"sharedObject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"__typename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ShareableFolderSummary"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AAd2PmNoFQT"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"top level folder 1"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"isInherited"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000001002"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"sharedWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"i0aiuf25nrgdfh4yz7df5s3kc"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Group 1"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USER_GROUP"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"sharedObject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"__typename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ShareableModelSummary"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NuDAWJ1C4RQ"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo Model 2"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"isInherited"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000001002"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"sharedWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"i0aiuf25nrgdfh4yz7df5s3kc"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Group 1"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USER_GROUP"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"sharedObject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"__typename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ShareableFolderSummary"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7ZQHTdNQziL"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Spaces"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"isInherited"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000001001"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"viewer"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"sharedWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"i0aiuf25nrgdfh4yz7df5s3kc"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Group 1"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USER_GROUP"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99a5c0m5qakpn16yhe9wbz25c"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Role 1"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?query=query%20getMemberDetails(%24email%3A%20String!)%7B%0A%20%20organization%7B%0A%20%20%20%20membershipByEmail(email%3A%24email)%7B%0A%20%20%20%20%20%20user%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20email%0A%20%20%20%20%20%20%20%20objectAccess%7B%0A%20%20%20%20%20%20%20%20%20%20results%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20sharedObject%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20__typename%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20isInherited%0A%20%20%20%20%20%20%20%20%20%20%20%20roles%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20sharedWith%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20source%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20roles%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;operationName=getMemberDetails&amp;variables=%7B%0A%20%20%22email%22%3A%20%22user%40example.com%22%0A%7D" target="_blank">Try this in our interactive console</a></p>
+
+</details>
+
+<h2 id="sample-mutations-account-api">Sample Mutations (Account API)</h2>
+
+<details>
+  <summary>Invite New User With Specific Custom Role</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">inviteMemberWithRole</span><span class="p">(</span><span class="nv">$email</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!,</span><span class="w"> </span><span class="nv">$roleId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">inviteMember</span><span class="p">(</span><span class="n">email</span><span class="p">:</span><span class="w"> </span><span class="nv">$email</span><span class="p">,</span><span class="w"> </span><span class="n">roleId</span><span class="p">:</span><span class="w"> </span><span class="nv">$roleId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">user</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c"># Variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">email</span><span class="err">":</span><span class="w"> </span><span class="err">"</span><span class="n">user</span><span class="k">@example</span><span class="err">.</span><span class="n">com</span><span class="err">"</span><span class="p">,</span><span class="w">
+  </span><span class="err">"</span><span class="n">roleId</span><span class="err">":</span><span class="w"> </span><span class="err">"99</span><span class="n">a5c0m5qakpn16yhe9wbz25c</span><span class="err">"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"inviteMember"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biLeTE8uWPG"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?query=mutation%20inviteMemberWithRole(%24email%3A%20String!%2C%20%24roleId%3A%20ID!)%20%7B%0A%20%20inviteMember(email%3A%20%24email%2C%20roleId%3A%20%24roleId)%20%7B%0A%20%20%20%20user%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;operationName=inviteMemberWithRole&amp;variables=%7B%0A%20%20%22email%22%3A%20%22adoss%2Broleinvitetest%40matterport.com%22%2C%0A%20%20%22roleId%22%3A%20%2299a5c0m5qakpn16yhe9wbz25c%22%0A%7D" target="_blank">Try this in our interactive console</a></p>
+
+</details>
+
+<details>
+  <summary>Change An Existing Users Role</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">patchUserMembership</span><span class="p">(</span><span class="nv">$email</span><span class="p">:</span><span class="nb">String</span><span class="p">!,</span><span class="w"> </span><span class="nv">$roleId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  </span><span class="n">patchMembership</span><span class="p">(</span><span class="n">email</span><span class="p">:</span><span class="w"> </span><span class="nv">$email</span><span class="p">,</span><span class="w"> </span><span class="n">roleId</span><span class="p">:</span><span class="w"> </span><span class="nv">$roleId</span><span class="p">){</span><span class="w">
+    </span><span class="n">user</span><span class="p">{</span><span class="w">
+      </span><span class="n">email</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="n">status</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c"># Variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">email</span><span class="err">":</span><span class="w"> </span><span class="err">"</span><span class="n">user</span><span class="k">@example</span><span class="err">.</span><span class="n">com</span><span class="err">"</span><span class="p">,</span><span class="w">
+  </span><span class="err">"</span><span class="n">roleId</span><span class="err">":</span><span class="w"> </span><span class="err">"99</span><span class="n">a5c0m5qakpn16yhe9wbz25c</span><span class="err">"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"patchMembership"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biLeTE8uWPG"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?query=mutation%20patchUserMembership(%24email%3AString!%2C%20%24roleId%3A%20ID!)%7B%0A%20%20patchMembership(email%3A%20%24email%2C%20roleId%3A%20%24roleId)%7B%0A%20%20%20%20user%7B%0A%20%20%20%20%20%20email%0A%20%20%20%20%20%20id%0A%20%20%20%20%7D%0A%20%20%20%20status%0A%20%20%7D%0A%7D&amp;operationName=patchUserMembership&amp;variables=%7B%0A%20%20%22email%22%3A%20%22user%40example.com%22%2C%0A%20%20%22roleId%22%3A%20%2299a5c0m5qakpn16yhe9wbz25c%22%0A%7D" target="_blank">Try this in our interactive console</a></p>
+
+</details>
+
+
+    <div class="tags">
+        
+    </div>
+
+<!-- 
+ -->
+
+</div>
+
+<!-- <hr class="shaded"/> -->
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2024 Matterport, Inc. All rights reserved. <br />
+ Site last generated: Oct 1, 2024 <br />
+<p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /#main -->
+    </div>
+
+    
+  </body>
+   <!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-34880260-5','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+ 
+</html>
