@@ -1001,9 +1001,24 @@ $('#toc').on('click', 'a', function() {
     
 
    <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> <br />
-We have deprecated the existing id scheme in favor of one that matches our platform and APIs.<br />
-If you have stored data including ids, we have added several functions to map between ids for <a href="docs/reference/current/modules/sweep.conversion.html">Sweeps</a>, <a href="docs/reference/current/modules/floor.conversion.html">Floors</a>, and <a href="docs/reference/current/modules/room.conversion.html">Rooms</a>. Adding the <code class="language-plaintext highlighter-rouge">&amp;useLegacyIds=0</code> URL parameter will change the id scheme in the aforementioned objects to the new id scheme.
-</div>
+Support for the <code class="language-plaintext highlighter-rouge">&amp;useLegacyIds</code> has been removed.
+We have moved to an id scheme that matches our platform and APIs.<br />
+If you have stored data including ids, we have added several functions to map between ids for <a href="docs/reference/current/modules/sweep.conversion.html">Sweeps</a>, <a href="docs/reference/current/modules/floor.conversion.html">Floors</a>, and <a href="docs/reference/current/modules/room.conversion.html">Rooms</a>.</div>
+
+<h2 id="24101">24.10.1</h2>
+
+<h5 id="oct-9-2024">Oct 9, 2024</h5>
+
+<p><strong>General</strong></p>
+<ul>
+  <li>Removed legacy IDs as a default option
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">&amp;useLegacyIds=1</code> parameter has been removed.</li>
+      <li>Conversion routines under the <a href="docs/reference/current/modules/floor.conversion.html">Floor</a>, <a href="docs/reference/current/modules/room.conversion.html">Room</a>, and <a href="docs/reference/current/modules/sweep.conversion.html">Sweep</a> namespaces are still available if legacy IDs are needed.</li>
+    </ul>
+  </li>
+  <li>Fixed an issue where <a href="docs/reference/current/modules/room.html#current"><code class="language-plaintext highlighter-rouge">Room.current</code></a> and <a href="docs/reference/current/modules/room.html#data"><code class="language-plaintext highlighter-rouge">Room.data</code></a> would never fire updates.</li>
+</ul>
 
 <h2 id="bootstrap-v300">Bootstrap v3.0.0</h2>
 
@@ -2094,7 +2109,7 @@ We are adding support for synchronous functions. These functions compute and ret
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Oct 1, 2024 <br />
+ Site last generated: Oct 9, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
