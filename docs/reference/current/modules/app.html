@@ -1034,7 +1034,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=24.10.2_webgl-548-g7c620eac23">24.10.2_webgl-548-g7c620eac23</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=24.11.2_webgl-798-gf42d1db434">24.11.2_webgl-798-gf42d1db434</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1195,14 +1195,12 @@ $('#toc').on('click', 'a', function() {
 						</div>
 						<pre><code class="language-typescript">App.features.subscribe({
   <span class="hljs-function"><span class="hljs-title">onChanged</span>(<span class="hljs-params">features</span>)</span> {
-    <span class="hljs-keyword">if</span> (features[App.Feature.RoomBounds] !== cache[App.Feature.RoomBounds]) {
-      <span class="hljs-comment">// room bounds setting has changed</span>
-      <span class="hljs-keyword">if</span> (features[App.Feature.RoomBounds] !== <span class="hljs-literal">undefined</span>) {
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;RoomBounds are &#x27;</span>, features[App.Feature.RoomBounds] ? <span class="hljs-string">&#x27;available&#x27;</span> : <span class="hljs-string">&#x27;unavailable&#x27;</span>);
-      }
-      <span class="hljs-keyword">else</span> {
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;RoomBounds are unavailable.&#x27;</span>);
-      }
+    <span class="hljs-comment">// room bounds setting has changed</span>
+    <span class="hljs-keyword">if</span> (features[App.Feature.RoomBounds] !== <span class="hljs-literal">undefined</span>) {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;RoomBounds are &#x27;</span>, features[App.Feature.RoomBounds] ? <span class="hljs-string">&#x27;available&#x27;</span> : <span class="hljs-string">&#x27;unavailable&#x27;</span>);
+    }
+    <span class="hljs-keyword">else</span> {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;RoomBounds are unavailable.&#x27;</span>);
     }
   }
 });
@@ -1427,7 +1425,7 @@ output
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Oct 23, 2024 <br />
+ Site last generated: Nov 19, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
