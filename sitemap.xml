@@ -291,13 +291,13 @@
   
   
   
+  
+  
+  
+  
   <url>
     <loc>https://matterport.github.io/index.html</loc>
   </url>
-  
-  
-  
-  
   
   
   
@@ -1177,6 +1177,12 @@
   
   <url>
     <loc>https://matterport.github.io/webhooks_home.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/webhooks_v1.html</loc>
   </url>
   
   
