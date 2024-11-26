@@ -1191,113 +1191,71 @@ noResultsText: '<li><div>No results found.<div></li>',
     <tr>
       <th><strong>Event Type</strong></th>
       <th><strong>Body</strong></th>
-      <th><strong>Notes</strong></th>
-      <th> </th>
-      <th> </th>
-      <th> </th>
-      <th> </th>
-      <th> </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>ModelCreated</td>
-      <td>type: copy</td>
-      <td>processing</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>activation_state_changed</td>
+      <td>{ previous: { state: pending | active | inactive }<br />current: { state: pending | active | inactive } }</td>
     </tr>
     <tr>
-      <td>ModelProcessed</td>
-      <td>status: succeeded</td>
-      <td>failed<br />error: string</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>bundle_updated</td>
+      <td>{ status: requested | delivered | canceled | failed,<br />bundleId: string }</td>
     </tr>
     <tr>
-      <td>ModelTransferredIn</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>created</td>
+      <td>{ type: copy | demo | transfer | processing | unknown }</td>
     </tr>
     <tr>
-      <td>ModelTransferredOut</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>deleted</td>
+      <td>{ }</td>
     </tr>
     <tr>
-      <td>ModelBundleUpdate</td>
-      <td>status: requested</td>
-      <td>delive</td>
-      <td>red</td>
-      <td>canceled</td>
-      <td>failed</td>
-      <td>bundleId: string</td>
-      <td> </td>
+      <td>details_changed</td>
+      <td>{ previous: { … },<br />current: { … } }</td>
     </tr>
     <tr>
-      <td>ModelActivationStateChanged</td>
-      <td>previous: { state: pending</td>
-      <td>active</td>
-      <td>inactive }<br />current: { state: pending</td>
-      <td>active</td>
-      <td>inactive }</td>
-      <td> </td>
-      <td> </td>
+      <td>processed</td>
+      <td>{ status: succeeded|failed, error: string }</td>
     </tr>
     <tr>
-      <td>ModelVisibilityChanged</td>
-      <td>previous: { accessVisibility: private</td>
-      <td>public</td>
-      <td>unlisted</td>
-      <td>active }<br />current: { accessVisibility: private</td>
-      <td>public</td>
-      <td>unlisted</td>
-      <td>active }</td>
+      <td>restored</td>
+      <td>{ type: copy | demo | transfer | processing | unknown }</td>
     </tr>
     <tr>
-      <td>ModelDetailsChanged</td>
-      <td>previous: { … }<br />current: { … }</td>
-      <td><em>Note these events will not be propagated until model processing completes.</em></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>transferred_in</td>
+      <td>{ source: OrgID }</td>
+    </tr>
+    <tr>
+      <td>transferred_out</td>
+      <td>{ destination: OrgID}</td>
+    </tr>
+    <tr>
+      <td>visibility_changed</td>
+      <td>{ previous: { accessVisibility: privat | public | unlisted | active },<br />current: { accessVisibility: private | public | unlisted | active } }</td>
     </tr>
   </tbody>
 </table>
 
-<p>The events that would trigger a ModelDetailsChanged event and would be included in the previous/current payloads:</p>
+<p>The ModelDetailsChanged payload will not be propagated until model processing completes.  The events that would trigger a ModelDetailsChanged event and would be included in the previous/current payloads:</p>
 
 <ul>
-  <li>address.*</li>
+  <li>address { * }</li>
   <li>description</li>
-  <li>image.id</li>
+  <li>image { id }</li>
   <li>internalId</li>
-  <li>mls.id</li>
-  <li>mls.name</li>
+  <li>mls { id name }</li>
   <li>name</li>
-  <li>publication.description</li>
-  <li>publication.externalUrl</li>
-  <li>publication.presentedby</li>
-  <li>publication.summary</li>
+  <li>publication { description, externalUrl, presentedby, summary }</li>
 </ul>
+
+<h2 id="model-processed--activation-state-changed">Model Processed &amp; Activation State Changed</h2>
+
+<p>When a model has finished processing it may not immediately be active and ready to accept mutations.</p>
+
+<p>For the majority of our users, a model will begin with a pending status.  Our platform will analyze the number of scans to determine the number of active spaces that the model will consume and will check the available spaces left for your account.  If the account has the capacity to store this new model, the model will then be set to active.</p>
+
+<p>Performing a mutation immediately after a model has processed may result in an error.  This race condition can be mitigated by subscribing to both the processed and activation_state_changed events and waiting until both the processed and active conditions have been met.</p>
 
 <h2 id="list-registered-model-event-callbacks">List Registered Model Event Callbacks</h2>
 
@@ -1491,7 +1449,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Nov 25, 2024 <br />
+ Site last generated: Nov 26, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
