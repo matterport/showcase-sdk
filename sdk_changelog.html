@@ -1012,6 +1012,25 @@ Support for the <code class="language-plaintext highlighter-rouge">&amp;useLegac
 We have moved to an id scheme that matches our platform and APIs.<br />
 If you have stored data including ids, we have added several functions to map between ids for <a href="docs/reference/current/modules/sweep.conversion.html">Sweeps</a>, <a href="docs/reference/current/modules/floor.conversion.html">Floors</a>, and <a href="docs/reference/current/modules/room.conversion.html">Rooms</a>.</div>
 
+<h2 id="24123">24.12.3</h2>
+
+<h5 id="dec-18-2024">Dec 18, 2024</h5>
+
+<p><em>General</em></p>
+
+<ul>
+  <li>Added: <a href="docs/reference/current/modules/tag.html#add">Tag.Add</a> now supports keywords (<code class="language-plaintext highlighter-rouge">keywords: string[]</code>)
+    <ul>
+      <li><a href="docs/reference/current/modules/tag.html#optional-keywords-string">Keywords</a> on the returned TagData object is a JavaScript array.</li>
+      <li>Directly mutate with standard Array methods - e.g. <code class="language-plaintext highlighter-rouge">tag.keywords.push('bar')</code>, <code class="language-plaintext highlighter-rouge">tag.keywords.splice(0,1)</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>Updated: <a href="docs/reference/current/modules/tour.html#currentstepdata">Tour.CurrentStepData</a> now includes <code class="language-plaintext highlighter-rouge">index</code></p>
+  </li>
+  <li>Improvement: Improved type definitions for <a href="docs/reference/current/interfaces/sensor.isource.html#type">ISource.type</a></li>
+</ul>
+
 <h2 id="24112">24.11.2</h2>
 
 <h5 id="nov-14-2024">Nov 14, 2024</h5>

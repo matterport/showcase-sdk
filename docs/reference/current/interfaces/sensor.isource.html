@@ -1042,20 +1042,25 @@ $('#toc').on('click', 'a', function() {
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="tsd-lead">
-						<p>A Source represents a volume that will be detected by a Sensor.
-							The type of the source, describes the type of volume associated with it.
-						For example, with a <code>type</code> of <code>SourceType.SPHERE</code> the <code>volume</code> is a <code>SphereVolume</code>; a <code>SourceType.BOX</code> has a <code>BoxVolume</code>.</p>
+						<p>A Source represents a volume that will be detected by a Sensor.</p>
 					</div>
+					<p>The type of the source, describes the type of volume associated with it.</p>
+					<p>For example, with a <code>type</code> of <code>SourceType.SPHERE</code> the <code>volume</code> is a <code>SphereVolume</code>; a <code>SourceType.BOX</code> has a <code>BoxVolume</code>.</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-type-parameters">
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
 					<li>
-						<h4>Volume</h4>
+						<h4>VolumeT</h4>
+						<div class="tsd-comment tsd-typography">
+							<div class="tsd-lead">
+								<p><a href="../modules/sensor.html#spherevolume">SphereVolume</a> | <a href="../modules/sensor.html#boxvolume">BoxVolume</a> | <a href="../modules/sensor.html#cylindervolume">CylinderVolume</a></p>
+							</div>
+						</div>
 					</li>
 					<li>
-						<h4>UserData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4>UserDataT<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -1072,7 +1077,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=24.11.2_webgl-798-gf42d1db434">24.11.2_webgl-798-gf42d1db434</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=24.12.3_webgl-944-ge03b07c22c">24.12.3_webgl-944-ge03b07c22c</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1119,7 +1124,7 @@ $('#toc').on('click', 'a', function() {
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="userdata" class="tsd-anchor"></a>
 					<h3>user<wbr>Data</h3>
-					<div class="tsd-signature tsd-kind-icon">user<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">UserData</span></div>
+					<div class="tsd-signature tsd-kind-icon">user<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">UserDataT</span></div>
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -1131,12 +1136,12 @@ $('#toc').on('click', 'a', function() {
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="volume" class="tsd-anchor"></a>
 					<h3>volume</h3>
-					<div class="tsd-signature tsd-kind-icon">volume<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Volume</span></div>
+					<div class="tsd-signature tsd-kind-icon">volume<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">VolumeT</span></div>
 					<aside class="tsd-sources">
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="tsd-lead">
-							<p>The volume that represents the range of emissions from this <code>ISource</code>.</p>
+							<p>The volume that represents the range of emissions from this <code>ISource</code>. See <a href="../modules/sensor.html#volume">Volume</a>.</p>
 						</div>
 					</div>
 				</section>
@@ -1291,6 +1296,9 @@ $('#toc').on('click', 'a', function() {
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="../modules/sensor.html#spherevolume" class="tsd-kind-icon">Sphere<wbr>Volume</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/sensor.html#volume" class="tsd-kind-icon">Volume</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/sensor.html#createsensor" class="tsd-kind-icon">create<wbr>Sensor</a>
