@@ -1031,16 +1031,18 @@ See the <a href="sdk_changelog.html">change log</a></p>
 
 <h2 id="script-support"><code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> support</h2>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> These instructions are for including the SDK from <code>static.matterport.com</code> via a <code>&lt;script&gt;</code> tag. There is also an <a href="#npm-sdk-embed-package">NPM package</a> available.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> These instructions are for including the SDK via a <code>&lt;script&gt;</code> tag. There is also an <a href="#npm-sdk-embed-package">NPM package</a> available.</div>
 
 <h3 id="include-the-library-and-add-a-matterport-space">Include the Library and Add a Matterport Space</h3>
 
-<p>First, add the 3D Showcase SDK to your web application by including the Javascript library. This line goes in the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> tag with your other includes.</p>
+<p>First, download the <a href="https://static.matterport.com/showcase-sdk/bootstrap/3.0.0-0-g0517b8d76c/sdk.es6.js">SDK bootstrap</a> and add it to the project.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+<p>Optionally, set up an importmap. This line goes in the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> tag with your other includes.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"importmap"</span><span class="nt">&gt;</span>
 <span class="p">{</span>
   <span class="dl">"</span><span class="s2">imports</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="dl">"</span><span class="s2">MP_SDK</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://static.matterport.com/showcase-sdk/bootstrap/3.0.0-0-g0517b8d76c/sdk.es6.js</span><span class="dl">"</span>
+    <span class="dl">"</span><span class="s2">MP_SDK</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./[path]/[to]/sdk.es6.js</span><span class="dl">"</span>
   <span class="p">}</span>
 <span class="p">}</span>
 <span class="nt">&lt;/script&gt;</span>
@@ -1070,7 +1072,11 @@ See the <a href="sdk_changelog.html">change log</a></p>
 
 <p>Replace the <strong>[YOUR_SDK_KEY_HERE]</strong> string with your sdk key.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">MP_SDK</span><span class="dl">'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// if using the importmap</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">MP_SDK</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// if importing directly</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./[path]/[to]/sdk.es6.js</span><span class="dl">'</span>
 
 <span class="kd">const</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase-iframe</span><span class="dl">'</span><span class="p">);</span>
 
@@ -1225,7 +1231,7 @@ See the <a href="sdk_changelog.html">change log</a></p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Dec 19, 2024 <br />
+ Site last generated: Dec 23, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

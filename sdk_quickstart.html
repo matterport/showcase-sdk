@@ -1013,14 +1013,14 @@ $('#toc').on('click', 'a', function() {
 
 <p>This sample HTML creates an iframe containing a Matterport model. It then connects the Embed SDK, retrieves data about the model, and finally logs the model’s id.</p>
 
-<p>You only need to replace the <code class="language-plaintext highlighter-rouge">[YOUR_SDK_KEY_HERE]</code> string in the iframe’s “src” with your own key.</p>
+<p>You only need to replace the <code class="language-plaintext highlighter-rouge">[YOUR_SDK_KEY_HERE]</code> string in the iframe’s “src” with your own key and download the <a href="https://static.matterport.com/showcase-sdk/bootstrap/3.0.0-0-g0517b8d76c/sdk.es6.js">SDK Bootstrap</a> to your server.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
   <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"importmap"</span><span class="nt">&gt;</span>
     <span class="p">{</span>
       <span class="dl">"</span><span class="s2">imports</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="dl">"</span><span class="s2">MP_SDK</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://static.matterport.com/showcase-sdk/bootstrap/3.0.0-0-g0517b8d76c/sdk.es6.js</span><span class="dl">"</span>
+        <span class="dl">"</span><span class="s2">MP_SDK</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./sdk.es6.js</span><span class="dl">"</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="nt">&lt;/script&gt;</span>
@@ -1080,7 +1080,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Dec 19, 2024 <br />
+ Site last generated: Dec 23, 2024 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
