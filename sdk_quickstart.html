@@ -1011,19 +1011,17 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="a-complete-example-to-get-started">A Complete Example to Get Started</h2>
 
-<p>This sample HTML creates an iframe containing a Matterport model. It then connects the Embed SDK, retrieves data about the model, and finally logs the model’s id.</p>
-
-<p>You only need to replace the <code class="language-plaintext highlighter-rouge">[YOUR_SDK_KEY_HERE]</code> string in the iframe’s “src” with your own key and download the <a href="https://static.matterport.com/showcase-sdk/bootstrap/3.0.0-0-g0517b8d76c/sdk.es6.js">SDK Bootstrap</a> to your server.</p>
+<p>The following sample embeds our Showcase Player in an HTML document and uses the SDK Client Bootstrap to connect to the Showcase, ultimately returning the Showcase API.  Simply replace [YOUR_SDK_KEY_HERE] with a valid SDK Key for the domain name that the page will be loaded from.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
-  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"importmap"</span><span class="nt">&gt;</span>
-    <span class="p">{</span>
-      <span class="dl">"</span><span class="s2">imports</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="dl">"</span><span class="s2">MP_SDK</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./sdk.es6.js</span><span class="dl">"</span>
+     <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"importmap"</span><span class="nt">&gt;</span>
+      <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">imports</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="dl">"</span><span class="s2">MP_SDK</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://api.matterport.com/sdk/bootstrap/3.0.0-0-g0517b8d76c/sdk.es6.js?applicationKey=[YOUR_SDK_KEY_HERE]</span><span class="dl">"</span>
+        <span class="p">}</span>
       <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/script&gt;</span>
   <span class="nt">&lt;/head&gt;</span>
   <span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;iframe</span>
@@ -1053,6 +1051,7 @@ $('#toc').on('click', 'a', function() {
 
         <span class="c1">// try retrieving the model data and log the model's sid</span>
         <span class="k">try</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello SDK</span><span class="dl">'</span><span class="p">,</span> <span class="nx">mpSdk</span><span class="p">);</span>
           <span class="kd">const</span> <span class="nx">modelData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">getData</span><span class="p">();</span>
           <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Model sid:</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">modelData</span><span class="p">.</span><span class="nx">sid</span><span class="p">);</span>
         <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
@@ -1079,8 +1078,8 @@ $('#toc').on('click', 'a', function() {
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Dec 23, 2024 <br />
+               &copy;2025 Matterport, Inc. All rights reserved. <br />
+ Site last generated: Jan 15, 2025 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

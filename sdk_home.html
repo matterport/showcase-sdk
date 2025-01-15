@@ -1042,11 +1042,13 @@ See the <a href="sdk_changelog.html">change log</a></p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"importmap"</span><span class="nt">&gt;</span>
 <span class="p">{</span>
   <span class="dl">"</span><span class="s2">imports</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="dl">"</span><span class="s2">MP_SDK</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./[path]/[to]/sdk.es6.js</span><span class="dl">"</span>
+    <span class="dl">"</span><span class="s2">MP_SDK</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./[path]/[to]/sdk.es6.js?applicationKey=[YOUR_SDK_KEY_HERE]</span><span class="dl">"</span>
   <span class="p">}</span>
 <span class="p">}</span>
 <span class="nt">&lt;/script&gt;</span>
 </code></pre></div></div>
+
+<p>Be sure to include the applicationKey when importing the library.</p>
 
 <p>Next, embed a Matterport Space on your web page with an <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> tag. <a href="https://support.matterport.com/hc/en-us/articles/115004549347-Embed-a-Space-with-an-iframe-">Learn more about embedding</a>.</p>
 
@@ -1119,7 +1121,7 @@ See the <a href="sdk_changelog.html">change log</a></p>
 <h3 id="legacy-windowmp_sdk-support">Legacy window.MP_SDK Support</h3>
 
 <p>Previous versions of the SDK set up a <code class="language-plaintext highlighter-rouge">window.MP_SDK</code> object with a <code class="language-plaintext highlighter-rouge">connect</code> function. To continue using this same connect method, use the non-ES6 version.</p>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://static.matterport.com/showcase-sdk/bootstrap/3.0.0-0-g0517b8d76c/sdk.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://static.matterport.com/showcase-sdk/bootstrap/3.0.0-0-g0517b8d76c/sdk.js&amp;applicationKey=[YOUR_SDK_KEY]"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script&gt;</span>
   <span class="nb">window</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">iframe</span><span class="p">,</span> <span class="dl">'</span><span class="s1">applicationkey</span><span class="dl">'</span><span class="p">)</span>
 <span class="nt">&lt;/script&gt;</span>
@@ -1230,8 +1232,8 @@ See the <a href="sdk_changelog.html">change log</a></p>
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Dec 23, 2024 <br />
+               &copy;2025 Matterport, Inc. All rights reserved. <br />
+ Site last generated: Jan 15, 2025 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

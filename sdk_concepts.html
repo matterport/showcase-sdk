@@ -1024,6 +1024,25 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If you’re having problems running 3D Showcase, it may be a problem with WebGL. Review our <a href="https://support.matterport.com/hc/articles/208220058">system requirements</a> for 3D Showcase.</div>
 
+<h2 id="the-sdk-is-asynchronous">The SDK is Asynchronous</h2>
+
+<p>It is important to understand that the SDK operates by making requests to Showcase and returning responses as <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promises</a>.</p>
+
+<p>For instance – the initial connect call doesn’t return the SDK object, but a promise <em>to</em> that SDK object.  Once <code class="language-plaintext highlighter-rouge">await</code>ed or <code class="language-plaintext highlighter-rouge">then</code>ed, this object will have all of the methods that we provide, divided into namespaces (App, Tag, etc) and visible via a console.log.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">iframe</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello SDK</span><span class="dl">'</span><span class="p">,</span> <span class="nx">mpSdk</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="disconnecting-the-sdk">Disconnecting the SDK</h2>
+
+<p>If your application has a feature that loads a new space, either reusing the same iframe or removing the DOM Element that contains the Showcase, you will want to <a href="docs/reference/current/index.html#disconnect" target="_blank">disconnect</a> the SDK before destroying or reusing that iframe. Then, you can connect again after the new page loads.</p>
+
 <h2 id="coordinate-conventions">Coordinate Conventions</h2>
 
 <p>In our Showcase Application, X, Y, and Z coordinates are from the <strong>viewpoint of the Matterport camera</strong> when it scanned the environment.</p>
@@ -1112,8 +1131,8 @@ $('#toc').on('click', 'a', function() {
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2024 Matterport, Inc. All rights reserved. <br />
- Site last generated: Dec 23, 2024 <br />
+               &copy;2025 Matterport, Inc. All rights reserved. <br />
+ Site last generated: Jan 15, 2025 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
