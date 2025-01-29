@@ -1,0 +1,605 @@
+{
+	"info": {
+		"_postman_id": "908e3c3a-bf31-48ce-8c1f-703063f48dfe",
+		"name": "Capture Services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19023259",
+		"_collection_link": "https://matterport-developer-support.postman.co/workspace/Chris-Hickman's-Workplace~d247665a-1abb-4fe7-811e-89a8d7202ed8/collection/19023259-908e3c3a-bf31-48ce-8c1f-703063f48dfe?action=share&source=collection_link&creator=19023259"
+	},
+	"item": [
+		{
+			"name": "Address Checker",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{Token_Secret}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{Token_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "domain_token={{domain_token}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query address {\n  address(address: {\n      streetAddressLines: [\n        \"801 E William Cannon Dr Suite 401\"\n      ],\n      administrativeArea: \"TX\",\n      locality: \"Austin\",\n      postalCode: \"78745\",\n      country: \"US\"\n    }){\n    ...AddressFields\n  }\n}\n\nfragment AddressFields on PreOrderAddress {\n  regionId\n  propertyTimeZone\n  addressLatitude\n  addressLongitude\n  placeId\n  geoCodePrecision\n  addressString\n  streetAddressLines\n  administrativeArea\n  locality\n  dependentLocality\n  postalCode\n  sortingCode\n  country\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://api.matterport.com/api/capturesvcs/graph",
+					"protocol": "https",
+					"host": [
+						"api",
+						"matterport",
+						"com"
+					],
+					"path": [
+						"api",
+						"capturesvcs",
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Preorder",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{Token_Secret}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{Token_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation createPreOrder($input: CaptureSvcsPreOrderInput) {\n  newPreOrder(input: $input) {\n    id\n    preOrderStatus\n    availability {\n      date\n      availableSlots {\n        startTime\n        endTime\n      }\n    }\n  }\n}",
+						"variables": "{\n    \"input\": {\n        \"address\": {\n        \"streetAddressLines\": [\n            \"801 E William Cannon Dr Suite 401\"\n        ],\n        \"administrativeArea\": \"TX\",\n        \"locality\": \"Austin\",\n        \"postalCode\": \"78745\",\n        \"country\": \"US\"\n        },\n        \"specialRequests\" : \"check in at the front desk\",\n        \"totalPropertySize\": 3500,\n        \"propertySizeUnit\": \"SQUARE_FT\",\n        \"estimateCurrency\": \"USD\",\n        \"contactName\": \"Test  User\",\n        \"contactEmail\": \"youremail@youreemail.com\",\n        \"contactPhone\": \"555-0000\",\n        \"contactWillBeOnsite\": true\n    }\n}"
+					}
+				},
+				"url": {
+					"raw": "https://api.matterport.com/api/capturesvcs/graph",
+					"protocol": "https",
+					"host": [
+						"api",
+						"matterport",
+						"com"
+					],
+					"path": [
+						"api",
+						"capturesvcs",
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch PreOrder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": " \nmutation editPreOrder($id: ID!, $input: CaptureSvcsPreOrderInput!){\n    patchPreOrder(id: $id,  input: $input) {\n    id\n    preOrderStatus\n  }\n}\n\n\n",
+						"variables": "{\n    \"id\": \"yk2ht2ksp5ech7dcm5tetgigd\",\n    \"input\": {\n        \"propertyType\":\"RESIDENTIAL\",\n        \"specialRequests\" : \"check in at the front desk.  more data\",\n        \"totalPropertySize\": 3500,\n        \"propertySizeUnit\": \"SQUARE_FT\",\n        \"preferredStartTime\": \"2022-04-16T14:00:00Z\",\n        \"contactName\": \"Test User\",\n        \"contactEmail\": \"youremail@youremail.com\",\n        \"contactPhone\": \"555-0000\" ,\n        \"contactWillBeOnsite\": true\n    }\n}"
+					}
+				},
+				"url": {
+					"raw": "https://api.matterport.com/api/capturesvcs/graph",
+					"protocol": "https",
+					"host": [
+						"api",
+						"matterport",
+						"com"
+					],
+					"path": [
+						"api",
+						"capturesvcs",
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit PreOrder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation submitPreOrder($preOrderId: ID!) {\n  submitPreOrder(id: $preOrderId) {\n    ...OrderFields\n  }\n}\n\n\nfragment OrderFields on CaptureSvcsOrder {\n  id\n  address\n  propertyType\n  propertyTimeZone\n  preferredStartTime\n  specialRequests\n  addressLatitude\n  addressLongitude\n  regionId\n  jobDuration\n  sizeTierPricing\n  sizeTier\n  price\n  customerCurrency\n  totalPropertySize\n  propertySizeUnit\n  contactName\n  contactEmail\n  contactPhone\n  contactWillBeOnsite\n}\n",
+						"variables": "{ \n\"preOrderId\":\"yk2ht2ksp5ech7dcm5tetgigd\"\n}"
+					}
+				},
+				"url": {
+					"raw": "https://api.matterport.com/api/capturesvcs/graph",
+					"protocol": "https",
+					"host": [
+						"api",
+						"matterport",
+						"com"
+					],
+					"path": [
+						"api",
+						"capturesvcs",
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Preview Order",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{Token_Secret}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{Token_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation previewOrder($preOrderId: ID!) {\n  previewOrder(id: $preOrderId) {\n    ...OrderFields\n  }\n}\n\nfragment OrderFields on CaptureSvcsOrder {\n  id\n  address\n  propertyType\n  propertyTimeZone\n  preferredStartTime\n  specialRequests\n  addressLatitude\n  addressLongitude\n  regionId\n  jobDuration\n  sizeTierPricing\n  sizeTier\n  price\n  customerCurrency\n  totalPropertySize\n  propertySizeUnit\n  contactName\n  contactEmail\n  contactPhone\n  contactWillBeOnsite\n}",
+						"variables": "{ \n\"preOrderId\":\"upgawir53nn26furm19nqtwyc\"\n}"
+					}
+				},
+				"url": {
+					"raw": "https://api.matterport.com/api/capturesvcs/graph",
+					"protocol": "https",
+					"host": [
+						"api",
+						"matterport",
+						"com"
+					],
+					"path": [
+						"api",
+						"capturesvcs",
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit Order",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{Token_Secret}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{Token_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation submitOrder($preOrderId: ID!) {\n  submitOrder(id: $preOrderId) {\n    ...OrderFields\n  }\n}\n\nfragment OrderFields on CaptureSvcsOrder {\n  id\n  address\n  propertyType\n  propertyTimeZone\n  preferredStartTime\n  specialRequests\n  addressLatitude\n  addressLongitude\n  regionId\n  jobDuration\n  sizeTierPricing\n  sizeTier\n  price\n  customerCurrency\n  totalPropertySize\n  propertySizeUnit\n  contactName\n  contactEmail\n  contactPhone\n  contactWillBeOnsite\n}",
+						"variables": "{ \n\"preOrderId\":\"yk2ht2ksp5ech7dcm5tetgigd\"\n}"
+					}
+				},
+				"url": {
+					"raw": "https://api.matterport.com/api/capturesvcs/graph",
+					"protocol": "https",
+					"host": [
+						"api",
+						"matterport",
+						"com"
+					],
+					"path": [
+						"api",
+						"capturesvcs",
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Job - Schedulo",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{Token_Secret}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{Token_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": " \nmutation patchJob($id: ID!, $input: CaptureSvcsJobInput!){\n    patchJob(id: $id,  input: $input) {\n    ...JobFields\n  }\n}\n\nfragment JobFields on CaptureSvcsJob {\n\tid\n  orderId\n  address\n  propertySize\n  propertySizeUnit\n  propertyType\n  propertyTimeZone\n  regionId\n  duration\n  status\n  scheduledStartTime\n  contactName\n  contactEmail\n  contactPhone\n  contactWillBeOnsite\n  specialRequests\n  techUserId\n  techAccountId\n  techNotesComments\n  custUserId\n  custAccountId\n  modelIds\n  created\n  modified\n}\n\n",
+						"variables": "{ \n\"id\":\"yk2ht2ksp5ech7dcm5tetgigd\",\n \"input\":  {\n     \"specialRequests\": \"Hello Testing\"\n}\n}"
+					}
+				},
+				"url": {
+					"raw": "https://api.matterport.com/api/capturesvcs/graph",
+					"protocol": "https",
+					"host": [
+						"api",
+						"matterport",
+						"com"
+					],
+					"path": [
+						"api",
+						"capturesvcs",
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel Job  - Schedulo",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{Token_Secret}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{Token_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation cancelJob($jobId: ID!) {\n  cancelJob(id: $jobId) {\n    id\n  }\n}",
+						"variables": "{ \n\"jobId\":\"i9cn9sqkm2c4qinui4d772r7c\"\n}"
+					}
+				},
+				"url": {
+					"raw": "https://api.matterport.com/api/capturesvcs/graph",
+					"protocol": "https",
+					"host": [
+						"api",
+						"matterport",
+						"com"
+					],
+					"path": [
+						"api",
+						"capturesvcs",
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Fields PreOrder",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{Token_Secret}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{Token_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query preOrder($id: ID!) {\n  preOrder(preOrderId: $id) {\n    ...PreOrderFields\n    \n  }\n}\n\nfragment AddressFields on PreOrderAddress {\n  regionId\n  propertyTimeZone\n  addressLatitude\n  addressLongitude\n  placeId\n  geoCodePrecision\n  addressString\n  streetAddressLines\n  administrativeArea\n  locality\n  dependentLocality\n  postalCode\n  sortingCode\n  country\n}\n\nfragment PreOrderFields on CaptureSvcsPreOrder {\n  id\n  address {\n    ...AddressFields\n  }\n  created\n  modified\n  estimateCurrency\n  propertyType\n  totalPropertySize\n  propertySizeUnit\n  sizeTier\n  sizeTierPricing\n  estimatePrice\n  jobDuration\n  preferredStartTime\n  contactName\n  contactEmail\n  contactPhone\n  contactWillBeOnsite\n  specialRequests\n  preOrderStatus\n}",
+						"variables": "{\n  \"id\": \"dfq7ynsqq0xayttskydiwgthc\"\n}"
+					}
+				},
+				"url": {
+					"raw": "https://api.matterport.com/api/capturesvcs/graph",
+					"protocol": "https",
+					"host": [
+						"api",
+						"matterport",
+						"com"
+					],
+					"path": [
+						"api",
+						"capturesvcs",
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Fields Order",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{Token_Secret}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{Token_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query order($id: ID!) {\n  order(orderId: $id) {\n    ...OrderFields\n  }\n}\n\n\nfragment OrderFields on CaptureSvcsOrder {\n  id\n  address\n  propertyType\n  propertyTimeZone\n  preferredStartTime\n  specialRequests\n  addressLatitude\n  addressLongitude\n  regionId\n  jobDuration\n  sizeTierPricing\n  sizeTier\n  price\n  customerCurrency\n  totalPropertySize\n  propertySizeUnit\n  contactName\n  contactEmail\n  contactPhone\n  contactWillBeOnsite\n}",
+						"variables": "{\n  \"id\": \"dfq7ynsqq0xayttskydiwgthc\"\n}"
+					}
+				},
+				"url": {
+					"raw": "https://api.matterport.com/api/capturesvcs/graph",
+					"protocol": "https",
+					"host": [
+						"api",
+						"matterport",
+						"com"
+					],
+					"path": [
+						"api",
+						"capturesvcs",
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Fields Job",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{Token_Secret}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{Token_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query job($id: ID!) {\n  job(jobId: $id) {\n    ...JobFields\n  }\n}\n\nfragment JobFields on CaptureSvcsJob {\n\tid\n  orderId\n  address\n  propertySize\n  propertySizeUnit\n  propertyType\n  propertyTimeZone\n  regionId\n  duration\n  status\n  scheduledStartTime\n  contactName\n  contactEmail\n  contactPhone\n  contactWillBeOnsite\n  specialRequests\n  techUserId\n  techAccountId\n  techNotesComments\n  custUserId\n  custAccountId\n  modelIds\n  created\n  modified\n}",
+						"variables": "{\n  \"id\": \"upgawir53nn26furm19nqtwyc\"\n}"
+					}
+				},
+				"url": {
+					"raw": "https://api.matterport.com/api/capturesvcs/graph",
+					"protocol": "https",
+					"host": [
+						"api",
+						"matterport",
+						"com"
+					],
+					"path": [
+						"api",
+						"capturesvcs",
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show All Preorders",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query preorder{\n  preoder{\n    results {\n      ...JobFields\n    }\n  }\n}\n\nfragment JobFields on CaptureSvcsJob {\n\tid\n  orderId\n  address\n  propertySize\n  propertySizeUnit\n  propertyType\n  propertyTimeZone\n  regionId\n  duration\n  status\n  scheduledStartTime\n  contactName\n  contactEmail\n  contactPhone\n  contactWillBeOnsite\n  specialRequests\n  techUserId\n  techAccountId\n  techNotesComments\n  custUserId\n  custAccountId\n  modelIds\n  created\n  modified\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show All Jobs",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{Token_Secret}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{Token_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query jobs{\n  jobs{\n    results {\n      ...JobFields\n    }\n  }\n}\n\nfragment JobFields on CaptureSvcsJob {\n\tid\n  orderId\n  address\n  propertySize\n  propertySizeUnit\n  propertyType\n  propertyTimeZone\n  regionId\n  duration\n  status\n  scheduledStartTime\n  contactName\n  contactEmail\n  contactPhone\n  contactWillBeOnsite\n  specialRequests\n  techUserId\n  techAccountId\n  techNotesComments\n  custUserId\n  custAccountId\n  modelIds\n  created\n  modified\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://api.matterport.com/api/capturesvcs/graph",
+					"protocol": "https",
+					"host": [
+						"api",
+						"matterport",
+						"com"
+					],
+					"path": [
+						"api",
+						"capturesvcs",
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show All Orders",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query orders{\n  orders{\n    results {\n      ...orders\n    }\n  }\n}\n\nfragment JobFields on CaptureSvcsJob {\n\tid\n  orderId\n  address\n  propertySize\n  propertySizeUnit\n  propertyType\n  propertyTimeZone\n  regionId\n  duration\n  status\n  scheduledStartTime\n  contactName\n  contactEmail\n  contactPhone\n  contactWillBeOnsite\n  specialRequests\n  techUserId\n  techAccountId\n  techNotesComments\n  custUserId\n  custAccountId\n  modelIds\n  created\n  modified\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://api.matterport.com/api/capturesvcs/graph",
+					"protocol": "https",
+					"host": [
+						"api",
+						"matterport",
+						"com"
+					],
+					"path": [
+						"api",
+						"capturesvcs",
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"username\":\"\",\n\"password\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://authn.matterport.com/api/login",
+					"protocol": "https",
+					"host": [
+						"authn",
+						"matterport",
+						"com"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

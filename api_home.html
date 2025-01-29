@@ -765,6 +765,27 @@
           
           
           <li class="subfolders">
+              <a title="Capture Services API" href="#">Capture Services API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Overview" href="/showcase-sdk/capture_services_api.html">Overview</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Sample Queries" href="/showcase-sdk/capture_services_queries.html">Sample Queries</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
               <a title="Property Intelligence" href="#">Property Intelligence</a>
               <ul>
                   
@@ -992,13 +1013,34 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>From directly accessing data, to modifying content, to managing a model’s status, to purchasing value-added services, we want our developers to have full control.</p>
 
-<h2 id="documentation">Documentation</h2>
+<h2 id="graphql">GraphQL</h2>
 
-<p>You can learn more about our current GraphQL API capabilities in our <a href="https://api.matterport.com/docs/reference" target="_blank">reference guide</a>. This also grants you access to our interactive console, where you can experiment with the GraphQL API on a limited basis. </p>
+<p>Matterport’s APIs are provided with a GraphQL API interface.  GraphQL allows developers to make declarative queries to fetch the exact data needed using a single endpoint.  Compared to a REST API, which may require round-trip requests to many endpoints, GraphQL can get all of the data that your application needs with a single request.</p>
 
-<p>To access the interactive console, you need to be logged into Matterport Cloud (my.matterport.com) with administrator credentials.</p>
+<p>In addition to queries that fetch data, our APIs also provide mutations, which are requests to modify data.  A mutation may be used to update data related to a model or may trigger an action such as purchasing an add-on or scheduling a Capture Services job.</p>
 
 <p><a href="https://graphql.org/learn/queries/" target="_blank">Learn more about constructing GraphQL queries and mutations</a>.</p>
+
+<h2 id="documentation">Documentation</h2>
+
+<p>Each of our GraphQL APIs contain a schema that contains a complete set of definitions for all queries and mutations that a user can perform.</p>
+
+<p>We provide an online schema reference for each of our public APIs that you can access at: 
+ <a href="https://api.matterport.com/docs/reference" target="_blank">https://api.matterport.com/docs/reference</a>.</p>
+
+<p>If you are logged into your Matterport Account with administrator access, you will be able to select each API that you have access to.</p>
+
+<p>Our Model API is available to users at all account levels.  Enterprise customers also have access to Account API.  We also provide access to the Capture Services API by request for customers that leverage our on-demand at an Enterprise level.</p>
+
+<p>You can also explore the schema and perform queries with each API via GraphiQL, an online GraphQL client that we provide customers access to.</p>
+
+<ul>
+  <li><a href="https://api.matterport.com/model/graphiql">Model API GraphiQL</a></li>
+  <li><a href="https://api.matterport.com/account/graphiql">Account API GraphiQL</a></li>
+  <li><a href="https://api.matterport.com/capturesvcs/graphiql">Capture Services API GraphiQL</a></li>
+</ul>
+
+<p>You can also explore our APIs and build and test queries with popular GraphQL clients such as [Postman](https://www.postman.com/]{:target=”_blank”}, [Altair][https://altairgraphql.dev/]{:target=”_blank”} or <a href="https://insomnia.rest/" taget="_blank">Insomnia</a>.  These clients leverage the provided schema to provide query completion through introspection along with an interactive reference guide, similar to what you will find in the GraphiQL Console.  Certain clients will also generate ready-to-use code that you can use within your applications.</p>
 
 <h2 id="generate-api-keys">Generate API Keys</h2>
 
@@ -1017,7 +1059,7 @@ noResultsText: '<li><div>No results found.<div></li>',
   <li><strong>Token Secret</strong> - This is presented only once, so make sure to copy and save it securely.</li>
 </ul>
 
-<p>API keys are “admin” or “all-access” keys. This means they grant users administrative credentials to the customer account. Using the API with the generated API key, developers can perform all administrative functions using the API, including archiving models and purchasing floorplans and MatterPaks.</p>
+<p>API keys are “admin” or “all-access” keys. This means they grant users administrative credentials to the customer account. Using the API with the generated API key, developers can perform all administrative functions using the API, including archiving models, purchasing floorplans and Matterpaks.</p>
 
 <p>It’s important to remember this when sharing your API keys. We strongly advise that you don’t share your API keys with third-party companies or developers.</p>
 
@@ -1032,6 +1074,7 @@ noResultsText: '<li><div>No results found.<div></li>',
     <ul>
       <li><strong>Model API:</strong> https://api.matterport.com/api/models/graph</li>
       <li><strong>Account API:</strong> https://api.matterport.com/api/accounts/graph (Enterprise Only)</li>
+      <li><strong>Capture Services API</strong> https://api.matterport.com/api/capturesvcs/graph (Enterprise Only)</li>
     </ul>
   </li>
   <li>Use the Token ID as the username.</li>
@@ -1040,10 +1083,6 @@ noResultsText: '<li><div>No results found.<div></li>',
 </ul>
 
 <p>All standard http libraries should support this process, but make sure to set your preemptive authorization to “true”.</p>
-
-<h2 id="code-snippet-examples">Code Snippet Examples</h2>
-
-<p>To get started, refer to <a href="modelapi_snippets.html">these code snippet examples</a></p>
 
 <h2 id="error-codes">Error Codes</h2>
 
@@ -1304,7 +1343,7 @@ def fromApiToSdk(x, y, z) = [ x, z, -y ]
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jan 16, 2025 <br />
+ Site last generated: Jan 29, 2025 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
