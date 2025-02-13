@@ -1143,10 +1143,12 @@ noResultsText: '<li><div>No results found.<div></li>',
 
   <p>Results might need to be <a href="https://graphql.org/learn/pagination/#pagination-and-edges" target="_blank">paginated</a> (offset pagination).</p>
 
+  <p>Optional - you can specify a text string within the ‘query’ field to filter results that contain the query string within the email, firstName or lastName fields.</p>
+
   <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getOrganizationInfo</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">organization</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">memberships</span><span class="p">(</span><span class="w">
-      </span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+      </span><span class="n">query</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="n">pageSize</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
       </span><span class="n">offset</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">){</span><span class="w">
@@ -1237,7 +1239,7 @@ noResultsText: '<li><div>No results found.<div></li>',
   </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/accounts/graphiql/?operationName=getOrganizationInfo&amp;query=fragment%20user%20on%20User%7B%0A%20%20id%0A%20%20firstName%0A%20%20lastName%0A%20%20email%0A%20%20created%0A%7D%0A%0Aquery%20getOrganizationInfo%20%7B%0A%20%20organization%20%7B%0A%09%09memberships(%0A%20%20%20%20%20%20query%3A%20%22*%22%2C%0A%20%20%20%20%20%20pageSize%3A%20100%2C%0A%20%20%20%20%20%20offset%3A%20null%0A%20%20%20%20)%7B%0A%20%20%20%20%20%20nextOffset%2C%0A%20%20%20%20%20%20results%7B%0A%20%20%20%20%20%20%20%20user%20%7B%0A%20%20%20%20%20%20%20%20%20%20...user%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20roles%7B%0A%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A" target="_blank">Try this in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/accounts/graphiql/?query=fragment%20user%20on%20User%7B%0A%20%20id%0A%20%20firstName%0A%20%20lastName%0A%20%20email%0A%20%20created%0A%7D%0A%0Aquery%20getOrganizationInfo%20%7B%0A%20%20organization%20%7B%0A%09%09memberships(%0A%20%20%20%20%20%20query%3A%20%22%22%2C%0A%20%20%20%20%20%20pageSize%3A%20100%2C%0A%20%20%20%20%20%20offset%3A%20null%0A%20%20%20%20)%7B%0A%20%20%20%20%20%20nextOffset%2C%0A%20%20%20%20%20%20results%7B%0A%20%20%20%20%20%20%20%20user%20%7B%0A%20%20%20%20%20%20%20%20%20%20...user%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20roles%7B%0A%20%20%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20status%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A" target="_blank">Try this in our interactive console</a></p>
 
 </details>
 <details name="Invite user to organization">
@@ -1572,7 +1574,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jan 29, 2025 <br />
+ Site last generated: Feb 13, 2025 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
