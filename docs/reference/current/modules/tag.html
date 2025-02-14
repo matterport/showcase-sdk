@@ -1062,7 +1062,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.1.1_webgl-61-g5f9ce8ed23">25.1.1_webgl-61-g5f9ce8ed23</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.2.2_webgl-203-g6c2f00dfc3">25.2.2_webgl-203-g6c2f00dfc3</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1230,6 +1230,7 @@ $('#toc').on('click', 'a', function() {
 							<p>A subset of the TagData used when adding Tags.
 							Most properties are optional except those used for positioning: <code>anchorPosition</code>, <code>stemVector</code>.</p>
 						</div>
+						<p>See <a href="tag.html#tagdata">Tag.TagData</a> for further descriptions of these properties.</p>
 					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
@@ -1245,6 +1246,9 @@ $('#toc').on('click', 'a', function() {
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> description<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> enabled<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> icon<wbr>Id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
@@ -1499,6 +1503,15 @@ $('#toc').on('click', 'a', function() {
 							</li>
 							<li class="tsd-parameter">
 								<h5>disc<wbr>Position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>enabled<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="tsd-lead">
+										<p>Whether this tag is visible and accepts input.
+										Modifying this value will toggle the tag&#39;s visibility and input handlers, and notify any existing observables.</p>
+									</div>
+								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5>font<wbr>Id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
@@ -3010,7 +3023,7 @@ mpSdk.Tag.toggleSharing();
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Feb 13, 2025 <br />
+ Site last generated: Feb 14, 2025 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
