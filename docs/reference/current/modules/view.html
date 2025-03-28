@@ -1062,7 +1062,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.2.2_webgl-203-g6c2f00dfc3">25.2.2_webgl-203-g6c2f00dfc3</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.3.4_webgl-403-g7d2911f42d">25.3.4_webgl-403-g7d2911f42d</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1075,6 +1075,13 @@ $('#toc').on('click', 'a', function() {
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/view.layertype.html" class="tsd-kind-icon">Layer<wbr>Type</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/view.viewtype.html" class="tsd-kind-icon">View<wbr>Type</a></li>
+							</ul>
+						</section>
 						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
@@ -1094,6 +1101,7 @@ $('#toc').on('click', 'a', function() {
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="view.html#createlayer" class="tsd-kind-icon">create<wbr>Layer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="view.html#deletelayer" class="tsd-kind-icon">delete<wbr>Layer</a></li>
 							</ul>
 						</section>
 					</div>
@@ -1181,7 +1189,7 @@ $('#toc').on('click', 'a', function() {
 					<a name="createlayer" class="tsd-anchor"></a>
 					<h3>create<wbr>Layer</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Layer<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/view.layer.html" class="tsd-signature-type">View.Layer</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Layer<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/view.layer.html" class="tsd-signature-type">View.Layer</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1191,18 +1199,60 @@ $('#toc').on('click', 'a', function() {
 								<div class="tsd-lead">
 									<p>Create a layer that can be later added to a View or Views</p>
 								</div>
-								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> layer = <span class="hljs-keyword">await</span> mpSdk.View.createLayer(<span class="hljs-string">&#x27;my layer&#x27;</span>);
+								<pre><code class="language-typescript"><span class="hljs-comment">// create a standard Layer to be added to a View</span>
+<span class="hljs-keyword">const</span> layer = <span class="hljs-keyword">await</span> mpSdk.View.createLayer(<span class="hljs-string">&#x27;my layer&#x27;</span>);
+<span class="hljs-comment">// create a common Layer that is in all Views</span>
+<span class="hljs-keyword">const</span> layer = <span class="hljs-keyword">await</span> mpSdk.View.createLayer(<span class="hljs-string">&#x27;my layer&#x27;</span>, { <span class="hljs-attr">common</span>: <span class="hljs-literal">true</span> });
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></h5>
 									<div class="tsd-comment tsd-typography">
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/view.layer.html" class="tsd-signature-type">View.Layer</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="deletelayer" class="tsd-anchor"></a>
+					<h3>delete<wbr>Layer</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Layer<span class="tsd-signature-symbol">(</span>layer<span class="tsd-signature-symbol">: </span><a href="../interfaces/view.layer.html" class="tsd-signature-type">View.Layer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
+							</dl>
+							<h4 class="tsd-introduced-title">Introduced
+								<span class="tsd-introduced-vers">25.3.4
+								</span>
+							</h4>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="tsd-lead">
+									<p>Delete a layer. The Layer will be removed from all views that it is in.</p>
+								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> layer = <span class="hljs-keyword">await</span> mpSdk.View.createLayer(<span class="hljs-string">&#x27;my layer&#x27;</span>);
+<span class="hljs-keyword">await</span> mpSdk.View.deleteLayer(layer);
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>layer: <a href="../interfaces/view.layer.html" class="tsd-signature-type">View.Layer</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1287,6 +1337,12 @@ $('#toc').on('click', 'a', function() {
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
+						<a href="../enums/view.layertype.html" class="tsd-kind-icon">Layer<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
+						<a href="../enums/view.viewtype.html" class="tsd-kind-icon">View<wbr>Type</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
 						<a href="../interfaces/view.layer.html" class="tsd-kind-icon">Layer</a>
 					</li>
@@ -1304,6 +1360,9 @@ $('#toc').on('click', 'a', function() {
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="view.html#createlayer" class="tsd-kind-icon">create<wbr>Layer</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="view.html#deletelayer" class="tsd-kind-icon">delete<wbr>Layer</a>
 					</li>
 				</ul>
 			</nav>
@@ -1331,7 +1390,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Feb 14, 2025 <br />
+ Site last generated: Mar 28, 2025 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

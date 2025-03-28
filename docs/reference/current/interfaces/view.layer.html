@@ -1078,7 +1078,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.2.2_webgl-203-g6c2f00dfc3">25.2.2_webgl-203-g6c2f00dfc3</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.3.4_webgl-403-g7d2911f42d">25.3.4_webgl-403-g7d2911f42d</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1095,9 +1095,16 @@ $('#toc').on('click', 'a', function() {
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="view.layer.html#tag" class="tsd-kind-icon">Tag</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="view.layer.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="view.layer.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="view.layer.html#toggled" class="tsd-kind-icon">toggled</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-interface"><a href="view.layer.html#common" class="tsd-kind-icon">common</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-interface"><a href="view.layer.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-interface"><a href="view.layer.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-interface"><a href="view.layer.html#toggled" class="tsd-kind-icon">toggled</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-interface"><a href="view.layer.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -1125,41 +1132,103 @@ $('#toc').on('click', 'a', function() {
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-interface">
+					<a name="common" class="tsd-anchor"></a>
+					<h3>common</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> common<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="tsd-lead">
+									<p>Whether this layer is common (shared across all views)</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-interface">
 					<a name="id" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> id</h3>
-					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="tsd-lead">
-							<p>The unique id of the Layer</p>
-						</div>
-					</div>
+					<h3>id</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> id<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="tsd-lead">
+									<p>The unique id of the Layer</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-interface">
 					<a name="name" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="tsd-lead">
-							<p>The human-readable name of the Layer</p>
-						</div>
-					</div>
+					<h3>name</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> name<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="tsd-lead">
+									<p>The human-readable name of the Layer</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-interface">
 					<a name="toggled" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> toggled</h3>
-					<div class="tsd-signature tsd-kind-icon">toggled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="tsd-lead">
-							<p>Whether this Layer toggled on or off. If toggled off, this Layer&#39;s objects are hidden.</p>
-						</div>
-					</div>
+					<h3>toggled</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> toggled<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="tsd-lead">
+									<p>Whether this Layer toggled on or off. If toggled off, this Layer&#39;s objects are hidden.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-interface">
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/view.layertype.html" class="tsd-signature-type">View.LayerType</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="tsd-lead">
+									<p>The type of layer</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/view.layertype.html" class="tsd-signature-type">View.LayerType</a></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -1212,7 +1281,7 @@ $('#toc').on('click', 'a', function() {
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> active: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Whether this Layer toggled on or off. If <code>active</code> is undefined, the state is flipped.</p>
+										<p>Whether this Layer should be toggled on or off. If <code>active</code> is undefined, the state is flipped.</p>
 									</div>
 								</li>
 							</ul>
@@ -1329,6 +1398,12 @@ $('#toc').on('click', 'a', function() {
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
+						<a href="../enums/view.layertype.html" class="tsd-kind-icon">Layer<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
+						<a href="../enums/view.viewtype.html" class="tsd-kind-icon">View<wbr>Type</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-namespace">
@@ -1337,14 +1412,20 @@ $('#toc').on('click', 'a', function() {
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="view.layer.html#tag" class="tsd-kind-icon">Tag</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-interface">
+								<a href="view.layer.html#common" class="tsd-kind-icon">common</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-interface">
 								<a href="view.layer.html#id" class="tsd-kind-icon">id</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-interface">
 								<a href="view.layer.html#name" class="tsd-kind-icon">name</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-interface">
 								<a href="view.layer.html#toggled" class="tsd-kind-icon">toggled</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-interface">
+								<a href="view.layer.html#type" class="tsd-kind-icon">type</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
 								<a href="view.layer.html#subscribe" class="tsd-kind-icon">subscribe</a>
@@ -1374,6 +1455,9 @@ $('#toc').on('click', 'a', function() {
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="../modules/view.html#createlayer" class="tsd-kind-icon">create<wbr>Layer</a>
 					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="../modules/view.html#deletelayer" class="tsd-kind-icon">delete<wbr>Layer</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -1400,7 +1484,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Feb 14, 2025 <br />
+ Site last generated: Mar 28, 2025 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

@@ -546,6 +546,8 @@
 
 
 
+
+
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -554,8 +556,6 @@
 "summary": ""
 }
 ,
-
-
 
 
 
@@ -2148,10 +2148,32 @@
 
 
 {
+"title": "Enumeration: View.LayerType",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docs/reference/current/enums/view.layertype.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Interface: View.View",
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/docs/reference/current/interfaces/view.view-1.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: View.ViewType",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docs/reference/current/enums/view.viewtype.html",
 "summary": ""
 }
 ,
