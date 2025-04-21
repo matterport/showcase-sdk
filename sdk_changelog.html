@@ -1032,6 +1032,35 @@ $('#toc').on('click', 'a', function() {
 Support for the <code class="language-plaintext highlighter-rouge">&amp;useLegacyIds</code> has been removed.
 Use <code class="language-plaintext highlighter-rouge">Conversion</code> maps for <a href="docs/reference/current/modules/sweep.conversion.html">Sweeps</a>, <a href="docs/reference/current/modules/floor.conversion.html">Floors</a>, and <a href="docs/reference/current/modules/room.conversion.html">Rooms</a>.</div>
 
+<h2 id="2543">25.4.3</h2>
+
+<h5 id="april-17-2025">April 17, 2025</h5>
+
+<p><strong>General</strong></p>
+<ul>
+  <li>Improvement: Resolved race condition from early access to Measurements mode</li>
+</ul>
+
+<h2 id="2543-1">25.4.3</h2>
+
+<h5 id="april-17-2025-1">April 17, 2025</h5>
+
+<p><strong>General</strong></p>
+<ul>
+  <li>Improvement: Updated floor inference algorithm used by Tag.add</li>
+  <li>Fixed an issue where some layers wouldn’t be included in a view’s <code class="language-plaintext highlighter-rouge">layers</code> list.</li>
+</ul>
+
+<h2 id="2541">25.4.1</h2>
+
+<h5 id="april-3-2025">April 3, 2025</h5>
+
+<p><strong>General</strong></p>
+<ul>
+  <li>Fixed an issue where SVG Images loaded with loaded via <a href="docs/reference/current/modules/asset.html#registertexture"><code class="language-plaintext highlighter-rouge">Asset.registerTexture</code></a> could have incorrect color profiles.</li>
+  <li>Fixed an issue where removing a layer from a view would require multiple <a href="docs/reference/current/interfaces/view.view-1.html#removelayer"><code class="language-plaintext highlighter-rouge">removeLayer</code></a> calls</li>
+</ul>
+
 <h2 id="2534">25.3.4</h2>
 
 <h5 id="mar-27-2025">Mar 27, 2025</h5>
@@ -1164,7 +1193,7 @@ Links:</p>
 <p><strong>General</strong></p>
 <ul>
   <li>Added <a href="docs/reference/current/modules/tag.html#editpositions"><code class="language-plaintext highlighter-rouge">Tag.editPositions</code></a> so that numerous Tags can be edited at once.</li>
-  <li>For maintenance, <a href="docs/reference/current/interfaces/scene.icomponent.html">Scene Components</a> are now under another level of hierarchy at the <a href="docs/reference/current/interfaces/scene.iobject.html">Scene Object</a> level, to more logically group them. There should be no noticeable change unless trying to traverse the scen graph through the parents.</li>
+  <li>For maintenance, <a href="docs/reference/current/interfaces/scene.icomponent.html">Scene Components</a> are now under another level of hierarchy at the <a href="docs/reference/current/interfaces/scene.iobject.html">Scene Object</a> level, to more logically group them. There should be no noticeable change unless trying to traverse the scene graph through the parents.</li>
   <li>Fixed an issue where <a href="docs/reference/current/index.html#on"><code class="language-plaintext highlighter-rouge">Label.Event.POSITION_UPDATED</code></a> would not fire</li>
 </ul>
 
@@ -2203,7 +2232,7 @@ We are adding support for synchronous functions. These functions compute and ret
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Mar 28, 2025 <br />
+ Site last generated: Apr 21, 2025 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
