@@ -1032,6 +1032,19 @@ $('#toc').on('click', 'a', function() {
 Support for the <code class="language-plaintext highlighter-rouge">&amp;useLegacyIds</code> has been removed.
 Use <code class="language-plaintext highlighter-rouge">Conversion</code> maps for <a href="docs/reference/current/modules/sweep.conversion.html">Sweeps</a>, <a href="docs/reference/current/modules/floor.conversion.html">Floors</a>, and <a href="docs/reference/current/modules/room.conversion.html">Rooms</a>.</div>
 
+<h2 id="2561">25.6.1</h2>
+
+<h5 id="jun-12-2025">Jun 12, 2025</h5>
+
+<p><strong>General</strong></p>
+<ul>
+  <li>Added <code class="language-plaintext highlighter-rouge">.waitUntil</code> to <a href="docs/reference/current/interfaces/iobservablemap.html#waituntil">ObservableMap</a>.</li>
+  <li>Added <a href="docs/reference/current/modules/conversion.html#basischange">Conversion routines</a> to convert coordinates (Vector) and rotations (Quaternion) between SDK and Platform API.</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">iconId</code> to <a href="docs/reference/current/modules/tag.html#tagdata">TagData</a>.</li>
+  <li>Fixed a <a href="docs/reference/current/interfaces/view.layer.html#toggle">Layer toggling</a> bug where the behavior was inverted: <code class="language-plaintext highlighter-rouge">true</code> now shows, <code class="language-plaintext highlighter-rouge">false</code> now hides.</li>
+  <li>Fixed an issue where Tag.attachments wouldn’t provide its initial state.</li>
+</ul>
+
 <h2 id="2544">25.4.4</h2>
 
 <h5 id="april-24-2025">April 24, 2025</h5>
@@ -2246,7 +2259,7 @@ We are adding support for synchronous functions. These functions compute and ret
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 29, 2025 <br />
+ Site last generated: Jun 16, 2025 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

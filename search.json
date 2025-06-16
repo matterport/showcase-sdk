@@ -345,6 +345,50 @@
 
 
 {
+"title": "Enumeration: TransformType.TransformType.CameraRotation",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docs/reference/current/enums/conversion.transformtype.camerarotation.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: TransformType.TransformType.Coordinates",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docs/reference/current/enums/conversion.transformtype.coordinates.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Namespace: Conversion.TransformType",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docs/reference/current/modules/conversion.transformtype.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: TransformType.TransformType.SweepRotation",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docs/reference/current/enums/conversion.transformtype.sweeprotation.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Custom Roles",
 "tags": "",
 "keywords": "",
@@ -544,10 +588,6 @@
 
 
 
-
-
-
-
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -556,6 +596,10 @@
 "summary": ""
 }
 ,
+
+
+
+
 
 
 

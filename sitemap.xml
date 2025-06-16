@@ -194,6 +194,30 @@
   
   
   <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/conversion.transformtype.camerarotation.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/conversion.transformtype.coordinates.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/modules/conversion.transformtype.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/conversion.transformtype.sweeprotation.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/custom_roles_overview.html</loc>
   </url>
   
@@ -303,13 +327,13 @@
   
   
   
-  
-  
-  
-  
   <url>
     <loc>https://matterport.github.io/index.html</loc>
   </url>
+  
+  
+  
+  
   
   
   
