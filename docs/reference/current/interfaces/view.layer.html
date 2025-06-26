@@ -1078,7 +1078,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.6.1_webgl-770-gd59ab04453">25.6.1_webgl-770-gd59ab04453</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.6.3_webgl-796-g11f6439ff2">25.6.3_webgl-796-g11f6439ff2</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1249,6 +1249,18 @@ $('#toc').on('click', 'a', function() {
 									<p>Subscribe to changes on this object.
 									When this observable detects a change, the <code>observer</code> provided will be called with the data associated with this observable.</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-comment">// Example: subscribe to changes in the app state</span>
+sdk.App.state.subscribe(<span class="hljs-function">(<span class="hljs-params">appState</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`App state changed to: <span class="hljs-subst">${appState.phase}</span>`</span>);
+});
+</code></pre>
+								<p>or:</p>
+								<pre><code class="language-typescript">sdk.App.state.subscribe({
+  <span class="hljs-function"><span class="hljs-title">onChanged</span>(<span class="hljs-params">appState</span>)</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`App state changed to: <span class="hljs-subst">${appState.phase}</span>`</span>);
+  }
+});
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1305,6 +1317,18 @@ $('#toc').on('click', 'a', function() {
 									<p>Wait for a specific condition on this object to be met.
 									When this observable detects a change, the <code>condition</code> provided will be called. When the <code>condition</code> returns true, the returned Promise will be resolved.</p>
 								</div>
+								<pre><code class="language-typescript"> <span class="hljs-comment">// Example: pause execution of code until the app state is in the &quot;playing&quot; phase</span>
+ <span class="hljs-keyword">await</span> sdk.App.state.waitUntil(
+  <span class="hljs-function"><span class="hljs-params">appState</span> =&gt;</span> appState.phase == sdk.App.Phase.PLAYING
+ );
+</code></pre>
+								<p>or:</p>
+								<pre><code class="language-typescript"><span class="hljs-keyword">await</span> sdk.App.state.waitUntil({
+  <span class="hljs-function"><span class="hljs-title">waitUntil</span>(<span class="hljs-params">appState</span>)</span> {
+    <span class="hljs-keyword">return</span> appState.phase == sdk.App.Phase.PLAYING;
+  }
+});
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1484,7 +1508,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jun 16, 2025 <br />
+ Site last generated: Jun 26, 2025 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>

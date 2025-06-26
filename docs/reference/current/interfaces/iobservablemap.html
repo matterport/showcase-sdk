@@ -1060,18 +1060,9 @@ $('#toc').on('click', 'a', function() {
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="tsd-lead">
-						<p>A map that can have its changes observed via subscribing an <a href="imapobserver.html">IMapObserver</a></p>
+						<p>A map that can have its changes observed via subscribing an <a href="imapobserver.html">IMapObserver</a> or that can
+						be waited on for a specific condition to be met.</p>
 					</div>
-					<p>For each observer subscribed to this <code>IObservableMap</code>:</p>
-					<ul>
-						<li><code>observer.onAdded</code> will be called when an item is added to the collection</li>
-						<li><code>observer.onRemoved</code> will be called when an item is removed from the collection</li>
-						<li><code>observer.onUpdated</code> will be called when an item has some of its properties changed</li>
-						<li><code>observer.onCollectionUpdated</code> will be called when some set of the above events have occured (item added/removed/updated)</li>
-					</ul>
-					<p>When first subscribing, the observers&#39; <code>onAdded</code> will be called for each item in the collection, and then again as items are added.
-						Alternatively, the <code>onCollectionUpdated</code> will always give an up-to-date view of the collection.
-					<code>onCollectionUpdated</code>, on first subscription, will be called once with the entire collection, and then again as changes to the collection  occur.</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-type-parameters">
@@ -1100,7 +1091,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.6.1_webgl-770-gd59ab04453">25.6.1_webgl-770-gd59ab04453</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.6.3_webgl-796-g11f6439ff2">25.6.3_webgl-796-g11f6439ff2</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1137,9 +1128,33 @@ $('#toc').on('click', 'a', function() {
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="tsd-lead">
-									<p>Subscribe to changes in this map.
-									When this observable detects a change, the <code>observer</code> provided will have its <code>onAdded</code>, <code>onRemoved</code>, and/or <code>onUpdated</code> called.</p>
+									<p>Subscribe to changes in this map.</p>
 								</div>
+								<p>When this observable detects a change, the <code>observer</code> provided will have its <code>onAdded</code>, <code>onRemoved</code>, and/or <code>onUpdated</code> called.</p>
+								<ul>
+									<li><code>observer.onAdded</code> will be called when an item is added to the collection</li>
+									<li><code>observer.onRemoved</code> will be called when an item is removed from the collection</li>
+									<li><code>observer.onUpdated</code> will be called when an item has some of its properties changed</li>
+									<li><code>observer.onCollectionUpdated</code> will be called after some set of the above events have occured (item added/removed/updated)</li>
+								</ul>
+								<p>When first subscribing, the observers&#39; <code>onAdded</code> will be called for each item in the collection.
+									The same is true for <code>onCollectionUpdated</code> which provides the latest view of the entire collection
+								<code>onCollectionUpdated</code> and <code>onAdded</code> continue to fire as changes to the collection occur.</p>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> subscription = sdk.Tag.data.subscribe({
+  <span class="hljs-attr">onAdded</span>: <span class="hljs-function">(<span class="hljs-params">index, item, collection</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Tag added at index <span class="hljs-subst">${index}</span>:`</span>, item);
+  },
+  <span class="hljs-attr">onRemoved</span>: <span class="hljs-function">(<span class="hljs-params">index, item, collection</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Tag removed from index <span class="hljs-subst">${index}</span>:`</span>, item);
+  },
+  <span class="hljs-attr">onUpdated</span>: <span class="hljs-function">(<span class="hljs-params">index, item, collection</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Tag updated at index <span class="hljs-subst">${index}</span>:`</span>, item);
+  },
+  <span class="hljs-attr">onCollectionUpdated</span>: <span class="hljs-function">(<span class="hljs-params">collection</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Current collection of tags:&#x27;</span>, collection);
+  }
+});
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1167,6 +1182,9 @@ $('#toc').on('click', 'a', function() {
 									<p>Wait for a specific condition on this map to be met.
 									When this observable detects a change, the <code>condition</code> provided will be called. When the <code>condition</code> returns true, the returned Promise will be resolved.</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-comment">// Get the tag collection to use in your application</span>
+<span class="hljs-keyword">const</span> tags: MpSdk.Dictionary&lt;MpSdk.Tag.TagData&gt; = <span class="hljs-keyword">await</span> props.sdk.Tag.data.waitUntil( <span class="hljs-function">() =&gt;</span> <span class="hljs-literal">true</span> );
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1232,7 +1250,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jun 16, 2025 <br />
+ Site last generated: Jun 26, 2025 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
