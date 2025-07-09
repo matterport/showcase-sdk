@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1060,13 +1060,13 @@ $('#toc').on('click', 'a', function() {
       <li>Either:
         <ol>
           <li>Wait for the <code class="language-plaintext highlighter-rouge">playingPromise</code>:
-            <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="kd">const</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">);</span>
+            <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="kd">const</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">);</span>
    <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">viewer</span><span class="p">.</span><span class="nx">playingPromise</span><span class="p">;</span>
 </code></pre></div>            </div>
           </li>
           <li><strong>OR</strong> listen for the <code class="language-plaintext highlighter-rouge">mpSdkPlaying</code> event:
-            <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="kd">const</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">);</span>
-   <span class="nx">viewer</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mpSdkPlaying</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="kd">const</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">);</span>
+   <span class="nx">viewer</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mpSdkPlaying</span><span class="dl">'</span><span class="p">,</span> <span class="k">async </span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">mpSdk</span><span class="p">;</span>
  <span class="cm">/* do something with mpSdk... */</span>
    <span class="p">});</span>
@@ -1092,8 +1092,8 @@ $('#toc').on('click', 'a', function() {
 <p>JS/TS:</p>
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">'</span><span class="s1">@matterport/webcomponent</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">);</span>
-<span class="nx">viewer</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mpSdkPlaying</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="kd">const</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">viewer</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mpSdkPlaying</span><span class="dl">'</span><span class="p">,</span> <span class="k">async </span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">mpSdk</span><span class="p">;</span>
   <span class="cm">/* do something with mpSdk... */</span>
 <span class="p">});</span>

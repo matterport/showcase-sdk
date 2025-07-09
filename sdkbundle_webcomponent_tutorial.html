@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1083,22 +1083,22 @@ npm <span class="nb">install </span>three@0.151
 
 <p>Create a file called <code class="language-plaintext highlighter-rouge">webpack.config.js</code> at your project root and set it up by pasting the following content:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">HtmlWebpackPlugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">html-webpack-plugin</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">HtmlWebpackPlugin</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">html-webpack-plugin</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">entry</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./src/index.js</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">./dist</span><span class="dl">"</span><span class="p">),</span>
+    <span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">./dist</span><span class="dl">"</span><span class="p">),</span>
     <span class="na">filename</span><span class="p">:</span> <span class="dl">"</span><span class="s2">index_bundle.js</span><span class="dl">"</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span>
-    <span class="k">new</span> <span class="nx">HtmlWebpackPlugin</span><span class="p">({</span>
-      <span class="na">template</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">./src/index.html</span><span class="dl">"</span><span class="p">),</span>
+    <span class="k">new</span> <span class="nc">HtmlWebpackPlugin</span><span class="p">({</span>
+      <span class="na">template</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">./src/index.html</span><span class="dl">"</span><span class="p">),</span>
     <span class="p">}),</span>
   <span class="p">],</span>
   <span class="na">devServer</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">static</span><span class="p">:</span> <span class="p">[</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">static</span><span class="dl">"</span><span class="p">)],</span>
+    <span class="na">static</span><span class="p">:</span> <span class="p">[</span><span class="nx">path</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">static</span><span class="dl">"</span><span class="p">)],</span>
   <span class="p">},</span>
 <span class="p">};</span>
 </code></pre></div></div>
@@ -1191,10 +1191,10 @@ npm run dev
 
 <p>Both events have the same call signature, so you can swap out <code class="language-plaintext highlighter-rouge">mpSdkPlaying</code> for <code class="language-plaintext highlighter-rouge">mpSdkConnected</code> if needed. In <code class="language-plaintext highlighter-rouge">index.js</code>:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">);</span>
-<span class="nx">viewer</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mpSdkPlaying</span><span class="dl">'</span><span class="p">,</span> <span class="nx">evt</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">viewer</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mpSdkPlaying</span><span class="dl">'</span><span class="p">,</span> <span class="nx">evt</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">mpSdk</span><span class="p">;</span>
-  <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">rotate</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nf">rotate</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 <span class="p">})</span>
 </code></pre></div></div>
 
@@ -1202,11 +1202,11 @@ npm run dev
 
 <p>To use those properties, add the following to your index.js file:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">main</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">).</span><span class="nx">playingPromise</span><span class="p">;</span>
-  <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">rotate</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">main</span> <span class="o">=</span> <span class="k">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">).</span><span class="nx">playingPromise</span><span class="p">;</span>
+  <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nf">rotate</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="nx">main</span><span class="p">();</span>
+<span class="nf">main</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p>Note that if you’re using TypeScript you can set up querySelector to preserve strong typing:</p>

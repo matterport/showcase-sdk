@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1122,47 +1122,47 @@ $('#toc').on('click', 'a', function() {
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create a scene object and node with an input component.</span>
 <span class="c1">// Note you will probably only need one instance of an input component</span>
 <span class="c1">// for your entire application.</span>
-<span class="kd">const</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">inputComponent</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.input</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+<span class="kd">const</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nf">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addNode</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">inputComponent</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.input</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">eventsEnabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="na">userNavigationEnabled</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
 <span class="p">});</span>
-<span class="nx">sceneObject</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<span class="nx">sceneObject</span><span class="p">.</span><span class="nf">start</span><span class="p">();</span>
 
 <span class="c1">// Define an emit path to listen for mouse click emits</span>
-<span class="kd">const</span> <span class="nx">clickEmitPath</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addEmitPath</span><span class="p">(</span>
+<span class="kd">const</span> <span class="nx">clickEmitPath</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addEmitPath</span><span class="p">(</span>
   <span class="nx">inputComponent</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">INTERACTION.CLICK</span><span class="dl">"</span>
 <span class="p">);</span>
 
 <span class="c1">// Define a click event spy</span>
-<span class="kd">const</span> <span class="nx">clickSpy</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">({</span>
+<span class="kd">const</span> <span class="nx">clickSpy</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">spyOnEvent</span><span class="p">({</span>
   <span class="na">path</span><span class="p">:</span> <span class="nx">clickEmitPath</span><span class="p">,</span>
-  <span class="nx">onEvent</span><span class="p">(</span><span class="na">payload</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">received</span><span class="dl">'</span><span class="p">,</span> <span class="nx">payload</span><span class="p">);</span>
+  <span class="nf">onEvent</span><span class="p">(</span><span class="na">payload</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">received</span><span class="dl">'</span><span class="p">,</span> <span class="nx">payload</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">});</span>
 
 <span class="c1">// Define an emit path to listen for keyboard interaction</span>
-<span class="kd">const</span> <span class="nx">keyEmitPath</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addEmitPath</span><span class="p">(</span>
+<span class="kd">const</span> <span class="nx">keyEmitPath</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addEmitPath</span><span class="p">(</span>
   <span class="nx">inputComponent</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">INTERACTION.KEY</span><span class="dl">"</span>
 <span class="p">);</span>
 
 <span class="c1">// Define a keypress event spy</span>
-<span class="kd">const</span> <span class="nx">keySpy</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">({</span>
+<span class="kd">const</span> <span class="nx">keySpy</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">spyOnEvent</span><span class="p">({</span>
   <span class="na">path</span><span class="p">:</span> <span class="nx">keyEmitPath</span><span class="p">,</span>
-  <span class="nx">onEvent</span><span class="p">(</span><span class="na">payload</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">onEvent</span><span class="p">(</span><span class="na">payload</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Log the key to the browser console.</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">key</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="mi">90</span> <span class="o">&amp;&amp;</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">state</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">key</span><span class="p">);</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="mi">90</span> <span class="o">&amp;&amp;</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">state</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
       <span class="c1">// Bind to keydown state for 'z'</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">z</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">z</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="mi">88</span> <span class="o">&amp;&amp;</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">state</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="mi">88</span> <span class="o">&amp;&amp;</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">state</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
       <span class="c1">// Bind to keydown state for 'x'</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">x</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">x</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">},</span>
 <span class="p">});</span>

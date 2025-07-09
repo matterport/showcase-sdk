@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1059,14 +1059,14 @@ graph TD
 <h2 id="creating-your-own-scene">Creating Your Own Scene</h2>
 <p>To get started, we’ll need to get some initial boilerplate out of the way by creating an Object and Node. Multiple Objects or Nodes can be created if necessary.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">sceneObject</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">sceneObject</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nf">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="c1">// if we only want one node:</span>
-<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">(</span><span class="cm">/* optionally, we can set the node's id here */</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addNode</span><span class="p">(</span><span class="cm">/* optionally, we can set the node's id here */</span><span class="p">);</span>
 
 <span class="c1">// ... we will be registering and adding components to nodes here in the following sections</span>
 
 <span class="c1">// and finally start running the components in our scene</span>
-<span class="nx">sceneObject</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<span class="nx">sceneObject</span><span class="p">.</span><span class="nf">start</span><span class="p">();</span>
 </code></pre></div></div>
 
 <h3 id="adding-basic-components">Adding Basic Components</h3>
@@ -1080,17 +1080,17 @@ graph TD
 </ul>
 
 <p>A Component that implements those 3 lifecycles would looks like this.</p>
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">BasicComponent</span> <span class="p">{</span>
-  <span class="nx">onInit</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">`onInit`</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">BasicComponent</span> <span class="p">{</span>
+  <span class="nf">onInit</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">`onInit`</span><span class="dl">'</span><span class="p">)</span>
   <span class="p">}</span>
 
-  <span class="nx">onTick</span><span class="p">(</span><span class="nx">delta</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">`onTick`</span><span class="dl">'</span><span class="p">,</span> <span class="nx">delta</span><span class="p">);</span>
+  <span class="nf">onTick</span><span class="p">(</span><span class="nx">delta</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">`onTick`</span><span class="dl">'</span><span class="p">,</span> <span class="nx">delta</span><span class="p">);</span>
   <span class="p">}</span>
 
-  <span class="nx">onDestroy</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">`onDestroy`</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nf">onDestroy</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">`onDestroy`</span><span class="dl">'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -1100,25 +1100,25 @@ graph TD
 <p>Now that we have a BasicComponent with some lifecycles, we need to register it, add it to a node, and get it running.</p>
 
 <p>First, registering is done through the <a href="docs/reference/current/modules/scene.html#register"><code class="language-plaintext highlighter-rouge">Scene.register</code></a> function. We provide a “name” (as a string) and a factory to create the component.</p>
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">basic</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">BasicComponent</span><span class="p">());</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nf">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">basic</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nc">BasicComponent</span><span class="p">());</span>
 </code></pre></div></div>
 
 <p>Then, we’ll add it to our <code class="language-plaintext highlighter-rouge">Node</code> we created earlier. We use the “name” of the component just registered. We can save a reference to the component returned by <a href="docs/reference/current/interfaces/scene.inode.html#addcomponent"><code class="language-plaintext highlighter-rouge">addComponent</code></a>.</p>
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">basic</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">basic</span><span class="dl">'</span><span class="p">);</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">basic</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">basic</span><span class="dl">'</span><span class="p">);</span>
 <span class="c1">// if we wanted to run more than one instance of the component, we can add more</span>
-<span class="kd">const</span> <span class="nx">basic2</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">basic</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">basic3</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">basic</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">basic4</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">basic</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">basic2</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">basic</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">basic3</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">basic</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">basic4</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">basic</span><span class="dl">'</span><span class="p">);</span>
 <span class="c1">// ...</span>
 </code></pre></div></div>
 
 <p>After we’ve added as many BasicComponents as we want to our nodes, we’ll start our scene using our previously created <code class="language-plaintext highlighter-rouge">Object</code>.</p>
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sceneObject</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sceneObject</span><span class="p">.</span><span class="nf">start</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p>At any time, we can stop our scene.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// stop our Object after 1 second</span>
-<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">stop</span><span class="p">(),</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">stop</span><span class="p">(),</span> <span class="mi">1000</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Now that we’ve started, ran, and stopped our object, a few things should have happened.</p>
@@ -1131,12 +1131,12 @@ graph TD
 <h3 id="aside-component-constructor-functions">Aside: Component Constructor Functions</h3>
 <p>While not necessary to understanding how Components work, there is at least one thing we glossed over (and didn’t include in our class): the Component’s constructor function and its relation to the factory passed to <code class="language-plaintext highlighter-rouge">register</code>. If a component needs to have some additional data that’s separate from the “inputs” (that we’ll introduce in the next lesson), we can add a constructor and pass data in through the factory. Another example of this is given in <a href="sdk_connecting_components#events-emits">Events, Emits</a>.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">ComponentWithCtor</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">secretPass</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ComponentWithCtor</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">secretPass</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
 
 <span class="kd">const</span> <span class="nx">secretPass</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">1234</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">secretPassComponent</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">ComponentWithCtor</span><span class="p">(</span><span class="nx">secretPass</span><span class="p">));</span>
+<span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nf">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">secretPassComponent</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nc">ComponentWithCtor</span><span class="p">(</span><span class="nx">secretPass</span><span class="p">));</span>
 </code></pre></div></div>
 
 <h2 id="source">Source</h2>
@@ -1146,7 +1146,7 @@ graph TD
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">startBasicComponents</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./basicComponent</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="kd">const</span> <span class="nx">mpSdk</span><span class="p">;</span> <span class="c1">// initialized from a successful `connect` call</span>
-<span class="nx">startBasicComponents</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">);</span>
+<span class="nf">startBasicComponents</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">);</span>
 </code></pre></div></div>
 
 <h2 id="continue-reading">Continue Reading</h2>

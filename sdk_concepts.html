@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1052,11 +1052,11 @@ $('#toc').on('click', 'a', function() {
 <p>For instance – the initial connect call doesn’t return the SDK object, but a promise <em>to</em> that SDK object.  Once <code class="language-plaintext highlighter-rouge">await</code>ed or <code class="language-plaintext highlighter-rouge">then</code>ed, this object will have all of the methods that we provide, divided into namespaces (App, Tag, etc) and visible via a console.log.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">iframe</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello SDK</span><span class="dl">'</span><span class="p">,</span> <span class="nx">mpSdk</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">connect</span><span class="p">(</span><span class="nx">iframe</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello SDK</span><span class="dl">'</span><span class="p">,</span> <span class="nx">mpSdk</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+<span class="k">catch </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 

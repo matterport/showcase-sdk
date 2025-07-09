@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1048,14 +1048,14 @@ $('#toc').on('click', 'a', function() {
 <p>To start, we will create a simple “Hello World” sandbox to show a custom message, style it, and attach it to a Tag.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// create a tag</span>
-<span class="kd">const</span> <span class="p">[</span><span class="nx">tagId</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">tagId</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nf">add</span><span class="p">({</span>
   <span class="na">label</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Test Tag</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">anchorPosition</span><span class="p">:</span> <span class="p">{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">z</span><span class="p">:</span> <span class="mi">0</span> <span class="p">},</span>
   <span class="na">stemVector</span><span class="p">:</span> <span class="p">{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="na">z</span><span class="p">:</span> <span class="mi">0</span> <span class="p">},</span>
 <span class="p">});</span>
 
 <span class="c1">// register a static sandbox</span>
-<span class="kd">const</span> <span class="p">[</span><span class="nx">sandboxId</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">registerSandbox</span><span class="p">(</span><span class="s2">`
+<span class="kd">const</span> <span class="p">[</span><span class="nx">sandboxId</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nf">registerSandbox</span><span class="p">(</span><span class="s2">`
 &lt;style&gt;
 body {
   color: #fff;
@@ -1066,7 +1066,7 @@ Hello, Sandbox!
 `</span><span class="p">);</span>
 
 <span class="c1">// associate (attach) the sandbox to the tag</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">attach</span><span class="p">(</span><span class="nx">tagId</span><span class="p">,</span> <span class="nx">sandboxId</span><span class="p">);</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nf">attach</span><span class="p">(</span><span class="nx">tagId</span><span class="p">,</span> <span class="nx">sandboxId</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Now, when the tag is opened, it should display a simple “Hello World” message in white text on a black background.</p>
@@ -1080,7 +1080,7 @@ Hello, Sandbox!
 
 <p>To implement a counter that increments as we click a button, we can add a script tag to our custom HTML that will get the elements and add calbacks or mutate them.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// register an interactive sandbox</span>
-<span class="kd">const</span> <span class="p">[</span><span class="nx">attachmentId</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">registerSandbox</span><span class="p">(</span><span class="s2">`
+<span class="kd">const</span> <span class="p">[</span><span class="nx">attachmentId</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nf">registerSandbox</span><span class="p">(</span><span class="s2">`
 &lt;style&gt;
 body {
   color: #fff;
@@ -1103,7 +1103,7 @@ body {
 `</span><span class="p">)</span>
 
 <span class="c1">// using the `tagId` from the previous example</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">attach</span><span class="p">(</span><span class="nx">tagId</span><span class="p">,</span> <span class="nx">attachmentId</span><span class="p">);</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nf">attach</span><span class="p">(</span><span class="nx">tagId</span><span class="p">,</span> <span class="nx">attachmentId</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Opening the tag should display a button with a counter that increments as the button is clicked.
@@ -1121,7 +1121,7 @@ These are the mechanism available to move data between an SDK application and a 
 <p>Up until now, we have only been using the <code class="language-plaintext highlighter-rouge">attachmentId</code> returned by <code class="language-plaintext highlighter-rouge">registerSandbox</code>. The second object returned is the messenger.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// register the attachment and get a reference to its messenger</span>
-<span class="kd">const</span> <span class="p">[</span><span class="nx">attachmentId</span><span class="p">,</span> <span class="nx">messenger</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">registerSandbox</span><span class="p">(</span><span class="s2">`
+<span class="kd">const</span> <span class="p">[</span><span class="nx">attachmentId</span><span class="p">,</span> <span class="nx">messenger</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nf">registerSandbox</span><span class="p">(</span><span class="s2">`
 &lt;!-- don't forget styling --&gt;
 &lt;button id='add'&gt;Add to Cart&lt;/button&gt;
 
@@ -1143,15 +1143,15 @@ window.on('product.added', () =&gt; {
 `</span><span class="p">);</span>
 
 <span class="c1">// add a handler for the 'add.to.cart' message that will come from the sandbox</span>
-<span class="nx">messenger</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">add.to.cart</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">productId</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="nx">messenger</span><span class="p">.</span><span class="nf">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">add.to.cart</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">productId</span><span class="p">,</span> <span class="nx">quantity</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="c1">// do some work</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`adding </span><span class="p">${</span><span class="nx">quantity</span><span class="p">}</span><span class="s2">x of </span><span class="p">${</span><span class="nx">productId</span><span class="p">}</span><span class="s2"> to cart`</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`adding </span><span class="p">${</span><span class="nx">quantity</span><span class="p">}</span><span class="s2">x of </span><span class="p">${</span><span class="nx">productId</span><span class="p">}</span><span class="s2"> to cart`</span><span class="p">);</span>
   <span class="c1">// send a 'product.added' message back to the sandbox</span>
-  <span class="nx">messenger</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">product.added</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">messenger</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">product.added</span><span class="dl">'</span><span class="p">);</span>
 <span class="p">});</span>
 
 <span class="c1">// finally, attach the sandbox to the tag using `tagId` from previous examples</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">attach</span><span class="p">(</span><span class="nx">tagId</span><span class="p">,</span> <span class="nx">attachmentId</span><span class="p">);</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nf">attach</span><span class="p">(</span><span class="nx">tagId</span><span class="p">,</span> <span class="nx">attachmentId</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Opening this tag will show a button that communicates to an SDK application that some quantity of a product should be added to a shopping cart when clicked. The SDK application then sends a message back confirming it has added the product which subsequently updates the button in the sandbox.</p>
@@ -1174,7 +1174,7 @@ The data sent between the SDK application and sandbox don’t need to be simple 
 
 <p>To demonstrate this, we will slightly modify our “counter” example and persist the number of clicks done.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">attachmentId</span><span class="p">,</span> <span class="nx">messenger</span><span class="p">]</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">registerSandbox</span><span class="p">(</span><span class="s2">`
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">attachmentId</span><span class="p">,</span> <span class="nx">messenger</span><span class="p">]</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nf">registerSandbox</span><span class="p">(</span><span class="s2">`
 &lt;button id='inc'&gt;INCREMENT&lt;/button&gt;
 &lt;div id='output'&gt;No clicks yet&lt;/div&gt;
 
@@ -1209,19 +1209,19 @@ The data sent between the SDK application and sandbox don’t need to be simple 
 <span class="c1">// the initial representation of the state in the sandbox</span>
 <span class="kd">let</span> <span class="nx">sandboxState</span> <span class="o">=</span> <span class="p">{</span> <span class="na">clicks</span><span class="p">:</span> <span class="mi">0</span> <span class="p">};</span>
 <span class="c1">// add a handler for the sandbox's 'init' "lifecycle"</span>
-<span class="nx">messenger</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">init</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="nx">messenger</span><span class="p">.</span><span class="nf">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">init</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="c1">// send the persisted state of the sandbox to set the state of the sandbox</span>
   <span class="c1">// unfortunately, when the sandbox is mounted it isn't immediately ready to receive messages so we need to timeout to delay the message just enough (this will likely change in future updates)</span>
-  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">messenger</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">initial.state</span><span class="dl">'</span><span class="p">,</span> <span class="nx">sandboxState</span><span class="p">));</span>
+  <span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">messenger</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">initial.state</span><span class="dl">'</span><span class="p">,</span> <span class="nx">sandboxState</span><span class="p">));</span>
 <span class="p">});</span>
 
 <span class="c1">// add a handler to update our representation of the sandbox's state</span>
-<span class="nx">messenger</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">current.state</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">currentState</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="nx">messenger</span><span class="p">.</span><span class="nf">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">current.state</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">currentState</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">sandboxState</span><span class="p">.</span><span class="nx">clicks</span> <span class="o">=</span> <span class="nx">currentState</span><span class="p">.</span><span class="nx">clicks</span><span class="p">;</span>
 <span class="p">});</span>
 
 <span class="c1">// finally, attach the sandbox to the tag, reusing the same `tagId` as before</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">attach</span><span class="p">(</span><span class="nx">tagId</span><span class="p">,</span> <span class="nx">attachmentId</span><span class="p">)</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nf">attach</span><span class="p">(</span><span class="nx">tagId</span><span class="p">,</span> <span class="nx">attachmentId</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>The key here is to create serializable representations of the sandbox’s state both inside and outside of the sandbox, tell the SDK application that the state has changed, and feed that state back to the sandbox as it gets remounted. Unfortunately, at this time, a message sent too soon after the remount may not be received by the sandbox, so a slight delay is necessary. This will likely be resolved in a future update.</p>
@@ -1233,16 +1233,16 @@ The data sent between the SDK application and sandbox don’t need to be simple 
 
 <h4 id="identifying-the-sandbox">Identifying the Sandbox</h4>
 <p>Because each sandbox is treated just as an attachment, it can be attached to multiple tags at the same time.</p>
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">attachmentId</span><span class="p">,</span> <span class="nx">messenger</span><span class="p">]</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">registerSandbox</span><span class="p">(</span><span class="cm">/* ... */</span><span class="p">);</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">attach</span><span class="p">(</span><span class="nx">tagId0</span><span class="p">,</span> <span class="nx">attachmentId</span><span class="p">);</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">attach</span><span class="p">(</span><span class="nx">tagId1</span><span class="p">,</span> <span class="nx">attachmentId</span><span class="p">);</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">attachmentId</span><span class="p">,</span> <span class="nx">messenger</span><span class="p">]</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nf">registerSandbox</span><span class="p">(</span><span class="cm">/* ... */</span><span class="p">);</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nf">attach</span><span class="p">(</span><span class="nx">tagId0</span><span class="p">,</span> <span class="nx">attachmentId</span><span class="p">);</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nf">attach</span><span class="p">(</span><span class="nx">tagId1</span><span class="p">,</span> <span class="nx">attachmentId</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>One problem that might arise is that the <code class="language-plaintext highlighter-rouge">messenger</code> associated with the sandbox doesn’t know any other context of the sandbox, like which tag it is currently mounted in.</p>
 
 <p>We can modify the <a href="sdk_tutorials_htmlsandbox.html#communicating-with-the-sandbox">previous shopping cart example</a> so that we can reuse the same sandbox for every product if we associate each tag with a product instead of creating a separate sandbox for each tag/product pair. For this purpose, we provide a global <code class="language-plaintext highlighter-rouge">tag</code> id to the sandbox.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">attachmentId</span><span class="p">,</span> <span class="nx">messenger</span><span class="p">]</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">registerSandbox</span><span class="p">(</span><span class="s2">`
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">attachmentId</span><span class="p">,</span> <span class="nx">messenger</span><span class="p">]</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nf">registerSandbox</span><span class="p">(</span><span class="s2">`
 &lt;button id='add'&gt;Add to Cart&lt;/button&gt;
 
 &lt;script&gt;
@@ -1263,12 +1263,12 @@ add.addEventListener('click', () =&gt; {
 <span class="p">};</span>
 
 <span class="c1">// attach the same sandbox to multiple tags</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">attach</span><span class="p">(</span><span class="nx">tagId0</span><span class="p">,</span> <span class="nx">attachment</span><span class="p">);</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">attach</span><span class="p">(</span><span class="nx">tagId1</span><span class="p">,</span> <span class="nx">attachment</span><span class="p">);</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nf">attach</span><span class="p">(</span><span class="nx">tagId0</span><span class="p">,</span> <span class="nx">attachment</span><span class="p">);</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nf">attach</span><span class="p">(</span><span class="nx">tagId1</span><span class="p">,</span> <span class="nx">attachment</span><span class="p">);</span>
 
 <span class="c1">// add a 'add.to.cart' handler that will look up the product via the tag's id</span>
-<span class="nx">messenger</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">add.to.cart</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">tagId</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">added product: </span><span class="dl">'</span><span class="p">,</span> <span class="nx">tagProductMap</span><span class="p">[</span><span class="nx">tagId</span><span class="p">]);</span>
+<span class="nx">messenger</span><span class="p">.</span><span class="nf">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">add.to.cart</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">tagId</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">added product: </span><span class="dl">'</span><span class="p">,</span> <span class="nx">tagProductMap</span><span class="p">[</span><span class="nx">tagId</span><span class="p">]);</span>
 <span class="p">});</span>
 </code></pre></div></div>
 

@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1069,16 +1069,16 @@ yarn add <span class="nt">--dev</span> webpack webpack-cli webpack-dev-server ht
 
 <p>Create a file called <code class="language-plaintext highlighter-rouge">webpack.config.js</code> at your project root and set it up to build the redistributable files to <code class="language-plaintext highlighter-rouge">dist</code> by pasting the following content:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">HtmlWebpackPlugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">html-webpack-plugin</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">HtmlWebpackPlugin</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">html-webpack-plugin</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">entry</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./index.js</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">'</span><span class="s1">./dist</span><span class="dl">'</span><span class="p">),</span>
+    <span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">'</span><span class="s1">./dist</span><span class="dl">'</span><span class="p">),</span>
     <span class="na">filename</span><span class="p">:</span> <span class="dl">'</span><span class="s1">index_bundle.js</span><span class="dl">'</span><span class="p">,</span>
   <span class="p">},</span>
-  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="k">new</span> <span class="nx">HtmlWebpackPlugin</span><span class="p">()],</span>
+  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="k">new</span> <span class="nc">HtmlWebpackPlugin</span><span class="p">()],</span>
 <span class="p">};</span>
 </code></pre></div></div>
 
@@ -1118,28 +1118,28 @@ yarn add @matterport/sdk
 
 <p>Then, below that, add an async function and call it right afterwards, including a <code class="language-plaintext highlighter-rouge">catch</code> to handle any errors:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">main</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">main</span> <span class="o">=</span> <span class="k">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="c1">// Initialize SDK here</span>
   <span class="c1">// ...</span>
 <span class="p">}</span>
-<span class="nx">main</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">err</span><span class="p">))</span>
+<span class="nf">main</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">err</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>Then, replace the commented ellipsis above with your <code class="language-plaintext highlighter-rouge">setupSdk</code> call. Pass your SDK key as the argument to the function:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// Initialize SDK here</span>
-  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">setupSdk</span><span class="p">(</span><span class="dl">'</span><span class="s1">yourSdkKey</span><span class="dl">'</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">setupSdk</span><span class="p">(</span><span class="dl">'</span><span class="s1">yourSdkKey</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>The full contents of <code class="language-plaintext highlighter-rouge">index.js</code> should look like this:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">setupSdk</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@matterport/sdk</span><span class="dl">'</span>
 
-<span class="kd">const</span> <span class="nx">main</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="kd">const</span> <span class="nx">main</span> <span class="o">=</span> <span class="k">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="c1">// Initialize SDK here</span>
-  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">setupSdk</span><span class="p">(</span><span class="dl">'</span><span class="s1">yourSdkKey</span><span class="dl">'</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">setupSdk</span><span class="p">(</span><span class="dl">'</span><span class="s1">yourSdkKey</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">}</span>
-<span class="nx">main</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">err</span><span class="p">))</span>
+<span class="nf">main</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">err</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>where <code class="language-plaintext highlighter-rouge">yourSdkKey</code> is replaced by your SDK key.</p>
@@ -1165,13 +1165,13 @@ yarn dev
 
 <p>In <code class="language-plaintext highlighter-rouge">index.js</code>, below your <code class="language-plaintext highlighter-rouge">setupSdk</code> call, add the following lines:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">App</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">waitUntil</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">phase</span> <span class="o">===</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">App</span><span class="p">.</span><span class="nx">Phase</span><span class="p">.</span><span class="nx">PLAYING</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">App</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nf">waitUntil</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">phase</span> <span class="o">===</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">App</span><span class="p">.</span><span class="nx">Phase</span><span class="p">.</span><span class="nx">PLAYING</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>What’s happening here? Let’s take a look at a commented version:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// use the SDK to wait until the app's state meets a condition...</span>
-<span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">App</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">waitUntil</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> 
+<span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">App</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nf">waitUntil</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> 
   <span class="c1">// ...specifically, when the state's `phase` property matches the `mpSdk.App.Phase.PLAYING` value</span>
   <span class="c1">// (ie, when the app is ready to accept input)</span>
   <span class="nx">state</span><span class="p">.</span><span class="nx">phase</span> <span class="o">===</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">App</span><span class="p">.</span><span class="nx">Phase</span><span class="p">.</span><span class="nx">PLAYING</span>
@@ -1180,20 +1180,20 @@ yarn dev
 
 <p>Then, add these lines to animate a camera rotation on load:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">rotate</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nf">rotate</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Your entire index.js file should now look like this:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">setupSdk</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@matterport/sdk</span><span class="dl">'</span>
 
-<span class="kd">const</span> <span class="nx">main</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="kd">const</span> <span class="nx">main</span> <span class="o">=</span> <span class="k">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="c1">// Initialize SDK here</span>
-  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">setupSdk</span><span class="p">(</span><span class="dl">'</span><span class="s1">yourSdkKey</span><span class="dl">'</span><span class="p">)</span>
-  <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">App</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">waitUntil</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">phase</span> <span class="o">===</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">App</span><span class="p">.</span><span class="nx">Phase</span><span class="p">.</span><span class="nx">PLAYING</span><span class="p">)</span>
-  <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nx">rotate</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">setupSdk</span><span class="p">(</span><span class="dl">'</span><span class="s1">yourSdkKey</span><span class="dl">'</span><span class="p">)</span>
+  <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">App</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nf">waitUntil</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">phase</span> <span class="o">===</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">App</span><span class="p">.</span><span class="nx">Phase</span><span class="p">.</span><span class="nx">PLAYING</span><span class="p">)</span>
+  <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nf">rotate</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="p">}</span>
-<span class="nx">main</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">err</span><span class="p">))</span>
+<span class="nf">main</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">err</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>and the showcase demo should look like this:</p>

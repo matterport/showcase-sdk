@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1080,32 +1080,32 @@ Transitioning to other modes will not work as expected while this component has 
 This component fires two events indicating when access has been granted or revoked.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create a three.js camera object that will be the acting as the source for the camera component.</span>
-<span class="kd">const</span> <span class="nx">myCamera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span> <span class="mi">45</span><span class="p">,</span> <span class="mf">1.333</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span> <span class="p">);</span>
+<span class="kd">const</span> <span class="nx">myCamera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">PerspectiveCamera</span><span class="p">(</span> <span class="mi">45</span><span class="p">,</span> <span class="mf">1.333</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span> <span class="p">);</span>
 
 <span class="c1">// Create a scene object and node with a camera component.</span>
 <span class="c1">// Set it up to request control after</span>
 <span class="c1">// the node is started by setting enabled to true.</span>
-<span class="kd">const</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">cameraComponent</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.camera</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+<span class="kd">const</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nf">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addNode</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">cameraComponent</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.camera</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="na">camera</span><span class="p">:</span> <span class="nx">myCamera</span><span class="p">,</span>
 <span class="p">});</span>
 
 <span class="c1">// Define a spy that intercepts ONACCESSGRANTED events</span>
-<span class="kd">class</span> <span class="nx">AccessGrantedSpy</span> <span class="p">{</span>
+<span class="kd">class</span> <span class="nc">AccessGrantedSpy</span> <span class="p">{</span>
   <span class="k">public</span> <span class="nx">eventType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ONACCESSGRANTED</span><span class="dl">'</span><span class="p">;</span>
-  <span class="k">public</span> <span class="nx">onEvent</span><span class="p">(</span><span class="nx">payload</span><span class="p">:</span> <span class="nx">unknown</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">public</span> <span class="nf">onEvent</span><span class="p">(</span><span class="nx">payload</span><span class="p">:</span> <span class="nx">unknown</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// myCamera is now enabled, changes to your camera will</span>
     <span class="c1">// be reflected on the showcase camera.</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1">// spy on the camera before it starts.</span>
-<span class="nx">cameraComponent</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">(</span> <span class="k">new</span> <span class="nx">AccessGrantedSpy</span><span class="p">());</span>
+<span class="nx">cameraComponent</span><span class="p">.</span><span class="nf">spyOnEvent</span><span class="p">(</span> <span class="k">new</span> <span class="nc">AccessGrantedSpy</span><span class="p">());</span>
 
 <span class="c1">// start the camera node</span>
-<span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<span class="nx">node</span><span class="p">.</span><span class="nf">start</span><span class="p">();</span>
 </code></pre></div></div>
 
 

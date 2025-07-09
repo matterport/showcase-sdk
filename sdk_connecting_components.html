@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1066,7 +1066,7 @@ $('#toc').on('click', 'a', function() {
   <li>For efficiency, <a href="docs/reference/current/interfaces/scene.icomponent.html#oninputsupdated"><code class="language-plaintext highlighter-rouge">onInputsUpdated</code></a> is called <strong>at most</strong> once per frame if the Component’s inputs have changed. It is called with the previous values of the inputs which can be used to compare the changes to the current <code class="language-plaintext highlighter-rouge">this.inputs</code> object. If inputs have changed multiple times within a single tick or frame, <code class="language-plaintext highlighter-rouge">onInputsUpdated</code> will still only be called once per frame.</li>
 </ul>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Adder</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Adder</span> <span class="p">{</span>
   <span class="c1">// define 2 inputs: "arg1" and "arg2"</span>
   <span class="nx">inputs</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">arg1</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -1078,19 +1078,19 @@ $('#toc').on('click', 'a', function() {
     <span class="na">sum</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
   <span class="p">}</span>
 
-  <span class="nx">onInit</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">onInit</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// calculate the initial sum</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">sum</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">arg2</span><span class="p">;</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">initial sum</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">sum</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">initial sum</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">sum</span><span class="p">);</span>
   <span class="p">}</span>
 
-  <span class="nx">onInputsUpdated</span><span class="p">(</span><span class="nx">prevInputs</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">onInputsUpdated</span><span class="p">(</span><span class="nx">prevInputs</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// log the previous sum by using the previous inputs values in `prevInputs`</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">previous sum</span><span class="dl">'</span><span class="p">,</span> <span class="nx">prevInputs</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">+</span> <span class="nx">prevInputs</span><span class="p">.</span><span class="nx">arg2</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">previous sum</span><span class="dl">'</span><span class="p">,</span> <span class="nx">prevInputs</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">+</span> <span class="nx">prevInputs</span><span class="p">.</span><span class="nx">arg2</span><span class="p">);</span>
 
     <span class="c1">// recalculate the sum</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">sum</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">arg2</span><span class="p">;</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">updated sum</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">sum</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">updated sum</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">sum</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -1119,14 +1119,14 @@ $('#toc').on('click', 'a', function() {
 </ol>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// --- reuse code from the "intro" example that creates `sceneObject` and `node` ---</span>
-<span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">Adder</span><span class="p">());</span>
-<span class="kd">const</span> <span class="nx">adder</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+<span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nf">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nc">Adder</span><span class="p">());</span>
+<span class="kd">const</span> <span class="nx">adder</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
   <span class="c1">// this object is optional but sets the initial values of the Adder</span>
   <span class="na">arg1</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
   <span class="na">arg2</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
 <span class="p">});</span>
 
-<span class="nx">sceneObject</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<span class="nx">sceneObject</span><span class="p">.</span><span class="nf">start</span><span class="p">();</span>
 
 <span class="c1">// set the inputs of `adder`</span>
 <span class="nx">adder</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">arg1</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
@@ -1134,7 +1134,7 @@ $('#toc').on('click', 'a', function() {
 
 <span class="c1">// ...some time later; this needs to be deferred until the next frame to get the updated sum</span>
 <span class="c1">// we'll see how Spies can make this easier to manage later</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">outputs.sum</span><span class="dl">'</span><span class="p">,</span> <span class="nx">adder</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">sum</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">outputs.sum</span><span class="dl">'</span><span class="p">,</span> <span class="nx">adder</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">sum</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Note: If no values are passed into the <code class="language-plaintext highlighter-rouge">addComponent</code> for the initial inputs, the default values set in the class will be used (in the case of the <code class="language-plaintext highlighter-rouge">Adder</code> arg1: 0, arg2: 0).</p>
@@ -1151,7 +1151,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>To demonstrate how to bind inputs and outputs we’ll first introduce a new Component, <code class="language-plaintext highlighter-rouge">RNG</code>, that we will use to generate random numbers every second. Then we’ll use two RNG Components’ outputs to change the input of our <code class="language-plaintext highlighter-rouge">Adder</code>. Finally, we will set up the <code class="language-plaintext highlighter-rouge">onTick</code> lifecycle method to automatically compute the sum each frame.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">RNG</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">RNG</span> <span class="p">{</span>
   <span class="nx">timeSinceUpdate</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="nx">inputs</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">interval</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
@@ -1161,11 +1161,11 @@ $('#toc').on('click', 'a', function() {
     <span class="na">value</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
   <span class="p">};</span>
 
-  <span class="nx">onTick</span><span class="p">(</span><span class="nx">delta</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">onTick</span><span class="p">(</span><span class="nx">delta</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">+=</span> <span class="nx">delta</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">&gt;=</span> <span class="k">this</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">interval</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">&gt;=</span> <span class="k">this</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">interval</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">%</span> <span class="k">this</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">interval</span><span class="p">;</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">();</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">();</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -1188,25 +1188,25 @@ $('#toc').on('click', 'a', function() {
 </ol>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// --- reuse code from the "intro" example that creates `sceneObject` and `node` ---</span>
-<span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">Adder</span><span class="p">());</span>
-<span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">RNG</span><span class="p">());</span>
+<span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nf">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nc">Adder</span><span class="p">());</span>
+<span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nf">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nc">RNG</span><span class="p">());</span>
 
-<span class="kd">const</span> <span class="nx">adder</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">rng1</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">rng2</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">adder</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">rng1</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">rng2</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="c1">// create paths to each of the RNGs' values</span>
-<span class="kd">const</span> <span class="nx">randomOutput1</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addOutputPath</span><span class="p">(</span><span class="nx">rng1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">randomOutput2</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addOutputPath</span><span class="p">(</span><span class="nx">rng2</span><span class="p">,</span> <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">randomOutput1</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addOutputPath</span><span class="p">(</span><span class="nx">rng1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">randomOutput2</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addOutputPath</span><span class="p">(</span><span class="nx">rng2</span><span class="p">,</span> <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span><span class="p">);</span>
 <span class="c1">// create paths to the each of the inputs of the Adder</span>
-<span class="kd">const</span> <span class="nx">adderInput1</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addInputPath</span><span class="p">(</span><span class="nx">adder</span><span class="p">,</span> <span class="dl">'</span><span class="s1">arg1</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">adderInput2</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addInputPath</span><span class="p">(</span><span class="nx">adder</span><span class="p">,</span> <span class="dl">'</span><span class="s1">arg2</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">adderInput1</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addInputPath</span><span class="p">(</span><span class="nx">adder</span><span class="p">,</span> <span class="dl">'</span><span class="s1">arg1</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">adderInput2</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addInputPath</span><span class="p">(</span><span class="nx">adder</span><span class="p">,</span> <span class="dl">'</span><span class="s1">arg2</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="c1">// bind the paths (inputs/outputs)</span>
-<span class="nx">randomOutput1</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">adderInput1</span><span class="p">);</span> <span class="c1">// we can bind an output to input ...</span>
-<span class="nx">adderInput2</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">randomOutput2</span><span class="p">);</span> <span class="c1">// ... or an input to an output (the result is the same)</span>
+<span class="nx">randomOutput1</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="nx">adderInput1</span><span class="p">);</span> <span class="c1">// we can bind an output to input ...</span>
+<span class="nx">adderInput2</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="nx">randomOutput2</span><span class="p">);</span> <span class="c1">// ... or an input to an output (the result is the same)</span>
 
-<span class="nx">sceneObject</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<span class="nx">sceneObject</span><span class="p">.</span><span class="nf">start</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p>Things should look a lot more interesting now.</p>
@@ -1224,7 +1224,7 @@ $('#toc').on('click', 'a', function() {
   <li><a href="docs/reference/current/interfaces/scene.icomponent.html#onevent"><code class="language-plaintext highlighter-rouge">onEvent</code></a> is called once for each event emitted (that this component handles). <code class="language-plaintext highlighter-rouge">onEvent</code> is not called immediately but on the next tick/frame. This means that multiple <code class="language-plaintext highlighter-rouge">onEvent</code> calls can happen within the same frame.</li>
 </ul>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Timer</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Timer</span> <span class="p">{</span>
   <span class="nx">timeSinceUpdate</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
   <span class="c1">// define an event that can be emitted: "tick"</span>
@@ -1232,20 +1232,20 @@ $('#toc').on('click', 'a', function() {
     <span class="na">tick</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="p">}</span>
 
-  <span class="kd">constructor</span><span class="p">(</span><span class="nx">interval</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">(</span><span class="nx">interval</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">interval</span> <span class="o">=</span> <span class="nx">interval</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="nx">onTick</span><span class="p">(</span><span class="nx">delta</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">onTick</span><span class="p">(</span><span class="nx">delta</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">+=</span> <span class="nx">delta</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">&gt;=</span> <span class="k">this</span><span class="p">.</span><span class="nx">interval</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">&gt;=</span> <span class="k">this</span><span class="p">.</span><span class="nx">interval</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">timeSinceUpdate</span> <span class="o">%</span> <span class="k">this</span><span class="p">.</span><span class="nx">interval</span><span class="p">;</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">notify</span><span class="p">(</span><span class="dl">'</span><span class="s1">tick</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="cm">/* This event has no payload but could be any arbitrary object */</span> <span class="p">});</span>
+      <span class="k">this</span><span class="p">.</span><span class="nf">notify</span><span class="p">(</span><span class="dl">'</span><span class="s1">tick</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="cm">/* This event has no payload but could be any arbitrary object */</span> <span class="p">});</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">class</span> <span class="nx">RNG</span> <span class="p">{</span>
+<span class="kd">class</span> <span class="nc">RNG</span> <span class="p">{</span>
   <span class="nx">outputs</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">value</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
   <span class="p">};</span>
@@ -1255,10 +1255,10 @@ $('#toc').on('click', 'a', function() {
     <span class="na">regenerate</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="p">};</span>
 
-  <span class="nx">onEvent</span><span class="p">(</span><span class="nx">eventType</span><span class="p">,</span> <span class="nx">eventData</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">eventType</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">regenerate</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">();</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eventData</span><span class="p">);</span> <span class="c1">// events receive data with them, though the 'regenerate' event doesn't use or expect one</span>
+  <span class="nf">onEvent</span><span class="p">(</span><span class="nx">eventType</span><span class="p">,</span> <span class="nx">eventData</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">eventType</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">regenerate</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">outputs</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">();</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">eventData</span><span class="p">);</span> <span class="c1">// events receive data with them, though the 'regenerate' event doesn't use or expect one</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -1284,33 +1284,33 @@ The <code class="language-plaintext highlighter-rouge">Timer</code> Component</p
 </ol>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// --- reuse code from the "intro" example that creates `sceneObject` and `node` ---</span>
-<span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">Adder</span><span class="p">());</span>
-<span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">RNG</span><span class="p">());</span>
+<span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nf">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nc">Adder</span><span class="p">());</span>
+<span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nf">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nc">RNG</span><span class="p">());</span>
 
-<span class="kd">const</span> <span class="nx">adder</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">rng1</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">rng2</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">adder</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">adder</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">rng1</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">rng2</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">rng</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="kd">const</span> <span class="nx">randomOutput1</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addOutputPath</span><span class="p">(</span><span class="nx">rng1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">randomOutput2</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addOutputPath</span><span class="p">(</span><span class="nx">rng2</span><span class="p">,</span> <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">adderInput1</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addInputPath</span><span class="p">(</span><span class="nx">adder</span><span class="p">,</span> <span class="dl">'</span><span class="s1">arg1</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">adderInput2</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addInputPath</span><span class="p">(</span><span class="nx">adder</span><span class="p">,</span> <span class="dl">'</span><span class="s1">arg2</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">randomOutput1</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addOutputPath</span><span class="p">(</span><span class="nx">rng1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">randomOutput2</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addOutputPath</span><span class="p">(</span><span class="nx">rng2</span><span class="p">,</span> <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">adderInput1</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addInputPath</span><span class="p">(</span><span class="nx">adder</span><span class="p">,</span> <span class="dl">'</span><span class="s1">arg1</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">adderInput2</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addInputPath</span><span class="p">(</span><span class="nx">adder</span><span class="p">,</span> <span class="dl">'</span><span class="s1">arg2</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="nx">randomOutput1</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">adderInput1</span><span class="p">);</span>
-<span class="nx">randomOutput2</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">adderInput2</span><span class="p">);</span>
+<span class="nx">randomOutput1</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="nx">adderInput1</span><span class="p">);</span>
+<span class="nx">randomOutput2</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="nx">adderInput2</span><span class="p">);</span>
 
 <span class="c1">// --- new code starts here ---</span>
-<span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">timer</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">Timer</span><span class="p">(</span><span class="mi">1000</span><span class="p">));</span>
-<span class="kd">const</span> <span class="nx">timer</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">timer</span><span class="dl">'</span><span class="p">);</span>
+<span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nf">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">timer</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nc">Timer</span><span class="p">(</span><span class="mi">1000</span><span class="p">));</span>
+<span class="kd">const</span> <span class="nx">timer</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">timer</span><span class="dl">'</span><span class="p">);</span>
 <span class="c1">// create new paths to the emit and the event</span>
-<span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addEmitPath</span><span class="p">(</span><span class="nx">timer</span><span class="p">,</span> <span class="dl">'</span><span class="s1">tick</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">regenRNG1</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addEventPath</span><span class="p">(</span><span class="nx">rng1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">regenerate</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">regenRNG2</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addEventPath</span><span class="p">(</span><span class="nx">rng2</span><span class="p">,</span> <span class="dl">'</span><span class="s1">regenerate</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addEmitPath</span><span class="p">(</span><span class="nx">timer</span><span class="p">,</span> <span class="dl">'</span><span class="s1">tick</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">regenRNG1</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addEventPath</span><span class="p">(</span><span class="nx">rng1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">regenerate</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">regenRNG2</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addEventPath</span><span class="p">(</span><span class="nx">rng2</span><span class="p">,</span> <span class="dl">'</span><span class="s1">regenerate</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="nx">tick</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">regenRNG1</span><span class="p">);</span>  <span class="c1">// we can bind an emit to an event</span>
-<span class="nx">regenRNG2</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">tick</span><span class="p">);</span> <span class="c1">// ... or an event to emit (the result is the same)</span>
+<span class="nx">tick</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="nx">regenRNG1</span><span class="p">);</span>  <span class="c1">// we can bind an emit to an event</span>
+<span class="nx">regenRNG2</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="nx">tick</span><span class="p">);</span> <span class="c1">// ... or an event to emit (the result is the same)</span>
 
-<span class="nx">sceneObject</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<span class="nx">sceneObject</span><span class="p">.</span><span class="nf">start</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p>To the end-user there hasn’t been any change in behavior from the previous example but our code is now in much more manageable, reusable Components.</p>
@@ -1330,49 +1330,49 @@ The <code class="language-plaintext highlighter-rouge">Timer</code> Component</p
 <span class="nx">rng1</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">regenerate</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
 <span class="c1">// we can also disable the emits through a path to it...</span>
-<span class="nx">tick</span><span class="p">.</span><span class="nx">disable</span><span class="p">();</span>
+<span class="nx">tick</span><span class="p">.</span><span class="nf">disable</span><span class="p">();</span>
 <span class="c1">// ... and re-enable it</span>
-<span class="nx">tick</span><span class="p">.</span><span class="nx">enable</span><span class="p">()</span>
+<span class="nx">tick</span><span class="p">.</span><span class="nf">enable</span><span class="p">()</span>
 
 <span class="c1">// and disable events though its path...</span>
-<span class="nx">regenRNG1</span><span class="p">.</span><span class="nx">disable</span><span class="p">();</span>
+<span class="nx">regenRNG1</span><span class="p">.</span><span class="nf">disable</span><span class="p">();</span>
 <span class="c1">// ... and re-enable it</span>
-<span class="nx">regenRNG1</span><span class="p">.</span><span class="nx">enable</span><span class="p">();</span>
+<span class="nx">regenRNG1</span><span class="p">.</span><span class="nf">enable</span><span class="p">();</span>
 </code></pre></div></div>
 
 <h3 id="aside-additional-path-functionality">Aside: Additional Path Functionality</h3>
 <p>While we showed how to bind paths in a 1:1 relationship, paths have a few extra capabilities like reading inputs and outputs, manually updating inputs, disabling and enabling events and emits, and manually triggering <code class="language-plaintext highlighter-rouge">onEvent</code> calls to components.</p>
 
 <p>We can bind a single Output Path to multiple Input Paths.</p>
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">randomOutput1</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">adderInput1</span><span class="p">);</span>
-<span class="nx">randomOutput1</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">adderInput2</span><span class="p">);</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">randomOutput1</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="nx">adderInput1</span><span class="p">);</span>
+<span class="nx">randomOutput1</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="nx">adderInput2</span><span class="p">);</span>
 </code></pre></div></div>
 <p>However, binding multiple outputs to a single input is not allowed.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// this is invalid -- `adderInput1` is already bound</span>
-<span class="nx">randomOutput1</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">adderInput1</span><span class="p">);</span>
-<span class="nx">randomOutput2</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">adderInput1</span><span class="p">);</span>
+<span class="nx">randomOutput1</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="nx">adderInput1</span><span class="p">);</span>
+<span class="nx">randomOutput2</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="nx">adderInput1</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Input and Output Paths can be used to read their values. Input Paths also allow for setting their value.</p>
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">RNG1 has an output of</span><span class="dl">'</span><span class="p">,</span> <span class="nx">randomOutput1</span><span class="p">.</span><span class="kd">get</span><span class="p">());</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Adder's first input is`</span><span class="p">,</span> <span class="nx">adderInput1</span><span class="p">.</span><span class="kd">get</span><span class="p">());</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">RNG1 has an output of</span><span class="dl">'</span><span class="p">,</span> <span class="nx">randomOutput1</span><span class="p">.</span><span class="nf">get</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Adder's first input is`</span><span class="p">,</span> <span class="nx">adderInput1</span><span class="p">.</span><span class="nf">get</span><span class="p">());</span>
 <span class="c1">// manually settng Adder's second input</span>
-<span class="nx">adderInput2</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">1234</span><span class="p">);</span>
+<span class="nx">adderInput2</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">1234</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Similarly, with Event and Emit paths, multiple events (like outputs) can be bound to multiple emits (like inputs); however, unlike inputs and outputs, multiple emits can be bound to multiple events.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// bind multiple events (`regenRNG1`, `regenRNG2`) to a single emit (`tick`)</span>
-<span class="nx">tick</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">regenRNG1</span><span class="p">);</span>
-<span class="nx">tick</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">regenRNG2</span><span class="p">);</span>
+<span class="nx">tick</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="nx">regenRNG1</span><span class="p">);</span>
+<span class="nx">tick</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="nx">regenRNG2</span><span class="p">);</span>
 <span class="c1">// bind a single event (`regenRNG1`) to multiple emits (`tick`, `tick2`) -- notice that `tick2` is a hypothetical path we haven't created thus far</span>
-<span class="nx">regenRNG1</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">tick</span><span class="p">);</span>
-<span class="nx">regenRNG1</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">tick2</span><span class="p">);</span>
+<span class="nx">regenRNG1</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="nx">tick</span><span class="p">);</span>
+<span class="nx">regenRNG1</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="nx">tick2</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Event and Emit Paths can be used to trigger the <code class="language-plaintext highlighter-rouge">onEvent</code> of any and all Components it’s associated with.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// event payloads are optional</span>
-<span class="nx">tick</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="cm">/* ... */</span><span class="p">);</span>
-<span class="nx">rng1</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="cm">/* ... */</span><span class="p">);</span>
+<span class="nx">tick</span><span class="p">.</span><span class="nf">emit</span><span class="p">(</span><span class="cm">/* ... */</span><span class="p">);</span>
+<span class="nx">rng1</span><span class="p">.</span><span class="nf">emit</span><span class="p">(</span><span class="cm">/* ... */</span><span class="p">);</span>
 </code></pre></div></div>
 
 <h2 id="spies">Spies</h2>
@@ -1381,37 +1381,37 @@ The <code class="language-plaintext highlighter-rouge">Timer</code> Component</p
 <p>To demonstrate Spies, we’ll create several different Spies, one for each Path type, using several of the Components we’ve created up until now.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// spy on input changes to our Adder</span>
 <span class="c1">// using class syntax</span>
-<span class="kd">class</span> <span class="nx">AdderArg1Spy</span> <span class="p">{</span>
+<span class="kd">class</span> <span class="nc">AdderArg1Spy</span> <span class="p">{</span>
   <span class="nx">path</span> <span class="o">=</span> <span class="nx">adderInput1</span><span class="p">;</span>
-  <span class="nx">onEvent</span><span class="p">(</span><span class="nx">newValue</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`spied change to "</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">path</span><span class="p">.</span><span class="nx">property</span><span class="p">}</span><span class="s2">" its new value is </span><span class="p">${</span><span class="nx">newValue</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="nf">onEvent</span><span class="p">(</span><span class="nx">newValue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`spied change to "</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">path</span><span class="p">.</span><span class="nx">property</span><span class="p">}</span><span class="s2">" its new value is </span><span class="p">${</span><span class="nx">newValue</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
-<span class="nx">sceneObject</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">AdderArg1Spy</span><span class="p">());</span>
+<span class="nx">sceneObject</span><span class="p">.</span><span class="nf">spyOnEvent</span><span class="p">(</span><span class="k">new</span> <span class="nc">AdderArg1Spy</span><span class="p">());</span>
 
 <span class="c1">// spy on an output from our Adder</span>
-<span class="kd">const</span> <span class="nx">adderOutput</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addOutputPath</span><span class="p">(</span><span class="nx">adder</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sum</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">adderOutput</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addOutputPath</span><span class="p">(</span><span class="nx">adder</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sum</span><span class="dl">'</span><span class="p">);</span>
 <span class="c1">// using inline syntax</span>
-<span class="nx">sceneObject</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">({</span>
+<span class="nx">sceneObject</span><span class="p">.</span><span class="nf">spyOnEvent</span><span class="p">({</span>
   <span class="na">path</span><span class="p">:</span> <span class="nx">adderOutput</span><span class="p">,</span>
-  <span class="nx">onEvent</span><span class="p">(</span><span class="nx">newSum</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`spied change to "</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">path</span><span class="p">.</span><span class="nx">property</span><span class="p">}</span><span class="s2">" its new value is </span><span class="p">${</span><span class="nx">newSum</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="nf">onEvent</span><span class="p">(</span><span class="nx">newSum</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`spied change to "</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">path</span><span class="p">.</span><span class="nx">property</span><span class="p">}</span><span class="s2">" its new value is </span><span class="p">${</span><span class="nx">newSum</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
   <span class="p">},</span>
 <span class="p">});</span>
 
 <span class="c1">// spy on an emit from our Timer</span>
-<span class="nx">sceneObject</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">({</span>
+<span class="nx">sceneObject</span><span class="p">.</span><span class="nf">spyOnEvent</span><span class="p">({</span>
   <span class="na">path</span><span class="p">:</span> <span class="nx">tick</span><span class="p">,</span>
-  <span class="nx">onEvent</span><span class="p">(</span><span class="nx">eventData</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`spied that an event "</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">path</span><span class="p">.</span><span class="nx">emitName</span><span class="p">}</span><span class="s2">" was emitted`</span><span class="p">);</span>
+  <span class="nf">onEvent</span><span class="p">(</span><span class="nx">eventData</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`spied that an event "</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">path</span><span class="p">.</span><span class="nx">emitName</span><span class="p">}</span><span class="s2">" was emitted`</span><span class="p">);</span>
   <span class="p">},</span>
 <span class="p">});</span>
 
 <span class="c1">// spy on an event</span>
-<span class="nx">sceneObject</span><span class="p">.</span><span class="nx">spyOnEvent</span><span class="p">({</span>
+<span class="nx">sceneObject</span><span class="p">.</span><span class="nf">spyOnEvent</span><span class="p">({</span>
   <span class="na">path</span><span class="p">:</span> <span class="nx">regenRNG1</span><span class="p">,</span>
-  <span class="nx">onEvent</span><span class="p">(</span><span class="nx">eventData</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`spied "</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">path</span><span class="p">.</span><span class="nx">eventName</span><span class="p">}</span><span class="s2">" received with data </span><span class="p">${</span><span class="nx">eventData</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="nf">onEvent</span><span class="p">(</span><span class="nx">eventData</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`spied "</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">path</span><span class="p">.</span><span class="nx">eventName</span><span class="p">}</span><span class="s2">" received with data </span><span class="p">${</span><span class="nx">eventData</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
   <span class="p">},</span>
 <span class="p">});</span>
 </code></pre></div></div>
@@ -1425,7 +1425,7 @@ The <code class="language-plaintext highlighter-rouge">Timer</code> Component</p
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">startBoundComponents</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./basicComponent</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="kd">const</span> <span class="nx">mpSdk</span><span class="p">;</span> <span class="c1">// initialized from a successful `connect` call</span>
-<span class="nx">startBoundComponents</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">);</span>
+<span class="nf">startBoundComponents</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">);</span>
 </code></pre></div></div>
 
 <h2 id="continue-reading">Continue Reading</h2>

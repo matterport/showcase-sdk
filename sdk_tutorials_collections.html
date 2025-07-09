@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1059,34 +1059,34 @@ Collections always provide an up-to-date view of its state to all of its subscri
 
 <p>An Observer that supports all four operations and watches the tag state will look something like this:</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">TagItem</span> <span class="o">=</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">TagData</span><span class="p">;</span>
-<span class="kd">class</span> <span class="nx">TagObserver</span> <span class="k">implements</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">IObservableMap</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span> <span class="p">{</span>
-  <span class="nx">onAdded</span><span class="p">(</span><span class="na">index</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="na">tag</span><span class="p">:</span> <span class="nx">TagItem</span><span class="p">,</span> <span class="na">collection</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Dictionary</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`an item at index </span><span class="p">${</span><span class="nx">index</span><span class="p">}</span><span class="s2"> was added`</span><span class="p">);</span>
+<span class="kd">class</span> <span class="nc">TagObserver</span> <span class="k">implements</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">IObservableMap</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nf">onAdded</span><span class="p">(</span><span class="na">index</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="na">tag</span><span class="p">:</span> <span class="nx">TagItem</span><span class="p">,</span> <span class="na">collection</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Dictionary</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`an item at index </span><span class="p">${</span><span class="nx">index</span><span class="p">}</span><span class="s2"> was added`</span><span class="p">);</span>
   <span class="p">},</span>
-  <span class="nx">onRemoved</span><span class="p">(</span><span class="na">index</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="na">tag</span><span class="p">:</span> <span class="nx">TagItem</span><span class="p">,</span> <span class="na">collection</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Dictionary</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`an item at index </span><span class="p">${</span><span class="nx">index</span><span class="p">}</span><span class="s2"> was removed`</span><span class="p">);</span>
+  <span class="nf">onRemoved</span><span class="p">(</span><span class="na">index</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="na">tag</span><span class="p">:</span> <span class="nx">TagItem</span><span class="p">,</span> <span class="na">collection</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Dictionary</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`an item at index </span><span class="p">${</span><span class="nx">index</span><span class="p">}</span><span class="s2"> was removed`</span><span class="p">);</span>
   <span class="p">},</span>
-  <span class="nx">onUpdated</span><span class="p">(</span><span class="na">index</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="na">tag</span><span class="p">:</span> <span class="nx">TagItem</span><span class="p">,</span> <span class="na">collection</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Dictionary</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`an item at index </span><span class="p">${</span><span class="nx">index</span><span class="p">}</span><span class="s2"> was updated`</span><span class="p">);</span>
+  <span class="nf">onUpdated</span><span class="p">(</span><span class="na">index</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="na">tag</span><span class="p">:</span> <span class="nx">TagItem</span><span class="p">,</span> <span class="na">collection</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Dictionary</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`an item at index </span><span class="p">${</span><span class="nx">index</span><span class="p">}</span><span class="s2"> was updated`</span><span class="p">);</span>
   <span class="p">},</span>
-  <span class="nx">onCollectionUpdated</span><span class="p">(</span><span class="na">collection</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Dictionary</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`the collection has changed in some way`</span><span class="p">);</span>
+  <span class="nf">onCollectionUpdated</span><span class="p">(</span><span class="na">collection</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Dictionary</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`the collection has changed in some way`</span><span class="p">);</span>
   <span class="p">},</span>
 <span class="p">}</span>
 
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="k">new</span> <span class="nx">TagObserver</span><span class="p">());</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="k">new</span> <span class="nc">TagObserver</span><span class="p">());</span>
 </code></pre></div></div>
 
 <h3 id="observing-when-the-collection-has-changed">Observing When the Collection has Changed</h3>
 <p>If the individual changes aren’t important and all that’s needed is an up-to-date view of the Collection, only the <code class="language-plaintext highlighter-rouge">onCollectionUpdated</code> needs implementing.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">TagItem</span> <span class="o">=</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">TagData</span><span class="p">;</span>
-<span class="kd">class</span> <span class="nx">TagObserver</span> <span class="k">implements</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">IObservableMap</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span> <span class="p">{</span>
-  <span class="nx">onCollectionUpdated</span><span class="p">(</span><span class="na">collection</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Dictionary</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`the full collection is now`</span><span class="p">,</span> <span class="nx">collection</span><span class="p">);</span>
+<span class="kd">class</span> <span class="nc">TagObserver</span> <span class="k">implements</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">IObservableMap</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nf">onCollectionUpdated</span><span class="p">(</span><span class="na">collection</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Dictionary</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`the full collection is now`</span><span class="p">,</span> <span class="nx">collection</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="k">new</span> <span class="nx">TagObserver</span><span class="p">());</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="k">new</span> <span class="nc">TagObserver</span><span class="p">());</span>
 </code></pre></div></div>
 
 <h3 id="using-multiple-observers">Using Multiple Observers</h3>
@@ -1101,28 +1101,28 @@ Now as things are added, removed, or updated in the Collection, the Observer wil
 
 <p>As an example of getting and observing when Tags are added to the Tag Collection:</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">TagItem</span> <span class="o">=</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">TagData</span><span class="p">;</span>
-<span class="kd">class</span> <span class="nx">TagObserver</span> <span class="k">implements</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">IObservableMap</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span> <span class="p">{</span>
-  <span class="nx">onAdded</span><span class="p">(</span><span class="na">index</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="na">tag</span><span class="p">:</span> <span class="nx">TagItem</span><span class="p">,</span> <span class="na">collection</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Dictionary</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`an item at index </span><span class="p">${</span><span class="nx">index</span><span class="p">}</span><span class="s2"> was added`</span><span class="p">);</span>
+<span class="kd">class</span> <span class="nc">TagObserver</span> <span class="k">implements</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">IObservableMap</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nf">onAdded</span><span class="p">(</span><span class="na">index</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="na">tag</span><span class="p">:</span> <span class="nx">TagItem</span><span class="p">,</span> <span class="na">collection</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Dictionary</span><span class="o">&lt;</span><span class="nx">TagItem</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`an item at index </span><span class="p">${</span><span class="nx">index</span><span class="p">}</span><span class="s2"> was added`</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1">// subscribing a new Observer will trigger its `onAdded` for each Tag in the Collection</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="k">new</span> <span class="nx">TagObserver</span><span class="p">());</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="k">new</span> <span class="nc">TagObserver</span><span class="p">());</span>
 
 <span class="c1">// subscribing a second Observer will ALSO trigger its `onAdded` for each Tag in the Collection</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="k">new</span> <span class="nx">TagObserver</span><span class="p">());</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="k">new</span> <span class="nc">TagObserver</span><span class="p">());</span>
 </code></pre></div></div>
 
 <h3 id="shutting-down-an-observer">Shutting down an Observer</h3>
 <p>When updates to state are no longer required, Observers should be removed from the Observable. When subscribing to an Observable, an <a href="docs/reference/current/interfaces/isubscription.html"><code class="language-plaintext highlighter-rouge">ISubscription</code></a> object is returned. The <code class="language-plaintext highlighter-rouge">ISubscription</code> object is the object used to remove the subscribed Observer and stop any callback it would have received.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">tagSubscription</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="nx">onAdded</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">item</span><span class="p">,</span> <span class="nx">collection</span><span class="p">)</span> <span class="p">{</span> <span class="p">},</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">tagSubscription</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nf">subscribe</span><span class="p">({</span>
+  <span class="nf">onAdded</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">item</span><span class="p">,</span> <span class="nx">collection</span><span class="p">)</span> <span class="p">{</span> <span class="p">},</span>
 <span class="p">});</span>
 
 <span class="c1">// ... some time later</span>
-<span class="nx">tagSubscription</span><span class="p">.</span><span class="nx">cancel</span><span class="p">();</span>
+<span class="nx">tagSubscription</span><span class="p">.</span><span class="nf">cancel</span><span class="p">();</span>
 <span class="c1">// from here on, the Observer's associated with `tagSubscription` will no longer be called back</span>
 </code></pre></div></div>
 
@@ -1132,17 +1132,17 @@ If a snapshot of the Collection or its items is needed, cloning one or both obje
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">TagItem</span> <span class="o">=</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">TagData</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">tagView</span><span class="p">:</span> <span class="nb">Record</span><span class="o">&lt;</span><span class="kr">string</span><span class="p">,</span> <span class="nx">TagItem</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{};</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="nx">onAdded</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">tag</span><span class="p">,</span> <span class="nx">collection</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nf">subscribe</span><span class="p">({</span>
+  <span class="nf">onAdded</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">tag</span><span class="p">,</span> <span class="nx">collection</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">tagView</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
       <span class="p">...</span><span class="nx">tag</span><span class="p">,</span>
       <span class="na">anchorPosition</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span><span class="nx">tag</span><span class="p">.</span><span class="nx">anchorPosition</span> <span class="p">},</span>
       <span class="na">attachments</span><span class="p">:</span> <span class="p">[</span> <span class="p">...</span><span class="nx">tag</span><span class="p">.</span><span class="nx">attachments</span> <span class="p">],</span>
       <span class="na">color</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span><span class="nx">tag</span><span class="p">.</span><span class="nx">color</span> <span class="p">},</span>
-      <span class="na">description</span><span class="p">:</span> <span class="nx">tag</span><span class="p">.</span><span class="nx">description</span><span class="p">.</span><span class="nx">slice</span><span class="p">(),</span>
-      <span class="na">id</span><span class="p">:</span> <span class="nx">tag</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">slice</span><span class="p">(),</span>
-      <span class="na">label</span><span class="p">:</span> <span class="nx">tag</span><span class="p">.</span><span class="nx">label</span><span class="p">.</span><span class="nx">slice</span><span class="p">(),</span>
-      <span class="na">roomId</span><span class="p">:</span> <span class="nx">tag</span><span class="p">.</span><span class="nx">roomId</span><span class="p">.</span><span class="nx">slice</span><span class="p">(),</span>
+      <span class="na">description</span><span class="p">:</span> <span class="nx">tag</span><span class="p">.</span><span class="nx">description</span><span class="p">.</span><span class="nf">slice</span><span class="p">(),</span>
+      <span class="na">id</span><span class="p">:</span> <span class="nx">tag</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nf">slice</span><span class="p">(),</span>
+      <span class="na">label</span><span class="p">:</span> <span class="nx">tag</span><span class="p">.</span><span class="nx">label</span><span class="p">.</span><span class="nf">slice</span><span class="p">(),</span>
+      <span class="na">roomId</span><span class="p">:</span> <span class="nx">tag</span><span class="p">.</span><span class="nx">roomId</span><span class="p">.</span><span class="nf">slice</span><span class="p">(),</span>
       <span class="na">stemVector</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span><span class="nx">tag</span><span class="p">.</span><span class="nx">stemVector</span> <span class="p">},</span>
     <span class="p">}</span>
   <span class="p">},</span>
@@ -1157,22 +1157,22 @@ If a snapshot of the Collection or its items is needed, cloning one or both obje
 
 <p><strong>DON’T</strong>: Setting up a <code class="language-plaintext highlighter-rouge">Label.POSITION_UPDATED</code> handler and seeding the data using <code class="language-plaintext highlighter-rouge">getData</code> is very verbose.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">labels</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Label</span><span class="p">.</span><span class="nx">Label</span><span class="p">[];</span>
-<span class="kd">function</span> <span class="nx">updateLabels</span><span class="p">(</span><span class="nx">updatedLabels</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nf">updateLabels</span><span class="p">(</span><span class="nx">updatedLabels</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">labels</span> <span class="o">=</span> <span class="nx">updatedLabels</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// listen for label changes</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Label</span><span class="p">.</span><span class="nx">POSITION_UPDATED</span><span class="p">,</span> <span class="nx">updateLabels</span><span class="p">);</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nf">on</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Label</span><span class="p">.</span><span class="nx">POSITION_UPDATED</span><span class="p">,</span> <span class="nx">updateLabels</span><span class="p">);</span>
 <span class="c1">// poll the data once in case the `POSITION_UPDATED` event hasn't fired yet</span>
-<span class="nx">labels</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Label</span><span class="p">.</span><span class="nx">getData</span><span class="p">();</span>
+<span class="nx">labels</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Label</span><span class="p">.</span><span class="nf">getData</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p><strong>DO</strong>: Use a Collection to reduce the above example to only one call: its <code class="language-plaintext highlighter-rouge">subscribe</code> function.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">tags</span><span class="p">:</span> <span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Dictionary</span><span class="o">&lt;</span><span class="nx">MpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">TagData</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nf">subscribe</span><span class="p">({</span>
   <span class="c1">// NOTE: this is only saving the reference to the shared `collection`...</span>
   <span class="c1">// ...It will update as the collection changes</span>
-  <span class="nx">onCollectionUpdated</span><span class="p">(</span><span class="nx">collection</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">onCollectionUpdated</span><span class="p">(</span><span class="nx">collection</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">tags</span> <span class="o">=</span> <span class="nx">collection</span><span class="p">;</span>
    <span class="p">},</span>
 <span class="p">});</span>
@@ -1182,15 +1182,15 @@ If a snapshot of the Collection or its items is needed, cloning one or both obje
 <p>Collections express the extent of their changes to Observers.</p>
 
 <p><strong>DON’T</strong>: Tracking differences between multiple “get” calls is complex, verbose, and error-prone</p>
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mattertagData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Mattertag</span><span class="p">.</span><span class="nx">getData</span><span class="p">();</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mattertagData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Mattertag</span><span class="p">.</span><span class="nf">getData</span><span class="p">();</span>
 
-<span class="kd">const</span> <span class="nx">newMattertagData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Mattertag</span><span class="p">.</span><span class="nx">getData</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">newMattertagData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Mattertag</span><span class="p">.</span><span class="nf">getData</span><span class="p">();</span>
 
 <span class="c1">// check and save references in the "new" data as compared to the previous data</span>
 <span class="kd">const</span> <span class="nx">newTags</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">newMattertagData</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">mattertagData</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">key</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nx">newTags</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newMattertagData</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span>
+<span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">newMattertagData</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">mattertagData</span><span class="p">.</span><span class="nf">hasOwnProperty</span><span class="p">(</span><span class="nx">key</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">newTags</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">newMattertagData</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
@@ -1201,9 +1201,9 @@ If a snapshot of the Collection or its items is needed, cloning one or both obje
 </code></pre></div></div>
 
 <p><strong>DO</strong>: Let the Collection figure out what has changed and how</p>
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="nx">onAdded</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">tag</span><span class="p">,</span> <span class="nx">collection</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`a new tag at </span><span class="p">${</span><span class="nx">index</span><span class="p">}</span><span class="s2"> was added to the collection`</span><span class="p">);</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nf">subscribe</span><span class="p">({</span>
+  <span class="nf">onAdded</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">tag</span><span class="p">,</span> <span class="nx">collection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`a new tag at </span><span class="p">${</span><span class="nx">index</span><span class="p">}</span><span class="s2"> was added to the collection`</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">});</span>
 </code></pre></div></div>
@@ -1212,17 +1212,17 @@ If a snapshot of the Collection or its items is needed, cloning one or both obje
 <p>Another benefit to Collections is that once subscribed, Observers are only called when changes occur. When a “get” call would return the same state as the previous call, it is doing unnecessary work. The excessive “get” calls and extra work done for each call are a potential for decreasing the performance of the application.</p>
 
 <p><strong>DON’T</strong>: Polling the current set of Mattertags by using an update loop triggers unnecessary updates</p>
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">updateMattertagData</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">mattertagData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Mattertag</span><span class="p">.</span><span class="nx">getData</span><span class="p">();</span>
-  <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">updateMattertagData</span><span class="p">);</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">updateMattertagData</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">mattertagData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Mattertag</span><span class="p">.</span><span class="nf">getData</span><span class="p">();</span>
+  <span class="nf">requestAnimationFrame</span><span class="p">(</span><span class="nx">updateMattertagData</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">updateMattertagData</span><span class="p">);</span>
+<span class="nf">requestAnimationFrame</span><span class="p">(</span><span class="nx">updateMattertagData</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p><strong>DO</strong>: Use the Collection to track state and automatically update only as needed</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// only called on first subscribe and when the Tag collection has changed</span>
-<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="nx">onCollectionUpdated</span><span class="p">(</span><span class="nx">collection</span><span class="p">)</span> <span class="p">{},</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nf">subscribe</span><span class="p">({</span>
+  <span class="nf">onCollectionUpdated</span><span class="p">(</span><span class="nx">collection</span><span class="p">)</span> <span class="p">{},</span>
 <span class="p">});</span>
 </code></pre></div></div>
 

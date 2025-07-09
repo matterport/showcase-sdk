@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1067,20 +1067,20 @@ url: <code class="language-plaintext highlighter-rouge">https://github.com/mrdoo
 
 <p>Start after <a href="https://github.com/matterport/showcase-sdk-tutorial/blob/master/src/index.ts#L25" target="_blank">https://github.com/matterport/showcase-sdk-tutorial/blob/master/src/index.ts#L25</a></p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">lights</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
-<span class="nx">lights</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.lights</span><span class="dl">'</span><span class="p">);</span>
-<span class="nx">lights</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nf">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">lights</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addNode</span><span class="p">();</span>
+<span class="nx">lights</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.lights</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">lights</span><span class="p">.</span><span class="nf">start</span><span class="p">();</span>
 </code></pre></div></div>
 
 <h2 id="add-your-component-to-the-scene-node">Add your component to the scene node</h2>
 
 <p>The component type will depend on the model you choose. We will use the stanford bunny.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">modelNode</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">modelNode</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addNode</span><span class="p">();</span>
 
 <span class="c1">// Store the fbx component since we will need to adjust it in the next step.</span>
-<span class="kd">const</span> <span class="nx">fbxComponent</span> <span class="o">=</span> <span class="nx">modelNode</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">Component</span><span class="p">.</span><span class="nx">FBX_LOADER</span><span class="p">,</span> <span class="p">{</span>
+<span class="kd">const</span> <span class="nx">fbxComponent</span> <span class="o">=</span> <span class="nx">modelNode</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">Component</span><span class="p">.</span><span class="nx">FBX_LOADER</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://cdn.jsdelivr.net/gh/mrdoob/three.js@dev/examples/models/fbx/stanford-bunny.fbx</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">});</span>
 </code></pre></div></div>
@@ -1100,14 +1100,14 @@ url: <code class="language-plaintext highlighter-rouge">https://github.com/mrdoo
 
 <p>We will lower the scene node a bit. The default position is 0, 0, 0</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">modelNode</span><span class="p">.</span><span class="nx">obj3D</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// drop ~3 feet</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">modelNode</span><span class="p">.</span><span class="nx">obj3D</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// drop ~3 feet</span>
 </code></pre></div></div>
 
 <h2 id="start-it">Start it</h2>
 
 <p>See <a href="sdkbundle_architecture.html#scene-nodes">SDK Architecture - Scene Nodes</a> for an explanation of what happens when you start a scene node.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">modelNode</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">modelNode</span><span class="p">.</span><span class="nf">start</span><span class="p">();</span>
 </code></pre></div></div>
 
 <h2 id="animate-it">Animate it</h2>
@@ -1115,10 +1115,10 @@ url: <code class="language-plaintext highlighter-rouge">https://github.com/mrdoo
 <p>We would like to see all sides of the model so we will rotate the bunny around the <strong>Y</strong> axis.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">);</span>
+  <span class="nf">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">);</span>
   <span class="nx">modelNode</span><span class="p">.</span><span class="nx">obj3D</span><span class="p">.</span><span class="nx">rotation</span><span class="p">.</span><span class="nx">y</span> <span class="o">+=</span> <span class="mf">0.02</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nx">tick</span><span class="p">();</span>
+<span class="nf">tick</span><span class="p">();</span>
 </code></pre></div></div>
 
 <h2 id="launch-your-browser">Launch your browser</h2>

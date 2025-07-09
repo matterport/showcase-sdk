@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1239,41 +1239,41 @@ def fromApiToSdk(x, y, z) = [ x, z, -y ]
 
   <p>Use the query below:</p>
 
-  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span> 
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">requests</span> 
 
-<span class="n">token</span> <span class="o">=</span> <span class="s">'Your API token'</span> 
-<span class="n">secret</span> <span class="o">=</span> <span class="s">'Your secret API token'</span> 
-<span class="n">endpoint</span> <span class="o">=</span> <span class="s">'https://api.matterport.com/api/models/graph'</span>
-<span class="n">query</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'query'</span> <span class="p">:</span>
-    <span class="s">'''
+<span class="n">token</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Your API token</span><span class="sh">'</span> 
+<span class="n">secret</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Your secret API token</span><span class="sh">'</span> 
+<span class="n">endpoint</span> <span class="o">=</span> <span class="sh">'</span><span class="s">https://api.matterport.com/api/models/graph</span><span class="sh">'</span>
+<span class="n">query</span> <span class="o">=</span> <span class="p">{</span> <span class="sh">'</span><span class="s">query</span><span class="sh">'</span> <span class="p">:</span>
+    <span class="sh">'''</span><span class="s">
     query {
-      models(query: "*"){
+      models(query: </span><span class="sh">"</span><span class="s">*</span><span class="sh">"</span><span class="s">){
         totalResults
         results{ id }
       }
     }
-    '''</span>
+    </span><span class="sh">'''</span>
 <span class="p">}</span>
 <span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">secret</span><span class="p">)</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'content-type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span> <span class="s">'accept'</span><span class="p">:</span><span class="s">'gzip'</span><span class="p">}</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">query</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span> 
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">content-type</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">application/json</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">accept</span><span class="sh">'</span><span class="p">:</span><span class="sh">'</span><span class="s">gzip</span><span class="sh">'</span><span class="p">}</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">query</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span> 
 
-<span class="k">if</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">ok</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+<span class="nf">if</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">ok</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="nf">json</span><span class="p">())</span>
 <span class="k">else</span><span class="p">:</span> 
-    <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span>
 </code></pre></div>  </div>
 </details>
 
 <details>
   <summary>How do I query all models with Node.js using fetch?</summary>
 
-  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="na">default</span><span class="p">:</span> <span class="nx">fetch</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">node-fetch</span><span class="dl">"</span><span class="p">);</span>
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="na">default</span><span class="p">:</span> <span class="nx">fetch</span> <span class="p">}</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">node-fetch</span><span class="dl">"</span><span class="p">);</span>
 <span class="kd">const</span> <span class="nx">token</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Your API token</span><span class="dl">"</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">secret</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Your secret API token</span><span class="dl">"</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">auth</span> <span class="o">=</span> <span class="nx">Buffer</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">token</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">:</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">secret</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="dl">'</span><span class="s1">base64</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">auth</span> <span class="o">=</span> <span class="nx">Buffer</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">token</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">:</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">secret</span><span class="p">).</span><span class="nf">toString</span><span class="p">(</span><span class="dl">'</span><span class="s1">base64</span><span class="dl">'</span><span class="p">);</span>
 <span class="kd">const</span> <span class="nx">endpoint</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://api.matterport.com/api/models/graph</span><span class="dl">"</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+<span class="kd">const</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">({</span>
   <span class="na">query</span><span class="p">:</span> <span class="s2">`
     query {
       models(query: "*"){
@@ -1284,7 +1284,7 @@ def fromApiToSdk(x, y, z) = [ x, z, -y ]
   `</span>
 <span class="p">});</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">,</span> <span class="p">{</span>
+<span class="nf">fetch</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
       <span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="s2">`Basic </span><span class="p">${</span><span class="nx">auth</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
@@ -1292,8 +1292,8 @@ def fromApiToSdk(x, y, z) = [ x, z, -y ]
     <span class="p">},</span>
     <span class="na">body</span><span class="p">:</span> <span class="nx">body</span><span class="p">,</span>
   <span class="p">})</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
+  <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nf">json</span><span class="p">())</span>
+  <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
 </code></pre></div>  </div>
 </details>
 

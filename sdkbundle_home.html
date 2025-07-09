@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1107,19 +1107,19 @@ cursors		images		locale		terms
 <h3 id="connect-to-the-sdk">Connect to the SDK</h3>
 <p>Add a script to the page to await the loading of showcase. Connect to it once loaded.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcase</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcase</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
 <span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">;</span>
-<span class="nx">showcase</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">load</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">showcase</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">load</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">mpSdk</span><span class="p">;</span>
   <span class="k">try</span> <span class="p">{</span>
-    <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">);</span>
+    <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
     <span class="k">return</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello Bundle SDK</span><span class="dl">'</span><span class="p">,</span> <span class="nx">mpSdk</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello Bundle SDK</span><span class="dl">'</span><span class="p">,</span> <span class="nx">mpSdk</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
@@ -1132,9 +1132,9 @@ cursors		images		locale		terms
 
 <p>To connct to a model using an OAuth token, pass an <code class="language-plaintext highlighter-rouge">access_token</code> as <code class="language-plaintext highlighter-rouge">auth</code> in the options argument to <a href="docs/reference/current/index.html#mp_sdk">connect</a>.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcase</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcase</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
 <span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nx">showcase</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="p">{</span>
+<span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">auth</span><span class="p">:</span> <span class="dl">'</span><span class="s1">[access_token]</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">});</span>
 </code></pre></div></div>

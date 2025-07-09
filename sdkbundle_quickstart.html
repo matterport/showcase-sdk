@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1051,31 +1051,31 @@ $('#toc').on('click', 'a', function() {
     <span class="nt">&lt;/iframe&gt;</span>
 
     <span class="nt">&lt;script&gt;</span>
-    <span class="kd">const</span> <span class="nx">bundleIframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">bundleIframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
     <span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nx">bundleIframe</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">;</span>
-    <span class="nx">showcase</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">load</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">showcase</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">load</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
       <span class="kd">let</span> <span class="nx">mpSdk</span><span class="p">;</span>
       <span class="k">try</span> <span class="p">{</span>
-        <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">onShowcaseConnect</span><span class="p">)</span>
+        <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">)</span>
+          <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">onShowcaseConnect</span><span class="p">)</span>
           <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
       <span class="p">}</span>
       <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
         <span class="k">return</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="p">});</span>
 
-   <span class="k">async</span> <span class="kd">function</span> <span class="nx">onShowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">async</span> <span class="kd">function</span> <span class="nf">onShowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">)</span> <span class="p">{</span>
      <span class="c1">// insert your sdk code here. See the ref https://matterport.github.io/showcase-sdk//docs/reference/current/index.html</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello Bundle SDK</span><span class="dl">'</span><span class="p">,</span> <span class="nx">mpSdk</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello Bundle SDK</span><span class="dl">'</span><span class="p">,</span> <span class="nx">mpSdk</span><span class="p">);</span>
 
      <span class="c1">// try retrieving the model data and log the model's sid</span>
      <span class="k">try</span> <span class="p">{</span>
-       <span class="kd">const</span> <span class="nx">modelData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">getData</span><span class="p">();</span>
-       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Model sid:</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">modelData</span><span class="p">.</span><span class="nx">sid</span><span class="p">);</span>
-     <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-       <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+       <span class="kd">const</span> <span class="nx">modelData</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nf">getData</span><span class="p">();</span>
+       <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Model sid:</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">modelData</span><span class="p">.</span><span class="nx">sid</span><span class="p">);</span>
+     <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+       <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
      <span class="p">}</span>
    <span class="p">}</span>
   <span class="nt">&lt;/script&gt;</span>

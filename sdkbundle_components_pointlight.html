@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1071,8 +1071,8 @@ $('#toc').on('click', 'a', function() {
   </tbody>
 </table>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nf">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addNode</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">initial</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">enabled</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="na">color</span><span class="p">:</span> <span class="p">{</span>
@@ -1087,8 +1087,8 @@ $('#toc').on('click', 'a', function() {
   <span class="na">debug</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
 <span class="p">};</span>
 
-<span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.pointLight</span><span class="dl">'</span><span class="p">,</span> <span class="nx">initial</span><span class="p">);</span>
-<span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.pointLight</span><span class="dl">'</span><span class="p">,</span> <span class="nx">initial</span><span class="p">);</span>
+<span class="nx">node</span><span class="p">.</span><span class="nf">start</span><span class="p">();</span>
 </code></pre></div></div>
 
 

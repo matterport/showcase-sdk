@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1101,17 +1101,17 @@ See the <a href="sdk_changelog.html">change log</a></p>
 <span class="c1">// if importing directly</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./[path]/[to]/sdk.es6.js</span><span class="dl">'</span>
 
-<span class="kd">const</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase-iframe</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase-iframe</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="c1">// connect the sdk; log an error and stop if there were any connection issues</span>
 <span class="k">try</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">iframe</span><span class="p">);</span>
-  <span class="nx">onShowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">connect</span><span class="p">(</span><span class="nx">iframe</span><span class="p">);</span>
+  <span class="nf">onShowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">onShowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nf">onShowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// start making calls on mpSdk as described in the reference docs</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -1144,7 +1144,7 @@ See the <a href="sdk_changelog.html">change log</a></p>
 <p>Previous versions of the SDK set up a <code class="language-plaintext highlighter-rouge">window.MP_SDK</code> object with a <code class="language-plaintext highlighter-rouge">connect</code> function. To continue using this same connect method, use the non-ES6 version.</p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://static.matterport.com/showcase-sdk/bootstrap/3.0.0-0-g0517b8d76c/sdk.js&amp;applicationKey=[YOUR_SDK_KEY]"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-  <span class="nb">window</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">iframe</span><span class="p">,</span> <span class="dl">'</span><span class="s1">applicationkey</span><span class="dl">'</span><span class="p">)</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="nx">iframe</span><span class="p">,</span> <span class="dl">'</span><span class="s1">applicationkey</span><span class="dl">'</span><span class="p">)</span>
 <span class="nt">&lt;/script&gt;</span>
 </code></pre></div></div>
 
@@ -1154,16 +1154,16 @@ See the <a href="sdk_changelog.html">change log</a></p>
 
 <p>Now you’ll want to make an action for 3D Showcase to execute. In the code for your web application, add this to a Javascript function where desired. Refer to the <a href="sdk_reference_summary">reference docs</a> for a list of all the actions you can do.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mpSdk</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">action</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">arguments</span><span class="o">&gt;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">successCallback</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mpSdk</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">action</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">arguments</span><span class="o">&gt;</span><span class="p">).</span><span class="nf">then</span><span class="p">(</span><span class="nx">successCallback</span><span class="p">)</span>
 <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">errorCallback</span><span class="p">);</span>
 
 <span class="c1">// ...</span>
 
 <span class="c1">// What to do if action was successful</span>
-<span class="kd">function</span> <span class="nx">successCallback</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span> <span class="p">}</span>
+<span class="kd">function</span> <span class="nf">successCallback</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span> <span class="p">}</span>
 
 <span class="c1">// What to do if the action failed</span>
-<span class="kd">function</span> <span class="nx">errorCallback</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">}</span>
+<span class="kd">function</span> <span class="nf">errorCallback</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">}</span>
 </code></pre></div></div>
 
 <table>
@@ -1189,7 +1189,7 @@ See the <a href="sdk_changelog.html">change log</a></p>
 
 <p>Listening for events from 3D Showcase is done in a similar way.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">event_name</span><span class="o">&gt;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">state_arguments</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mpSdk</span><span class="p">.</span><span class="nf">on</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">event_name</span><span class="o">&gt;</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="o">&lt;</span><span class="nx">state_arguments</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// what to do when this event happens</span>
 <span class="p">});</span>
 </code></pre></div></div>
@@ -1217,10 +1217,10 @@ See the <a href="sdk_changelog.html">change log</a></p>
 
 <p>Finally, you can grab metadata about the entire Matterport Space by calling <code class="language-plaintext highlighter-rouge">getData()</code> and <code class="language-plaintext highlighter-rouge">getDetails()</code> in your web app. For example:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">getData</span><span class="p">()</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">model</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nf">getData</span><span class="p">()</span>
+  <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">model</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Model data successfully retrieved</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Model sid:</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">model</span><span class="p">.</span><span class="nx">sid</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Model sid:</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">model</span><span class="p">.</span><span class="nx">sid</span><span class="p">);</span>
   <span class="p">})</span>
   <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Problem retrieving model data</span>

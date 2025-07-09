@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1079,18 +1079,18 @@ $('#toc').on('click', 'a', function() {
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create a scene object and node with a model component.</span>
 <span class="c1">// This node's transform will be changed by the transform control.</span>
-<span class="kd">const</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">modelNode</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
-<span class="nx">modelNode</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.gltfLoader</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+<span class="kd">const</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nf">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">modelNode</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addNode</span><span class="p">();</span>
+<span class="nx">modelNode</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.gltfLoader</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">http://test.com/bunny.gltf</span><span class="dl">"</span><span class="p">,</span>
 <span class="p">});</span>
 
 <span class="c1">// Create a scene node with a transform control component.</span>
-<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nx">addNode</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">myControl</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.transformControls</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+<span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addNode</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">myControl</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.transformControls</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">translate</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">});</span>
-<span class="nx">node</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<span class="nx">node</span><span class="p">.</span><span class="nf">start</span><span class="p">();</span>
 
 <span class="c1">// Attach the model to the transform control</span>
 <span class="nx">myControl</span><span class="p">.</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">selection</span> <span class="o">=</span> <span class="nx">modelNode</span><span class="p">;</span>

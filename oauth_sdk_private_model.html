@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1029,9 +1029,9 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 
 <p>Next, pass the authentication token to the SDK:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">).</span><span class="nx">contentWindow</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">).</span><span class="nx">contentWindow</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">bundleSdk</span> <span class="o">=</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">;</span>
-<span class="nx">bundleSdk</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="p">{</span>
+<span class="nx">bundleSdk</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="p">{</span>
    <span class="na">auth</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">token</span><span class="o">&gt;</span><span class="p">,</span>
 <span class="p">});</span>
 </code></pre></div></div>
@@ -1043,9 +1043,9 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 <p>First, create a helper to refresh tokens from your server. Something as simple as this could work.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">fetcher</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="k">async</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">oldToken</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;your server&gt;/refresh?</span><span class="dl">'</span><span class="p">);</span>
-      <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+   <span class="k">async</span> <span class="nf">fetch</span><span class="p">(</span><span class="nx">oldToken</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;your server&gt;/refresh?</span><span class="dl">'</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -1053,7 +1053,7 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 <p>Then attach that fetcher to an instance of an ITokenRefresher.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="kd">const</span> <span class="nx">refresher</span> <span class="o">=</span> <span class="nx">bundleSdk</span><span class="p">.</span><span class="nx">OAuth</span><span class="p">.</span><span class="nx">createTokenRefresher</span><span class="p">({</span>
+<span class="kd">const</span> <span class="nx">refresher</span> <span class="o">=</span> <span class="nx">bundleSdk</span><span class="p">.</span><span class="nx">OAuth</span><span class="p">.</span><span class="nf">createTokenRefresher</span><span class="p">({</span>
    <span class="na">access_token</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">token</span><span class="o">&gt;</span><span class="p">,</span>
    <span class="na">expires_in</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span>
 <span class="p">},</span> <span class="nx">fetcher</span><span class="p">);</span>
@@ -1070,9 +1070,9 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 
 <p>First, here is all of the code associated with the example:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcaseElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">oauthOverlay</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">oauth-overlay</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">oauthButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">oauth-diag-submit</span><span class="dl">'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcaseElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">oauthOverlay</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">oauth-overlay</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">oauthButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">oauth-diag-submit</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="c1">// Origins we possibly expect to receive messages over `postMessage` from</span>
 <span class="kd">const</span> <span class="nx">safeOrigins</span> <span class="o">=</span> <span class="p">[</span>
@@ -1082,37 +1082,37 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 <span class="p">];</span>
 
 <span class="c1">// when the user auths through the button provided, start everything and get it running</span>
-<span class="nx">oauthButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="k">async</span> <span class="kd">function</span> <span class="nx">onAuthMessage</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
-     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">authWindow</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+<span class="nx">oauthButton</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">async</span> <span class="kd">function</span> <span class="nf">onAuthMessage</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">authWindow</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
      <span class="c1">// validate that we received a message from a known source</span>
-     <span class="k">if</span> <span class="p">(</span>
+     <span class="k">if </span><span class="p">(</span>
           <span class="nx">msg</span><span class="p">.</span><span class="nx">source</span> <span class="o">===</span> <span class="nx">authWindow</span> <span class="o">&amp;&amp;</span>
-          <span class="nx">safeOrigins</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">origin</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
+          <span class="nx">safeOrigins</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">origin</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
           <span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">auth_model</span><span class="dl">'</span>
      <span class="p">)</span> <span class="p">{</span>
        <span class="c1">// cleanup a bit: remove the message listener, and close the auth window</span>
-       <span class="nb">window</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="nx">onAuthMessage</span><span class="p">);</span>
-       <span class="nx">authWindow</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+       <span class="nb">window</span><span class="p">.</span><span class="nf">removeEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="nx">onAuthMessage</span><span class="p">);</span>
+       <span class="nx">authWindow</span><span class="p">.</span><span class="nf">close</span><span class="p">();</span>
 
        <span class="c1">// set up some url params for Showcase</span>
        <span class="kd">const</span> <span class="p">{</span> <span class="nx">token</span><span class="p">,</span> <span class="nx">modelId</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
-       <span class="kd">const</span> <span class="nx">showcaseParams</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
-       <span class="nx">showcaseParams</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">m</span><span class="dl">'</span><span class="p">,</span> <span class="nx">modelId</span><span class="p">);</span>
-       <span class="nx">showcaseParams</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">applicationKey</span><span class="dl">'</span><span class="p">,</span> <span class="nx">config</span><span class="p">.</span><span class="nx">applicationKey</span><span class="p">);</span>
-       <span class="nx">showcaseParams</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">apiHost</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">https://my.matterport.com</span><span class="dl">'</span><span class="p">);</span>
+       <span class="kd">const</span> <span class="nx">showcaseParams</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
+       <span class="nx">showcaseParams</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">m</span><span class="dl">'</span><span class="p">,</span> <span class="nx">modelId</span><span class="p">);</span>
+       <span class="nx">showcaseParams</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">applicationKey</span><span class="dl">'</span><span class="p">,</span> <span class="nx">config</span><span class="p">.</span><span class="nx">applicationKey</span><span class="p">);</span>
+       <span class="nx">showcaseParams</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">apiHost</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">https://my.matterport.com</span><span class="dl">'</span><span class="p">);</span>
        <span class="c1">// start the Showcase player, hide the OAuth overlay, and connect the SDK</span>
-       <span class="k">await</span> <span class="nx">loadShowcase</span><span class="p">(</span><span class="nx">showcaseParams</span><span class="p">);</span>
-       <span class="nx">oauthOverlay</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">collapsed</span><span class="dl">'</span><span class="p">);</span>
-       <span class="k">await</span> <span class="nx">connectSdk</span><span class="p">({</span>
+       <span class="k">await</span> <span class="nf">loadShowcase</span><span class="p">(</span><span class="nx">showcaseParams</span><span class="p">);</span>
+       <span class="nx">oauthOverlay</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">collapsed</span><span class="dl">'</span><span class="p">);</span>
+       <span class="k">await</span> <span class="nf">connectSdk</span><span class="p">({</span>
          <span class="na">auth</span><span class="p">:</span> <span class="nx">token</span><span class="p">,</span>
        <span class="p">});</span>
     <span class="p">}</span>
   <span class="p">}</span>
-  <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="nx">onAuthMessage</span><span class="p">);</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="nx">onAuthMessage</span><span class="p">);</span>
 
   <span class="c1">// open a window to start the user down the OAuth flow</span>
-  <span class="kd">const</span> <span class="nx">authWindow</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span>
+  <span class="kd">const</span> <span class="nx">authWindow</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span>
     <span class="dl">'</span><span class="s1">https://authn.matterport.com/oauth/authorize?client_id=&lt;client_id&gt;&amp;response_type=code&amp;scope=ViewDetails</span><span class="dl">'</span><span class="p">,</span>
     <span class="dl">'</span><span class="s1">sdk auth</span><span class="dl">'</span><span class="p">,</span>
     <span class="dl">'</span><span class="s1">width=800,height=800</span><span class="dl">'</span>
@@ -1120,20 +1120,20 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 <span class="p">});</span>
 
 <span class="c1">// load the bundle in the IFrame and return a promise to await its load</span>
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">loadShowcase</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
-   <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="k">export</span> <span class="kd">function</span> <span class="nf">loadShowcase</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="nx">showcaseElement</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="nx">res</span><span class="p">;</span>
       <span class="kd">const</span> <span class="nx">src</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">./bundle/showcase.html</span><span class="dl">'</span><span class="p">;</span>
       <span class="c1">// append the other url params -- make sure `apiHost` is defined so that the bundle properly connects</span>
-      <span class="nx">showcaseElement</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">src</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">?</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">params</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+      <span class="nx">showcaseElement</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">src</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">?</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">params</span><span class="p">.</span><span class="nf">toString</span><span class="p">();</span>
    <span class="p">});</span>
 <span class="p">}</span>
 
 <span class="c1">// connect to the Bundle SDK</span>
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">connectSdk</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">connectSdk</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
    <span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nx">showcaseElement</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">;</span>
    <span class="kd">const</span> <span class="nx">bundleConnector</span> <span class="o">=</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">;</span>
-   <span class="k">return</span> <span class="nx">bundleConnector</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+   <span class="k">return</span> <span class="nx">bundleConnector</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -1141,30 +1141,30 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">id=</span><span class="s">'model-select'</span> <span class="na">style=</span><span class="s">'width: 100vw; height: 100vh;'</span><span class="nt">&gt;&lt;/iframe&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-    <span class="p">(</span><span class="k">async</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-       <span class="kd">const</span> <span class="nx">modelSelector</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">model-select</span><span class="dl">'</span><span class="p">);</span>
-       <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">opener</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">(</span><span class="k">async</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+       <span class="kd">const</span> <span class="nx">modelSelector</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">model-select</span><span class="dl">'</span><span class="p">);</span>
+       <span class="k">if </span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">opener</span><span class="p">)</span> <span class="p">{</span>
          <span class="c1">// get the authorization_code out of the current URL</span>
-         <span class="kd">const</span> <span class="nx">urlParams</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
-         <span class="kd">const</span> <span class="nx">auth_code</span> <span class="o">=</span> <span class="nx">urlParams</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">code</span><span class="dl">'</span><span class="p">);</span>
+         <span class="kd">const</span> <span class="nx">urlParams</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
+         <span class="kd">const</span> <span class="nx">auth_code</span> <span class="o">=</span> <span class="nx">urlParams</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">code</span><span class="dl">'</span><span class="p">);</span>
 
          <span class="c1">// Use the authorization_code with your server side script</span>
          <span class="c1">// to fetch an access_token using your OAuth Client Credentials</span>
-         <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://path/to/server/token/?code=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">auth_code</span><span class="p">);</span>
-         <span class="kd">const</span> <span class="nx">responseJson</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+         <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://path/to/server/token/?code=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">auth_code</span><span class="p">);</span>
+         <span class="kd">const</span> <span class="nx">responseJson</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
          <span class="kd">const</span> <span class="nx">oauthToken</span> <span class="o">=</span> <span class="nx">responseJson</span><span class="p">.</span><span class="nx">access_token</span><span class="p">;</span>
 
          <span class="c1">// set the src of the IFrame (with the oauthToken) to start the model selector</span>
          <span class="nx">modelSelector</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://authn.matterport.com/model-select?oauthToken=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">oauthToken</span><span class="p">;</span>
          <span class="c1">// wait for the iframe to message us back</span>
-         <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
-           <span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">source</span> <span class="o">===</span> <span class="nx">modelSelector</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">)</span> <span class="p">{</span>
-             <span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">models</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nb">window</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
+           <span class="k">if </span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">source</span> <span class="o">===</span> <span class="nx">modelSelector</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">)</span> <span class="p">{</span>
+             <span class="k">if </span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">models</span><span class="p">)</span> <span class="p">{</span>
                <span class="c1">// just take the first selected model</span>
-               <span class="kd">const</span> <span class="p">[</span><span class="nx">modelId</span><span class="p">]</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">models</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">,</span><span class="dl">'</span><span class="p">);</span>
-               <span class="k">if</span> <span class="p">(</span><span class="nx">modelId</span><span class="p">)</span> <span class="p">{</span>
+               <span class="kd">const</span> <span class="p">[</span><span class="nx">modelId</span><span class="p">]</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">models</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">,</span><span class="dl">'</span><span class="p">);</span>
+               <span class="k">if </span><span class="p">(</span><span class="nx">modelId</span><span class="p">)</span> <span class="p">{</span>
                  <span class="c1">// post back to the app that opened this window</span>
-                 <span class="nb">window</span><span class="p">.</span><span class="nx">opener</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span>
+                 <span class="nb">window</span><span class="p">.</span><span class="nx">opener</span><span class="p">.</span><span class="nf">postMessage</span><span class="p">({</span>
                    <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">auth_model</span><span class="dl">'</span><span class="p">,</span>
                    <span class="nx">modelId</span><span class="p">,</span>
                    <span class="na">token</span><span class="p">:</span> <span class="nx">oauthToken</span><span class="p">,</span>
@@ -1196,10 +1196,10 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="kd">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">module</span><span class="dl">"</span><span class="o">&gt;</span>
    <span class="k">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">MP_SDK</span><span class="dl">"</span><span class="p">;</span>
 
-   <span class="kd">const</span> <span class="nx">showcaseElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
+   <span class="kd">const</span> <span class="nx">showcaseElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">showcase</span><span class="dl">'</span><span class="p">);</span>
    <span class="c1">// connect the SDK</span>
-   <span class="k">async</span> <span class="kd">function</span> <span class="nx">connectSdk</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+   <span class="k">async</span> <span class="kd">function</span> <span class="nf">connectSdk</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nf">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
    <span class="p">}</span>
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span></code></pre></div></div>
@@ -1216,9 +1216,9 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 
 <p>Opening a new window requires a user event so we use a button in an overlay over the Showcase player.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">oauthButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">oauthButton</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
    <span class="c1">// ...</span>
-   <span class="kd">const</span> <span class="nx">authWindow</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span>
+   <span class="kd">const</span> <span class="nx">authWindow</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span>
       <span class="dl">'</span><span class="s1">https://authn.matterport.com/oauth/authorize?client_id=&lt;client_id&gt;&amp;response_type=code&amp;scope=ViewDetails</span><span class="dl">'</span><span class="p">,</span>
       <span class="dl">'</span><span class="s1">sdk auth</span><span class="dl">'</span><span class="p">,</span>
       <span class="dl">'</span><span class="s1">width=800,height=800</span><span class="dl">'</span>
@@ -1238,8 +1238,8 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 </code></pre></div></div>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// redirect.js</span>
-<span class="kd">const</span> <span class="nx">urlParams</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">auth_code</span> <span class="o">=</span> <span class="nx">urlParams</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">code</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">urlParams</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">auth_code</span> <span class="o">=</span> <span class="nx">urlParams</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">code</span><span class="dl">'</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Here, we created a simple page that contains an iFrame that we will eventually populate with the Model Selector, but first we read the code from the URL in order to generate an access_token.</p>
@@ -1248,8 +1248,8 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 
 <p>With the access_token we can display the model selector tool in our redirect page. We pass the access_token in via URL hash.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://path/to/server/token/?code=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">auth_code</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">responseJson</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://path/to/server/token/?code=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">auth_code</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">responseJson</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
 <span class="kd">const</span> <span class="nx">oauthToken</span> <span class="o">=</span> <span class="nx">responseJson</span><span class="p">.</span><span class="nx">access_token</span><span class="p">;</span>
 </code></pre></div></div>
 
@@ -1259,8 +1259,8 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 
 <p>On the server side, using something like ExpressJS:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="dl">'</span><span class="s1">/path/to/server/token</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-   <span class="kd">const</span> <span class="nx">requestBody</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URLSearchParams</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nf">use</span><span class="p">(</span><span class="dl">'</span><span class="s1">/path/to/server/token</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">const</span> <span class="nx">requestBody</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">URLSearchParams</span><span class="p">({</span>
       <span class="na">grant_type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">authorization_code</span><span class="dl">'</span><span class="p">,</span>
       <span class="na">code</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">code</span><span class="p">,</span>
       <span class="na">scope</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ViewDetails</span><span class="dl">'</span><span class="p">,</span>
@@ -1268,16 +1268,16 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
       <span class="na">client_secret</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">client_secret</span><span class="o">&gt;</span><span class="p">,</span>
    <span class="p">});</span>
    <span class="kd">const</span> <span class="nx">tokenUrl</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://api.matterport.com/api/oauth/token</span><span class="dl">'</span><span class="p">;</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`requesting token from </span><span class="p">${</span><span class="nx">tokenUrl</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-   <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">tokenUrl</span><span class="p">,</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`requesting token from </span><span class="p">${</span><span class="nx">tokenUrl</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+   <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="nx">tokenUrl</span><span class="p">,</span> <span class="p">{</span>
       <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
       <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
          <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/x-www-form-urlencoded</span><span class="dl">'</span>
       <span class="p">},</span>
       <span class="na">body</span><span class="p">:</span> <span class="nx">requestBody</span><span class="p">,</span>
    <span class="p">});</span>
-   <span class="kd">const</span> <span class="nx">responseJson</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-   <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">responseJson</span><span class="p">);</span>
+   <span class="kd">const</span> <span class="nx">responseJson</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
+   <span class="nx">res</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="nx">responseJson</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
@@ -1288,11 +1288,11 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 <p>Now that we have our oauth_token, we can set up the model selector and start receiving data from it. The model selector will postMessage back to a comma separated list of model IDs back to its .parent. To get the model selected, we will need to listen for the ‘message’ event from the Selector.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
+<span class="nb">window</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
    <span class="c1">// validate the message is from our modelSelector IFrame</span>
-   <span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">source</span> <span class="o">===</span> <span class="nx">modelSelector</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="p">[</span><span class="nx">modelId</span><span class="p">]</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">models</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">,</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// take just the first model id</span>
-      <span class="nb">window</span><span class="p">.</span><span class="nx">opener</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span>
+   <span class="k">if </span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">source</span> <span class="o">===</span> <span class="nx">modelSelector</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="p">[</span><span class="nx">modelId</span><span class="p">]</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">models</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">,</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// take just the first model id</span>
+      <span class="nb">window</span><span class="p">.</span><span class="nx">opener</span><span class="p">.</span><span class="nf">postMessage</span><span class="p">({</span>
          <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">auth_model</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// help distinguish this event from others</span>
          <span class="nx">modelId</span><span class="p">,</span>
          <span class="na">token</span><span class="p">:</span> <span class="nx">oauthToken</span><span class="p">,</span>
@@ -1311,20 +1311,20 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 <p>So far we’ve been operating in a popup window, not in our application. We set up the redirect to postMessage back to its opener. In order to receive the token and model ID from the OAuth popup, we will need to listen for the ‘message’ event from the popup.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">onAuthMessage</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">onAuthMessage</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
    <span class="c1">// validate that we received a message from a known source</span>
-   <span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">source</span> <span class="o">===</span> <span class="nx">authWindow</span> <span class="o">&amp;&amp;</span>
-      <span class="nx">safeOrigins</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">origin</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
+   <span class="k">if </span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">source</span> <span class="o">===</span> <span class="nx">authWindow</span> <span class="o">&amp;&amp;</span>
+      <span class="nx">safeOrigins</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">origin</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
       <span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">auth_model</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
      <span class="c1">// cleanup a bit: remove the message listener, and close the auth window</span>
-      <span class="nb">window</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="nx">onAuthMessage</span><span class="p">);</span>
-      <span class="nx">authWindow</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+      <span class="nb">window</span><span class="p">.</span><span class="nf">removeEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="nx">onAuthMessage</span><span class="p">);</span>
+      <span class="nx">authWindow</span><span class="p">.</span><span class="nf">close</span><span class="p">();</span>
 
       <span class="kd">const</span> <span class="p">{</span> <span class="nx">token</span><span class="p">,</span> <span class="nx">modelId</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
       <span class="c1">// ...</span>
    <span class="p">}</span>
 <span class="p">}</span>
-<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="nx">onAuthMessage</span><span class="p">);</span>
+<span class="nb">window</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="nx">onAuthMessage</span><span class="p">);</span>
 
 </code></pre></div></div>
 
@@ -1338,7 +1338,7 @@ https://my.matterport.com/show/?m=&lt;modelId&gt;&amp;auth=Bearer+&lt;token&gt;;
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">showcaseWindow</span> <span class="o">=</span> <span class="nx">showcaseElement</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">bundleConnector</span> <span class="o">=</span> <span class="nx">showcaseWindow</span><span class="p">.</span><span class="nx">MP_SDK</span><span class="p">;</span>
-<span class="nx">bundleConnector</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="p">{</span>
+<span class="nx">bundleConnector</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="nx">showcaseWindow</span><span class="p">,</span> <span class="p">{</span>
    <span class="na">auth</span><span class="p">:</span> <span class="nx">token</span>
 <span class="p">});</span>
 </code></pre></div></div>

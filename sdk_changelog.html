@@ -47,7 +47,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="showcase-sdk" href="https://matterport.github.iofeed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
 
     <script>
       $(document).ready(function () {
@@ -1627,8 +1627,8 @@ Links:</p>
     <ul>
       <li>Depending on the asset format being deserialized, either an <code class="language-plaintext highlighter-rouge">INode[]</code> or <code class="language-plaintext highlighter-rouge">IObject</code> was being returned. For consistency, we have opted to only return the latter.</li>
       <li>To get references to the nodes after deserialization
-        <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sceneObject</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">deserialize</span><span class="p">(</span><span class="cm">/* ... */</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">nodes</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">sceneObject</span><span class="p">.</span><span class="nx">nodeIterator</span><span class="p">()];</span>
+        <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sceneObject</span> <span class="o">=</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nf">deserialize</span><span class="p">(</span><span class="cm">/* ... */</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">nodes</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">sceneObject</span><span class="p">.</span><span class="nf">nodeIterator</span><span class="p">()];</span>
 <span class="c1">// from here continue using the nodes as usual</span>
 </code></pre></div>        </div>
       </li>
