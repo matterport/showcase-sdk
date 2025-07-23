@@ -588,6 +588,8 @@
 
 
 
+
+
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -596,8 +598,6 @@
 "summary": ""
 }
 ,
-
-
 
 
 
@@ -927,6 +927,17 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/modelapi_changelog.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Model API - Geolocation",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/modelapi_geolocation.html",
 "summary": ""
 }
 ,

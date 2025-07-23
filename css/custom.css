@@ -297,7 +297,7 @@ aside div#mysidebar > li ul li.subfolders > a {
   flex-direction: row-reverse;
 }
 aside div#mysidebar > li ul li ul li a {
-  padding-left: 80px;
+  padding-left: 60px;
 }
 aside div#mysidebar > li:first-of-type {
   margin-top: 20px;

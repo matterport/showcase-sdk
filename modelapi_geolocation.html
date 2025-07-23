@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Interface: Tag.IMessenger | Matterport Developers</title>
+<title>Model API - Geolocation | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -129,7 +129,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Interface: Tag.IMessenger page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:developer@matterport.com?subject=Showcase SDK feedback&body=I have some feedback about the Model API - Geolocation page: ' + window.location.href;">Feedback</a>
           </div>
           <div class="dropdown">
             <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
@@ -845,7 +845,7 @@
                   
                   
                   
-                  <li><a title="Overview and Examples" href="/showcase-sdk/modelapi_geolocation.html">Overview and Examples</a></li>
+                  <li class="active"><a title="Overview and Examples" href="/showcase-sdk/modelapi_geolocation.html">Overview and Examples</a></li>
                   
                   
                   
@@ -991,7 +991,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="Interface: Tag.IMessenger">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Model API - Geolocation">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -1006,7 +1006,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">Interface: Tag.IMessenger</h1>
+   <h1 class="post-title-main">Model API - Geolocation</h1>
 </div>
 
 
@@ -1016,451 +1016,264 @@ noResultsText: '<li><div>No results found.<div></li>',
    
 
     
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-  
-});
-</script>
-
-<div id="toc"></div>
-
-    
 
 
     
 
-   <!doctype html>
-<html class="default no-js">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IMessenger | Matterport SDK</title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../assets/css/main.css">
-</head>
-<body>
-<header>
-	<div class="tsd-page-title">
-		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="../index.html">@mpSdk</a>
-				</li>
-				<li>
-					<a href="../modules/tag.html">Tag</a>
-				</li>
-				<li>
-					<a href="tag.imessenger.html">IMessenger</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-</header>
-<div class="container container-main">
-	<div class="row">
-		<div class="col-8 col-content">
-			<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="tsd-lead">
-						<p>A messaging object to send and receive messages to and from your iframe sandbox.</p>
-					</div>
-				</div>
-			</section>
-			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
-				<ul class="tsd-hierarchy">
-					<li>
-						<span class="target">IMessenger</span>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel-group tsd-index-group">
-				<div class="tsd-panel-group" id="typescript-declarations" style="display: none;">
-					<h2>Typescript Declarations File</h2>
-					<section class="tsd-panel">
-						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.7.1_webgl-818-g55ca17aa5f">25.7.1_webgl-818-g55ca17aa5f</a><br>
-							Declarations are already include in the Bundle SDK distribution.
-						</div>
-					</section>
-				</div>
-				<script>
-  if (window.location.href.endsWith('index.html')) {
-    document.getElementById('typescript-declarations').style = 'display: block;';
-  }
-</script>
-				<h2>Index</h2>
-				<section class="tsd-panel tsd-index-panel">
-					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Methods</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="tag.imessenger.html#off" class="tsd-kind-icon">off</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="tag.imessenger.html#on" class="tsd-kind-icon">on</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="tag.imessenger.html#send" class="tsd-kind-icon">send</a></li>
-							</ul>
-						</section>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="off" class="tsd-anchor"></a>
-					<h3>off</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">off<span class="tsd-signature-symbol">(</span>eventType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, eventHandler<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="tsd-lead">
-									<p>Remove a handler for messages of type <code>eventType</code> from the iframe sandbox</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>eventType: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>eventHandler: <span class="tsd-signature-type">function</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
-														</li>
-													</ul>
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="on" class="tsd-anchor"></a>
-					<h3>on</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>eventType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, eventHandler<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="tsd-lead">
-									<p>Add a handler for messages of type <code>eventType</code> from the iframe sandbox</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>eventType: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>eventHandler: <span class="tsd-signature-type">function</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
-														</li>
-													</ul>
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="send" class="tsd-anchor"></a>
-					<h3>send</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">send<span class="tsd-signature-symbol">(</span>eventType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="tsd-lead">
-									<p>Send a messages of type <code>eventType</code> to the iframe sandbox with any optional data associated with the message</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>eventType: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-		</div>
-		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-			<nav class="tsd-navigation primary">
-				<ul>
-					<li class="globals  ">
-						<a href="../index.html"><em>@mpSdk</em></a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/app.html">App</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/asset.html">Asset</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/camera.html">Camera</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/conversion.html">Conversion</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/floor.html">Floor</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/graph.html">Graph</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/label.html">Label</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/link.html">Link</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/mattertag.html">Mattertag</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/measurements.html">Measurements</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/mode.html">Mode</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/model.html">Model</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/oauth.html">OAuth</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/pointer.html">Pointer</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/renderer.html">Renderer</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/room.html">Room</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/scene.html">Scene</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/sensor.html">Sensor</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/settings.html">Settings</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/sweep.html">Sweep</a>
-					</li>
-					<li class="current tsd-kind-namespace">
-						<a href="../modules/tag.html">Tag</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/tour.html">Tour</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/view.html">View</a>
-					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation secondary menu-sticky">
-				<ul class="before-current">
-					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
-						<a href="../enums/tag.attachmenttype.html" class="tsd-kind-icon">Attachment<wbr>Type</a>
-					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="tag.imessenger.html" class="tsd-kind-icon">IMessenger</a>
-						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="tag.imessenger.html#off" class="tsd-kind-icon">off</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="tag.imessenger.html#on" class="tsd-kind-icon">on</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="tag.imessenger.html#send" class="tsd-kind-icon">send</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="after-current">
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#allowableactions" class="tsd-kind-icon">Allowable<wbr>Actions</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#attachment" class="tsd-kind-icon">Attachment</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#descriptor" class="tsd-kind-icon">Descriptor</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#editpositiondescriptor" class="tsd-kind-icon">Edit<wbr>Position<wbr>Descriptor</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#editableproperties" class="tsd-kind-icon">Editable<wbr>Properties</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#globalvariablemap" class="tsd-kind-icon">Global<wbr>Variable<wbr>Map</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#openoptions" class="tsd-kind-icon">Open<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#opentags" class="tsd-kind-icon">Open<wbr>Tags</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#positionoptions" class="tsd-kind-icon">Position<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#sandboxoptions" class="tsd-kind-icon">Sandbox<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#stemheighteditoptions" class="tsd-kind-icon">Stem<wbr>Height<wbr>Edit<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#tagdata" class="tsd-kind-icon">Tag<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-property tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#attachments-2" class="tsd-kind-icon">attachments</a>
-					</li>
-					<li class=" tsd-kind-property tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#data" class="tsd-kind-icon">data</a>
-					</li>
-					<li class=" tsd-kind-property tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#opentags-1" class="tsd-kind-icon">open<wbr>Tags</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#add" class="tsd-kind-icon">add</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#allowaction" class="tsd-kind-icon">allow<wbr>Action</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#attach" class="tsd-kind-icon">attach</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#close" class="tsd-kind-icon">close</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#detach" class="tsd-kind-icon">detach</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#dock" class="tsd-kind-icon">dock</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#editbillboard" class="tsd-kind-icon">edit<wbr>Billboard</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#editcolor" class="tsd-kind-icon">edit<wbr>Color</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#editicon" class="tsd-kind-icon">edit<wbr>Icon</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#editopacity" class="tsd-kind-icon">edit<wbr>Opacity</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#editposition" class="tsd-kind-icon">edit<wbr>Position</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#editpositions" class="tsd-kind-icon">edit<wbr>Positions</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#editstem" class="tsd-kind-icon">edit<wbr>Stem</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#open" class="tsd-kind-icon">open</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#registerattachment" class="tsd-kind-icon">register<wbr>Attachment</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#registersandbox" class="tsd-kind-icon">register<wbr>Sandbox</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#remove" class="tsd-kind-icon">remove</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#reseticon" class="tsd-kind-icon">reset<wbr>Icon</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#toggledocking" class="tsd-kind-icon">toggle<wbr>Docking</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#togglenavcontrols" class="tsd-kind-icon">toggle<wbr>Nav<wbr>Controls</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/tag.html#togglesharing" class="tsd-kind-icon">toggle<wbr>Sharing</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-</div>
-<div class="overlay"></div>
-<script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
-</body>
-</html>
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Geolocation Data in Model API is only available for Enterprise-level Matterport Subscriptions and is currently in beta at this time.</div>
+
+<h2 id="introduction">Introduction</h2>
+
+<p><strong>Geolocation</strong> allows Matterport Spaces to be mapped to real world locations by latitude, longitude, and altitute.</p>
+
+<p>Determining Geolocation can be difficult in indoor environments and is determined by a combination of different factors including hardware GPS and software-based mapping tools that are forthcoming.</p>
+
+<p>Our <strong>GeoCoordinates</strong> API provides an interface for accessing geolocation data that is associated with a model as well as the source of the data (processing, client, unknown) and a translation from the associated GPS and the origin of a model (0,0,0).</p>
+
+<p>Users can also use their own methods to patch the geolocation data associated with a model.</p>
+
+<h2 id="sample-queries">Sample Queries</h2>
+
+<details>
+  <summary>Get GeoCoordinates Information for a Model</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getGeoCoordinates</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">geocoordinates</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="p">...</span><span class="w"> </span><span class="n">GeoCoordinateFragment</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">fragment</span><span class="w"> </span><span class="n">GeoCoordinateFragment</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">source</span><span class="w">
+  </span><span class="n">altitude</span><span class="w">
+  </span><span class="n">latitude</span><span class="w">
+  </span><span class="n">longitude</span><span class="w">
+  </span><span class="n">translation</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="n">rotation</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Variable Arguments:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"modelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR MODEL ID]"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DpFVgQXVTmD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"geocoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"processing"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"altitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.276006298034105</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-96.80354127176122</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"translation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3076627708815243</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.3566522639732987</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"rotation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.3681099881862502</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"w"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.929782252249159</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getGeoCoordinates(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20id%0A%20%20%20%20geocoordinates%20%7B%0A%20%20%20%20%20%20%20%20...%20GeoCoordinateFragment%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0Afragment%20GeoCoordinateFragment%20on%20GeoCoordinate%20%7B%0A%20%20source%0A%20%20altitude%0A%20%20latitude%0A%20%20longitude%0A%20%20translation%20%7B%20x%20y%20z%20%7D%0A%20%20rotation%20%7B%20x%20y%20z%20w%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D" target="_blank">Try this query in our interactive console</a></p>
+</details>
+
+<details>
+  <summary>Get GeoCoordinates for a Point within in a Model</summary>
+
+  <p>Sample Query:</p>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getGeoLocationOf</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$point</span><span class="p">:</span><span class="w"> </span><span class="n">IPoint3D</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">geocoordinates</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">geoLocationOf</span><span class="p">(</span><span class="n">modelLocation</span><span class="p">:</span><span class="w"> </span><span class="nv">$point</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="n">lat</span><span class="w">
+          </span><span class="n">long</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Variable Arguments:</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"modelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR MODEL ID]]"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"point"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.11</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.14</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.4</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR MODEL ID]]"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"geocoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"geoLocationOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33.27603743078501"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"long"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-96.8034845051858"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getGeoLocationOf(%24modelId%3A%20ID!%2C%20%24point%3A%20IPoint3D!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20id%0A%20%20%20%20geocoordinates%20%7B%0A%20%20%20%20%20%20geoLocationOf(modelLocation%3A%20%24point)%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20long%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%2C%0A%20%20%22point%22%3A%20%7B%0A%20%20%20%20%22x%22%3A%204%2C%0A%20%20%20%20%22y%22%3A%203%2C%0A%20%20%20%20%22z%22%3A%201%0A%20%20%7D%0A%7D" target="_blank">Try this query in our interactive console</a></p>
+</details>
+
+<details>
+  <summary>Translate GeoCoordinates to Model Coordinates</summary>
+
+  <p>Sample Query:</p>
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getModelLocationOf</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$lat</span><span class="p">:</span><span class="w"> </span><span class="nb">Float</span><span class="p">!,</span><span class="w"> </span><span class="nv">$lon</span><span class="p">:</span><span class="w"> </span><span class="nb">Float</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">geocoordinates</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">modelLocationOf</span><span class="p">(</span><span class="w">
+          </span><span class="n">latitude</span><span class="p">:</span><span class="w"> </span><span class="nv">$lat</span><span class="p">,</span><span class="w">
+          </span><span class="n">longitude</span><span class="p">:</span><span class="w"> </span><span class="nv">$lon</span><span class="p">,</span><span class="w">
+      </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Variable Arguments:</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"modelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR MODEL ID]"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.27603743078501</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-96.8034845051858</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR MODEL ID]"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"geocoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"modelLocationOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.5507595647023336</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.4784207745132183</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.0000031264498829841614</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getModelLocationOf(%24modelId%3A%20ID!%2C%20%24lat%3A%20Float!%2C%20%24lon%3A%20Float!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20id%0A%20%20%20%20geocoordinates%20%7B%0A%20%20%20%20%20%20modelLocationOf(%0A%20%20%20%20%20%20%20%20%20%20latitude%3A%20%24lat%2C%0A%20%20%20%20%20%20%20%20%20%20longitude%3A%20%24lon%2C%0A%20%20%20%20%20%20)%20%7B%20x%20y%20z%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%5BYOUR%20MODEL%20ID%5D%22%2C%0A%20%20%22lat%22%3A%2033.27603743078501%2C%0A%20%20%22lon%22%3A%20-96.8034845051858%0A%7D&amp;operationName=getModelLocationOf" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<h2 id="sample-mutations">Sample Mutations</h2>
+
+<p>We offer mutations to allow customers to provide their own GeoCoordinates to a model.  To ensure the integrity of the provided data, patched values do not remove the original data.  We have provided a reset mutation to allow customer’s to restore provided GeoCoordinate data.</p>
+
+<details>
+  <summary>Patch a Model's GeoCoordinates</summary>
+
+  <p>Sample Query:</p>
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">patchGeoCoordinates</span><span class="p">(</span><span class="w">
+    </span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!</span><span class="w">
+    </span><span class="nv">$altitude</span><span class="p">:</span><span class="w"> </span><span class="nb">Float</span><span class="w">
+    </span><span class="nv">$latitude</span><span class="p">:</span><span class="w"> </span><span class="nb">Float</span><span class="w">
+    </span><span class="nv">$longitude</span><span class="p">:</span><span class="w"> </span><span class="nb">Float</span><span class="w">
+    </span><span class="nv">$translation</span><span class="p">:</span><span class="w"> </span><span class="n">IPoint3D</span><span class="w">
+    </span><span class="nv">$rotation</span><span class="p">:</span><span class="w"> </span><span class="n">IQuaternion</span><span class="w">
+</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">patchModelGeoCoordinates</span><span class="p">(</span><span class="w">
+      </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w">
+      </span><span class="n">altitude</span><span class="p">:</span><span class="w"> </span><span class="nv">$altitude</span><span class="p">,</span><span class="w">
+      </span><span class="n">latitude</span><span class="p">:</span><span class="w"> </span><span class="nv">$latitude</span><span class="p">,</span><span class="w">
+      </span><span class="n">longitude</span><span class="p">:</span><span class="w"> </span><span class="nv">$longitude</span><span class="p">,</span><span class="w">
+      </span><span class="n">translation</span><span class="p">:</span><span class="w"> </span><span class="nv">$translation</span><span class="p">,</span><span class="w">
+      </span><span class="n">rotation</span><span class="p">:</span><span class="w"> </span><span class="nv">$rotation</span><span class="w">
+    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="p">...</span><span class="w"> </span><span class="n">GeoCoordinateFragment</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="k">fragment</span><span class="w"> </span><span class="n">GeoCoordinateFragment</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">source</span><span class="w">
+  </span><span class="n">altitude</span><span class="w">
+  </span><span class="n">latitude</span><span class="w">
+  </span><span class="n">longitude</span><span class="w">
+  </span><span class="n">translation</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="n">rotation</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Variable Arguments:</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"modelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"altitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"translation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"rotation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nl">"w"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20patchGeoCoordinates(%0A%20%20%20%20%24modelId%3A%20ID!%0A%20%20%20%20%24altitude%3A%20Float%0A%20%20%20%20%24latitude%3A%20Float%0A%20%20%20%20%24longitude%3A%20Float%0A%20%20%20%20%24translation%3A%20IPoint3D%0A%20%20%20%20%24rotation%3A%20IQuaternion%0A)%20%7B%0A%20%20%20%20patchModelGeoCoordinates(%0A%20%20%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20%20%20altitude%3A%20%24altitude%2C%0A%20%20%20%20%20%20latitude%3A%20%24latitude%2C%0A%20%20%20%20%20%20longitude%3A%20%24longitude%2C%0A%20%20%20%20%20%20translation%3A%20%24translation%2C%0A%20%20%20%20%20%20rotation%3A%20%24rotation%0A%20%20%20%20)%20%7B%0A%20%20%20%20%20%20%20%20...%20GeoCoordinateFragment%0A%20%20%20%20%7D%0A%7D%0Afragment%20GeoCoordinateFragment%20on%20GeoCoordinate%20%7B%0A%20%20source%0A%20%20altitude%0A%20%20latitude%0A%20%20longitude%0A%20%20translation%20%7B%20x%20y%20z%20%7D%0A%20%20rotation%20%7B%20x%20y%20z%20w%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%2C%0A%20%20%22altitude%22%3A%200%2C%0A%20%20%22latitude%22%3A%200%2C%0A%20%20%22longitude%22%3A%200%2C%0A%20%20%22translation%22%3A%20%7B%20%22x%22%3A%200%2C%20%22y%22%3A%200%2C%20%22z%22%3A%200%20%7D%2C%0A%20%20%22rotation%22%3A%20%7B%20%22x%22%3A%200%2C%20%22y%22%3A%200%2C%20%22z%22%3A%200%2C%20%22w%22%3A%200%20%7D%0A%7D&amp;operationName=patchGeoCoordinates" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<details>
+  <summary>Reset a Model's GeoCoordinates</summary>
+
+  <p>Sample Mutation:</p>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span><span class="k">mutation</span><span class="w"> </span><span class="n">resetGeoCoordinates</span><span class="p">(</span><span class="w">
+    </span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!</span><span class="w">
+</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">    
+    </span><span class="n">resetModelGeoCoordinates</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="p">...</span><span class="w"> </span><span class="n">GeoCoordinateFragment</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="k">fragment</span><span class="w"> </span><span class="n">GeoCoordinateFragment</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">source</span><span class="w">
+  </span><span class="n">altitude</span><span class="w">
+  </span><span class="n">latitude</span><span class="w">
+  </span><span class="n">longitude</span><span class="w">
+  </span><span class="n">translation</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="n">rotation</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Variable Arguments:</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"modelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=%0Amutation%20resetGeoCoordinates(%0A%20%20%20%20%24modelId%3A%20ID!%0A)%20%7B%20%20%20%20%0A%20%20%20%20resetModelGeoCoordinates(id%3A%20%24modelId)%20%7B%0A%20%20%20%20%20%20%20%20...%20GeoCoordinateFragment%0A%20%20%20%20%7D%0A%7D%0A%0Afragment%20GeoCoordinateFragment%20on%20GeoCoordinate%20%7B%0A%20%20source%0A%20%20altitude%0A%20%20latitude%0A%20%20longitude%0A%20%20translation%20%7B%20x%20y%20z%20%7D%0A%20%20rotation%20%7B%20x%20y%20z%20w%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=resetGeoCoordinates" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
 
     <div class="tags">
         
