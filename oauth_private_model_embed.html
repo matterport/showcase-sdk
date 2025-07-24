@@ -1032,10 +1032,6 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>To use PME, your organization must be on an Enterprise subscription and enabled for PME use. To learn more about enablement, <a href="https://matterport.com/contact-us" target="\_blank">contact our sales team</a>.</p>
 
-<h2 id="integration-with-showcase-sdk">Integration with Showcase SDK</h2>
-
-<p>Private Model Embed (PME) is currently only compatible with the SDK for Embeds, not with the SDK Bundle. For inquiries about using Private Model Embed with the SDK Bundle or WebComponent, please contact <a href="mailto:developer@matterport.com">Developer Support</a>.</p>
-
 <h2 id="application-registration">Application Registration</h2>
 
 <p>After your organization has been enabled for PME, the first step is to regenerate the client secret for the OAuth application. You can do this by logging into Matterport Cloud (<a href="https://my.matterport.com" target="\_blank">my.matterport.com</a>) and going to Settings &gt; Developer Tools &gt; click the Reset secret button.</p>
@@ -1101,7 +1097,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 <p>Sample response:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ut4dp7u0yq1gd15kccp176r5d"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR ACCESS TOKEN]"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">3599</span><span class="p">,</span><span class="w">
   </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ViewPublic ViewDetails"</span><span class="w">
@@ -1112,9 +1108,11 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <h2 id="generating-a-private-link">Generating a Private Link</h2>
 
-<p>Using the access token procured in the last step, the Authorization HTTP header must be set to <strong><code class="language-plaintext highlighter-rouge">Bearer ut4dp7u0yq1gd15kccp176r5d</code></strong> to authorize GraphQL calls. The access token can be used to list out the organization’s models or be used with the interactive Model Picker.</p>
+<p>The access token procured in the last step can be used to perform a GraphQL mutation to generate a short lived token that can be used to display a private model.</p>
 
-<p>Then a GraphQL mutation like the following can be issued:</p>
+<p>The token can be used to authenticate an API request by setting the Authorization HTTP header to <strong><code class="language-plaintext highlighter-rouge">Bearer [YOUR ACCESS TOKEN]</code></strong> with the Model API Endpoint.</p>
+
+<p>Model API Endpoint: <code class="language-plaintext highlighter-rouge">https://api.matterport.com/api/models/graph</code></p>
 
 <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">createLink</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">createPrivateModelEmbedLink</span><span class="p">(</span><span class="w">
@@ -1138,9 +1136,9 @@ noResultsText: '<li><div>No results found.<div></li>',
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"createPrivateModelEmbedLink"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4bizw5azqzf40986fwm092bra"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[SHORT LIVED ACCESS TOKEN]"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"application"</span><span class="p">:</span><span class="w"> </span><span class="s2">"showcase"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://my.matterport.com/show?m=yyHDFKzPzvN&amp;auth=Bearer+4bizw5azqzf40986fwm092bra"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://my.matterport.com/show?m=yyHDFKzPzvN&amp;auth=Bearer+[SHORT LIVED ACCESS TOKEN]"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-06-03T00:33:13Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -1155,7 +1153,7 @@ noResultsText: '<li><div>No results found.<div></li>',
   </span><span class="n">deletePrivateModelEmbedToken</span><span class="p">(</span><span class="w">
     </span><span class="n">clientId</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR CLIENT ID]"</span><span class="w">
     </span><span class="n">clientSecret</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR CLIENT SECRET]"</span><span class="w">
-    </span><span class="n">accessToken</span><span class="p">:</span><span class="w"> </span><span class="s2">"4bizw5azqzf40986fwm092bra"</span><span class="w">
+    </span><span class="n">accessToken</span><span class="p">:</span><span class="w"> </span><span class="s2">"[SHORT LIVED ACCESS TOKEN]"</span><span class="w">
   </span><span class="p">)</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -1168,6 +1166,50 @@ noResultsText: '<li><div>No results found.<div></li>',
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
+
+<h2 id="integration-with-showcase-sdk">Integration with Showcase SDK</h2>
+
+<p>Private Model Embed (PME) was designed to work with our Showcase SDK.  To use the SDK with PME, you can provide the <em>access_token</em> to the SDK’s connect method.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// connect the sdk; log an error and stop if there were any connection issues</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="c1">// include the bearer token within the optional options argument:</span>
+      <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">connect</span><span class="p">(</span><span class="nx">iframe</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">auth</span><span class="p">:</span> <span class="nx">token</span>
+      <span class="p">});</span>
+      <span class="nf">onShowcaseConnect</span><span class="p">(</span><span class="nx">mpSdk</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">})();</span>
+</code></pre></div></div>
+
+<h2 id="handling-access-token-refreshing-with-the-sdk">Handling Access Token Refreshing with the SDK</h2>
+
+<p>If a user is viewing a space with a short-lived access token, the token may expire, resulting in Showcase being unable to load new assets.  The SDK has a 
+<a href="docs/reference/current/modules/oauth.html#createtokenrefresher">createTokenRefresher</a> method that we have provided that can seamlessly provide a new <em>access_token</em>
+to Showcase to ensure a seamless experience.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// Endpoint that returns a payload from https://api.matterport.com/api/oauth/token</span>
+<span class="kd">const</span> <span class="nx">tokenEndpoint</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://yourdomain.com/yourapp/refresh</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">fetcher</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="k">async</span> <span class="nf">fetch</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Refreshing Showcase Access Token</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">try</span> <span class="p">{</span> 
+      <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="nx">tokenEndpoint</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Could not refresh access token</span><span class="dl">'</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">const</span> <span class="nx">token</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nx">token</span><span class="p">;</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">initial_access_token_payload</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetcher</span><span class="p">.</span><span class="nf">fetch</span><span class="p">();</span>
+<span class="nx">mpSdk</span><span class="p">.</span><span class="nx">OAuth</span><span class="p">.</span><span class="nf">createTokenRefresher</span><span class="p">(</span><span class="nx">initial_access_token_payload</span><span class="p">,</span> <span class="nx">fetcher</span><span class="p">);</span>
+</code></pre></div></div>
 
 <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 
@@ -1195,7 +1237,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jul 23, 2025 <br />
+ Site last generated: Jul 24, 2025 <br />
 <p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
                 </div>
             </div>
