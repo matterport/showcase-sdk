@@ -325,7 +325,6 @@ aside div#mysidebar > li:first-of-type {
 .navbar > div:first-child > div:first-child .navbrand .navbar-image {
   height: 35px;
   margin: 0;
-  margin-left: -7px;
 }
 .navbar > div:first-child > div:first-child .dev-nav-links .dropdown-items {
   position: relative;

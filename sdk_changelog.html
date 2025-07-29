@@ -38,7 +38,15 @@
 <script src="/showcase-sdk/js/customscripts.js"></script>
 <script src="/showcase-sdk/js/mermaid.min.js"></script>
 
-<link rel="shortcut icon" href="/showcase-sdk/images/favicon.ico">
+<link rel="icon" type="image/png" href="/showcase-sdk/images/favicons/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/showcase-sdk/images/favicons/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href="/showcase-sdk/images/favicons/favicon.svg?dark" media="(prefers-color-scheme: dark)" />
+<link rel="shortcut icon" href="/showcase-sdk/images/favicons/favicon.ico" sizes="32x32" />
+<link rel="apple-touch-icon" sizes="180x180" href="/showcase-sdk/images/favicons/apple-touch-icon.png" />
+<link rel="manifest" href="/showcase-sdk/images/favicons/favicon.webmanifest"/>
+<meta name="msapplication-TileColor" content="#ff3158" />
+<meta name="theme-color" content="#ffffff" />
+
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -102,9 +110,9 @@
   <div>
     <div class="row">
       <a class="navbrand col-md-3" href="https://matterport.github.io/showcase-sdk/"
-        >&nbsp;<img
+        ><img
           class="navbar-image"
-          src="/showcase-sdk/images/MP-logo_H_lock-RGB_white.svg"
+          src="/showcase-sdk/images/Matterport-Logo-White.svg"
         /><span class="projectTitle"> </span></a
       >
       <div class="dev-nav-links col-md-6">
@@ -1046,6 +1054,17 @@ $('#toc').on('click', 'a', function() {
    <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Attention:</b> <br />
 Support for the <code class="language-plaintext highlighter-rouge">&amp;useLegacyIds</code> has been removed.
 Use <code class="language-plaintext highlighter-rouge">Conversion</code> maps for <a href="docs/reference/current/modules/sweep.conversion.html">Sweeps</a>, <a href="docs/reference/current/modules/floor.conversion.html">Floors</a>, and <a href="docs/reference/current/modules/room.conversion.html">Rooms</a>.</div>
+
+<h2 id="2573">25.7.3</h2>
+
+<h5 id="jul-29-2025">Jul 29, 2025</h5>
+
+<p><strong>General</strong></p>
+<ul>
+  <li>Swapped position of <a href="docs/reference/current/modules/tour.html#next">Tour.next()</a> and <a href="docs/reference/current/modules/tour.html#previous">Tour.previous()</a></li>
+  <li>Fixed bug with added <a href="docs/reference/current/modules/sweep.html#puckposition-vector3">puckPosition</a>.</li>
+  <li>Refreshed brand logo</li>
+</ul>
 
 <h2 id="2571">25.7.1</h2>
 
@@ -2294,8 +2313,7 @@ We are adding support for synchronous functions. These functions compute and ret
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jul 24, 2025 <br />
-<p><img class="footer-logo" src="/showcase-sdk/images/MP-logo_icon-RGB_black.svg" alt="Company logo"/></p>
+ Site last generated: Jul 29, 2025
                 </div>
             </div>
 </footer>
