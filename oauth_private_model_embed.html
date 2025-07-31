@@ -1055,7 +1055,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <h2 id="authorizing-to-the-matterport-api">Authorizing to the Matterport API</h2>
 
-<p>The first step for an application using PME is to procure an OAuth bearer token for use in calling the Model GraphQL API. To acquire an access token, a POST request will need to be made to the following endpoint with the provided body fields and headers:</p>
+<p>The first step for an application using PME is to procure an OAuth bearer token for use in calling the Model GraphQL API. To acquire an access token, a server-side POST request will need to be made to the following endpoint with the provided body fields and headers:</p>
 
 <p><code class="language-plaintext highlighter-rouge">https://api.matterport.com/api/oauth/token</code></p>
 
@@ -1114,9 +1114,11 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>The <strong><code class="language-plaintext highlighter-rouge">access_token</code></strong> is then used in the Authorization header for the GraphQL request.</p>
 
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Please note - the first access_token should remain server-side as it is long lived and has access to make API calls.</div>
+
 <h2 id="generating-a-private-link">Generating a Private Link</h2>
 
-<p>The access token procured in the last step can be used to perform a GraphQL mutation to generate a short lived token that can be used to display a private model.</p>
+<p>The access token procured in the last step can be used to perform a server-side GraphQL mutation to generate a short lived token that can be used to display a private model.</p>
 
 <p>The token can be used to authenticate an API request by setting the Authorization HTTP header to <strong><code class="language-plaintext highlighter-rouge">Bearer [YOUR ACCESS TOKEN]</code></strong> with the Model API Endpoint.</p>
 
@@ -1144,7 +1146,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"createPrivateModelEmbedLink"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[SHORT LIVED ACCESS TOKEN]"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[MODEL SCOPED ACCESS TOKEN]"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"application"</span><span class="p">:</span><span class="w"> </span><span class="s2">"showcase"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://my.matterport.com/show?m=yyHDFKzPzvN&amp;auth=Bearer+[SHORT LIVED ACCESS TOKEN]"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"validUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-06-03T00:33:13Z"</span><span class="w">
@@ -1153,27 +1155,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<h2 id="revoking-a-private-link-access-token">Revoking a Private Link Access Token</h2>
-
-<p>If for some reason an access token needs to be revoked before it’s expiration time, an additional GraphQL mutation is available for this purpose:</p>
-
-<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">deleteToken</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="n">deletePrivateModelEmbedToken</span><span class="p">(</span><span class="w">
-    </span><span class="n">clientId</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR CLIENT ID]"</span><span class="w">
-    </span><span class="n">clientSecret</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR CLIENT SECRET]"</span><span class="w">
-    </span><span class="n">accessToken</span><span class="p">:</span><span class="w"> </span><span class="s2">"[SHORT LIVED ACCESS TOKEN]"</span><span class="w">
-  </span><span class="p">)</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<p>Sample response:</p>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"deletePrivateModelEmbedToken"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+<p>Plese note, this access token will be exposed publically.  For this reason, a short validity to prevent the generated url from being shareable.  When the token expires, the player will no longer be able to load additional resources.  For this reason, we provide methods via our SDK to refresh tokens while a user is viewing a space.</p>
 
 <h2 id="integration-with-showcase-sdk">Integration with Showcase SDK</h2>
 
@@ -1219,6 +1201,28 @@ to Showcase to ensure a seamless experience.</p>
 <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">OAuth</span><span class="p">.</span><span class="nf">createTokenRefresher</span><span class="p">(</span><span class="nx">initial_access_token_payload</span><span class="p">,</span> <span class="nx">fetcher</span><span class="p">);</span>
 </code></pre></div></div>
 
+<h2 id="revoking-a-private-link-access-token">Revoking a Private Link Access Token</h2>
+
+<p>If for some reason an access token needs to be revoked before it’s expiration time, an additional server-side GraphQL mutation is available for this purpose:</p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">deleteToken</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">deletePrivateModelEmbedToken</span><span class="p">(</span><span class="w">
+    </span><span class="n">clientId</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR CLIENT ID]"</span><span class="w">
+    </span><span class="n">clientSecret</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR CLIENT SECRET]"</span><span class="w">
+    </span><span class="n">accessToken</span><span class="p">:</span><span class="w"> </span><span class="s2">"[MODEL SCOPED ACCESS TOKEN]"</span><span class="w">
+  </span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Sample response:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"deletePrivateModelEmbedToken"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 
 <h3 id="how-long-until-access-tokens-expire">How long until access tokens expire?</h3>
@@ -1245,7 +1249,7 @@ to Showcase to ensure a seamless experience.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Jul 29, 2025
+ Site last generated: Jul 31, 2025
                 </div>
             </div>
 </footer>
