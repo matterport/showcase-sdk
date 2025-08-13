@@ -1095,14 +1095,14 @@ $('#toc').on('click', 'a', function() {
 						<strong>Updating</strong> - after start has been called but before stop has been called<br>
 					<strong>Destroyed</strong> - after stop has been called</p>
 					<p>Components can only be added during the Initializing state. A scene node cannot be restarted.</p>
-					<pre><code>sdk.Scene.createNode().<span class="hljs-keyword">then</span>(<span class="hljs-keyword">function</span>(<span class="hljs-type">node</span>) {
-   <span class="hljs-type">node</span>.addComponent(<span class="hljs-string">&#x27;mp.gltfLoader&#x27;</span>, {
-     url: <span class="hljs-string">&#x27;http://www.someModelSite.com/rabbit.gltf&#x27;</span>
-   });
-
-   <span class="hljs-type">node</span><span class="hljs-built_in">.position</span>.set(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>);
-   <span class="hljs-type">node</span>.<span class="hljs-keyword">start</span>();
+					<pre><code>const [sceneObject] = await sdk.Scene.createObjects(<span class="hljs-number">1</span>);
+const <span class="hljs-type">node</span> = sceneObject.addNode();
+<span class="hljs-type">node</span>.addComponent(<span class="hljs-string">&#x27;mp.gltfLoader&#x27;</span>, {
+  url: <span class="hljs-string">&#x27;http://www.someModelSite.com/rabbit.gltf&#x27;</span>
 });
+
+<span class="hljs-type">node</span><span class="hljs-built_in">.position</span>.set(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>);
+<span class="hljs-type">node</span>.<span class="hljs-keyword">start</span>();
 </code></pre>
 					<p>Setting the position, rotation, or scale of a scene node affects child components.</p>
 				</div>
@@ -1571,7 +1571,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Aug 8, 2025
+ Site last generated: Aug 13, 2025
                 </div>
             </div>
 </footer>

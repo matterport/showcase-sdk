@@ -1629,7 +1629,7 @@ node.start<span class="hljs-literal">()</span>;
 									<p>Bind an event referenced by <code>eventPath</code> to a <a href="scene.icomponent.html#notify">IComponent.notify</a> call at <code>emitPath</code></p>
 								</div>
 								<pre><code>const [sceneObject] = await sdk.Scene.createObject(<span class="hljs-number">1</span>);
-const node = sceneObject.createNode();
+const node = sceneObject.addNode();
 
 // myReceiver has an `onEvent` lifecycle <span class="hljs-keyword">function</span> <span class="hljs-keyword">and</span> an `events[<span class="hljs-string">&#x27;do.update&#x27;</span>]` property
 const receiver = node.addComponent(`myReceiver<span class="hljs-string">&#x27;);
@@ -1803,7 +1803,7 @@ node.start();
 									<p>Spy on events or input and output value changes</p>
 								</div>
 								<pre><code>const <span class="hljs-literal">[<span class="hljs-identifier">sceneObject</span>]</span> = await sdk.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Scene</span>.</span></span>create<span class="hljs-constructor">Objects(1)</span>;
-const node = sceneObject.create<span class="hljs-constructor">Node()</span>;
+const node = sceneObject.add<span class="hljs-constructor">Node()</span>;
 
 <span class="hljs-comment">// mp.objLoader has an outputs.visible property</span>
 const comp1 = node.add<span class="hljs-constructor">Component(&#x27;<span class="hljs-params">mp</span>.<span class="hljs-params">objLoader</span>&#x27;)</span>;
@@ -2132,7 +2132,7 @@ node.start<span class="hljs-literal">()</span>;
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Aug 8, 2025
+ Site last generated: Aug 13, 2025
                 </div>
             </div>
 </footer>

@@ -1221,6 +1221,11 @@ mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keywor
 							</li>
 							<li class="tsd-parameter">
 								<h5>enabled<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="tsd-lead">
+										<p>If sweep can be navigated to and visualized.  Can be toggled with <a href="sweep.html#enable">Sweep.enable</a> and <a href="sweep.html#disable">Sweep.disable</a>.</p>
+									</div>
+								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5>floor<wbr>Info<span class="tsd-signature-symbol">: </span><a href="sweep.html#sweepfloorinfo" class="tsd-signature-type">Sweep.SweepFloorInfo</a><span class="tsd-signature-symbol"> | </span><a href="sweep.html#emptysweepfloorinfo" class="tsd-signature-type">Sweep.EmptySweepFloorInfo</a></h5>
@@ -1247,6 +1252,11 @@ mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keywor
 							</li>
 							<li class="tsd-parameter">
 								<h5>rotation<span class="tsd-signature-symbol">: </span><a href="../index.html#eulerangle" class="tsd-signature-type">EulerAngle</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="tsd-lead">
+										<p>The rotation of the panoramic imagery relative to the model as a Euler Angle</p>
+									</div>
+								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
@@ -1287,6 +1297,11 @@ mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keywor
 							</li>
 							<li class="tsd-parameter">
 								<h5>rotation<span class="tsd-signature-symbol">: </span><a href="../index.html#eulerangle" class="tsd-signature-type">EulerAngle</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="tsd-lead">
+										<p>The rotation of the panoramic imagery relative to the model as a Euler Angle</p>
+									</div>
+								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
@@ -1389,6 +1404,7 @@ mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keywor
 							<p>An observable collection of sweep data that can be subscribed to.</p>
 						</div>
 						<p>When first subscribing, the current set of Sweeps will call the observer&#39;s <code>onAdded</code> for each Sweep as the data becomes available.</p>
+						<p>Sweeps that are disabled via Edit Mode or Model API will not be included in the collection in Showcase.</p>
 						<pre><code>mpSdk.Sweep.data.subscribe({
   onAdded: <span class="hljs-keyword">function</span> (index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>) {
     console.log(<span class="hljs-string">&#x27;sweep added to the collection&#x27;</span>, index, <span class="hljs-type">item</span>,<span class="hljs-built_in"> collection</span>);
@@ -1776,7 +1792,7 @@ mpSdk.Sweep.moveTo(sweepId, {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Aug 8, 2025
+ Site last generated: Aug 13, 2025
                 </div>
             </div>
 </footer>
