@@ -1178,6 +1178,78 @@ noResultsText: '<li><div>No results found.<div></li>',
 <p>model() queries get data from individual models.</p>
 
 <details>
+  <summary>Get Model Details</summary>
+  <p>Use Model API to query the information that a user has entered on the ‘Model Details’ tab in Matterport Cloud and information on when a model was created and last updated.</p>
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getModelDetails</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
+  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">state</span><span class="w">
+    </span><span class="n">visibility</span><span class="w">
+    </span><span class="n">created</span><span class="w">
+    </span><span class="n">modified</span><span class="w">
+    </span><span class="n">description</span><span class="w">
+    </span><span class="n">publication</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">description</span><span class="w">
+      </span><span class="n">summary</span><span class="w">
+      </span><span class="n">address</span><span class="w">
+      </span><span class="n">contact</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">name</span><span class="w">
+        </span><span class="n">email</span><span class="w">
+        </span><span class="n">phoneNumber</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="n">externalUrl</span><span class="w">
+      </span><span class="n">presentedBy</span><span class="w">
+      </span><span class="n">published</span><span class="w">
+      </span><span class="n">url</span><span class="p">(</span><span class="n">branding</span><span class="p">:</span><span class="w"> </span><span class="n">default</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c"># variables</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">"</span><span class="n">modelId</span><span class="err">"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Important Note - <code class="language-plaintext highlighter-rouge">model { description }</code> is the Internal Notes field, whereas <code>model { publication { description } }</code> is the public model description.</p>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JGPnGQ6hosj"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Southern California Luxury Home"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"visibility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-26T21:52:07Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-08-14T04:31:32Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"publication"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This majestic looking home has wood flooring, crown molding, is a great family home. This tour was shot with the Matterport Pro2 3D camera."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"contact"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acme Realty"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name@example.com"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"phoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+15551234567"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"externalUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.acemerealty.com"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"presentedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acme Realty"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"published"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://my.matterport.com/show/?m=JGPnGQ6hosj"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getModelDetails(%24modelId%3A%20ID!)%7B%0A%09model(id%3A%24modelId)%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20state%0A%20%20%20%20%20%20%20%20visibility%0A%20%20%20%20%20%20%20%20created%0A%20%20%20%20%20%20%20%20modified%0A%20%20%20%20%20%20%20%20description%0A%20%20%20%20%20%20%20%20publication%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20description%0A%20%20%20%20%20%20%20%20%20%20%20%20summary%0A%20%20%20%20%20%20%20%20%20%20%20%20address%0A%20%20%20%20%20%20%20%20%20%20%20%20contact%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20email%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20phoneNumber%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20externalUrl%0A%20%20%20%20%20%20%20%20%20%20%20%20presentedBy%0A%20%20%20%20%20%20%20%20%20%20%20%20published%0A%20%20%20%20%20%20%20%20%20%20%20%20url(branding%3A%20default)%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%7D%20%20%20%20&amp;operationName=getModelDetails&amp;variables=%7B%0A%20%20%20%20%22modelId%22%20%3A%20%22%22%0A%7D" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<details>
   <summary>Get all Sweep Locations and Panoramic Images</summary>
 
   <p>Panoramic images are currently only available as <strong>skyboxes</strong>.</p>
@@ -1195,14 +1267,14 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 
 </span><span class="k">query</span><span class="w"> </span><span class="n">getSweeps</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
-    </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="n">locations</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="n">id</span><span class="w">
-        </span><span class="n">model</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">}</span><span class="w">
-        </span><span class="n">position</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="p">}</span><span class="w">
-        </span><span class="n">floor</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">}</span><span class="w">
-        </span><span class="n">room</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">}</span><span class="w">
-        </span><span class="n">panos</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="n">panoFragment</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">locations</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">model</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">}</span><span class="w">
+      </span><span class="n">position</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="p">}</span><span class="w">
+      </span><span class="n">floor</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">}</span><span class="w">
+      </span><span class="n">room</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">}</span><span class="w">
+      </span><span class="n">panos</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="n">panoFragment</span><span class="w"> </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
