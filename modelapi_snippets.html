@@ -1828,18 +1828,23 @@ noResultsText: '<li><div>No results found.<div></li>',
 <details>
   <summary>Get the Colored Rooms Floorplan URL</summary>
 
+  <p>Model API users receive access to a variety of generated floorplan images that can be used in 3rd party applications as reference maps.  The following query gets a full listing of all floorplans that match the ‘photogramy’ flag.</p>
+
   <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getColoredRooms</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!){</span><span class="w">
  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">assets</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="n">floorplans</span><span class="p">(</span><span class="n">provider</span><span class="p">:</span><span class="w"> </span><span class="s2">"matterport"</span><span class="p">,</span><span class="w"> </span><span class="n">flags</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">colored_rooms</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="n">provider</span><span class="w">
-        </span><span class="n">format</span><span class="w">
+      </span><span class="n">floorplans</span><span class="p">(</span><span class="n">provider</span><span class="p">:</span><span class="w"> </span><span class="s2">"matterport"</span><span class="p">,</span><span class="w"> </span><span class="n">flags</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">photogramy</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">floor</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="n">sequence</span><span class="w"> </span><span class="p">}</span><span class="w">
+        </span><span class="n">format</span><span class="w">       
         </span><span class="n">flags</span><span class="w">
-        </span><span class="n">id</span><span class="w">
         </span><span class="n">url</span><span class="w">
+        </span><span class="n">origin</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="p">}</span><span class="w">
+        </span><span class="n">width</span><span class="w">
+        </span><span class="n">height</span><span class="w">
+        </span><span class="n">resolution</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  	</span><span class="p">}</span><span class="w">
+	</span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span><span class="c"># variables</span><span class="w">
@@ -1848,7 +1853,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p>Sample Response:</p>
+  <p>Abridged Sample Response:</p>
 
   <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1856,33 +1861,104 @@ noResultsText: '<li><div>No results found.<div></li>',
       </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"floorplans"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matterport"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"floor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floor 1"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
             </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"photogramy"</span><span class="p">,</span><span class="w"> </span><span class="s2">"colored_rooms"</span><span class="p">],</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/render/colorplan_room_000.jpg?t=2-45286ff9b37da4d31d06a13b828c497d00343f7c-1679975423-1&amp;download=colorplan_room_000.jpg&amp;k=models%2F58f2a24ec7fb43abaf68c39459cd29d3%2Fassets%2Frender%2Fcolorplan_room_000.jpg"</span><span class="w">
+            </span><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"photogramy"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/4374f365af4b4983bc8978386f296ab2/assets/render/colorplan_000.jpg?t=2-699b80864d621f874279d737ebceb0045c3c3b76-1758048743-1&amp;download=mp_floorplan_matterport_1234-Main-St_jm5WwEA3HUN.jpg&amp;k=models%2F4374f365af4b4983bc8978386f296ab2%2Fassets%2Frender%2Fcolorplan_000.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"origin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">-4.14900016784668</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9.085000038146973</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">2470</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1616</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resolution"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
           </span><span class="p">},</span><span class="w">
+          </span><span class="err">...</span><span class="w"> 
           </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matterport"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"photogramy"</span><span class="p">,</span><span class="w"> </span><span class="s2">"colored_rooms"</span><span class="p">],</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/render/colorplan_room_001.jpg?t=2-3377428ace2fcebeb51b5a24d55aff51ad6b85db-1679975423-1&amp;download=colorplan_room_001.jpg&amp;k=models%2F58f2a24ec7fb43abaf68c39459cd29d3%2Fassets%2Frender%2Fcolorplan_room_001.jpg"</span><span class="w">
+            </span><span class="nl">"floor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floor 1"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"photogramy"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"alpha"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/4374f365af4b4983bc8978386f296ab2/assets/render/colorplan_alpha_000.png?t=2-39112fc9d13de972de06659ba291cff797867134-1758048743-1&amp;download=mp_floorplan_matterport_1234-Main-St_jm5WwEA3HUN.png&amp;k=models%2F4374f365af4b4983bc8978386f296ab2%2Fassets%2Frender%2Fcolorplan_alpha_000.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"origin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">-3.4489998817443848</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">-8.385000228881836</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">2330</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1476</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resolution"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
           </span><span class="p">},</span><span class="w">
+          </span><span class="err">...</span><span class="w">
           </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matterport"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"floor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floor 1"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
             </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"photogramy"</span><span class="p">,</span><span class="w"> </span><span class="s2">"colored_rooms"</span><span class="p">],</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/render/colorplan_room_002.jpg?t=2-878d69a6f66558f17271e17b4c4f5a03b606368f-1679975423-1&amp;download=colorplan_room_002.jpg&amp;k=models%2F58f2a24ec7fb43abaf68c39459cd29d3%2Fassets%2Frender%2Fcolorplan_room_002.jpg"</span><span class="w">
+            </span><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"photogramy"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"colored_rooms"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/4374f365af4b4983bc8978386f296ab2/assets/render/colorplan_room_000.jpg?t=2-e3c989818191b2a52b429b203bd6f84ffb2d7d6a-1758048743-1&amp;download=mp_floorplan_matterport_1234-Main-St_jm5WwEA3HUN.jpg&amp;k=models%2F4374f365af4b4983bc8978386f296ab2%2Fassets%2Frender%2Fcolorplan_room_000.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"origin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">-4.14900016784668</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9.085000038146973</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">2470</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1616</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resolution"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
           </span><span class="p">},</span><span class="w">
+          </span><span class="err">...</span><span class="w">
           </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matterport"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"floor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floor 1"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
             </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"photogramy"</span><span class="p">,</span><span class="w"> </span><span class="s2">"colored_rooms"</span><span class="p">],</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/58f2a24ec7fb43abaf68c39459cd29d3/assets/render/colorplan_room_003.jpg?t=2-0dd57e99aa752e228ef2d85b9aff89f8663b826b-1679975423-1&amp;download=colorplan_room_003.jpg&amp;k=models%2F58f2a24ec7fb43abaf68c39459cd29d3%2Fassets%2Frender%2Fcolorplan_room_003.jpg"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+            </span><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"photogramy"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"measurements"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/4374f365af4b4983bc8978386f296ab2/assets/render/measureplan_imperial_room_000.jpg?t=2-9f0da9bdea98979f30bdf63d61b57a61dc5c85e4-1758048743-1&amp;download=mp_floorplan_matterport_1234-Main-St_jm5WwEA3HUN.jpg&amp;k=models%2F4374f365af4b4983bc8978386f296ab2%2Fassets%2Frender%2Fmeasureplan_imperial_room_000.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"origin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">-4.14900016784668</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9.085000038146973</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">2470</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1616</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resolution"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="err">...</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"floor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floor 1"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"flags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"photogramy"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"alpha"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn-2.matterport.com/models/4374f365af4b4983bc8978386f296ab2/assets/render/vr_colorplan_000.png?t=2-563683a6f19031f56cd98f35e74d61c2bf9ab573-1758048743-1&amp;download=mp_floorplan_matterport_1234-Main-St_jm5WwEA3HUN.png&amp;k=models%2F4374f365af4b4983bc8978386f296ab2%2Fassets%2Frender%2Fvr_colorplan_000.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"origin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">-3.447999954223633</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">-8.376633644104004</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">512</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">324</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resolution"</span><span class="p">:</span><span class="w"> </span><span class="mf">21.97613525390625</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="err">...</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -1890,7 +1966,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getColoredRooms(%24modelId%3A%20ID!)%7B%0A%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20assets%20%7B%0A%20%20%20%20%20%20floorplans(provider%3A%20%22matterport%22%2C%20flags%3A%20%5Bcolored_rooms%5D)%20%7B%0A%20%20%20%20%20%20%20%20provider%0A%20%20%20%20%20%20%20%20format%0A%20%20%20%20%20%20%20%20flags%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%7D%0A%20%20%09%7D%0A%09%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getColoredRooms" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getColoredRooms(%24modelId%3A%20ID!)%7B%0A%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20assets%20%7B%0A%20%20%20%20%20%20floorplans(provider%3A%20%22matterport%22%2C%20flags%3A%20%5Bphotogramy%5D)%20%7B%0A%20%20%20%20%20%20%20%20floor%20%7B%20label%20sequence%20%7D%0A%20%20%20%20%20%20%20%20format%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20flags%0A%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20origin%20%7B%20x%20y%20%7D%0A%20%20%20%20%20%20%20%20width%0A%20%20%20%20%20%20%20%20height%0A%20%20%20%20%20%20%20%20resolution%0A%20%20%20%20%20%20%7D%0A%20%20%09%7D%0A%09%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=getColoredRooms" target="_blank">Try this query in our interactive console</a></p>
 
 </details>
 
