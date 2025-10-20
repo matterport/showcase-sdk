@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Model API - Geolocation | Matterport Developers</title>
+<title>Model API - Geo Coordinates | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -137,7 +137,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:MP-developer@costar.com?subject=Showcase SDK feedback&body=I have some feedback about the Model API - Geolocation page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:MP-developer@costar.com?subject=Showcase SDK feedback&body=I have some feedback about the Model API - Geo Coordinates page: ' + window.location.href;">Feedback</a>
           </div>
           <div class="dropdown">
             <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
@@ -730,6 +730,12 @@
                   
                   
                   
+                  <li><a title="GeoCoordinates" href="/showcase-sdk/modelapi_geocoordinates.html">GeoCoordinates</a></li>
+                  
+                  
+                  
+                  
+                  
                   <li><a title="Views and Layers" href="/showcase-sdk/modelapi_views_and_layers.html">Views and Layers</a></li>
                   
                   
@@ -839,21 +845,6 @@
                   
                   
                   <li><a title="Overview and Examples" href="/showcase-sdk/custom_roles_overview.html">Overview and Examples</a></li>
-                  
-                  
-                  
-              </ul>
-          </li>
-          
-          
-          
-          <li class="subfolders">
-              <a title="Geolocation" href="#">Geolocation</a>
-              <ul>
-                  
-                  
-                  
-                  <li class="active"><a title="Overview and Examples" href="/showcase-sdk/modelapi_geolocation.html">Overview and Examples</a></li>
                   
                   
                   
@@ -999,7 +990,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="Model API - Geolocation">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Model API - Geo Coordinates">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -1014,7 +1005,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">Model API - Geolocation</h1>
+   <h1 class="post-title-main">Model API - Geo Coordinates</h1>
 </div>
 
 
@@ -1028,22 +1019,35 @@ noResultsText: '<li><div>No results found.<div></li>',
 
     
 
-   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Geolocation Data in Model API is only available for Enterprise-level Matterport Subscriptions and is currently in beta at this time.</div>
+   <!-- This file is still live because the link has already been shared to external customers. Removed it from the navigation bar and updated the content to reflect the latest GeoCoordinates API page (modelapi_geocoordinates.md) -->
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Geo Coordinates Data in Model API is only available for Enterprise-level Matterport Subscriptions and is currently in beta at this time.</div>
 
 <h2 id="introduction">Introduction</h2>
 
-<p><strong>Geolocation</strong> allows Matterport Spaces to be mapped to real world locations by latitude, longitude, and altitute.</p>
+<p>Our <strong>Geo Coordinates</strong> lets you map a Matterport 3D model to real-world locations using latitude, longitude, and altitude. This is useful for aligning your model with Geo Coordinates data, especially in outdoor or large-scale environments.</p>
 
-<p>Determining Geolocation can be difficult in indoor environments and is determined by a combination of different factors including hardware GPS and software-based mapping tools that are forthcoming.</p>
+<h2 id="how-it-works">How it works</h2>
 
-<p>Our <strong>GeoCoordinates</strong> API provides an interface for accessing geolocation data that is associated with a model as well as the source of the data (processing, client, unknown) and a translation from the associated GPS and the origin of a model (0,0,0).</p>
+<p>Matterport uses a special point inside the model called the <strong>GeoAnchor Point</strong>. This point is usually the <strong>centroid</strong> of the model, chosen by our vision pipeline (Note: Centroid is different from the origin <code class="language-plaintext highlighter-rouge">0, 0, 0</code>).</p>
 
-<p>Users can also use their own methods to patch the geolocation data associated with a model.</p>
+<p>The API provides a <code class="language-plaintext highlighter-rouge">translation</code> value that shows how far the GeoAnchor Point is from the origin. If you want to align the GeoAnchor Point with the origin, set <code class="language-plaintext highlighter-rouge">translation</code> to <code class="language-plaintext highlighter-rouge">{ x: 0, y: 0, z: 0 }</code>.</p>
+
+<h2 id="what-you-can-do">What you can do</h2>
+
+<p>With the GeoCoordinates API, you can:</p>
+
+<ul>
+  <li>Get the Geo Coordinates of a model.</li>
+  <li>Convert a point in the model to Geo Coordinates.</li>
+  <li>Convert Geo Coordinates to a point in the model.</li>
+  <li>Patch or reset the GeoAnchor Point for a model.</li>
+</ul>
 
 <h2 id="sample-queries">Sample Queries</h2>
 
 <details>
-  <summary>Get GeoCoordinates Information for a Model</summary>
+  <summary>Get the Geo Coordinates (GeoAnchor Point) of a model</summary>
 
   <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getGeoCoordinates</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1103,15 +1107,15 @@ noResultsText: '<li><div>No results found.<div></li>',
 </details>
 
 <details>
-  <summary>Get GeoCoordinates for a Point within in a Model</summary>
+  <summary>Convert a point in the model to Geo Coordinates</summary>
 
   <p>Sample Query:</p>
 
-  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getGeoLocationOf</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$point</span><span class="p">:</span><span class="w"> </span><span class="n">IPoint3D</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getGeoCoordinatesOf</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$point</span><span class="p">:</span><span class="w"> </span><span class="n">IPoint3D</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="n">id</span><span class="w">
     </span><span class="n">geocoordinates</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="n">geoLocationOf</span><span class="p">(</span><span class="n">modelLocation</span><span class="p">:</span><span class="w"> </span><span class="nv">$point</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">GeoCoordinatesOf</span><span class="p">(</span><span class="n">modelLocation</span><span class="p">:</span><span class="w"> </span><span class="nv">$point</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="n">lat</span><span class="w">
           </span><span class="n">long</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -1137,7 +1141,7 @@ noResultsText: '<li><div>No results found.<div></li>',
     </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR MODEL ID]]"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"geocoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"geoLocationOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"GeoCoordinatesOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33.27603743078501"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"long"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-96.8034845051858"</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -1147,11 +1151,11 @@ noResultsText: '<li><div>No results found.<div></li>',
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getGeoLocationOf(%24modelId%3A%20ID!%2C%20%24point%3A%20IPoint3D!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20id%0A%20%20%20%20geocoordinates%20%7B%0A%20%20%20%20%20%20geoLocationOf(modelLocation%3A%20%24point)%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20long%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%2C%0A%20%20%22point%22%3A%20%7B%0A%20%20%20%20%22x%22%3A%204%2C%0A%20%20%20%20%22y%22%3A%203%2C%0A%20%20%20%20%22z%22%3A%201%0A%20%20%7D%0A%7D" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getGeoCoordinatesOf(%24modelId%3A%20ID!%2C%20%24point%3A%20IPoint3D!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20id%0A%20%20%20%20geocoordinates%20%7B%0A%20%20%20%20%20%20GeoCoordinatesOf(modelLocation%3A%20%24point)%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20long%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%2C%0A%20%20%22point%22%3A%20%7B%0A%20%20%20%20%22x%22%3A%204%2C%0A%20%20%20%20%22y%22%3A%203%2C%0A%20%20%20%20%22z%22%3A%201%0A%20%20%7D%0A%7D" target="_blank">Try this query in our interactive console</a></p>
 </details>
 
 <details>
-  <summary>Translate GeoCoordinates to Model Coordinates</summary>
+  <summary>Convert Geo Coordinates to a point in the model</summary>
 
   <p>Sample Query:</p>
   <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getModelLocationOf</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$lat</span><span class="p">:</span><span class="w"> </span><span class="nb">Float</span><span class="p">!,</span><span class="w"> </span><span class="nv">$lon</span><span class="p">:</span><span class="w"> </span><span class="nb">Float</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1198,10 +1202,10 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <h2 id="sample-mutations">Sample Mutations</h2>
 
-<p>We offer mutations to allow customers to provide their own GeoCoordinates to a model.  To ensure the integrity of the provided data, patched values do not remove the original data.  We have provided a reset mutation to allow customer’s to restore provided GeoCoordinate data.</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> To ensure the integrity of the provided data, patched values do not remove the original data.  We have provided a reset mutation to allow customer’s to restore provided GeoCoordinate data.</div>
 
 <details>
-  <summary>Patch a Model's GeoCoordinates</summary>
+  <summary>Patch the GeoAnchor Point for a model</summary>
 
   <p>Sample Query:</p>
   <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">patchGeoCoordinates</span><span class="p">(</span><span class="w">
@@ -1249,7 +1253,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 </details>
 
 <details>
-  <summary>Reset a Model's GeoCoordinates</summary>
+  <summary>Reset the GeoAnchor Point for a model.</summary>
 
   <p>Sample Mutation:</p>
 
@@ -1298,7 +1302,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Oct 5, 2025
+ Site last generated: Oct 20, 2025
                 </div>
             </div>
 </footer>

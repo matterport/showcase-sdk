@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Model API - Dimension Estimates | Matterport Developers</title>
+<title>Model API - Geo Coordinates | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -137,7 +137,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:MP-developer@costar.com?subject=Showcase SDK feedback&body=I have some feedback about the Model API - Dimension Estimates page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:MP-developer@costar.com?subject=Showcase SDK feedback&body=I have some feedback about the Model API - Geo Coordinates page: ' + window.location.href;">Feedback</a>
           </div>
           <div class="dropdown">
             <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
@@ -730,7 +730,7 @@
                   
                   
                   
-                  <li><a title="GeoCoordinates" href="/showcase-sdk/modelapi_geocoordinates.html">GeoCoordinates</a></li>
+                  <li class="active"><a title="GeoCoordinates" href="/showcase-sdk/modelapi_geocoordinates.html">GeoCoordinates</a></li>
                   
                   
                   
@@ -811,7 +811,7 @@
                   
                   
                   
-                  <li class="active"><a title="Dimension Estimates" href="/showcase-sdk/modelapi_pi_dimension_estimates.html">Dimension Estimates</a></li>
+                  <li><a title="Dimension Estimates" href="/showcase-sdk/modelapi_pi_dimension_estimates.html">Dimension Estimates</a></li>
                   
                   
                   
@@ -990,7 +990,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="Model API - Dimension Estimates">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Model API - Geo Coordinates">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -1005,7 +1005,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">Model API - Dimension Estimates</h1>
+   <h1 class="post-title-main">Model API - Geo Coordinates</h1>
 </div>
 
 
@@ -1019,306 +1019,270 @@ noResultsText: '<li><div>No results found.<div></li>',
 
     
 
-   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Property Intelligence Data in Model API is only available for Enterprise-level Matterport Subscriptions</div>
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Geo Coordinates Data in Model API is only available for Enterprise-level Matterport Subscriptions and is currently in beta at this time.</div>
 
-<h2 id="dimension-estimates">Dimension Estimates</h2>
+<h2 id="introduction">Introduction</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th><strong>Field</strong></th>
-      <th><strong>description</strong></th>
-      <th><strong>model</strong></th>
-      <th><strong>floor</strong></th>
-      <th><strong>room</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">area</code></td>
-      <td>Estimated area based on measured room(s) BoundedRegion data</td>
-      <td>x</td>
-      <td>x</td>
-      <td>x</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">areaIndoor</code></td>
-      <td>Estimated area not counting outdoor space or portions covered by walls</td>
-      <td>x</td>
-      <td>x</td>
-      <td>x</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">depth</code></td>
-      <td>Estimated depth of room</td>
-      <td> </td>
-      <td> </td>
-      <td>x</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">depthData</code></td>
-      <td>Metadata pertaining to the depth measurement</td>
-      <td> </td>
-      <td> </td>
-      <td>x</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">height</code></td>
-      <td>Estimated height of the room</td>
-      <td> </td>
-      <td> </td>
-      <td>x</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">width</code></td>
-      <td>Estimated width of the room</td>
-      <td> </td>
-      <td> </td>
-      <td>x</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">widthData</code></td>
-      <td>Metadata pertaining to the width measurement</td>
-      <td> </td>
-      <td> </td>
-      <td>x</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">units</code></td>
-      <td>metric or imperial</td>
-      <td>x</td>
-      <td>x</td>
-      <td>x</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">lowerElevation</code></td>
-      <td>A room’s BoundedRegion’s distance from the ground plane (z = 0)</td>
-      <td> </td>
-      <td> </td>
-      <td>x</td>
-    </tr>
-  </tbody>
-</table>
+<p>Our <strong>Geo Coordinates</strong> lets you map a Matterport 3D model to real-world locations using latitude, longitude, and altitude. This is useful for aligning your model with Geo Coordinates data, especially in outdoor or large-scale environments.</p>
 
-<h3 id="measurements">Measurements</h3>
+<h2 id="how-it-works">How it works</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th><strong>Name</strong></th>
-      <th><strong>description</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Length</code></td>
-      <td>The longest measurement reported for a given room</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Depth</code></td>
-      <td>The shortest measurement reported for a given room</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Area</code></td>
-      <td>The total area of a room, floor, or model. For floors and models, this is a sum of the contained room areas.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">IndoorArea</code></td>
-      <td>The total indoor <strong>scanned</strong> area.  This will be set to zero if the room is identified as outdoor.  For most models this will be the same value as Area at this time.</td>
-    </tr>
-  </tbody>
-</table>
+<p>Matterport uses a special point inside the model called the <strong>GeoAnchor Point</strong>. This point is usually the <strong>centroid</strong> of the model, chosen by our vision pipeline (Note: Centroid is different from the origin <code class="language-plaintext highlighter-rouge">0, 0, 0</code>).</p>
 
-<h3 id="query-the-area-and-indoor-area-for-a-model">Query the Area and Indoor Area for a Model</h3>
+<p>The API provides a <code class="language-plaintext highlighter-rouge">translation</code> value that shows how far the GeoAnchor Point is from the origin. If you want to align the GeoAnchor Point with the origin, set <code class="language-plaintext highlighter-rouge">translation</code> to <code class="language-plaintext highlighter-rouge">{ x: 0, y: 0, z: 0 }</code>.</p>
 
-<p>A user wanting to know dimensional data about their entire space can query this from the <strong>model</strong>’s’ <strong>dimensionEstimates</strong> object.</p>
+<h2 id="what-you-can-do">What you can do</h2>
 
-<p>Units returned can be either <em>metric</em> or <em>imperial</em> based on the model or account’s default settings.  By providing an optional <strong>units</strong> parameter, a developer can receive results in either measurement standard.</p>
+<p>With the GeoCoordinates API, you can:</p>
 
-<p>Sample Query:</p>
+<ul>
+  <li>Get the Geo Coordinates of a model.</li>
+  <li>Convert a point in the model to Geo Coordinates.</li>
+  <li>Convert Geo Coordinates to a point in the model.</li>
+  <li>Patch or reset the GeoAnchor Point for a model.</li>
+</ul>
 
-<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getArea</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$units</span><span class="p">:</span><span class="w"> </span><span class="n">Units</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+<h2 id="sample-queries">Sample Queries</h2>
+
+<details>
+  <summary>Get the Geo Coordinates (GeoAnchor Point) of a model</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getGeoCoordinates</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="n">dimensionEstimates</span><span class="p">(</span><span class="n">units</span><span class="p">:</span><span class="w"> </span><span class="nv">$units</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="n">area</span><span class="w">
-      </span><span class="n">areaIndoor</span><span class="w">
-      </span><span class="n">units</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">geocoordinates</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="p">...</span><span class="w"> </span><span class="n">GeoCoordinateFragment</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
 
-<p>Variable Arguments:</p>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"modelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your-model-id"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metric"</span><span class="w">
+</span><span class="k">fragment</span><span class="w"> </span><span class="n">GeoCoordinateFragment</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">source</span><span class="w">
+  </span><span class="n">altitude</span><span class="w">
+  </span><span class="n">latitude</span><span class="w">
+  </span><span class="n">longitude</span><span class="w">
+  </span><span class="n">translation</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="n">rotation</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre></div>  </div>
 
-<p>Sample Response:</p>
+  <p>Variable Arguments:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"modelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR MODEL ID]"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"dimensionEstimates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="mf">2545.456973221831</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"areaIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">2129.756609921589</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imperial"</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DpFVgQXVTmD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"geocoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"processing"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"altitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.276006298034105</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-96.80354127176122</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"translation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3076627708815243</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.3566522639732987</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"rotation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.3681099881862502</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"w"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.929782252249159</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre></div>  </div>
 
-<p><a href="https://api.matterport.com/api/graphiql/?query=query%20getArea(%24modelId%3A%20ID!%2C%20%24units%3A%20Units)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20dimensionEstimates(units%3A%20%24units)%20%7B%0A%20%20%20%20%20%20area%0A%20%20%20%20%20%20areaIndoor%0A%20%20%20%20%20%20units%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%2C%0A%20%20%22units%22%3A%20%22imperial%22%0A%7D&amp;operationName=getArea" target="_blank">Try this query in our interactive console</a></p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getGeoCoordinates(%24modelId%3A%20ID!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20id%0A%20%20%20%20geocoordinates%20%7B%0A%20%20%20%20%20%20%20%20...%20GeoCoordinateFragment%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0Afragment%20GeoCoordinateFragment%20on%20GeoCoordinate%20%7B%0A%20%20source%0A%20%20altitude%0A%20%20latitude%0A%20%20longitude%0A%20%20translation%20%7B%20x%20y%20z%20%7D%0A%20%20rotation%20%7B%20x%20y%20z%20w%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D" target="_blank">Try this query in our interactive console</a></p>
+</details>
 
-<h3 id="query-the-dimension-estimates-for-rooms-and-floors">Query the Dimension Estimates for Rooms and Floors</h3>
+<details>
+  <summary>Convert a point in the model to Geo Coordinates</summary>
 
-<p>The <strong>dimensionEstimates</strong> object also exists on the <strong>rooms</strong> and <strong>floors</strong> objects and includes additional fields for <strong>rooms</strong>.</p>
+  <p>Sample Query:</p>
 
-<p>Sample Query:</p>
-
-<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
-</span><span class="k">query</span><span class="w"> </span><span class="n">getRoomFloorDimensions</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$units</span><span class="p">:</span><span class="w"> </span><span class="n">Units</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getGeoCoordinatesOf</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$point</span><span class="p">:</span><span class="w"> </span><span class="n">IPoint3D</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="n">rooms</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="n">id</span><span class="w">
-      </span><span class="n">label</span><span class="w">
-      </span><span class="n">floor</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="n">id</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-      </span><span class="n">dimensionEstimates</span><span class="p">(</span><span class="n">units</span><span class="p">:</span><span class="w"> </span><span class="nv">$units</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="n">area</span><span class="w">
-        </span><span class="n">areaIndoor</span><span class="w">
-        </span><span class="n">depth</span><span class="w">
-        </span><span class="n">depthData</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="c"># The points that this depthData was measured from</span><span class="w">
-          </span><span class="n">points</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="n">x</span><span class="w">
-            </span><span class="n">y</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-        </span><span class="n">height</span><span class="w">
-        </span><span class="n">width</span><span class="w">
-        </span><span class="n">widthData</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="c"># The points that this widthData was measured from</span><span class="w">
-            </span><span class="n">points</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="n">x</span><span class="w">
-              </span><span class="n">y</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-        </span><span class="n">units</span><span class="w">
-        </span><span class="n">lowerElevation</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-    </span><span class="n">floors</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="n">id</span><span class="w">
-      </span><span class="n">label</span><span class="w">
-      </span><span class="n">sequence</span><span class="w">
-      </span><span class="n">dimensionEstimates</span><span class="p">(</span><span class="n">units</span><span class="p">:</span><span class="w"> </span><span class="nv">$units</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="n">area</span><span class="w">
-        </span><span class="n">areaIndoor</span><span class="w">
-        </span><span class="n">units</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">geocoordinates</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">GeoCoordinatesOf</span><span class="p">(</span><span class="n">modelLocation</span><span class="p">:</span><span class="w"> </span><span class="nv">$point</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="n">lat</span><span class="w">
+          </span><span class="n">long</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre></div>  </div>
 
-<p>Sample Response</p>
+  <p>Variable Arguments:</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"modelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR MODEL ID]]"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"point"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.11</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.14</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.4</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"rooms"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gqxp3yld2eh"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"floor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pd0i1c4yq9w0y2zsb07ed23sb"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"dimensionEstimates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="mf">228.36937521825212</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"areaIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">228.36937521825212</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"depth"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"depthData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="nl">"points"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.055118400000001</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"widthData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="nl">"points"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imperial"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"lowerElevation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"x8zqpa4lyuh"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"floor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tsmq1wak12rhgn0mawksxcwcd"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"dimensionEstimates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="mf">72.83019428676131</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"areaIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">72.83019428676131</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"depth"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.088261308636113</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"depthData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="nl">"points"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0393704</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mf">8.076408171135771</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"widthData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="nl">"points"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imperial"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"lowerElevation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="err">...</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="nl">"floors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tsmq1wak12rhgn0mawksxcwcd"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floor 1"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"dimensionEstimates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="mf">1343.2818079401443</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"areaIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">1343.2818079401443</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imperial"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pd0i1c4yq9w0y2zsb07ed23sb"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floor 2"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"dimensionEstimates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="mf">1584.1840743270077</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"areaIndoor"</span><span class="p">:</span><span class="w"> </span><span class="mf">1584.1840743270077</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imperial"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">]</span><span class="w">
+  <p>Sample Response:</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR MODEL ID]]"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"geocoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"GeoCoordinatesOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33.27603743078501"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"long"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-96.8034845051858"</span><span class="w">
         </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getGeoCoordinatesOf(%24modelId%3A%20ID!%2C%20%24point%3A%20IPoint3D!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20id%0A%20%20%20%20geocoordinates%20%7B%0A%20%20%20%20%20%20GeoCoordinatesOf(modelLocation%3A%20%24point)%20%7B%0A%20%20%20%20%20%20%20%20%20%20lat%0A%20%20%20%20%20%20%20%20%20%20long%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%2C%0A%20%20%22point%22%3A%20%7B%0A%20%20%20%20%22x%22%3A%204%2C%0A%20%20%20%20%22y%22%3A%203%2C%0A%20%20%20%20%22z%22%3A%201%0A%20%20%7D%0A%7D" target="_blank">Try this query in our interactive console</a></p>
+</details>
+
+<details>
+  <summary>Convert Geo Coordinates to a point in the model</summary>
+
+  <p>Sample Query:</p>
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">getModelLocationOf</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$lat</span><span class="p">:</span><span class="w"> </span><span class="nb">Float</span><span class="p">!,</span><span class="w"> </span><span class="nv">$lon</span><span class="p">:</span><span class="w"> </span><span class="nb">Float</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">model</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">geocoordinates</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">modelLocationOf</span><span class="p">(</span><span class="w">
+          </span><span class="n">latitude</span><span class="p">:</span><span class="w"> </span><span class="nv">$lat</span><span class="p">,</span><span class="w">
+          </span><span class="n">longitude</span><span class="p">:</span><span class="w"> </span><span class="nv">$lon</span><span class="p">,</span><span class="w">
+      </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Variable Arguments:</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"modelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR MODEL ID]"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.27603743078501</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-96.8034845051858</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Sample Response:</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[YOUR MODEL ID]"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"geocoordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"modelLocationOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.5507595647023336</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.4784207745132183</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.0000031264498829841614</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=query%20getModelLocationOf(%24modelId%3A%20ID!%2C%20%24lat%3A%20Float!%2C%20%24lon%3A%20Float!)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20id%0A%20%20%20%20geocoordinates%20%7B%0A%20%20%20%20%20%20modelLocationOf(%0A%20%20%20%20%20%20%20%20%20%20latitude%3A%20%24lat%2C%0A%20%20%20%20%20%20%20%20%20%20longitude%3A%20%24lon%2C%0A%20%20%20%20%20%20)%20%7B%20x%20y%20z%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%5BYOUR%20MODEL%20ID%5D%22%2C%0A%20%20%22lat%22%3A%2033.27603743078501%2C%0A%20%20%22lon%22%3A%20-96.8034845051858%0A%7D&amp;operationName=getModelLocationOf" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<h2 id="sample-mutations">Sample Mutations</h2>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> To ensure the integrity of the provided data, patched values do not remove the original data.  We have provided a reset mutation to allow customer’s to restore provided GeoCoordinate data.</div>
+
+<details>
+  <summary>Patch the GeoAnchor Point for a model</summary>
+
+  <p>Sample Query:</p>
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">patchGeoCoordinates</span><span class="p">(</span><span class="w">
+    </span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!</span><span class="w">
+    </span><span class="nv">$altitude</span><span class="p">:</span><span class="w"> </span><span class="nb">Float</span><span class="w">
+    </span><span class="nv">$latitude</span><span class="p">:</span><span class="w"> </span><span class="nb">Float</span><span class="w">
+    </span><span class="nv">$longitude</span><span class="p">:</span><span class="w"> </span><span class="nb">Float</span><span class="w">
+    </span><span class="nv">$translation</span><span class="p">:</span><span class="w"> </span><span class="n">IPoint3D</span><span class="w">
+    </span><span class="nv">$rotation</span><span class="p">:</span><span class="w"> </span><span class="n">IQuaternion</span><span class="w">
+</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">patchModelGeoCoordinates</span><span class="p">(</span><span class="w">
+      </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">,</span><span class="w">
+      </span><span class="n">altitude</span><span class="p">:</span><span class="w"> </span><span class="nv">$altitude</span><span class="p">,</span><span class="w">
+      </span><span class="n">latitude</span><span class="p">:</span><span class="w"> </span><span class="nv">$latitude</span><span class="p">,</span><span class="w">
+      </span><span class="n">longitude</span><span class="p">:</span><span class="w"> </span><span class="nv">$longitude</span><span class="p">,</span><span class="w">
+      </span><span class="n">translation</span><span class="p">:</span><span class="w"> </span><span class="nv">$translation</span><span class="p">,</span><span class="w">
+      </span><span class="n">rotation</span><span class="p">:</span><span class="w"> </span><span class="nv">$rotation</span><span class="w">
+    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="p">...</span><span class="w"> </span><span class="n">GeoCoordinateFragment</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="k">fragment</span><span class="w"> </span><span class="n">GeoCoordinateFragment</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">source</span><span class="w">
+  </span><span class="n">altitude</span><span class="w">
+  </span><span class="n">latitude</span><span class="w">
+  </span><span class="n">longitude</span><span class="w">
+  </span><span class="n">translation</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="n">rotation</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p>Variable Arguments:</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"modelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"altitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"translation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"rotation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nl">"w"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><a href="https://api.matterport.com/api/graphiql/?query=mutation%20patchGeoCoordinates(%0A%20%20%20%20%24modelId%3A%20ID!%0A%20%20%20%20%24altitude%3A%20Float%0A%20%20%20%20%24latitude%3A%20Float%0A%20%20%20%20%24longitude%3A%20Float%0A%20%20%20%20%24translation%3A%20IPoint3D%0A%20%20%20%20%24rotation%3A%20IQuaternion%0A)%20%7B%0A%20%20%20%20patchModelGeoCoordinates(%0A%20%20%20%20%20%20id%3A%20%24modelId%2C%0A%20%20%20%20%20%20altitude%3A%20%24altitude%2C%0A%20%20%20%20%20%20latitude%3A%20%24latitude%2C%0A%20%20%20%20%20%20longitude%3A%20%24longitude%2C%0A%20%20%20%20%20%20translation%3A%20%24translation%2C%0A%20%20%20%20%20%20rotation%3A%20%24rotation%0A%20%20%20%20)%20%7B%0A%20%20%20%20%20%20%20%20...%20GeoCoordinateFragment%0A%20%20%20%20%7D%0A%7D%0Afragment%20GeoCoordinateFragment%20on%20GeoCoordinate%20%7B%0A%20%20source%0A%20%20altitude%0A%20%20latitude%0A%20%20longitude%0A%20%20translation%20%7B%20x%20y%20z%20%7D%0A%20%20rotation%20%7B%20x%20y%20z%20w%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%2C%0A%20%20%22altitude%22%3A%200%2C%0A%20%20%22latitude%22%3A%200%2C%0A%20%20%22longitude%22%3A%200%2C%0A%20%20%22translation%22%3A%20%7B%20%22x%22%3A%200%2C%20%22y%22%3A%200%2C%20%22z%22%3A%200%20%7D%2C%0A%20%20%22rotation%22%3A%20%7B%20%22x%22%3A%200%2C%20%22y%22%3A%200%2C%20%22z%22%3A%200%2C%20%22w%22%3A%200%20%7D%0A%7D&amp;operationName=patchGeoCoordinates" target="_blank">Try this query in our interactive console</a></p>
+
+</details>
+
+<details>
+  <summary>Reset the GeoAnchor Point for a model.</summary>
+
+  <p>Sample Mutation:</p>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span><span class="k">mutation</span><span class="w"> </span><span class="n">resetGeoCoordinates</span><span class="p">(</span><span class="w">
+    </span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!</span><span class="w">
+</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">    
+    </span><span class="n">resetModelGeoCoordinates</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="p">...</span><span class="w"> </span><span class="n">GeoCoordinateFragment</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div></div>
+</span><span class="k">fragment</span><span class="w"> </span><span class="n">GeoCoordinateFragment</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">source</span><span class="w">
+  </span><span class="n">altitude</span><span class="w">
+  </span><span class="n">latitude</span><span class="w">
+  </span><span class="n">longitude</span><span class="w">
+  </span><span class="n">translation</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="n">rotation</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
 
-<p><a href="https://api.matterport.com/api/graphiql/?query=query%20getRoomFloorDimensions(%24modelId%3A%20ID!%2C%20%24units%3A%20Units)%20%7B%0A%20%20model(id%3A%20%24modelId)%20%7B%0A%20%20%20%20rooms%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20label%0A%20%20%20%20%20%20floor%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20dimensionEstimates(units%3A%20%24units)%20%7B%0A%20%20%20%20%20%20%20%20area%0A%20%20%20%20%20%20%20%20areaIndoor%0A%20%20%20%20%20%20%20%20depth%0A%20%20%20%20%20%20%20%20depthData%20%7B%0A%20%20%20%20%20%20%20%20%20%20%23%20The%20points%20that%20this%20depthData%20was%20measured%20from%0A%20%20%20%20%20%20%20%20%20%20points%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20x%0A%20%20%20%20%20%20%20%20%20%20%20%20y%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20height%0A%20%20%20%20%20%20%20%20width%0A%20%20%20%20%20%20%20%20widthData%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%23%20The%20points%20that%20this%20widthData%20was%20measured%20from%0A%20%20%20%20%20%20%20%20%20%20%20%20points%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20x%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20y%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20units%0A%20%20%20%20%20%20%20%20lowerElevation%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20floors%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20label%0A%20%20%20%20%20%20sequence%0A%20%20%20%20%20%20dimensionEstimates(units%3A%20%24units)%20%7B%0A%20%20%20%20%20%20%20%20area%0A%20%20%20%20%20%20%20%20areaIndoor%0A%20%20%20%20%20%20%20%20units%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%2C%0A%20%20%22units%22%3A%20%22imperial%22%0A%7D&amp;operationName=getRoomFloorDimensions" target="_blank">Try this query in our interactive console</a></p>
+  <p>Variable Arguments:</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"modelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
 
-<p>In the above response, you will note that there are two floors - one for interior space, one for exterior space.  The exterior space does not return a full set of dimensional data.</p>
+  <p><a href="https://api.matterport.com/api/graphiql/?query=%0Amutation%20resetGeoCoordinates(%0A%20%20%20%20%24modelId%3A%20ID!%0A)%20%7B%20%20%20%20%0A%20%20%20%20resetModelGeoCoordinates(id%3A%20%24modelId)%20%7B%0A%20%20%20%20%20%20%20%20...%20GeoCoordinateFragment%0A%20%20%20%20%7D%0A%7D%0A%0Afragment%20GeoCoordinateFragment%20on%20GeoCoordinate%20%7B%0A%20%20source%0A%20%20altitude%0A%20%20latitude%0A%20%20longitude%0A%20%20translation%20%7B%20x%20y%20z%20%7D%0A%20%20rotation%20%7B%20x%20y%20z%20w%20%7D%0A%7D%0A&amp;variables=%7B%0A%20%20%22modelId%22%3A%20%22%22%0A%7D&amp;operationName=resetGeoCoordinates" target="_blank">Try this query in our interactive console</a></p>
 
-<p>Floors contain a label as well as a numeric sequence from the spatially lowest floor beginning at 0 and an id.</p>
-
-<p>Floor IDs generally tend to be consistent between models the first floor is usually <em>tsmq1wak12rhgn0mawksxcwcd</em>, and the second floor is usually <em>pd0i1c4yq9w0y2zsb07ed23sb</em>.  This may not be true as gaps can exist between detected floors.  Therefore, it is important to validate the floor IDs for each model.</p>
-
-<p>All rooms are associated with floors and the areas provided for floors represent a summation of the areas of their respective rooms.</p>
-
-<h3 id="why-do-i-see-null-or-zero-values-in-the-dimensions-tables">Why do I see null or zero values in the dimensions tables?</h3>
-
-<p>Rooms with irregular shapes or non-flat ceilings may not produce automatic dimensions.  These rooms, when refined in the editor may then produce usable values.</p>
+</details>
 
 
     <div class="tags">

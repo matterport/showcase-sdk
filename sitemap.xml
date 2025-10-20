@@ -329,11 +329,11 @@
   
   
   
+  
+  
   <url>
     <loc>https://matterport.github.io/index.html</loc>
   </url>
-  
-  
   
   
   
@@ -513,6 +513,12 @@
   
   <url>
     <loc>https://matterport.github.io/modelapi_changelog.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/modelapi_geocoordinates.html</loc>
   </url>
   
   
