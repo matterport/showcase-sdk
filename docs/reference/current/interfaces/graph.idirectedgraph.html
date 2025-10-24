@@ -1107,7 +1107,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.10.1_webgl-1182-g1884951708">25.10.1_webgl-1182-g1884951708</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.10.2_webgl-1230-g1a839ce829">25.10.2_webgl-1230-g1a839ce829</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1133,9 +1133,12 @@ $('#toc').on('click', 'a', function() {
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="graph.idirectedgraph.html#addvertex" class="tsd-kind-icon">add<wbr>Vertex</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="graph.idirectedgraph.html#clear" class="tsd-kind-icon">clear</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="graph.idirectedgraph.html#commit" class="tsd-kind-icon">commit</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="graph.idirectedgraph.html#dispose" class="tsd-kind-icon">dispose</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="graph.idirectedgraph.html#edge" class="tsd-kind-icon">edge</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="graph.idirectedgraph.html#filtervertices" class="tsd-kind-icon">filter<wbr>Vertices</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="graph.idirectedgraph.html#findvertex" class="tsd-kind-icon">find<wbr>Vertex</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="graph.idirectedgraph.html#hasedge" class="tsd-kind-icon">has<wbr>Edge</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="graph.idirectedgraph.html#hasvertex" class="tsd-kind-icon">has<wbr>Vertex</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="graph.idirectedgraph.html#onedgeschanged" class="tsd-kind-icon">on<wbr>Edges<wbr>Changed</a></li>
@@ -1258,6 +1261,29 @@ graph.addVertex(
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="clear" class="tsd-anchor"></a>
+					<h3>clear</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">clear<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="tsd-lead">
+									<p>Remove all vertices and edges from the graph.</p>
+								</div>
+								<pre><code class="language-typescript">graph.clear();
+<span class="hljs-comment">// graph.vertexCount === 0</span>
+<span class="hljs-comment">// graph.edgeCount === 0</span>
+</code></pre>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="commit" class="tsd-anchor"></a>
 					<h3>commit</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -1347,6 +1373,119 @@ graph.addVertex(
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="filtervertices" class="tsd-anchor"></a>
+					<h3>filter<wbr>Vertices</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">filter<wbr>Vertices<span class="tsd-signature-symbol">(</span>predicate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, thisArg<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="tsd-lead">
+									<p>Filter the vertices of this graph to ones that meet the condition specified.</p>
+								</div>
+								<pre><code class="language-ts"><span class="hljs-comment">// find all vertices that are islands (have no edges in nor out)</span>
+graph.filterVertices(<span class="hljs-function"><span class="hljs-params">verex</span> =&gt;</span> (vertex.edgesOutCount + vertex.edgesInCount) &gt; <span class="hljs-number">10</span>);
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>predicate: <span class="tsd-signature-type">function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The callback to run against each vertex to determine whether to include it in the returned array.</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>vertex<span class="tsd-signature-symbol">: </span><a href="../modules/graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>vertex: <a href="../modules/graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> thisArg: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The &quot;this&quot; argument to use in <code>predicate</code></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="findvertex" class="tsd-anchor"></a>
+					<h3>find<wbr>Vertex</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">find<wbr>Vertex<span class="tsd-signature-symbol">(</span>predicate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, thisArg<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="tsd-lead">
+									<p>Find a vertex of this graph.</p>
+								</div>
+								<pre><code class="language-ts"><span class="hljs-comment">// find a highly connected vertex with more than 10 edges</span>
+graph.findVertex(<span class="hljs-function"><span class="hljs-params">vertex</span> =&gt;</span> (vertex.edgesOutCount + vertex.edgesInCount) &gt; <span class="hljs-number">10</span>);
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>predicate: <span class="tsd-signature-type">function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The callback to run against each vertex until one is found (by returning true.)</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>vertex<span class="tsd-signature-symbol">: </span><a href="../modules/graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>vertex: <a href="../modules/graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> thisArg: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The &quot;this&quot; argument to use in <code>predicate</code></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">undefined</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="hasedge" class="tsd-anchor"></a>
 					<h3>has<wbr>Edge</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -1422,7 +1561,7 @@ graph.addVertex(
 					<a name="onedgeschanged" class="tsd-anchor"></a>
 					<h3>on<wbr>Edges<wbr>Changed</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Edges<wbr>Changed<span class="tsd-signature-symbol">(</span>observer<span class="tsd-signature-symbol">: </span><a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="isubscription.html" class="tsd-signature-type">ISubscription</a></li>
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Edges<wbr>Changed<span class="tsd-signature-symbol">(</span>observer<span class="tsd-signature-symbol">: </span><a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><a href="graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="isubscription.html" class="tsd-signature-type">ISubscription</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1444,7 +1583,7 @@ graph.addVertex(
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>observer: <a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>observer: <a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><a href="graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 									</div>
 								</li>
@@ -1457,7 +1596,7 @@ graph.addVertex(
 					<a name="onverticeschanged" class="tsd-anchor"></a>
 					<h3>on<wbr>Vertices<wbr>Changed</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Vertices<wbr>Changed<span class="tsd-signature-symbol">(</span>observer<span class="tsd-signature-symbol">: </span><a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="isubscription.html" class="tsd-signature-type">ISubscription</a></li>
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Vertices<wbr>Changed<span class="tsd-signature-symbol">(</span>observer<span class="tsd-signature-symbol">: </span><a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><a href="graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="isubscription.html" class="tsd-signature-type">ISubscription</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1479,7 +1618,7 @@ graph.addVertex(
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>observer: <a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>observer: <a href="iobserver.html" class="tsd-signature-type">IObserver</a><span class="tsd-signature-symbol">&lt;</span><a href="graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 									</div>
 								</li>
@@ -1795,6 +1934,9 @@ sub.cancel();
 								<a href="graph.idirectedgraph.html#addvertex" class="tsd-kind-icon">add<wbr>Vertex</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="graph.idirectedgraph.html#clear" class="tsd-kind-icon">clear</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="graph.idirectedgraph.html#commit" class="tsd-kind-icon">commit</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
@@ -1802,6 +1944,12 @@ sub.cancel();
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="graph.idirectedgraph.html#edge" class="tsd-kind-icon">edge</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="graph.idirectedgraph.html#filtervertices" class="tsd-kind-icon">filter<wbr>Vertices</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="graph.idirectedgraph.html#findvertex" class="tsd-kind-icon">find<wbr>Vertex</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="graph.idirectedgraph.html#hasedge" class="tsd-kind-icon">has<wbr>Edge</a>
@@ -1856,10 +2004,19 @@ sub.cancel();
 						<a href="../modules/graph.html#vertexiddescriptor" class="tsd-kind-icon">Vertex<wbr>IdDescriptor</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../modules/graph.html#clonegraph" class="tsd-kind-icon">clone<wbr>Graph</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="../modules/graph.html#createastarrunner" class="tsd-kind-icon">createAStar<wbr>Runner</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="../modules/graph.html#createdirectedgraph" class="tsd-kind-icon">create<wbr>Directed<wbr>Graph</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../modules/graph.html#findcycle" class="tsd-kind-icon">find<wbr>Cycle</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../modules/graph.html#findcycles" class="tsd-kind-icon">find<wbr>Cycles</a>
 					</li>
 				</ul>
 			</nav>
@@ -1887,7 +2044,7 @@ sub.cancel();
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Oct 20, 2025
+ Site last generated: Oct 24, 2025
                 </div>
             </div>
 </footer>
