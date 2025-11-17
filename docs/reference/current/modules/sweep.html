@@ -1076,7 +1076,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.10.3_webgl-1257-gf4f2426732">25.10.3_webgl-1257-gf4f2426732</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.11.2_webgl-1327-g527db53a6e">25.11.2_webgl-1327-g527db53a6e</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1553,21 +1553,22 @@ mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keywor
 								<div class="tsd-lead">
 									<p>Move to a sweep.</p>
 								</div>
-								<pre><code><span class="hljs-keyword">const</span> sweepId = <span class="hljs-string">&#x27;1&#x27;</span>;
-<span class="hljs-keyword">const</span> rotation = { <span class="hljs-attr">x</span>: <span class="hljs-number">30</span>, <span class="hljs-attr">y</span>: -<span class="hljs-number">45</span> };
+								<pre><code>
+<span class="hljs-keyword">const</span> sweepId: <span class="hljs-keyword">string</span>; <span class="hljs-comment">// Acquired through a previous call to Sweep.data, Sweep.current, etc.</span>
+<span class="hljs-keyword">const</span> rotation = { x: <span class="hljs-number">30</span>, y: -<span class="hljs-number">45</span> };
 <span class="hljs-keyword">const</span> transition = mpSdk.Sweep.Transition.INSTANT;
 <span class="hljs-keyword">const</span> transitionTime = <span class="hljs-number">2000</span>; <span class="hljs-comment">// in milliseconds</span>
 
 mpSdk.Sweep.moveTo(sweepId, {
-    <span class="hljs-attr">rotation</span>: rotation,
-    <span class="hljs-attr">transition</span>: transition,
-    <span class="hljs-attr">transitionTime</span>: transitionTime,
+    rotation: rotation,
+    transition: transition,
+    transitionTime: transitionTime,
   })
   .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">sweepId</span>)</span>{
     <span class="hljs-comment">// Move successful.</span>
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Arrived at sweep &#x27;</span> + sweepId);
+    console.log(<span class="hljs-string">&#x27;Arrived at sweep &#x27;</span> + sweepId);
   })
-  .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>)</span>{
+  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-built_in">error</span></span>)</span>{
     <span class="hljs-comment">// Error with moveTo command</span>
   });
 </code></pre>
@@ -1783,7 +1784,7 @@ mpSdk.Sweep.moveTo(sweepId, {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Oct 30, 2025
+ Site last generated: Nov 17, 2025
                 </div>
             </div>
 </footer>
