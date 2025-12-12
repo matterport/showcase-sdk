@@ -279,17 +279,6 @@
 
 
 {
-"title": "Change Log",
-"tags": "",
-"keywords": "",
-"url": "/showcase-sdk/sdk_changelog.html",
-"summary": ""
-}
-,
-
-
-
-{
 "title": "Using Collection Data",
 "tags": "",
 "keywords": "",
@@ -393,6 +382,17 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/custom_roles_overview.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "SDK Deprecation",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/sdk_deprecation.html",
 "summary": ""
 }
 ,
@@ -588,10 +588,6 @@
 
 
 
-
-
-
-
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -600,6 +596,10 @@
 "summary": ""
 }
 ,
+
+
+
+
 
 
 
@@ -1488,6 +1488,17 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/sdk_scene_intro.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Change Log",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/sdk_changelog.html",
 "summary": ""
 }
 ,

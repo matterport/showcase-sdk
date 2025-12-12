@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>SDK Embed Package Tutorial | Matterport Developers</title>
+<title>SDK Deprecation | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -137,7 +137,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:MP-developer@costar.com?subject=Showcase SDK feedback&body=I have some feedback about the SDK Embed Package Tutorial page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:MP-developer@costar.com?subject=Showcase SDK feedback&body=I have some feedback about the SDK Deprecation page: ' + window.location.href;">Feedback</a>
           </div>
           <div class="dropdown">
             <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
@@ -232,7 +232,7 @@
           
           
           
-          <li><a title="SDK Deprecation" href="/showcase-sdk/sdk_deprecation.html">SDK Deprecation</a></li>
+          <li class="active"><a title="SDK Deprecation" href="/showcase-sdk/sdk_deprecation.html">SDK Deprecation</a></li>
           
           
           
@@ -277,7 +277,7 @@
           
           
           
-          <li class="active"><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
           
           
           
@@ -476,7 +476,7 @@
           
           
           
-          <li class="active"><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
           
           
           
@@ -1009,7 +1009,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="SDK Embed Package Tutorial">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="SDK Deprecation">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -1024,7 +1024,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">SDK Embed Package Tutorial</h1>
+   <h1 class="post-title-main">SDK Deprecation</h1>
 </div>
 
 
@@ -1061,181 +1061,92 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <p>You can use the Matterport SDK for Embeds package to quickly scaffold a 3D showcase and attach the SDK.</p>
+   
+<h2 id="sdk-deprecation-notice">SDK Deprecation Notice</h2>
 
-<p><strong>Prerequisites</strong></p>
+<h5 id="nov-26-2025">Nov 26, 2025</h5>
+
+<p><strong>Important: Deprecation Notice for Older SDK Versions</strong></p>
+
+<p>We are announcing the deprecation of the older Matterport SDK versions, specifically the Bundle, Web Component, and R3F packages. Support for these packages will tentatively end on January 12, 2026. Users should transition to the latest SDK versions before this deadline.</p>
+
+<h3 id="why-is-this-happening"><strong>Why is this happening</strong></h3>
+
+<p>In an effort to advance and optimize the Matterport offering, we are deprecating several older APIs. Once these underlying APIs are shut down, these outdated versions of our SDK will stop functioning, likely causing breaking changes or complete service failure in your application.</p>
+
+<h3 id="what-you-need-to-do"><strong>What you need to do</strong></h3>
+
+<p>To ensure your application continues to work without interruption, and to optimize your Matterport experience, you must upgrade any of these SDKs.  Our tentative deprecation date is Jan 12, 2026.</p>
+
+<p>The latest versions are not only compatible with our new APIs, but also include significant improvements in performance, security, and features.</p>
+
+<h3 id="were-here-to-help"><strong>We’re here to help</strong></h3>
+
+<p>We understand that updates require development time. If you have any technical questions, run into issues during the migration, or are unsure which SDKs your application is using, please contact our developer support team for assistance at <a href="mailto:developer@matterport.com">developer@matterport.com</a></p>
+
+<h2 id="24101">24.10.1</h2>
+<h5 id="oct-9-2024">Oct 9, 2024</h5>
 <ul>
-  <li>You should be familiar with the <a href="https://www.davidbaumgold.com/tutorials/command-line/">command line</a>.</li>
-  <li>You should have <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">NPM</a> or <a href="https://yarnpkg.com/getting-started/install">Yarn</a> installed.</li>
-  <li>Finally, you should <a href="sdk_home.html#how-do-i-obtain-an-sdk-key">obtain an SDK key</a>.</li>
+  <li>Removed legacy IDs as a default option
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">&amp;useLegacyIds=1</code> parameter has been removed.</li>
+      <li>Conversion routines under the <a href="docs/reference/current/modules/floor.conversion.html">Floor</a>, <a href="docs/reference/current/modules/room.conversion.html">Room</a>, and <a href="docs/reference/current/modules/sweep.conversion.html">Sweep</a> namespaces are still available if legacy IDs are needed.</li>
+    </ul>
+  </li>
 </ul>
 
-<h2 id="starting-your-project">Starting Your Project</h2>
+<h2 id="22102">22.10.2</h2>
+<h5 id="oct-13-2022">Oct 13, 2022</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Removed deprecated Tag namespace functions</li>
+</ul>
 
-<p>The SDK for Embeds package will work with any framework (React, Vue, Svelte, etc) or vanilla JavaScript or TypeScript.</p>
+<h2 id="22101">22.10.1</h2>
+<h5 id="oct-4-2022">Oct 4, 2022</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Tags 2.0 Early Access is now considered Generally Available
+    <ul>
+      <li>Any features in the Tag namespace marked deprecated will be removed in the next release</li>
+    </ul>
+  </li>
+</ul>
 
-<p>Let’s start a project using vanilla JS and Webpack. Tools like <a href="https://vitejs.dev/">Vite</a> can be useful if you’d like to skip some of the setup work, but for now we’ll stick with creating the project manually. (If you know how to create a project where you can <code class="language-plaintext highlighter-rouge">npm install</code> or <code class="language-plaintext highlighter-rouge">yarn add</code> dependencies, you can do so and <a href="#adding-the-sdk-package">skip ahead</a>.)</p>
+<h2 id="2231">22.3.1</h2>
+<h5 id="mar-11-2022">Mar 11, 2022</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li><a href="docs/reference/current//interfaces/scene.icomponent.html#bind">INode.bind</a> now has the correct type. This function is deprecated.</li>
+</ul>
 
-<p>Open the command line and navigate to the folder where you want your project. Then create a project folder and navigate into it. We’ll call our project and its folder mp-sdk:</p>
+<h2 id="20123">20.12.3</h2>
+<h5 id="dec-21-2020">Dec 21, 2020</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added: <a href="docs/reference/current/modules/floor.html#data">Floor.data</a> observable collection, deprecated <code class="language-plaintext highlighter-rouge">Floor.getData</code></li>
+</ul>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>mp-sdk
-<span class="nb">cd </span>mp-sdk
-</code></pre></div></div>
+<h2 id="20121">20.12.1</h2>
+<h5 id="dec-1-2020">Dec 1, 2020</h5>
+<p><strong>General</strong></p>
+<ul>
+  <li>Added: <code class="language-plaintext highlighter-rouge">Mattertag.data</code> observable collection, deprecated <code class="language-plaintext highlighter-rouge">Mattertag.getData</code></li>
+</ul>
 
-<p>Initialize a new NPM or Yarn project. (Choose one or the other, whichever you prefer - we will provide instructions for both in this tutorial.) You can accept the default values in all of the prompts.</p>
+<h2 id="19121">19.12.1</h2>
+<h5 id="dec-9-2019">Dec 9, 2019</h5>
+<ul>
+  <li><strong>Synchronous Functions</strong><br />
+We are adding support for synchronous functions. These functions compute and return your data immediately, no promise involved. In general, synchronous functions are more performant since they dont directly interact with the showcase. Use them when you can. To start, we have selected a function that is called frequently <code class="language-plaintext highlighter-rouge">Renderer.getScreenPosition()</code>. This function is now being deprecated, and the new synchronous function is <code class="language-plaintext highlighter-rouge">Renderer.worldToScreen()</code>. In order to use synchronous functions, you will need to update your sdk client reference to <code class="language-plaintext highlighter-rouge">https://static.matterport.com/showcase-sdk/2.0.0-0-g7edd6b8/sdk.js</code></li>
+  <li>Deprecating <code class="language-plaintext highlighter-rouge">window.SHOWCASE_SDK</code>, use <code class="language-plaintext highlighter-rouge">window.MP_SDK instead</code>.</li>
+</ul>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># npm</span>
-npm init
-
-<span class="c"># yarn</span>
-yarn init
-</code></pre></div></div>
-
-<p>Next, install Webpack and a few plugins:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># npm</span>
-npm <span class="nb">install</span> <span class="nt">--save-dev</span> webpack webpack-cli webpack-dev-server html-webpack-plugin
-
-<span class="c"># yarn</span>
-yarn add <span class="nt">--dev</span> webpack webpack-cli webpack-dev-server html-webpack-plugin
-</code></pre></div></div>
-
-<p>Create a file called <code class="language-plaintext highlighter-rouge">webpack.config.js</code> at your project root and set it up to build the redistributable files to <code class="language-plaintext highlighter-rouge">dist</code> by pasting the following content:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">HtmlWebpackPlugin</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">html-webpack-plugin</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">entry</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./index.js</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">'</span><span class="s1">./dist</span><span class="dl">'</span><span class="p">),</span>
-    <span class="na">filename</span><span class="p">:</span> <span class="dl">'</span><span class="s1">index_bundle.js</span><span class="dl">'</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="k">new</span> <span class="nc">HtmlWebpackPlugin</span><span class="p">()],</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>Add the following <code class="language-plaintext highlighter-rouge">scripts</code> property (or replace the existing one) at the top level of your <code class="language-plaintext highlighter-rouge">package.json</code> file:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">scripts</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-  <span class="dl">"</span><span class="s2">dev</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">webpack serve --mode=development</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">build</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">webpack</span><span class="dl">"</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Finally, add a file called <code class="language-plaintext highlighter-rouge">index.js</code> at your project root. Your project folder should now look like this:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| node_modules
-| index.js
-| package.json
-| webpack.config.json
-</code></pre></div></div>
-
-<p>(Don’t worry if you see extra <code class="language-plaintext highlighter-rouge">package-lock.json</code> or <code class="language-plaintext highlighter-rouge">yarn.lock</code> files - those are generated for internal use by NPM and Yarn, respectively.)</p>
-
-<h2 id="adding-the-sdk-package">Adding the SDK Package</h2>
-
-<p>Next, we’ll add the SDK for Embeds package:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># npm</span>
-npm <span class="nb">install</span> @matterport/sdk
-
-<span class="c"># yarn</span>
-yarn add @matterport/sdk
-</code></pre></div></div>
-
-<p>Open <code class="language-plaintext highlighter-rouge">index.js</code> and import the function <code class="language-plaintext highlighter-rouge">setupSdk</code> from the package:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">setupSdk</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@matterport/sdk</span><span class="dl">'</span>
-</code></pre></div></div>
-
-<p>Then, below that, add an async function and call it right afterwards, including a <code class="language-plaintext highlighter-rouge">catch</code> to handle any errors:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">main</span> <span class="o">=</span> <span class="k">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// Initialize SDK here</span>
-  <span class="c1">// ...</span>
-<span class="p">}</span>
-<span class="nf">main</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">err</span><span class="p">))</span>
-</code></pre></div></div>
-
-<p>Then, replace the commented ellipsis above with your <code class="language-plaintext highlighter-rouge">setupSdk</code> call. Pass your SDK key as the argument to the function:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// Initialize SDK here</span>
-  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">setupSdk</span><span class="p">(</span><span class="dl">'</span><span class="s1">yourSdkKey</span><span class="dl">'</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>The full contents of <code class="language-plaintext highlighter-rouge">index.js</code> should look like this:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">setupSdk</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@matterport/sdk</span><span class="dl">'</span>
-
-<span class="kd">const</span> <span class="nx">main</span> <span class="o">=</span> <span class="k">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// Initialize SDK here</span>
-  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">setupSdk</span><span class="p">(</span><span class="dl">'</span><span class="s1">yourSdkKey</span><span class="dl">'</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="nf">main</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">err</span><span class="p">))</span>
-</code></pre></div></div>
-
-<p>where <code class="language-plaintext highlighter-rouge">yourSdkKey</code> is replaced by your SDK key.</p>
-
-<h2 id="running-the-server">Running the server</h2>
-
-<p>Run:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># npm</span>
-npm run dev
-
-<span class="c"># yarn </span>
-yarn dev
-</code></pre></div></div>
-
-<p>and navigate to <a href="http://localhost:8080" target="_blank">localhost:8080</a>. You should see a sample Showcase space in an iframe (the actual space and presentation may be different depending on any future changes):</p>
-
-<p><img src="images/sdk-package-success.png" /></p>
-
-<p>Your showcase is up and running! But we can do more than this - let’s interact with the model when it’s loaded.</p>
-
-<h2 id="using-the-sdk">Using the SDK</h2>
-
-<p>In <code class="language-plaintext highlighter-rouge">index.js</code>, below your <code class="language-plaintext highlighter-rouge">setupSdk</code> call, add the following lines:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">App</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nf">waitUntil</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">phase</span> <span class="o">===</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">App</span><span class="p">.</span><span class="nx">Phase</span><span class="p">.</span><span class="nx">PLAYING</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>What’s happening here? Let’s take a look at a commented version:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// use the SDK to wait until the app's state meets a condition...</span>
-<span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">App</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nf">waitUntil</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> 
-  <span class="c1">// ...specifically, when the state's `phase` property matches the `mpSdk.App.Phase.PLAYING` value</span>
-  <span class="c1">// (ie, when the app is ready to accept input)</span>
-  <span class="nx">state</span><span class="p">.</span><span class="nx">phase</span> <span class="o">===</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">App</span><span class="p">.</span><span class="nx">Phase</span><span class="p">.</span><span class="nx">PLAYING</span>
-<span class="p">)</span>
-</code></pre></div></div>
-
-<p>Then, add these lines to animate a camera rotation on load:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nf">rotate</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>Your entire index.js file should now look like this:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">setupSdk</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@matterport/sdk</span><span class="dl">'</span>
-
-<span class="kd">const</span> <span class="nx">main</span> <span class="o">=</span> <span class="k">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// Initialize SDK here</span>
-  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">setupSdk</span><span class="p">(</span><span class="dl">'</span><span class="s1">yourSdkKey</span><span class="dl">'</span><span class="p">)</span>
-  <span class="k">await</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">App</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nf">waitUntil</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">phase</span> <span class="o">===</span> <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">App</span><span class="p">.</span><span class="nx">Phase</span><span class="p">.</span><span class="nx">PLAYING</span><span class="p">)</span>
-  <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nf">rotate</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="nf">main</span><span class="p">().</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">err</span><span class="p">))</span>
-</code></pre></div></div>
-
-<p>and the showcase demo should look like this:</p>
-
-<p><img src="images/sdk-package-command.gif" /></p>
-
-<h2 id="next-steps">Next Steps</h2>
-
-<p>This barely scratches the surface of what’s possible with the SDK, but it’s hopefully enough to point you in the right direction. Take a look at the <a href="https://github.com/matterport/sdk-package-examples">starter examples repo</a> to see starter examples for different frameworks, and reach out to <a href="mailto:MP-developer@costar.com">MP-developer@costar.com</a> with any questions or issues.</p>
+<h2 id="1981">19.8.1</h2>
+<h5 id="aug-22-2019">Aug 22, 2019</h5>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Camera.getPose()</code> is now deprecated. It will be removed in a future update.</li>
+</ul>
 
 
     <div class="tags">
