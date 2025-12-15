@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Enumeration: Mattertag.Transition | Matterport Developers</title>
+<title>Enumeration: Camera.TransitionType | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -137,7 +137,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:MP-developer@costar.com?subject=Showcase SDK feedback&body=I have some feedback about the Enumeration: Mattertag.Transition page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:MP-developer@costar.com?subject=Showcase SDK feedback&body=I have some feedback about the Enumeration: Camera.TransitionType page: ' + window.location.href;">Feedback</a>
           </div>
           <div class="dropdown">
             <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
@@ -1009,7 +1009,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="Enumeration: Mattertag.Transition">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Enumeration: Camera.TransitionType">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -1024,7 +1024,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">Enumeration: Mattertag.Transition</h1>
+   <h1 class="post-title-main">Enumeration: Camera.TransitionType</h1>
 </div>
 
 
@@ -1066,7 +1066,7 @@ $('#toc').on('click', 'a', function() {
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Transition | Matterport SDK</title>
+	<title>TransitionType | Matterport SDK</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -1080,10 +1080,10 @@ $('#toc').on('click', 'a', function() {
 					<a href="../index.html">@mpSdk</a>
 				</li>
 				<li>
-					<a href="../modules/mattertag.html">Mattertag</a>
+					<a href="../modules/camera.html">Camera</a>
 				</li>
 				<li>
-					<a href="mattertag.transition.html">Transition</a>
+					<a href="camera.transitiontype.html">TransitionType</a>
 				</li>
 			</ul>
 		</div>
@@ -1093,12 +1093,20 @@ $('#toc').on('click', 'a', function() {
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="tsd-lead">
+						<p>Transition types for camera movements. This is the canonical transition type enum.
+						Used for <a href="../modules/mode.html#moveto">Mode.moveTo</a>, <a href="../modules/sweep.html#moveto">Sweep.moveTo</a>, <a href="../modules/mattertag.html#navigatetotag">Mattertag.navigateToTag</a>, and other camera movement methods.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<div class="tsd-panel-group" id="typescript-declarations" style="display: none;">
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.12.1_webgl-1428-gc091dc50aa">25.12.1_webgl-1428-gc091dc50aa</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.12.2_webgl-1476-gb1a50f26e1">25.12.2_webgl-1476-gb1a50f26e1</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1114,9 +1122,11 @@ $('#toc').on('click', 'a', function() {
 						<section class="tsd-index-section ">
 							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="mattertag.transition.html#fadeout" class="tsd-kind-icon">FADEOUT</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="mattertag.transition.html#fly" class="tsd-kind-icon">FLY</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="mattertag.transition.html#instant" class="tsd-kind-icon">INSTANT</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="camera.transitiontype.html#fadeout" class="tsd-kind-icon">FADEOUT</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="camera.transitiontype.html#fly" class="tsd-kind-icon">FLY</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="camera.transitiontype.html#instant" class="tsd-kind-icon">INSTANT</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="camera.transitiontype.html#movefade" class="tsd-kind-icon">MOVEFADE</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="camera.transitiontype.html#orbit" class="tsd-kind-icon">ORBIT</a></li>
 							</ul>
 						</section>
 					</div>
@@ -1130,6 +1140,11 @@ $('#toc').on('click', 'a', function() {
 					<div class="tsd-signature tsd-kind-icon">FADEOUT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;transition.fade&quot;</span></div>
 					<aside class="tsd-sources">
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="tsd-lead">
+							<p>Fade to black transition</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="fly" class="tsd-anchor"></a>
@@ -1137,6 +1152,11 @@ $('#toc').on('click', 'a', function() {
 					<div class="tsd-signature tsd-kind-icon">FLY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;transition.fly&quot;</span></div>
 					<aside class="tsd-sources">
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="tsd-lead">
+							<p>Fly transition</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="instant" class="tsd-anchor"></a>
@@ -1144,6 +1164,45 @@ $('#toc').on('click', 'a', function() {
 					<div class="tsd-signature tsd-kind-icon">INSTANT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;transition.instant&quot;</span></div>
 					<aside class="tsd-sources">
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="tsd-lead">
+							<p>Instant transition</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="movefade" class="tsd-anchor"></a>
+					<h3>MOVEFADE</h3>
+					<div class="tsd-signature tsd-kind-icon">MOVEFADE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;transition.movefade&quot;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<dl class="tsd-comment-tags tsd-typography">
+					</dl>
+					<dl class="tsd-comment-tags tsd-typography">
+						<dt class="tsd-comment-tags-experimental">experimental</dt>
+						<dd>
+							<p>Move with fade transition</p>
+						</dd>
+					</dl>
+					<div class="tsd-comment tsd-typography">
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="orbit" class="tsd-anchor"></a>
+					<h3>ORBIT</h3>
+					<div class="tsd-signature tsd-kind-icon">ORBIT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;transition.orbit&quot;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<dl class="tsd-comment-tags tsd-typography">
+					</dl>
+					<dl class="tsd-comment-tags tsd-typography">
+						<dt class="tsd-comment-tags-experimental">experimental</dt>
+						<dd>
+							<p>Orbit transition</p>
+						</dd>
+					</dl>
+					<div class="tsd-comment tsd-typography">
+					</div>
 				</section>
 			</section>
 		</div>
@@ -1159,7 +1218,7 @@ $('#toc').on('click', 'a', function() {
 					<li class=" tsd-kind-namespace">
 						<a href="../modules/asset.html">Asset</a>
 					</li>
-					<li class=" tsd-kind-namespace">
+					<li class="current tsd-kind-namespace">
 						<a href="../modules/camera.html">Camera</a>
 					</li>
 					<li class=" tsd-kind-namespace">
@@ -1177,7 +1236,7 @@ $('#toc').on('click', 'a', function() {
 					<li class=" tsd-kind-namespace">
 						<a href="../modules/link.html">Link</a>
 					</li>
-					<li class="current tsd-kind-namespace">
+					<li class=" tsd-kind-namespace">
 						<a href="../modules/mattertag.html">Mattertag</a>
 					</li>
 					<li class=" tsd-kind-namespace">
@@ -1227,115 +1286,76 @@ $('#toc').on('click', 'a', function() {
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
-						<a href="mattertag.descriptionchunktype.html" class="tsd-kind-icon">Description<wbr>Chunk<wbr>Type</a>
+						<a href="camera.direction.html" class="tsd-kind-icon">Direction</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
-						<a href="mattertag.event.html" class="tsd-kind-icon">Event</a>
-					</li>
-					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
-						<a href="mattertag.linktype.html" class="tsd-kind-icon">Link<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
-						<a href="mattertag.mediatype.html" class="tsd-kind-icon">Media<wbr>Type</a>
+						<a href="camera.event.html" class="tsd-kind-icon">Event</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-enum tsd-parent-kind-namespace">
-						<a href="mattertag.transition.html" class="tsd-kind-icon">Transition</a>
+						<a href="camera.transitiontype.html" class="tsd-kind-icon">Transition<wbr>Type</a>
 						<ul>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="mattertag.transition.html#fadeout" class="tsd-kind-icon">FADEOUT</a>
+								<a href="camera.transitiontype.html#fadeout" class="tsd-kind-icon">FADEOUT</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="mattertag.transition.html#fly" class="tsd-kind-icon">FLY</a>
+								<a href="camera.transitiontype.html#fly" class="tsd-kind-icon">FLY</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="mattertag.transition.html#instant" class="tsd-kind-icon">INSTANT</a>
+								<a href="camera.transitiontype.html#instant" class="tsd-kind-icon">INSTANT</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="camera.transitiontype.html#movefade" class="tsd-kind-icon">MOVEFADE</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="camera.transitiontype.html#orbit" class="tsd-kind-icon">ORBIT</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="../interfaces/mattertag.descriptionchunk.html" class="tsd-kind-icon">Description<wbr>Chunk</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="../interfaces/mattertag.imessenger.html" class="tsd-kind-icon">IMessenger</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="../interfaces/mattertag.link.html" class="tsd-kind-icon">Link</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="../interfaces/mattertag.mattertagdescriptor.html" class="tsd-kind-icon">Mattertag<wbr>Descriptor</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="../interfaces/mattertag.positionoptions.html" class="tsd-kind-icon">Position<wbr>Options</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/camera.html#pose" class="tsd-kind-icon">Pose</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#editableproperties" class="tsd-kind-icon">Editable<wbr>Properties</a>
+						<a href="../modules/camera.html#rotateoptions" class="tsd-kind-icon">Rotate<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#globalvariablemap" class="tsd-kind-icon">Global<wbr>Variable<wbr>Map</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#injectionoptions" class="tsd-kind-icon">Injection<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#mattertagdata" class="tsd-kind-icon">Mattertag<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#observablemattertagdata" class="tsd-kind-icon">Observable<wbr>Mattertag<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#preventableactions" class="tsd-kind-icon">Preventable<wbr>Actions</a>
+						<a href="../modules/camera.html#zoomdata" class="tsd-kind-icon">Zoom<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-property tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#data" class="tsd-kind-icon">data</a>
+						<a href="../modules/camera.html#pose-1" class="tsd-kind-icon">pose</a>
+					</li>
+					<li class=" tsd-kind-property tsd-parent-kind-namespace">
+						<a href="../modules/camera.html#zoom" class="tsd-kind-icon">zoom</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#add" class="tsd-kind-icon">add</a>
+						<a href="../modules/camera.html#getpose" class="tsd-kind-icon">get<wbr>Pose</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#editbillboard" class="tsd-kind-icon">edit<wbr>Billboard</a>
+						<a href="../modules/camera.html#lookatscreencoords" class="tsd-kind-icon">look<wbr>AtScreen<wbr>Coords</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#editcolor" class="tsd-kind-icon">edit<wbr>Color</a>
+						<a href="../modules/camera.html#moveindirection" class="tsd-kind-icon">move<wbr>InDirection</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#editicon" class="tsd-kind-icon">edit<wbr>Icon</a>
+						<a href="../modules/camera.html#pan" class="tsd-kind-icon">pan</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#editopacity" class="tsd-kind-icon">edit<wbr>Opacity</a>
+						<a href="../modules/camera.html#rotate" class="tsd-kind-icon">rotate</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#editposition" class="tsd-kind-icon">edit<wbr>Position</a>
+						<a href="../modules/camera.html#setrotation" class="tsd-kind-icon">set<wbr>Rotation</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#editstem" class="tsd-kind-icon">edit<wbr>Stem</a>
+						<a href="../modules/camera.html#zoomby" class="tsd-kind-icon">zoom<wbr>By</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#getdata" class="tsd-kind-icon">get<wbr>Data</a>
+						<a href="../modules/camera.html#zoomreset" class="tsd-kind-icon">zoom<wbr>Reset</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#getdiscposition" class="tsd-kind-icon">get<wbr>Disc<wbr>Position</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#injecthtml" class="tsd-kind-icon">injectHTML</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#navigatetotag" class="tsd-kind-icon">navigate<wbr>ToTag</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#preventaction" class="tsd-kind-icon">prevent<wbr>Action</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#registericon" class="tsd-kind-icon">register<wbr>Icon</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#remove" class="tsd-kind-icon">remove</a>
-					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-namespace">
-						<a href="../modules/mattertag.html#reseticon" class="tsd-kind-icon">reset<wbr>Icon</a>
+						<a href="../modules/camera.html#zoomto" class="tsd-kind-icon">zoom<wbr>To</a>
 					</li>
 				</ul>
 			</nav>
@@ -1363,7 +1383,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Dec 11, 2025
+ Site last generated: Dec 15, 2025
                 </div>
             </div>
 </footer>

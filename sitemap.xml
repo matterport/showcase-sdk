@@ -146,6 +146,12 @@
   
   
   <url>
+    <loc>https://matterport.github.io/docs/reference/current/enums/camera.transitiontype.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/capture_services_api.html</loc>
   </url>
   
@@ -327,13 +333,13 @@
   
   
   
+  
+  
+  
+  
   <url>
     <loc>https://matterport.github.io/index.html</loc>
   </url>
-  
-  
-  
-  
   
   
   
@@ -458,12 +464,6 @@
   
   
   <url>
-    <loc>https://matterport.github.io/docs/reference/current/enums/mattertag.transition.html</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://matterport.github.io/sdk_tutorials_mattertagtotag.html</loc>
   </url>
   
@@ -489,12 +489,6 @@
   
   <url>
     <loc>https://matterport.github.io/docs/reference/current/enums/mode.mode-1.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://matterport.github.io/docs/reference/current/enums/mode.transitiontype.html</loc>
   </url>
   
   
@@ -1159,12 +1153,6 @@
   
   <url>
     <loc>https://matterport.github.io/docs/reference/current/enums/sweep.placement.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://matterport.github.io/docs/reference/current/enums/sweep.transition.html</loc>
   </url>
   
   

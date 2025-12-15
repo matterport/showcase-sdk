@@ -1095,7 +1095,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.12.1_webgl-1428-gc091dc50aa">25.12.1_webgl-1428-gc091dc50aa</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=25.12.2_webgl-1476-gb1a50f26e1">25.12.2_webgl-1476-gb1a50f26e1</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1120,7 +1120,7 @@ $('#toc').on('click', 'a', function() {
 								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/sweep.alignment.html" class="tsd-kind-icon">Alignment</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/sweep.event.html" class="tsd-kind-icon">Event</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/sweep.placement.html" class="tsd-kind-icon">Placement</a></li>
-								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="../enums/sweep.transition.html" class="tsd-kind-icon">Transition</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-namespace"><a href="sweep.html#transition-1" class="tsd-kind-icon">Transition</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -1204,7 +1204,7 @@ mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keywor
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> rotation<span class="tsd-signature-symbol">?: </span><a href="../index.html#rotation" class="tsd-signature-type">Rotation</a></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> transition<span class="tsd-signature-symbol">?: </span><a href="../enums/sweep.transition.html" class="tsd-signature-type">Sweep.Transition</a></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> transition<span class="tsd-signature-symbol">?: </span><a href="sweep.html#transition-1" class="tsd-signature-type">Sweep.Transition</a></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> transition<wbr>Time<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
@@ -1340,6 +1340,66 @@ mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keywor
 								<h5>sequence<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 							</li>
 						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Enumerations</h2>
+				<section class="tsd-panel tsd-member tsd-kind-enum tsd-parent-kind-namespace">
+					<h3><a href="../enums/sweep.alignment.html">Alignment</a></h3>
+					<div style="border: none;" class="tsd-signature tsd-kind-icon">Enum<span class="tsd-signature-symbol">:</span>
+						<span class="tsd-signature-type">
+							<a href="../enums/sweep.alignment.html">Sweep.Alignment</a>
+						</span>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum tsd-parent-kind-namespace">
+					<h3><a href="../enums/sweep.placement.html">Placement</a></h3>
+					<div style="border: none;" class="tsd-signature tsd-kind-icon">Enum<span class="tsd-signature-symbol">:</span>
+						<span class="tsd-signature-type">
+							<a href="../enums/sweep.placement.html">Sweep.Placement</a>
+						</span>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum tsd-parent-kind-namespace">
+					<h3><a href="../enums/sweep.event.html">Event</a></h3>
+					<div style="border: none;" class="tsd-signature tsd-kind-icon">Enum<span class="tsd-signature-symbol">:</span>
+						<span class="tsd-signature-type">
+							<a href="../enums/sweep.event.html">Sweep.Event</a>
+						</span>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-namespace">
+					<a name="transition-1" class="tsd-anchor"></a>
+					<h3>Transition</h3>
+					<div class="tsd-signature tsd-kind-icon">Transition<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">typeof Transition</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<dl class="tsd-comment-tags tsd-typography">
+					</dl>
+					<dl class="tsd-comment-tags tsd-typography">
+						<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+						<dd>
+							<p>This enum is maintained for backward compatibility.</p>
+						</dd>
+						<dt class="tsd-comment-tags-see">see</dt>
+						<dd>
+							<p><a href="../enums/camera.transitiontype.html">Camera.TransitionType</a></p>
+						</dd>
+						<dt class="tsd-comment-tags-option">option</dt>
+						<dd>
+							<p>FLY - Smoothly interpolate the camera to the target position.</p>
+						</dd>
+						<dt class="tsd-comment-tags-option">option</dt>
+						<dd>
+							<p>FADEOUT - Fade out to black before moving the camera.</p>
+						</dd>
+						<dt class="tsd-comment-tags-option">option</dt>
+						<dd>
+							<p>INSTANT - Instantly move the camera to the target position.</p>
+						</dd>
+					</dl>
+					<div class="tsd-comment tsd-typography">
 					</div>
 				</section>
 			</section>
@@ -1575,7 +1635,7 @@ mpSdk.Camera.pose.subscribe(<span class="hljs-function"><span class="hljs-keywor
 								<pre><code>
 <span class="hljs-keyword">const</span> sweepId: <span class="hljs-keyword">string</span>; <span class="hljs-comment">// Acquired through a previous call to Sweep.data, Sweep.current, etc.</span>
 <span class="hljs-keyword">const</span> rotation = { x: <span class="hljs-number">30</span>, y: -<span class="hljs-number">45</span> };
-<span class="hljs-keyword">const</span> transition = mpSdk.Sweep.Transition.INSTANT;
+<span class="hljs-keyword">const</span> transition = mpSdk.Camera.Transition.INSTANT;
 <span class="hljs-keyword">const</span> transitionTime = <span class="hljs-number">2000</span>; <span class="hljs-comment">// in milliseconds</span>
 
 mpSdk.Sweep.moveTo(sweepId, {
@@ -1735,9 +1795,6 @@ mpSdk.Sweep.moveTo(sweepId, {
 					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
 						<a href="../enums/sweep.placement.html" class="tsd-kind-icon">Placement</a>
 					</li>
-					<li class=" tsd-kind-enum tsd-parent-kind-namespace">
-						<a href="../enums/sweep.transition.html" class="tsd-kind-icon">Transition</a>
-					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="sweep.html#emptysweepfloorinfo" class="tsd-kind-icon">Empty<wbr>Sweep<wbr>Floor<wbr>Info</a>
 					</li>
@@ -1752,6 +1809,9 @@ mpSdk.Sweep.moveTo(sweepId, {
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="sweep.html#sweepfloorinfo" class="tsd-kind-icon">Sweep<wbr>Floor<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-property tsd-parent-kind-namespace">
+						<a href="sweep.html#transition-1" class="tsd-kind-icon">Transition</a>
 					</li>
 					<li class=" tsd-kind-property tsd-parent-kind-namespace">
 						<a href="sweep.html#current" class="tsd-kind-icon">current</a>
@@ -1803,7 +1863,7 @@ mpSdk.Sweep.moveTo(sweepId, {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Dec 11, 2025
+ Site last generated: Dec 15, 2025
                 </div>
             </div>
 </footer>

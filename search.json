@@ -257,6 +257,17 @@
 
 
 {
+"title": "Enumeration: Camera.TransitionType",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docs/reference/current/enums/camera.transitiontype.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Capture Services APIs Overview",
 "tags": "",
 "keywords": "",
@@ -588,6 +599,10 @@
 
 
 
+
+
+
+
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -596,10 +611,6 @@
 "summary": ""
 }
 ,
-
-
-
-
 
 
 
@@ -824,17 +835,6 @@
 
 
 {
-"title": "Enumeration: Mattertag.Transition",
-"tags": "",
-"keywords": "",
-"url": "/showcase-sdk/docs/reference/current/enums/mattertag.transition.html",
-"summary": ""
-}
-,
-
-
-
-{
 "title": "Migrating from Mattertags to Tags",
 "tags": "",
 "keywords": "",
@@ -883,17 +883,6 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/docs/reference/current/enums/mode.mode-1.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Enumeration: Mode.TransitionType",
-"tags": "",
-"keywords": "",
-"url": "/showcase-sdk/docs/reference/current/enums/mode.transitiontype.html",
 "summary": ""
 }
 ,
@@ -2108,17 +2097,6 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/docs/reference/current/enums/sweep.placement.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Enumeration: Sweep.Transition",
-"tags": "",
-"keywords": "",
-"url": "/showcase-sdk/docs/reference/current/enums/sweep.transition.html",
 "summary": ""
 }
 ,
