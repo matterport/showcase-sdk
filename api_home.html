@@ -251,6 +251,13 @@
           
           
           
+          
+          
+          <li><a title="Capture Services API" href="/showcase-sdk/captureservicesapi_changelog.html">Capture Services API</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -798,27 +805,6 @@
           
           
           <li class="subfolders">
-              <a title="Capture Services API" href="#">Capture Services API</a>
-              <ul>
-                  
-                  
-                  
-                  <li><a title="Overview" href="/showcase-sdk/capture_services_api.html">Overview</a></li>
-                  
-                  
-                  
-                  
-                  
-                  <li><a title="Sample Queries" href="/showcase-sdk/capture_services_queries.html">Sample Queries</a></li>
-                  
-                  
-                  
-              </ul>
-          </li>
-          
-          
-          
-          <li class="subfolders">
               <a title="Property Intelligence" href="#">Property Intelligence</a>
               <ul>
                   
@@ -1050,7 +1036,7 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>Matterport’s APIs are provided with a GraphQL API interface.  GraphQL allows developers to make declarative queries to fetch the exact data needed using a single endpoint.  Compared to a REST API, which may require round-trip requests to many endpoints, GraphQL can get all of the data that your application needs with a single request.</p>
 
-<p>In addition to queries that fetch data, our APIs also provide mutations, which are requests to modify data.  A mutation may be used to update data related to a model or may trigger an action such as purchasing an add-on or scheduling a Capture Services job.</p>
+<p>In addition to queries that fetch data, our APIs also provide mutations, which are requests to modify data.  A mutation may be used to update data related to a model or may trigger an action such as purchasing an add-on or changes contents of a Mattertag.</p>
 
 <p><a href="https://graphql.org/learn/queries/" target="_blank">Learn more about constructing GraphQL queries and mutations</a>.</p>
 
@@ -1063,14 +1049,13 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>If you are logged into your Matterport Account with administrator access, you will be able to select each API that you have access to.</p>
 
-<p>Our Model API is available to users at all account levels.  Enterprise customers also have access to Account API.  We also provide access to the Capture Services API by request for customers that leverage our on-demand at an Enterprise level.</p>
+<p>Our Model API is available to users at all account levels.  Enterprise customers also have access to Account API.</p>
 
 <p>You can also explore the schema and perform queries with each API via GraphiQL, an online GraphQL client that we provide customers access to.</p>
 
 <ul>
   <li><a href="https://api.matterport.com/model/graphiql">Model API GraphiQL</a></li>
   <li><a href="https://api.matterport.com/account/graphiql">Account API GraphiQL</a></li>
-  <li><a href="https://api.matterport.com/capturesvcs/graphiql">Capture Services API GraphiQL</a></li>
 </ul>
 
 <p>You can also explore our APIs and build and test queries with popular GraphQL clients such as [Postman](https://www.postman.com/]{:target=”_blank”}, [Altair][https://altairgraphql.dev/]{:target=”_blank”} or <a href="https://insomnia.rest/" taget="_blank">Insomnia</a>.  These clients leverage the provided schema to provide query completion through introspection along with an interactive reference guide, similar to what you will find in the GraphiQL Console.  Certain clients will also generate ready-to-use code that you can use within your applications.</p>
@@ -1107,7 +1092,6 @@ noResultsText: '<li><div>No results found.<div></li>',
     <ul>
       <li><strong>Model API:</strong> https://api.matterport.com/api/models/graph</li>
       <li><strong>Account API:</strong> https://api.matterport.com/api/accounts/graph (Enterprise Only)</li>
-      <li><strong>Capture Services API</strong> https://api.matterport.com/api/capturesvcs/graph (Enterprise Only)</li>
     </ul>
   </li>
   <li>Use the Token ID as the username.</li>
@@ -1375,8 +1359,8 @@ def fromApiToSdk(x, y, z) = [ x, z, -y ]
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2025 Matterport, Inc. All rights reserved. <br />
- Site last generated: Dec 15, 2025
+               &copy;2026 Matterport, Inc. All rights reserved. <br />
+ Site last generated: Jan 21, 2026
                 </div>
             </div>
 </footer>
