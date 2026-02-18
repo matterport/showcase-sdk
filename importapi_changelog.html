@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>DAE Loader | Matterport Developers</title>
+<title>Import API Changelog | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -137,7 +137,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:MP-developer@costar.com?subject=Showcase SDK feedback&body=I have some feedback about the DAE Loader page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:MP-developer@costar.com?subject=Showcase SDK feedback&body=I have some feedback about the Import API Changelog page: ' + window.location.href;">Feedback</a>
           </div>
           <div class="dropdown">
             <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
@@ -253,7 +253,7 @@
           
           
           
-          <li><a title="Import API" href="/showcase-sdk/importapi_changelog.html">Import API</a></li>
+          <li class="active"><a title="Import API" href="/showcase-sdk/importapi_changelog.html">Import API</a></li>
           
           
           
@@ -370,7 +370,7 @@
                   
                   
                   
-                  <li class="active"><a title="DAE Loader" href="/showcase-sdk/sdkbundle_components_daeloader.html">DAE Loader</a></li>
+                  <li><a title="DAE Loader" href="/showcase-sdk/sdkbundle_components_daeloader.html">DAE Loader</a></li>
                   
                   
                   
@@ -1022,7 +1022,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="DAE Loader">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Import API Changelog">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -1037,7 +1037,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">DAE Loader</h1>
+   <h1 class="post-title-main">Import API Changelog</h1>
 </div>
 
 
@@ -1047,110 +1047,11 @@ noResultsText: '<li><div>No results found.<div></li>',
    
 
     
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-  
-});
-</script>
-
-<div id="toc"></div>
-
-    
 
 
     
 
-   <p><strong>Type</strong>: mp.daeLoader</p>
-
-<p><strong>Inputs</strong></p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Property</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><strong>url</strong>: string<br /><em>default</em> <code class="language-plaintext highlighter-rouge">""</code></td>
-      <td>The url to the dae file.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>visible</strong>: boolean<br /><em>default</em> <code class="language-plaintext highlighter-rouge">true</code></td>
-      <td>If true, the model is visible.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>localPosition</strong>: { x: number, y: number, z: number } <br /> <em>default</em> <code class="language-plaintext highlighter-rouge">{ x: 0, y: 0, z: 0 }</code></td>
-      <td>The local offset of the model.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>localRotation</strong>: { x: number, y: number, z: number } <br /> <em>default</em> <code class="language-plaintext highlighter-rouge">{ x: 0, y: 0, z: 0 }</code></td>
-      <td>The local rotation of model in euler angles.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>localScale</strong>: { x: number, y: number, z: number } <br /> <em>default</em> <code class="language-plaintext highlighter-rouge">{ x: 1, y: 1, z: 1 }</code></td>
-      <td>The local scale of the model.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>colliderEnabled</strong>: boolean <br /> <em>default</em> <code class="language-plaintext highlighter-rouge">true</code></td>
-      <td>When set, the collider output is set to the loaded model.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Outputs</strong></p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Property</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><strong>loadingState</strong>: string<br /><em>default</em> <code class="language-plaintext highlighter-rouge">"Idle"</code></td>
-      <td><code class="language-plaintext highlighter-rouge">"Idle"</code> - initialized no url is set <br /> <code class="language-plaintext highlighter-rouge">"Loading"</code> - url set, loading the model <br /> <code class="language-plaintext highlighter-rouge">"Loaded"</code> - model has been loaded <br /> <code class="language-plaintext highlighter-rouge">"Error"</code> - there was an error during loading</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>objectRoot</strong>: Object3D<br /><em>default</em> <code class="language-plaintext highlighter-rouge">null</code></td>
-      <td><code class="language-plaintext highlighter-rouge">null</code>- no model loaded <br /> <code class="language-plaintext highlighter-rouge">{Object3D}</code> - the root of the loaded model.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>collider</strong>: Object3D<br /><em>default</em> <code class="language-plaintext highlighter-rouge">{objectRoot}</code></td>
-      <td><code class="language-plaintext highlighter-rouge">null</code>- no collider events if colliderEnabled is set to false <br /> <code class="language-plaintext highlighter-rouge">{objectRoot}</code> - Raycasting will be performed against the loaded model.</td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nf">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addNode</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">initial</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">http://test.com/model.dae</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">visible</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="na">localScale</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">x</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="na">z</span><span class="p">:</span> <span class="mf">0.5</span>
-  <span class="p">},</span>
-<span class="p">};</span>
-
-<span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.daeLoader</span><span class="dl">'</span><span class="p">,</span> <span class="nx">initial</span><span class="p">);</span>
-<span class="nx">node</span><span class="p">.</span><span class="nf">start</span><span class="p">();</span>
-</code></pre></div></div>
+   
 
 
     <div class="tags">

@@ -251,6 +251,13 @@
           
           
           
+          
+          
+          <li><a title="Import API" href="/showcase-sdk/importapi_changelog.html">Import API</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -798,6 +805,33 @@
           
           
           <li class="subfolders">
+              <a title="Import API" href="#">Import API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Overview" href="/showcase-sdk/importapi_overview.html">Overview</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Guide" href="/showcase-sdk/importapi_guide.html">Guide</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Code Examples" href="/showcase-sdk/importapi_code_examples.html">Code Examples</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
               <a title="Property Intelligence" href="#">Property Intelligence</a>
               <ul>
                   
@@ -1042,13 +1076,14 @@ noResultsText: '<li><div>No results found.<div></li>',
 
 <p>If you are logged into your Matterport Account with administrator access, you will be able to select each API that you have access to.</p>
 
-<p>Our Model API is available to users at all account levels.  Enterprise customers also have access to Account API.</p>
+<p>Our Model API is available to users at all account levels.  Enterprise customers also have access to Account API and Import API (Beta).</p>
 
 <p>You can also explore the schema and perform queries with each API via GraphiQL, an online GraphQL client that we provide customers access to.</p>
 
 <ul>
   <li><a href="https://api.matterport.com/model/graphiql">Model API GraphiQL</a></li>
   <li><a href="https://api.matterport.com/account/graphiql">Account API GraphiQL</a></li>
+  <li><a href="https://api.matterport.com/import/graphiql">Import API GraphiQL</a></li>
 </ul>
 
 <p>You can also explore our APIs and build and test queries with popular GraphQL clients such as <a href="https://www.postman.com/" target="_blank">Postman</a>, <a href="https://altairgraphql.dev/" target="_blank">Altair</a> or <a href="https://insomnia.rest/" target="_blank">Insomnia</a>.  These clients leverage the provided schema to provide query completion through introspection along with an interactive reference guide, similar to what you will find in the GraphiQL Console.  Certain clients will also generate ready-to-use code that you can use within your applications.</p>
@@ -1085,6 +1120,7 @@ noResultsText: '<li><div>No results found.<div></li>',
     <ul>
       <li><strong>Model API:</strong> https://api.matterport.com/api/models/graph</li>
       <li><strong>Account API:</strong> https://api.matterport.com/api/accounts/graph (Enterprise Only)</li>
+      <li><strong>Import API:</strong> https://api.matterport.com/api/import/graph (Enterprise Only, Beta)</li>
     </ul>
   </li>
   <li>Use the Token ID as the username.</li>
@@ -1157,11 +1193,15 @@ noResultsText: '<li><div>No results found.<div></li>',
 
   <p><strong>Model API</strong> Search, read, and change model data, including model details like the name and address of the space, sharing URLs, images, videos, position data, the OBJ mesh file, the point cloud file, panoramic imagery, position points, and Tags.</p>
 
-  <p><strong>Account API</strong> (available only with Enterprise subscription tiers) - These commands include managing users, inviting, updating permissions, and managing SDK keys.</p>
+  <p><strong>Account API</strong> (Enterprise Only) - These commands include managing users, inviting, updating permissions, and managing SDK keys.</p>
+
+  <p><strong>Import API</strong> (Enterprise Only, Beta) - Import and programmatically process open file formats like E57 to create Matterport models.</p>
 
   <p>Matterport also offers Enterprise-only extensions to these APIs:</p>
 
   <p><strong>Folders API</strong> - An extension to both Model and Account APIs that provides the ability to manage folders, move models between folders and query models by folders.</p>
+
+  <p><strong>GeoCoords API</strong> - An extension to Model API that provides the ability to extract and modify geographic coordinates (latitude, longitude, and altitude) for Matterport models.</p>
 
   <p><strong>Webhooks</strong> - An extension to Model API. Add callback events that send information to your platform when changes are made within your account including when models are uploaded, processed, edited or removed.</p>
 
@@ -1353,7 +1393,7 @@ def fromApiToSdk(x, y, z) = [ x, z, -y ]
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2026 Matterport, Inc. All rights reserved. <br />
- Site last generated: Feb 14, 2026
+ Site last generated: Feb 18, 2026
                 </div>
             </div>
 </footer>

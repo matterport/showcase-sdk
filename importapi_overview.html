@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>DAE Loader | Matterport Developers</title>
+<title>Import API Overview | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -137,7 +137,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:MP-developer@costar.com?subject=Showcase SDK feedback&body=I have some feedback about the DAE Loader page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:MP-developer@costar.com?subject=Showcase SDK feedback&body=I have some feedback about the Import API Overview page: ' + window.location.href;">Feedback</a>
           </div>
           <div class="dropdown">
             <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
@@ -370,7 +370,7 @@
                   
                   
                   
-                  <li class="active"><a title="DAE Loader" href="/showcase-sdk/sdkbundle_components_daeloader.html">DAE Loader</a></li>
+                  <li><a title="DAE Loader" href="/showcase-sdk/sdkbundle_components_daeloader.html">DAE Loader</a></li>
                   
                   
                   
@@ -810,7 +810,7 @@
                   
                   
                   
-                  <li><a title="Overview" href="/showcase-sdk/importapi_overview.html">Overview</a></li>
+                  <li class="active"><a title="Overview" href="/showcase-sdk/importapi_overview.html">Overview</a></li>
                   
                   
                   
@@ -1022,7 +1022,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="DAE Loader">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Import API Overview">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -1037,7 +1037,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">DAE Loader</h1>
+   <h1 class="post-title-main">Import API Overview</h1>
 </div>
 
 
@@ -1047,110 +1047,76 @@ noResultsText: '<li><div>No results found.<div></li>',
    
 
     
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-  
-});
-</script>
-
-<div id="toc"></div>
-
-    
 
 
     
 
-   <p><strong>Type</strong>: mp.daeLoader</p>
+   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Import API is only available for Enterprise-level Matterport Subscriptions and is currently in beta at this time.</div>
 
-<p><strong>Inputs</strong></p>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For a walkthrough of importing E57 files through the Matterport Cloud interface, see the <a href="https://support.matterport.com/s/article/Import-E57-Files" target="_blank">Import E57 Files</a> support article.</div>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Property</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><strong>url</strong>: string<br /><em>default</em> <code class="language-plaintext highlighter-rouge">""</code></td>
-      <td>The url to the dae file.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>visible</strong>: boolean<br /><em>default</em> <code class="language-plaintext highlighter-rouge">true</code></td>
-      <td>If true, the model is visible.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>localPosition</strong>: { x: number, y: number, z: number } <br /> <em>default</em> <code class="language-plaintext highlighter-rouge">{ x: 0, y: 0, z: 0 }</code></td>
-      <td>The local offset of the model.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>localRotation</strong>: { x: number, y: number, z: number } <br /> <em>default</em> <code class="language-plaintext highlighter-rouge">{ x: 0, y: 0, z: 0 }</code></td>
-      <td>The local rotation of model in euler angles.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>localScale</strong>: { x: number, y: number, z: number } <br /> <em>default</em> <code class="language-plaintext highlighter-rouge">{ x: 1, y: 1, z: 1 }</code></td>
-      <td>The local scale of the model.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>colliderEnabled</strong>: boolean <br /> <em>default</em> <code class="language-plaintext highlighter-rouge">true</code></td>
-      <td>When set, the collider output is set to the loaded model.</td>
-    </tr>
-  </tbody>
-</table>
+<h2 id="introduction">Introduction</h2>
 
-<p><strong>Outputs</strong></p>
+<p>The Matterport Import API enables developers to programmatically create Matterport models from open file formats such as E57 (point cloud data). This API is designed for organizations that need to automate model creation workflows and integrate Matterport model generation into their existing pipelines.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Property</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><strong>loadingState</strong>: string<br /><em>default</em> <code class="language-plaintext highlighter-rouge">"Idle"</code></td>
-      <td><code class="language-plaintext highlighter-rouge">"Idle"</code> - initialized no url is set <br /> <code class="language-plaintext highlighter-rouge">"Loading"</code> - url set, loading the model <br /> <code class="language-plaintext highlighter-rouge">"Loaded"</code> - model has been loaded <br /> <code class="language-plaintext highlighter-rouge">"Error"</code> - there was an error during loading</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>objectRoot</strong>: Object3D<br /><em>default</em> <code class="language-plaintext highlighter-rouge">null</code></td>
-      <td><code class="language-plaintext highlighter-rouge">null</code>- no model loaded <br /> <code class="language-plaintext highlighter-rouge">{Object3D}</code> - the root of the loaded model.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>collider</strong>: Object3D<br /><em>default</em> <code class="language-plaintext highlighter-rouge">{objectRoot}</code></td>
-      <td><code class="language-plaintext highlighter-rouge">null</code>- no collider events if colliderEnabled is set to false <br /> <code class="language-plaintext highlighter-rouge">{objectRoot}</code> - Raycasting will be performed against the loaded model.</td>
-    </tr>
-  </tbody>
-</table>
+<h2 id="key-features">Key Features</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="p">[</span> <span class="nx">sceneObject</span> <span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nf">createObjects</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">sceneObject</span><span class="p">.</span><span class="nf">addNode</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">initial</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">http://test.com/model.dae</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">visible</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="na">localScale</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">x</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="na">z</span><span class="p">:</span> <span class="mf">0.5</span>
-  <span class="p">},</span>
-<span class="p">};</span>
+<ul>
+  <li><strong>Automated Model Creation</strong> - Create Matterport models programmatically from E57 files without manual upload steps</li>
+  <li><strong>Multi-file Processing</strong> - Combine multiple E57 files into a single Matterport model within one import session</li>
+  <li><strong>Enterprise Integration</strong> - Integrate model creation directly into your workflows and applications</li>
+  <li><strong>Scalable File Handling</strong> - Support for large file uploads with multipart upload capability</li>
+</ul>
 
-<span class="nx">node</span><span class="p">.</span><span class="nf">addComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">mp.daeLoader</span><span class="dl">'</span><span class="p">,</span> <span class="nx">initial</span><span class="p">);</span>
-<span class="nx">node</span><span class="p">.</span><span class="nf">start</span><span class="p">();</span>
-</code></pre></div></div>
+<h2 id="supported-file-formats">Supported File Formats</h2>
+
+<ul>
+  <li><strong>E57</strong> - Structured point cloud data files. Learn how to check for <a href="https://support.matterport.com/s/article/Structured-and-Unstructured-Point-Clouds" target="_blank">Structured vs Unstructured here</a>.</li>
+</ul>
+
+<h2 id="access-requirements">Access Requirements</h2>
+
+<p>The Import API is available exclusive to Matterport Enterprise plans. You must have:</p>
+
+<ul>
+  <li>An active Matterport Enterprise account</li>
+  <li>Developer Tools License</li>
+  <li>API credentials (Token ID and Token Secret) generated through <a href="https://my.matterport.com/settings/account/devtools" target="_blank">your Matterport Cloud account</a></li>
+</ul>
+
+<p>For more information about Matterport Enterprise Subscription and Developer Tools, reach out to your Sales Executive.</p>
+
+<h2 id="graphql-endpoint">GraphQL Endpoint</h2>
+
+<div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 16px 20px; border-radius: 6px; border-left: 4px solid #0066cc; display: flex; justify-content: space-between; align-items: center; font-family: 'Monaco', 'Courier New', monospace;">
+  <code style="color: #333; font-size: 14px; margin: 0;">https://api.matterport.com/api/import/graph</code>
+  <button onclick="navigator.clipboard.writeText('https://api.matterport.com/api/import/graph'); this.textContent='✓ Copied!'; this.style.backgroundColor='#28a745'; setTimeout(() =&gt; { this.textContent='Copy'; this.style.backgroundColor='#0066cc'; }, 2000);" style="padding: 8px 16px; cursor: pointer; background-color: #0066cc; color: white; border: none; border-radius: 4px; font-weight: 600; font-size: 13px; transition: background-color 0.2s; white-space: nowrap; margin-left: 12px;">Copy</button>
+</div>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>The Import API workflow consists of seven steps. This structured approach ensures reliable file handling and maintains data integrity.</p>
+
+<ol>
+  <li><strong>Create an import session</strong> - Initialize a new import process with a unique session ID</li>
+  <li><strong>Add E57 objects</strong> - Add the E57 file(s) you want to import</li>
+  <li><strong>Begin upload</strong> - Notify the API that you’re ready to upload the file</li>
+  <li><strong>Request part uploads</strong> - Get pre-signed URLs for multipart file uploads</li>
+  <li><strong>Upload file</strong> - Transfer your E57 file to cloud storage using the provided URLs</li>
+  <li><strong>Complete upload</strong> - Confirm that all file parts have been successfully uploaded</li>
+  <li><strong>Commit import session</strong> - Finalize the import and begin model creation</li>
+</ol>
+
+<p>For detailed step-by-step instructions with code examples, see <a href="https://matterport.github.io/showcase-sdk//importapi_guide.html">Import API Guide</a>.</p>
+
+<h2 id="code-examples">Code Examples</h2>
+
+<p>Ready to get started? Check out practical code examples in <a href="https://matterport.github.io/showcase-sdk//importapi_code_examples.html">Node.js, Python, and cURL</a> to accelerate your development.</p>
+
+<h2 id="schema-reference">Schema Reference</h2>
+
+<p>For a complete reference of all available mutations and queries, see the <a href="https://api.matterport.com/docs/reference" target="_blank">API Schema Reference</a>.</p>
+
 
 
     <div class="tags">

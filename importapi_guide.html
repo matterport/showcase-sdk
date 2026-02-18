@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Import API Guide | Matterport Developers</title>
+<link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/showcase-sdk/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="/showcase-sdk/css/customstyles.css">
+<link rel="stylesheet" href="/showcase-sdk/css/custom.css">
+<link rel="stylesheet" href="/showcase-sdk/css/tags2.css">
+
+<link rel="stylesheet" href="/showcase-sdk/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/showcase-sdk/css/theme-matterport.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/showcase-sdk/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/showcase-sdk/js/toc.js"></script>
+<script src="/showcase-sdk/js/customscripts.js"></script>
+<script src="/showcase-sdk/js/mermaid.min.js"></script>
+
+<link rel="icon" type="image/png" href="/showcase-sdk/images/favicons/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/showcase-sdk/images/favicons/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href="/showcase-sdk/images/favicons/favicon.svg?dark" media="(prefers-color-scheme: dark)" />
+<link rel="shortcut icon" href="/showcase-sdk/images/favicons/favicon.ico" sizes="32x32" />
+<link rel="apple-touch-icon" sizes="180x180" href="/showcase-sdk/images/favicons/apple-touch-icon.png" />
+<link rel="manifest" href="/showcase-sdk/images/favicons/favicon.webmanifest"/>
+<meta name="msapplication-TileColor" content="#ff3158" />
+<meta name="theme-color" content="#ffffff" />
+
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="https://matterport.github.iofeed.xml">
+
+    <script>
+      $(document).ready(function () {
+        // Initialize navgoco with default options
+        $("#mysidebar").navgoco({
+          caretHtml: '<i class="fa fa-chevron-down"></i>',
+          accordion: true,
+          openClass: "active", // open
+
+          save: false, // leave false or nav highlighting doesn't work right
+          cookie: {
+            name: "navgoco",
+            expires: false,
+            path: "/",
+          },
+          slide: {
+            duration: 400,
+            easing: "swing",
+          },
+        });
+
+        $("#collapseAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", false);
+        });
+
+        $("#expandAll").click(function (e) {
+          e.preventDefault();
+          $("#mysidebar").navgoco("toggle", true);
+        });
+      });
+    </script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#tg-sb-link").change(function () {
+          $("#tg-sb-sidebar").toggle();
+          $("#tg-sb-content").toggleClass("col-md-9");
+          $("#tg-sb-content").toggleClass("col-md-12");
+        });
+      });
+    </script>
+     
+  </head>
+  <body>
+    <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div>
+    <div class="row">
+      <a class="navbrand col-md-3" href="https://matterport.github.io/showcase-sdk/"
+        ><img
+          class="navbar-image"
+          src="/showcase-sdk/images/Matterport-Logo-White.svg"
+        /><span class="projectTitle"> </span></a
+      >
+      <div class="dev-nav-links col-md-6">
+        <div class="dropdown-items">
+          <div class="dropdown ">
+            <a class="dropbtn active" href="index.html">SDK Docs</a>
+            <div class="dropdown-content">
+              <a href="https://matterport.github.io/showcase-sdk/sdk_home.html" class="">SDK for Embeds</a>
+              <a href="https://matterport.github.io/showcase-sdk/sdkbundle_home.html" class="" href="#">SDK Bundle</a>
+              <a href="https://matterport.github.io/showcase-sdk/earlyaccess_home.html" class="" href="#">SDK Early Access</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="api_home.html">API Docs</a>
+            <div class="dropdown-content">
+              <a href="https://matterport.github.io/showcase-sdk/api_home.html">API Overview</a>
+              <a href="https://api.matterport.com/docs/reference" target="_blank">API Reference</a>
+              <a href="https://api.matterport.com/model/graphiql" target="_blank">Interactive Console</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:MP-developer@costar.com?subject=Showcase SDK feedback&body=I have some feedback about the Import API Guide page: ' + window.location.href;">Feedback</a>
+          </div>
+          <div class="dropdown">
+            <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
+              Subscribe
+              <sup class="subscribe-sup" style="font-size: 10px; color: #ff3158">New</sup>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="right-content col-md-3">
+        <div class="dev-input-container">
+          <!-- Add roboto font to search bar -->
+          <img src="/showcase-sdk/images/search_button.png" />
+          <input id="search-input" type="text" placeholder="Search"/>
+          <div id="results-container"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</nav>
+ 
+    <!-- Page Content -->
+    <div class="dev-page-wrapper">
+      <div id="main">
+        <!-- Content Row -->
+        <div class="row">
+          <!-- Sidebar Column -->
+          
+          <aside class="col-md-3" id="tg-sb-sidebar">
+            
+<div id="mysidebar" class="nav">
+  
+  
+  
+
+  <li>
+      <a title="Overview" href="#">Overview</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/index.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Vocabulary" href="/showcase-sdk/sdk_vocabulary.html">Vocabulary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Concepts" href="/showcase-sdk/sdk_concepts.html">Concepts</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Docs Summary" href="/showcase-sdk/sdk_reference_summary.html">Reference Docs Summary</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Documentation" href="/showcase-sdk/docs\reference\current\index.html">Reference Documentation</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Change Log" href="#">Change Log</a>
+      <ul>
+          
+          
+          
+          <li><a title="SDK" href="/showcase-sdk/sdk_changelog.html">SDK</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SDK Deprecation" href="/showcase-sdk/sdk_deprecation.html">SDK Deprecation</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Model API" href="/showcase-sdk/modelapi_changelog.html">Model API</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Account API" href="/showcase-sdk/accountapi_changelog.html">Account API</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Import API" href="/showcase-sdk/importapi_changelog.html">Import API</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK for Embeds" href="#">SDK for Embeds</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdk_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdk_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Typescript Declarations" href="/showcase-sdk/sdk_types.html">Typescript Declarations</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Bundle" href="#">SDK Bundle</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdkbundle_home.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Quick Start" href="/showcase-sdk/sdkbundle_quickstart.html">HTML Quick Start</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setting up Embed.ly" href="/showcase-sdk/sdkbundle_tutorials_setting_up_embedly.html">Setting up Embed.ly</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Setup a Local Environment" href="/showcase-sdk/sdkbundle_tutorials_setup.html">Setup a Local Environment</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Architecture" href="/showcase-sdk/sdkbundle_architecture.html">Architecture</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Components" href="#">Components</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Ambient Light" href="/showcase-sdk/sdkbundle_components_ambientlight.html">Ambient Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Directional Light" href="/showcase-sdk/sdkbundle_components_directionallight.html">Directional Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Point Light" href="/showcase-sdk/sdkbundle_components_pointlight.html">Point Light</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="GLTF Loader" href="/showcase-sdk/sdkbundle_components_gltfloader.html">GLTF Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="DAE Loader" href="/showcase-sdk/sdkbundle_components_daeloader.html">DAE Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="FBX Loader" href="/showcase-sdk/sdkbundle_components_fbxloader.html">FBX Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="OBJ Loader" href="/showcase-sdk/sdkbundle_components_objloader.html">OBJ Loader</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transform Controls" href="/showcase-sdk/sdkbundle_components_transformcontrols.html">Transform Controls</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Input" href="/showcase-sdk/sdkbundle_components_input.html">Input</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Camera" href="/showcase-sdk/sdkbundle_components_camera.html">Camera</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="XR" href="/showcase-sdk/sdkbundle_components_xr.html">XR</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Web Component (Beta)" href="#">Web Component (Beta)</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/sdkbundle_webcomponent.html">Home</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tutorial" href="/showcase-sdk/sdkbundle_webcomponent_tutorial.html">Tutorial</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Advanced" href="/showcase-sdk/sdkbundle_webcomponent_advanced.html">Advanced</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Migration from Bundle" href="/showcase-sdk/sdkbundle_webcomponent_migration.html">Migration from Bundle</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Early Access" href="#">SDK Early Access</a>
+      <ul>
+          
+          
+          
+          <li><a title="Home" href="/showcase-sdk/earlyaccess_home.html">Home</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Tutorials" href="#">SDK Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="SDK Embed Package" href="/showcase-sdk/sdk_tutorials_package.html">SDK Embed Package</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Observables" href="/showcase-sdk/sdk_tutorials_observables.html">Using Observables</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Collections" href="/showcase-sdk/sdk_tutorials_collections.html">Using Collections</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Using the Scene Namespace" href="#">Using the Scene Namespace</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Intro and Basic Components" href="/showcase-sdk/sdk_scene_intro.html">Intro and Basic Components</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Connecting Components" href="/showcase-sdk/sdk_connecting_components.html">Connecting Components</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Creating Tags" href="/showcase-sdk/sdk_creating_mattertags.html">Creating Tags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Editing Tags" href="/showcase-sdk/sdk_editing_mattertags.html">Editing Tags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags 2.0 Migration" href="/showcase-sdk/sdk_tutorials_mattertagtotag.html">Tags 2.0 Migration</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Code Sandboxes" href="/showcase-sdk/sdk_tutorials_htmlsandbox.html">Tags Code Sandboxes</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pathfinding" href="/showcase-sdk/sdk_tutorials_pathfinding.html">Pathfinding</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pointer Reticle" href="/showcase-sdk/sdk_tutorials_cursor.html">Pointer Reticle</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Working with Models" href="/showcase-sdk/sdkbundle_tutorials_models.html">Working with Models</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using xr" href="/showcase-sdk/sdkbundle_tutorials_using_xr.html">Using xr</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Scene Objects" href="/showcase-sdk/sdkbundle_tutorials_using_scene_objects.html">Using Scene Objects</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="SDK Examples" href="#">SDK Examples</a>
+      <ul>
+          
+          
+          
+          <li><a title="Navigation Controls" href="/showcase-sdk/sdk_navigation_controls.html">Navigation Controls</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Intersection Inspector" href="/showcase-sdk/sdk_intersection_inspector.html">Intersection Inspector</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz" href="/showcase-sdk/sdk_tags_quiz.html">Tags Quiz</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags Quiz - Overlay" href="/showcase-sdk/sdk_tags_quiz_overlay.html">Tags Quiz - Overlay</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Kitchen Sink" href="/showcase-sdk/sdk_kitchen_sink.html">Kitchen Sink</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Remote Control" href="/showcase-sdk/sdk_remote_control.html">Remote Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Source Areas" href="/showcase-sdk/sdk_sensors_source_areas.html">Sensors - Source Areas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Tags Level of Detail" href="/showcase-sdk/sdk_sensors_tags_level_of_detail.html">Sensors - Tags Level of Detail</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sensors - Sweep Control" href="/showcase-sdk/sdk_sensors_sweep_control.html">Sensors - Sweep Control</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Virtual Staging" href="/showcase-sdk/sdkbundle_virtual_staging.html">Virtual Staging</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Local Webcam" href="/showcase-sdk/sdkbundle_local_webcam.html">Local Webcam</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="HTML Livestream" href="/showcase-sdk/sdkbundle_html_livestream.html">HTML Livestream</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="IoT Canvas" href="/showcase-sdk/sdkbundle_iot_canvas.html">IoT Canvas</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Custom Experience" href="/showcase-sdk/sdkbundle_custom_experience.html">Custom Experience</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Security Camera FOV" href="/showcase-sdk/sdkbundle_security_camera.html">Security Camera FOV</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Content Attribution" href="/showcase-sdk/sdkbundle_content_attribution.html">Content Attribution</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Matterport APIs" href="#">Matterport APIs</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/api_home.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Reference Docs" href="https://api.matterport.com/model/docs/reference" target="_blank" rel="noopener">Reference Docs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Interactive Console" href="https://api.matterport.com/model/graphiql" target="_blank" rel="noopener">Interactive Console</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Model API" href="#">Model API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Models Queries" href="/showcase-sdk/modelapi_models_ref.html">Models Queries</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Sample Queries" href="/showcase-sdk/modelapi_snippets.html">Sample Queries</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Ordering Add-Ons" href="/showcase-sdk/modelapi_ordering_addons.html">Ordering Add-Ons</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="GeoCoordinates" href="/showcase-sdk/modelapi_geocoordinates.html">GeoCoordinates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Views and Layers" href="/showcase-sdk/modelapi_views_and_layers.html">Views and Layers</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Tags Icon Reference" href="/showcase-sdk/tags_icons_reference.html">Tags Icon Reference</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Postman Collection" href="/showcase-sdk/modelapi_postman.html">Postman Collection</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Account API" href="#">Account API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Sample Queries" href="/showcase-sdk/accountapi_snippets.html">Sample Queries</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Import API" href="#">Import API</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Overview" href="/showcase-sdk/importapi_overview.html">Overview</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="active"><a title="Guide" href="/showcase-sdk/importapi_guide.html">Guide</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Code Examples" href="/showcase-sdk/importapi_code_examples.html">Code Examples</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Property Intelligence" href="#">Property Intelligence</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Overview" href="/showcase-sdk/modelapi_property_intelligence.html">Overview</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Dimension Estimates" href="/showcase-sdk/modelapi_pi_dimension_estimates.html">Dimension Estimates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Room Names" href="/showcase-sdk/modelapi_pi_room_names.html">Room Names</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Vector Data" href="/showcase-sdk/modelapi_pi_vector_data.html">Vector Data</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Mutations" href="/showcase-sdk/modelapi_pi_mutations.html">Mutations</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Custom Roles" href="#">Custom Roles</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Overview and Examples" href="/showcase-sdk/custom_roles_overview.html">Overview and Examples</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="OAuth" href="#">OAuth</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/oauth_home.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Implementation" href="/showcase-sdk/oauth_implementation.html">Implementation</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Model Selector" href="/showcase-sdk/oauth_model_selector.html">Model Selector</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Use Case - Model API" href="/showcase-sdk/oauth_model_api.html">Use Case - Model API</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Use Case - Private Models" href="/showcase-sdk/oauth_sdk_private_model.html">Use Case - Private Models</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OAuth Sample Application" href="/showcase-sdk/sdkbundle_tutorials_using_oauth.html">OAuth Sample Application</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Private Model Embed" href="#">Private Model Embed</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/showcase-sdk/oauth_private_model_embed.html">Overview</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Webhooks" href="#">Webhooks</a>
+      <ul>
+          
+          
+          
+          <li><a title="Webhooks v2" href="/showcase-sdk/webhooks_home.html">Webhooks v2</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Webhooks v1 (Deprecated)" href="/showcase-sdk/webhooks_v1.html">Webhooks v1 (Deprecated)</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  <li>
+      <a title="Learn More" href="#">Learn More</a>
+      <ul>
+          
+          
+          
+          <li><a title="Developer Tools Overview" href="https://support.matterport.com/s/article/API-SDK-Developer-Tools-Overview" target="_blank" rel="noopener">Developer Tools Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Pricing and Availability" href="https://support.matterport.com/s/article/Developer-Tools-Pricing-and-Availability" target="_blank" rel="noopener">Pricing and Availability</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</div>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+<script src="/showcase-sdk/js/jekyll-search.js" type="text/javascript"></script>
+<script type="text/javascript">
+        SimpleJekyllSearch.init({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            dataSource: '/showcase-sdk/search.json',
+            searchResultTemplate: '<li><a href="{url}" title="Import API Guide">{title}</a></li>',
+noResultsText: '<li><div>No results found.<div></li>',
+        limit: 10,
+        fuzzy: true,
+})
+</script>
+
+          </aside>
+           
+          <!-- Content Column -->
+          <div
+            class=" col-md-9" 
+            id="tg-sb-content"
+          >
+            <div class="post-header">
+   <h1 class="post-title-main">Import API Guide</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+
+
+    
+
+   <p>This guide walks through the Import API workflow to create a Matterport model from an E57 file. Each step includes code examples, variables, and sample responses.0</p>
+
+<p><strong>Try it first in GraphiQL or Postman:</strong> You can run each step interactively in the Matterport GraphiQL explorer at <a href="https://api.matterport.com/import/graphiql">Import API GraphiQL</a> before automating, or use <a href="https://www.postman.com">Postman</a> to send the same mutations and queries.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+  <li>Matterport API credentials (Token ID and Token Secret)</li>
+  <li>An E57 file ready for import</li>
+  <li>Enterprise account with Developer Tools license enabled</li>
+</ul>
+
+<h2 id="step-1-create-import-session">Step 1: Create Import Session</h2>
+
+<p>Initialize a new import session that will contain your file and track the import progress.</p>
+
+<details>
+  <summary>addImportSession Mutation</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">addImportSession</span><span class="p">(</span><span class="w">
+  </span><span class="nv">$organizationId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!</span><span class="w">
+  </span><span class="nv">$processType</span><span class="p">:</span><span class="w"> </span><span class="n">ProcessType</span><span class="p">!</span><span class="w">
+  </span><span class="nv">$name</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="w">
+  </span><span class="nv">$description</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="w">
+</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">addImportSession</span><span class="p">(</span><span class="w">
+    </span><span class="n">organizationId</span><span class="p">:</span><span class="w"> </span><span class="nv">$organizationId</span><span class="w">
+    </span><span class="n">processType</span><span class="p">:</span><span class="w"> </span><span class="nv">$processType</span><span class="w">
+    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="nv">$name</span><span class="w">
+    </span><span class="n">description</span><span class="p">:</span><span class="w"> </span><span class="nv">$description</span><span class="w">
+  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">organizationId</span><span class="w">
+    </span><span class="n">created</span><span class="w">
+    </span><span class="n">modified</span><span class="w">
+    </span><span class="n">processType</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">description</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Sample Variables:</strong></p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"organizationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P79zdxVGgWq"</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"processType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E57"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Import API Demo"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Import API Demo description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Sample Response:</strong></p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"addImportSession"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0cumin458wkndg4qke309xmm"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"organizationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P79zdxVGgWq"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-02-15T23:34:22Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-02-15T23:34:22Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"processType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E57"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Import API Demo"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Import API Demo description"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Parameters:</strong></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>organizationId</td>
+        <td>Yes</td>
+        <td>Organization where the model will be created.</td>
+      </tr>
+      <tr>
+        <td>processType</td>
+        <td>Yes</td>
+        <td>File format being imported; currently supports <code class="language-plaintext highlighter-rouge">E57</code>.</td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>No</td>
+        <td>Model name for the import session/model.</td>
+      </tr>
+      <tr>
+        <td>description</td>
+        <td>No</td>
+        <td>Model description for the import session/model.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <ul>
+    <li>Full session metadata, including the session <code class="language-plaintext highlighter-rouge">id</code> used in later steps.</li>
+  </ul>
+
+</details>
+
+<hr />
+
+<h2 id="step-2-add-e57-object">Step 2: Add E57 Object</h2>
+
+<p>Add the E57 file to the import session.</p>
+
+<details>
+  <summary>addE57Object Mutation</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">AddE57Object</span><span class="p">(</span><span class="nv">$importSessionId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$e57</span><span class="p">:</span><span class="w"> </span><span class="n">E57ObjectInput</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">addE57Object</span><span class="p">(</span><span class="n">importSessionId</span><span class="p">:</span><span class="w"> </span><span class="nv">$importSessionId</span><span class="p">,</span><span class="w"> </span><span class="n">e57</span><span class="p">:</span><span class="w"> </span><span class="nv">$e57</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">clientId</span><span class="w">
+    </span><span class="n">files</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">clientId</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+      </span><span class="n">type</span><span class="w">
+      </span><span class="n">size</span><span class="w">
+      </span><span class="n">uploadStatus</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Sample Variables:</strong></p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"importSessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0cumin458wkndg4qke309xmm"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"e57"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e57"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"file"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"clientId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"file1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SampleDemo.e57"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/octet-stream"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">2090321920</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Sample Response:</strong></p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"addE57Object"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iwnrt72hznzpd6cznsci95quc"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clientId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e57"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0waw9rsctf42u329if6zcr4da"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"clientId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"file1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SampleDemo.e57"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/octet-stream"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">2090321920</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"uploadStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PENDING"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Parameters:</strong></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>importSessionId</td>
+        <td>Yes</td>
+        <td>Import Session ID from Step 1.</td>
+      </tr>
+      <tr>
+        <td>e57.id</td>
+        <td>Yes</td>
+        <td>Identifier for the E57 object.</td>
+      </tr>
+      <tr>
+        <td>e57.file.clientId</td>
+        <td>Yes</td>
+        <td>Client-side identifier for the file.</td>
+      </tr>
+      <tr>
+        <td>e57.file.name</td>
+        <td>Yes</td>
+        <td>Name of the E57 file.</td>
+      </tr>
+      <tr>
+        <td>e57.file.type</td>
+        <td>Yes</td>
+        <td>MIME type.</td>
+      </tr>
+      <tr>
+        <td>e57.file.size</td>
+        <td>Yes</td>
+        <td>File size in bytes.</td>
+      </tr>
+    </tbody>
+  </table>
+
+</details>
+
+<hr />
+
+<h2 id="step-3-begin-upload">Step 3: Begin Upload</h2>
+
+<p>Signal to the API that you’re ready to start uploading the file.</p>
+
+<details>
+  <summary>beginUpload Mutation</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">beginUpload</span><span class="p">(</span><span class="nv">$importSessionId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!,</span><span class="w"> </span><span class="nv">$importFileId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">beginUpload</span><span class="p">(</span><span class="n">importSessionId</span><span class="p">:</span><span class="w"> </span><span class="nv">$importSessionId</span><span class="p">,</span><span class="w"> </span><span class="n">importFileId</span><span class="p">:</span><span class="w"> </span><span class="nv">$importFileId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">clientId</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">type</span><span class="w">
+    </span><span class="n">size</span><span class="w">
+    </span><span class="n">uploadStatus</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Sample Variables:</strong></p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"importSessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0cumin458wkndg4qke309xmm"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"importFileId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"file1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Sample Response:</strong></p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"beginUpload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0waw9rsctf42u329if6zcr4da"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clientId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"file1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SampleDemo.e57"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/octet-stream"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">2090321920</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"uploadStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STARTED"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Parameters:</strong></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>importSessionId</td>
+        <td>Yes</td>
+        <td>Import Session ID from Step 1.</td>
+      </tr>
+      <tr>
+        <td>importFileId</td>
+        <td>Yes</td>
+        <td>File identifier from Step 2 (use the <code class="language-plaintext highlighter-rouge">clientId</code>).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <ul>
+    <li>Confirmation to begin upload.</li>
+  </ul>
+
+</details>
+
+<hr />
+
+<h2 id="step-4-request-part-upload">Step 4: Request Part Upload</h2>
+
+<p>Request a pre-signed URL for uploading a specific part of your file (supports multipart uploads for large files).</p>
+
+<details>
+  <summary>requestPartUpload Mutation</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">requestPartUpload</span><span class="p">(</span><span class="w">
+  </span><span class="nv">$importSessionId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!</span><span class="w">
+  </span><span class="nv">$importFileId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!</span><span class="w">
+  </span><span class="nv">$part</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">!</span><span class="w">
+  </span><span class="nv">$size</span><span class="p">:</span><span class="w"> </span><span class="n">Long</span><span class="p">!</span><span class="w">
+</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">requestPartUpload</span><span class="p">(</span><span class="w">
+    </span><span class="n">importSessionId</span><span class="p">:</span><span class="w"> </span><span class="nv">$importSessionId</span><span class="w">
+    </span><span class="n">importFileId</span><span class="p">:</span><span class="w"> </span><span class="nv">$importFileId</span><span class="w">
+    </span><span class="n">part</span><span class="p">:</span><span class="w"> </span><span class="nv">$part</span><span class="w">
+    </span><span class="n">size</span><span class="p">:</span><span class="w"> </span><span class="nv">$size</span><span class="w">
+  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">url</span><span class="w">
+    </span><span class="n">minSize</span><span class="w">
+    </span><span class="n">maxSize</span><span class="w">
+    </span><span class="n">headers</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">key</span><span class="w">
+      </span><span class="n">value</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="n">method</span><span class="w">
+    </span><span class="n">completed</span><span class="w">
+    </span><span class="n">partNumber</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Sample Variables:</strong></p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"importSessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0cumin458wkndg4qke309xmm"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"importFileId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"file1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"part"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">2090321920</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Sample Response:</strong></p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"requestPartUpload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mp-transient-qa.s3.amazonaws.com/import/0cumin458wkndg4qke309xmm/0waw9rsctf42u329if6zcr4da?..."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">2090321920</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">2090321920</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"headers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PUT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"partNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Parameters:</strong></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>importSessionId</td>
+        <td>Yes</td>
+        <td>Import Session ID from Step 1.</td>
+      </tr>
+      <tr>
+        <td>importFileId</td>
+        <td>Yes</td>
+        <td>File <code class="language-plaintext highlighter-rouge">clientId</code> from Step 2.</td>
+      </tr>
+      <tr>
+        <td>part</td>
+        <td>Yes</td>
+        <td>Zero-based part index.</td>
+      </tr>
+      <tr>
+        <td>size</td>
+        <td>Yes</td>
+        <td>File size in bytes for this part (use full file size when uploading in one part).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <ul>
+    <li>Pre-signed URL and headers to upload the part. Copy the full URL exactly as it contains signatures.</li>
+  </ul>
+
+  <p>Repeat for each part if chunking the upload.</p>
+
+</details>
+
+<hr />
+
+<h2 id="step-5-upload-the-file">Step 5: Upload the File</h2>
+
+<p>Upload the file (or part) to the provided pre-signed URL with the HTTP method <code class="language-plaintext highlighter-rouge">PUT</code>. Capture the <code class="language-plaintext highlighter-rouge">ETag</code> header from the storage response for each uploaded part.</p>
+
+<p><strong>Example using cURL:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">--data-binary</span> @SampleDemo.e57 <span class="se">\</span>
+  <span class="s2">"&lt;presigned_url_from_step_4&gt;"</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> For multipart uploads, repeat the request for each part URL and keep the <code class="language-plaintext highlighter-rouge">ETag</code> values per part.</p>
+
+<hr />
+
+<h2 id="step-6-complete-upload">Step 6: Complete Upload</h2>
+
+<p>Confirm that the file upload is complete and provide the <code class="language-plaintext highlighter-rouge">ETag</code> values collected in Step 5.</p>
+
+<details>
+  <summary>completeUpload Mutation</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">completeUpload</span><span class="p">(</span><span class="w">
+  </span><span class="nv">$importSessionId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!</span><span class="w">
+  </span><span class="nv">$importFileId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!</span><span class="w">
+  </span><span class="nv">$completedParts</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">CompletedPartInput</span><span class="p">!]!</span><span class="w">
+</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">completeUpload</span><span class="p">(</span><span class="w">
+    </span><span class="n">importSessionId</span><span class="p">:</span><span class="w"> </span><span class="nv">$importSessionId</span><span class="w">
+    </span><span class="n">importFileId</span><span class="p">:</span><span class="w"> </span><span class="nv">$importFileId</span><span class="w">
+    </span><span class="n">completedParts</span><span class="p">:</span><span class="w"> </span><span class="nv">$completedParts</span><span class="w">
+  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">clientId</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">type</span><span class="w">
+    </span><span class="n">size</span><span class="w">
+    </span><span class="n">uploadStatus</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Sample Variables:</strong></p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"importSessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0cumin458wkndg4qke309xmm"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"importFileId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"file1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"completedParts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"headers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETag"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"69f67e056a3fad6395c42e3f1a5ea9"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Sample Response:</strong></p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"completeUpload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0waw9rsctf42u329if6zcr4da"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clientId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"file1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SampleDemo.e57"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/octet-stream"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">2090321920</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"uploadStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPLETED"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Parameters:</strong></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>importSessionId</td>
+        <td>Yes</td>
+        <td>Session ID from Step 1.</td>
+      </tr>
+      <tr>
+        <td>importFileId</td>
+        <td>Yes</td>
+        <td>File <code class="language-plaintext highlighter-rouge">clientId</code> from Step 2.</td>
+      </tr>
+      <tr>
+        <td>completedParts</td>
+        <td>Yes</td>
+        <td>Array of uploaded parts with their <code class="language-plaintext highlighter-rouge">ETag</code> headers.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <ul>
+    <li>File metadata confirming the upload finished successfully.</li>
+  </ul>
+
+</details>
+
+<hr />
+
+<h2 id="step-7-commit-import-session">Step 7: Commit Import Session</h2>
+
+<p>Finalize the import session and trigger model creation.</p>
+
+<details>
+  <summary>commitImportSession Mutation</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mutation</span><span class="w"> </span><span class="n">commitImportSession</span><span class="p">(</span><span class="nv">$importSessionId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">commitImportSession</span><span class="p">(</span><span class="n">importSessionId</span><span class="p">:</span><span class="w"> </span><span class="nv">$importSessionId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">description</span><span class="w">
+    </span><span class="n">created</span><span class="w">
+    </span><span class="n">organizationId</span><span class="w">
+    </span><span class="n">userId</span><span class="w">
+    </span><span class="n">processType</span><span class="w">
+    </span><span class="n">files</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">clientId</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+      </span><span class="n">type</span><span class="w">
+      </span><span class="n">size</span><span class="w">
+      </span><span class="n">uploadStatus</span><span class="w">
+      </span><span class="n">numParts</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Sample Variables:</strong></p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"importSessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0cumin458wkndg4qke309xmm"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Parameters:</strong></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>importSessionId</td>
+        <td>Yes</td>
+        <td>Session ID from Step 1.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Sample Response:</strong></p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"commitImportSession"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0cumin458wkndg4qke309xmm"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Import API Demo"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Import API Demo description"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-02-15T23:44:19Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"organizationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P79zdxVGgWq"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nR4VCCojTGi"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"processType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E57"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+</details>
+
+<hr />
+
+<h2 id="query-import-session-or-model-ids">Query Import Session or Model IDs</h2>
+
+<p>Use these queries to retrieve model IDs from import sessions or find sessions from a model ID.</p>
+
+<details>
+  <summary>importSession Query (by Import Session ID)</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">importSession</span><span class="p">(</span><span class="nv">$importSessionId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">importSession</span><span class="p">(</span><span class="n">importSessionId</span><span class="p">:</span><span class="w"> </span><span class="nv">$importSessionId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">id</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">description</span><span class="w">
+    </span><span class="n">created</span><span class="w">
+    </span><span class="n">organizationId</span><span class="w">
+    </span><span class="n">userId</span><span class="w">
+    </span><span class="n">modelId</span><span class="w">
+    </span><span class="n">processType</span><span class="w">
+    </span><span class="n">files</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">clientId</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+      </span><span class="n">type</span><span class="w">
+      </span><span class="n">size</span><span class="w">
+      </span><span class="n">uploadStatus</span><span class="w">
+      </span><span class="n">numParts</span><span class="w">
+      </span><span class="n">parts</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">minSize</span><span class="w">
+        </span><span class="n">maxSize</span><span class="w">
+        </span><span class="n">headers</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="n">key</span><span class="w">
+          </span><span class="n">value</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Sample Variables:</strong></p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"importSessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0cumin458wkndg4qke309xmm"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Parameters:</strong></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>importSessionId</td>
+        <td>Yes</td>
+        <td>Import session ID to fetch.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Sample Response:</strong></p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"importSession"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0cumin458wkndg4qke309xmm"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Import API Demo"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Import API Demo description"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-02-15T23:34:22Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"organizationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P79zdxVGgWq"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nR4VCCojTGi"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"modelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ga4afATLPtH"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"processType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E57"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0waw9rsctf42u329if6zcr4da"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"clientId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"file1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SampleDemo.e57"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/octet-stream"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">2090321920</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"uploadStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPLETED"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"numParts"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"parts"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+</details>
+
+<details>
+  <summary>listImportSessions Query (by Model ID)</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">listImportSessions</span><span class="p">(</span><span class="nv">$modelId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">listImportSessions</span><span class="p">(</span><span class="n">modelId</span><span class="p">:</span><span class="w"> </span><span class="nv">$modelId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+      </span><span class="n">created</span><span class="w">
+      </span><span class="n">modified</span><span class="w">
+      </span><span class="n">organizationId</span><span class="w">
+      </span><span class="n">userId</span><span class="w">
+      </span><span class="n">processType</span><span class="w">
+      </span><span class="n">committed</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Sample Variables:</strong></p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"modelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ga4afATLPtH"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Parameters:</strong></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>modelId</td>
+        <td>Yes</td>
+        <td>Filter sessions by resulting model ID.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Sample Response:</strong></p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"listImportSessions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0cumin458wkndg4qke309xmm"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Import API Demo"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-02-15T23:34:22Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-02-15T23:34:37Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"organizationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P79zdxVGgWq"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nR4VCCojTGi"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"processType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E57"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"committed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+</details>
+
+<details>
+  <summary>importFilePartsUploadStatus Query</summary>
+
+  <div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">query</span><span class="w"> </span><span class="n">importFilePartsUploadStatus</span><span class="p">(</span><span class="w">
+  </span><span class="nv">$importSessionId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!</span><span class="w">
+  </span><span class="nv">$importFileId</span><span class="p">:</span><span class="w"> </span><span class="nb">ID</span><span class="p">!</span><span class="w">
+</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">importFilePartsUploadStatus</span><span class="p">(</span><span class="w">
+    </span><span class="n">importSessionId</span><span class="p">:</span><span class="w"> </span><span class="nv">$importSessionId</span><span class="w">
+    </span><span class="n">importFileId</span><span class="p">:</span><span class="w"> </span><span class="nv">$importFileId</span><span class="w">
+  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">eTag</span><span class="w">
+    </span><span class="n">size</span><span class="w">
+    </span><span class="n">partNumber</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Sample Variables:</strong></p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"importSessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0cumin458wkndg4qke309xmm"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"importFileId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"file1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <p><strong>Parameters:</strong></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Required</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>importSessionId</td>
+        <td>Yes</td>
+        <td>Session ID to inspect.</td>
+      </tr>
+      <tr>
+        <td>importFileId</td>
+        <td>Yes</td>
+        <td>File <code class="language-plaintext highlighter-rouge">clientId</code> whose parts to list.</td>
+      </tr>
+    </tbody>
+  </table>
+
+</details>
+
+<hr />
+
+<h2 id="error-handling">Error Handling</h2>
+
+<p>If you encounter errors during the import workflow, refer to the <a href="https://matterport.github.io/showcase-sdk//api_home.html#error-codes">error codes documentation</a> for troubleshooting guidance.</p>
+
+
+    <div class="tags">
+        
+    </div>
+
+<!-- 
+ -->
+
+</div>
+
+<!-- <hr class="shaded"/> -->
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2026 Matterport, Inc. All rights reserved. <br />
+ Site last generated: Feb 18, 2026
+                </div>
+            </div>
+</footer>
+
+
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /#main -->
+    </div>
+
+    
+  </body>
+   <!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-34880260-5','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+ 
+</html>
