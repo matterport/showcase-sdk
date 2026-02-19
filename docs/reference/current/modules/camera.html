@@ -1108,7 +1108,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=26.1.3_webgl-190-ge117742b46">26.1.3_webgl-190-ge117742b46</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=26.2.3_webgl-295-gf6ade28cd9">26.2.3_webgl-295-gf6ade28cd9</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1132,6 +1132,7 @@ $('#toc').on('click', 'a', function() {
 						<section class="tsd-index-section ">
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="camera.html#lookatoptions" class="tsd-kind-icon">Look<wbr>AtOptions</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="camera.html#pose" class="tsd-kind-icon">Pose</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="camera.html#rotateoptions" class="tsd-kind-icon">Rotate<wbr>Options</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="camera.html#zoomdata" class="tsd-kind-icon">Zoom<wbr>Data</a></li>
@@ -1148,6 +1149,7 @@ $('#toc').on('click', 'a', function() {
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="camera.html#getpose" class="tsd-kind-icon">get<wbr>Pose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="camera.html#lookat" class="tsd-kind-icon">look<wbr>At</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="camera.html#lookatscreencoords" class="tsd-kind-icon">look<wbr>AtScreen<wbr>Coords</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="camera.html#moveindirection" class="tsd-kind-icon">move<wbr>InDirection</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="camera.html#pan" class="tsd-kind-icon">pan</a></li>
@@ -1163,6 +1165,47 @@ $('#toc').on('click', 'a', function() {
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Types</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
+					<a name="lookatoptions" class="tsd-anchor"></a>
+					<h3>Look<wbr>AtOptions</h3>
+					<div class="tsd-signature tsd-kind-icon">Look<wbr>AtOptions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="tsd-lead">
+							<p>Options for Camera.lookAt method</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> mode<span class="tsd-signature-symbol">?: </span><a href="../enums/mode.mode-1.html" class="tsd-signature-type">Mode.Mode</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="tsd-lead">
+										<p>Target view mode. If not specified, stays in current mode. Valid values include Dollhouse, Floorplan, and Inside.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> offset<span class="tsd-signature-symbol">?: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="tsd-lead">
+										<p>Camera offset from the target position. The camera will be positioned at (position + offset) looking toward position.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> transition<span class="tsd-signature-symbol">?: </span><a href="../enums/camera.transitiontype.html" class="tsd-signature-type">Camera.TransitionType</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="tsd-lead">
+										<p>Type of transition animation. Not valid for Floorplan mode.</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
 					<a name="pose" class="tsd-anchor"></a>
 					<h3>Pose</h3>
@@ -1307,6 +1350,73 @@ $('#toc').on('click', 'a', function() {
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="camera.html#pose" class="tsd-signature-type">Camera.Pose</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A promise that resolves with the current state of the camera.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="lookat" class="tsd-anchor"></a>
+					<h3>look<wbr>At</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">look<wbr>At<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><a href="../index.html#vector3" class="tsd-signature-type">Vector3</a>, options<span class="tsd-signature-symbol">?: </span><a href="camera.html#lookatoptions" class="tsd-signature-type">Camera.LookAtOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-experimental">experimental</dt>
+								<dd>
+									<p>Moves the camera to look at a specific 3D world position.
+									Works in both dollhouse and inside (panorama) view modes.</p>
+									<pre><code><span class="hljs-comment">// Look at a position</span>
+<span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Camera</span><span class="hljs-selector-class">.lookAt</span>({ x: 0, y: 1, z: 0 })
+  <span class="hljs-selector-class">.then</span>(function() {
+    <span class="hljs-comment">// Camera movement complete.</span>
+  })
+  <span class="hljs-selector-class">.catch</span>(function(error) {
+    <span class="hljs-comment">// Camera movement error.</span>
+  });
+
+<span class="hljs-comment">// Look at a position with options</span>
+<span class="hljs-selector-tag">mpSdk</span><span class="hljs-selector-class">.Camera</span><span class="hljs-selector-class">.lookAt</span>(
+  { x: 0, y: 1, z: 0 },
+  {
+    mode: mpSdk.Mode.Mode.DOLLHOUSE,
+    <span class="hljs-attribute">transition</span>: mpSdk.Camera.TransitionType.FLY,
+    <span class="hljs-attribute">offset</span>: { <span class="hljs-attribute">x</span>: <span class="hljs-number">2</span>, <span class="hljs-attribute">y</span>: <span class="hljs-number">0</span>, <span class="hljs-attribute">z</span>: <span class="hljs-number">0</span> }
+  }
+)<span class="hljs-selector-class">.then</span>(function() {
+  <span class="hljs-comment">// Camera positioned 2 units to the right of the target, looking at it</span>
+});
+</code></pre>
+								</dd>
+							</dl>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <a href="../index.html#vector3" class="tsd-signature-type">Vector3</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The 3D world position to look at.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="camera.html#lookatoptions" class="tsd-signature-type">Camera.LookAtOptions</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional parameters for the camera movement.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A Promise that resolves when the camera movement is complete.</p>
+							<p><strong>Errors</strong></p>
+							<ul>
+								<li>Fails if position coordinates are invalid (NaN or not numbers).</li>
+								<li>Fails if offset coordinates are invalid when provided.</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -1788,6 +1898,9 @@ mpSdk.Camera.moveInDirection(nextDirection)
 						<a href="../enums/camera.transitiontype.html" class="tsd-kind-icon">Transition<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="camera.html#lookatoptions" class="tsd-kind-icon">Look<wbr>AtOptions</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
 						<a href="camera.html#pose" class="tsd-kind-icon">Pose</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
@@ -1804,6 +1917,9 @@ mpSdk.Camera.moveInDirection(nextDirection)
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="camera.html#getpose" class="tsd-kind-icon">get<wbr>Pose</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="camera.html#lookat" class="tsd-kind-icon">look<wbr>At</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="camera.html#lookatscreencoords" class="tsd-kind-icon">look<wbr>AtScreen<wbr>Coords</a>
@@ -1855,7 +1971,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2026 Matterport, Inc. All rights reserved. <br />
- Site last generated: Feb 18, 2026
+ Site last generated: Feb 19, 2026
                 </div>
             </div>
 </footer>

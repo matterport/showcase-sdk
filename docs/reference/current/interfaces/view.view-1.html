@@ -1124,7 +1124,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=26.1.3_webgl-190-ge117742b46">26.1.3_webgl-190-ge117742b46</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=26.2.3_webgl-295-gf6ade28cd9">26.2.3_webgl-295-gf6ade28cd9</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1153,6 +1153,7 @@ $('#toc').on('click', 'a', function() {
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="view.view-1.html#addlayer" class="tsd-kind-icon">add<wbr>Layer</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="view.view-1.html#haslayer" class="tsd-kind-icon">has<wbr>Layer</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="view.view-1.html#removelayer" class="tsd-kind-icon">remove<wbr>Layer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="view.view-1.html#revert" class="tsd-kind-icon">revert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="view.view-1.html#setactive" class="tsd-kind-icon">set<wbr>Active</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="view.view-1.html#subscribe" class="tsd-kind-icon">subscribe</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="view.view-1.html#waituntil" class="tsd-kind-icon">wait<wbr>Until</a></li>
@@ -1350,6 +1351,27 @@ $('#toc').on('click', 'a', function() {
 									</div>
 								</li>
 							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="revert" class="tsd-anchor"></a>
+					<h3>revert</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">revert<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="tsd-lead">
+									<p>Revert this view by removing all transient layers and removing any object edits.</p>
+								</div>
+								<pre><code class="language-ts"><span class="hljs-keyword">await</span> view.revert();
+</code></pre>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
@@ -1583,6 +1605,9 @@ sdk.App.state.subscribe(<span class="hljs-function">(<span class="hljs-params">a
 								<a href="view.view-1.html#removelayer" class="tsd-kind-icon">remove<wbr>Layer</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="view.view-1.html#revert" class="tsd-kind-icon">revert</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="view.view-1.html#setactive" class="tsd-kind-icon">set<wbr>Active</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
@@ -1639,7 +1664,7 @@ sdk.App.state.subscribe(<span class="hljs-function">(<span class="hljs-params">a
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2026 Matterport, Inc. All rights reserved. <br />
- Site last generated: Feb 18, 2026
+ Site last generated: Feb 19, 2026
                 </div>
             </div>
 </footer>
