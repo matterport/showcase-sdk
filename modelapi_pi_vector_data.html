@@ -1083,7 +1083,7 @@ noResultsText: '<li><div>No results found.<div></li>',
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">centerLineBias</code></td>
-      <td>Where the line representing the edge is positioned within the projected thickness (0.5 for 1/2 of the thickness on either side of the edge)</td>
+      <td>Where the line representing the edge is positioned within the projected thickness.<br />• centerLineBias = 0.5 =&gt; wall is centered on wall center line<br />• centerLineBias &lt; 0.5 =&gt; wall is thicker on right side<br />• centerLineBias &gt; 0.5 =&gt; wall is thicker on left side<br />• As the value increases toward 1.0, more of the wall’s thickness shifts to your left-hand side.<br />• As the value decreases toward 0.0, the wall shifts to your right-hand side.<br /><br /><img src="/images/center_line_bias.png" alt="center line bias" /></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">thickness</code></td>
@@ -1474,7 +1474,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2026 Matterport, Inc. All rights reserved. <br />
- Site last generated: Mar 13, 2026
+ Site last generated: Mar 19, 2026
                 </div>
             </div>
 </footer>
