@@ -1108,7 +1108,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=26.3.2_webgl-394-g35ce69c01e">26.3.2_webgl-394-g35ce69c01e</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=26.3.3_webgl-467-g9e305fc096">26.3.3_webgl-467-g9e305fc096</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1140,6 +1140,7 @@ $('#toc').on('click', 'a', function() {
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="measurements.html#getdata" class="tsd-kind-icon">get<wbr>Data</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="measurements.html#remove" class="tsd-kind-icon">remove</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-namespace"><a href="measurements.html#togglemode" class="tsd-kind-icon">toggle<wbr>Mode</a></li>
 							</ul>
 						</section>
@@ -1190,6 +1191,14 @@ $('#toc').on('click', 'a', function() {
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
+								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="tsd-lead">
+										<p>A unique identifier for this measurement</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
 								<h5>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="tsd-lead">
@@ -1217,7 +1226,7 @@ $('#toc').on('click', 'a', function() {
 								<h5>sid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="tsd-lead">
-										<p>A unique identifier for this measurement</p>
+										<p>Alias for <code>id</code></p>
 									</div>
 								</div>
 							</li>
@@ -1308,26 +1317,58 @@ $('#toc').on('click', 'a', function() {
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-deprecated">deprecated</dt>
+								<dd>
+									<p>Use <a href="measurements.html#data">data</a></p>
+								</dd>
+							</dl>
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="measurements.html#measurementdata" class="tsd-signature-type">Measurements.MeasurementData</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-namespace">
+					<a name="remove" class="tsd-anchor"></a>
+					<h3>remove</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>measurements<span class="tsd-signature-symbol">: </span><a href="measurements.html#measurementmodedata" class="tsd-signature-type">Measurements.MeasurementModeData</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<dl class="tsd-comment-tags tsd-typography">
+							</dl>
+							<dl class="tsd-comment-tags tsd-typography">
+								<dt class="tsd-comment-tags-experimental">experimental</dt>
+								<dd>
+								</dd>
+							</dl>
 							<aside class="tsd-sources">
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="tsd-lead">
-									<p>This function returns metadata on the collection of Measurements.</p>
+									<p>Remove one or more measurements.</p>
 								</div>
-								<pre><code>mpSdk.Measurement.getData()
-  .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(Measurements)</span> {</span>
-    <span class="hljs-comment">// Measurement data retreival complete.</span>
-    <span class="hljs-keyword">if</span>(Measurements.<span class="hljs-built_in">length</span> &gt; <span class="hljs-number">0</span>) {
-      console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;First Measurement label: &#x27;</span> + Measurements[<span class="hljs-number">0</span>].label);
-      console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;First Measurement description: &#x27;</span> + Measurements[<span class="hljs-number">0</span>].description);
-    }
-  })
-  .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> {</span>
-    <span class="hljs-comment">// Measurement data retrieval error.</span>
-  });
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> measurements: Dictionary&lt;Measurements.MeasurementModeData&gt;; <span class="hljs-comment">// ... acquired through `mpSdk.Measurements.data`</span>
+<span class="hljs-comment">// remove one measurement</span>
+mpSdk.Measurements.remove(measurements);
+
+<span class="hljs-comment">// or rmeove multiple at the same time</span>
+mpSdk.Measurements.remove(...Object.values(measurements));
 </code></pre>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="measurements.html#measurementdata" class="tsd-signature-type">Measurements.MeasurementData</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>measurements: <a href="measurements.html#measurementmodedata" class="tsd-signature-type">Measurements.MeasurementModeData</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1463,6 +1504,9 @@ $('#toc').on('click', 'a', function() {
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="measurements.html#getdata" class="tsd-kind-icon">get<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="measurements.html#remove" class="tsd-kind-icon">remove</a>
 					</li>
 					<li class=" tsd-kind-method tsd-parent-kind-namespace">
 						<a href="measurements.html#togglemode" class="tsd-kind-icon">toggle<wbr>Mode</a>
