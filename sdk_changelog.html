@@ -1075,6 +1075,34 @@ $('#toc').on('click', 'a', function() {
     
 
    
+<h2 id="2634">26.3.4</h2>
+
+<h5 id="mar-26-2026">Mar 26, 2026</h5>
+
+<p><strong>General</strong></p>
+<ul>
+  <li>Added <a href="docs/reference/current/modules/measurements.html#add">Measurements.add</a> to add one or more measurements</li>
+  <li>Added the ability to update <a href="docs/reference/current/modules/measurements.html#measurementmodedata">Measurements’</a> labels
+    <ul>
+      <li>Setting a measurement’s <a href="docs/reference/current/modules/measurements.html#label-string-1">label</a> directly will update it</li>
+      <li>Example: <code class="language-plaintext highlighter-rouge">measurement.label = "new Label"</code></li>
+    </ul>
+  </li>
+  <li>Added the ability to update <a href="docs/reference/current/modules/measurements.html#measurementmodedata">Measurements’</a> points
+    <ul>
+      <li>Setting a measurement’s <a href="docs/reference/current/modules/measurements.html#points-vector3-1">points</a> directly will update the rendered measurement</li>
+      <li>All built-in Array functions are supported</li>
+      <li>Examples:
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">measurement.points[0] = {x, y, z}</code></li>
+          <li><code class="language-plaintext highlighter-rouge">measurement.points.push({x, y, z})</code></li>
+          <li><code class="language-plaintext highlighter-rouge">measurement.points.splice(1, 1)</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
 <h2 id="2633">26.3.3</h2>
 
 <h5 id="mar-19-2026">Mar 19, 2026</h5>
@@ -2454,7 +2482,7 @@ We are adding support for synchronous functions. These functions compute and ret
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2026 Matterport, Inc. All rights reserved. <br />
- Site last generated: Mar 19, 2026
+ Site last generated: Mar 30, 2026
                 </div>
             </div>
 </footer>
