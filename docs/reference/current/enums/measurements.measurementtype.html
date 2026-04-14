@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>SDK Web Component Tutorial | Matterport Developers</title>
+<title>Enumeration: Measurements.MeasurementType | Matterport Developers</title>
 <link rel="stylesheet" href="/showcase-sdk/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -137,7 +137,7 @@
             <a class="dropbtn" href="https://matterport.com/legal/platform-subscription-agreement#sdk-terms" target="_blank">Terms</a>
           </div>
           <div class="dropdown">
-            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:MP-developer@costar.com?subject=Showcase SDK feedback&body=I have some feedback about the SDK Web Component Tutorial page: ' + window.location.href;">Feedback</a>
+            <a class="dropbtn" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:MP-developer@costar.com?subject=Showcase SDK feedback&body=I have some feedback about the Enumeration: Measurements.MeasurementType page: ' + window.location.href;">Feedback</a>
           </div>
           <div class="dropdown">
             <a class="dropbtn" href="https://matterport.github.io/showcase-sdk/subscribe.html" >
@@ -435,7 +435,7 @@
           
           
           
-          <li class="active"><a title="Tutorial" href="/showcase-sdk/sdkbundle_webcomponent_tutorial.html">Tutorial</a></li>
+          <li><a title="Tutorial" href="/showcase-sdk/sdkbundle_webcomponent_tutorial.html">Tutorial</a></li>
           
           
           
@@ -1022,7 +1022,7 @@
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
             dataSource: '/showcase-sdk/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="SDK Web Component Tutorial">{title}</a></li>',
+            searchResultTemplate: '<li><a href="{url}" title="Enumeration: Measurements.MeasurementType">{title}</a></li>',
 noResultsText: '<li><div>No results found.<div></li>',
         limit: 10,
         fuzzy: true,
@@ -1037,7 +1037,7 @@ noResultsText: '<li><div>No results found.<div></li>',
             id="tg-sb-content"
           >
             <div class="post-header">
-   <h1 class="post-title-main">SDK Web Component Tutorial</h1>
+   <h1 class="post-title-main">Enumeration: Measurements.MeasurementType</h1>
 </div>
 
 
@@ -1074,198 +1074,228 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The Matterport Web Component is currently in public beta - interface and syntax are subject to change.</div>
-
-<h3 id="prerequisites">Prerequisites</h3>
-
-<ul>
-  <li>You should be familiar with the <a href="https://www.davidbaumgold.com/tutorials/command-line/">command line</a>.</li>
-  <li>You should have <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">NPM</a> or <a href="https://yarnpkg.com/getting-started/install">Yarn</a> installed.</li>
-  <li>Finally, you should <a href="https://matterport.github.io/showcase-sdk/sdk_home.html#installation">obtain an SDK key</a>.</li>
-</ul>
-
-<h3 id="starting-your-project">Starting Your Project</h3>
-
-<p>The Web Component package will work with any framework (React, Vue, Svelte, etc) or vanilla JavaScript or TypeScript.</p>
-
-<p>Let’s start a project using vanilla JS and Webpack. Tools like <a href="https://vitejs.dev/">Vite</a> can be useful if you’d like to skip some of the setup work, but for now we’ll stick with creating the project manually. (If you know how to create a project where you can <code>npm install</code> or <code>yarn add</code> dependencies, you can do so and <a href="#adding-the-web-component">skip ahead</a>.)</p>
-
-<p>Open the command line and navigate to the folder where you want your project. Then create a project folder and navigate into it. We’ll call our project and its folder mp-webcomponent:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>mp-webcomponent
-<span class="nb">cd </span>mp-webcomponent
-</code></pre></div></div>
-
-<p>Initialize a new NPM or Yarn project. (Choose one or the other, whichever you prefer - we will provide instructions for both in this tutorial.) You can accept the default values in all of the prompts.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
-yarn init
-
-<span class="c"># npm</span>
-npm init
-</code></pre></div></div>
-
-<p>Next, install Webpack and a few plugins:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
-yarn add <span class="nt">--dev</span> webpack webpack-cli webpack-dev-server html-webpack-plugin
-
-<span class="c"># npm</span>
-npm <span class="nb">install</span> <span class="nt">--save-dev</span> webpack webpack-cli webpack-dev-server html-webpack-plugin
-</code></pre></div></div>
-
-<p>And install <a href="https://threejs.org/">Three</a>:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
-yarn add three@0.151
-
-<span class="c"># npm</span>
-npm <span class="nb">install </span>three@0.151
-</code></pre></div></div>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The Web Component is only tested with the version of Three listed in <code class="language-plaintext highlighter-rouge">package.json</code>’s <code class="language-plaintext highlighter-rouge">peerDependencies</code> field. You may try using a different version if you prefer, but only the listed version is supported.</div>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If you’re going to use TypeScript, install the Three types: <code>yarn add --dev @types/three</code> or <code>npm install --save-dev @types/three</code></div>
-
-<p>Create a file called <code class="language-plaintext highlighter-rouge">webpack.config.js</code> at your project root and set it up by pasting the following content:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">HtmlWebpackPlugin</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">html-webpack-plugin</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">entry</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./src/index.js</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">./dist</span><span class="dl">"</span><span class="p">),</span>
-    <span class="na">filename</span><span class="p">:</span> <span class="dl">"</span><span class="s2">index_bundle.js</span><span class="dl">"</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span>
-    <span class="k">new</span> <span class="nc">HtmlWebpackPlugin</span><span class="p">({</span>
-      <span class="na">template</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">./src/index.html</span><span class="dl">"</span><span class="p">),</span>
-    <span class="p">}),</span>
-  <span class="p">],</span>
-  <span class="na">devServer</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">static</span><span class="p">:</span> <span class="p">[</span><span class="nx">path</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">static</span><span class="dl">"</span><span class="p">)],</span>
-  <span class="p">},</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>Add the following <code class="language-plaintext highlighter-rouge">scripts</code> property (or replace the existing one) at the top level of your package.json file:</p>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="nl">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webpack serve --mode=development"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webpack"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<p>Finally, add a folder called <code class="language-plaintext highlighter-rouge">src</code> to the project root, and add a file called <code class="language-plaintext highlighter-rouge">index.js</code> and one called <code class="language-plaintext highlighter-rouge">index.html</code> inside <code class="language-plaintext highlighter-rouge">src</code>:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>src
-<span class="nb">touch </span>src/index.html
-<span class="nb">touch </span>src/index.js
-Your project folder should now look like this:
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| node_modules
-| package.json
-| src/
-|-- index.html
-|-- index.js
-| webpack.config.json
-</code></pre></div></div>
-
-<p>Your terminal should be in the <code class="language-plaintext highlighter-rouge">mp-webcomponent</code> directory</p>
-
-<p>(Don’t worry if you see extra <code class="language-plaintext highlighter-rouge">package-lock.json</code> or <code class="language-plaintext highlighter-rouge">yarn.lock</code> files - those are generated for internal use by NPM and Yarn, respectively.)</p>
-
-<h3 id="adding-the-web-component">Adding the Web Component</h3>
-
-<p>Next, we’ll add the Web Component:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
-yarn add @matterport/webcomponent
-
-<span class="c"># npm</span>
-npm <span class="nb">install</span> @matterport/webcomponent
-</code></pre></div></div>
-
-<p>And we’ll add the static assets:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
-yarn matterport-assets static
-
-<span class="c"># npm</span>
-npx matterport-assets static
-</code></pre></div></div>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The Web Component requires several static assets, like font files, textures, WASM files, compiled JS files, and more; this script is meant to be a single-step solution for copying those assets to your site.<br /><br />You may, but do not need to, check these files into source control - instead, you can include the yarn/npx matterport-assets your/static/folder command in your build script if you’re using a static site generator like Netlify. More on this workflow later.</div>
-
-<p>Open <code class="language-plaintext highlighter-rouge">index.js</code> and import the Web Component by adding this line:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">'</span><span class="s1">@matterport/webcomponent</span><span class="dl">'</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>Then open index.html and add this line:</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;matterport-viewer</span> <span class="na">m=</span><span class="s">"SxQL3iGyoDo"</span><span class="nt">&gt;&lt;/matterport-viewer&gt;</span>
-</code></pre></div></div>
-
-<p>The Web Component wraps a custom web component that contains the 3D Matterport viewer; the m attribute sets the ID of the model you’d like to load. The value of m here is a sample space you can use for testing and dev.</p>
-
-<p>Start your server:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># yarn</span>
-yarn dev
-
-<span class="c"># npm</span>
-npm run dev
-</code></pre></div></div>
-
-<p>and navigate to <code class="language-plaintext highlighter-rouge">localhost:8080</code>. You should see a Matterport viewer and a sample space on your page.</p>
-
-<h3 id="interacting-with-the-space">Interacting with the Space</h3>
-<p>You can interact with the space by providing your SDK key to the <code class="language-plaintext highlighter-rouge">application-key</code> attribute (see <a href="https://matterport.github.io/showcase-sdk/sdk_home.html#installation">here</a> if you don’t have an SDK key yet):</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;matterport-viewer</span> <span class="na">m=</span><span class="s">"SxQL3iGyoDo"</span> <span class="na">application-key=</span><span class="s">"YOUR_SDK_KEY"</span><span class="nt">&gt;&lt;/matterport-viewer&gt;</span>
-</code></pre></div></div>
-
-<p>Once you’ve done that, the viewer will emit two events you can listen for:</p>
-
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">mpSdkConnected</code> - the SDK is connected and ready to use.</li>
-  <li><code class="language-plaintext highlighter-rouge">mpSdkPlaying</code> - the SDK is connected and ready to use, and the camera is ready to start accepting commands (ie, any intro fly-in has completed and the camera has stopped moving).</li>
-</ol>
-
-<p>Both events have the same call signature, so you can swap out <code class="language-plaintext highlighter-rouge">mpSdkPlaying</code> for <code class="language-plaintext highlighter-rouge">mpSdkConnected</code> if needed. In <code class="language-plaintext highlighter-rouge">index.js</code>:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">viewer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">);</span>
-<span class="nx">viewer</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mpSdkPlaying</span><span class="dl">'</span><span class="p">,</span> <span class="nx">evt</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">mpSdk</span><span class="p">;</span>
-  <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nf">rotate</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="p">})</span>
-</code></pre></div></div>
-
-<p>An even easier route is using the <code class="language-plaintext highlighter-rouge">sdkPromise</code>/<code class="language-plaintext highlighter-rouge">playingPromise</code> properties provided by the component, which correspond with the mpSdkConnected event and the mpSdkPlaying event, respectively.</p>
-
-<p>To use those properties, add the following to your index.js file:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">main</span> <span class="o">=</span> <span class="k">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">).</span><span class="nx">playingPromise</span><span class="p">;</span>
-  <span class="nx">mpSdk</span><span class="p">.</span><span class="nx">Camera</span><span class="p">.</span><span class="nf">rotate</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="nf">main</span><span class="p">();</span>
-</code></pre></div></div>
-
-<p>Note that if you’re using TypeScript you can set up querySelector to preserve strong typing:</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mpSdk</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="o">&lt;</span><span class="nx">MatterportViewer</span><span class="o">&gt;</span><span class="p">(</span><span class="dl">'</span><span class="s1">matterport-viewer</span><span class="dl">'</span><span class="p">)</span><span class="o">!</span><span class="p">.</span><span class="nx">playingPromise</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>If you’ve added a working SDK key, you should see the model load, fly in, and turn to the right.</p>
-
-<h3 id="next-steps">Next Steps</h3>
-
-<p>At this point, you can work with anything from any of the mpSdk namespaces, including Tags, Measurements, Scene objects, and more. Enjoy, and please reach out to MP-developer@costar.com with any questions or issues!</p>
-
+   <!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MeasurementType | Matterport SDK</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">@mpSdk</a>
+				</li>
+				<li>
+					<a href="../modules/measurements.html">Measurements</a>
+				</li>
+				<li>
+					<a href="measurements.measurementtype.html">MeasurementType</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="note">Usage of the SDK constitutes your agreement with the <a href="https://matterport.com/legal/sdk-agreement/">Matterport SDK Agreement</a>. Email <a href="mailto:developers@matterport.com">developers@matterport.com</a> with any questions.</div>
+			<section class="tsd-panel-group tsd-index-group">
+				<div class="tsd-panel-group" id="typescript-declarations" style="display: none;">
+					<h2>Typescript Declarations File</h2>
+					<section class="tsd-panel">
+						<div class="tsd-index-content">
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=26.4.2_webgl-571-gee83324694">26.4.2_webgl-571-gee83324694</a><br>
+							Declarations are already include in the Bundle SDK distribution.
+						</div>
+					</section>
+				</div>
+				<script>
+  if (window.location.href.endsWith('index.html')) {
+    document.getElementById('typescript-declarations').style = 'display: block;';
+  }
+</script>
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Enumeration members</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="measurements.measurementtype.html#floorplan" class="tsd-kind-icon">Floorplan</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="measurements.measurementtype.html#threed" class="tsd-kind-icon">ThreeD</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Enumeration members</h2>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="floorplan" class="tsd-anchor"></a>
+					<h3>Floorplan</h3>
+					<div class="tsd-signature tsd-kind-icon">Floorplan<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;measurement.type.floorplan&quot;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="tsd-lead">
+							<p>A measurement only visible in the floorplan views.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="threed" class="tsd-anchor"></a>
+					<h3>ThreeD</h3>
+					<div class="tsd-signature tsd-kind-icon">ThreeD<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;measurement.type.3d&quot;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="tsd-lead">
+							<p>A measurement visible in any 3d view (inside/dollhouse/etc)</p>
+						</div>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../index.html"><em>@mpSdk</em></a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/app.html">App</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/asset.html">Asset</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/camera.html">Camera</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/conversion.html">Conversion</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/floor.html">Floor</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/graph.html">Graph</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/label.html">Label</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/link.html">Link</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/mattertag.html">Mattertag</a>
+					</li>
+					<li class="current tsd-kind-namespace">
+						<a href="../modules/measurements.html">Measurements</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/mode.html">Mode</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/model.html">Model</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/oauth.html">OAuth</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/pointer.html">Pointer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/renderer.html">Renderer</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/room.html">Room</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/scene.html">Scene</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/sensor.html">Sensor</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/settings.html">Settings</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/sweep.html">Sweep</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/tag.html">Tag</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/tour.html">Tour</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/view.html">View</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-enum tsd-parent-kind-namespace">
+						<a href="measurements.measurementtype.html" class="tsd-kind-icon">Measurement<wbr>Type</a>
+						<ul>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="measurements.measurementtype.html#floorplan" class="tsd-kind-icon">Floorplan</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="measurements.measurementtype.html#threed" class="tsd-kind-icon">ThreeD</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace">
+						<a href="../interfaces/measurements.measurementmodedata.html" class="tsd-kind-icon">Measurement<wbr>Mode<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/measurements.html#measurementdata" class="tsd-kind-icon">Measurement<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/measurements.html#measurementdescriptor" class="tsd-kind-icon">Measurement<wbr>Descriptor</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/measurements.html#state" class="tsd-kind-icon">State</a>
+					</li>
+					<li class=" tsd-kind-property tsd-parent-kind-namespace">
+						<a href="../modules/measurements.html#data" class="tsd-kind-icon">data</a>
+					</li>
+					<li class=" tsd-kind-property tsd-parent-kind-namespace">
+						<a href="../modules/measurements.html#mode" class="tsd-kind-icon">mode</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="../modules/measurements.html#add" class="tsd-kind-icon">add</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="../modules/measurements.html#getdata" class="tsd-kind-icon">get<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="../modules/measurements.html#remove" class="tsd-kind-icon">remove</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-namespace">
+						<a href="../modules/measurements.html#togglemode" class="tsd-kind-icon">toggle<wbr>Mode</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
 
     <div class="tags">
         

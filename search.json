@@ -643,10 +643,6 @@
 
 
 
-
-
-
-
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -655,6 +651,10 @@
 "summary": ""
 }
 ,
+
+
+
+
 
 
 
@@ -894,6 +894,28 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/docs/reference/current/modules/measurements.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: Measurements.MeasurementModeData",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docs/reference/current/interfaces/measurements.measurementmodedata.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Enumeration: Measurements.MeasurementType",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docs/reference/current/enums/measurements.measurementtype.html",
 "summary": ""
 }
 ,
