@@ -1108,7 +1108,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=26.4.2_webgl-571-gee83324694">26.4.2_webgl-571-gee83324694</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=26.4.3_webgl-588-g7009b9e6af">26.4.3_webgl-588-g7009b9e6af</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1130,19 +1130,19 @@ $('#toc').on('click', 'a', function() {
 						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/graph.edge.html" class="tsd-kind-icon">Edge</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/graph.iastarrunner.html" class="tsd-kind-icon">IAStar<wbr>Runner</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/graph.icollectionadaptor.html" class="tsd-kind-icon">ICollection<wbr>Adaptor</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/graph.idirectedgraph.html" class="tsd-kind-icon">IDirected<wbr>Graph</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/graph.searchoptions.html" class="tsd-kind-icon">Search<wbr>Options</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter"><a href="../interfaces/graph.vertex.html" class="tsd-kind-icon">Vertex</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Types</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter"><a href="graph.html#astarresult" class="tsd-kind-icon">AStar<wbr>Result</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter"><a href="graph.html#edge" class="tsd-kind-icon">Edge</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter"><a href="graph.html#edgedescriptor" class="tsd-kind-icon">Edge<wbr>Descriptor</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter"><a href="graph.html#vertex" class="tsd-kind-icon">Vertex</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter"><a href="graph.html#vertexdescriptor" class="tsd-kind-icon">Vertex<wbr>Descriptor</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-namespace"><a href="graph.html#vertexiddescriptor" class="tsd-kind-icon">Vertex<wbr>IdDescriptor</a></li>
 							</ul>
@@ -1185,7 +1185,7 @@ $('#toc').on('click', 'a', function() {
 								</div>
 							</li>
 							<li class="tsd-parameter">
-								<h5>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<h5>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/graph.vertex.html" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="tsd-lead">
 										<p>On success, contains the path of vertices.</p>
@@ -1197,47 +1197,6 @@ $('#toc').on('click', 'a', function() {
 								<div class="tsd-comment tsd-typography">
 									<div class="tsd-lead">
 										<p>Whether the search was successful, timed out, or if there was no path found.</p>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
-					<a name="edge" class="tsd-anchor"></a>
-					<h3>Edge</h3>
-					<div class="tsd-signature tsd-kind-icon">Edge<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="tsd-lead">
-							<p>A weighted, directed connection between two vertices.</p>
-						</div>
-					</div>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> dst<span class="tsd-signature-symbol">: </span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="tsd-lead">
-										<p>The vertex at the destination of this edge.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> src<span class="tsd-signature-symbol">: </span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="tsd-lead">
-										<p>The vertex at the source of this edge.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> weight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="tsd-lead">
-										<p>The weight associated with this edge.</p>
 									</div>
 								</div>
 							</li>
@@ -1259,7 +1218,7 @@ $('#toc').on('click', 'a', function() {
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5>dst<span class="tsd-signature-symbol">: </span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<h5>dst<span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.vertex.html" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="tsd-lead">
 										<p>The destination vertex.</p>
@@ -1267,7 +1226,7 @@ $('#toc').on('click', 'a', function() {
 								</div>
 							</li>
 							<li class="tsd-parameter">
-								<h5>src<span class="tsd-signature-symbol">: </span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<h5>src<span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.vertex.html" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="tsd-lead">
 										<p>The source vertex.</p>
@@ -1281,216 +1240,6 @@ $('#toc').on('click', 'a', function() {
 										<p>The weight of the edge.</p>
 									</div>
 								</div>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
-					<a name="vertex" class="tsd-anchor"></a>
-					<h3>Vertex</h3>
-					<div class="tsd-signature tsd-kind-icon">Vertex<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="tsd-lead">
-							<p>A node in the graph.</p>
-						</div>
-					</div>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="tsd-lead">
-										<p>User data associated with the vertex.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> edges<wbr>In<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><a href="graph.html#edge" class="tsd-signature-type">Graph.Edge</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="tsd-lead">
-										<p>An iterable of all edges that have this vertex as its destination endpoint.</p>
-									</div>
-									<pre><code class="language-typescript"><span class="hljs-keyword">const</span> vertex = graph.vertex(<span class="hljs-string">&#x27;a&#x27;</span>);
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> edgeIn <span class="hljs-keyword">of</span> vertex.edgesIn) {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`vertex &quot;<span class="hljs-subst">${edgeIn.dst.id}</span>&quot; has an edge coming in from a vertex &quot;<span class="hljs-subst">${edgeIn.src.id}</span>&quot;`</span>);
-}
-</code></pre>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> edges<wbr>InCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="tsd-lead">
-										<p>The nubmer of edges that have this vertex as its destination endpoint.</p>
-									</div>
-									<pre><code class="language-typescript"><span class="hljs-keyword">const</span> vertex = graph.vertex(<span class="hljs-string">&#x27;a&#x27;</span>);
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`vertex &quot;<span class="hljs-subst">${vertex.id}</span>&quot; has <span class="hljs-subst">${vertex.edgesInCount}</span> edges out&quot;);</span>
-</code></pre>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> edges<wbr>Out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><a href="graph.html#edge" class="tsd-signature-type">Graph.Edge</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="tsd-lead">
-										<p>An iterable of all edges that have this vertex as its source endpoint.</p>
-									</div>
-									<pre><code class="language-typescript"><span class="hljs-keyword">const</span> vertex = graph.vertex(<span class="hljs-string">&#x27;a&#x27;</span>);
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> edgeOut <span class="hljs-keyword">of</span> vertex.edgesOut) {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`vertex &quot;<span class="hljs-subst">${edgeOut.src.id}</span>&quot; has an edge going to a vertex &quot;<span class="hljs-subst">${edgeOut.dst.id}</span>&quot;`</span>);
-}
-</code></pre>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> edges<wbr>Out<wbr>Count<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="tsd-lead">
-										<p>The nubmer of edges that have this vertex as its source endpoint.</p>
-									</div>
-									<pre><code class="language-typescript"><span class="hljs-keyword">const</span> vertex = graph.vertex(<span class="hljs-string">&#x27;a&#x27;</span>);
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`vertex &quot;<span class="hljs-subst">${vertex.id}</span>&quot; has <span class="hljs-subst">${vertex.edgeOutCount}</span> edges out&quot;);</span>
-</code></pre>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="tsd-lead">
-										<p>The vertex&#39;s id.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> neighbors<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="tsd-lead">
-										<p>An iterable of all vertices that can be traversed to from this vertex.</p>
-									</div>
-									<pre><code class="language-typescript"><span class="hljs-keyword">const</span> vertex = graph.vertex(<span class="hljs-string">&#x27;a&#x27;</span>);
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> neighbor <span class="hljs-keyword">of</span> vertex.neighbors) {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`vertex &quot;<span class="hljs-subst">${vertex.id}</span>&quot; shares an edge with &quot;<span class="hljs-subst">${neighbor.id}</span>&quot;);
-}</span>
-</code></pre>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>find<wbr>Edge<wbr>In<span class="tsd-signature-symbol">: </span>function</h5>
-								<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
-									<li class="tsd-signature tsd-kind-icon">find<wbr>Edge<wbr>In<span class="tsd-signature-symbol">(</span>predicate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, thisArg<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="graph.html#edge" class="tsd-signature-type">Graph.Edge</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<aside class="tsd-sources">
-										</aside>
-										<div class="tsd-comment tsd-typography">
-											<div class="tsd-lead">
-												<p>Find an edge into this vertex.</p>
-											</div>
-											<pre><code class="language-ts"><span class="hljs-keyword">const</span> vertex = graph.vertex(<span class="hljs-string">&#x27;a&#x27;</span>);
-<span class="hljs-comment">// find an edge into &#x27;a&#x27; and out from &#x27;b&#x27;</span>
-vertex.findEdgeIn(<span class="hljs-function"><span class="hljs-params">edge</span> =&gt;</span> edge.src.id === <span class="hljs-string">&#x27;b&#x27;</span>);
-</code></pre>
-										</div>
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>predicate: <span class="tsd-signature-type">function</span></h5>
-												<div class="tsd-comment tsd-typography">
-													<p>The callback to run against each inward edge until one is found (by returning true.)</p>
-												</div>
-												<ul class="tsd-parameters">
-													<li class="tsd-parameter-siganture">
-														<ul class="tsd-signatures tsd-kind-type-literal">
-															<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>edgeIn<span class="tsd-signature-symbol">: </span><a href="graph.html#edge" class="tsd-signature-type">Graph.Edge</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-														</ul>
-														<ul class="tsd-descriptions">
-															<li class="tsd-description">
-																<h4 class="tsd-parameters-title">Parameters</h4>
-																<ul class="tsd-parameters">
-																	<li>
-																		<h5>edgeIn: <a href="graph.html#edge" class="tsd-signature-type">Graph.Edge</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-																	</li>
-																</ul>
-																<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-															</li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-											<li>
-												<h5><span class="tsd-flag ts-flagOptional">Optional</span> thisArg: <span class="tsd-signature-type">any</span></h5>
-												<div class="tsd-comment tsd-typography">
-													<p>The &quot;this&quot; argument to use in <code>predicate</code></p>
-												</div>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <a href="graph.html#edge" class="tsd-signature-type">Graph.Edge</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>
-											<span class="tsd-signature-symbol"> | </span>
-											<span class="tsd-signature-type">undefined</span>
-										</h4>
-									</li>
-								</ul>
-							</li>
-							<li class="tsd-parameter">
-								<h5>find<wbr>Edge<wbr>Out<span class="tsd-signature-symbol">: </span>function</h5>
-								<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal">
-									<li class="tsd-signature tsd-kind-icon">find<wbr>Edge<wbr>Out<span class="tsd-signature-symbol">(</span>predicate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, thisArg<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="graph.html#edge" class="tsd-signature-type">Graph.Edge</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<aside class="tsd-sources">
-										</aside>
-										<div class="tsd-comment tsd-typography">
-											<div class="tsd-lead">
-												<p>Find an edge out of this vertex.</p>
-											</div>
-											<pre><code class="language-ts"><span class="hljs-keyword">const</span> vertex = graph.vertex(<span class="hljs-string">&#x27;a&#x27;</span>);
-<span class="hljs-comment">// find an edge out from &#x27;a&#x27; and into &#x27;b&#x27;</span>
-vertex.findEdgeIn(<span class="hljs-function"><span class="hljs-params">edge</span> =&gt;</span> edge.src.id === <span class="hljs-string">&#x27;b&#x27;</span>);
-</code></pre>
-										</div>
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>predicate: <span class="tsd-signature-type">function</span></h5>
-												<div class="tsd-comment tsd-typography">
-													<p>The callback to run against each outward edge until one is found (by returning true.)</p>
-												</div>
-												<ul class="tsd-parameters">
-													<li class="tsd-parameter-siganture">
-														<ul class="tsd-signatures tsd-kind-type-literal">
-															<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>edgeOut<span class="tsd-signature-symbol">: </span><a href="graph.html#edge" class="tsd-signature-type">Graph.Edge</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-														</ul>
-														<ul class="tsd-descriptions">
-															<li class="tsd-description">
-																<h4 class="tsd-parameters-title">Parameters</h4>
-																<ul class="tsd-parameters">
-																	<li>
-																		<h5>edgeOut: <a href="graph.html#edge" class="tsd-signature-type">Graph.Edge</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-																	</li>
-																</ul>
-																<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-															</li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-											<li>
-												<h5><span class="tsd-flag ts-flagOptional">Optional</span> thisArg: <span class="tsd-signature-type">any</span></h5>
-												<div class="tsd-comment tsd-typography">
-													<p>The &quot;this&quot; argument to use in <code>predicate</code></p>
-												</div>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <a href="graph.html#edge" class="tsd-signature-type">Graph.Edge</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>
-											<span class="tsd-signature-symbol"> | </span>
-											<span class="tsd-signature-type">undefined</span>
-										</h4>
-									</li>
-								</ul>
 							</li>
 						</ul>
 					</div>
@@ -1604,7 +1353,7 @@ vertex.findEdgeIn(<span class="hljs-function"><span class="hljs-params">edge</sp
 					<a name="createastarrunner" class="tsd-anchor"></a>
 					<h3>createAStar<wbr>Runner</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">createAStar<wbr>Runner&lt;T&gt;<span class="tsd-signature-symbol">(</span>graph<span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, start<span class="tsd-signature-symbol">: </span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/graph.searchoptions.html" class="tsd-signature-type">Graph.SearchOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.iastarrunner.html" class="tsd-signature-type">Graph.IAStarRunner</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">createAStar<wbr>Runner&lt;T&gt;<span class="tsd-signature-symbol">(</span>graph<span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, start<span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.vertex.html" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.vertex.html" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/graph.searchoptions.html" class="tsd-signature-type">Graph.SearchOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.iastarrunner.html" class="tsd-signature-type">Graph.IAStarRunner</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1649,13 +1398,13 @@ vertex.findEdgeIn(<span class="hljs-function"><span class="hljs-params">edge</sp
 									</div>
 								</li>
 								<li>
-									<h5>start: <a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>start: <a href="../interfaces/graph.vertex.html" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The start vertex.</p>
 									</div>
 								</li>
 								<li>
-									<h5>end: <a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>end: <a href="../interfaces/graph.vertex.html" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The end vertex.</p>
 									</div>
@@ -1725,7 +1474,7 @@ vertex.findEdgeIn(<span class="hljs-function"><span class="hljs-params">edge</sp
 					<a name="findcycle" class="tsd-anchor"></a>
 					<h3>find<wbr>Cycle</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">find<wbr>Cycle&lt;T&gt;<span class="tsd-signature-symbol">(</span>graph<span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">find<wbr>Cycle&lt;T&gt;<span class="tsd-signature-symbol">(</span>graph<span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/graph.vertex.html" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1763,7 +1512,7 @@ vertex.findEdgeIn(<span class="hljs-function"><span class="hljs-params">edge</sp
 									<h5>graph: <a href="../interfaces/graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/graph.vertex.html" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>an Iterable of vertices that represent a found cycle or <code>[]</code> if none were found</p>
 						</li>
 					</ul>
@@ -1772,7 +1521,7 @@ vertex.findEdgeIn(<span class="hljs-function"><span class="hljs-params">edge</sp
 					<a name="findcycles" class="tsd-anchor"></a>
 					<h3>find<wbr>Cycles</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-namespace tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">find<wbr>Cycles&lt;T&gt;<span class="tsd-signature-symbol">(</span>graph<span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">find<wbr>Cycles&lt;T&gt;<span class="tsd-signature-symbol">(</span>graph<span class="tsd-signature-symbol">: </span><a href="../interfaces/graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/graph.vertex.html" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1811,7 +1560,7 @@ vertex.findEdgeIn(<span class="hljs-function"><span class="hljs-params">edge</sp
 									<h5>graph: <a href="../interfaces/graph.idirectedgraph.html" class="tsd-signature-type">Graph.IDirectedGraph</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><a href="graph.html#vertex" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/graph.vertex.html" class="tsd-signature-type">Graph.Vertex</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>an iterbale of iterables (like an array of arrays) of vertices</p>
 						</li>
 					</ul>
@@ -1901,6 +1650,9 @@ vertex.findEdgeIn(<span class="hljs-function"><span class="hljs-params">edge</sp
 						<a href="../enums/graph.astarstatus.html" class="tsd-kind-icon">AStar<wbr>Status</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../interfaces/graph.edge.html" class="tsd-kind-icon">Edge</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="../interfaces/graph.iastarrunner.html" class="tsd-kind-icon">IAStar<wbr>Runner</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
@@ -1912,17 +1664,14 @@ vertex.findEdgeIn(<span class="hljs-function"><span class="hljs-params">edge</sp
 					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="../interfaces/graph.searchoptions.html" class="tsd-kind-icon">Search<wbr>Options</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="../interfaces/graph.vertex.html" class="tsd-kind-icon">Vertex</a>
+					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="graph.html#astarresult" class="tsd-kind-icon">AStar<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
-						<a href="graph.html#edge" class="tsd-kind-icon">Edge</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="graph.html#edgedescriptor" class="tsd-kind-icon">Edge<wbr>Descriptor</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
-						<a href="graph.html#vertex" class="tsd-kind-icon">Vertex</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace tsd-has-type-parameter">
 						<a href="graph.html#vertexdescriptor" class="tsd-kind-icon">Vertex<wbr>Descriptor</a>
@@ -1971,7 +1720,7 @@ vertex.findEdgeIn(<span class="hljs-function"><span class="hljs-params">edge</sp
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2026 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 14, 2026
+ Site last generated: Apr 16, 2026
                 </div>
             </div>
 </footer>

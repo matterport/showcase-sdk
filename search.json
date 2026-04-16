@@ -490,6 +490,17 @@
 
 
 {
+"title": "Interface: Graph.Edge",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docs/reference/current/interfaces/graph.edge.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Namespace: Graph",
 "tags": "",
 "keywords": "",
@@ -538,6 +549,17 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/docs/reference/current/interfaces/graph.searchoptions.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Interface: Graph.Vertex",
+"tags": "",
+"keywords": "",
+"url": "/showcase-sdk/docs/reference/current/interfaces/graph.vertex.html",
 "summary": ""
 }
 ,

@@ -1161,7 +1161,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=26.4.2_webgl-571-gee83324694">26.4.2_webgl-571-gee83324694</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=26.4.3_webgl-588-g7009b9e6af">26.4.3_webgl-588-g7009b9e6af</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1182,6 +1182,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.icomponent.html#emits" class="tsd-kind-icon">emits</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.icomponent.html#events" class="tsd-kind-icon">events</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.icomponent.html#inputs" class="tsd-kind-icon">inputs</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.icomponent.html#ismeasurable" class="tsd-kind-icon">is<wbr>Measurable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="scene.icomponent.html#outputs" class="tsd-kind-icon">outputs</a></li>
 							</ul>
 						</section>
@@ -1270,6 +1271,20 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 								to respond appropriately to the changes. These input properties can also be bind targets to an
 							observable source e.g. the output property of another component.</p>
 						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="ismeasurable" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> is<wbr>Measurable</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Measurable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="tsd-lead">
+							<p>Whether the <code>outputs.collider</code> of this component will be one of the meshes considered for intersection testing in the measurement tool.
+							Put simply, is this component measurable.</p>
+						</div>
+						<p>Manual and more granular control of pointer intersection can be done by setting the <code>.userData.isMeasurable</code> on each THREE.js mesh.</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -1688,6 +1703,9 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
 								<a href="scene.icomponent.html#inputs" class="tsd-kind-icon">inputs</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="scene.icomponent.html#ismeasurable" class="tsd-kind-icon">is<wbr>Measurable</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="scene.icomponent.html#outputs" class="tsd-kind-icon">outputs</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
@@ -1831,7 +1849,7 @@ sdk.Scene.register(<span class="hljs-string">&#x27;box&#x27;</span>, BoxFactory)
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2026 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 14, 2026
+ Site last generated: Apr 16, 2026
                 </div>
             </div>
 </footer>

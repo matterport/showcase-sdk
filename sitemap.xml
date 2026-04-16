@@ -274,6 +274,12 @@
   
   
   <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/graph.edge.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://matterport.github.io/docs/reference/current/modules/graph.html</loc>
   </url>
   
@@ -299,6 +305,12 @@
   
   <url>
     <loc>https://matterport.github.io/docs/reference/current/interfaces/graph.searchoptions.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://matterport.github.io/docs/reference/current/interfaces/graph.vertex.html</loc>
   </url>
   
   
