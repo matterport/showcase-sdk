@@ -665,6 +665,8 @@
 
 
 
+
+
 {
 "title": "Matterport Developers",
 "tags": "",
@@ -673,8 +675,6 @@
 "summary": ""
 }
 ,
-
-
 
 
 
@@ -1543,17 +1543,6 @@
 "tags": "",
 "keywords": "",
 "url": "/showcase-sdk/docs/reference/current/enums/scene.pathtype.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Interface: Scene.SceneComponentOptions",
-"tags": "",
-"keywords": "",
-"url": "/showcase-sdk/docs/reference/current/interfaces/scene.scenecomponentoptions.html",
 "summary": ""
 }
 ,

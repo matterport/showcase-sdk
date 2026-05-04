@@ -1108,7 +1108,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=26.4.3_webgl-588-g7009b9e6af">26.4.3_webgl-588-g7009b9e6af</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=26.4.4_webgl-611-g928b55af19">26.4.4_webgl-611-g928b55af19</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1549,18 +1549,17 @@ mpSdk.Camera.moveInDirection(nextDirection)
 							<ul class="tsd-parameters">
 								<li>
 									<h5>params: <span class="tsd-signature-type">object</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Object containing x and z coordinates.
+											<code>params.x</code>: Absolute position of the sweep on the x axis.
+										<code>params.z</code>: Absolute position of the sweep on the z axis.</p>
+									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
 											<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-											<div class="tsd-comment tsd-typography">
-												<p>Absolute position of the sweep on the x axis.</p>
-											</div>
 										</li>
 										<li class="tsd-parameter">
 											<h5>z<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-											<div class="tsd-comment tsd-typography">
-												<p>Absolute position of the sweep on the z axis.</p>
-											</div>
 										</li>
 									</ul>
 								</li>
@@ -1621,6 +1620,9 @@ mpSdk.Camera.moveInDirection(nextDirection)
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="camera.html#rotateoptions" class="tsd-signature-type">Camera.RotateOptions</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>additional rotation options such as speed</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1685,6 +1687,9 @@ mpSdk.Camera.moveInDirection(nextDirection)
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="camera.html#rotateoptions" class="tsd-signature-type">Camera.RotateOptions</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>additional rotation options such as speed</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1729,6 +1734,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
 								<li>
 									<h5>zoomDelta: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
+										<p>the amount to change the zoom relative to the base field of view</p>
 										<p><strong>Errors</strong></p>
 										<ul>
 											<li>Fails if the current mode is not Inside mode.</li>
@@ -1795,6 +1801,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
 								<li>
 									<h5>zoomLevel: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
+										<p>the target zoom level as a multiple of the base field of view</p>
 										<p><strong>Errors</strong></p>
 										<ul>
 											<li>Fails if the current mode is not Inside mode.</li>
@@ -1971,7 +1978,7 @@ mpSdk.Camera.moveInDirection(nextDirection)
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2026 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 16, 2026
+ Site last generated: May 4, 2026
                 </div>
             </div>
 </footer>

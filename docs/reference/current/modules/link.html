@@ -1108,7 +1108,7 @@ $('#toc').on('click', 'a', function() {
 					<h2>Typescript Declarations File</h2>
 					<section class="tsd-panel">
 						<div class="tsd-index-content">
-							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=26.4.3_webgl-588-g7009b9e6af">26.4.3_webgl-588-g7009b9e6af</a><br>
+							Typescript declarations for use with the Embed SDK are available here: <a href="https://api.matterport.com/sdk/types/sdk.d.ts?v=26.4.4_webgl-611-g928b55af19">26.4.4_webgl-611-g928b55af19</a><br>
 							Declarations are already include in the Bundle SDK distribution.
 						</div>
 					</section>
@@ -1192,7 +1192,7 @@ $('#toc').on('click', 'a', function() {
 									<p>If <code>${[param]}</code> is included in the path of the URL, it will be replaced by the current URL parameter&#39;s value or undefined (<code>${m}/show</code>: <code>abc123/show</code>).</p>
 									<p>If <code>${[param]}</code> is included in the search parameters of the URL, it and it&#39;s value wil be appended ot the URL (<code>${m}</code>: <code>m=abc123</code>).</p>
 									<p>URL parameters that are unset will be appended without a value. (<code>${unset}</code>: <code>unset</code>)</p>
-									<p>Note: <code>${m}</code> or `${model} are special cases in model links.
+									<p>Note: <code>${m}</code> or <code>${model}</code> are special cases in model links.
 									Instead of the current window&#39;s &quot;model&quot; param, the model ID from the link will be used instead.</p>
 									<p>As an example, the string <code>&quot;https://my.domain.com/${m}/show.html?${play}&amp;${unset}&quot;</code> interpolated at the URL <code>https://my.domain.com/show/?m=abc123&amp;play=1</code>
 									will result in a URL like <code>&quot;https://my.domain.com/abc123/show.html?play=1&amp;unset&amp;m=abc123&quot;</code>.</p>
@@ -1325,10 +1325,14 @@ $('#toc').on('click', 'a', function() {
 							<ul class="tsd-parameters">
 								<li>
 									<h5>policy: <a href="../enums/link.openpolicy.html" class="tsd-signature-type">Link.OpenPolicy</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the open policy for model links</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="link.html#openpolicyoptions" class="tsd-signature-type">Link.OpenPolicyOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
+										<p>additional options such as a template href</p>
 									</div>
 								</li>
 							</ul>
@@ -1431,6 +1435,7 @@ sdk.Link.setSameOriginLinkPolicy(sdk.Link.OpenPolicy.SAME_FRAME);
 								<li>
 									<h5>policy: <a href="../enums/link.openpolicy.html" class="tsd-signature-type">Link.OpenPolicy</a></h5>
 									<div class="tsd-comment tsd-typography">
+										<p>the open policy for same-origin links</p>
 									</div>
 								</li>
 							</ul>
@@ -1467,10 +1472,14 @@ sdk.Link.setSameOriginLinkPolicy(sdk.Link.OpenPolicy.SAME_FRAME);
 							<ul class="tsd-parameters">
 								<li>
 									<h5>policy: <a href="../enums/link.creationpolicy.html" class="tsd-signature-type">Link.CreationPolicy</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the creation policy for generating share links</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="link.html#createlinkoptions" class="tsd-signature-type">Link.CreateLinkOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
+										<p>additional options such as URL parameters to include</p>
 									</div>
 								</li>
 							</ul>
@@ -1621,7 +1630,7 @@ sdk.Link.setSameOriginLinkPolicy(sdk.Link.OpenPolicy.SAME_FRAME);
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2026 Matterport, Inc. All rights reserved. <br />
- Site last generated: Apr 16, 2026
+ Site last generated: May 4, 2026
                 </div>
             </div>
 </footer>
